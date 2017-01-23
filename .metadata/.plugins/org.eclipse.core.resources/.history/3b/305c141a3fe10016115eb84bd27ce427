@@ -1,0 +1,9 @@
+grammar org.xtext.example.oil.Oil with org.eclipse.xtext.common.Terminals
+
+generate oil "http://www.xtext.org/example/oil/Oil"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
