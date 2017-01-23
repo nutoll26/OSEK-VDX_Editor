@@ -6,6 +6,7 @@ package org.xtext.example.oil.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.EnumLiteralDeclaration;
@@ -79,35 +80,35 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
 		private final Keyword cLessThanSignKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
 		private final Assignment cNameAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cNameFILENAMETerminalRuleCall_1_0_1_0 = (RuleCall)cNameAssignment_1_0_1.eContents().get(0);
+		private final RuleCall cNameFileNameParserRuleCall_1_0_1_0 = (RuleCall)cNameAssignment_1_0_1.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_1_0_2 = (Keyword)cGroup_1_0.eContents().get(2);
 		private final Assignment cNameAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cNameEStringParserRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
 		
 		//Include:
-		//	"#include" ("<" name=FILENAME ">" | name=EString);
+		//	"#include" ("<" name=FileName ">" | name=EString);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"#include" ("<" name=FILENAME ">" | name=EString)
+		//"#include" ("<" name=FileName ">" | name=EString)
 		public Group getGroup() { return cGroup; }
 		
 		//"#include"
 		public Keyword getIncludeKeyword_0() { return cIncludeKeyword_0; }
 		
-		//("<" name=FILENAME ">" | name=EString)
+		//("<" name=FileName ">" | name=EString)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//"<" name=FILENAME ">"
+		//"<" name=FileName ">"
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//"<"
 		public Keyword getLessThanSignKeyword_1_0_0() { return cLessThanSignKeyword_1_0_0; }
 		
-		//name=FILENAME
+		//name=FileName
 		public Assignment getNameAssignment_1_0_1() { return cNameAssignment_1_0_1; }
 		
-		//FILENAME
-		public RuleCall getNameFILENAMETerminalRuleCall_1_0_1_0() { return cNameFILENAMETerminalRuleCall_1_0_1_0; }
+		//FileName
+		public RuleCall getNameFileNameParserRuleCall_1_0_1_0() { return cNameFileNameParserRuleCall_1_0_1_0; }
 		
 		//">"
 		public Keyword getGreaterThanSignKeyword_1_0_2() { return cGreaterThanSignKeyword_1_0_2; }
@@ -117,6 +118,17 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EString
 		public RuleCall getNameEStringParserRuleCall_1_1_0() { return cNameEStringParserRuleCall_1_1_0; }
+	}
+	public class FileNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.FileName");
+		private final RuleCall cFILEIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//FileName:
+		//	FILEID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//FILEID
+		public RuleCall getFILEIDTerminalRuleCall() { return cFILEIDTerminalRuleCall; }
 	}
 	public class OILVersionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.OILVersion");
@@ -129,13 +141,13 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cDescriptionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cDescriptionEStringParserRuleCall_3_1_0 = (RuleCall)cDescriptionAssignment_3_1.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//OILVersion:
-		//	"OIL_VERSION" "=" value=EString (":" description=EString)? SEMICOLON;
+		//	"OIL_VERSION" "=" value=EString (":" description=EString)? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"OIL_VERSION" "=" value=EString (":" description=EString)? SEMICOLON
+		//"OIL_VERSION" "=" value=EString (":" description=EString)? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//"OIL_VERSION"
@@ -162,8 +174,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_3_1_0() { return cDescriptionEStringParserRuleCall_3_1_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_4() { return cSEMICOLONTerminalRuleCall_4; }
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class ImplementationDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplementationDefinition");
@@ -171,20 +183,20 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIMPLEMENTATIONKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cImplementationSpecsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cImplementationSpecsImplementationSpecParserRuleCall_3_0 = (RuleCall)cImplementationSpecsAssignment_3.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cDescriptionAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cDescriptionEStringParserRuleCall_5_0 = (RuleCall)cDescriptionAssignment_5.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ImplementationDefinition:
-		//	"IMPLEMENTATION" name=Name BLOCKBEGIN implementationSpecs+=ImplementationSpec* BLOCKEND
-		//	description=EString? SEMICOLON;
+		//	"IMPLEMENTATION" name=Name "{" implementationSpecs+=ImplementationSpec "}"
+		//	description=EString? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"IMPLEMENTATION" name=Name BLOCKBEGIN implementationSpecs+=ImplementationSpec* BLOCKEND description=EString? SEMICOLON
+		//"IMPLEMENTATION" name=Name "{" implementationSpecs+=ImplementationSpec "}" description=EString? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//"IMPLEMENTATION"
@@ -196,17 +208,17 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//Name
 		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_2() { return cBLOCKBEGINTerminalRuleCall_2; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//implementationSpecs+=ImplementationSpec*
+		//implementationSpecs+=ImplementationSpec
 		public Assignment getImplementationSpecsAssignment_3() { return cImplementationSpecsAssignment_3; }
 		
 		//ImplementationSpec
 		public RuleCall getImplementationSpecsImplementationSpecParserRuleCall_3_0() { return cImplementationSpecsImplementationSpecParserRuleCall_3_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_4() { return cBLOCKENDTerminalRuleCall_4; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 		
 		//description=EString?
 		public Assignment getDescriptionAssignment_5() { return cDescriptionAssignment_5; }
@@ -214,86 +226,374 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_5_0() { return cDescriptionEStringParserRuleCall_5_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_6() { return cSEMICOLONTerminalRuleCall_6; }
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 	public class ImplementationSpecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplementationSpec");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cObjectAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cObjectObjectParserRuleCall_0_0 = (RuleCall)cObjectAssignment_0.eContents().get(0);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cImplementationsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cImplementationsImplementationDefParserRuleCall_2_0 = (RuleCall)cImplementationsAssignment_2.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cDescriptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cDescriptionEStringParserRuleCall_4_1_0 = (RuleCall)cDescriptionAssignment_4_1.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Action cImplementationSpecAction_0 = (Action)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cOsRuleAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cOsRuleOsRuleParserRuleCall_1_0_0 = (RuleCall)cOsRuleAssignment_1_0.eContents().get(0);
+		private final Assignment cTaskRuleAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cTaskRuleTaskRuleParserRuleCall_1_1_0 = (RuleCall)cTaskRuleAssignment_1_1.eContents().get(0);
+		private final Assignment cCounterRuleAssignment_1_2 = (Assignment)cAlternatives_1.eContents().get(2);
+		private final RuleCall cCounterRuleCounterRuleParserRuleCall_1_2_0 = (RuleCall)cCounterRuleAssignment_1_2.eContents().get(0);
+		private final Assignment cIsrRuleAssignment_1_3 = (Assignment)cAlternatives_1.eContents().get(3);
+		private final RuleCall cIsrRuleIsrRuleParserRuleCall_1_3_0 = (RuleCall)cIsrRuleAssignment_1_3.eContents().get(0);
 		
 		//ImplementationSpec:
-		//	object=Object BLOCKBEGIN implementations+=ImplementationDef* BLOCKEND (":" description=EString)? SEMICOLON;
+		//	{ImplementationSpec} (osRule+=OsRule | taskRule+=TaskRule | counterRule+=CounterRule | isrRule+=IsrRule)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//object=Object BLOCKBEGIN implementations+=ImplementationDef* BLOCKEND (":" description=EString)? SEMICOLON
+		//{ImplementationSpec} (osRule+=OsRule | taskRule+=TaskRule | counterRule+=CounterRule | isrRule+=IsrRule)+
 		public Group getGroup() { return cGroup; }
 		
-		//object=Object
-		public Assignment getObjectAssignment_0() { return cObjectAssignment_0; }
+		//{ImplementationSpec}
+		public Action getImplementationSpecAction_0() { return cImplementationSpecAction_0; }
 		
-		//Object
-		public RuleCall getObjectObjectParserRuleCall_0_0() { return cObjectObjectParserRuleCall_0_0; }
+		//(osRule+=OsRule | taskRule+=TaskRule | counterRule+=CounterRule | isrRule+=IsrRule)+
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_1() { return cBLOCKBEGINTerminalRuleCall_1; }
+		//osRule+=OsRule
+		public Assignment getOsRuleAssignment_1_0() { return cOsRuleAssignment_1_0; }
+		
+		//OsRule
+		public RuleCall getOsRuleOsRuleParserRuleCall_1_0_0() { return cOsRuleOsRuleParserRuleCall_1_0_0; }
+		
+		//taskRule+=TaskRule
+		public Assignment getTaskRuleAssignment_1_1() { return cTaskRuleAssignment_1_1; }
+		
+		//TaskRule
+		public RuleCall getTaskRuleTaskRuleParserRuleCall_1_1_0() { return cTaskRuleTaskRuleParserRuleCall_1_1_0; }
+		
+		//counterRule+=CounterRule
+		public Assignment getCounterRuleAssignment_1_2() { return cCounterRuleAssignment_1_2; }
+		
+		//CounterRule
+		public RuleCall getCounterRuleCounterRuleParserRuleCall_1_2_0() { return cCounterRuleCounterRuleParserRuleCall_1_2_0; }
+		
+		//isrRule+=IsrRule
+		public Assignment getIsrRuleAssignment_1_3() { return cIsrRuleAssignment_1_3; }
+		
+		//IsrRule
+		public RuleCall getIsrRuleIsrRuleParserRuleCall_1_3_0() { return cIsrRuleIsrRuleParserRuleCall_1_3_0; }
+	}
+	public class OsRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.OsRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cOsRuleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cOSKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cImplementationsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cImplementationsImplementationDefParserRuleCall_3_0 = (RuleCall)cImplementationsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cDescriptionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDescriptionEStringParserRuleCall_5_1_0 = (RuleCall)cDescriptionAssignment_5_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//OsRule:
+		//	{OsRule}
+		//	"OS" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{OsRule} "OS" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{OsRule}
+		public Action getOsRuleAction_0() { return cOsRuleAction_0; }
+		
+		//"OS"
+		public Keyword getOSKeyword_1() { return cOSKeyword_1; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//implementations+=ImplementationDef*
-		public Assignment getImplementationsAssignment_2() { return cImplementationsAssignment_2; }
+		public Assignment getImplementationsAssignment_3() { return cImplementationsAssignment_3; }
 		
 		//ImplementationDef
-		public RuleCall getImplementationsImplementationDefParserRuleCall_2_0() { return cImplementationsImplementationDefParserRuleCall_2_0; }
+		public RuleCall getImplementationsImplementationDefParserRuleCall_3_0() { return cImplementationsImplementationDefParserRuleCall_3_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_3() { return cBLOCKENDTerminalRuleCall_3; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 		
 		//(":" description=EString)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//":"
-		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
+		public Keyword getColonKeyword_5_0() { return cColonKeyword_5_0; }
 		
 		//description=EString
-		public Assignment getDescriptionAssignment_4_1() { return cDescriptionAssignment_4_1; }
+		public Assignment getDescriptionAssignment_5_1() { return cDescriptionAssignment_5_1; }
 		
 		//EString
-		public RuleCall getDescriptionEStringParserRuleCall_4_1_0() { return cDescriptionEStringParserRuleCall_4_1_0; }
+		public RuleCall getDescriptionEStringParserRuleCall_5_1_0() { return cDescriptionEStringParserRuleCall_5_1_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_5() { return cSEMICOLONTerminalRuleCall_5; }
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
+	public class TaskRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.TaskRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTaskRuleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTASKKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cImplementationsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cImplementationsImplementationDefParserRuleCall_3_0 = (RuleCall)cImplementationsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cDescriptionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDescriptionEStringParserRuleCall_5_1_0 = (RuleCall)cDescriptionAssignment_5_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//TaskRule:
+		//	{TaskRule}
+		//	"TASK" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{TaskRule} "TASK" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{TaskRule}
+		public Action getTaskRuleAction_0() { return cTaskRuleAction_0; }
+		
+		//"TASK"
+		public Keyword getTASKKeyword_1() { return cTASKKeyword_1; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//implementations+=ImplementationDef*
+		public Assignment getImplementationsAssignment_3() { return cImplementationsAssignment_3; }
+		
+		//ImplementationDef
+		public RuleCall getImplementationsImplementationDefParserRuleCall_3_0() { return cImplementationsImplementationDefParserRuleCall_3_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		
+		//(":" description=EString)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//":"
+		public Keyword getColonKeyword_5_0() { return cColonKeyword_5_0; }
+		
+		//description=EString
+		public Assignment getDescriptionAssignment_5_1() { return cDescriptionAssignment_5_1; }
+		
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_5_1_0() { return cDescriptionEStringParserRuleCall_5_1_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
+	public class CounterRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.CounterRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cCounterRuleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCOUNTERKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cImplementationsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cImplementationsImplementationDefParserRuleCall_3_0 = (RuleCall)cImplementationsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cDescriptionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDescriptionEStringParserRuleCall_5_1_0 = (RuleCall)cDescriptionAssignment_5_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//CounterRule:
+		//	{CounterRule}
+		//	"COUNTER" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{CounterRule} "COUNTER" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{CounterRule}
+		public Action getCounterRuleAction_0() { return cCounterRuleAction_0; }
+		
+		//"COUNTER"
+		public Keyword getCOUNTERKeyword_1() { return cCOUNTERKeyword_1; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//implementations+=ImplementationDef*
+		public Assignment getImplementationsAssignment_3() { return cImplementationsAssignment_3; }
+		
+		//ImplementationDef
+		public RuleCall getImplementationsImplementationDefParserRuleCall_3_0() { return cImplementationsImplementationDefParserRuleCall_3_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		
+		//(":" description=EString)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//":"
+		public Keyword getColonKeyword_5_0() { return cColonKeyword_5_0; }
+		
+		//description=EString
+		public Assignment getDescriptionAssignment_5_1() { return cDescriptionAssignment_5_1; }
+		
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_5_1_0() { return cDescriptionEStringParserRuleCall_5_1_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+	}
+	public class IsrRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.IsrRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIsrRuleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cISRKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cImplementationsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cImplementationsImplementationDefParserRuleCall_3_0 = (RuleCall)cImplementationsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cDescriptionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDescriptionEStringParserRuleCall_5_1_0 = (RuleCall)cDescriptionAssignment_5_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//IsrRule:
+		//	{IsrRule}
+		//	"ISR" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{IsrRule} "ISR" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{IsrRule}
+		public Action getIsrRuleAction_0() { return cIsrRuleAction_0; }
+		
+		//"ISR"
+		public Keyword getISRKeyword_1() { return cISRKeyword_1; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//implementations+=ImplementationDef*
+		public Assignment getImplementationsAssignment_3() { return cImplementationsAssignment_3; }
+		
+		//ImplementationDef
+		public RuleCall getImplementationsImplementationDefParserRuleCall_3_0() { return cImplementationsImplementationDefParserRuleCall_3_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		
+		//(":" description=EString)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//":"
+		public Keyword getColonKeyword_5_0() { return cColonKeyword_5_0; }
+		
+		//description=EString
+		public Assignment getDescriptionAssignment_5_1() { return cDescriptionAssignment_5_1; }
+		
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_5_1_0() { return cDescriptionEStringParserRuleCall_5_1_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 	public class ObjectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Object");
-		private final RuleCall cT_OBJECTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cOSKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cTASKKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cCOUNTERKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cALARMKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cRESOURCEKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cEVENTKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cISRKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cMESSAGEKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cCOMKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cNMKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cAPPMODEKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cIPDUKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cNETWORKMESSAGEKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cAPPLICATIONKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cMEMOTY_PROTECTIONKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cSPINLOCKKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cSCHEDULETABLEKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cIOCKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cLIBRARYKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
 		
 		//Object:
-		//	T_OBJECT;
+		//	"OS" | "TASK" | "COUNTER" | "ALARM" | "RESOURCE" |
+		//	"EVENT" | "ISR" | "MESSAGE" | "COM" | "NM" |
+		//	"APPMODE" | "IPDU" | "NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" |
+		//	"SPINLOCK" | "SCHEDULETABLE" | "IOC" | "LIBRARY";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//T_OBJECT
-		public RuleCall getT_OBJECTTerminalRuleCall() { return cT_OBJECTTerminalRuleCall; }
-	}
-	public class ReObjectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ReObject");
-		private final RuleCall cT_ReObjectTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		//"OS" | "TASK" | "COUNTER" | "ALARM" | "RESOURCE" | "EVENT" | "ISR" | "MESSAGE" | "COM" | "NM" | "APPMODE" | "IPDU" |
+		//"NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" | "SPINLOCK" | "SCHEDULETABLE" | "IOC" | "LIBRARY"
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//ReObject:
-		//	T_ReObject;
-		@Override public ParserRule getRule() { return rule; }
+		//"OS"
+		public Keyword getOSKeyword_0() { return cOSKeyword_0; }
 		
-		////추가
-		//T_ReObject
-		public RuleCall getT_ReObjectTerminalRuleCall() { return cT_ReObjectTerminalRuleCall; }
+		//"TASK"
+		public Keyword getTASKKeyword_1() { return cTASKKeyword_1; }
+		
+		//"COUNTER"
+		public Keyword getCOUNTERKeyword_2() { return cCOUNTERKeyword_2; }
+		
+		//"ALARM"
+		public Keyword getALARMKeyword_3() { return cALARMKeyword_3; }
+		
+		//"RESOURCE"
+		public Keyword getRESOURCEKeyword_4() { return cRESOURCEKeyword_4; }
+		
+		//"EVENT"
+		public Keyword getEVENTKeyword_5() { return cEVENTKeyword_5; }
+		
+		//"ISR"
+		public Keyword getISRKeyword_6() { return cISRKeyword_6; }
+		
+		//"MESSAGE"
+		public Keyword getMESSAGEKeyword_7() { return cMESSAGEKeyword_7; }
+		
+		//"COM"
+		public Keyword getCOMKeyword_8() { return cCOMKeyword_8; }
+		
+		//"NM"
+		public Keyword getNMKeyword_9() { return cNMKeyword_9; }
+		
+		//"APPMODE"
+		public Keyword getAPPMODEKeyword_10() { return cAPPMODEKeyword_10; }
+		
+		//"IPDU"
+		public Keyword getIPDUKeyword_11() { return cIPDUKeyword_11; }
+		
+		//"NETWORKMESSAGE"
+		public Keyword getNETWORKMESSAGEKeyword_12() { return cNETWORKMESSAGEKeyword_12; }
+		
+		//"APPLICATION"
+		public Keyword getAPPLICATIONKeyword_13() { return cAPPLICATIONKeyword_13; }
+		
+		//"MEMOTY_PROTECTION"
+		public Keyword getMEMOTY_PROTECTIONKeyword_14() { return cMEMOTY_PROTECTIONKeyword_14; }
+		
+		//"SPINLOCK"
+		public Keyword getSPINLOCKKeyword_15() { return cSPINLOCKKeyword_15; }
+		
+		//"SCHEDULETABLE"
+		public Keyword getSCHEDULETABLEKeyword_16() { return cSCHEDULETABLEKeyword_16; }
+		
+		//"IOC"
+		public Keyword getIOCKeyword_17() { return cIOCKeyword_17; }
+		
+		//"LIBRARY"
+		public Keyword getLIBRARYKeyword_18() { return cLIBRARYKeyword_18; }
 	}
 	public class ImplementationDefElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplementationDef");
@@ -373,16 +673,16 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ImplAttrIntDef:
 		//	type=IntTypeEnum
 		//	auto?="WITH_AUTO"? range=Range? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=Number |
-		//	default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+		//	default=DefaultEnum))? (":" description=EString)? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
 		//type=IntTypeEnum auto?="WITH_AUTO"? range=Range? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=Number |
-		//default=DefaultEnum))? (":" description=EString)? SEMICOLON
+		//default=DefaultEnum))? (":" description=EString)? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//type=IntTypeEnum
@@ -448,57 +748,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_7() { return cSEMICOLONTerminalRuleCall_7; }
-	}
-	public class ImplAttrIdentiFierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplAttrIdentiFier");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIDENTIFIERKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cAutoAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cAutoWITH_AUTOKeyword_1_0 = (Keyword)cAutoAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameAttributeNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cValueIDTerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		
-		//ImplAttrIdentiFier: //by 정수 개가라판
-		//	"IDENTIFIER" auto?="WITH_AUTO"? name=AttributeName "=" value=ID SEMICOLON;
-		@Override public ParserRule getRule() { return rule; }
-		
-		////by 정수 개가라판
-		//"IDENTIFIER" auto?="WITH_AUTO"? name=AttributeName "=" value=ID SEMICOLON
-		public Group getGroup() { return cGroup; }
-		
-		////by 정수 개가라판
-		//"IDENTIFIER"
-		public Keyword getIDENTIFIERKeyword_0() { return cIDENTIFIERKeyword_0; }
-		
-		//auto?="WITH_AUTO"?
-		public Assignment getAutoAssignment_1() { return cAutoAssignment_1; }
-		
-		//"WITH_AUTO"
-		public Keyword getAutoWITH_AUTOKeyword_1_0() { return cAutoWITH_AUTOKeyword_1_0; }
-		
-		//name=AttributeName
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//AttributeName
-		public RuleCall getNameAttributeNameParserRuleCall_2_0() { return cNameAttributeNameParserRuleCall_2_0; }
-		
-		//"="
-		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
-		
-		//value=ID
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
-		
-		//ID
-		public RuleCall getValueIDTerminalRuleCall_4_0() { return cValueIDTerminalRuleCall_4_0; }
-		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_5() { return cSEMICOLONTerminalRuleCall_5; }
+		//";"
+		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
 	public class ImplAttrFloatDefElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplAttrFloatDef");
@@ -523,16 +774,16 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ImplAttrFloatDef:
 		//	"FLOAT"
 		//	auto?="WITH_AUTO"? range=Range? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=EFloat |
-		//	default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+		//	default=DefaultEnum))? (":" description=EString)? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"FLOAT" auto?="WITH_AUTO"? range=Range? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=EFloat |
-		//default=DefaultEnum))? (":" description=EString)? SEMICOLON
+		//default=DefaultEnum))? (":" description=EString)? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//"FLOAT"
@@ -595,8 +846,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_7() { return cSEMICOLONTerminalRuleCall_7; }
+		//";"
+		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
 	public class ImplAttrEnumDefElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplAttrEnumDef");
@@ -621,16 +872,16 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ImplAttrEnumDef:
 		//	"ENUM"
 		//	auto?="WITH_AUTO"? enumeration=Enumeration? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=Name |
-		//	default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+		//	default=DefaultEnum))? (":" description=EString)? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"ENUM" auto?="WITH_AUTO"? enumeration=Enumeration? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=Name |
-		//default=DefaultEnum))? (":" description=EString)? SEMICOLON
+		//default=DefaultEnum))? (":" description=EString)? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//"ENUM"
@@ -693,8 +944,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_7() { return cSEMICOLONTerminalRuleCall_7; }
+		//";"
+		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
 	public class ImplAttrStringDefElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplAttrStringDef");
@@ -717,16 +968,16 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cDescriptionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final RuleCall cDescriptionEStringParserRuleCall_5_1_0 = (RuleCall)cDescriptionAssignment_5_1.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ImplAttrStringDef:
 		//	"STRING"
 		//	auto?="WITH_AUTO"? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=EString | default=DefaultEnum))? (":"
-		//	description=EString)? SEMICOLON;
+		//	description=EString)? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"STRING" auto?="WITH_AUTO"? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=EString | default=DefaultEnum))?
-		//(":" description=EString)? SEMICOLON
+		//(":" description=EString)? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//"STRING"
@@ -783,8 +1034,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_5_1_0() { return cDescriptionEStringParserRuleCall_5_1_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_6() { return cSEMICOLONTerminalRuleCall_6; }
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 	public class ImplAttrBooleanDefElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplAttrBooleanDef");
@@ -796,19 +1047,19 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftSquareBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final RuleCall cT_TRUETerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_2_2_0 = (RuleCall)cGroup_2_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cTrueParameterListAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
 		private final RuleCall cTrueParameterListImplementationDefParserRuleCall_2_2_1_0 = (RuleCall)cTrueParameterListAssignment_2_2_1.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_2_2_2 = (RuleCall)cGroup_2_2.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_2_2_2 = (Keyword)cGroup_2_2.eContents().get(2);
 		private final Assignment cTrueDescriptionAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
 		private final RuleCall cTrueDescriptionEStringParserRuleCall_2_3_0 = (RuleCall)cTrueDescriptionAssignment_2_3.eContents().get(0);
 		private final Keyword cCommaKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
 		private final RuleCall cT_FALSETerminalRuleCall_2_5 = (RuleCall)cGroup_2.eContents().get(5);
 		private final Group cGroup_2_6 = (Group)cGroup_2.eContents().get(6);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_2_6_0 = (RuleCall)cGroup_2_6.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2_6_0 = (Keyword)cGroup_2_6.eContents().get(0);
 		private final Assignment cFalseParameterListAssignment_2_6_1 = (Assignment)cGroup_2_6.eContents().get(1);
 		private final RuleCall cFalseParameterListImplementationDefParserRuleCall_2_6_1_0 = (RuleCall)cFalseParameterListAssignment_2_6_1.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_2_6_2 = (RuleCall)cGroup_2_6.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_2_6_2 = (Keyword)cGroup_2_6.eContents().get(2);
 		private final Assignment cFalseDescriptionAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
 		private final RuleCall cFalseDescriptionEStringParserRuleCall_2_7_0 = (RuleCall)cFalseDescriptionAssignment_2_7.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
@@ -829,21 +1080,19 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cDescriptionEStringParserRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ImplAttrBooleanDef:
 		//	"BOOLEAN"
-		//	auto?="WITH_AUTO"? ("[" T_TRUE (BLOCKBEGIN trueParameterList+=ImplementationDef* BLOCKEND)?
+		//	auto?="WITH_AUTO"? ("[" T_TRUE ("{" trueParameterList+=ImplementationDef* "}")?
 		//	trueDescription=EString? ","
-		//	T_FALSE (BLOCKBEGIN falseParameterList+=ImplementationDef* BLOCKEND)? falseDescription=EString? "]")? name=(Name |
-		//	Object) multiple?=MultipleSpecifier? ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)?
-		//	SEMICOLON;
+		//	T_FALSE ("{" falseParameterList+=ImplementationDef* "}")? falseDescription=EString? "]")? name=(Name | Object)
+		//	multiple?=MultipleSpecifier? ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"BOOLEAN" auto?="WITH_AUTO"? ("[" T_TRUE (BLOCKBEGIN trueParameterList+=ImplementationDef* BLOCKEND)?
-		//trueDescription=EString? "," T_FALSE (BLOCKBEGIN falseParameterList+=ImplementationDef* BLOCKEND)?
-		//falseDescription=EString? "]")? name=(Name | Object) multiple?=MultipleSpecifier? ("=" (value=EBoolean |
-		//default=DefaultEnum))? (":" description=EString)? SEMICOLON
+		//"BOOLEAN" auto?="WITH_AUTO"? ("[" T_TRUE ("{" trueParameterList+=ImplementationDef* "}")? trueDescription=EString? ","
+		//T_FALSE ("{" falseParameterList+=ImplementationDef* "}")? falseDescription=EString? "]")? name=(Name | Object)
+		//multiple?=MultipleSpecifier? ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//"BOOLEAN"
@@ -855,8 +1104,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//"WITH_AUTO"
 		public Keyword getAutoWITH_AUTOKeyword_1_0() { return cAutoWITH_AUTOKeyword_1_0; }
 		
-		//("[" T_TRUE (BLOCKBEGIN trueParameterList+=ImplementationDef* BLOCKEND)? trueDescription=EString? "," T_FALSE
-		//(BLOCKBEGIN falseParameterList+=ImplementationDef* BLOCKEND)? falseDescription=EString? "]")?
+		//("[" T_TRUE ("{" trueParameterList+=ImplementationDef* "}")? trueDescription=EString? "," T_FALSE ("{"
+		//falseParameterList+=ImplementationDef* "}")? falseDescription=EString? "]")?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//"["
@@ -865,11 +1114,11 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//T_TRUE
 		public RuleCall getT_TRUETerminalRuleCall_2_1() { return cT_TRUETerminalRuleCall_2_1; }
 		
-		//(BLOCKBEGIN trueParameterList+=ImplementationDef* BLOCKEND)?
+		//("{" trueParameterList+=ImplementationDef* "}")?
 		public Group getGroup_2_2() { return cGroup_2_2; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_2_2_0() { return cBLOCKBEGINTerminalRuleCall_2_2_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2_2_0() { return cLeftCurlyBracketKeyword_2_2_0; }
 		
 		//trueParameterList+=ImplementationDef*
 		public Assignment getTrueParameterListAssignment_2_2_1() { return cTrueParameterListAssignment_2_2_1; }
@@ -877,8 +1126,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//ImplementationDef
 		public RuleCall getTrueParameterListImplementationDefParserRuleCall_2_2_1_0() { return cTrueParameterListImplementationDefParserRuleCall_2_2_1_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_2_2_2() { return cBLOCKENDTerminalRuleCall_2_2_2; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_2_2_2() { return cRightCurlyBracketKeyword_2_2_2; }
 		
 		//trueDescription=EString?
 		public Assignment getTrueDescriptionAssignment_2_3() { return cTrueDescriptionAssignment_2_3; }
@@ -892,11 +1141,11 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//T_FALSE
 		public RuleCall getT_FALSETerminalRuleCall_2_5() { return cT_FALSETerminalRuleCall_2_5; }
 		
-		//(BLOCKBEGIN falseParameterList+=ImplementationDef* BLOCKEND)?
+		//("{" falseParameterList+=ImplementationDef* "}")?
 		public Group getGroup_2_6() { return cGroup_2_6; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_2_6_0() { return cBLOCKBEGINTerminalRuleCall_2_6_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2_6_0() { return cLeftCurlyBracketKeyword_2_6_0; }
 		
 		//falseParameterList+=ImplementationDef*
 		public Assignment getFalseParameterListAssignment_2_6_1() { return cFalseParameterListAssignment_2_6_1; }
@@ -904,8 +1153,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//ImplementationDef
 		public RuleCall getFalseParameterListImplementationDefParserRuleCall_2_6_1_0() { return cFalseParameterListImplementationDefParserRuleCall_2_6_1_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_2_6_2() { return cBLOCKENDTerminalRuleCall_2_6_2; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_2_6_2() { return cRightCurlyBracketKeyword_2_6_2; }
 		
 		//falseDescription=EString?
 		public Assignment getFalseDescriptionAssignment_2_7() { return cFalseDescriptionAssignment_2_7; }
@@ -967,8 +1216,57 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_6_1_0() { return cDescriptionEStringParserRuleCall_6_1_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_7() { return cSEMICOLONTerminalRuleCall_7; }
+		//";"
+		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
+	}
+	public class ImplAttrIdentiFierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ImplAttrIdentiFier");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIDENTIFIERKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cAutoAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cAutoWITH_AUTOKeyword_1_0 = (Keyword)cAutoAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameAttributeNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValueIDTerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//ImplAttrIdentiFier: // possibly change according to implementation grammar.
+		//	"IDENTIFIER" auto?="WITH_AUTO"? name=AttributeName "=" value=ID ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//// possibly change according to implementation grammar.
+		//"IDENTIFIER" auto?="WITH_AUTO"? name=AttributeName "=" value=ID ";"
+		public Group getGroup() { return cGroup; }
+		
+		//// possibly change according to implementation grammar.
+		//"IDENTIFIER"
+		public Keyword getIDENTIFIERKeyword_0() { return cIDENTIFIERKeyword_0; }
+		
+		//auto?="WITH_AUTO"?
+		public Assignment getAutoAssignment_1() { return cAutoAssignment_1; }
+		
+		//"WITH_AUTO"
+		public Keyword getAutoWITH_AUTOKeyword_1_0() { return cAutoWITH_AUTOKeyword_1_0; }
+		
+		//name=AttributeName
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//AttributeName
+		public RuleCall getNameAttributeNameParserRuleCall_2_0() { return cNameAttributeNameParserRuleCall_2_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
+		//value=ID
+		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_4_0() { return cValueIDTerminalRuleCall_4_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 	public class RangeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Range");
@@ -1102,18 +1400,18 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cImplParameterListAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cImplParameterListImplementationDefParserRuleCall_1_1_0 = (RuleCall)cImplParameterListAssignment_1_1.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		private final Assignment cDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescriptionEStringParserRuleCall_2_0 = (RuleCall)cDescriptionAssignment_2.eContents().get(0);
 		
 		//Enumerator:
-		//	name=Name (BLOCKBEGIN implParameterList+=ImplementationDef* BLOCKEND)? description=EString?;
+		//	name=Name ("{" implParameterList+=ImplementationDef* "}")? description=EString?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Name (BLOCKBEGIN implParameterList+=ImplementationDef* BLOCKEND)? description=EString?
+		//name=Name ("{" implParameterList+=ImplementationDef* "}")? description=EString?
 		public Group getGroup() { return cGroup; }
 		
 		//name=Name
@@ -1122,11 +1420,11 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//Name
 		public RuleCall getNameNameParserRuleCall_0_0() { return cNameNameParserRuleCall_0_0; }
 		
-		//(BLOCKBEGIN implParameterList+=ImplementationDef* BLOCKEND)?
+		//("{" implParameterList+=ImplementationDef* "}")?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_1_0() { return cBLOCKBEGINTerminalRuleCall_1_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//implParameterList+=ImplementationDef*
 		public Assignment getImplParameterListAssignment_1_1() { return cImplParameterListAssignment_1_1; }
@@ -1134,8 +1432,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//ImplementationDef
 		public RuleCall getImplParameterListImplementationDefParserRuleCall_1_1_0() { return cImplParameterListImplementationDefParserRuleCall_1_1_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_1_2() { return cBLOCKENDTerminalRuleCall_1_2; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 		
 		//description=EString?
 		public Assignment getDescriptionAssignment_2() { return cDescriptionAssignment_2; }
@@ -1154,13 +1452,13 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMultipleMultipleSpecifierParserRuleCall_2_0 = (RuleCall)cMultipleAssignment_2.eContents().get(0);
 		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDescriptionEStringParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ImplRefDef:
-		//	type=ObjectRefTypeEnum name=AttributeName multiple?=MultipleSpecifier? description=EString? SEMICOLON;
+		//	type=ObjectRefTypeEnum name=AttributeName multiple?=MultipleSpecifier? description=EString? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=ObjectRefTypeEnum name=AttributeName multiple?=MultipleSpecifier? description=EString? SEMICOLON
+		//type=ObjectRefTypeEnum name=AttributeName multiple?=MultipleSpecifier? description=EString? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//type=ObjectRefTypeEnum
@@ -1187,8 +1485,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_3_0() { return cDescriptionEStringParserRuleCall_3_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_4() { return cSEMICOLONTerminalRuleCall_4; }
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class MultipleSpecifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MultipleSpecifier");
@@ -1212,26 +1510,26 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	public class ApplicationDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ApplicationDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cT_CPUTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cCPUKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cObjectDefinitionListAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cObjectDefinitionListObjectDefinitionParserRuleCall_3_0 = (RuleCall)cObjectDefinitionListAssignment_3.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cDescriptionAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cDescriptionEStringParserRuleCall_5_0 = (RuleCall)cDescriptionAssignment_5.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ApplicationDefinition:
-		//	T_CPU name=Name BLOCKBEGIN objectDefinitionList+=ObjectDefinition* BLOCKEND description=EString? SEMICOLON;
+		//	"CPU" name=Name "{" objectDefinitionList+=ObjectDefinition* "}" description=EString? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//T_CPU name=Name BLOCKBEGIN objectDefinitionList+=ObjectDefinition* BLOCKEND description=EString? SEMICOLON
+		//"CPU" name=Name "{" objectDefinitionList+=ObjectDefinition* "}" description=EString? ";"
 		public Group getGroup() { return cGroup; }
 		
-		//T_CPU
-		public RuleCall getT_CPUTerminalRuleCall_0() { return cT_CPUTerminalRuleCall_0; }
+		//"CPU"
+		public Keyword getCPUKeyword_0() { return cCPUKeyword_0; }
 		
 		//name=Name
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -1239,8 +1537,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//Name
 		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_2() { return cBLOCKBEGINTerminalRuleCall_2; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//objectDefinitionList+=ObjectDefinition*
 		public Assignment getObjectDefinitionListAssignment_3() { return cObjectDefinitionListAssignment_3; }
@@ -1248,8 +1546,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//ObjectDefinition
 		public RuleCall getObjectDefinitionListObjectDefinitionParserRuleCall_3_0() { return cObjectDefinitionListObjectDefinitionParserRuleCall_3_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_4() { return cBLOCKENDTerminalRuleCall_4; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 		
 		//description=EString?
 		public Assignment getDescriptionAssignment_5() { return cDescriptionAssignment_5; }
@@ -1257,140 +1555,198 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_5_0() { return cDescriptionEStringParserRuleCall_5_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_6() { return cSEMICOLONTerminalRuleCall_6; }
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 	public class ObjectDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ObjectDefinition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cObjectAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cObjectObjectParserRuleCall_0_0 = (RuleCall)cObjectAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cParameterListAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cParameterListAttributeParserRuleCall_2_1_0 = (RuleCall)cParameterListAssignment_2_1.eContents().get(0);
-		private final Assignment cReObjectDefinitionAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cReObjectDefinitionReObjectDefinitionParserRuleCall_2_2_0 = (RuleCall)cReObjectDefinitionAssignment_2_2.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_2_3 = (RuleCall)cGroup_2.eContents().get(3);
-		private final Assignment cDescrptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDescrptionEStringParserRuleCall_3_0 = (RuleCall)cDescrptionAssignment_3.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cLIBRARYKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameNameParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Group cGroup_0_2 = (Group)cGroup_0.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_0_2_0 = (Keyword)cGroup_0_2.eContents().get(0);
+		private final Assignment cLibraryListAssignment_0_2_1 = (Assignment)cGroup_0_2.eContents().get(1);
+		private final RuleCall cLibraryListLibrayattributeParserRuleCall_0_2_1_0 = (RuleCall)cLibraryListAssignment_0_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_0_2_2 = (Keyword)cGroup_0_2.eContents().get(2);
+		private final Keyword cSemicolonKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cObjectAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cObjectObjectParserRuleCall_1_0_0 = (RuleCall)cObjectAssignment_1_0.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameNameParserRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cParameterListAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final RuleCall cParameterListAttributeParserRuleCall_1_2_1_0 = (RuleCall)cParameterListAssignment_1_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_2_2 = (Keyword)cGroup_1_2.eContents().get(2);
+		private final Assignment cDescrptionAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cDescrptionEStringParserRuleCall_1_3_0 = (RuleCall)cDescrptionAssignment_1_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//ObjectDefinition:
-		//	object=Object name=Name (BLOCKBEGIN parameterList+=Attribute* reObjectDefinition=ReObjectDefinition* BLOCKEND)?
-		//	descrption=EString? SEMICOLON;
+		//	"LIBRARY" name=Name ("{" LibraryList+=Librayattribute* "}")? ";" | object=Object name=Name ("{"
+		//	parameterList+=Attribute* "}")? descrption=EString? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		////수정
-		//object=Object name=Name (BLOCKBEGIN parameterList+=Attribute* reObjectDefinition=ReObjectDefinition* BLOCKEND)?
-		//descrption=EString? SEMICOLON
-		public Group getGroup() { return cGroup; }
+		//"LIBRARY" name=Name ("{" LibraryList+=Librayattribute* "}")? ";" | object=Object name=Name ("{"
+		//parameterList+=Attribute* "}")? descrption=EString? ";"
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		////수정
+		//"LIBRARY" name=Name ("{" LibraryList+=Librayattribute* "}")? ";"
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//"LIBRARY"
+		public Keyword getLIBRARYKeyword_0_0() { return cLIBRARYKeyword_0_0; }
+		
+		//name=Name
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		
+		//Name
+		public RuleCall getNameNameParserRuleCall_0_1_0() { return cNameNameParserRuleCall_0_1_0; }
+		
+		//("{" LibraryList+=Librayattribute* "}")?
+		public Group getGroup_0_2() { return cGroup_0_2; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0_2_0() { return cLeftCurlyBracketKeyword_0_2_0; }
+		
+		//LibraryList+=Librayattribute*
+		public Assignment getLibraryListAssignment_0_2_1() { return cLibraryListAssignment_0_2_1; }
+		
+		//Librayattribute
+		public RuleCall getLibraryListLibrayattributeParserRuleCall_0_2_1_0() { return cLibraryListLibrayattributeParserRuleCall_0_2_1_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_0_2_2() { return cRightCurlyBracketKeyword_0_2_2; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_0_3() { return cSemicolonKeyword_0_3; }
+		
+		//object=Object name=Name ("{" parameterList+=Attribute* "}")? descrption=EString? ";"
+		public Group getGroup_1() { return cGroup_1; }
+		
 		//object=Object
-		public Assignment getObjectAssignment_0() { return cObjectAssignment_0; }
+		public Assignment getObjectAssignment_1_0() { return cObjectAssignment_1_0; }
 		
 		//Object
-		public RuleCall getObjectObjectParserRuleCall_0_0() { return cObjectObjectParserRuleCall_0_0; }
+		public RuleCall getObjectObjectParserRuleCall_1_0_0() { return cObjectObjectParserRuleCall_1_0_0; }
 		
 		//name=Name
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
 		
 		//Name
-		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
+		public RuleCall getNameNameParserRuleCall_1_1_0() { return cNameNameParserRuleCall_1_1_0; }
 		
-		//(BLOCKBEGIN parameterList+=Attribute* reObjectDefinition=ReObjectDefinition* BLOCKEND)?
-		public Group getGroup_2() { return cGroup_2; }
+		//("{" parameterList+=Attribute* "}")?
+		public Group getGroup_1_2() { return cGroup_1_2; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_2_0() { return cBLOCKBEGINTerminalRuleCall_2_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_2_0() { return cLeftCurlyBracketKeyword_1_2_0; }
 		
 		//parameterList+=Attribute*
-		public Assignment getParameterListAssignment_2_1() { return cParameterListAssignment_2_1; }
+		public Assignment getParameterListAssignment_1_2_1() { return cParameterListAssignment_1_2_1; }
 		
 		//Attribute
-		public RuleCall getParameterListAttributeParserRuleCall_2_1_0() { return cParameterListAttributeParserRuleCall_2_1_0; }
+		public RuleCall getParameterListAttributeParserRuleCall_1_2_1_0() { return cParameterListAttributeParserRuleCall_1_2_1_0; }
 		
-		//reObjectDefinition=ReObjectDefinition*
-		public Assignment getReObjectDefinitionAssignment_2_2() { return cReObjectDefinitionAssignment_2_2; }
-		
-		//ReObjectDefinition
-		public RuleCall getReObjectDefinitionReObjectDefinitionParserRuleCall_2_2_0() { return cReObjectDefinitionReObjectDefinitionParserRuleCall_2_2_0; }
-		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_2_3() { return cBLOCKENDTerminalRuleCall_2_3; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2_2() { return cRightCurlyBracketKeyword_1_2_2; }
 		
 		//descrption=EString?
-		public Assignment getDescrptionAssignment_3() { return cDescrptionAssignment_3; }
+		public Assignment getDescrptionAssignment_1_3() { return cDescrptionAssignment_1_3; }
 		
 		//EString
-		public RuleCall getDescrptionEStringParserRuleCall_3_0() { return cDescrptionEStringParserRuleCall_3_0; }
+		public RuleCall getDescrptionEStringParserRuleCall_1_3_0() { return cDescrptionEStringParserRuleCall_1_3_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_4() { return cSEMICOLONTerminalRuleCall_4; }
+		//";"
+		public Keyword getSemicolonKeyword_1_4() { return cSemicolonKeyword_1_4; }
 	}
-	public class ReObjectDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ReObjectDefinition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cReobjectAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cReobjectReObjectParserRuleCall_0_0 = (RuleCall)cReobjectAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cParameterListAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cParameterListAttributeParserRuleCall_2_1_0 = (RuleCall)cParameterListAssignment_2_1.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
-		private final Assignment cDescrptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDescrptionEStringParserRuleCall_3_0 = (RuleCall)cDescrptionAssignment_3.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+	public class LibrayattributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Librayattribute");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cPATHKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cDescriptionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cDescriptionEStringParserRuleCall_0_2_0 = (RuleCall)cDescriptionAssignment_0_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cCHEADERKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cDescriptionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cDescriptionEStringParserRuleCall_1_2_0 = (RuleCall)cDescriptionAssignment_1_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cCFILEKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cDescriptionAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cDescriptionEStringParserRuleCall_2_2_0 = (RuleCall)cDescriptionAssignment_2_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
-		//ReObjectDefinition:
-		//	reobject=ReObject name=Name (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)? descrption=EString? SEMICOLON;
+		//Librayattribute:
+		//	"PATH" "=" description=EString ";" |
+		//	"CHEADER" "=" description=EString ";" |
+		//	"CFILE" "=" description=EString ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		////추가
-		//reobject=ReObject name=Name (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)? descrption=EString? SEMICOLON
-		public Group getGroup() { return cGroup; }
+		//"PATH" "=" description=EString ";" | "CHEADER" "=" description=EString ";" | "CFILE" "=" description=EString ";"
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		////추가
-		//reobject=ReObject
-		public Assignment getReobjectAssignment_0() { return cReobjectAssignment_0; }
+		//"PATH" "=" description=EString ";"
+		public Group getGroup_0() { return cGroup_0; }
 		
-		//ReObject
-		public RuleCall getReobjectReObjectParserRuleCall_0_0() { return cReobjectReObjectParserRuleCall_0_0; }
+		//"PATH"
+		public Keyword getPATHKeyword_0_0() { return cPATHKeyword_0_0; }
 		
-		//name=Name
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//"="
+		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
 		
-		//Name
-		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
-		
-		//(BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_2_0() { return cBLOCKBEGINTerminalRuleCall_2_0; }
-		
-		//parameterList+=Attribute*
-		public Assignment getParameterListAssignment_2_1() { return cParameterListAssignment_2_1; }
-		
-		//Attribute
-		public RuleCall getParameterListAttributeParserRuleCall_2_1_0() { return cParameterListAttributeParserRuleCall_2_1_0; }
-		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_2_2() { return cBLOCKENDTerminalRuleCall_2_2; }
-		
-		//descrption=EString?
-		public Assignment getDescrptionAssignment_3() { return cDescrptionAssignment_3; }
+		//description=EString
+		public Assignment getDescriptionAssignment_0_2() { return cDescriptionAssignment_0_2; }
 		
 		//EString
-		public RuleCall getDescrptionEStringParserRuleCall_3_0() { return cDescrptionEStringParserRuleCall_3_0; }
+		public RuleCall getDescriptionEStringParserRuleCall_0_2_0() { return cDescriptionEStringParserRuleCall_0_2_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_4() { return cSEMICOLONTerminalRuleCall_4; }
+		//";"
+		public Keyword getSemicolonKeyword_0_3() { return cSemicolonKeyword_0_3; }
+		
+		//"CHEADER" "=" description=EString ";"
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//"CHEADER"
+		public Keyword getCHEADERKeyword_1_0() { return cCHEADERKeyword_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//description=EString
+		public Assignment getDescriptionAssignment_1_2() { return cDescriptionAssignment_1_2; }
+		
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_1_2_0() { return cDescriptionEStringParserRuleCall_1_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3() { return cSemicolonKeyword_1_3; }
+		
+		//"CFILE" "=" description=EString ";"
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//"CFILE"
+		public Keyword getCFILEKeyword_2_0() { return cCFILEKeyword_2_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_2_1() { return cEqualsSignKeyword_2_1; }
+		
+		//description=EString
+		public Assignment getDescriptionAssignment_2_2() { return cDescriptionAssignment_2_2; }
+		
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_2_2_0() { return cDescriptionEStringParserRuleCall_2_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_2_3() { return cSemicolonKeyword_2_3; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Attribute");
@@ -1402,13 +1758,22 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueAttributeValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDescriptionEStringParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
+		/// ************************ 
+		//object=Object name=Name (BLOCKBEGIN (parameterList+=Attribute
+		//   )* (reObjectDefinition=ReObjectDefinition)* BLOCKEND)? (descrption=EString)? SEMICOLON;
+		//
+		//ReObjectDefinition://異붽?
+		//   reobject=ReObject name=Name (BLOCKBEGIN (parameterList+=Attribute)* BLOCKEND)? (descrption=EString)? SEMICOLON;
 		//Attribute:
-		//	name=AttributeName "=" value=AttributeValue description=EString? SEMICOLON;
+		//   name=AttributeName "=" value=AttributeValue (description=EString)? SEMICOLON;
+		//
+		// ************************* / Attribute:
+		//	name=AttributeName "="? value=AttributeValue description=EString? ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=AttributeName "=" value=AttributeValue description=EString? SEMICOLON
+		//name=AttributeName "="? value=AttributeValue description=EString? ";"
 		public Group getGroup() { return cGroup; }
 		
 		//name=AttributeName
@@ -1417,7 +1782,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//AttributeName
 		public RuleCall getNameAttributeNameParserRuleCall_0_0() { return cNameAttributeNameParserRuleCall_0_0; }
 		
-		//"="
+		//"="?
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
 		//value=AttributeValue
@@ -1432,8 +1797,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_3_0() { return cDescriptionEStringParserRuleCall_3_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_4() { return cSEMICOLONTerminalRuleCall_4; }
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class AttributeNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.AttributeName");
@@ -1501,16 +1866,16 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cValueNameParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cParameterListAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cParameterListAttributeParserRuleCall_1_1_0 = (RuleCall)cParameterListAssignment_1_1.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//NameAttributeValue:
-		//	value=Name (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?;
+		//	value=Name ("{" parameterList+=Attribute* "}")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=Name (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?
+		//value=Name ("{" parameterList+=Attribute* "}")?
 		public Group getGroup() { return cGroup; }
 		
 		//value=Name
@@ -1519,11 +1884,11 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//Name
 		public RuleCall getValueNameParserRuleCall_0_0() { return cValueNameParserRuleCall_0_0; }
 		
-		//(BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?
+		//("{" parameterList+=Attribute* "}")?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_1_0() { return cBLOCKBEGINTerminalRuleCall_1_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//parameterList+=Attribute*
 		public Assignment getParameterListAssignment_1_1() { return cParameterListAssignment_1_1; }
@@ -1531,8 +1896,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//Attribute
 		public RuleCall getParameterListAttributeParserRuleCall_1_1_0() { return cParameterListAttributeParserRuleCall_1_1_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_1_2() { return cBLOCKENDTerminalRuleCall_1_2; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 	}
 	public class BooleanAttributeValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.BooleanAttributeValue");
@@ -1540,16 +1905,16 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cValueEBooleanParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cBLOCKBEGINTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cParameterListAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cParameterListAttributeParserRuleCall_1_1_0 = (RuleCall)cParameterListAssignment_1_1.eContents().get(0);
-		private final RuleCall cBLOCKENDTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//BooleanAttributeValue:
-		//	value=EBoolean (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?;
+		//	value=EBoolean ("{" parameterList+=Attribute* "}")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=EBoolean (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?
+		//value=EBoolean ("{" parameterList+=Attribute* "}")?
 		public Group getGroup() { return cGroup; }
 		
 		//value=EBoolean
@@ -1558,11 +1923,11 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getValueEBooleanParserRuleCall_0_0() { return cValueEBooleanParserRuleCall_0_0; }
 		
-		//(BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?
+		//("{" parameterList+=Attribute* "}")?
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//BLOCKBEGIN
-		public RuleCall getBLOCKBEGINTerminalRuleCall_1_0() { return cBLOCKBEGINTerminalRuleCall_1_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
 		//parameterList+=Attribute*
 		public Assignment getParameterListAssignment_1_1() { return cParameterListAssignment_1_1; }
@@ -1570,8 +1935,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//Attribute
 		public RuleCall getParameterListAttributeParserRuleCall_1_1_0() { return cParameterListAttributeParserRuleCall_1_1_0; }
 		
-		//BLOCKEND
-		public RuleCall getBLOCKENDTerminalRuleCall_1_2() { return cBLOCKENDTerminalRuleCall_1_2; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
 	}
 	public class NumberAttributeValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.NumberAttributeValue");
@@ -1946,23 +2311,24 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final OILFileElements pOILFile;
 	private final IncludeElements pInclude;
-	private final TerminalRule tFILENAME;
+	private final FileNameElements pFileName;
 	private final OILVersionElements pOILVersion;
 	private final ImplementationDefinitionElements pImplementationDefinition;
 	private final ImplementationSpecElements pImplementationSpec;
+	private final OsRuleElements pOsRule;
+	private final TaskRuleElements pTaskRule;
+	private final CounterRuleElements pCounterRule;
+	private final IsrRuleElements pIsrRule;
 	private final ObjectElements pObject;
-	private final TerminalRule tT_OBJECT;
-	private final ReObjectElements pReObject;
-	private final TerminalRule tT_ReObject;
 	private final ImplementationDefElements pImplementationDef;
 	private final ImplAttrDefElements pImplAttrDef;
 	private final ImplAttrIntDefElements pImplAttrIntDef;
 	private final IntTypeEnumElements eIntTypeEnum;
-	private final ImplAttrIdentiFierElements pImplAttrIdentiFier;
 	private final ImplAttrFloatDefElements pImplAttrFloatDef;
 	private final ImplAttrEnumDefElements pImplAttrEnumDef;
 	private final ImplAttrStringDefElements pImplAttrStringDef;
 	private final ImplAttrBooleanDefElements pImplAttrBooleanDef;
+	private final ImplAttrIdentiFierElements pImplAttrIdentiFier;
 	private final RangeElements pRange;
 	private final DefaultEnumElements eDefaultEnum;
 	private final EnumerationElements pEnumeration;
@@ -1971,9 +2337,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	private final ObjectRefTypeEnumElements eObjectRefTypeEnum;
 	private final MultipleSpecifierElements pMultipleSpecifier;
 	private final ApplicationDefinitionElements pApplicationDefinition;
-	private final TerminalRule tT_CPU;
 	private final ObjectDefinitionElements pObjectDefinition;
-	private final ReObjectDefinitionElements pReObjectDefinition;
+	private final LibrayattributeElements pLibrayattribute;
 	private final AttributeElements pAttribute;
 	private final AttributeNameElements pAttributeName;
 	private final AttributeValueElements pAttributeValue;
@@ -1993,9 +2358,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tT_FLOAT;
 	private final NameElements pName;
 	private final TerminalRule tID;
-	private final TerminalRule tBLOCKBEGIN;
-	private final TerminalRule tBLOCKEND;
-	private final TerminalRule tSEMICOLON;
+	private final TerminalRule tFILEID;
 	
 	private final Grammar grammar;
 	
@@ -2008,23 +2371,24 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pOILFile = new OILFileElements();
 		this.pInclude = new IncludeElements();
-		this.tFILENAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.FILENAME");
+		this.pFileName = new FileNameElements();
 		this.pOILVersion = new OILVersionElements();
 		this.pImplementationDefinition = new ImplementationDefinitionElements();
 		this.pImplementationSpec = new ImplementationSpecElements();
+		this.pOsRule = new OsRuleElements();
+		this.pTaskRule = new TaskRuleElements();
+		this.pCounterRule = new CounterRuleElements();
+		this.pIsrRule = new IsrRuleElements();
 		this.pObject = new ObjectElements();
-		this.tT_OBJECT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.T_OBJECT");
-		this.pReObject = new ReObjectElements();
-		this.tT_ReObject = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.T_ReObject");
 		this.pImplementationDef = new ImplementationDefElements();
 		this.pImplAttrDef = new ImplAttrDefElements();
 		this.pImplAttrIntDef = new ImplAttrIntDefElements();
 		this.eIntTypeEnum = new IntTypeEnumElements();
-		this.pImplAttrIdentiFier = new ImplAttrIdentiFierElements();
 		this.pImplAttrFloatDef = new ImplAttrFloatDefElements();
 		this.pImplAttrEnumDef = new ImplAttrEnumDefElements();
 		this.pImplAttrStringDef = new ImplAttrStringDefElements();
 		this.pImplAttrBooleanDef = new ImplAttrBooleanDefElements();
+		this.pImplAttrIdentiFier = new ImplAttrIdentiFierElements();
 		this.pRange = new RangeElements();
 		this.eDefaultEnum = new DefaultEnumElements();
 		this.pEnumeration = new EnumerationElements();
@@ -2033,9 +2397,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		this.eObjectRefTypeEnum = new ObjectRefTypeEnumElements();
 		this.pMultipleSpecifier = new MultipleSpecifierElements();
 		this.pApplicationDefinition = new ApplicationDefinitionElements();
-		this.tT_CPU = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.T_CPU");
 		this.pObjectDefinition = new ObjectDefinitionElements();
-		this.pReObjectDefinition = new ReObjectDefinitionElements();
+		this.pLibrayattribute = new LibrayattributeElements();
 		this.pAttribute = new AttributeElements();
 		this.pAttributeName = new AttributeNameElements();
 		this.pAttributeValue = new AttributeValueElements();
@@ -2055,9 +2418,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		this.tT_FLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.T_FLOAT");
 		this.pName = new NameElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ID");
-		this.tBLOCKBEGIN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.BLOCKBEGIN");
-		this.tBLOCKEND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.BLOCKEND");
-		this.tSEMICOLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.SEMICOLON");
+		this.tFILEID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.FILEID");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -2101,7 +2462,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Include:
-	//	"#include" ("<" name=FILENAME ">" | name=EString);
+	//	"#include" ("<" name=FileName ">" | name=EString);
 	public IncludeElements getIncludeAccess() {
 		return pInclude;
 	}
@@ -2110,15 +2471,18 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		return getIncludeAccess().getRule();
 	}
 	
-	//terminal FILENAME:
-	//	("_" | "." | "/" | "a".."z" | "A".."Z") ("_" | "." | "/" | "a".."z" | "A".."Z" | "0".."9")* "." ("a".."z" | "A".."Z")
-	//	("a".."z" | "A".."Z")*;
-	public TerminalRule getFILENAMERule() {
-		return tFILENAME;
+	//FileName:
+	//	FILEID;
+	public FileNameElements getFileNameAccess() {
+		return pFileName;
+	}
+	
+	public ParserRule getFileNameRule() {
+		return getFileNameAccess().getRule();
 	}
 	
 	//OILVersion:
-	//	"OIL_VERSION" "=" value=EString (":" description=EString)? SEMICOLON;
+	//	"OIL_VERSION" "=" value=EString (":" description=EString)? ";";
 	public OILVersionElements getOILVersionAccess() {
 		return pOILVersion;
 	}
@@ -2128,8 +2492,8 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ImplementationDefinition:
-	//	"IMPLEMENTATION" name=Name BLOCKBEGIN implementationSpecs+=ImplementationSpec* BLOCKEND
-	//	description=EString? SEMICOLON;
+	//	"IMPLEMENTATION" name=Name "{" implementationSpecs+=ImplementationSpec "}"
+	//	description=EString? ";";
 	public ImplementationDefinitionElements getImplementationDefinitionAccess() {
 		return pImplementationDefinition;
 	}
@@ -2139,7 +2503,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ImplementationSpec:
-	//	object=Object BLOCKBEGIN implementations+=ImplementationDef* BLOCKEND (":" description=EString)? SEMICOLON;
+	//	{ImplementationSpec} (osRule+=OsRule | taskRule+=TaskRule | counterRule+=CounterRule | isrRule+=IsrRule)+;
 	public ImplementationSpecElements getImplementationSpecAccess() {
 		return pImplementationSpec;
 	}
@@ -2148,39 +2512,61 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		return getImplementationSpecAccess().getRule();
 	}
 	
+	//OsRule:
+	//	{OsRule}
+	//	"OS" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+	public OsRuleElements getOsRuleAccess() {
+		return pOsRule;
+	}
+	
+	public ParserRule getOsRuleRule() {
+		return getOsRuleAccess().getRule();
+	}
+	
+	//TaskRule:
+	//	{TaskRule}
+	//	"TASK" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+	public TaskRuleElements getTaskRuleAccess() {
+		return pTaskRule;
+	}
+	
+	public ParserRule getTaskRuleRule() {
+		return getTaskRuleAccess().getRule();
+	}
+	
+	//CounterRule:
+	//	{CounterRule}
+	//	"COUNTER" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+	public CounterRuleElements getCounterRuleAccess() {
+		return pCounterRule;
+	}
+	
+	public ParserRule getCounterRuleRule() {
+		return getCounterRuleAccess().getRule();
+	}
+	
+	//IsrRule:
+	//	{IsrRule}
+	//	"ISR" "{" implementations+=ImplementationDef* "}" (":" description=EString)? ";";
+	public IsrRuleElements getIsrRuleAccess() {
+		return pIsrRule;
+	}
+	
+	public ParserRule getIsrRuleRule() {
+		return getIsrRuleAccess().getRule();
+	}
+	
 	//Object:
-	//	T_OBJECT;
+	//	"OS" | "TASK" | "COUNTER" | "ALARM" | "RESOURCE" |
+	//	"EVENT" | "ISR" | "MESSAGE" | "COM" | "NM" |
+	//	"APPMODE" | "IPDU" | "NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" |
+	//	"SPINLOCK" | "SCHEDULETABLE" | "IOC" | "LIBRARY";
 	public ObjectElements getObjectAccess() {
 		return pObject;
 	}
 	
 	public ParserRule getObjectRule() {
 		return getObjectAccess().getRule();
-	}
-	
-	//terminal T_OBJECT:
-	//	"OS" | "TASK" | "COUNTER" | "ALARM" | "RESOURCE" |
-	//	"EVENT" | "ISR" | "MESSAGE" | "COM" | "NM" |
-	//	"APPMODE" | "IPDU" | "NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" |
-	//	"SPINLOCK" | "SCHEDULETABLE" | "IOC" | "APICONFIG" | "LIBRARY";
-	public TerminalRule getT_OBJECTRule() {
-		return tT_OBJECT;
-	}
-	
-	//ReObject:
-	//	T_ReObject;
-	public ReObjectElements getReObjectAccess() {
-		return pReObject;
-	}
-	
-	public ParserRule getReObjectRule() {
-		return getReObjectAccess().getRule();
-	}
-	
-	//terminal T_ReObject: //추가
-	//	"EXPIRY_POINT" | "TIMINGPROTECTION_WATCHDOG";
-	public TerminalRule getT_ReObjectRule() {
-		return tT_ReObject;
 	}
 	
 	//ImplementationDef:
@@ -2206,7 +2592,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	//ImplAttrIntDef:
 	//	type=IntTypeEnum
 	//	auto?="WITH_AUTO"? range=Range? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=Number |
-	//	default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+	//	default=DefaultEnum))? (":" description=EString)? ";";
 	public ImplAttrIntDefElements getImplAttrIntDefAccess() {
 		return pImplAttrIntDef;
 	}
@@ -2225,20 +2611,10 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		return getIntTypeEnumAccess().getRule();
 	}
 	
-	//ImplAttrIdentiFier: //by 정수 개가라판
-	//	"IDENTIFIER" auto?="WITH_AUTO"? name=AttributeName "=" value=ID SEMICOLON;
-	public ImplAttrIdentiFierElements getImplAttrIdentiFierAccess() {
-		return pImplAttrIdentiFier;
-	}
-	
-	public ParserRule getImplAttrIdentiFierRule() {
-		return getImplAttrIdentiFierAccess().getRule();
-	}
-	
 	//ImplAttrFloatDef:
 	//	"FLOAT"
 	//	auto?="WITH_AUTO"? range=Range? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=EFloat |
-	//	default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+	//	default=DefaultEnum))? (":" description=EString)? ";";
 	public ImplAttrFloatDefElements getImplAttrFloatDefAccess() {
 		return pImplAttrFloatDef;
 	}
@@ -2250,7 +2626,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	//ImplAttrEnumDef:
 	//	"ENUM"
 	//	auto?="WITH_AUTO"? enumeration=Enumeration? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=Name |
-	//	default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+	//	default=DefaultEnum))? (":" description=EString)? ";";
 	public ImplAttrEnumDefElements getImplAttrEnumDefAccess() {
 		return pImplAttrEnumDef;
 	}
@@ -2262,7 +2638,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	//ImplAttrStringDef:
 	//	"STRING"
 	//	auto?="WITH_AUTO"? name=AttributeName multiple?=MultipleSpecifier? ("=" (value=EString | default=DefaultEnum))? (":"
-	//	description=EString)? SEMICOLON;
+	//	description=EString)? ";";
 	public ImplAttrStringDefElements getImplAttrStringDefAccess() {
 		return pImplAttrStringDef;
 	}
@@ -2273,17 +2649,26 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ImplAttrBooleanDef:
 	//	"BOOLEAN"
-	//	auto?="WITH_AUTO"? ("[" T_TRUE (BLOCKBEGIN trueParameterList+=ImplementationDef* BLOCKEND)?
+	//	auto?="WITH_AUTO"? ("[" T_TRUE ("{" trueParameterList+=ImplementationDef* "}")?
 	//	trueDescription=EString? ","
-	//	T_FALSE (BLOCKBEGIN falseParameterList+=ImplementationDef* BLOCKEND)? falseDescription=EString? "]")? name=(Name |
-	//	Object) multiple?=MultipleSpecifier? ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)?
-	//	SEMICOLON;
+	//	T_FALSE ("{" falseParameterList+=ImplementationDef* "}")? falseDescription=EString? "]")? name=(Name | Object)
+	//	multiple?=MultipleSpecifier? ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)? ";";
 	public ImplAttrBooleanDefElements getImplAttrBooleanDefAccess() {
 		return pImplAttrBooleanDef;
 	}
 	
 	public ParserRule getImplAttrBooleanDefRule() {
 		return getImplAttrBooleanDefAccess().getRule();
+	}
+	
+	//ImplAttrIdentiFier: // possibly change according to implementation grammar.
+	//	"IDENTIFIER" auto?="WITH_AUTO"? name=AttributeName "=" value=ID ";";
+	public ImplAttrIdentiFierElements getImplAttrIdentiFierAccess() {
+		return pImplAttrIdentiFier;
+	}
+	
+	public ParserRule getImplAttrIdentiFierRule() {
+		return getImplAttrIdentiFierAccess().getRule();
 	}
 	
 	//Range:
@@ -2317,7 +2702,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Enumerator:
-	//	name=Name (BLOCKBEGIN implParameterList+=ImplementationDef* BLOCKEND)? description=EString?;
+	//	name=Name ("{" implParameterList+=ImplementationDef* "}")? description=EString?;
 	public EnumeratorElements getEnumeratorAccess() {
 		return pEnumerator;
 	}
@@ -2327,7 +2712,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ImplRefDef:
-	//	type=ObjectRefTypeEnum name=AttributeName multiple?=MultipleSpecifier? description=EString? SEMICOLON;
+	//	type=ObjectRefTypeEnum name=AttributeName multiple?=MultipleSpecifier? description=EString? ";";
 	public ImplRefDefElements getImplRefDefAccess() {
 		return pImplRefDef;
 	}
@@ -2360,7 +2745,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ApplicationDefinition:
-	//	T_CPU name=Name BLOCKBEGIN objectDefinitionList+=ObjectDefinition* BLOCKEND description=EString? SEMICOLON;
+	//	"CPU" name=Name "{" objectDefinitionList+=ObjectDefinition* "}" description=EString? ";";
 	public ApplicationDefinitionElements getApplicationDefinitionAccess() {
 		return pApplicationDefinition;
 	}
@@ -2369,15 +2754,9 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		return getApplicationDefinitionAccess().getRule();
 	}
 	
-	//terminal T_CPU:
-	//	"CPU";
-	public TerminalRule getT_CPURule() {
-		return tT_CPU;
-	}
-	
 	//ObjectDefinition:
-	//	object=Object name=Name (BLOCKBEGIN parameterList+=Attribute* reObjectDefinition=ReObjectDefinition* BLOCKEND)?
-	//	descrption=EString? SEMICOLON;
+	//	"LIBRARY" name=Name ("{" LibraryList+=Librayattribute* "}")? ";" | object=Object name=Name ("{"
+	//	parameterList+=Attribute* "}")? descrption=EString? ";";
 	public ObjectDefinitionElements getObjectDefinitionAccess() {
 		return pObjectDefinition;
 	}
@@ -2386,18 +2765,29 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		return getObjectDefinitionAccess().getRule();
 	}
 	
-	//ReObjectDefinition:
-	//	reobject=ReObject name=Name (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)? descrption=EString? SEMICOLON;
-	public ReObjectDefinitionElements getReObjectDefinitionAccess() {
-		return pReObjectDefinition;
+	//Librayattribute:
+	//	"PATH" "=" description=EString ";" |
+	//	"CHEADER" "=" description=EString ";" |
+	//	"CFILE" "=" description=EString ";";
+	public LibrayattributeElements getLibrayattributeAccess() {
+		return pLibrayattribute;
 	}
 	
-	public ParserRule getReObjectDefinitionRule() {
-		return getReObjectDefinitionAccess().getRule();
+	public ParserRule getLibrayattributeRule() {
+		return getLibrayattributeAccess().getRule();
 	}
 	
+	/// ************************ 
+	//object=Object name=Name (BLOCKBEGIN (parameterList+=Attribute
+	//   )* (reObjectDefinition=ReObjectDefinition)* BLOCKEND)? (descrption=EString)? SEMICOLON;
+	//
+	//ReObjectDefinition://異붽?
+	//   reobject=ReObject name=Name (BLOCKBEGIN (parameterList+=Attribute)* BLOCKEND)? (descrption=EString)? SEMICOLON;
 	//Attribute:
-	//	name=AttributeName "=" value=AttributeValue description=EString? SEMICOLON;
+	//   name=AttributeName "=" value=AttributeValue (description=EString)? SEMICOLON;
+	//
+	// ************************* / Attribute:
+	//	name=AttributeName "="? value=AttributeValue description=EString? ";";
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -2428,7 +2818,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NameAttributeValue:
-	//	value=Name (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?;
+	//	value=Name ("{" parameterList+=Attribute* "}")?;
 	public NameAttributeValueElements getNameAttributeValueAccess() {
 		return pNameAttributeValue;
 	}
@@ -2438,7 +2828,7 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BooleanAttributeValue:
-	//	value=EBoolean (BLOCKBEGIN parameterList+=Attribute* BLOCKEND)?;
+	//	value=EBoolean ("{" parameterList+=Attribute* "}")?;
 	public BooleanAttributeValueElements getBooleanAttributeValueAccess() {
 		return pBooleanAttributeValue;
 	}
@@ -2567,22 +2957,10 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		return tID;
 	}
 	
-	//terminal BLOCKBEGIN:
-	//	"{";
-	public TerminalRule getBLOCKBEGINRule() {
-		return tBLOCKBEGIN;
-	}
-	
-	//terminal BLOCKEND:
-	//	"}";
-	public TerminalRule getBLOCKENDRule() {
-		return tBLOCKEND;
-	}
-	
-	//terminal SEMICOLON:
-	//	";";
-	public TerminalRule getSEMICOLONRule() {
-		return tSEMICOLON;
+	//terminal FILEID:
+	//	("_" | "a".."z" | "A".."Z") ("_" | "a".."z" | "A".."Z" | "0".."9")* "." ("a".."z" | "A".."Z") ("a".."z" | "A".."Z")*;
+	public TerminalRule getFILEIDRule() {
+		return tFILEID;
 	}
 	
 	//terminal INT returns ecore::EInt:

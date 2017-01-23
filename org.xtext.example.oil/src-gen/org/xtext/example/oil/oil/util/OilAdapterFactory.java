@@ -101,6 +101,26 @@ public class OilAdapterFactory extends AdapterFactoryImpl
         return createImplementationSpecAdapter();
       }
       @Override
+      public Adapter caseOsRule(OsRule object)
+      {
+        return createOsRuleAdapter();
+      }
+      @Override
+      public Adapter caseTaskRule(TaskRule object)
+      {
+        return createTaskRuleAdapter();
+      }
+      @Override
+      public Adapter caseCounterRule(CounterRule object)
+      {
+        return createCounterRuleAdapter();
+      }
+      @Override
+      public Adapter caseIsrRule(IsrRule object)
+      {
+        return createIsrRuleAdapter();
+      }
+      @Override
       public Adapter caseImplementationDef(ImplementationDef object)
       {
         return createImplementationDefAdapter();
@@ -114,11 +134,6 @@ public class OilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseImplAttrIntDef(ImplAttrIntDef object)
       {
         return createImplAttrIntDefAdapter();
-      }
-      @Override
-      public Adapter caseImplAttrIdentiFier(ImplAttrIdentiFier object)
-      {
-        return createImplAttrIdentiFierAdapter();
       }
       @Override
       public Adapter caseImplAttrFloatDef(ImplAttrFloatDef object)
@@ -139,6 +154,11 @@ public class OilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseImplAttrBooleanDef(ImplAttrBooleanDef object)
       {
         return createImplAttrBooleanDefAdapter();
+      }
+      @Override
+      public Adapter caseImplAttrIdentiFier(ImplAttrIdentiFier object)
+      {
+        return createImplAttrIdentiFierAdapter();
       }
       @Override
       public Adapter caseRange(Range object)
@@ -171,9 +191,9 @@ public class OilAdapterFactory extends AdapterFactoryImpl
         return createObjectDefinitionAdapter();
       }
       @Override
-      public Adapter caseReObjectDefinition(ReObjectDefinition object)
+      public Adapter caseLibrayattribute(Librayattribute object)
       {
-        return createReObjectDefinitionAdapter();
+        return createLibrayattributeAdapter();
       }
       @Override
       public Adapter caseAttribute(Attribute object)
@@ -318,6 +338,66 @@ public class OilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.OsRule <em>Os Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.OsRule
+   * @generated
+   */
+  public Adapter createOsRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TaskRule <em>Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.TaskRule
+   * @generated
+   */
+  public Adapter createTaskRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.CounterRule <em>Counter Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.CounterRule
+   * @generated
+   */
+  public Adapter createCounterRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IsrRule <em>Isr Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IsrRule
+   * @generated
+   */
+  public Adapter createIsrRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImplementationDef <em>Implementation Def</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -358,21 +438,6 @@ public class OilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createImplAttrIntDefAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImplAttrIdentiFier <em>Impl Attr Identi Fier</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.oil.oil.ImplAttrIdentiFier
-   * @generated
-   */
-  public Adapter createImplAttrIdentiFierAdapter()
   {
     return null;
   }
@@ -433,6 +498,21 @@ public class OilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createImplAttrBooleanDefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImplAttrIdentiFier <em>Impl Attr Identi Fier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ImplAttrIdentiFier
+   * @generated
+   */
+  public Adapter createImplAttrIdentiFierAdapter()
   {
     return null;
   }
@@ -528,16 +608,16 @@ public class OilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ReObjectDefinition <em>Re Object Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Librayattribute <em>Librayattribute</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.oil.oil.ReObjectDefinition
+   * @see org.xtext.example.oil.oil.Librayattribute
    * @generated
    */
-  public Adapter createReObjectDefinitionAdapter()
+  public Adapter createLibrayattributeAdapter()
   {
     return null;
   }

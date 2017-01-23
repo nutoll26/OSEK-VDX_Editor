@@ -108,6 +108,34 @@ public class OilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case OilPackage.OS_RULE:
+      {
+        OsRule osRule = (OsRule)theEObject;
+        T result = caseOsRule(osRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.TASK_RULE:
+      {
+        TaskRule taskRule = (TaskRule)theEObject;
+        T result = caseTaskRule(taskRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.COUNTER_RULE:
+      {
+        CounterRule counterRule = (CounterRule)theEObject;
+        T result = caseCounterRule(counterRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.ISR_RULE:
+      {
+        IsrRule isrRule = (IsrRule)theEObject;
+        T result = caseIsrRule(isrRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case OilPackage.IMPLEMENTATION_DEF:
       {
         ImplementationDef implementationDef = (ImplementationDef)theEObject;
@@ -129,15 +157,6 @@ public class OilSwitch<T> extends Switch<T>
         T result = caseImplAttrIntDef(implAttrIntDef);
         if (result == null) result = caseImplAttrDef(implAttrIntDef);
         if (result == null) result = caseImplementationDef(implAttrIntDef);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case OilPackage.IMPL_ATTR_IDENTI_FIER:
-      {
-        ImplAttrIdentiFier implAttrIdentiFier = (ImplAttrIdentiFier)theEObject;
-        T result = caseImplAttrIdentiFier(implAttrIdentiFier);
-        if (result == null) result = caseImplAttrDef(implAttrIdentiFier);
-        if (result == null) result = caseImplementationDef(implAttrIdentiFier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -174,6 +193,15 @@ public class OilSwitch<T> extends Switch<T>
         T result = caseImplAttrBooleanDef(implAttrBooleanDef);
         if (result == null) result = caseImplAttrDef(implAttrBooleanDef);
         if (result == null) result = caseImplementationDef(implAttrBooleanDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.IMPL_ATTR_IDENTI_FIER:
+      {
+        ImplAttrIdentiFier implAttrIdentiFier = (ImplAttrIdentiFier)theEObject;
+        T result = caseImplAttrIdentiFier(implAttrIdentiFier);
+        if (result == null) result = caseImplAttrDef(implAttrIdentiFier);
+        if (result == null) result = caseImplementationDef(implAttrIdentiFier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -220,10 +248,10 @@ public class OilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case OilPackage.RE_OBJECT_DEFINITION:
+      case OilPackage.LIBRAYATTRIBUTE:
       {
-        ReObjectDefinition reObjectDefinition = (ReObjectDefinition)theEObject;
-        T result = caseReObjectDefinition(reObjectDefinition);
+        Librayattribute librayattribute = (Librayattribute)theEObject;
+        T result = caseLibrayattribute(librayattribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -381,6 +409,70 @@ public class OilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Os Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Os Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOsRule(OsRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Task Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Task Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTaskRule(TaskRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Counter Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Counter Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCounterRule(CounterRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Isr Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Isr Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIsrRule(IsrRule object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Implementation Def</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -424,22 +516,6 @@ public class OilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseImplAttrIntDef(ImplAttrIntDef object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Impl Attr Identi Fier</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Impl Attr Identi Fier</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseImplAttrIdentiFier(ImplAttrIdentiFier object)
   {
     return null;
   }
@@ -504,6 +580,22 @@ public class OilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseImplAttrBooleanDef(ImplAttrBooleanDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Impl Attr Identi Fier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Impl Attr Identi Fier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImplAttrIdentiFier(ImplAttrIdentiFier object)
   {
     return null;
   }
@@ -605,17 +697,17 @@ public class OilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Re Object Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Librayattribute</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Re Object Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Librayattribute</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseReObjectDefinition(ReObjectDefinition object)
+  public T caseLibrayattribute(Librayattribute object)
   {
     return null;
   }

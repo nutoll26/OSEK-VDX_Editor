@@ -69,6 +69,42 @@ public interface OilFactory extends EFactory
   ImplementationSpec createImplementationSpec();
 
   /**
+   * Returns a new object of class '<em>Os Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Os Rule</em>'.
+   * @generated
+   */
+  OsRule createOsRule();
+
+  /**
+   * Returns a new object of class '<em>Task Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Task Rule</em>'.
+   * @generated
+   */
+  TaskRule createTaskRule();
+
+  /**
+   * Returns a new object of class '<em>Counter Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Counter Rule</em>'.
+   * @generated
+   */
+  CounterRule createCounterRule();
+
+  /**
+   * Returns a new object of class '<em>Isr Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Isr Rule</em>'.
+   * @generated
+   */
+  IsrRule createIsrRule();
+
+  /**
    * Returns a new object of class '<em>Implementation Def</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,15 +130,6 @@ public interface OilFactory extends EFactory
    * @generated
    */
   ImplAttrIntDef createImplAttrIntDef();
-
-  /**
-   * Returns a new object of class '<em>Impl Attr Identi Fier</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Impl Attr Identi Fier</em>'.
-   * @generated
-   */
-  ImplAttrIdentiFier createImplAttrIdentiFier();
 
   /**
    * Returns a new object of class '<em>Impl Attr Float Def</em>'.
@@ -139,6 +166,15 @@ public interface OilFactory extends EFactory
    * @generated
    */
   ImplAttrBooleanDef createImplAttrBooleanDef();
+
+  /**
+   * Returns a new object of class '<em>Impl Attr Identi Fier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Impl Attr Identi Fier</em>'.
+   * @generated
+   */
+  ImplAttrIdentiFier createImplAttrIdentiFier();
 
   /**
    * Returns a new object of class '<em>Range</em>'.
@@ -195,13 +231,13 @@ public interface OilFactory extends EFactory
   ObjectDefinition createObjectDefinition();
 
   /**
-   * Returns a new object of class '<em>Re Object Definition</em>'.
+   * Returns a new object of class '<em>Librayattribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Re Object Definition</em>'.
+   * @return a new object of class '<em>Librayattribute</em>'.
    * @generated
    */
-  ReObjectDefinition createReObjectDefinition();
+  Librayattribute createLibrayattribute();
 
   /**
    * Returns a new object of class '<em>Attribute</em>'.

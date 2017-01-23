@@ -5,7 +5,6 @@ package org.xtext.example.oil.oil.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,15 +12,17 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.oil.oil.ImplementationDef;
+import org.xtext.example.oil.oil.CounterRule;
 import org.xtext.example.oil.oil.ImplementationSpec;
+import org.xtext.example.oil.oil.IsrRule;
 import org.xtext.example.oil.oil.OilPackage;
+import org.xtext.example.oil.oil.OsRule;
+import org.xtext.example.oil.oil.TaskRule;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,9 +31,10 @@ import org.xtext.example.oil.oil.OilPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl#getObject <em>Object</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl#getImplementations <em>Implementations</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl#getOsRule <em>Os Rule</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl#getTaskRule <em>Task Rule</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl#getCounterRule <em>Counter Rule</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl#getIsrRule <em>Isr Rule</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,54 +43,44 @@ import org.xtext.example.oil.oil.OilPackage;
 public class ImplementationSpecImpl extends MinimalEObjectImpl.Container implements ImplementationSpec
 {
   /**
-   * The default value of the '{@link #getObject() <em>Object</em>}' attribute.
+   * The cached value of the '{@link #getOsRule() <em>Os Rule</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getObject()
+   * @see #getOsRule()
    * @generated
    * @ordered
    */
-  protected static final String OBJECT_EDEFAULT = null;
+  protected EList<OsRule> osRule;
 
   /**
-   * The cached value of the '{@link #getObject() <em>Object</em>}' attribute.
+   * The cached value of the '{@link #getTaskRule() <em>Task Rule</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getObject()
+   * @see #getTaskRule()
    * @generated
    * @ordered
    */
-  protected String object = OBJECT_EDEFAULT;
+  protected EList<TaskRule> taskRule;
 
   /**
-   * The cached value of the '{@link #getImplementations() <em>Implementations</em>}' containment reference list.
+   * The cached value of the '{@link #getCounterRule() <em>Counter Rule</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImplementations()
+   * @see #getCounterRule()
    * @generated
    * @ordered
    */
-  protected EList<ImplementationDef> implementations;
+  protected EList<CounterRule> counterRule;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * The cached value of the '{@link #getIsrRule() <em>Isr Rule</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
+   * @see #getIsrRule()
    * @generated
    * @ordered
    */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
+  protected EList<IsrRule> isrRule;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,36 +108,13 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getObject()
+  public EList<OsRule> getOsRule()
   {
-    return object;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setObject(String newObject)
-  {
-    String oldObject = object;
-    object = newObject;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.IMPLEMENTATION_SPEC__OBJECT, oldObject, object));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ImplementationDef> getImplementations()
-  {
-    if (implementations == null)
+    if (osRule == null)
     {
-      implementations = new EObjectContainmentEList<ImplementationDef>(ImplementationDef.class, this, OilPackage.IMPLEMENTATION_SPEC__IMPLEMENTATIONS);
+      osRule = new EObjectContainmentEList<OsRule>(OsRule.class, this, OilPackage.IMPLEMENTATION_SPEC__OS_RULE);
     }
-    return implementations;
+    return osRule;
   }
 
   /**
@@ -153,9 +122,13 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDescription()
+  public EList<TaskRule> getTaskRule()
   {
-    return description;
+    if (taskRule == null)
+    {
+      taskRule = new EObjectContainmentEList<TaskRule>(TaskRule.class, this, OilPackage.IMPLEMENTATION_SPEC__TASK_RULE);
+    }
+    return taskRule;
   }
 
   /**
@@ -163,12 +136,27 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDescription(String newDescription)
+  public EList<CounterRule> getCounterRule()
   {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.IMPLEMENTATION_SPEC__DESCRIPTION, oldDescription, description));
+    if (counterRule == null)
+    {
+      counterRule = new EObjectContainmentEList<CounterRule>(CounterRule.class, this, OilPackage.IMPLEMENTATION_SPEC__COUNTER_RULE);
+    }
+    return counterRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<IsrRule> getIsrRule()
+  {
+    if (isrRule == null)
+    {
+      isrRule = new EObjectContainmentEList<IsrRule>(IsrRule.class, this, OilPackage.IMPLEMENTATION_SPEC__ISR_RULE);
+    }
+    return isrRule;
   }
 
   /**
@@ -181,8 +169,14 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case OilPackage.IMPLEMENTATION_SPEC__IMPLEMENTATIONS:
-        return ((InternalEList<?>)getImplementations()).basicRemove(otherEnd, msgs);
+      case OilPackage.IMPLEMENTATION_SPEC__OS_RULE:
+        return ((InternalEList<?>)getOsRule()).basicRemove(otherEnd, msgs);
+      case OilPackage.IMPLEMENTATION_SPEC__TASK_RULE:
+        return ((InternalEList<?>)getTaskRule()).basicRemove(otherEnd, msgs);
+      case OilPackage.IMPLEMENTATION_SPEC__COUNTER_RULE:
+        return ((InternalEList<?>)getCounterRule()).basicRemove(otherEnd, msgs);
+      case OilPackage.IMPLEMENTATION_SPEC__ISR_RULE:
+        return ((InternalEList<?>)getIsrRule()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,12 +191,14 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case OilPackage.IMPLEMENTATION_SPEC__OBJECT:
-        return getObject();
-      case OilPackage.IMPLEMENTATION_SPEC__IMPLEMENTATIONS:
-        return getImplementations();
-      case OilPackage.IMPLEMENTATION_SPEC__DESCRIPTION:
-        return getDescription();
+      case OilPackage.IMPLEMENTATION_SPEC__OS_RULE:
+        return getOsRule();
+      case OilPackage.IMPLEMENTATION_SPEC__TASK_RULE:
+        return getTaskRule();
+      case OilPackage.IMPLEMENTATION_SPEC__COUNTER_RULE:
+        return getCounterRule();
+      case OilPackage.IMPLEMENTATION_SPEC__ISR_RULE:
+        return getIsrRule();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -218,15 +214,21 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case OilPackage.IMPLEMENTATION_SPEC__OBJECT:
-        setObject((String)newValue);
+      case OilPackage.IMPLEMENTATION_SPEC__OS_RULE:
+        getOsRule().clear();
+        getOsRule().addAll((Collection<? extends OsRule>)newValue);
         return;
-      case OilPackage.IMPLEMENTATION_SPEC__IMPLEMENTATIONS:
-        getImplementations().clear();
-        getImplementations().addAll((Collection<? extends ImplementationDef>)newValue);
+      case OilPackage.IMPLEMENTATION_SPEC__TASK_RULE:
+        getTaskRule().clear();
+        getTaskRule().addAll((Collection<? extends TaskRule>)newValue);
         return;
-      case OilPackage.IMPLEMENTATION_SPEC__DESCRIPTION:
-        setDescription((String)newValue);
+      case OilPackage.IMPLEMENTATION_SPEC__COUNTER_RULE:
+        getCounterRule().clear();
+        getCounterRule().addAll((Collection<? extends CounterRule>)newValue);
+        return;
+      case OilPackage.IMPLEMENTATION_SPEC__ISR_RULE:
+        getIsrRule().clear();
+        getIsrRule().addAll((Collection<? extends IsrRule>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -242,14 +244,17 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case OilPackage.IMPLEMENTATION_SPEC__OBJECT:
-        setObject(OBJECT_EDEFAULT);
+      case OilPackage.IMPLEMENTATION_SPEC__OS_RULE:
+        getOsRule().clear();
         return;
-      case OilPackage.IMPLEMENTATION_SPEC__IMPLEMENTATIONS:
-        getImplementations().clear();
+      case OilPackage.IMPLEMENTATION_SPEC__TASK_RULE:
+        getTaskRule().clear();
         return;
-      case OilPackage.IMPLEMENTATION_SPEC__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
+      case OilPackage.IMPLEMENTATION_SPEC__COUNTER_RULE:
+        getCounterRule().clear();
+        return;
+      case OilPackage.IMPLEMENTATION_SPEC__ISR_RULE:
+        getIsrRule().clear();
         return;
     }
     super.eUnset(featureID);
@@ -265,33 +270,16 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case OilPackage.IMPLEMENTATION_SPEC__OBJECT:
-        return OBJECT_EDEFAULT == null ? object != null : !OBJECT_EDEFAULT.equals(object);
-      case OilPackage.IMPLEMENTATION_SPEC__IMPLEMENTATIONS:
-        return implementations != null && !implementations.isEmpty();
-      case OilPackage.IMPLEMENTATION_SPEC__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case OilPackage.IMPLEMENTATION_SPEC__OS_RULE:
+        return osRule != null && !osRule.isEmpty();
+      case OilPackage.IMPLEMENTATION_SPEC__TASK_RULE:
+        return taskRule != null && !taskRule.isEmpty();
+      case OilPackage.IMPLEMENTATION_SPEC__COUNTER_RULE:
+        return counterRule != null && !counterRule.isEmpty();
+      case OilPackage.IMPLEMENTATION_SPEC__ISR_RULE:
+        return isrRule != null && !isrRule.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (object: ");
-    result.append(object);
-    result.append(", description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
   }
 
 } //ImplementationSpecImpl

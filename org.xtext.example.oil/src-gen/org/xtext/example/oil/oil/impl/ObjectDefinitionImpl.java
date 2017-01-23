@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.oil.oil.Attribute;
+import org.xtext.example.oil.oil.Librayattribute;
 import org.xtext.example.oil.oil.ObjectDefinition;
 import org.xtext.example.oil.oil.OilPackage;
-import org.xtext.example.oil.oil.ReObjectDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,10 +31,10 @@ import org.xtext.example.oil.oil.ReObjectDefinition;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl#getObject <em>Object</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl#getLibraryList <em>Library List</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl#getObject <em>Object</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl#getParameterList <em>Parameter List</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl#getReObjectDefinition <em>Re Object Definition</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl#getDescrption <em>Descrption</em>}</li>
  * </ul>
  * </p>
@@ -43,26 +43,6 @@ import org.xtext.example.oil.oil.ReObjectDefinition;
  */
 public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implements ObjectDefinition
 {
-  /**
-   * The default value of the '{@link #getObject() <em>Object</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getObject()
-   * @generated
-   * @ordered
-   */
-  protected static final String OBJECT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getObject() <em>Object</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getObject()
-   * @generated
-   * @ordered
-   */
-  protected String object = OBJECT_EDEFAULT;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -84,6 +64,36 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getLibraryList() <em>Library List</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLibraryList()
+   * @generated
+   * @ordered
+   */
+  protected EList<Librayattribute> libraryList;
+
+  /**
+   * The default value of the '{@link #getObject() <em>Object</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getObject()
+   * @generated
+   * @ordered
+   */
+  protected static final String OBJECT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getObject() <em>Object</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getObject()
+   * @generated
+   * @ordered
+   */
+  protected String object = OBJECT_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getParameterList() <em>Parameter List</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -92,16 +102,6 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
    * @ordered
    */
   protected EList<Attribute> parameterList;
-
-  /**
-   * The cached value of the '{@link #getReObjectDefinition() <em>Re Object Definition</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReObjectDefinition()
-   * @generated
-   * @ordered
-   */
-  protected ReObjectDefinition reObjectDefinition;
 
   /**
    * The default value of the '{@link #getDescrption() <em>Descrption</em>}' attribute.
@@ -149,29 +149,6 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getObject()
-  {
-    return object;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setObject(String newObject)
-  {
-    String oldObject = object;
-    object = newObject;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.OBJECT_DEFINITION__OBJECT, oldObject, object));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getName()
   {
     return name;
@@ -195,6 +172,43 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Librayattribute> getLibraryList()
+  {
+    if (libraryList == null)
+    {
+      libraryList = new EObjectContainmentEList<Librayattribute>(Librayattribute.class, this, OilPackage.OBJECT_DEFINITION__LIBRARY_LIST);
+    }
+    return libraryList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getObject()
+  {
+    return object;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setObject(String newObject)
+  {
+    String oldObject = object;
+    object = newObject;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.OBJECT_DEFINITION__OBJECT, oldObject, object));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Attribute> getParameterList()
   {
     if (parameterList == null)
@@ -202,54 +216,6 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
       parameterList = new EObjectContainmentEList<Attribute>(Attribute.class, this, OilPackage.OBJECT_DEFINITION__PARAMETER_LIST);
     }
     return parameterList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ReObjectDefinition getReObjectDefinition()
-  {
-    return reObjectDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetReObjectDefinition(ReObjectDefinition newReObjectDefinition, NotificationChain msgs)
-  {
-    ReObjectDefinition oldReObjectDefinition = reObjectDefinition;
-    reObjectDefinition = newReObjectDefinition;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION, oldReObjectDefinition, newReObjectDefinition);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReObjectDefinition(ReObjectDefinition newReObjectDefinition)
-  {
-    if (newReObjectDefinition != reObjectDefinition)
-    {
-      NotificationChain msgs = null;
-      if (reObjectDefinition != null)
-        msgs = ((InternalEObject)reObjectDefinition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION, null, msgs);
-      if (newReObjectDefinition != null)
-        msgs = ((InternalEObject)newReObjectDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION, null, msgs);
-      msgs = basicSetReObjectDefinition(newReObjectDefinition, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION, newReObjectDefinition, newReObjectDefinition));
   }
 
   /**
@@ -285,10 +251,10 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case OilPackage.OBJECT_DEFINITION__LIBRARY_LIST:
+        return ((InternalEList<?>)getLibraryList()).basicRemove(otherEnd, msgs);
       case OilPackage.OBJECT_DEFINITION__PARAMETER_LIST:
         return ((InternalEList<?>)getParameterList()).basicRemove(otherEnd, msgs);
-      case OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION:
-        return basicSetReObjectDefinition(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -303,14 +269,14 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case OilPackage.OBJECT_DEFINITION__OBJECT:
-        return getObject();
       case OilPackage.OBJECT_DEFINITION__NAME:
         return getName();
+      case OilPackage.OBJECT_DEFINITION__LIBRARY_LIST:
+        return getLibraryList();
+      case OilPackage.OBJECT_DEFINITION__OBJECT:
+        return getObject();
       case OilPackage.OBJECT_DEFINITION__PARAMETER_LIST:
         return getParameterList();
-      case OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION:
-        return getReObjectDefinition();
       case OilPackage.OBJECT_DEFINITION__DESCRPTION:
         return getDescrption();
     }
@@ -328,18 +294,19 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case OilPackage.OBJECT_DEFINITION__OBJECT:
-        setObject((String)newValue);
-        return;
       case OilPackage.OBJECT_DEFINITION__NAME:
         setName((String)newValue);
+        return;
+      case OilPackage.OBJECT_DEFINITION__LIBRARY_LIST:
+        getLibraryList().clear();
+        getLibraryList().addAll((Collection<? extends Librayattribute>)newValue);
+        return;
+      case OilPackage.OBJECT_DEFINITION__OBJECT:
+        setObject((String)newValue);
         return;
       case OilPackage.OBJECT_DEFINITION__PARAMETER_LIST:
         getParameterList().clear();
         getParameterList().addAll((Collection<? extends Attribute>)newValue);
-        return;
-      case OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION:
-        setReObjectDefinition((ReObjectDefinition)newValue);
         return;
       case OilPackage.OBJECT_DEFINITION__DESCRPTION:
         setDescrption((String)newValue);
@@ -358,17 +325,17 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case OilPackage.OBJECT_DEFINITION__OBJECT:
-        setObject(OBJECT_EDEFAULT);
-        return;
       case OilPackage.OBJECT_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case OilPackage.OBJECT_DEFINITION__LIBRARY_LIST:
+        getLibraryList().clear();
+        return;
+      case OilPackage.OBJECT_DEFINITION__OBJECT:
+        setObject(OBJECT_EDEFAULT);
+        return;
       case OilPackage.OBJECT_DEFINITION__PARAMETER_LIST:
         getParameterList().clear();
-        return;
-      case OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION:
-        setReObjectDefinition((ReObjectDefinition)null);
         return;
       case OilPackage.OBJECT_DEFINITION__DESCRPTION:
         setDescrption(DESCRPTION_EDEFAULT);
@@ -387,14 +354,14 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case OilPackage.OBJECT_DEFINITION__OBJECT:
-        return OBJECT_EDEFAULT == null ? object != null : !OBJECT_EDEFAULT.equals(object);
       case OilPackage.OBJECT_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case OilPackage.OBJECT_DEFINITION__LIBRARY_LIST:
+        return libraryList != null && !libraryList.isEmpty();
+      case OilPackage.OBJECT_DEFINITION__OBJECT:
+        return OBJECT_EDEFAULT == null ? object != null : !OBJECT_EDEFAULT.equals(object);
       case OilPackage.OBJECT_DEFINITION__PARAMETER_LIST:
         return parameterList != null && !parameterList.isEmpty();
-      case OilPackage.OBJECT_DEFINITION__RE_OBJECT_DEFINITION:
-        return reObjectDefinition != null;
       case OilPackage.OBJECT_DEFINITION__DESCRPTION:
         return DESCRPTION_EDEFAULT == null ? descrption != null : !DESCRPTION_EDEFAULT.equals(descrption);
     }
@@ -412,10 +379,10 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (object: ");
-    result.append(object);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
+    result.append(", object: ");
+    result.append(object);
     result.append(", descrption: ");
     result.append(descrption);
     result.append(')');

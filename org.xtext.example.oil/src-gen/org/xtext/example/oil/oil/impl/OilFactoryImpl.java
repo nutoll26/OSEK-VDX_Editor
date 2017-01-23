@@ -71,21 +71,25 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.OIL_VERSION: return createOILVersion();
       case OilPackage.IMPLEMENTATION_DEFINITION: return createImplementationDefinition();
       case OilPackage.IMPLEMENTATION_SPEC: return createImplementationSpec();
+      case OilPackage.OS_RULE: return createOsRule();
+      case OilPackage.TASK_RULE: return createTaskRule();
+      case OilPackage.COUNTER_RULE: return createCounterRule();
+      case OilPackage.ISR_RULE: return createIsrRule();
       case OilPackage.IMPLEMENTATION_DEF: return createImplementationDef();
       case OilPackage.IMPL_ATTR_DEF: return createImplAttrDef();
       case OilPackage.IMPL_ATTR_INT_DEF: return createImplAttrIntDef();
-      case OilPackage.IMPL_ATTR_IDENTI_FIER: return createImplAttrIdentiFier();
       case OilPackage.IMPL_ATTR_FLOAT_DEF: return createImplAttrFloatDef();
       case OilPackage.IMPL_ATTR_ENUM_DEF: return createImplAttrEnumDef();
       case OilPackage.IMPL_ATTR_STRING_DEF: return createImplAttrStringDef();
       case OilPackage.IMPL_ATTR_BOOLEAN_DEF: return createImplAttrBooleanDef();
+      case OilPackage.IMPL_ATTR_IDENTI_FIER: return createImplAttrIdentiFier();
       case OilPackage.RANGE: return createRange();
       case OilPackage.ENUMERATION: return createEnumeration();
       case OilPackage.ENUMERATOR: return createEnumerator();
       case OilPackage.IMPL_REF_DEF: return createImplRefDef();
       case OilPackage.APPLICATION_DEFINITION: return createApplicationDefinition();
       case OilPackage.OBJECT_DEFINITION: return createObjectDefinition();
-      case OilPackage.RE_OBJECT_DEFINITION: return createReObjectDefinition();
+      case OilPackage.LIBRAYATTRIBUTE: return createLibrayattribute();
       case OilPackage.ATTRIBUTE: return createAttribute();
       case OilPackage.ATTRIBUTE_NAME: return createAttributeName();
       case OilPackage.ATTRIBUTE_VALUE: return createAttributeValue();
@@ -202,6 +206,50 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public OsRule createOsRule()
+  {
+    OsRuleImpl osRule = new OsRuleImpl();
+    return osRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TaskRule createTaskRule()
+  {
+    TaskRuleImpl taskRule = new TaskRuleImpl();
+    return taskRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CounterRule createCounterRule()
+  {
+    CounterRuleImpl counterRule = new CounterRuleImpl();
+    return counterRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IsrRule createIsrRule()
+  {
+    IsrRuleImpl isrRule = new IsrRuleImpl();
+    return isrRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ImplementationDef createImplementationDef()
   {
     ImplementationDefImpl implementationDef = new ImplementationDefImpl();
@@ -228,17 +276,6 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     ImplAttrIntDefImpl implAttrIntDef = new ImplAttrIntDefImpl();
     return implAttrIntDef;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ImplAttrIdentiFier createImplAttrIdentiFier()
-  {
-    ImplAttrIdentiFierImpl implAttrIdentiFier = new ImplAttrIdentiFierImpl();
-    return implAttrIdentiFier;
   }
 
   /**
@@ -283,6 +320,17 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     ImplAttrBooleanDefImpl implAttrBooleanDef = new ImplAttrBooleanDefImpl();
     return implAttrBooleanDef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImplAttrIdentiFier createImplAttrIdentiFier()
+  {
+    ImplAttrIdentiFierImpl implAttrIdentiFier = new ImplAttrIdentiFierImpl();
+    return implAttrIdentiFier;
   }
 
   /**
@@ -356,10 +404,10 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReObjectDefinition createReObjectDefinition()
+  public Librayattribute createLibrayattribute()
   {
-    ReObjectDefinitionImpl reObjectDefinition = new ReObjectDefinitionImpl();
-    return reObjectDefinition;
+    LibrayattributeImpl librayattribute = new LibrayattributeImpl();
+    return librayattribute;
   }
 
   /**

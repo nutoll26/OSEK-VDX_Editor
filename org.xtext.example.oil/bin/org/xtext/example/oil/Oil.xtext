@@ -9,38 +9,47 @@ OILFile:
    (implementation=ImplementationDefinition)? 
    application=ApplicationDefinition;
 
-
 Include:
-   "#include" ("<" name=FILENAME ">" | name=EString);
+   "#include" ("<" name=FileName ">"|name=EString);
 
-terminal FILENAME:
-   ("_"|"."|"/"|"a".."z"|"A".."Z")("_"|"."|"/"|"a".."z"|"A".."Z"|"0".."9")*"."("a".."z" | "A".."Z") ("a".."z" | "A".."Z")*;
-
+FileName returns ecore::EString:
+   FILEID;
+   
 OILVersion:
-   "OIL_VERSION" "=" value=EString (":" description=EString)? SEMICOLON;
+   "OIL_VERSION" "=" value=EString (":" description=EString)? ";";
 
 ImplementationDefinition:
-   "IMPLEMENTATION" name=Name BLOCKBEGIN (implementationSpecs+=ImplementationSpec)* BLOCKEND
-   (description=EString)? SEMICOLON;
+   "IMPLEMENTATION" name=Name "{" (implementationSpecs+=ImplementationSpec) "}"
+   (description=EString)? ";";
 
 ImplementationSpec:
-   object=Object BLOCKBEGIN (implementations+=ImplementationDef)* BLOCKEND (":" description=EString)? SEMICOLON;
+   {ImplementationSpec}
+   (osRule+=OsRule| taskRule+=TaskRule | counterRule+=CounterRule| isrRule+=IsrRule)+
+;
+
+OsRule:
+   {OsRule}
+   "OS" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+;
+TaskRule:
+   {TaskRule}
+   "TASK" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+;
+CounterRule:
+   {CounterRule}
+   "COUNTER" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+;
+IsrRule:
+   {IsrRule}
+   "ISR" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+;
 
 Object:
-   T_OBJECT;
-
-terminal T_OBJECT:
-   "OS" | "TASK" | "COUNTER" | "ALARM" | "RESOURCE" |
+   ("OS" | "TASK" | "COUNTER" | "ALARM" | "RESOURCE" |
    "EVENT" | "ISR" | "MESSAGE" | "COM" | "NM" | 
    "APPMODE" | "IPDU" | "NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" | 
-   "SPINLOCK" | "SCHEDULETABLE" | "IOC" | "APICONFIG"| "LIBRARY"; 
-
-ReObject://추가
-   T_ReObject;   
-
-terminal T_ReObject://추가
-   "EXPIRY_POINT" | "TIMINGPROTECTION_WATCHDOG";
-   
+   "SPINLOCK" | "SCHEDULETABLE" | "IOC" | "LIBRARY")
+  ;
 ImplementationDef:
    ImplAttrDef | ImplRefDef;
 
@@ -50,40 +59,39 @@ ImplAttrDef:
 ImplAttrIntDef:
    type=IntTypeEnum
    (auto?="WITH_AUTO")? (range=Range)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=Number | default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+   ("=" (value=Number | default=DefaultEnum))? (":" description=EString)? ";";
 
 enum IntTypeEnum:
    UINT32 | INT32 | UINT64 | INT64;
-   
-ImplAttrIdentiFier: //by 정수 개가라판
-   "IDENTIFIER"
-   (auto?="WITH_AUTO")? name=AttributeName "=" value = ID SEMICOLON;
 
 ImplAttrFloatDef:
    "FLOAT"
    (auto?="WITH_AUTO")? (range=Range)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=EFloat | default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+   ("=" (value=EFloat | default=DefaultEnum))? (":" description=EString)? ";";
 
 ImplAttrEnumDef:
    "ENUM"
    (auto?="WITH_AUTO")? (enumeration=Enumeration)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=Name | default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+   ("=" (value=Name | default=DefaultEnum))? (":" description=EString)? ";";
 
 ImplAttrStringDef:
-   "STRING" 
+   "STRING"
    (auto?="WITH_AUTO")? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=EString | default=DefaultEnum))? (":" description=EString)? SEMICOLON;
-
+   ("=" (value=EString | default=DefaultEnum))? (":" description=EString)? ";";
 
 ImplAttrBooleanDef:
    "BOOLEAN"
-   (auto?="WITH_AUTO")? ("[" T_TRUE (BLOCKBEGIN (trueParameterList+=ImplementationDef)* BLOCKEND)?
+   (auto?="WITH_AUTO")? ("[" T_TRUE ("{" (trueParameterList+=ImplementationDef)* "}")?
    (trueDescription=EString)? ","
    T_FALSE
-   (BLOCKBEGIN (falseParameterList+=ImplementationDef)* BLOCKEND)? (falseDescription=EString)? "]")? name=(Name | Object)
+   ("{" (falseParameterList+=ImplementationDef)* "}")? (falseDescription=EString)? "]")? name=(Name | Object)
    (multiple?=MultipleSpecifier)?
-   ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)? SEMICOLON;
+   ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)? ";";
 
+ImplAttrIdentiFier: // possibly change according to implementation grammar.
+    "IDENTIFIER"
+   (auto?="WITH_AUTO")? name=AttributeName "=" value = ID ";"
+;
 Range:
    "[" (value=Number | begin=Number ".." end=Number | numbers+=Number ("," numbers+=Number)+) "]";
 
@@ -94,10 +102,10 @@ Enumeration:
    "[" list+=Enumerator ("," list+=Enumerator)* "]";
 
 Enumerator:
-   name=Name (BLOCKBEGIN (implParameterList+=ImplementationDef)* BLOCKEND)? (description=EString)?;
+   name=Name ("{" (implParameterList+=ImplementationDef)* "}")? (description=EString)?;
 
 ImplRefDef:
-   type=ObjectRefTypeEnum name=AttributeName (multiple?=MultipleSpecifier)? (description=EString)? SEMICOLON;
+   type=ObjectRefTypeEnum name=AttributeName (multiple?=MultipleSpecifier)? (description=EString)? ";";
 
 enum ObjectRefTypeEnum:
    OS_TYPE | TASK_TYPE | COUNTER_TYPE | ALARM_TYPE | RESOURCE_TYPE | 
@@ -110,19 +118,32 @@ MultipleSpecifier:
    "[" "]";
 
 ApplicationDefinition:
-   T_CPU name=Name BLOCKBEGIN (objectDefinitionList+=ObjectDefinition)* BLOCKEND (description=EString)? SEMICOLON;
+   "CPU" name=Name "{" (objectDefinitionList+=ObjectDefinition)* "}" (description=EString)? ";";
 
-terminal T_CPU:
-   "CPU";
+ObjectDefinition:
+   ("LIBRARY" name=Name ("{" (LibraryList += Librayattribute)* "}")? ";" |   
+   object=Object name=Name ("{" (parameterList+=Attribute)* "}")? (descrption=EString)? ";");
 
-ObjectDefinition://수정
-   object=Object name=Name (BLOCKBEGIN (parameterList+=Attribute
+Librayattribute :
+   
+   ("PATH" "=" (description=EString) ";"|
+    "CHEADER" "=" (description=EString) ";"|
+    "CFILE" "=" (description=EString) ";"   )
+;
+
+/************************ 
+object=Object name=Name (BLOCKBEGIN (parameterList+=Attribute
    )* (reObjectDefinition=ReObjectDefinition)* BLOCKEND)? (descrption=EString)? SEMICOLON;
 
-ReObjectDefinition://추가
+ReObjectDefinition://異붽?
    reobject=ReObject name=Name (BLOCKBEGIN (parameterList+=Attribute)* BLOCKEND)? (descrption=EString)? SEMICOLON;
 Attribute:
    name=AttributeName "=" value=AttributeValue (description=EString)? SEMICOLON;
+
+*************************/
+
+Attribute:
+   name=AttributeName ("=")? value=AttributeValue (description=EString)? ";";
 
 AttributeName:
    value=(Name | Object);
@@ -132,10 +153,10 @@ AttributeValue:
    AutoAttributeValue;
 
 NameAttributeValue:
-   value=Name (BLOCKBEGIN (parameterList+=Attribute)* BLOCKEND)?;
+   value=Name ("{" (parameterList+=Attribute)* "}")?;
 
 BooleanAttributeValue:
-   value=EBoolean (BLOCKBEGIN (parameterList+=Attribute)* BLOCKEND)?;
+   value=EBoolean ("{" (parameterList+=Attribute)* "}")?;
 
 NumberAttributeValue:
    value=Number;
@@ -178,12 +199,6 @@ Name returns ecore::EString:
 
 terminal ID:
    ("_" | "a".."z" | "A".."Z") ("_" | "a".."z" | "A".."Z" | "0".."9")*;
-
-terminal BLOCKBEGIN:
-   "{";
-
-terminal BLOCKEND:
-   "}";
-
-terminal SEMICOLON:
-   ";";
+terminal FILEID:
+   ("_" | "a".."z" | "A".."Z") ("_" | "a".."z" | "A".."Z" | "0".."9")* "."("a".."z" | "A".."Z") ("a".."z" | "A".."Z")*
+;

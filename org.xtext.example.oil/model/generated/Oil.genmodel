@@ -57,9 +57,26 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplementationDefinition/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplementationSpec">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplementationSpec/object"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplementationSpec/implementations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplementationSpec/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplementationSpec/osRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplementationSpec/taskRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplementationSpec/counterRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplementationSpec/isrRule"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//OsRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//OsRule/implementations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsRule/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//TaskRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//TaskRule/implementations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TaskRule/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//CounterRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//CounterRule/implementations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//CounterRule/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IsrRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IsrRule/implementations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IsrRule/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplementationDef"/>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrDef">
@@ -73,10 +90,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIntDef/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIntDef/default"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIntDef/description"/>
-    </genClasses>
-    <genClasses ecoreClass="Oil.ecore#//ImplAttrIdentiFier">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrIdentiFier/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIdentiFier/value"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrFloatDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrFloatDef/range"/>
@@ -112,6 +125,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrBooleanDef/default"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrBooleanDef/description"/>
     </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//ImplAttrIdentiFier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrIdentiFier/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIdentiFier/value"/>
+    </genClasses>
     <genClasses ecoreClass="Oil.ecore#//Range">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Range/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Range/begin"/>
@@ -138,17 +155,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ApplicationDefinition/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ObjectDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ObjectDefinition/object"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ObjectDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ObjectDefinition/LibraryList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ObjectDefinition/object"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ObjectDefinition/parameterList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ObjectDefinition/reObjectDefinition"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ObjectDefinition/descrption"/>
     </genClasses>
-    <genClasses ecoreClass="Oil.ecore#//ReObjectDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ReObjectDefinition/reobject"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ReObjectDefinition/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ReObjectDefinition/parameterList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ReObjectDefinition/descrption"/>
+    <genClasses ecoreClass="Oil.ecore#//Librayattribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Librayattribute/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//Attribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Attribute/name"/>

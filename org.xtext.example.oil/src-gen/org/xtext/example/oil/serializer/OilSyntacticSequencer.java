@@ -21,65 +21,39 @@ import org.xtext.example.oil.services.OilGrammarAccess;
 public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected OilGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_BooleanAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q;
-	protected AbstractElementAlias match_Enumerator___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q;
-	protected AbstractElementAlias match_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q;
-	protected AbstractElementAlias match_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q;
-	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q_RightSquareBracketKeyword_2_8__q;
-	protected AbstractElementAlias match_NameAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q;
-	protected AbstractElementAlias match_ObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_3__q;
-	protected AbstractElementAlias match_ReObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_2__q;
+	protected AbstractElementAlias match_Attribute_EqualsSignKeyword_1_q;
+	protected AbstractElementAlias match_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
+	protected AbstractElementAlias match_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
+	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q;
+	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q;
+	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q;
+	protected AbstractElementAlias match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
+	protected AbstractElementAlias match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q;
+	protected AbstractElementAlias match_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (OilGrammarAccess) access;
-		match_BooleanAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBooleanAttributeValueAccess().getBLOCKBEGINTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getBooleanAttributeValueAccess().getBLOCKENDTerminalRuleCall_1_2()));
-		match_Enumerator___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEnumeratorAccess().getBLOCKBEGINTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getEnumeratorAccess().getBLOCKENDTerminalRuleCall_1_2()));
-		match_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKBEGINTerminalRuleCall_2_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKENDTerminalRuleCall_2_2_2()));
-		match_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKBEGINTerminalRuleCall_2_6_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKENDTerminalRuleCall_2_6_2()));
-		match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q_RightSquareBracketKeyword_2_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftSquareBracketKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getT_TRUETerminalRuleCall_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKBEGINTerminalRuleCall_2_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKENDTerminalRuleCall_2_2_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getCommaKeyword_2_4()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getT_FALSETerminalRuleCall_2_5()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKBEGINTerminalRuleCall_2_6_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getBLOCKENDTerminalRuleCall_2_6_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightSquareBracketKeyword_2_8()));
-		match_NameAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getBLOCKBEGINTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getBLOCKENDTerminalRuleCall_1_2()));
-		match_ObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getBLOCKBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getBLOCKENDTerminalRuleCall_2_3()));
-		match_ReObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getReObjectDefinitionAccess().getBLOCKBEGINTerminalRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getReObjectDefinitionAccess().getBLOCKENDTerminalRuleCall_2_2()));
+		match_Attribute_EqualsSignKeyword_1_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getEqualsSignKeyword_1());
+		match_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBooleanAttributeValueAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getBooleanAttributeValueAccess().getRightCurlyBracketKeyword_1_2()));
+		match_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEnumeratorAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getEnumeratorAccess().getRightCurlyBracketKeyword_1_2()));
+		match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_2_2()));
+		match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_6_2()));
+		match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftSquareBracketKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getT_TRUETerminalRuleCall_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_2_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getCommaKeyword_2_4()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getT_FALSETerminalRuleCall_2_5()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_6_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightSquareBracketKeyword_2_8()));
+		match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getRightCurlyBracketKeyword_1_2()));
+		match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getLeftCurlyBracketKeyword_0_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getRightCurlyBracketKeyword_0_2_2()));
+		match_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getLeftCurlyBracketKeyword_1_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getRightCurlyBracketKeyword_1_2_2()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getBLOCKBEGINRule())
-			return getBLOCKBEGINToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getBLOCKENDRule())
-			return getBLOCKENDToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getMultipleSpecifierRule())
+		if (ruleCall.getRule() == grammarAccess.getMultipleSpecifierRule())
 			return getMultipleSpecifierToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getSEMICOLONRule())
-			return getSEMICOLONToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getT_CPURule())
-			return getT_CPUToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getT_FALSERule())
 			return getT_FALSEToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getT_TRUERule())
 			return getT_TRUEToken(semanticObject, ruleCall, node);
 		return "";
-	}
-	
-	/**
-	 * terminal BLOCKBEGIN:
-	 *    "{";
-	 */
-	protected String getBLOCKBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "{";
-	}
-	
-	/**
-	 * terminal BLOCKEND:
-	 *    "}";
-	 */
-	protected String getBLOCKENDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "}";
 	}
 	
 	/**
@@ -90,26 +64,6 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "[]";
-	}
-	
-	/**
-	 * terminal SEMICOLON:
-	 *    ";";
-	 */
-	protected String getSEMICOLONToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return ";";
-	}
-	
-	/**
-	 * terminal T_CPU:
-	 *    "CPU";
-	 */
-	protected String getT_CPUToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "CPU";
 	}
 	
 	/**
@@ -138,80 +92,93 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_BooleanAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q.equals(syntax))
-				emit_BooleanAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Enumerator___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q.equals(syntax))
-				emit_Enumerator___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q.equals(syntax))
-				emit_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q.equals(syntax))
-				emit_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q_RightSquareBracketKeyword_2_8__q.equals(syntax))
-				emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q_RightSquareBracketKeyword_2_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_NameAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q.equals(syntax))
-				emit_NameAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_3__q.equals(syntax))
-				emit_ObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ReObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_2__q.equals(syntax))
-				emit_ReObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Attribute_EqualsSignKeyword_1_q.equals(syntax))
+				emit_Attribute_EqualsSignKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
+				emit_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
+				emit_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q.equals(syntax))
+				emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q.equals(syntax))
+				emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q.equals(syntax))
+				emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
+				emit_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q.equals(syntax))
+				emit_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q.equals(syntax))
+				emit_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     (BLOCKBEGIN BLOCKEND)?
+	 *     '='?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     value=EBoolean (ambiguity) (rule end)
+	 *     name=AttributeName (ambiguity) value=AttributeValue
 	 */
-	protected void emit_BooleanAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Attribute_EqualsSignKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (BLOCKBEGIN BLOCKEND)?
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     value=EBoolean (ambiguity) (rule end)
+	 */
+	protected void emit_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     name=Name (ambiguity) (rule end)
 	 *     name=Name (ambiguity) description=EString
 	 */
-	protected void emit_Enumerator___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (BLOCKBEGIN BLOCKEND)?
+	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) ',' T_FALSE (BLOCKBEGIN BLOCKEND)? falseDescription=EString
-	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) ',' T_FALSE BLOCKBEGIN falseParameterList+=ImplementationDef
+	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) ',' T_FALSE '{' falseParameterList+=ImplementationDef
+	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) ',' T_FALSE ('{' '}')? falseDescription=EString
 	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) trueDescription=EString
-	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) ',' T_FALSE (BLOCKBEGIN BLOCKEND)? falseDescription=EString
-	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) ',' T_FALSE BLOCKBEGIN falseParameterList+=ImplementationDef
+	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) ',' T_FALSE '{' falseParameterList+=ImplementationDef
+	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) ',' T_FALSE ('{' '}')? falseDescription=EString
 	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) trueDescription=EString
 	 */
-	protected void emit_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (BLOCKBEGIN BLOCKEND)?
+	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'BOOLEAN' '[' T_TRUE (BLOCKBEGIN BLOCKEND)? ',' T_FALSE (ambiguity) falseDescription=EString
-	 *     auto?='WITH_AUTO' '[' T_TRUE (BLOCKBEGIN BLOCKEND)? ',' T_FALSE (ambiguity) falseDescription=EString
+	 *     (rule start) 'BOOLEAN' '[' T_TRUE ('{' '}')? ',' T_FALSE (ambiguity) falseDescription=EString
+	 *     auto?='WITH_AUTO' '[' T_TRUE ('{' '}')? ',' T_FALSE (ambiguity) falseDescription=EString
 	 *     trueDescription=EString ',' T_FALSE (ambiguity) ']' name=Name
 	 *     trueDescription=EString ',' T_FALSE (ambiguity) ']' name=Object
 	 *     trueDescription=EString ',' T_FALSE (ambiguity) falseDescription=EString
-	 *     trueParameterList+=ImplementationDef BLOCKEND ',' T_FALSE (ambiguity) ']' name=Name
-	 *     trueParameterList+=ImplementationDef BLOCKEND ',' T_FALSE (ambiguity) ']' name=Object
-	 *     trueParameterList+=ImplementationDef BLOCKEND ',' T_FALSE (ambiguity) falseDescription=EString
+	 *     trueParameterList+=ImplementationDef '}' ',' T_FALSE (ambiguity) ']' name=Name
+	 *     trueParameterList+=ImplementationDef '}' ',' T_FALSE (ambiguity) ']' name=Object
+	 *     trueParameterList+=ImplementationDef '}' ',' T_FALSE (ambiguity) falseDescription=EString
 	 */
-	protected void emit_ImplAttrBooleanDef___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -220,10 +187,10 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (
 	  *         '[' 
 	  *         T_TRUE 
-	  *         (BLOCKBEGIN BLOCKEND)? 
+	  *         ('{' '}')? 
 	  *         ',' 
 	  *         T_FALSE 
-	  *         (BLOCKBEGIN BLOCKEND)? 
+	  *         ('{' '}')? 
 	  *         ']'
 	  *     )?
 	 *
@@ -233,42 +200,41 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     auto?='WITH_AUTO' (ambiguity) name=Name
 	 *     auto?='WITH_AUTO' (ambiguity) name=Object
 	 */
-	protected void emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___BLOCKBEGINTerminalRuleCall_2_2_0_BLOCKENDTerminalRuleCall_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___BLOCKBEGINTerminalRuleCall_2_6_0_BLOCKENDTerminalRuleCall_2_6_2__q_RightSquareBracketKeyword_2_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (BLOCKBEGIN BLOCKEND)?
+	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     value=Name (ambiguity) (rule end)
 	 */
-	protected void emit_NameAttributeValue___BLOCKBEGINTerminalRuleCall_1_0_BLOCKENDTerminalRuleCall_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (BLOCKBEGIN BLOCKEND)?
+	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=Name (ambiguity) SEMICOLON (rule end)
-	 *     name=Name (ambiguity) descrption=EString
+	 *     name=Name (ambiguity) ';' (rule end)
 	 */
-	protected void emit_ObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     (BLOCKBEGIN BLOCKEND)?
+	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=Name (ambiguity) SEMICOLON (rule end)
+	 *     name=Name (ambiguity) ';' (rule end)
 	 *     name=Name (ambiguity) descrption=EString
 	 */
-	protected void emit_ReObjectDefinition___BLOCKBEGINTerminalRuleCall_2_0_BLOCKENDTerminalRuleCall_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

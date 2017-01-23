@@ -15,9 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.example.oil.oil.ImplementationSpec#getObject <em>Object</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.ImplementationSpec#getImplementations <em>Implementations</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.ImplementationSpec#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.ImplementationSpec#getOsRule <em>Os Rule</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.ImplementationSpec#getTaskRule <em>Task Rule</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.ImplementationSpec#getCounterRule <em>Counter Rule</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.ImplementationSpec#getIsrRule <em>Isr Rule</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,71 +29,67 @@ import org.eclipse.emf.ecore.EObject;
 public interface ImplementationSpec extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Object</b></em>' attribute.
+   * Returns the value of the '<em><b>Os Rule</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.oil.oil.OsRule}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Object</em>' attribute isn't clear,
+   * If the meaning of the '<em>Os Rule</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Object</em>' attribute.
-   * @see #setObject(String)
-   * @see org.xtext.example.oil.oil.OilPackage#getImplementationSpec_Object()
-   * @model
-   * @generated
-   */
-  String getObject();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.oil.oil.ImplementationSpec#getObject <em>Object</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Object</em>' attribute.
-   * @see #getObject()
-   * @generated
-   */
-  void setObject(String value);
-
-  /**
-   * Returns the value of the '<em><b>Implementations</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.oil.oil.ImplementationDef}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Implementations</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Implementations</em>' containment reference list.
-   * @see org.xtext.example.oil.oil.OilPackage#getImplementationSpec_Implementations()
+   * @return the value of the '<em>Os Rule</em>' containment reference list.
+   * @see org.xtext.example.oil.oil.OilPackage#getImplementationSpec_OsRule()
    * @model containment="true"
    * @generated
    */
-  EList<ImplementationDef> getImplementations();
+  EList<OsRule> getOsRule();
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * Returns the value of the '<em><b>Task Rule</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.oil.oil.TaskRule}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Description</em>' attribute isn't clear,
+   * If the meaning of the '<em>Task Rule</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see org.xtext.example.oil.oil.OilPackage#getImplementationSpec_Description()
-   * @model
+   * @return the value of the '<em>Task Rule</em>' containment reference list.
+   * @see org.xtext.example.oil.oil.OilPackage#getImplementationSpec_TaskRule()
+   * @model containment="true"
    * @generated
    */
-  String getDescription();
+  EList<TaskRule> getTaskRule();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.oil.oil.ImplementationSpec#getDescription <em>Description</em>}' attribute.
+   * Returns the value of the '<em><b>Counter Rule</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.oil.oil.CounterRule}.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Counter Rule</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
+   * @return the value of the '<em>Counter Rule</em>' containment reference list.
+   * @see org.xtext.example.oil.oil.OilPackage#getImplementationSpec_CounterRule()
+   * @model containment="true"
    * @generated
    */
-  void setDescription(String value);
+  EList<CounterRule> getCounterRule();
+
+  /**
+   * Returns the value of the '<em><b>Isr Rule</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.oil.oil.IsrRule}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Isr Rule</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Isr Rule</em>' containment reference list.
+   * @see org.xtext.example.oil.oil.OilPackage#getImplementationSpec_IsrRule()
+   * @model containment="true"
+   * @generated
+   */
+  EList<IsrRule> getIsrRule();
 
 } // ImplementationSpec

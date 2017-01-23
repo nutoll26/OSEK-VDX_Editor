@@ -19,6 +19,7 @@ import org.xtext.example.oil.oil.Attribute;
 import org.xtext.example.oil.oil.AttributeName;
 import org.xtext.example.oil.oil.AutoAttributeValue;
 import org.xtext.example.oil.oil.BooleanAttributeValue;
+import org.xtext.example.oil.oil.CounterRule;
 import org.xtext.example.oil.oil.Enumeration;
 import org.xtext.example.oil.oil.Enumerator;
 import org.xtext.example.oil.oil.FloatAttributeValue;
@@ -32,15 +33,18 @@ import org.xtext.example.oil.oil.ImplRefDef;
 import org.xtext.example.oil.oil.ImplementationDefinition;
 import org.xtext.example.oil.oil.ImplementationSpec;
 import org.xtext.example.oil.oil.Include;
+import org.xtext.example.oil.oil.IsrRule;
+import org.xtext.example.oil.oil.Librayattribute;
 import org.xtext.example.oil.oil.NameAttributeValue;
 import org.xtext.example.oil.oil.NumberAttributeValue;
 import org.xtext.example.oil.oil.OILFile;
 import org.xtext.example.oil.oil.OILVersion;
 import org.xtext.example.oil.oil.ObjectDefinition;
 import org.xtext.example.oil.oil.OilPackage;
+import org.xtext.example.oil.oil.OsRule;
 import org.xtext.example.oil.oil.Range;
-import org.xtext.example.oil.oil.ReObjectDefinition;
 import org.xtext.example.oil.oil.StringAttributeValue;
+import org.xtext.example.oil.oil.TaskRule;
 import org.xtext.example.oil.services.OilGrammarAccess;
 
 @SuppressWarnings("all")
@@ -71,6 +75,9 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case OilPackage.BOOLEAN_ATTRIBUTE_VALUE:
 				sequence_BooleanAttributeValue(context, (BooleanAttributeValue) semanticObject); 
+				return; 
+			case OilPackage.COUNTER_RULE:
+				sequence_CounterRule(context, (CounterRule) semanticObject); 
 				return; 
 			case OilPackage.ENUMERATION:
 				sequence_Enumeration(context, (Enumeration) semanticObject); 
@@ -111,6 +118,12 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case OilPackage.INCLUDE:
 				sequence_Include(context, (Include) semanticObject); 
 				return; 
+			case OilPackage.ISR_RULE:
+				sequence_IsrRule(context, (IsrRule) semanticObject); 
+				return; 
+			case OilPackage.LIBRAYATTRIBUTE:
+				sequence_Librayattribute(context, (Librayattribute) semanticObject); 
+				return; 
 			case OilPackage.NAME_ATTRIBUTE_VALUE:
 				sequence_NameAttributeValue(context, (NameAttributeValue) semanticObject); 
 				return; 
@@ -126,14 +139,17 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case OilPackage.OBJECT_DEFINITION:
 				sequence_ObjectDefinition(context, (ObjectDefinition) semanticObject); 
 				return; 
+			case OilPackage.OS_RULE:
+				sequence_OsRule(context, (OsRule) semanticObject); 
+				return; 
 			case OilPackage.RANGE:
 				sequence_Range(context, (Range) semanticObject); 
 				return; 
-			case OilPackage.RE_OBJECT_DEFINITION:
-				sequence_ReObjectDefinition(context, (ReObjectDefinition) semanticObject); 
-				return; 
 			case OilPackage.STRING_ATTRIBUTE_VALUE:
 				sequence_StringAttributeValue(context, (StringAttributeValue) semanticObject); 
+				return; 
+			case OilPackage.TASK_RULE:
+				sequence_TaskRule(context, (TaskRule) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -204,6 +220,18 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (value=EBoolean parameterList+=Attribute*)
 	 */
 	protected void sequence_BooleanAttributeValue(ISerializationContext context, BooleanAttributeValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CounterRule returns CounterRule
+	 *
+	 * Constraint:
+	 *     (implementations+=ImplementationDef* description=EString?)
+	 */
+	protected void sequence_CounterRule(ISerializationContext context, CounterRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -385,7 +413,7 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ImplementationDefinition returns ImplementationDefinition
 	 *
 	 * Constraint:
-	 *     (name=Name implementationSpecs+=ImplementationSpec* description=EString?)
+	 *     (name=Name implementationSpecs+=ImplementationSpec description=EString?)
 	 */
 	protected void sequence_ImplementationDefinition(ISerializationContext context, ImplementationDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -397,7 +425,7 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ImplementationSpec returns ImplementationSpec
 	 *
 	 * Constraint:
-	 *     (object=Object implementations+=ImplementationDef* description=EString?)
+	 *     (osRule+=OsRule | taskRule+=TaskRule | counterRule+=CounterRule | isrRule+=IsrRule)+
 	 */
 	protected void sequence_ImplementationSpec(ISerializationContext context, ImplementationSpec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -409,9 +437,33 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Include returns Include
 	 *
 	 * Constraint:
-	 *     (name=FILENAME | name=EString)
+	 *     (name=FileName | name=EString)
 	 */
 	protected void sequence_Include(ISerializationContext context, Include semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IsrRule returns IsrRule
+	 *
+	 * Constraint:
+	 *     (implementations+=ImplementationDef* description=EString?)
+	 */
+	protected void sequence_IsrRule(ISerializationContext context, IsrRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Librayattribute returns Librayattribute
+	 *
+	 * Constraint:
+	 *     (description=EString | description=EString | description=EString)
+	 */
+	protected void sequence_Librayattribute(ISerializationContext context, Librayattribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -477,9 +529,21 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ObjectDefinition returns ObjectDefinition
 	 *
 	 * Constraint:
-	 *     (object=Object name=Name parameterList+=Attribute* reObjectDefinition=ReObjectDefinition* descrption=EString?)
+	 *     ((name=Name LibraryList+=Librayattribute*) | (object=Object name=Name parameterList+=Attribute* descrption=EString?))
 	 */
 	protected void sequence_ObjectDefinition(ISerializationContext context, ObjectDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     OsRule returns OsRule
+	 *
+	 * Constraint:
+	 *     (implementations+=ImplementationDef* description=EString?)
+	 */
+	protected void sequence_OsRule(ISerializationContext context, OsRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -492,18 +556,6 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (value=Number | (begin=Number end=Number) | (numbers+=Number numbers+=Number+))
 	 */
 	protected void sequence_Range(ISerializationContext context, Range semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ReObjectDefinition returns ReObjectDefinition
-	 *
-	 * Constraint:
-	 *     (reobject=ReObject name=Name parameterList+=Attribute* descrption=EString?)
-	 */
-	protected void sequence_ReObjectDefinition(ISerializationContext context, ReObjectDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -524,6 +576,18 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStringAttributeValueAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TaskRule returns TaskRule
+	 *
+	 * Constraint:
+	 *     (implementations+=ImplementationDef* description=EString?)
+	 */
+	protected void sequence_TaskRule(ISerializationContext context, TaskRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
