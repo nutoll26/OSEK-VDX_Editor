@@ -9,18 +9,21 @@ OILFile:
    (implementation=ImplementationDefinition)? 
    application=ApplicationDefinition;
 
-Include:
-   "#include" ("<" name=FileName ">"|name=EString);
+Include:	// ¼öÁ¤
+   "#include" ("<" name=FileName ">"|name=STRING)
+;
 
-FileName returns ecore::EString:
-   FILEID;
+FileName:
+   FILEID
+;
    
 OILVersion:
-   "OIL_VERSION" "=" value=EString (":" description=EString)? ";";
+   "OIL_VERSION" "=" version=STRING (":" description=EString)? ";"
+;
 
 ImplementationDefinition:
-   "IMPLEMENTATION" name=Name "{" (implementationSpecs+=ImplementationSpec) "}"
-   (description=EString)? ";";
+   "IMPLEMENTATION" name=Name "{" (implementationSpecs+=ImplementationSpec) "}" ";"
+;
 
 ImplementationSpec:
    {ImplementationSpec}
@@ -29,19 +32,89 @@ ImplementationSpec:
 
 OsRule:
    {OsRule}
-   "OS" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+   "OS" "{" (implementations+=ImplementationDef)* "}" ";"
 ;
+
 TaskRule:
    {TaskRule}
-   "TASK" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+   "TASK" "{" (implementations+=ImplementationDef)* "}" ";"
 ;
+
 CounterRule:
    {CounterRule}
-   "COUNTER" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+   "COUNTER" "{" (implementations+=ImplementationDef)* "}" ";"
 ;
+
+ApplicationRule:
+	{ApplicationRule}
+	"APPLICATION"
+	(name=Name)? "{" (appSubOrParam+=(AppSubContainer | ApplicationParam))* "}" ";"
+;
+
+AppSubContainer:
+	(hasRestartTaskRule=HasRestartTaskRule | trustedRule=TrustedRule)
+;
+
+HasRestartTaskRule:
+	{HasRestartTaskRule}
+	"HAS_RESTARTTASK"
+	(name=Name)? "=" ("TRUE" "{" (restartTaskRule=RestartTaskRule) "}"| "FALSE") ";"
+;
+
+RestartTaskRule:
+	"RESTARTTASK"
+	(name=Name)? "=" value=AttributeValue ";"
+;
+
+TrustedRule:
+	{TrustedRule}
+	"TRUSTED" (name=Name)? "=" ("TRUE" | "FALSE") ";"
+;
+
+ApplicationParam:
+	type=ApplicationParamEnum "=" value=AttributeValue ";"
+;
+
+enum ApplicationParamEnum:
+	CORE | ALARM | COUNTER | RESOURCE | TASK | ISR | MESSAGE |
+	SCHEDULETABLE | IOC | ERRORHOOK | SHUTDOWNHOOK | STARTUPHOOK
+;
+
 IsrRule:
    {IsrRule}
-   "ISR" "{" (implementations+=ImplementationDef)* "}" (":" description=EString)? ";"
+   "ISR"
+   (name=Name)? "{" (type=IntTypeEnum)? (isrSubOrParam+=(IsrSubContainer | IsrParam))* "}" ";"
+;
+
+IsrSubContainer:
+	(timingProtectionRule=TimingProtectionRule)
+;
+
+TimingProtectionRule:
+	{TimingProtectionRule}
+	"TIMING_PROTECTION"
+	(name=Name)? "=" ("TRUE" "{" (timingProtectionParam+=TimingProtectionParam)* "}" | "FALSE") ";"
+;
+
+TimingProtectionParam:
+	type=TimingProtectionParamEnum "=" value=AttributeValue ";"
+;
+
+enum TimingProtectionParamEnum:
+	MAXALLINTERRUPTLOCKTIME | MAXOSINTERRUPTLOCKTIME | EXECUTIONTIME | TIMEFRAME
+;
+
+IsrParam:
+	type=IsrParamEnum "=" value=AttributeValue ";"
+;
+
+enum IsrParamEnum:
+	CATEGORY | RESOURCE | MESSAGE | PRIORITY | ENTRY | STACKSIZE | SOURCE
+;
+
+MemoryProtectionRule:
+	{MemoryProtectionRule}
+	"MEMORY_PROTECTION" "{" "}" ";"
 ;
 
 Object:
@@ -49,7 +122,8 @@ Object:
    "EVENT" | "ISR" | "MESSAGE" | "COM" | "NM" | 
    "APPMODE" | "IPDU" | "NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" | 
    "SPINLOCK" | "SCHEDULETABLE" | "IOC" | "LIBRARY")
-  ;
+;
+
 ImplementationDef:
    ImplAttrDef | ImplRefDef;
 
@@ -59,7 +133,7 @@ ImplAttrDef:
 ImplAttrIntDef:
    type=IntTypeEnum
    (auto?="WITH_AUTO")? (range=Range)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=Number | default=DefaultEnum))? (":" description=EString)? ";";
+   ("=" (value=Number | default=DefaultEnum))? ";";
 
 enum IntTypeEnum:
    UINT32 | INT32 | UINT64 | INT64;
@@ -67,31 +141,32 @@ enum IntTypeEnum:
 ImplAttrFloatDef:
    "FLOAT"
    (auto?="WITH_AUTO")? (range=Range)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=EFloat | default=DefaultEnum))? (":" description=EString)? ";";
+   ("=" (value=EFloat | default=DefaultEnum))? ";";
 
 ImplAttrEnumDef:
    "ENUM"
    (auto?="WITH_AUTO")? (enumeration=Enumeration)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=Name | default=DefaultEnum))? (":" description=EString)? ";";
+   ("=" (value=Name | default=DefaultEnum))? ";";
 
 ImplAttrStringDef:
    "STRING"
    (auto?="WITH_AUTO")? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=EString | default=DefaultEnum))? (":" description=EString)? ";";
+   ("=" (value=EString | default=DefaultEnum))? ";";
 
 ImplAttrBooleanDef:
    "BOOLEAN"
-   (auto?="WITH_AUTO")? ("[" T_TRUE ("{" (trueParameterList+=ImplementationDef)* "}")?
+   (auto?="WITH_AUTO")? ("[" "TRUE" ("{" (trueParameterList+=ImplementationDef)* "}")?
    (trueDescription=EString)? ","
-   T_FALSE
+   "FALSE"
    ("{" (falseParameterList+=ImplementationDef)* "}")? (falseDescription=EString)? "]")? name=(Name | Object)
    (multiple?=MultipleSpecifier)?
-   ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)? ";";
+   ("=" (value=("TRUE" | "FALSE") | default=DefaultEnum))? ";";
 
 ImplAttrIdentiFier: // possibly change according to implementation grammar.
     "IDENTIFIER"
    (auto?="WITH_AUTO")? name=AttributeName "=" value = ID ";"
 ;
+
 Range:
    "[" (value=Number | begin=Number ".." end=Number | numbers+=Number ("," numbers+=Number)+) "]";
 
@@ -118,10 +193,12 @@ MultipleSpecifier:
    "[" "]";
 
 ApplicationDefinition:
-   "CPU" name=Name "{" (objectDefinitionList+=ObjectDefinition)* "}" (description=EString)? ";";
+   "CPU" name=Name "{" (objectDefinitionList+=ObjectDefinition)* "}" ";";
 
 ObjectDefinition:
    ("LIBRARY" name=Name ("{" (LibraryList += Librayattribute)* "}")? ";" |   
+   	
+   	ApplicationRule |
    object=Object name=Name ("{" (parameterList+=Attribute)* "}")? (descrption=EString)? ";");
 
 Librayattribute :
@@ -135,7 +212,7 @@ Librayattribute :
 object=Object name=Name (BLOCKBEGIN (parameterList+=Attribute
    )* (reObjectDefinition=ReObjectDefinition)* BLOCKEND)? (descrption=EString)? SEMICOLON;
 
-ReObjectDefinition://ì¶”ê?
+ReObjectDefinition://
    reobject=ReObject name=Name (BLOCKBEGIN (parameterList+=Attribute)* BLOCKEND)? (descrption=EString)? SEMICOLON;
 Attribute:
    name=AttributeName "=" value=AttributeValue (description=EString)? SEMICOLON;
@@ -153,10 +230,12 @@ AttributeValue:
    AutoAttributeValue;
 
 NameAttributeValue:
-   value=Name ("{" (parameterList+=Attribute)* "}")?;
+   value=Name
+;
 
 BooleanAttributeValue:
-   value=EBoolean ("{" (parameterList+=Attribute)* "}")?;
+   value=("TRUE" | "FALSE")
+;
 
 NumberAttributeValue:
    value=Number;
@@ -172,15 +251,6 @@ AutoAttributeValue:
 
 EString returns ecore::EString:
    STRING;
-
-EBoolean:
-   T_TRUE | T_FALSE;
-
-terminal T_TRUE:
-   "TRUE";
-
-terminal T_FALSE:
-   "FALSE";
 
 Number returns ecore::EInt:
    T_NUMBER;
@@ -199,6 +269,7 @@ Name returns ecore::EString:
 
 terminal ID:
    ("_" | "a".."z" | "A".."Z") ("_" | "a".."z" | "A".."Z" | "0".."9")*;
+
 terminal FILEID:
    ("_" | "a".."z" | "A".."Z") ("_" | "a".."z" | "A".."Z" | "0".."9")* "."("a".."z" | "A".."Z") ("a".."z" | "A".."Z")*
 ;

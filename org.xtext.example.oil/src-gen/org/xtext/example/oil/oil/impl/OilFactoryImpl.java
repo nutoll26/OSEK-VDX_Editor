@@ -74,7 +74,18 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.OS_RULE: return createOsRule();
       case OilPackage.TASK_RULE: return createTaskRule();
       case OilPackage.COUNTER_RULE: return createCounterRule();
+      case OilPackage.APPLICATION_RULE: return createApplicationRule();
+      case OilPackage.APP_SUB_CONTAINER: return createAppSubContainer();
+      case OilPackage.HAS_RESTART_TASK_RULE: return createHasRestartTaskRule();
+      case OilPackage.RESTART_TASK_RULE: return createRestartTaskRule();
+      case OilPackage.TRUSTED_RULE: return createTrustedRule();
+      case OilPackage.APPLICATION_PARAM: return createApplicationParam();
       case OilPackage.ISR_RULE: return createIsrRule();
+      case OilPackage.ISR_SUB_CONTAINER: return createIsrSubContainer();
+      case OilPackage.TIMING_PROTECTION_RULE: return createTimingProtectionRule();
+      case OilPackage.TIMING_PROTECTION_PARAM: return createTimingProtectionParam();
+      case OilPackage.ISR_PARAM: return createIsrParam();
+      case OilPackage.MEMORY_PROTECTION_RULE: return createMemoryProtectionRule();
       case OilPackage.IMPLEMENTATION_DEF: return createImplementationDef();
       case OilPackage.IMPL_ATTR_DEF: return createImplAttrDef();
       case OilPackage.IMPL_ATTR_INT_DEF: return createImplAttrIntDef();
@@ -114,6 +125,12 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case OilPackage.APPLICATION_PARAM_ENUM:
+        return createApplicationParamEnumFromString(eDataType, initialValue);
+      case OilPackage.TIMING_PROTECTION_PARAM_ENUM:
+        return createTimingProtectionParamEnumFromString(eDataType, initialValue);
+      case OilPackage.ISR_PARAM_ENUM:
+        return createIsrParamEnumFromString(eDataType, initialValue);
       case OilPackage.INT_TYPE_ENUM:
         return createIntTypeEnumFromString(eDataType, initialValue);
       case OilPackage.DEFAULT_ENUM:
@@ -135,6 +152,12 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case OilPackage.APPLICATION_PARAM_ENUM:
+        return convertApplicationParamEnumToString(eDataType, instanceValue);
+      case OilPackage.TIMING_PROTECTION_PARAM_ENUM:
+        return convertTimingProtectionParamEnumToString(eDataType, instanceValue);
+      case OilPackage.ISR_PARAM_ENUM:
+        return convertIsrParamEnumToString(eDataType, instanceValue);
       case OilPackage.INT_TYPE_ENUM:
         return convertIntTypeEnumToString(eDataType, instanceValue);
       case OilPackage.DEFAULT_ENUM:
@@ -239,10 +262,131 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ApplicationRule createApplicationRule()
+  {
+    ApplicationRuleImpl applicationRule = new ApplicationRuleImpl();
+    return applicationRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AppSubContainer createAppSubContainer()
+  {
+    AppSubContainerImpl appSubContainer = new AppSubContainerImpl();
+    return appSubContainer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HasRestartTaskRule createHasRestartTaskRule()
+  {
+    HasRestartTaskRuleImpl hasRestartTaskRule = new HasRestartTaskRuleImpl();
+    return hasRestartTaskRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RestartTaskRule createRestartTaskRule()
+  {
+    RestartTaskRuleImpl restartTaskRule = new RestartTaskRuleImpl();
+    return restartTaskRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TrustedRule createTrustedRule()
+  {
+    TrustedRuleImpl trustedRule = new TrustedRuleImpl();
+    return trustedRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ApplicationParam createApplicationParam()
+  {
+    ApplicationParamImpl applicationParam = new ApplicationParamImpl();
+    return applicationParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IsrRule createIsrRule()
   {
     IsrRuleImpl isrRule = new IsrRuleImpl();
     return isrRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IsrSubContainer createIsrSubContainer()
+  {
+    IsrSubContainerImpl isrSubContainer = new IsrSubContainerImpl();
+    return isrSubContainer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimingProtectionRule createTimingProtectionRule()
+  {
+    TimingProtectionRuleImpl timingProtectionRule = new TimingProtectionRuleImpl();
+    return timingProtectionRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimingProtectionParam createTimingProtectionParam()
+  {
+    TimingProtectionParamImpl timingProtectionParam = new TimingProtectionParamImpl();
+    return timingProtectionParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IsrParam createIsrParam()
+  {
+    IsrParamImpl isrParam = new IsrParamImpl();
+    return isrParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MemoryProtectionRule createMemoryProtectionRule()
+  {
+    MemoryProtectionRuleImpl memoryProtectionRule = new MemoryProtectionRuleImpl();
+    return memoryProtectionRule;
   }
 
   /**
@@ -507,6 +651,72 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     AutoAttributeValueImpl autoAttributeValue = new AutoAttributeValueImpl();
     return autoAttributeValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ApplicationParamEnum createApplicationParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    ApplicationParamEnum result = ApplicationParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertApplicationParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimingProtectionParamEnum createTimingProtectionParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    TimingProtectionParamEnum result = TimingProtectionParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTimingProtectionParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IsrParamEnum createIsrParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    IsrParamEnum result = IsrParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIsrParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.example.oil.oil.OILVersion#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.OILVersion#getVersion <em>Version</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.OILVersion#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface OILVersion extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Version</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Version</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see org.xtext.example.oil.oil.OilPackage#getOILVersion_Value()
+   * @return the value of the '<em>Version</em>' attribute.
+   * @see #setVersion(String)
+   * @see org.xtext.example.oil.oil.OilPackage#getOILVersion_Version()
    * @model
    * @generated
    */
-  String getValue();
+  String getVersion();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.oil.oil.OILVersion#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.oil.oil.OILVersion#getVersion <em>Version</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
+   * @param value the new value of the '<em>Version</em>' attribute.
+   * @see #getVersion()
    * @generated
    */
-  void setValue(String value);
+  void setVersion(String value);
 
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.

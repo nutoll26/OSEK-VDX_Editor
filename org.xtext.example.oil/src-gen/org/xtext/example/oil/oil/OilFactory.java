@@ -96,6 +96,60 @@ public interface OilFactory extends EFactory
   CounterRule createCounterRule();
 
   /**
+   * Returns a new object of class '<em>Application Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Application Rule</em>'.
+   * @generated
+   */
+  ApplicationRule createApplicationRule();
+
+  /**
+   * Returns a new object of class '<em>App Sub Container</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>App Sub Container</em>'.
+   * @generated
+   */
+  AppSubContainer createAppSubContainer();
+
+  /**
+   * Returns a new object of class '<em>Has Restart Task Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Has Restart Task Rule</em>'.
+   * @generated
+   */
+  HasRestartTaskRule createHasRestartTaskRule();
+
+  /**
+   * Returns a new object of class '<em>Restart Task Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Restart Task Rule</em>'.
+   * @generated
+   */
+  RestartTaskRule createRestartTaskRule();
+
+  /**
+   * Returns a new object of class '<em>Trusted Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Trusted Rule</em>'.
+   * @generated
+   */
+  TrustedRule createTrustedRule();
+
+  /**
+   * Returns a new object of class '<em>Application Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Application Param</em>'.
+   * @generated
+   */
+  ApplicationParam createApplicationParam();
+
+  /**
    * Returns a new object of class '<em>Isr Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +157,51 @@ public interface OilFactory extends EFactory
    * @generated
    */
   IsrRule createIsrRule();
+
+  /**
+   * Returns a new object of class '<em>Isr Sub Container</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Isr Sub Container</em>'.
+   * @generated
+   */
+  IsrSubContainer createIsrSubContainer();
+
+  /**
+   * Returns a new object of class '<em>Timing Protection Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Timing Protection Rule</em>'.
+   * @generated
+   */
+  TimingProtectionRule createTimingProtectionRule();
+
+  /**
+   * Returns a new object of class '<em>Timing Protection Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Timing Protection Param</em>'.
+   * @generated
+   */
+  TimingProtectionParam createTimingProtectionParam();
+
+  /**
+   * Returns a new object of class '<em>Isr Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Isr Param</em>'.
+   * @generated
+   */
+  IsrParam createIsrParam();
+
+  /**
+   * Returns a new object of class '<em>Memory Protection Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Memory Protection Rule</em>'.
+   * @generated
+   */
+  MemoryProtectionRule createMemoryProtectionRule();
 
   /**
    * Returns a new object of class '<em>Implementation Def</em>'.

@@ -6,6 +6,35 @@
     copyrightFields="false" runtimeVersion="2.10">
   <genPackages prefix="Oil" basePackage="org.xtext.example.oil" disposableProviderFactory="true"
       fileExtensions="oil" ecorePackage="Oil.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//ApplicationParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/CORE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/ALARM"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/COUNTER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/RESOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/TASK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/ISR"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/SCHEDULETABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/IOC"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/ERRORHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/SHUTDOWNHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ApplicationParamEnum/STARTUPHOOK"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//TimingProtectionParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//TimingProtectionParamEnum/MAXALLINTERRUPTLOCKTIME"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//TimingProtectionParamEnum/MAXOSINTERRUPTLOCKTIME"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//TimingProtectionParamEnum/EXECUTIONTIME"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//TimingProtectionParamEnum/TIMEFRAME"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//IsrParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IsrParamEnum/CATEGORY"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IsrParamEnum/RESOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IsrParamEnum/MESSAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IsrParamEnum/PRIORITY"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IsrParamEnum/ENTRY"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IsrParamEnum/STACKSIZE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IsrParamEnum/SOURCE"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//IntTypeEnum">
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IntTypeEnum/UINT32"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IntTypeEnum/INT32"/>
@@ -48,13 +77,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Include/name"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//OILVersion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OILVersion/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OILVersion/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OILVersion/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplementationDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplementationDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplementationDefinition/implementationSpecs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplementationDefinition/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplementationSpec">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplementationSpec/osRule"/>
@@ -64,20 +92,56 @@
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//OsRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//OsRule/implementations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsRule/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//TaskRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//TaskRule/implementations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TaskRule/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//CounterRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//CounterRule/implementations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//CounterRule/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//ApplicationRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ApplicationRule/appSubOrParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//AppSubContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//AppSubContainer/hasRestartTaskRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//AppSubContainer/trustedRule"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//HasRestartTaskRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//HasRestartTaskRule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//HasRestartTaskRule/restartTaskRule"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//RestartTaskRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//RestartTaskRule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//RestartTaskRule/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//TrustedRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TrustedRule/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//ApplicationParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ApplicationParam/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ApplicationParam/value"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//IsrRule">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IsrRule/implementations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IsrRule/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IsrRule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IsrRule/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IsrRule/isrSubOrParam"/>
     </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IsrSubContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IsrSubContainer/timingProtectionRule"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//TimingProtectionRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TimingProtectionRule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//TimingProtectionRule/timingProtectionParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//TimingProtectionParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TimingProtectionParam/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//TimingProtectionParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IsrParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IsrParam/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IsrParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MemoryProtectionRule"/>
     <genClasses ecoreClass="Oil.ecore#//ImplementationDef"/>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrDef/auto"/>
@@ -89,7 +153,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIntDef/multiple"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIntDef/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIntDef/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrIntDef/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrFloatDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrFloatDef/range"/>
@@ -97,7 +160,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrFloatDef/multiple"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrFloatDef/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrFloatDef/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrFloatDef/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrEnumDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrEnumDef/enumeration"/>
@@ -105,14 +167,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrEnumDef/multiple"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrEnumDef/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrEnumDef/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrEnumDef/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrStringDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrStringDef/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrStringDef/multiple"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrStringDef/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrStringDef/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrStringDef/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrBooleanDef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrBooleanDef/trueParameterList"/>
@@ -123,7 +183,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrBooleanDef/multiple"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrBooleanDef/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrBooleanDef/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ImplAttrBooleanDef/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ImplAttrIdentiFier">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ImplAttrIdentiFier/name"/>
@@ -152,7 +211,6 @@
     <genClasses ecoreClass="Oil.ecore#//ApplicationDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ApplicationDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ApplicationDefinition/objectDefinitionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ApplicationDefinition/description"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//ObjectDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ObjectDefinition/name"/>
@@ -175,11 +233,9 @@
     <genClasses ecoreClass="Oil.ecore#//AttributeValue"/>
     <genClasses ecoreClass="Oil.ecore#//NameAttributeValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//NameAttributeValue/value"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//NameAttributeValue/parameterList"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//BooleanAttributeValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//BooleanAttributeValue/value"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//BooleanAttributeValue/parameterList"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//NumberAttributeValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//NumberAttributeValue/value"/>

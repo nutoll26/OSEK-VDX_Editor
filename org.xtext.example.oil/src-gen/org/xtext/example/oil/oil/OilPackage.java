@@ -152,13 +152,13 @@ public interface OilPackage extends EPackage
   int OIL_VERSION = 2;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Version</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OIL_VERSION__VALUE = 0;
+  int OIL_VERSION__VERSION = 0;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -207,22 +207,13 @@ public interface OilPackage extends EPackage
   int IMPLEMENTATION_DEFINITION__IMPLEMENTATION_SPECS = 1;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPLEMENTATION_DEFINITION__DESCRIPTION = 2;
-
-  /**
    * The number of structural features of the '<em>Implementation Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPLEMENTATION_DEFINITION_FEATURE_COUNT = 3;
+  int IMPLEMENTATION_DEFINITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl <em>Implementation Spec</em>}' class.
@@ -299,22 +290,13 @@ public interface OilPackage extends EPackage
   int OS_RULE__IMPLEMENTATIONS = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OS_RULE__DESCRIPTION = 1;
-
-  /**
    * The number of structural features of the '<em>Os Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OS_RULE_FEATURE_COUNT = 2;
+  int OS_RULE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.TaskRuleImpl <em>Task Rule</em>}' class.
@@ -336,22 +318,13 @@ public interface OilPackage extends EPackage
   int TASK_RULE__IMPLEMENTATIONS = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK_RULE__DESCRIPTION = 1;
-
-  /**
    * The number of structural features of the '<em>Task Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK_RULE_FEATURE_COUNT = 2;
+  int TASK_RULE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.CounterRuleImpl <em>Counter Rule</em>}' class.
@@ -373,22 +346,326 @@ public interface OilPackage extends EPackage
   int COUNTER_RULE__IMPLEMENTATIONS = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COUNTER_RULE__DESCRIPTION = 1;
-
-  /**
    * The number of structural features of the '<em>Counter Rule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COUNTER_RULE_FEATURE_COUNT = 2;
+  int COUNTER_RULE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl <em>Object Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.ObjectDefinitionImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getObjectDefinition()
+   * @generated
+   */
+  int OBJECT_DEFINITION = 33;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DEFINITION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Library List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DEFINITION__LIBRARY_LIST = 1;
+
+  /**
+   * The feature id for the '<em><b>Object</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DEFINITION__OBJECT = 2;
+
+  /**
+   * The feature id for the '<em><b>Parameter List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DEFINITION__PARAMETER_LIST = 3;
+
+  /**
+   * The feature id for the '<em><b>Descrption</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DEFINITION__DESCRPTION = 4;
+
+  /**
+   * The number of structural features of the '<em>Object Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DEFINITION_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ApplicationRuleImpl <em>Application Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.ApplicationRuleImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getApplicationRule()
+   * @generated
+   */
+  int APPLICATION_RULE = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_RULE__NAME = OBJECT_DEFINITION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Library List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_RULE__LIBRARY_LIST = OBJECT_DEFINITION__LIBRARY_LIST;
+
+  /**
+   * The feature id for the '<em><b>Object</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_RULE__OBJECT = OBJECT_DEFINITION__OBJECT;
+
+  /**
+   * The feature id for the '<em><b>Parameter List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_RULE__PARAMETER_LIST = OBJECT_DEFINITION__PARAMETER_LIST;
+
+  /**
+   * The feature id for the '<em><b>Descrption</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_RULE__DESCRPTION = OBJECT_DEFINITION__DESCRPTION;
+
+  /**
+   * The feature id for the '<em><b>App Sub Or Param</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_RULE__APP_SUB_OR_PARAM = OBJECT_DEFINITION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Application Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_RULE_FEATURE_COUNT = OBJECT_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.AppSubContainerImpl <em>App Sub Container</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.AppSubContainerImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getAppSubContainer()
+   * @generated
+   */
+  int APP_SUB_CONTAINER = 9;
+
+  /**
+   * The feature id for the '<em><b>Has Restart Task Rule</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APP_SUB_CONTAINER__HAS_RESTART_TASK_RULE = 0;
+
+  /**
+   * The feature id for the '<em><b>Trusted Rule</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APP_SUB_CONTAINER__TRUSTED_RULE = 1;
+
+  /**
+   * The number of structural features of the '<em>App Sub Container</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APP_SUB_CONTAINER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.HasRestartTaskRuleImpl <em>Has Restart Task Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.HasRestartTaskRuleImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getHasRestartTaskRule()
+   * @generated
+   */
+  int HAS_RESTART_TASK_RULE = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_RESTART_TASK_RULE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Restart Task Rule</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_RESTART_TASK_RULE__RESTART_TASK_RULE = 1;
+
+  /**
+   * The number of structural features of the '<em>Has Restart Task Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_RESTART_TASK_RULE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.RestartTaskRuleImpl <em>Restart Task Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.RestartTaskRuleImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getRestartTaskRule()
+   * @generated
+   */
+  int RESTART_TASK_RULE = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESTART_TASK_RULE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESTART_TASK_RULE__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Restart Task Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESTART_TASK_RULE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.TrustedRuleImpl <em>Trusted Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.TrustedRuleImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTrustedRule()
+   * @generated
+   */
+  int TRUSTED_RULE = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUSTED_RULE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Trusted Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUSTED_RULE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ApplicationParamImpl <em>Application Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.ApplicationParamImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getApplicationParam()
+   * @generated
+   */
+  int APPLICATION_PARAM = 13;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_PARAM__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_PARAM__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Application Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_PARAM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.IsrRuleImpl <em>Isr Rule</em>}' class.
@@ -398,25 +675,34 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIsrRule()
    * @generated
    */
-  int ISR_RULE = 8;
+  int ISR_RULE = 14;
 
   /**
-   * The feature id for the '<em><b>Implementations</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ISR_RULE__IMPLEMENTATIONS = 0;
+  int ISR_RULE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ISR_RULE__DESCRIPTION = 1;
+  int ISR_RULE__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Isr Sub Or Param</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ISR_RULE__ISR_SUB_OR_PARAM = 2;
 
   /**
    * The number of structural features of the '<em>Isr Rule</em>' class.
@@ -425,7 +711,165 @@ public interface OilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ISR_RULE_FEATURE_COUNT = 2;
+  int ISR_RULE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.IsrSubContainerImpl <em>Isr Sub Container</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.IsrSubContainerImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIsrSubContainer()
+   * @generated
+   */
+  int ISR_SUB_CONTAINER = 15;
+
+  /**
+   * The feature id for the '<em><b>Timing Protection Rule</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ISR_SUB_CONTAINER__TIMING_PROTECTION_RULE = 0;
+
+  /**
+   * The number of structural features of the '<em>Isr Sub Container</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ISR_SUB_CONTAINER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.TimingProtectionRuleImpl <em>Timing Protection Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.TimingProtectionRuleImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTimingProtectionRule()
+   * @generated
+   */
+  int TIMING_PROTECTION_RULE = 16;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMING_PROTECTION_RULE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Timing Protection Param</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMING_PROTECTION_RULE__TIMING_PROTECTION_PARAM = 1;
+
+  /**
+   * The number of structural features of the '<em>Timing Protection Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMING_PROTECTION_RULE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.TimingProtectionParamImpl <em>Timing Protection Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.TimingProtectionParamImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTimingProtectionParam()
+   * @generated
+   */
+  int TIMING_PROTECTION_PARAM = 17;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMING_PROTECTION_PARAM__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMING_PROTECTION_PARAM__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Timing Protection Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIMING_PROTECTION_PARAM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.IsrParamImpl <em>Isr Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.IsrParamImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIsrParam()
+   * @generated
+   */
+  int ISR_PARAM = 18;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ISR_PARAM__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ISR_PARAM__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Isr Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ISR_PARAM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.MemoryProtectionRuleImpl <em>Memory Protection Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.impl.MemoryProtectionRuleImpl
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getMemoryProtectionRule()
+   * @generated
+   */
+  int MEMORY_PROTECTION_RULE = 19;
+
+  /**
+   * The number of structural features of the '<em>Memory Protection Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMORY_PROTECTION_RULE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ImplementationDefImpl <em>Implementation Def</em>}' class.
@@ -435,7 +879,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplementationDef()
    * @generated
    */
-  int IMPLEMENTATION_DEF = 9;
+  int IMPLEMENTATION_DEF = 20;
 
   /**
    * The number of structural features of the '<em>Implementation Def</em>' class.
@@ -454,7 +898,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplAttrDef()
    * @generated
    */
-  int IMPL_ATTR_DEF = 10;
+  int IMPL_ATTR_DEF = 21;
 
   /**
    * The feature id for the '<em><b>Auto</b></em>' attribute.
@@ -482,7 +926,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplAttrIntDef()
    * @generated
    */
-  int IMPL_ATTR_INT_DEF = 11;
+  int IMPL_ATTR_INT_DEF = 22;
 
   /**
    * The feature id for the '<em><b>Auto</b></em>' attribute.
@@ -548,22 +992,13 @@ public interface OilPackage extends EPackage
   int IMPL_ATTR_INT_DEF__DEFAULT = IMPL_ATTR_DEF_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPL_ATTR_INT_DEF__DESCRIPTION = IMPL_ATTR_DEF_FEATURE_COUNT + 6;
-
-  /**
    * The number of structural features of the '<em>Impl Attr Int Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPL_ATTR_INT_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 7;
+  int IMPL_ATTR_INT_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ImplAttrFloatDefImpl <em>Impl Attr Float Def</em>}' class.
@@ -573,7 +1008,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplAttrFloatDef()
    * @generated
    */
-  int IMPL_ATTR_FLOAT_DEF = 12;
+  int IMPL_ATTR_FLOAT_DEF = 23;
 
   /**
    * The feature id for the '<em><b>Auto</b></em>' attribute.
@@ -630,22 +1065,13 @@ public interface OilPackage extends EPackage
   int IMPL_ATTR_FLOAT_DEF__DEFAULT = IMPL_ATTR_DEF_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPL_ATTR_FLOAT_DEF__DESCRIPTION = IMPL_ATTR_DEF_FEATURE_COUNT + 5;
-
-  /**
    * The number of structural features of the '<em>Impl Attr Float Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPL_ATTR_FLOAT_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 6;
+  int IMPL_ATTR_FLOAT_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ImplAttrEnumDefImpl <em>Impl Attr Enum Def</em>}' class.
@@ -655,7 +1081,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplAttrEnumDef()
    * @generated
    */
-  int IMPL_ATTR_ENUM_DEF = 13;
+  int IMPL_ATTR_ENUM_DEF = 24;
 
   /**
    * The feature id for the '<em><b>Auto</b></em>' attribute.
@@ -712,22 +1138,13 @@ public interface OilPackage extends EPackage
   int IMPL_ATTR_ENUM_DEF__DEFAULT = IMPL_ATTR_DEF_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPL_ATTR_ENUM_DEF__DESCRIPTION = IMPL_ATTR_DEF_FEATURE_COUNT + 5;
-
-  /**
    * The number of structural features of the '<em>Impl Attr Enum Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPL_ATTR_ENUM_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 6;
+  int IMPL_ATTR_ENUM_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ImplAttrStringDefImpl <em>Impl Attr String Def</em>}' class.
@@ -737,7 +1154,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplAttrStringDef()
    * @generated
    */
-  int IMPL_ATTR_STRING_DEF = 14;
+  int IMPL_ATTR_STRING_DEF = 25;
 
   /**
    * The feature id for the '<em><b>Auto</b></em>' attribute.
@@ -785,22 +1202,13 @@ public interface OilPackage extends EPackage
   int IMPL_ATTR_STRING_DEF__DEFAULT = IMPL_ATTR_DEF_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPL_ATTR_STRING_DEF__DESCRIPTION = IMPL_ATTR_DEF_FEATURE_COUNT + 4;
-
-  /**
    * The number of structural features of the '<em>Impl Attr String Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPL_ATTR_STRING_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 5;
+  int IMPL_ATTR_STRING_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ImplAttrBooleanDefImpl <em>Impl Attr Boolean Def</em>}' class.
@@ -810,7 +1218,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplAttrBooleanDef()
    * @generated
    */
-  int IMPL_ATTR_BOOLEAN_DEF = 15;
+  int IMPL_ATTR_BOOLEAN_DEF = 26;
 
   /**
    * The feature id for the '<em><b>Auto</b></em>' attribute.
@@ -894,22 +1302,13 @@ public interface OilPackage extends EPackage
   int IMPL_ATTR_BOOLEAN_DEF__DEFAULT = IMPL_ATTR_DEF_FEATURE_COUNT + 7;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPL_ATTR_BOOLEAN_DEF__DESCRIPTION = IMPL_ATTR_DEF_FEATURE_COUNT + 8;
-
-  /**
    * The number of structural features of the '<em>Impl Attr Boolean Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPL_ATTR_BOOLEAN_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 9;
+  int IMPL_ATTR_BOOLEAN_DEF_FEATURE_COUNT = IMPL_ATTR_DEF_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ImplAttrIdentiFierImpl <em>Impl Attr Identi Fier</em>}' class.
@@ -919,7 +1318,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplAttrIdentiFier()
    * @generated
    */
-  int IMPL_ATTR_IDENTI_FIER = 16;
+  int IMPL_ATTR_IDENTI_FIER = 27;
 
   /**
    * The feature id for the '<em><b>Auto</b></em>' attribute.
@@ -965,7 +1364,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getRange()
    * @generated
    */
-  int RANGE = 17;
+  int RANGE = 28;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1020,7 +1419,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getEnumeration()
    * @generated
    */
-  int ENUMERATION = 18;
+  int ENUMERATION = 29;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference list.
@@ -1048,7 +1447,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getEnumerator()
    * @generated
    */
-  int ENUMERATOR = 19;
+  int ENUMERATOR = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1094,7 +1493,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getImplRefDef()
    * @generated
    */
-  int IMPL_REF_DEF = 20;
+  int IMPL_REF_DEF = 31;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1149,7 +1548,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getApplicationDefinition()
    * @generated
    */
-  int APPLICATION_DEFINITION = 21;
+  int APPLICATION_DEFINITION = 32;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1170,86 +1569,13 @@ public interface OilPackage extends EPackage
   int APPLICATION_DEFINITION__OBJECT_DEFINITION_LIST = 1;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int APPLICATION_DEFINITION__DESCRIPTION = 2;
-
-  /**
    * The number of structural features of the '<em>Application Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int APPLICATION_DEFINITION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl <em>Object Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.oil.oil.impl.ObjectDefinitionImpl
-   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getObjectDefinition()
-   * @generated
-   */
-  int OBJECT_DEFINITION = 22;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DEFINITION__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Library List</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DEFINITION__LIBRARY_LIST = 1;
-
-  /**
-   * The feature id for the '<em><b>Object</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DEFINITION__OBJECT = 2;
-
-  /**
-   * The feature id for the '<em><b>Parameter List</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DEFINITION__PARAMETER_LIST = 3;
-
-  /**
-   * The feature id for the '<em><b>Descrption</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DEFINITION__DESCRPTION = 4;
-
-  /**
-   * The number of structural features of the '<em>Object Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DEFINITION_FEATURE_COUNT = 5;
+  int APPLICATION_DEFINITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.LibrayattributeImpl <em>Librayattribute</em>}' class.
@@ -1259,7 +1585,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getLibrayattribute()
    * @generated
    */
-  int LIBRAYATTRIBUTE = 23;
+  int LIBRAYATTRIBUTE = 34;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1287,7 +1613,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 24;
+  int ATTRIBUTE = 35;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -1333,7 +1659,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getAttributeName()
    * @generated
    */
-  int ATTRIBUTE_NAME = 25;
+  int ATTRIBUTE_NAME = 36;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1361,7 +1687,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getAttributeValue()
    * @generated
    */
-  int ATTRIBUTE_VALUE = 26;
+  int ATTRIBUTE_VALUE = 37;
 
   /**
    * The number of structural features of the '<em>Attribute Value</em>' class.
@@ -1380,7 +1706,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getNameAttributeValue()
    * @generated
    */
-  int NAME_ATTRIBUTE_VALUE = 27;
+  int NAME_ATTRIBUTE_VALUE = 38;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1392,22 +1718,13 @@ public interface OilPackage extends EPackage
   int NAME_ATTRIBUTE_VALUE__VALUE = ATTRIBUTE_VALUE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Parameter List</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_ATTRIBUTE_VALUE__PARAMETER_LIST = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Name Attribute Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 2;
+  int NAME_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.BooleanAttributeValueImpl <em>Boolean Attribute Value</em>}' class.
@@ -1417,7 +1734,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getBooleanAttributeValue()
    * @generated
    */
-  int BOOLEAN_ATTRIBUTE_VALUE = 28;
+  int BOOLEAN_ATTRIBUTE_VALUE = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1429,22 +1746,13 @@ public interface OilPackage extends EPackage
   int BOOLEAN_ATTRIBUTE_VALUE__VALUE = ATTRIBUTE_VALUE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Parameter List</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_ATTRIBUTE_VALUE__PARAMETER_LIST = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Boolean Attribute Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 2;
+  int BOOLEAN_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.impl.NumberAttributeValueImpl <em>Number Attribute Value</em>}' class.
@@ -1454,7 +1762,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getNumberAttributeValue()
    * @generated
    */
-  int NUMBER_ATTRIBUTE_VALUE = 29;
+  int NUMBER_ATTRIBUTE_VALUE = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1482,7 +1790,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getFloatAttributeValue()
    * @generated
    */
-  int FLOAT_ATTRIBUTE_VALUE = 30;
+  int FLOAT_ATTRIBUTE_VALUE = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1510,7 +1818,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getStringAttributeValue()
    * @generated
    */
-  int STRING_ATTRIBUTE_VALUE = 31;
+  int STRING_ATTRIBUTE_VALUE = 42;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1538,7 +1846,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getAutoAttributeValue()
    * @generated
    */
-  int AUTO_ATTRIBUTE_VALUE = 32;
+  int AUTO_ATTRIBUTE_VALUE = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1559,6 +1867,36 @@ public interface OilPackage extends EPackage
   int AUTO_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.ApplicationParamEnum <em>Application Param Enum</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.ApplicationParamEnum
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getApplicationParamEnum()
+   * @generated
+   */
+  int APPLICATION_PARAM_ENUM = 44;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.TimingProtectionParamEnum <em>Timing Protection Param Enum</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.TimingProtectionParamEnum
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTimingProtectionParamEnum()
+   * @generated
+   */
+  int TIMING_PROTECTION_PARAM_ENUM = 45;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.oil.oil.IsrParamEnum <em>Isr Param Enum</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.oil.oil.IsrParamEnum
+   * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIsrParamEnum()
+   * @generated
+   */
+  int ISR_PARAM_ENUM = 46;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.IntTypeEnum <em>Int Type Enum</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1566,7 +1904,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIntTypeEnum()
    * @generated
    */
-  int INT_TYPE_ENUM = 33;
+  int INT_TYPE_ENUM = 47;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.DefaultEnum <em>Default Enum</em>}' enum.
@@ -1576,7 +1914,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getDefaultEnum()
    * @generated
    */
-  int DEFAULT_ENUM = 34;
+  int DEFAULT_ENUM = 48;
 
   /**
    * The meta object id for the '{@link org.xtext.example.oil.oil.ObjectRefTypeEnum <em>Object Ref Type Enum</em>}' enum.
@@ -1586,7 +1924,7 @@ public interface OilPackage extends EPackage
    * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getObjectRefTypeEnum()
    * @generated
    */
-  int OBJECT_REF_TYPE_ENUM = 35;
+  int OBJECT_REF_TYPE_ENUM = 49;
 
 
   /**
@@ -1675,15 +2013,15 @@ public interface OilPackage extends EPackage
   EClass getOILVersion();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.OILVersion#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.OILVersion#getVersion <em>Version</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.example.oil.oil.OILVersion#getValue()
+   * @return the meta object for the attribute '<em>Version</em>'.
+   * @see org.xtext.example.oil.oil.OILVersion#getVersion()
    * @see #getOILVersion()
    * @generated
    */
-  EAttribute getOILVersion_Value();
+  EAttribute getOILVersion_Version();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.OILVersion#getDescription <em>Description</em>}'.
@@ -1727,17 +2065,6 @@ public interface OilPackage extends EPackage
    * @generated
    */
   EReference getImplementationDefinition_ImplementationSpecs();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ImplementationDefinition#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.ImplementationDefinition#getDescription()
-   * @see #getImplementationDefinition()
-   * @generated
-   */
-  EAttribute getImplementationDefinition_Description();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ImplementationSpec <em>Implementation Spec</em>}'.
@@ -1815,17 +2142,6 @@ public interface OilPackage extends EPackage
   EReference getOsRule_Implementations();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.OsRule#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.OsRule#getDescription()
-   * @see #getOsRule()
-   * @generated
-   */
-  EAttribute getOsRule_Description();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.TaskRule <em>Task Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1845,17 +2161,6 @@ public interface OilPackage extends EPackage
    * @generated
    */
   EReference getTaskRule_Implementations();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.TaskRule#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.TaskRule#getDescription()
-   * @see #getTaskRule()
-   * @generated
-   */
-  EAttribute getTaskRule_Description();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.CounterRule <em>Counter Rule</em>}'.
@@ -1879,15 +2184,174 @@ public interface OilPackage extends EPackage
   EReference getCounterRule_Implementations();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.CounterRule#getDescription <em>Description</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.ApplicationRule <em>Application Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.CounterRule#getDescription()
-   * @see #getCounterRule()
+   * @return the meta object for class '<em>Application Rule</em>'.
+   * @see org.xtext.example.oil.oil.ApplicationRule
    * @generated
    */
-  EAttribute getCounterRule_Description();
+  EClass getApplicationRule();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.oil.oil.ApplicationRule#getAppSubOrParam <em>App Sub Or Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>App Sub Or Param</em>'.
+   * @see org.xtext.example.oil.oil.ApplicationRule#getAppSubOrParam()
+   * @see #getApplicationRule()
+   * @generated
+   */
+  EReference getApplicationRule_AppSubOrParam();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.AppSubContainer <em>App Sub Container</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>App Sub Container</em>'.
+   * @see org.xtext.example.oil.oil.AppSubContainer
+   * @generated
+   */
+  EClass getAppSubContainer();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.AppSubContainer#getHasRestartTaskRule <em>Has Restart Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Has Restart Task Rule</em>'.
+   * @see org.xtext.example.oil.oil.AppSubContainer#getHasRestartTaskRule()
+   * @see #getAppSubContainer()
+   * @generated
+   */
+  EReference getAppSubContainer_HasRestartTaskRule();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.AppSubContainer#getTrustedRule <em>Trusted Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Trusted Rule</em>'.
+   * @see org.xtext.example.oil.oil.AppSubContainer#getTrustedRule()
+   * @see #getAppSubContainer()
+   * @generated
+   */
+  EReference getAppSubContainer_TrustedRule();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.HasRestartTaskRule <em>Has Restart Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Has Restart Task Rule</em>'.
+   * @see org.xtext.example.oil.oil.HasRestartTaskRule
+   * @generated
+   */
+  EClass getHasRestartTaskRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.HasRestartTaskRule#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.oil.oil.HasRestartTaskRule#getName()
+   * @see #getHasRestartTaskRule()
+   * @generated
+   */
+  EAttribute getHasRestartTaskRule_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.HasRestartTaskRule#getRestartTaskRule <em>Restart Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Restart Task Rule</em>'.
+   * @see org.xtext.example.oil.oil.HasRestartTaskRule#getRestartTaskRule()
+   * @see #getHasRestartTaskRule()
+   * @generated
+   */
+  EReference getHasRestartTaskRule_RestartTaskRule();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.RestartTaskRule <em>Restart Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Restart Task Rule</em>'.
+   * @see org.xtext.example.oil.oil.RestartTaskRule
+   * @generated
+   */
+  EClass getRestartTaskRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.RestartTaskRule#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.oil.oil.RestartTaskRule#getName()
+   * @see #getRestartTaskRule()
+   * @generated
+   */
+  EAttribute getRestartTaskRule_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.RestartTaskRule#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.example.oil.oil.RestartTaskRule#getValue()
+   * @see #getRestartTaskRule()
+   * @generated
+   */
+  EReference getRestartTaskRule_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.TrustedRule <em>Trusted Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Trusted Rule</em>'.
+   * @see org.xtext.example.oil.oil.TrustedRule
+   * @generated
+   */
+  EClass getTrustedRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.TrustedRule#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.oil.oil.TrustedRule#getName()
+   * @see #getTrustedRule()
+   * @generated
+   */
+  EAttribute getTrustedRule_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.ApplicationParam <em>Application Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Application Param</em>'.
+   * @see org.xtext.example.oil.oil.ApplicationParam
+   * @generated
+   */
+  EClass getApplicationParam();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ApplicationParam#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.oil.oil.ApplicationParam#getType()
+   * @see #getApplicationParam()
+   * @generated
+   */
+  EAttribute getApplicationParam_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.ApplicationParam#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.example.oil.oil.ApplicationParam#getValue()
+   * @see #getApplicationParam()
+   * @generated
+   */
+  EReference getApplicationParam_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.IsrRule <em>Isr Rule</em>}'.
@@ -1900,26 +2364,164 @@ public interface OilPackage extends EPackage
   EClass getIsrRule();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.oil.oil.IsrRule#getImplementations <em>Implementations</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.IsrRule#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Implementations</em>'.
-   * @see org.xtext.example.oil.oil.IsrRule#getImplementations()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.oil.oil.IsrRule#getName()
    * @see #getIsrRule()
    * @generated
    */
-  EReference getIsrRule_Implementations();
+  EAttribute getIsrRule_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.IsrRule#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.IsrRule#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.IsrRule#getDescription()
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.oil.oil.IsrRule#getType()
    * @see #getIsrRule()
    * @generated
    */
-  EAttribute getIsrRule_Description();
+  EAttribute getIsrRule_Type();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.oil.oil.IsrRule#getIsrSubOrParam <em>Isr Sub Or Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Isr Sub Or Param</em>'.
+   * @see org.xtext.example.oil.oil.IsrRule#getIsrSubOrParam()
+   * @see #getIsrRule()
+   * @generated
+   */
+  EReference getIsrRule_IsrSubOrParam();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.IsrSubContainer <em>Isr Sub Container</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Isr Sub Container</em>'.
+   * @see org.xtext.example.oil.oil.IsrSubContainer
+   * @generated
+   */
+  EClass getIsrSubContainer();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.IsrSubContainer#getTimingProtectionRule <em>Timing Protection Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Timing Protection Rule</em>'.
+   * @see org.xtext.example.oil.oil.IsrSubContainer#getTimingProtectionRule()
+   * @see #getIsrSubContainer()
+   * @generated
+   */
+  EReference getIsrSubContainer_TimingProtectionRule();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.TimingProtectionRule <em>Timing Protection Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Timing Protection Rule</em>'.
+   * @see org.xtext.example.oil.oil.TimingProtectionRule
+   * @generated
+   */
+  EClass getTimingProtectionRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.TimingProtectionRule#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.oil.oil.TimingProtectionRule#getName()
+   * @see #getTimingProtectionRule()
+   * @generated
+   */
+  EAttribute getTimingProtectionRule_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.oil.oil.TimingProtectionRule#getTimingProtectionParam <em>Timing Protection Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Timing Protection Param</em>'.
+   * @see org.xtext.example.oil.oil.TimingProtectionRule#getTimingProtectionParam()
+   * @see #getTimingProtectionRule()
+   * @generated
+   */
+  EReference getTimingProtectionRule_TimingProtectionParam();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.TimingProtectionParam <em>Timing Protection Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Timing Protection Param</em>'.
+   * @see org.xtext.example.oil.oil.TimingProtectionParam
+   * @generated
+   */
+  EClass getTimingProtectionParam();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.TimingProtectionParam#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.oil.oil.TimingProtectionParam#getType()
+   * @see #getTimingProtectionParam()
+   * @generated
+   */
+  EAttribute getTimingProtectionParam_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.TimingProtectionParam#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.example.oil.oil.TimingProtectionParam#getValue()
+   * @see #getTimingProtectionParam()
+   * @generated
+   */
+  EReference getTimingProtectionParam_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.IsrParam <em>Isr Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Isr Param</em>'.
+   * @see org.xtext.example.oil.oil.IsrParam
+   * @generated
+   */
+  EClass getIsrParam();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.IsrParam#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.example.oil.oil.IsrParam#getType()
+   * @see #getIsrParam()
+   * @generated
+   */
+  EAttribute getIsrParam_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.oil.oil.IsrParam#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see org.xtext.example.oil.oil.IsrParam#getValue()
+   * @see #getIsrParam()
+   * @generated
+   */
+  EReference getIsrParam_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.oil.oil.MemoryProtectionRule <em>Memory Protection Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Memory Protection Rule</em>'.
+   * @see org.xtext.example.oil.oil.MemoryProtectionRule
+   * @generated
+   */
+  EClass getMemoryProtectionRule();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ImplementationDef <em>Implementation Def</em>}'.
@@ -2029,17 +2631,6 @@ public interface OilPackage extends EPackage
   EAttribute getImplAttrIntDef_Default();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ImplAttrIntDef#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.ImplAttrIntDef#getDescription()
-   * @see #getImplAttrIntDef()
-   * @generated
-   */
-  EAttribute getImplAttrIntDef_Description();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ImplAttrFloatDef <em>Impl Attr Float Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2103,17 +2694,6 @@ public interface OilPackage extends EPackage
    * @generated
    */
   EAttribute getImplAttrFloatDef_Default();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ImplAttrFloatDef#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.ImplAttrFloatDef#getDescription()
-   * @see #getImplAttrFloatDef()
-   * @generated
-   */
-  EAttribute getImplAttrFloatDef_Description();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ImplAttrEnumDef <em>Impl Attr Enum Def</em>}'.
@@ -2181,17 +2761,6 @@ public interface OilPackage extends EPackage
   EAttribute getImplAttrEnumDef_Default();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ImplAttrEnumDef#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.ImplAttrEnumDef#getDescription()
-   * @see #getImplAttrEnumDef()
-   * @generated
-   */
-  EAttribute getImplAttrEnumDef_Description();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ImplAttrStringDef <em>Impl Attr String Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2244,17 +2813,6 @@ public interface OilPackage extends EPackage
    * @generated
    */
   EAttribute getImplAttrStringDef_Default();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ImplAttrStringDef#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.ImplAttrStringDef#getDescription()
-   * @see #getImplAttrStringDef()
-   * @generated
-   */
-  EAttribute getImplAttrStringDef_Description();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ImplAttrBooleanDef <em>Impl Attr Boolean Def</em>}'.
@@ -2353,17 +2911,6 @@ public interface OilPackage extends EPackage
    * @generated
    */
   EAttribute getImplAttrBooleanDef_Default();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ImplAttrBooleanDef#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.ImplAttrBooleanDef#getDescription()
-   * @see #getImplAttrBooleanDef()
-   * @generated
-   */
-  EAttribute getImplAttrBooleanDef_Description();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ImplAttrIdentiFier <em>Impl Attr Identi Fier</em>}'.
@@ -2602,17 +3149,6 @@ public interface OilPackage extends EPackage
   EReference getApplicationDefinition_ObjectDefinitionList();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.oil.oil.ApplicationDefinition#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.example.oil.oil.ApplicationDefinition#getDescription()
-   * @see #getApplicationDefinition()
-   * @generated
-   */
-  EAttribute getApplicationDefinition_Description();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.ObjectDefinition <em>Object Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2794,17 +3330,6 @@ public interface OilPackage extends EPackage
   EAttribute getNameAttributeValue_Value();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.oil.oil.NameAttributeValue#getParameterList <em>Parameter List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameter List</em>'.
-   * @see org.xtext.example.oil.oil.NameAttributeValue#getParameterList()
-   * @see #getNameAttributeValue()
-   * @generated
-   */
-  EReference getNameAttributeValue_ParameterList();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.BooleanAttributeValue <em>Boolean Attribute Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2824,17 +3349,6 @@ public interface OilPackage extends EPackage
    * @generated
    */
   EAttribute getBooleanAttributeValue_Value();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.oil.oil.BooleanAttributeValue#getParameterList <em>Parameter List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameter List</em>'.
-   * @see org.xtext.example.oil.oil.BooleanAttributeValue#getParameterList()
-   * @see #getBooleanAttributeValue()
-   * @generated
-   */
-  EReference getBooleanAttributeValue_ParameterList();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.oil.oil.NumberAttributeValue <em>Number Attribute Value</em>}'.
@@ -2919,6 +3433,36 @@ public interface OilPackage extends EPackage
    * @generated
    */
   EAttribute getAutoAttributeValue_Value();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.oil.oil.ApplicationParamEnum <em>Application Param Enum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Application Param Enum</em>'.
+   * @see org.xtext.example.oil.oil.ApplicationParamEnum
+   * @generated
+   */
+  EEnum getApplicationParamEnum();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.oil.oil.TimingProtectionParamEnum <em>Timing Protection Param Enum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Timing Protection Param Enum</em>'.
+   * @see org.xtext.example.oil.oil.TimingProtectionParamEnum
+   * @generated
+   */
+  EEnum getTimingProtectionParamEnum();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.example.oil.oil.IsrParamEnum <em>Isr Param Enum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Isr Param Enum</em>'.
+   * @see org.xtext.example.oil.oil.IsrParamEnum
+   * @generated
+   */
+  EEnum getIsrParamEnum();
 
   /**
    * Returns the meta object for enum '{@link org.xtext.example.oil.oil.IntTypeEnum <em>Int Type Enum</em>}'.
@@ -3044,12 +3588,12 @@ public interface OilPackage extends EPackage
     EClass OIL_VERSION = eINSTANCE.getOILVersion();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OIL_VERSION__VALUE = eINSTANCE.getOILVersion_Value();
+    EAttribute OIL_VERSION__VERSION = eINSTANCE.getOILVersion_Version();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -3084,14 +3628,6 @@ public interface OilPackage extends EPackage
      * @generated
      */
     EReference IMPLEMENTATION_DEFINITION__IMPLEMENTATION_SPECS = eINSTANCE.getImplementationDefinition_ImplementationSpecs();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPLEMENTATION_DEFINITION__DESCRIPTION = eINSTANCE.getImplementationDefinition_Description();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ImplementationSpecImpl <em>Implementation Spec</em>}' class.
@@ -3154,14 +3690,6 @@ public interface OilPackage extends EPackage
     EReference OS_RULE__IMPLEMENTATIONS = eINSTANCE.getOsRule_Implementations();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OS_RULE__DESCRIPTION = eINSTANCE.getOsRule_Description();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.TaskRuleImpl <em>Task Rule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3178,14 +3706,6 @@ public interface OilPackage extends EPackage
      * @generated
      */
     EReference TASK_RULE__IMPLEMENTATIONS = eINSTANCE.getTaskRule_Implementations();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK_RULE__DESCRIPTION = eINSTANCE.getTaskRule_Description();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.CounterRuleImpl <em>Counter Rule</em>}' class.
@@ -3206,12 +3726,144 @@ public interface OilPackage extends EPackage
     EReference COUNTER_RULE__IMPLEMENTATIONS = eINSTANCE.getCounterRule_Implementations();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ApplicationRuleImpl <em>Application Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.ApplicationRuleImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getApplicationRule()
+     * @generated
+     */
+    EClass APPLICATION_RULE = eINSTANCE.getApplicationRule();
+
+    /**
+     * The meta object literal for the '<em><b>App Sub Or Param</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COUNTER_RULE__DESCRIPTION = eINSTANCE.getCounterRule_Description();
+    EReference APPLICATION_RULE__APP_SUB_OR_PARAM = eINSTANCE.getApplicationRule_AppSubOrParam();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.AppSubContainerImpl <em>App Sub Container</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.AppSubContainerImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getAppSubContainer()
+     * @generated
+     */
+    EClass APP_SUB_CONTAINER = eINSTANCE.getAppSubContainer();
+
+    /**
+     * The meta object literal for the '<em><b>Has Restart Task Rule</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference APP_SUB_CONTAINER__HAS_RESTART_TASK_RULE = eINSTANCE.getAppSubContainer_HasRestartTaskRule();
+
+    /**
+     * The meta object literal for the '<em><b>Trusted Rule</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference APP_SUB_CONTAINER__TRUSTED_RULE = eINSTANCE.getAppSubContainer_TrustedRule();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.HasRestartTaskRuleImpl <em>Has Restart Task Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.HasRestartTaskRuleImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getHasRestartTaskRule()
+     * @generated
+     */
+    EClass HAS_RESTART_TASK_RULE = eINSTANCE.getHasRestartTaskRule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HAS_RESTART_TASK_RULE__NAME = eINSTANCE.getHasRestartTaskRule_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Restart Task Rule</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HAS_RESTART_TASK_RULE__RESTART_TASK_RULE = eINSTANCE.getHasRestartTaskRule_RestartTaskRule();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.RestartTaskRuleImpl <em>Restart Task Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.RestartTaskRuleImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getRestartTaskRule()
+     * @generated
+     */
+    EClass RESTART_TASK_RULE = eINSTANCE.getRestartTaskRule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESTART_TASK_RULE__NAME = eINSTANCE.getRestartTaskRule_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESTART_TASK_RULE__VALUE = eINSTANCE.getRestartTaskRule_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.TrustedRuleImpl <em>Trusted Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.TrustedRuleImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTrustedRule()
+     * @generated
+     */
+    EClass TRUSTED_RULE = eINSTANCE.getTrustedRule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRUSTED_RULE__NAME = eINSTANCE.getTrustedRule_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ApplicationParamImpl <em>Application Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.ApplicationParamImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getApplicationParam()
+     * @generated
+     */
+    EClass APPLICATION_PARAM = eINSTANCE.getApplicationParam();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute APPLICATION_PARAM__TYPE = eINSTANCE.getApplicationParam_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference APPLICATION_PARAM__VALUE = eINSTANCE.getApplicationParam_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.IsrRuleImpl <em>Isr Rule</em>}' class.
@@ -3224,20 +3876,134 @@ public interface OilPackage extends EPackage
     EClass ISR_RULE = eINSTANCE.getIsrRule();
 
     /**
-     * The meta object literal for the '<em><b>Implementations</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ISR_RULE__IMPLEMENTATIONS = eINSTANCE.getIsrRule_Implementations();
+    EAttribute ISR_RULE__NAME = eINSTANCE.getIsrRule_Name();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ISR_RULE__DESCRIPTION = eINSTANCE.getIsrRule_Description();
+    EAttribute ISR_RULE__TYPE = eINSTANCE.getIsrRule_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Isr Sub Or Param</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ISR_RULE__ISR_SUB_OR_PARAM = eINSTANCE.getIsrRule_IsrSubOrParam();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.IsrSubContainerImpl <em>Isr Sub Container</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.IsrSubContainerImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIsrSubContainer()
+     * @generated
+     */
+    EClass ISR_SUB_CONTAINER = eINSTANCE.getIsrSubContainer();
+
+    /**
+     * The meta object literal for the '<em><b>Timing Protection Rule</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ISR_SUB_CONTAINER__TIMING_PROTECTION_RULE = eINSTANCE.getIsrSubContainer_TimingProtectionRule();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.TimingProtectionRuleImpl <em>Timing Protection Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.TimingProtectionRuleImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTimingProtectionRule()
+     * @generated
+     */
+    EClass TIMING_PROTECTION_RULE = eINSTANCE.getTimingProtectionRule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TIMING_PROTECTION_RULE__NAME = eINSTANCE.getTimingProtectionRule_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Timing Protection Param</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TIMING_PROTECTION_RULE__TIMING_PROTECTION_PARAM = eINSTANCE.getTimingProtectionRule_TimingProtectionParam();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.TimingProtectionParamImpl <em>Timing Protection Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.TimingProtectionParamImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTimingProtectionParam()
+     * @generated
+     */
+    EClass TIMING_PROTECTION_PARAM = eINSTANCE.getTimingProtectionParam();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TIMING_PROTECTION_PARAM__TYPE = eINSTANCE.getTimingProtectionParam_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TIMING_PROTECTION_PARAM__VALUE = eINSTANCE.getTimingProtectionParam_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.IsrParamImpl <em>Isr Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.IsrParamImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIsrParam()
+     * @generated
+     */
+    EClass ISR_PARAM = eINSTANCE.getIsrParam();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ISR_PARAM__TYPE = eINSTANCE.getIsrParam_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ISR_PARAM__VALUE = eINSTANCE.getIsrParam_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.MemoryProtectionRuleImpl <em>Memory Protection Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.impl.MemoryProtectionRuleImpl
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getMemoryProtectionRule()
+     * @generated
+     */
+    EClass MEMORY_PROTECTION_RULE = eINSTANCE.getMemoryProtectionRule();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ImplementationDefImpl <em>Implementation Def</em>}' class.
@@ -3326,14 +4092,6 @@ public interface OilPackage extends EPackage
     EAttribute IMPL_ATTR_INT_DEF__DEFAULT = eINSTANCE.getImplAttrIntDef_Default();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPL_ATTR_INT_DEF__DESCRIPTION = eINSTANCE.getImplAttrIntDef_Description();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ImplAttrFloatDefImpl <em>Impl Attr Float Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3382,14 +4140,6 @@ public interface OilPackage extends EPackage
      * @generated
      */
     EAttribute IMPL_ATTR_FLOAT_DEF__DEFAULT = eINSTANCE.getImplAttrFloatDef_Default();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPL_ATTR_FLOAT_DEF__DESCRIPTION = eINSTANCE.getImplAttrFloatDef_Description();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ImplAttrEnumDefImpl <em>Impl Attr Enum Def</em>}' class.
@@ -3442,14 +4192,6 @@ public interface OilPackage extends EPackage
     EAttribute IMPL_ATTR_ENUM_DEF__DEFAULT = eINSTANCE.getImplAttrEnumDef_Default();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPL_ATTR_ENUM_DEF__DESCRIPTION = eINSTANCE.getImplAttrEnumDef_Description();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ImplAttrStringDefImpl <em>Impl Attr String Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3490,14 +4232,6 @@ public interface OilPackage extends EPackage
      * @generated
      */
     EAttribute IMPL_ATTR_STRING_DEF__DEFAULT = eINSTANCE.getImplAttrStringDef_Default();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPL_ATTR_STRING_DEF__DESCRIPTION = eINSTANCE.getImplAttrStringDef_Description();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ImplAttrBooleanDefImpl <em>Impl Attr Boolean Def</em>}' class.
@@ -3572,14 +4306,6 @@ public interface OilPackage extends EPackage
      * @generated
      */
     EAttribute IMPL_ATTR_BOOLEAN_DEF__DEFAULT = eINSTANCE.getImplAttrBooleanDef_Default();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPL_ATTR_BOOLEAN_DEF__DESCRIPTION = eINSTANCE.getImplAttrBooleanDef_Description();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ImplAttrIdentiFierImpl <em>Impl Attr Identi Fier</em>}' class.
@@ -3770,14 +4496,6 @@ public interface OilPackage extends EPackage
     EReference APPLICATION_DEFINITION__OBJECT_DEFINITION_LIST = eINSTANCE.getApplicationDefinition_ObjectDefinitionList();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute APPLICATION_DEFINITION__DESCRIPTION = eINSTANCE.getApplicationDefinition_Description();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.ObjectDefinitionImpl <em>Object Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3926,14 +4644,6 @@ public interface OilPackage extends EPackage
     EAttribute NAME_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getNameAttributeValue_Value();
 
     /**
-     * The meta object literal for the '<em><b>Parameter List</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_ATTRIBUTE_VALUE__PARAMETER_LIST = eINSTANCE.getNameAttributeValue_ParameterList();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.BooleanAttributeValueImpl <em>Boolean Attribute Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3950,14 +4660,6 @@ public interface OilPackage extends EPackage
      * @generated
      */
     EAttribute BOOLEAN_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getBooleanAttributeValue_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Parameter List</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BOOLEAN_ATTRIBUTE_VALUE__PARAMETER_LIST = eINSTANCE.getBooleanAttributeValue_ParameterList();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.impl.NumberAttributeValueImpl <em>Number Attribute Value</em>}' class.
@@ -4030,6 +4732,36 @@ public interface OilPackage extends EPackage
      * @generated
      */
     EAttribute AUTO_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getAutoAttributeValue_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.ApplicationParamEnum <em>Application Param Enum</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.ApplicationParamEnum
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getApplicationParamEnum()
+     * @generated
+     */
+    EEnum APPLICATION_PARAM_ENUM = eINSTANCE.getApplicationParamEnum();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.TimingProtectionParamEnum <em>Timing Protection Param Enum</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.TimingProtectionParamEnum
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getTimingProtectionParamEnum()
+     * @generated
+     */
+    EEnum TIMING_PROTECTION_PARAM_ENUM = eINSTANCE.getTimingProtectionParamEnum();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.oil.oil.IsrParamEnum <em>Isr Param Enum</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.oil.oil.IsrParamEnum
+     * @see org.xtext.example.oil.oil.impl.OilPackageImpl#getIsrParamEnum()
+     * @generated
+     */
+    EEnum ISR_PARAM_ENUM = eINSTANCE.getIsrParamEnum();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.oil.oil.IntTypeEnum <em>Int Type Enum</em>}' enum.

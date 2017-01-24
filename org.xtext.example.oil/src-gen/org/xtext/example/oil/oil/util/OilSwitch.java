@@ -129,10 +129,88 @@ public class OilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case OilPackage.APPLICATION_RULE:
+      {
+        ApplicationRule applicationRule = (ApplicationRule)theEObject;
+        T result = caseApplicationRule(applicationRule);
+        if (result == null) result = caseObjectDefinition(applicationRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.APP_SUB_CONTAINER:
+      {
+        AppSubContainer appSubContainer = (AppSubContainer)theEObject;
+        T result = caseAppSubContainer(appSubContainer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.HAS_RESTART_TASK_RULE:
+      {
+        HasRestartTaskRule hasRestartTaskRule = (HasRestartTaskRule)theEObject;
+        T result = caseHasRestartTaskRule(hasRestartTaskRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.RESTART_TASK_RULE:
+      {
+        RestartTaskRule restartTaskRule = (RestartTaskRule)theEObject;
+        T result = caseRestartTaskRule(restartTaskRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.TRUSTED_RULE:
+      {
+        TrustedRule trustedRule = (TrustedRule)theEObject;
+        T result = caseTrustedRule(trustedRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.APPLICATION_PARAM:
+      {
+        ApplicationParam applicationParam = (ApplicationParam)theEObject;
+        T result = caseApplicationParam(applicationParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case OilPackage.ISR_RULE:
       {
         IsrRule isrRule = (IsrRule)theEObject;
         T result = caseIsrRule(isrRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.ISR_SUB_CONTAINER:
+      {
+        IsrSubContainer isrSubContainer = (IsrSubContainer)theEObject;
+        T result = caseIsrSubContainer(isrSubContainer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.TIMING_PROTECTION_RULE:
+      {
+        TimingProtectionRule timingProtectionRule = (TimingProtectionRule)theEObject;
+        T result = caseTimingProtectionRule(timingProtectionRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.TIMING_PROTECTION_PARAM:
+      {
+        TimingProtectionParam timingProtectionParam = (TimingProtectionParam)theEObject;
+        T result = caseTimingProtectionParam(timingProtectionParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.ISR_PARAM:
+      {
+        IsrParam isrParam = (IsrParam)theEObject;
+        T result = caseIsrParam(isrParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MEMORY_PROTECTION_RULE:
+      {
+        MemoryProtectionRule memoryProtectionRule = (MemoryProtectionRule)theEObject;
+        T result = caseMemoryProtectionRule(memoryProtectionRule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -457,6 +535,102 @@ public class OilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Application Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Application Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseApplicationRule(ApplicationRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>App Sub Container</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>App Sub Container</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAppSubContainer(AppSubContainer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Has Restart Task Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Has Restart Task Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHasRestartTaskRule(HasRestartTaskRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Restart Task Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Restart Task Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRestartTaskRule(RestartTaskRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Trusted Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Trusted Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTrustedRule(TrustedRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Application Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Application Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseApplicationParam(ApplicationParam object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Isr Rule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -468,6 +642,86 @@ public class OilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIsrRule(IsrRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Isr Sub Container</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Isr Sub Container</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIsrSubContainer(IsrSubContainer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Timing Protection Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Timing Protection Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTimingProtectionRule(TimingProtectionRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Timing Protection Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Timing Protection Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTimingProtectionParam(TimingProtectionParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Isr Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Isr Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIsrParam(IsrParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Memory Protection Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Memory Protection Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMemoryProtectionRule(MemoryProtectionRule object)
   {
     return null;
   }

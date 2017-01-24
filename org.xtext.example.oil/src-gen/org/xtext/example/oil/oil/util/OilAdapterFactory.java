@@ -116,9 +116,64 @@ public class OilAdapterFactory extends AdapterFactoryImpl
         return createCounterRuleAdapter();
       }
       @Override
+      public Adapter caseApplicationRule(ApplicationRule object)
+      {
+        return createApplicationRuleAdapter();
+      }
+      @Override
+      public Adapter caseAppSubContainer(AppSubContainer object)
+      {
+        return createAppSubContainerAdapter();
+      }
+      @Override
+      public Adapter caseHasRestartTaskRule(HasRestartTaskRule object)
+      {
+        return createHasRestartTaskRuleAdapter();
+      }
+      @Override
+      public Adapter caseRestartTaskRule(RestartTaskRule object)
+      {
+        return createRestartTaskRuleAdapter();
+      }
+      @Override
+      public Adapter caseTrustedRule(TrustedRule object)
+      {
+        return createTrustedRuleAdapter();
+      }
+      @Override
+      public Adapter caseApplicationParam(ApplicationParam object)
+      {
+        return createApplicationParamAdapter();
+      }
+      @Override
       public Adapter caseIsrRule(IsrRule object)
       {
         return createIsrRuleAdapter();
+      }
+      @Override
+      public Adapter caseIsrSubContainer(IsrSubContainer object)
+      {
+        return createIsrSubContainerAdapter();
+      }
+      @Override
+      public Adapter caseTimingProtectionRule(TimingProtectionRule object)
+      {
+        return createTimingProtectionRuleAdapter();
+      }
+      @Override
+      public Adapter caseTimingProtectionParam(TimingProtectionParam object)
+      {
+        return createTimingProtectionParamAdapter();
+      }
+      @Override
+      public Adapter caseIsrParam(IsrParam object)
+      {
+        return createIsrParamAdapter();
+      }
+      @Override
+      public Adapter caseMemoryProtectionRule(MemoryProtectionRule object)
+      {
+        return createMemoryProtectionRuleAdapter();
       }
       @Override
       public Adapter caseImplementationDef(ImplementationDef object)
@@ -383,6 +438,96 @@ public class OilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ApplicationRule <em>Application Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ApplicationRule
+   * @generated
+   */
+  public Adapter createApplicationRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.AppSubContainer <em>App Sub Container</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.AppSubContainer
+   * @generated
+   */
+  public Adapter createAppSubContainerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.HasRestartTaskRule <em>Has Restart Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.HasRestartTaskRule
+   * @generated
+   */
+  public Adapter createHasRestartTaskRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.RestartTaskRule <em>Restart Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.RestartTaskRule
+   * @generated
+   */
+  public Adapter createRestartTaskRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TrustedRule <em>Trusted Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.TrustedRule
+   * @generated
+   */
+  public Adapter createTrustedRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ApplicationParam <em>Application Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ApplicationParam
+   * @generated
+   */
+  public Adapter createApplicationParamAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IsrRule <em>Isr Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -393,6 +538,81 @@ public class OilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIsrRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IsrSubContainer <em>Isr Sub Container</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IsrSubContainer
+   * @generated
+   */
+  public Adapter createIsrSubContainerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TimingProtectionRule <em>Timing Protection Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.TimingProtectionRule
+   * @generated
+   */
+  public Adapter createTimingProtectionRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TimingProtectionParam <em>Timing Protection Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.TimingProtectionParam
+   * @generated
+   */
+  public Adapter createTimingProtectionParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IsrParam <em>Isr Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IsrParam
+   * @generated
+   */
+  public Adapter createIsrParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MemoryProtectionRule <em>Memory Protection Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MemoryProtectionRule
+   * @generated
+   */
+  public Adapter createMemoryProtectionRuleAdapter()
   {
     return null;
   }

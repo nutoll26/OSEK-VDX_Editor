@@ -10,6 +10,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
@@ -22,37 +23,33 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected OilGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Attribute_EqualsSignKeyword_1_q;
-	protected AbstractElementAlias match_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
 	protected AbstractElementAlias match_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
 	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q;
 	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q;
-	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q;
-	protected AbstractElementAlias match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
+	protected AbstractElementAlias match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_TRUEKeyword_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_FALSEKeyword_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q;
 	protected AbstractElementAlias match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q;
-	protected AbstractElementAlias match_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q;
+	protected AbstractElementAlias match_ObjectDefinition___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q;
+	protected AbstractElementAlias match_TimingProtectionRule_FALSEKeyword_4_1_or___TRUEKeyword_4_0_0_LeftCurlyBracketKeyword_4_0_1_RightCurlyBracketKeyword_4_0_3__;
+	protected AbstractElementAlias match_TrustedRule_FALSEKeyword_4_1_or_TRUEKeyword_4_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (OilGrammarAccess) access;
 		match_Attribute_EqualsSignKeyword_1_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getEqualsSignKeyword_1());
-		match_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBooleanAttributeValueAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getBooleanAttributeValueAccess().getRightCurlyBracketKeyword_1_2()));
 		match_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEnumeratorAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getEnumeratorAccess().getRightCurlyBracketKeyword_1_2()));
 		match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_2_2()));
 		match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_6_2()));
-		match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftSquareBracketKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getT_TRUETerminalRuleCall_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_2_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getCommaKeyword_2_4()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getT_FALSETerminalRuleCall_2_5()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_6_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightSquareBracketKeyword_2_8()));
-		match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getRightCurlyBracketKeyword_1_2()));
+		match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_TRUEKeyword_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_FALSEKeyword_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftSquareBracketKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getTRUEKeyword_2_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_2_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getCommaKeyword_2_4()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getFALSEKeyword_2_5()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getLeftCurlyBracketKeyword_2_6_0()), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightCurlyBracketKeyword_2_6_2())), new TokenAlias(false, false, grammarAccess.getImplAttrBooleanDefAccess().getRightSquareBracketKeyword_2_8()));
 		match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getLeftCurlyBracketKeyword_0_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getRightCurlyBracketKeyword_0_2_2()));
-		match_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getLeftCurlyBracketKeyword_1_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getRightCurlyBracketKeyword_1_2_2()));
+		match_ObjectDefinition___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getLeftCurlyBracketKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getRightCurlyBracketKeyword_2_2_2()));
+		match_TimingProtectionRule_FALSEKeyword_4_1_or___TRUEKeyword_4_0_0_LeftCurlyBracketKeyword_4_0_1_RightCurlyBracketKeyword_4_0_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimingProtectionRuleAccess().getTRUEKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getTimingProtectionRuleAccess().getLeftCurlyBracketKeyword_4_0_1()), new TokenAlias(false, false, grammarAccess.getTimingProtectionRuleAccess().getRightCurlyBracketKeyword_4_0_3())), new TokenAlias(false, false, grammarAccess.getTimingProtectionRuleAccess().getFALSEKeyword_4_1()));
+		match_TrustedRule_FALSEKeyword_4_1_or_TRUEKeyword_4_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTrustedRuleAccess().getFALSEKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getTrustedRuleAccess().getTRUEKeyword_4_0()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getMultipleSpecifierRule())
 			return getMultipleSpecifierToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getT_FALSERule())
-			return getT_FALSEToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getT_TRUERule())
-			return getT_TRUEToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -66,26 +63,6 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "[]";
 	}
 	
-	/**
-	 * terminal T_FALSE:
-	 *    "FALSE";
-	 */
-	protected String getT_FALSEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "FALSE";
-	}
-	
-	/**
-	 * terminal T_TRUE:
-	 *    "TRUE";
-	 */
-	protected String getT_TRUEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "TRUE";
-	}
-	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
@@ -94,22 +71,22 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Attribute_EqualsSignKeyword_1_q.equals(syntax))
 				emit_Attribute_EqualsSignKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
-				emit_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
 				emit_Enumerator___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q.equals(syntax))
 				emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q.equals(syntax))
 				emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q.equals(syntax))
-				emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
-				emit_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_TRUEKeyword_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_FALSEKeyword_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q.equals(syntax))
+				emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_TRUEKeyword_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_FALSEKeyword_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q.equals(syntax))
 				emit_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q.equals(syntax))
-				emit_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ObjectDefinition___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q.equals(syntax))
+				emit_ObjectDefinition___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimingProtectionRule_FALSEKeyword_4_1_or___TRUEKeyword_4_0_0_LeftCurlyBracketKeyword_4_0_1_RightCurlyBracketKeyword_4_0_3__.equals(syntax))
+				emit_TimingProtectionRule_FALSEKeyword_4_1_or___TRUEKeyword_4_0_0_LeftCurlyBracketKeyword_4_0_1_RightCurlyBracketKeyword_4_0_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TrustedRule_FALSEKeyword_4_1_or_TRUEKeyword_4_0.equals(syntax))
+				emit_TrustedRule_FALSEKeyword_4_1_or_TRUEKeyword_4_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -130,17 +107,6 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     value=EBoolean (ambiguity) (rule end)
-	 */
-	protected void emit_BooleanAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('{' '}')?
-	 *
-	 * This ambiguous syntax occurs at:
 	 *     name=Name (ambiguity) (rule end)
 	 *     name=Name (ambiguity) description=EString
 	 */
@@ -153,12 +119,12 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) ',' T_FALSE '{' falseParameterList+=ImplementationDef
-	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) ',' T_FALSE ('{' '}')? falseDescription=EString
-	 *     (rule start) 'BOOLEAN' '[' T_TRUE (ambiguity) trueDescription=EString
-	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) ',' T_FALSE '{' falseParameterList+=ImplementationDef
-	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) ',' T_FALSE ('{' '}')? falseDescription=EString
-	 *     auto?='WITH_AUTO' '[' T_TRUE (ambiguity) trueDescription=EString
+	 *     (rule start) 'BOOLEAN' '[' 'TRUE' (ambiguity) ',' 'FALSE' '{' falseParameterList+=ImplementationDef
+	 *     (rule start) 'BOOLEAN' '[' 'TRUE' (ambiguity) ',' 'FALSE' ('{' '}')? falseDescription=EString
+	 *     (rule start) 'BOOLEAN' '[' 'TRUE' (ambiguity) trueDescription=EString
+	 *     auto?='WITH_AUTO' '[' 'TRUE' (ambiguity) ',' 'FALSE' '{' falseParameterList+=ImplementationDef
+	 *     auto?='WITH_AUTO' '[' 'TRUE' (ambiguity) ',' 'FALSE' ('{' '}')? falseDescription=EString
+	 *     auto?='WITH_AUTO' '[' 'TRUE' (ambiguity) trueDescription=EString
 	 */
 	protected void emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -169,14 +135,14 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'BOOLEAN' '[' T_TRUE ('{' '}')? ',' T_FALSE (ambiguity) falseDescription=EString
-	 *     auto?='WITH_AUTO' '[' T_TRUE ('{' '}')? ',' T_FALSE (ambiguity) falseDescription=EString
-	 *     trueDescription=EString ',' T_FALSE (ambiguity) ']' name=Name
-	 *     trueDescription=EString ',' T_FALSE (ambiguity) ']' name=Object
-	 *     trueDescription=EString ',' T_FALSE (ambiguity) falseDescription=EString
-	 *     trueParameterList+=ImplementationDef '}' ',' T_FALSE (ambiguity) ']' name=Name
-	 *     trueParameterList+=ImplementationDef '}' ',' T_FALSE (ambiguity) ']' name=Object
-	 *     trueParameterList+=ImplementationDef '}' ',' T_FALSE (ambiguity) falseDescription=EString
+	 *     (rule start) 'BOOLEAN' '[' 'TRUE' ('{' '}')? ',' 'FALSE' (ambiguity) falseDescription=EString
+	 *     auto?='WITH_AUTO' '[' 'TRUE' ('{' '}')? ',' 'FALSE' (ambiguity) falseDescription=EString
+	 *     trueDescription=EString ',' 'FALSE' (ambiguity) ']' name=Name
+	 *     trueDescription=EString ',' 'FALSE' (ambiguity) ']' name=Object
+	 *     trueDescription=EString ',' 'FALSE' (ambiguity) falseDescription=EString
+	 *     trueParameterList+=ImplementationDef '}' ',' 'FALSE' (ambiguity) ']' name=Name
+	 *     trueParameterList+=ImplementationDef '}' ',' 'FALSE' (ambiguity) ']' name=Object
+	 *     trueParameterList+=ImplementationDef '}' ',' 'FALSE' (ambiguity) falseDescription=EString
 	 */
 	protected void emit_ImplAttrBooleanDef___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -186,10 +152,10 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Ambiguous syntax:
 	 *     (
 	  *         '[' 
-	  *         T_TRUE 
+	  *         'TRUE' 
 	  *         ('{' '}')? 
 	  *         ',' 
-	  *         T_FALSE 
+	  *         'FALSE' 
 	  *         ('{' '}')? 
 	  *         ']'
 	  *     )?
@@ -200,18 +166,7 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     auto?='WITH_AUTO' (ambiguity) name=Name
 	 *     auto?='WITH_AUTO' (ambiguity) name=Object
 	 */
-	protected void emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_T_TRUETerminalRuleCall_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_T_FALSETerminalRuleCall_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('{' '}')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     value=Name (ambiguity) (rule end)
-	 */
-	protected void emit_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ImplAttrBooleanDef___LeftSquareBracketKeyword_2_0_TRUEKeyword_2_1___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q_CommaKeyword_2_4_FALSEKeyword_2_5___LeftCurlyBracketKeyword_2_6_0_RightCurlyBracketKeyword_2_6_2__q_RightSquareBracketKeyword_2_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -234,7 +189,31 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=Name (ambiguity) ';' (rule end)
 	 *     name=Name (ambiguity) descrption=EString
 	 */
-	protected void emit_ObjectDefinition___LeftCurlyBracketKeyword_1_2_0_RightCurlyBracketKeyword_1_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ObjectDefinition___LeftCurlyBracketKeyword_2_2_0_RightCurlyBracketKeyword_2_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('TRUE' '{' '}') | 'FALSE'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'TIMING_PROTECTION' '=' (ambiguity) ';' (rule start)
+	 *     name=Name '=' (ambiguity) ';' (rule end)
+	 */
+	protected void emit_TimingProtectionRule_FALSEKeyword_4_1_or___TRUEKeyword_4_0_0_LeftCurlyBracketKeyword_4_0_1_RightCurlyBracketKeyword_4_0_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'TRUE' | 'FALSE'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'TRUSTED' '=' (ambiguity) ';' (rule start)
+	 *     name=Name '=' (ambiguity) ';' (rule end)
+	 */
+	protected void emit_TrustedRule_FALSEKeyword_4_1_or_TRUEKeyword_4_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
