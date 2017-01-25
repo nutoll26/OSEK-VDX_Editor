@@ -101,19 +101,34 @@ public class OilAdapterFactory extends AdapterFactoryImpl
         return createImplementationSpecAdapter();
       }
       @Override
-      public Adapter caseOsRule(OsRule object)
+      public Adapter caseImpTaskRule(ImpTaskRule object)
       {
-        return createOsRuleAdapter();
+        return createImpTaskRuleAdapter();
       }
       @Override
-      public Adapter caseTaskRule(TaskRule object)
+      public Adapter caseImpTaskParam(ImpTaskParam object)
       {
-        return createTaskRuleAdapter();
+        return createImpTaskParamAdapter();
       }
       @Override
-      public Adapter caseCounterRule(CounterRule object)
+      public Adapter caseImpOsRule(ImpOsRule object)
       {
-        return createCounterRuleAdapter();
+        return createImpOsRuleAdapter();
+      }
+      @Override
+      public Adapter caseImpOsParam(ImpOsParam object)
+      {
+        return createImpOsParamAdapter();
+      }
+      @Override
+      public Adapter caseImpCounterRule(ImpCounterRule object)
+      {
+        return createImpCounterRuleAdapter();
+      }
+      @Override
+      public Adapter caseImpCounterParam(ImpCounterParam object)
+      {
+        return createImpCounterParamAdapter();
       }
       @Override
       public Adapter caseApplicationRule(ApplicationRule object)
@@ -124,6 +139,11 @@ public class OilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAppSubContainer(AppSubContainer object)
       {
         return createAppSubContainerAdapter();
+      }
+      @Override
+      public Adapter caseApplicationParam(ApplicationParam object)
+      {
+        return createApplicationParamAdapter();
       }
       @Override
       public Adapter caseHasRestartTaskRule(HasRestartTaskRule object)
@@ -141,9 +161,9 @@ public class OilAdapterFactory extends AdapterFactoryImpl
         return createTrustedRuleAdapter();
       }
       @Override
-      public Adapter caseApplicationParam(ApplicationParam object)
+      public Adapter caseTrustedFucRule(TrustedFucRule object)
       {
-        return createApplicationParamAdapter();
+        return createTrustedFucRuleAdapter();
       }
       @Override
       public Adapter caseIsrRule(IsrRule object)
@@ -251,6 +271,126 @@ public class OilAdapterFactory extends AdapterFactoryImpl
         return createLibrayattributeAdapter();
       }
       @Override
+      public Adapter caseComRule(ComRule object)
+      {
+        return createComRuleAdapter();
+      }
+      @Override
+      public Adapter caseComattribute(Comattribute object)
+      {
+        return createComattributeAdapter();
+      }
+      @Override
+      public Adapter caseTaskRule(TaskRule object)
+      {
+        return createTaskRuleAdapter();
+      }
+      @Override
+      public Adapter caseTaskattribute(Taskattribute object)
+      {
+        return createTaskattributeAdapter();
+      }
+      @Override
+      public Adapter caseTaskTimingAttribute(TaskTimingAttribute object)
+      {
+        return createTaskTimingAttributeAdapter();
+      }
+      @Override
+      public Adapter caseTaskAutostartAttribute(TaskAutostartAttribute object)
+      {
+        return createTaskAutostartAttributeAdapter();
+      }
+      @Override
+      public Adapter caseResourceRule(ResourceRule object)
+      {
+        return createResourceRuleAdapter();
+      }
+      @Override
+      public Adapter caseResourceattribute(Resourceattribute object)
+      {
+        return createResourceattributeAdapter();
+      }
+      @Override
+      public Adapter caseAlarmRule(AlarmRule object)
+      {
+        return createAlarmRuleAdapter();
+      }
+      @Override
+      public Adapter caseAlarmAttribute(AlarmAttribute object)
+      {
+        return createAlarmAttributeAdapter();
+      }
+      @Override
+      public Adapter caseAlarmActionAttribute(AlarmActionAttribute object)
+      {
+        return createAlarmActionAttributeAdapter();
+      }
+      @Override
+      public Adapter caseAlarmAutostartAttribute(AlarmAutostartAttribute object)
+      {
+        return createAlarmAutostartAttributeAdapter();
+      }
+      @Override
+      public Adapter caseScheduleTableRule(ScheduleTableRule object)
+      {
+        return createScheduleTableRuleAdapter();
+      }
+      @Override
+      public Adapter caseScheduleTableAttribute(ScheduleTableAttribute object)
+      {
+        return createScheduleTableAttributeAdapter();
+      }
+      @Override
+      public Adapter caseScheduleAutoStartAttribute(ScheduleAutoStartAttribute object)
+      {
+        return createScheduleAutoStartAttributeAdapter();
+      }
+      @Override
+      public Adapter caseSchduleSynAttribute(SchduleSynAttribute object)
+      {
+        return createSchduleSynAttributeAdapter();
+      }
+      @Override
+      public Adapter caseExpiryAttribute(ExpiryAttribute object)
+      {
+        return createExpiryAttributeAdapter();
+      }
+      @Override
+      public Adapter caseSchduleActionAttribute(SchduleActionAttribute object)
+      {
+        return createSchduleActionAttributeAdapter();
+      }
+      @Override
+      public Adapter caseIocRule(IocRule object)
+      {
+        return createIocRuleAdapter();
+      }
+      @Override
+      public Adapter caseIocAttribute(IocAttribute object)
+      {
+        return createIocAttributeAdapter();
+      }
+      @Override
+      public Adapter caseIocSender(IocSender object)
+      {
+        return createIocSenderAdapter();
+      }
+      @Override
+      public Adapter caseIocReceiver(IocReceiver object)
+      {
+        return createIocReceiverAdapter();
+      }
+      @Override
+      public Adapter caseIocDataTypeAttr(IocDataTypeAttr object)
+      {
+        return createIocDataTypeAttrAdapter();
+      }
+      @Override
+      public Adapter caseIocSemantics(IocSemantics object)
+      {
+        return createIocSemanticsAdapter();
+      }
+      @Override
       public Adapter caseAttribute(Attribute object)
       {
         return createAttributeAdapter();
@@ -294,6 +434,16 @@ public class OilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAutoAttributeValue(AutoAttributeValue object)
       {
         return createAutoAttributeValueAdapter();
+      }
+      @Override
+      public Adapter caseOsRule(OsRule object)
+      {
+        return createOsRuleAdapter();
+      }
+      @Override
+      public Adapter caseCounterRule(CounterRule object)
+      {
+        return createCounterRuleAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -393,46 +543,91 @@ public class OilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.OsRule <em>Os Rule</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImpTaskRule <em>Imp Task Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.oil.oil.OsRule
+   * @see org.xtext.example.oil.oil.ImpTaskRule
    * @generated
    */
-  public Adapter createOsRuleAdapter()
+  public Adapter createImpTaskRuleAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TaskRule <em>Task Rule</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImpTaskParam <em>Imp Task Param</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.oil.oil.TaskRule
+   * @see org.xtext.example.oil.oil.ImpTaskParam
    * @generated
    */
-  public Adapter createTaskRuleAdapter()
+  public Adapter createImpTaskParamAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.CounterRule <em>Counter Rule</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImpOsRule <em>Imp Os Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.oil.oil.CounterRule
+   * @see org.xtext.example.oil.oil.ImpOsRule
    * @generated
    */
-  public Adapter createCounterRuleAdapter()
+  public Adapter createImpOsRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImpOsParam <em>Imp Os Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ImpOsParam
+   * @generated
+   */
+  public Adapter createImpOsParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImpCounterRule <em>Imp Counter Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ImpCounterRule
+   * @generated
+   */
+  public Adapter createImpCounterRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ImpCounterParam <em>Imp Counter Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ImpCounterParam
+   * @generated
+   */
+  public Adapter createImpCounterParamAdapter()
   {
     return null;
   }
@@ -463,6 +658,21 @@ public class OilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAppSubContainerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ApplicationParam <em>Application Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ApplicationParam
+   * @generated
+   */
+  public Adapter createApplicationParamAdapter()
   {
     return null;
   }
@@ -513,16 +723,16 @@ public class OilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ApplicationParam <em>Application Param</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TrustedFucRule <em>Trusted Fuc Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.oil.oil.ApplicationParam
+   * @see org.xtext.example.oil.oil.TrustedFucRule
    * @generated
    */
-  public Adapter createApplicationParamAdapter()
+  public Adapter createTrustedFucRuleAdapter()
   {
     return null;
   }
@@ -843,6 +1053,366 @@ public class OilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ComRule <em>Com Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ComRule
+   * @generated
+   */
+  public Adapter createComRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Comattribute <em>Comattribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Comattribute
+   * @generated
+   */
+  public Adapter createComattributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TaskRule <em>Task Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.TaskRule
+   * @generated
+   */
+  public Adapter createTaskRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Taskattribute <em>Taskattribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Taskattribute
+   * @generated
+   */
+  public Adapter createTaskattributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TaskTimingAttribute <em>Task Timing Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.TaskTimingAttribute
+   * @generated
+   */
+  public Adapter createTaskTimingAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.TaskAutostartAttribute <em>Task Autostart Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.TaskAutostartAttribute
+   * @generated
+   */
+  public Adapter createTaskAutostartAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ResourceRule <em>Resource Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ResourceRule
+   * @generated
+   */
+  public Adapter createResourceRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Resourceattribute <em>Resourceattribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Resourceattribute
+   * @generated
+   */
+  public Adapter createResourceattributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.AlarmRule <em>Alarm Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.AlarmRule
+   * @generated
+   */
+  public Adapter createAlarmRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.AlarmAttribute <em>Alarm Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.AlarmAttribute
+   * @generated
+   */
+  public Adapter createAlarmAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.AlarmActionAttribute <em>Alarm Action Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.AlarmActionAttribute
+   * @generated
+   */
+  public Adapter createAlarmActionAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.AlarmAutostartAttribute <em>Alarm Autostart Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.AlarmAutostartAttribute
+   * @generated
+   */
+  public Adapter createAlarmAutostartAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ScheduleTableRule <em>Schedule Table Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ScheduleTableRule
+   * @generated
+   */
+  public Adapter createScheduleTableRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ScheduleTableAttribute <em>Schedule Table Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ScheduleTableAttribute
+   * @generated
+   */
+  public Adapter createScheduleTableAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ScheduleAutoStartAttribute <em>Schedule Auto Start Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ScheduleAutoStartAttribute
+   * @generated
+   */
+  public Adapter createScheduleAutoStartAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.SchduleSynAttribute <em>Schdule Syn Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.SchduleSynAttribute
+   * @generated
+   */
+  public Adapter createSchduleSynAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.ExpiryAttribute <em>Expiry Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.ExpiryAttribute
+   * @generated
+   */
+  public Adapter createExpiryAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.SchduleActionAttribute <em>Schdule Action Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.SchduleActionAttribute
+   * @generated
+   */
+  public Adapter createSchduleActionAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IocRule <em>Ioc Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IocRule
+   * @generated
+   */
+  public Adapter createIocRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IocAttribute <em>Ioc Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IocAttribute
+   * @generated
+   */
+  public Adapter createIocAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IocSender <em>Ioc Sender</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IocSender
+   * @generated
+   */
+  public Adapter createIocSenderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IocReceiver <em>Ioc Receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IocReceiver
+   * @generated
+   */
+  public Adapter createIocReceiverAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IocDataTypeAttr <em>Ioc Data Type Attr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IocDataTypeAttr
+   * @generated
+   */
+  public Adapter createIocDataTypeAttrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.IocSemantics <em>Ioc Semantics</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.IocSemantics
+   * @generated
+   */
+  public Adapter createIocSemanticsAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -973,6 +1543,36 @@ public class OilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAutoAttributeValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.OsRule <em>Os Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.OsRule
+   * @generated
+   */
+  public Adapter createOsRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.CounterRule <em>Counter Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.CounterRule
+   * @generated
+   */
+  public Adapter createCounterRuleAdapter()
   {
     return null;
   }

@@ -17,6 +17,7 @@ package org.xtext.example.oil.oil;
  *   <li>{@link org.xtext.example.oil.oil.ImplAttrFloatDef#isMultiple <em>Multiple</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.ImplAttrFloatDef#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.ImplAttrFloatDef#getDefault <em>Default</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.ImplAttrFloatDef#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -158,5 +159,31 @@ public interface ImplAttrFloatDef extends ImplAttrDef
    * @generated
    */
   void setDefault(DefaultEnum value);
+
+  /**
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see org.xtext.example.oil.oil.OilPackage#getImplAttrFloatDef_Description()
+   * @model
+   * @generated
+   */
+  String getDescription();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.oil.oil.ImplAttrFloatDef#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(String value);
 
 } // ImplAttrFloatDef

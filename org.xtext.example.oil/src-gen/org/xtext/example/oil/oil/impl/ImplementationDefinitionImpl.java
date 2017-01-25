@@ -32,6 +32,7 @@ import org.xtext.example.oil.oil.OilPackage;
  * <ul>
  *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationDefinitionImpl#getImplementationSpecs <em>Implementation Specs</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ImplementationDefinitionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,6 +69,26 @@ public class ImplementationDefinitionImpl extends MinimalEObjectImpl.Container i
    * @ordered
    */
   protected EList<ImplementationSpec> implementationSpecs;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -132,6 +153,29 @@ public class ImplementationDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.IMPLEMENTATION_DEFINITION__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -157,6 +201,8 @@ public class ImplementationDefinitionImpl extends MinimalEObjectImpl.Container i
         return getName();
       case OilPackage.IMPLEMENTATION_DEFINITION__IMPLEMENTATION_SPECS:
         return getImplementationSpecs();
+      case OilPackage.IMPLEMENTATION_DEFINITION__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -179,6 +225,9 @@ public class ImplementationDefinitionImpl extends MinimalEObjectImpl.Container i
         getImplementationSpecs().clear();
         getImplementationSpecs().addAll((Collection<? extends ImplementationSpec>)newValue);
         return;
+      case OilPackage.IMPLEMENTATION_DEFINITION__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -199,6 +248,9 @@ public class ImplementationDefinitionImpl extends MinimalEObjectImpl.Container i
       case OilPackage.IMPLEMENTATION_DEFINITION__IMPLEMENTATION_SPECS:
         getImplementationSpecs().clear();
         return;
+      case OilPackage.IMPLEMENTATION_DEFINITION__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -217,6 +269,8 @@ public class ImplementationDefinitionImpl extends MinimalEObjectImpl.Container i
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case OilPackage.IMPLEMENTATION_DEFINITION__IMPLEMENTATION_SPECS:
         return implementationSpecs != null && !implementationSpecs.isEmpty();
+      case OilPackage.IMPLEMENTATION_DEFINITION__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
     return super.eIsSet(featureID);
   }
@@ -234,6 +288,8 @@ public class ImplementationDefinitionImpl extends MinimalEObjectImpl.Container i
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

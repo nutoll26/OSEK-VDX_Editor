@@ -15,35 +15,64 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OILVersion">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementationSpecs" upperBound="-1"
         eType="#//ImplementationSpec" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationSpec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="osRule" upperBound="-1"
-        eType="#//OsRule" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="taskRule" upperBound="-1"
-        eType="#//TaskRule" containment="true"/>
+        eType="#//ImpOsRule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="counterRule" upperBound="-1"
-        eType="#//CounterRule" containment="true"/>
+        eType="#//ImpCounterRule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isrRule" upperBound="-1"
         eType="#//IsrRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskRule" upperBound="-1"
+        eType="#//ImpTaskRule" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OsRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
-        eType="#//ImplementationDef" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpTaskRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpTaskParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//IntTypeEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="auto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" eType="#//Range"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//ImpTaskParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//DefaultEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TaskRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
-        eType="#//ImplementationDef" containment="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ImpTaskParamEnum">
+    <eLiterals name="STACKSIZE" literal="STACKSIZE"/>
+    <eLiterals name="PRIORITY" value="1" literal="PRIORITY"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CounterRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
-        eType="#//ImplementationDef" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpOsRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpOsParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="auto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumeration" eType="#//Enumeration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//DefaultEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpCounterRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpCounterParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//IntTypeEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="auto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" eType="#//Range"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//ImpCounterParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ImpCounterParamEnum">
+    <eLiterals name="SOURCE" literal="SOURCE"/>
+    <eLiterals name="FREQUENCY" value="1" literal="FREQUENCY"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationRule" eSuperTypes="#//ObjectDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="appSubOrParam" upperBound="-1"
@@ -54,19 +83,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trustedRule" eType="#//TrustedRule"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HasRestartTaskRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="restartTaskRule" eType="#//RestartTaskRule"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RestartTaskRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TrustedRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationParam">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ApplicationParamEnum"/>
@@ -87,11 +103,34 @@
     <eLiterals name="SHUTDOWNHOOK" value="10" literal="SHUTDOWNHOOK"/>
     <eLiterals name="STARTUPHOOK" value="11" literal="STARTUPHOOK"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IsrRule">
+  <eClassifiers xsi:type="ecore:EClass" name="HasRestartTaskRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//IntTypeEnum"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="isrSubOrParam" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="#//RestartTaskRule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RestartTaskRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrustedRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="#//TrustedFucRule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrustedFucRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsrRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isrParam" upperBound="-1"
+        eType="#//IsrParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isrSubConainer" upperBound="-1"
+        eType="#//IsrSubContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IsrSubContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="timingProtectionRule" eType="#//TimingProtectionRule"
@@ -99,6 +138,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimingProtectionRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timingProtectionParam"
         upperBound="-1" eType="#//TimingProtectionParam" containment="true"/>
   </eClassifiers>
@@ -114,7 +154,10 @@
     <eLiterals name="TIMEFRAME" value="3" literal="TIMEFRAME"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IsrParam">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//IsrParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//IntTypeEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" eType="#//Range"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//IsrParamEnum"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
         containment="true"/>
   </eClassifiers>
@@ -127,7 +170,9 @@
     <eLiterals name="STACKSIZE" value="5" literal="STACKSIZE"/>
     <eLiterals name="SOURCE" value="6" literal="SOURCE"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MemoryProtectionRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryProtectionRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplementationDef"/>
   <eClassifiers xsi:type="ecore:EClass" name="ImplAttrDef" eSuperTypes="#//ImplementationDef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="auto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -141,6 +186,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//DefaultEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IntTypeEnum">
     <eLiterals name="UINT32" literal="UINT32"/>
@@ -156,6 +202,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//DefaultEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplAttrEnumDef" eSuperTypes="#//ImplAttrDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumeration" eType="#//Enumeration"
@@ -165,6 +212,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//DefaultEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplAttrStringDef" eSuperTypes="#//ImplAttrDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//AttributeName"
@@ -172,6 +220,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//DefaultEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplAttrBooleanDef" eSuperTypes="#//ImplAttrDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="trueParameterList" upperBound="-1"
@@ -184,6 +233,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="#//DefaultEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImplAttrIdentiFier" eSuperTypes="#//ImplAttrDef">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//AttributeName"
@@ -244,18 +294,251 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objectDefinitionList" upperBound="-1"
         eType="#//ObjectDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LibraryList" upperBound="-1"
         eType="#//Librayattribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="object" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descrption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Librayattribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ComList" upperBound="-1"
+        eType="#//Comattribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comattribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//ComAttributeName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComAttributeName">
+    <eLiterals name="COMSTATUS" literal="COMSTATUS"/>
+    <eLiterals name="COMERRORHOOK" value="1" literal="COMERRORHOOK"/>
+    <eLiterals name="COMUSEGETSERVICEID" value="2" literal="COMUSEGETSERVICEID"/>
+    <eLiterals name="COMUSEPARAMETERACCESS" value="3" literal="COMUSEPARAMETERACCESS"/>
+    <eLiterals name="COMSTARTCOMEXTENSION" value="4" literal="COMSTARTCOMEXTENSION"/>
+    <eLiterals name="COMTIMEBASE" value="5" literal="COMTIMEBASE"/>
+    <eLiterals name="COMAPPMODE" value="6" literal="COMAPPMODE"/>
+    <eLiterals name="USE" value="7" literal="USE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskRule" eSuperTypes="#//ImpTaskRule #//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ImpTaskParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TaskList" upperBound="-1"
+        eType="#//Taskattribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Taskattribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//TaskAttributeName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskTimingAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//TaskTimingAttributeName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterList" unique="false"
+        upperBound="-1" eType="#//TaskTimingrLockAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TaskTimingrLockAttribute">
+    <eLiterals name="LOCKTIME" literal="LOCKTIME"/>
+    <eLiterals name="RESOURCENAME" value="1" literal="RESOURCENAME"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TaskTimingAttributeName">
+    <eLiterals name="MAXALLINTERRUPTLOCKTIME" literal="MAXALLINTERRUPTLOCKTIME"/>
+    <eLiterals name="EXECUTIONBUDGET" value="1" literal="EXECUTIONBUDGET"/>
+    <eLiterals name="MAXOSINTERRUPTLOCKTIME" value="2" literal="MAXOSINTERRUPTLOCKTIME"/>
+    <eLiterals name="EXECUTIONTIME" value="3" literal="EXECUTIONTIME"/>
+    <eLiterals name="TIMEFRAME" value="4" literal="TIMEFRAME"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskAutostartAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TaskAttributeName">
+    <eLiterals name="ACTIVATION" literal="ACTIVATION"/>
+    <eLiterals name="NAME" value="1" literal="NAME"/>
+    <eLiterals name="PROCESSKIND" value="2" literal="PROCESSKIND"/>
+    <eLiterals name="NONPREEMPTABLE" value="3" literal="NONPREEMPTABLE"/>
+    <eLiterals name="PRIORITY" value="4" literal="PRIORITY"/>
+    <eLiterals name="SCHEDULE" value="5" literal="SCHEDULE"/>
+    <eLiterals name="EVENT" value="6" literal="EVENT"/>
+    <eLiterals name="RESOURCE" value="7" literal="RESOURCE"/>
+    <eLiterals name="USEINTERNALRESOURCE" value="8" literal="USEINTERNALRESOURCE"/>
+    <eLiterals name="ACCESSING_APPLICATION" value="9" literal="ACCESSING_APPLICATION"/>
+    <eLiterals name="INTERNALRESOURCE" value="10" literal="INTERNALRESOURCE"/>
+    <eLiterals name="MESSAGE" value="11" literal="MESSAGE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ResourceList" upperBound="-1"
+        eType="#//Resourceattribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resourceattribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceRange" eType="#//ResourceRange"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ResourceRange">
+    <eLiterals name="STANDARD" literal="STANDARD"/>
+    <eLiterals name="INTERNAL" value="1" literal="INTERNAL"/>
+    <eLiterals name="LINKED" value="2" literal="LINKED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlarmRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AlarmList" upperBound="-1"
+        eType="#//AlarmAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlarmAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlarmActionAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activatetask" eType="#//ActivateTask"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incrementcounter" eType="#//IncrementCounter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setevent" eType="#//Setevent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alarmcallback" eType="#//AlarmCallBack"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlarmAutostartAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActivateTask">
+    <eLiterals name="TASK" literal="TASK"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IncrementCounter">
+    <eLiterals name="COUNTER" literal="COUNTER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Setevent">
+    <eLiterals name="TASK" literal="TASK"/>
+    <eLiterals name="EVENT" value="1" literal="EVENT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AlarmCallBack">
+    <eLiterals name="ALARMCALLBACK" literal="ALARMCALLBACK"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduleTableRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulelist" upperBound="-1"
+        eType="#//ScheduleTableAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduleTableAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduleAutoStartAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="absolute" eType="#//Absolute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchduleSynAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schdulesyn" eType="#//SchduleSyn"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpiryAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schdulexpiry" eType="#//SchduleExpiryAdustble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="#//SchduleActionAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchduleActionAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activatetask" eType="#//ActivateTask"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setevent" eType="#//Setevent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Absolute">
+    <eLiterals name="START" literal="START"/>
+    <eLiterals name="APPMODE" value="1" literal="APPMODE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SchduleSyn">
+    <eLiterals name="EXPLICIT" literal="EXPLICIT"/>
+    <eLiterals name="IMPLICIT" value="1" literal="IMPLICIT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SchduleExpiryAdustble">
+    <eLiterals name="MAX_RETARD" literal="MAX_RETARD"/>
+    <eLiterals name="MAX_ADVANCE" value="1" literal="MAX_ADVANCE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IocRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ioclist" upperBound="-1"
+        eType="#//IocAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IocAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatypeList" upperBound="-1"
+        eType="#//IocDataTypeAttr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iocsemantics" eType="#//IocSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiverList" upperBound="-1"
+        eType="#//IocReceiver" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="senderList" upperBound="-1"
+        eType="#//IocSender" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IocSender">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumiocsenderlist" unique="false"
+        upperBound="-1" eType="#//EnumIocSendRec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IocReceiver">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumioclist" unique="false"
+        upperBound="-1" eType="#//EnumIocRec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recnone" eType="#//IocReciverNone"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IocDataTypeAttr">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iocdatatype" eType="#//IocDataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IocSemantics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iocSema" eType="#//IocSemanticsenum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iocSeman" eType="#//IocSemanticsenumm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IocReciverNone">
+    <eLiterals name="NONE" literal="NONE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnumIocSendRec">
+    <eLiterals name="SENDER_ID" literal="SENDER_ID"/>
+    <eLiterals name="SND_OSAPPLICATION" value="1" literal="SND_OSAPPLICATION"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnumIocRec">
+    <eLiterals name="REV_OSAPPLICATION" literal="REV_OSAPPLICATION"/>
+    <eLiterals name="RECEIVER_PULL_CB" value="1" literal="RECEIVER_PULL_CB"/>
+    <eLiterals name="ACTION" value="2" literal="ACTION"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IocDataType">
+    <eLiterals name="DATA" literal="DATA"/>
+    <eLiterals name="REFERNCE" value="1" literal="REFERNCE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IocSemanticsenum">
+    <eLiterals name="BUFFER_LENGTH" literal="BUFFER_LENGTH"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IocSemanticsenumm">
+    <eLiterals name="INIT_VALUE_SYMBOL" literal="INIT_VALUE_SYMBOL"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//AttributeName"
@@ -270,9 +553,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="AttributeValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="NameAttributeValue" eSuperTypes="#//AttributeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanAttributeValue" eSuperTypes="#//AttributeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="#//Attribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumberAttributeValue" eSuperTypes="#//AttributeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -285,5 +572,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AutoAttributeValue" eSuperTypes="#//AttributeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OsRule" eSuperTypes="#//ImpOsRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ImpOsParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CounterRule" eSuperTypes="#//ImpCounterRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ImpCounterParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

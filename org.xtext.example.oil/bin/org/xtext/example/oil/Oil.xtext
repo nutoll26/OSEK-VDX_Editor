@@ -9,112 +9,145 @@ OILFile:
    (implementation=ImplementationDefinition)? 
    application=ApplicationDefinition;
 
-Include:	// 수정
+Include: //jake modify
    "#include" ("<" name=FileName ">"|name=STRING)
 ;
 
-FileName:
+FileName returns ecore::EString:
    FILEID
 ;
    
 OILVersion:
-   "OIL_VERSION" "=" version=STRING (":" description=EString)? ";"
+   "OIL_VERSION" "=" value=EString (":" description=EString)? ";"
 ;
 
 ImplementationDefinition:
-   "IMPLEMENTATION" name=Name "{" (implementationSpecs+=ImplementationSpec) "}" ";"
+   "IMPLEMENTATION" name=Name "{" (implementationSpecs+=ImplementationSpec) "}"
+   (description=EString)? ";"
 ;
 
-ImplementationSpec:
+ImplementationSpec: //달린 수정 
    {ImplementationSpec}
-   (osRule+=OsRule| taskRule+=TaskRule | counterRule+=CounterRule| isrRule+=IsrRule)+
+   (osRule+=ImpOsRule 
+      | counterRule+=ImpCounterRule
+      | isrRule+=IsrRule
+      | taskRule+=ImpTaskRule)*
 ;
 
-OsRule:
-   {OsRule}
-   "OS" "{" (implementations+=ImplementationDef)* "}" ";"
-;
 
-TaskRule:
+ImpTaskRule: //달린수정
    {TaskRule}
-   "TASK" "{" (implementations+=ImplementationDef)* "}" ";"
+   "TASK" "{" (implementations+=ImpTaskParam)* "}" (":" description=EString)? ";"
 ;
 
-CounterRule:
+ImpTaskParam: //달린추가 
+   (type=IntTypeEnum)? (auto?="WITH_AUTO")? (range=Range)? param=ImpTaskParamEnum (multiple?=MultipleSpecifier)?
+   ("=" (value=Number | default=DefaultEnum))? (":" description=EString)? ";"
+ ;
+   
+enum ImpTaskParamEnum: //달린추가 
+   STACKSIZE|PRIORITY
+;
+
+
+ImpOsRule://달린 수정 
+   {OsRule}
+   "OS" "{" (implementations+=ImpOsParam)* "}" (":" description=EString)? ";"
+;
+
+ImpOsParam: //달린수정
+   "ENUM"
+   (auto?="WITH_AUTO")? (enumeration=Enumeration)? "STATUS" (multiple?=MultipleSpecifier)?
+   ("=" (value=Name | default=DefaultEnum))? (":" description=EString)? ";";
+
+
+ImpCounterRule://달린 수정 
    {CounterRule}
-   "COUNTER" "{" (implementations+=ImplementationDef)* "}" ";"
+   "COUNTER" "{" (implementations+=ImpCounterParam)* "}" (":" description=EString)? ";"
 ;
 
-ApplicationRule:
-	{ApplicationRule}
-	"APPLICATION"
-	(name=Name)? "{" (appSubOrParam+=(AppSubContainer | ApplicationParam))* "}" ";"
+ImpCounterParam: //달린수정
+   (type=IntTypeEnum|"IDENTIFIER")? (auto?="WITH_AUTO")?(range=Range)? param=ImpCounterParamEnum "=" value=AttributeValue ";"
 ;
 
-AppSubContainer:
-	(hasRestartTaskRule=HasRestartTaskRule | trustedRule=TrustedRule)
+enum ImpCounterParamEnum: //달린추가 
+   SOURCE|FREQUENCY
 ;
 
-HasRestartTaskRule:
-	{HasRestartTaskRule}
-	"HAS_RESTARTTASK"
-	(name=Name)? "=" ("TRUE" "{" (restartTaskRule=RestartTaskRule) "}"| "FALSE") ";"
+ApplicationRule: // jake
+   {ApplicationRule}
+   "APPLICATION"
+   (name=Name)? "{" (appSubOrParam+=(AppSubContainer | ApplicationParam))* "}" ";"
 ;
 
-RestartTaskRule:
-	"RESTARTTASK"
-	(name=Name)? "=" value=AttributeValue ";"
+AppSubContainer: // jake
+   (hasRestartTaskRule=HasRestartTaskRule | trustedRule=TrustedRule)
 ;
 
-TrustedRule:
-	{TrustedRule}
-	"TRUSTED" (name=Name)? "=" ("TRUE" | "FALSE") ";"
+ApplicationParam: // jake
+   type=ApplicationParamEnum "=" value=AttributeValue ";"
 ;
 
-ApplicationParam:
-	type=ApplicationParamEnum "=" value=AttributeValue ";"
+enum ApplicationParamEnum: // jake
+   CORE | ALARM | COUNTER | RESOURCE | TASK | ISR | MESSAGE |
+   SCHEDULETABLE | IOC | ERRORHOOK | SHUTDOWNHOOK | STARTUPHOOK
 ;
 
-enum ApplicationParamEnum:
-	CORE | ALARM | COUNTER | RESOURCE | TASK | ISR | MESSAGE |
-	SCHEDULETABLE | IOC | ERRORHOOK | SHUTDOWNHOOK | STARTUPHOOK
+HasRestartTaskRule: // jake
+   "HAS_RESTARTTASK"
+   (name=Name)? "=" value=("TRUE" | "FALSE") ("{" (parameterList+=RestartTaskRule)* "}")? ";"
 ;
 
-IsrRule:
+RestartTaskRule: // jake
+   "RESTARTTASK"
+   (name=Name)? "=" value=AttributeValue ";"
+;
+
+TrustedRule: // jake
+   "TRUSTED"
+   (name=Name)? "=" value=("TRUE" | "FALSE") ("{" parameterList+=TrustedFucRule "}")? ";"
+;
+
+TrustedFucRule: // jake
+   "TRUSTED_FUNCTION"
+   (name=Name)? "=" value=AttributeValue ";"   
+;
+
+IsrRule: //jake
    {IsrRule}
    "ISR"
-   (name=Name)? "{" (type=IntTypeEnum)? (isrSubOrParam+=(IsrSubContainer | IsrParam))* "}" ";"
+   (name=Name)? "{" (isrParam+=IsrParam | isrSubConainer+=IsrSubContainer)* "}" ";"
+   (":" description=EString)?
+; 
+
+IsrSubContainer: //jake
+   (timingProtectionRule=TimingProtectionRule)
 ;
 
-IsrSubContainer:
-	(timingProtectionRule=TimingProtectionRule)
+TimingProtectionRule: //jake
+   "TIMING_PROTECTION"
+   (name=Name)? "=" value=("TRUE" | "FALSE") ("{" timingProtectionParam+=TimingProtectionParam "}")? ";"?
 ;
 
-TimingProtectionRule:
-	{TimingProtectionRule}
-	"TIMING_PROTECTION"
-	(name=Name)? "=" ("TRUE" "{" (timingProtectionParam+=TimingProtectionParam)* "}" | "FALSE") ";"
+TimingProtectionParam: //jake
+   type=TimingProtectionParamEnum "=" value=AttributeValue ";"
 ;
 
-TimingProtectionParam:
-	type=TimingProtectionParamEnum "=" value=AttributeValue ";"
+enum TimingProtectionParamEnum: //jake
+   MAXALLINTERRUPTLOCKTIME | MAXOSINTERRUPTLOCKTIME | EXECUTIONTIME | TIMEFRAME
 ;
 
-enum TimingProtectionParamEnum:
-	MAXALLINTERRUPTLOCKTIME | MAXOSINTERRUPTLOCKTIME | EXECUTIONTIME | TIMEFRAME
+IsrParam: //jake
+   (type=IntTypeEnum)? (range=Range)? param=IsrParamEnum "=" value=AttributeValue ";"
 ;
 
-IsrParam:
-	type=IsrParamEnum "=" value=AttributeValue ";"
+enum IsrParamEnum: //jake
+   CATEGORY | RESOURCE | MESSAGE | PRIORITY | ENTRY | STACKSIZE | SOURCE
 ;
 
-enum IsrParamEnum:
-	CATEGORY | RESOURCE | MESSAGE | PRIORITY | ENTRY | STACKSIZE | SOURCE
-;
-
-MemoryProtectionRule:
-	{MemoryProtectionRule}
-	"MEMORY_PROTECTION" "{" "}" ";"
+MemoryProtectionRule: //jake
+   "MEMORY_PROTECTION"
+   (name=Name)? "=" value=("TRUE" | "FALSE") ("{"  "}")? ";"?
 ;
 
 Object:
@@ -122,8 +155,7 @@ Object:
    "EVENT" | "ISR" | "MESSAGE" | "COM" | "NM" | 
    "APPMODE" | "IPDU" | "NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" | 
    "SPINLOCK" | "SCHEDULETABLE" | "IOC" | "LIBRARY")
-;
-
+  ;
 ImplementationDef:
    ImplAttrDef | ImplRefDef;
 
@@ -133,7 +165,7 @@ ImplAttrDef:
 ImplAttrIntDef:
    type=IntTypeEnum
    (auto?="WITH_AUTO")? (range=Range)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=Number | default=DefaultEnum))? ";";
+   ("=" (value=Number | default=DefaultEnum))? (":" description=EString)? ";";
 
 enum IntTypeEnum:
    UINT32 | INT32 | UINT64 | INT64;
@@ -141,17 +173,17 @@ enum IntTypeEnum:
 ImplAttrFloatDef:
    "FLOAT"
    (auto?="WITH_AUTO")? (range=Range)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=EFloat | default=DefaultEnum))? ";";
+   ("=" (value=EFloat | default=DefaultEnum))? (":" description=EString)? ";";
 
 ImplAttrEnumDef:
    "ENUM"
    (auto?="WITH_AUTO")? (enumeration=Enumeration)? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=Name | default=DefaultEnum))? ";";
+   ("=" (value=Name | default=DefaultEnum))? (":" description=EString)? ";";
 
 ImplAttrStringDef:
    "STRING"
    (auto?="WITH_AUTO")? name=AttributeName (multiple?=MultipleSpecifier)?
-   ("=" (value=EString | default=DefaultEnum))? ";";
+   ("=" (value=EString | default=DefaultEnum))? (":" description=EString)? ";";
 
 ImplAttrBooleanDef:
    "BOOLEAN"
@@ -160,13 +192,12 @@ ImplAttrBooleanDef:
    "FALSE"
    ("{" (falseParameterList+=ImplementationDef)* "}")? (falseDescription=EString)? "]")? name=(Name | Object)
    (multiple?=MultipleSpecifier)?
-   ("=" (value=("TRUE" | "FALSE") | default=DefaultEnum))? ";";
+   ("=" (value=EBoolean | default=DefaultEnum))? (":" description=EString)? ";";
 
 ImplAttrIdentiFier: // possibly change according to implementation grammar.
     "IDENTIFIER"
    (auto?="WITH_AUTO")? name=AttributeName "=" value = ID ";"
 ;
-
 Range:
    "[" (value=Number | begin=Number ".." end=Number | numbers+=Number ("," numbers+=Number)+) "]";
 
@@ -193,32 +224,206 @@ MultipleSpecifier:
    "[" "]";
 
 ApplicationDefinition:
-   "CPU" name=Name "{" (objectDefinitionList+=ObjectDefinition)* "}" ";";
+   "CPU" name=Name "{" (objectDefinitionList+=ObjectDefinition)* "}" (description=EString)? ";";
 
-ObjectDefinition:
-   ("LIBRARY" name=Name ("{" (LibraryList += Librayattribute)* "}")? ";" |   
-   	
-   	ApplicationRule |
-   object=Object name=Name ("{" (parameterList+=Attribute)* "}")? (descrption=EString)? ";");
+ObjectDefinition://수정(AlarmRule,scheduletableRule 추가), resourcerule, taskrule, conrule추가 (달린)
+   ("LIBRARY" name=Name ("{" (LibraryList += Librayattribute)* "}")? ";"
+      | AlarmRule 
+      | ScheduleTableRule 
+      | IocRule 
+      | ResourceRule 
+      | TaskRule 
+      | ComRule
+      | ApplicationRule
+      | MemoryProtectionRule
+      | IsrRule
+      ) 
+      //object=Object name=Name ("{" (parameterList+=Attribute)* "}")? (descrption=EString)? ";")
+   ;
 
 Librayattribute :
-   
-   ("PATH" "=" (description=EString) ";"|
+    ("PATH" "=" (description=EString) ";"|
     "CHEADER" "=" (description=EString) ";"|
     "CFILE" "=" (description=EString) ";"   )
 ;
 
-/************************ 
-object=Object name=Name (BLOCKBEGIN (parameterList+=Attribute
-   )* (reObjectDefinition=ReObjectDefinition)* BLOCKEND)? (descrption=EString)? SEMICOLON;
+ComRule: //달린 com추가 
+    {ComRule}
+   "COM" name=Name ("{"(ComList+=Comattribute)* "}")? (description=EString)? ";"
+;
 
-ReObjectDefinition://
-   reobject=ReObject name=Name (BLOCKBEGIN (parameterList+=Attribute)* BLOCKEND)? (descrption=EString)? SEMICOLON;
-Attribute:
-   name=AttributeName "=" value=AttributeValue (description=EString)? SEMICOLON;
+Comattribute://달린 추가 
+   name=ComAttributeName ("=")? value=AttributeValue (description=EString)? ";"
+;
 
-*************************/
+enum ComAttributeName: //달린추가 
+   COMSTATUS|COMERRORHOOK|COMUSEGETSERVICEID|COMUSEPARAMETERACCESS|
+   COMSTARTCOMEXTENSION|COMTIMEBASE|COMAPPMODE|USE
+;
 
+TaskRule: //달린추가 
+    {TaskRule}
+   "TASK" name=Name ("{"(TaskList+=Taskattribute)* "}")? (description=EString)? ";"
+;
+
+Taskattribute: //달린TASK추가 
+   name=TaskAttributeName ("=")? value=AttributeValue (description=EString)? ";"|
+   "AUTOSTART"("=")? ("TRUE" "{" (parameterList+=TaskAutostartAttribute)* "}" | "FALSE") ";"|
+   "TIMINGPROTECTION" ("=")? ("TRUE" "{" (parameterList+=TaskTimingAttribute)* "}" | "FALSE") ";"
+;
+
+TaskTimingAttribute: //달린추가 
+   name = TaskTimingAttributeName ("=")? value=AttributeValue (description=EString)?";"|
+   "RESOURCELOCK" ("=")? ("TRUE" "{" (parameterList+=TaskTimingrLockAttribute)* "}" | "FALSE") ";"
+;
+
+enum TaskTimingrLockAttribute: //달린추가 
+   LOCKTIME|RESOURCENAME
+;
+
+enum TaskTimingAttributeName: //달린추가 
+   MAXALLINTERRUPTLOCKTIME|EXECUTIONBUDGET|MAXOSINTERRUPTLOCKTIME|EXECUTIONTIME|TIMEFRAME
+;
+
+TaskAutostartAttribute://달린TASK추가 
+   "APPMODE" ("=")? value=AttributeValue (description=EString)? ";"
+;
+
+enum TaskAttributeName://달린TASK추가 
+   ACTIVATION|NAME|PROCESSKIND|NONPREEMPTABLE|PRIORITY|SCHEDULE|EVENT|
+   RESOURCE|USEINTERNALRESOURCE|ACCESSING_APPLICATION|INTERNALRESOURCE|MESSAGE
+;
+
+ResourceRule: //달린Resource추가 
+   {ResourceRule}
+   "RESOURCE" name=Name "{"(ResourceList+=Resourceattribute)*"}" (description=EString)? ";"
+;
+
+Resourceattribute: //달린추가 
+   "RESOURCEPROPERTY" "=" (resourceRange=ResourceRange)";"
+;
+
+enum ResourceRange: //달린추가 
+   STANDARD|INTERNAL|LINKED
+;
+
+AlarmRule://서택추가
+   "ALARM" name=Name ("{" (AlarmList += AlarmAttribute)* "}") ";"
+;
+AlarmAttribute ://서택추가
+   ("COUNTER" "=" (name=Name) ";"|
+    "ACCESSING_APPLICATION" "=" (name=Name) ";"|
+    "ACTION" "=" (parameterList+=AlarmActionAttribute) ";"|
+    "AUTOSTART" "=" ("TRUE" "{" (parameterList+=AlarmAutostartAttribute)* "}" | "FALSE") ";")
+;
+
+AlarmActionAttribute ://서택추가
+   ("ACTIVATETASK" "{" (activatetask=ActivateTask) ("=")? value=AttributeValue (description=EString)? ";" "}"|
+    "INCREMENTCOUNTER" "{"(incrementcounter=IncrementCounter) ("=")? value=AttributeValue (description=EString)? ";" "}"|
+    "SETEVENT" "{"(setevent=Setevent) ("=")? value=AttributeValue (description=EString)? ";" "}"|
+    "ALARMCALLBACK" "{"(alarmcallback=AlarmCallBack)("=")? value=AttributeValue (description=EString)? ";" "}"   
+   )
+;
+
+AlarmAutostartAttribute ://서택추가
+   ( 
+   "ALARMTIME" ("=")? value=AttributeValue (description=EString)? ";"|
+   "CYCLETIME" ("=")? value=AttributeValue (description=EString)? ";"|
+   "APPMODE" ("=")? value=AttributeValue (description=EString)? ";"   
+   )   
+;
+enum ActivateTask://서택추가
+   TASK
+;
+enum IncrementCounter://서택추가
+   COUNTER
+;
+enum Setevent://서택추가
+   TASK|EVENT
+;
+enum AlarmCallBack://서택추가
+   ALARMCALLBACK
+;
+ScheduleTableRule://서택추가
+   "SCHEDULETABLE" name=Name ("{" (schedulelist += ScheduleTableAttribute)* "}") ";"
+;
+ScheduleTableAttribute://서택추가
+   ("COUNTER" "=" (name=Name) ";"|
+    "ACCESSING_APPLICATION" "=" (name=Name) ";"|
+    "LENGTH" "=" (value=AttributeValue)";"|
+    "AUTOSTART" "=" ("NONE"| parameterList+=ScheduleAutoStartAttribute) ";"|
+    "LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION" "=" ("TRUE" "{" (parameterList+=SchduleSynAttribute)* "}" | "FALSE") ";"|
+    "PERIODIC" "="("TRUE"|"FALSE")";"|
+    "EXPIRY_POINT" name=Name ("{"(parameterList+=ExpiryAttribute)*"}" )";"
+    )
+;
+ScheduleAutoStartAttribute://서택추가
+   "ABSOLUTE" "{" ((absolute=Absolute) ("=")? value=AttributeValue (description=EString)? ";")* "}"
+;
+SchduleSynAttribute://서택추가
+   "PRECISION" ("=")? value=AttributeValue (description=EString)? ";"|
+   "SYNC_STRATEGY" ("=")? schdulesyn=SchduleSyn (description=EString)? ";"
+;
+ExpiryAttribute://서택추가
+   "OFFSET" ("=")? value=AttributeValue (description=EString)? ";"|
+   "ADJUSTBLE" ("=")? schdulexpiry=SchduleExpiryAdustble (description=EString)? ";"|
+   "ACTION" "=" (parameterList+=SchduleActionAttribute) ";"
+;
+SchduleActionAttribute://서택추가
+   "ACTIVATETASK" "{" (activatetask=ActivateTask) ("=")? value=AttributeValue (description=EString)? ";" "}"|
+   "SETEVENT" "{"(setevent=Setevent) ("=")? value=AttributeValue (description=EString)? ";" "}"
+;
+enum Absolute://서택추가
+   START|APPMODE
+;
+enum SchduleSyn://서택추가
+   EXPLICIT|IMPLICIT
+;
+enum SchduleExpiryAdustble://서택추가
+   MAX_RETARD|MAX_ADVANCE
+;
+IocRule://서택추가
+   "IOC" name=Name ("{" (ioclist += IocAttribute)* "}") ";"
+;
+IocAttribute://서택추가
+   "DATATYPENAME" name=Name ("{"(datatypeList+=IocDataTypeAttr)*"}" )";"|
+   "SEMANTICS" ("=")? iocsemantics=IocSemantics (description=EString)? ";"|
+   "RECEIVER" name=Name ("{"(receiverList+=IocReceiver)*"}" )";"|
+   "SENDER" name=Name ("{"(senderList+=IocSender)*"}" )";"
+;
+IocSender://서택추가
+   enumiocsenderlist+=EnumIocSendRec ("=")? value=AttributeValue (description=EString)? ";"
+;
+IocReceiver://서택추가
+   enumioclist+=EnumIocRec ("=")? (value=AttributeValue|recnone=IocReciverNone) (description=EString)? ";"
+;
+IocDataTypeAttr://서택추가
+   "DATATYPEPROPERTY" ("=")? (iocdatatype=IocDataType) ";" "}"";"
+;
+
+IocSemantics://서택추가
+   "QUEUED" "{" (iocSema=IocSemanticsenum) ("=")? value=AttributeValue (description=EString)? ";" "}"|
+   "LAST_IS_BEST" "{" (iocSeman=IocSemanticsenumm) ("=")? value=AttributeValue (description=EString)? ";" "}"
+    
+;
+enum IocReciverNone://서택추가
+   NONE
+;
+enum EnumIocSendRec://서택추가
+   SENDER_ID|SND_OSAPPLICATION
+;
+enum EnumIocRec://서택추가
+   REV_OSAPPLICATION|RECEIVER_PULL_CB|ACTION
+;
+enum IocDataType://서택추가
+   DATA|REFERNCE   
+;
+enum IocSemanticsenum://서택추가
+   BUFFER_LENGTH
+;
+enum IocSemanticsenumm://서택추가
+   INIT_VALUE_SYMBOL
+;
 Attribute:
    name=AttributeName ("=")? value=AttributeValue (description=EString)? ";";
 
@@ -230,12 +435,10 @@ AttributeValue:
    AutoAttributeValue;
 
 NameAttributeValue:
-   value=Name
-;
+   value=Name ("{" (parameterList+=Attribute)* "}")?;
 
 BooleanAttributeValue:
-   value=("TRUE" | "FALSE")
-;
+   value=EBoolean ("{" (parameterList+=Attribute)* "}")?;
 
 NumberAttributeValue:
    value=Number;
@@ -248,6 +451,9 @@ StringAttributeValue:
 
 AutoAttributeValue:
    value?="AUTO";
+
+EBoolean:
+   "TRUE" | "FALSE";  
 
 EString returns ecore::EString:
    STRING;
@@ -269,7 +475,6 @@ Name returns ecore::EString:
 
 terminal ID:
    ("_" | "a".."z" | "A".."Z") ("_" | "a".."z" | "A".."Z" | "0".."9")*;
-
 terminal FILEID:
    ("_" | "a".."z" | "A".."Z") ("_" | "a".."z" | "A".."Z" | "0".."9")* "."("a".."z" | "A".."Z") ("a".."z" | "A".."Z")*
 ;

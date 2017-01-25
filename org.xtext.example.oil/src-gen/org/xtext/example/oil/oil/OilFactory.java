@@ -69,31 +69,58 @@ public interface OilFactory extends EFactory
   ImplementationSpec createImplementationSpec();
 
   /**
-   * Returns a new object of class '<em>Os Rule</em>'.
+   * Returns a new object of class '<em>Imp Task Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Os Rule</em>'.
+   * @return a new object of class '<em>Imp Task Rule</em>'.
    * @generated
    */
-  OsRule createOsRule();
+  ImpTaskRule createImpTaskRule();
 
   /**
-   * Returns a new object of class '<em>Task Rule</em>'.
+   * Returns a new object of class '<em>Imp Task Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Task Rule</em>'.
+   * @return a new object of class '<em>Imp Task Param</em>'.
    * @generated
    */
-  TaskRule createTaskRule();
+  ImpTaskParam createImpTaskParam();
 
   /**
-   * Returns a new object of class '<em>Counter Rule</em>'.
+   * Returns a new object of class '<em>Imp Os Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Counter Rule</em>'.
+   * @return a new object of class '<em>Imp Os Rule</em>'.
    * @generated
    */
-  CounterRule createCounterRule();
+  ImpOsRule createImpOsRule();
+
+  /**
+   * Returns a new object of class '<em>Imp Os Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Imp Os Param</em>'.
+   * @generated
+   */
+  ImpOsParam createImpOsParam();
+
+  /**
+   * Returns a new object of class '<em>Imp Counter Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Imp Counter Rule</em>'.
+   * @generated
+   */
+  ImpCounterRule createImpCounterRule();
+
+  /**
+   * Returns a new object of class '<em>Imp Counter Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Imp Counter Param</em>'.
+   * @generated
+   */
+  ImpCounterParam createImpCounterParam();
 
   /**
    * Returns a new object of class '<em>Application Rule</em>'.
@@ -112,6 +139,15 @@ public interface OilFactory extends EFactory
    * @generated
    */
   AppSubContainer createAppSubContainer();
+
+  /**
+   * Returns a new object of class '<em>Application Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Application Param</em>'.
+   * @generated
+   */
+  ApplicationParam createApplicationParam();
 
   /**
    * Returns a new object of class '<em>Has Restart Task Rule</em>'.
@@ -141,13 +177,13 @@ public interface OilFactory extends EFactory
   TrustedRule createTrustedRule();
 
   /**
-   * Returns a new object of class '<em>Application Param</em>'.
+   * Returns a new object of class '<em>Trusted Fuc Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Application Param</em>'.
+   * @return a new object of class '<em>Trusted Fuc Rule</em>'.
    * @generated
    */
-  ApplicationParam createApplicationParam();
+  TrustedFucRule createTrustedFucRule();
 
   /**
    * Returns a new object of class '<em>Isr Rule</em>'.
@@ -339,6 +375,222 @@ public interface OilFactory extends EFactory
   Librayattribute createLibrayattribute();
 
   /**
+   * Returns a new object of class '<em>Com Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Com Rule</em>'.
+   * @generated
+   */
+  ComRule createComRule();
+
+  /**
+   * Returns a new object of class '<em>Comattribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comattribute</em>'.
+   * @generated
+   */
+  Comattribute createComattribute();
+
+  /**
+   * Returns a new object of class '<em>Task Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Task Rule</em>'.
+   * @generated
+   */
+  TaskRule createTaskRule();
+
+  /**
+   * Returns a new object of class '<em>Taskattribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Taskattribute</em>'.
+   * @generated
+   */
+  Taskattribute createTaskattribute();
+
+  /**
+   * Returns a new object of class '<em>Task Timing Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Task Timing Attribute</em>'.
+   * @generated
+   */
+  TaskTimingAttribute createTaskTimingAttribute();
+
+  /**
+   * Returns a new object of class '<em>Task Autostart Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Task Autostart Attribute</em>'.
+   * @generated
+   */
+  TaskAutostartAttribute createTaskAutostartAttribute();
+
+  /**
+   * Returns a new object of class '<em>Resource Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resource Rule</em>'.
+   * @generated
+   */
+  ResourceRule createResourceRule();
+
+  /**
+   * Returns a new object of class '<em>Resourceattribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resourceattribute</em>'.
+   * @generated
+   */
+  Resourceattribute createResourceattribute();
+
+  /**
+   * Returns a new object of class '<em>Alarm Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alarm Rule</em>'.
+   * @generated
+   */
+  AlarmRule createAlarmRule();
+
+  /**
+   * Returns a new object of class '<em>Alarm Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alarm Attribute</em>'.
+   * @generated
+   */
+  AlarmAttribute createAlarmAttribute();
+
+  /**
+   * Returns a new object of class '<em>Alarm Action Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alarm Action Attribute</em>'.
+   * @generated
+   */
+  AlarmActionAttribute createAlarmActionAttribute();
+
+  /**
+   * Returns a new object of class '<em>Alarm Autostart Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alarm Autostart Attribute</em>'.
+   * @generated
+   */
+  AlarmAutostartAttribute createAlarmAutostartAttribute();
+
+  /**
+   * Returns a new object of class '<em>Schedule Table Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Schedule Table Rule</em>'.
+   * @generated
+   */
+  ScheduleTableRule createScheduleTableRule();
+
+  /**
+   * Returns a new object of class '<em>Schedule Table Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Schedule Table Attribute</em>'.
+   * @generated
+   */
+  ScheduleTableAttribute createScheduleTableAttribute();
+
+  /**
+   * Returns a new object of class '<em>Schedule Auto Start Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Schedule Auto Start Attribute</em>'.
+   * @generated
+   */
+  ScheduleAutoStartAttribute createScheduleAutoStartAttribute();
+
+  /**
+   * Returns a new object of class '<em>Schdule Syn Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Schdule Syn Attribute</em>'.
+   * @generated
+   */
+  SchduleSynAttribute createSchduleSynAttribute();
+
+  /**
+   * Returns a new object of class '<em>Expiry Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expiry Attribute</em>'.
+   * @generated
+   */
+  ExpiryAttribute createExpiryAttribute();
+
+  /**
+   * Returns a new object of class '<em>Schdule Action Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Schdule Action Attribute</em>'.
+   * @generated
+   */
+  SchduleActionAttribute createSchduleActionAttribute();
+
+  /**
+   * Returns a new object of class '<em>Ioc Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ioc Rule</em>'.
+   * @generated
+   */
+  IocRule createIocRule();
+
+  /**
+   * Returns a new object of class '<em>Ioc Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ioc Attribute</em>'.
+   * @generated
+   */
+  IocAttribute createIocAttribute();
+
+  /**
+   * Returns a new object of class '<em>Ioc Sender</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ioc Sender</em>'.
+   * @generated
+   */
+  IocSender createIocSender();
+
+  /**
+   * Returns a new object of class '<em>Ioc Receiver</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ioc Receiver</em>'.
+   * @generated
+   */
+  IocReceiver createIocReceiver();
+
+  /**
+   * Returns a new object of class '<em>Ioc Data Type Attr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ioc Data Type Attr</em>'.
+   * @generated
+   */
+  IocDataTypeAttr createIocDataTypeAttr();
+
+  /**
+   * Returns a new object of class '<em>Ioc Semantics</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ioc Semantics</em>'.
+   * @generated
+   */
+  IocSemantics createIocSemantics();
+
+  /**
    * Returns a new object of class '<em>Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -418,6 +670,24 @@ public interface OilFactory extends EFactory
    * @generated
    */
   AutoAttributeValue createAutoAttributeValue();
+
+  /**
+   * Returns a new object of class '<em>Os Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Os Rule</em>'.
+   * @generated
+   */
+  OsRule createOsRule();
+
+  /**
+   * Returns a new object of class '<em>Counter Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Counter Rule</em>'.
+   * @generated
+   */
+  CounterRule createCounterRule();
 
   /**
    * Returns the package supported by this factory.

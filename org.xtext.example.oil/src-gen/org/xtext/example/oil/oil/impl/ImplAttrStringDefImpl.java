@@ -27,6 +27,7 @@ import org.xtext.example.oil.oil.OilPackage;
  *   <li>{@link org.xtext.example.oil.oil.impl.ImplAttrStringDefImpl#isMultiple <em>Multiple</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.impl.ImplAttrStringDefImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.impl.ImplAttrStringDefImpl#getDefault <em>Default</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.ImplAttrStringDefImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,6 +104,26 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
    * @ordered
    */
   protected DefaultEnum default_ = DEFAULT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -247,6 +268,29 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.IMPL_ATTR_STRING_DEF__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -276,6 +320,8 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
         return getValue();
       case OilPackage.IMPL_ATTR_STRING_DEF__DEFAULT:
         return getDefault();
+      case OilPackage.IMPL_ATTR_STRING_DEF__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -301,6 +347,9 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
         return;
       case OilPackage.IMPL_ATTR_STRING_DEF__DEFAULT:
         setDefault((DefaultEnum)newValue);
+        return;
+      case OilPackage.IMPL_ATTR_STRING_DEF__DESCRIPTION:
+        setDescription((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -328,6 +377,9 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
       case OilPackage.IMPL_ATTR_STRING_DEF__DEFAULT:
         setDefault(DEFAULT_EDEFAULT);
         return;
+      case OilPackage.IMPL_ATTR_STRING_DEF__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -350,6 +402,8 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case OilPackage.IMPL_ATTR_STRING_DEF__DEFAULT:
         return default_ != DEFAULT_EDEFAULT;
+      case OilPackage.IMPL_ATTR_STRING_DEF__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
     return super.eIsSet(featureID);
   }
@@ -371,6 +425,8 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
     result.append(value);
     result.append(", default: ");
     result.append(default_);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

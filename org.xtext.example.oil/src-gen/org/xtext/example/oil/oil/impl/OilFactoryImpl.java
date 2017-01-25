@@ -71,15 +71,19 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.OIL_VERSION: return createOILVersion();
       case OilPackage.IMPLEMENTATION_DEFINITION: return createImplementationDefinition();
       case OilPackage.IMPLEMENTATION_SPEC: return createImplementationSpec();
-      case OilPackage.OS_RULE: return createOsRule();
-      case OilPackage.TASK_RULE: return createTaskRule();
-      case OilPackage.COUNTER_RULE: return createCounterRule();
+      case OilPackage.IMP_TASK_RULE: return createImpTaskRule();
+      case OilPackage.IMP_TASK_PARAM: return createImpTaskParam();
+      case OilPackage.IMP_OS_RULE: return createImpOsRule();
+      case OilPackage.IMP_OS_PARAM: return createImpOsParam();
+      case OilPackage.IMP_COUNTER_RULE: return createImpCounterRule();
+      case OilPackage.IMP_COUNTER_PARAM: return createImpCounterParam();
       case OilPackage.APPLICATION_RULE: return createApplicationRule();
       case OilPackage.APP_SUB_CONTAINER: return createAppSubContainer();
+      case OilPackage.APPLICATION_PARAM: return createApplicationParam();
       case OilPackage.HAS_RESTART_TASK_RULE: return createHasRestartTaskRule();
       case OilPackage.RESTART_TASK_RULE: return createRestartTaskRule();
       case OilPackage.TRUSTED_RULE: return createTrustedRule();
-      case OilPackage.APPLICATION_PARAM: return createApplicationParam();
+      case OilPackage.TRUSTED_FUC_RULE: return createTrustedFucRule();
       case OilPackage.ISR_RULE: return createIsrRule();
       case OilPackage.ISR_SUB_CONTAINER: return createIsrSubContainer();
       case OilPackage.TIMING_PROTECTION_RULE: return createTimingProtectionRule();
@@ -101,6 +105,30 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.APPLICATION_DEFINITION: return createApplicationDefinition();
       case OilPackage.OBJECT_DEFINITION: return createObjectDefinition();
       case OilPackage.LIBRAYATTRIBUTE: return createLibrayattribute();
+      case OilPackage.COM_RULE: return createComRule();
+      case OilPackage.COMATTRIBUTE: return createComattribute();
+      case OilPackage.TASK_RULE: return createTaskRule();
+      case OilPackage.TASKATTRIBUTE: return createTaskattribute();
+      case OilPackage.TASK_TIMING_ATTRIBUTE: return createTaskTimingAttribute();
+      case OilPackage.TASK_AUTOSTART_ATTRIBUTE: return createTaskAutostartAttribute();
+      case OilPackage.RESOURCE_RULE: return createResourceRule();
+      case OilPackage.RESOURCEATTRIBUTE: return createResourceattribute();
+      case OilPackage.ALARM_RULE: return createAlarmRule();
+      case OilPackage.ALARM_ATTRIBUTE: return createAlarmAttribute();
+      case OilPackage.ALARM_ACTION_ATTRIBUTE: return createAlarmActionAttribute();
+      case OilPackage.ALARM_AUTOSTART_ATTRIBUTE: return createAlarmAutostartAttribute();
+      case OilPackage.SCHEDULE_TABLE_RULE: return createScheduleTableRule();
+      case OilPackage.SCHEDULE_TABLE_ATTRIBUTE: return createScheduleTableAttribute();
+      case OilPackage.SCHEDULE_AUTO_START_ATTRIBUTE: return createScheduleAutoStartAttribute();
+      case OilPackage.SCHDULE_SYN_ATTRIBUTE: return createSchduleSynAttribute();
+      case OilPackage.EXPIRY_ATTRIBUTE: return createExpiryAttribute();
+      case OilPackage.SCHDULE_ACTION_ATTRIBUTE: return createSchduleActionAttribute();
+      case OilPackage.IOC_RULE: return createIocRule();
+      case OilPackage.IOC_ATTRIBUTE: return createIocAttribute();
+      case OilPackage.IOC_SENDER: return createIocSender();
+      case OilPackage.IOC_RECEIVER: return createIocReceiver();
+      case OilPackage.IOC_DATA_TYPE_ATTR: return createIocDataTypeAttr();
+      case OilPackage.IOC_SEMANTICS: return createIocSemantics();
       case OilPackage.ATTRIBUTE: return createAttribute();
       case OilPackage.ATTRIBUTE_NAME: return createAttributeName();
       case OilPackage.ATTRIBUTE_VALUE: return createAttributeValue();
@@ -110,6 +138,8 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.FLOAT_ATTRIBUTE_VALUE: return createFloatAttributeValue();
       case OilPackage.STRING_ATTRIBUTE_VALUE: return createStringAttributeValue();
       case OilPackage.AUTO_ATTRIBUTE_VALUE: return createAutoAttributeValue();
+      case OilPackage.OS_RULE: return createOsRule();
+      case OilPackage.COUNTER_RULE: return createCounterRule();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -125,6 +155,10 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case OilPackage.IMP_TASK_PARAM_ENUM:
+        return createImpTaskParamEnumFromString(eDataType, initialValue);
+      case OilPackage.IMP_COUNTER_PARAM_ENUM:
+        return createImpCounterParamEnumFromString(eDataType, initialValue);
       case OilPackage.APPLICATION_PARAM_ENUM:
         return createApplicationParamEnumFromString(eDataType, initialValue);
       case OilPackage.TIMING_PROTECTION_PARAM_ENUM:
@@ -137,6 +171,42 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return createDefaultEnumFromString(eDataType, initialValue);
       case OilPackage.OBJECT_REF_TYPE_ENUM:
         return createObjectRefTypeEnumFromString(eDataType, initialValue);
+      case OilPackage.COM_ATTRIBUTE_NAME:
+        return createComAttributeNameFromString(eDataType, initialValue);
+      case OilPackage.TASK_TIMINGR_LOCK_ATTRIBUTE:
+        return createTaskTimingrLockAttributeFromString(eDataType, initialValue);
+      case OilPackage.TASK_TIMING_ATTRIBUTE_NAME:
+        return createTaskTimingAttributeNameFromString(eDataType, initialValue);
+      case OilPackage.TASK_ATTRIBUTE_NAME:
+        return createTaskAttributeNameFromString(eDataType, initialValue);
+      case OilPackage.RESOURCE_RANGE:
+        return createResourceRangeFromString(eDataType, initialValue);
+      case OilPackage.ACTIVATE_TASK:
+        return createActivateTaskFromString(eDataType, initialValue);
+      case OilPackage.INCREMENT_COUNTER:
+        return createIncrementCounterFromString(eDataType, initialValue);
+      case OilPackage.SETEVENT:
+        return createSeteventFromString(eDataType, initialValue);
+      case OilPackage.ALARM_CALL_BACK:
+        return createAlarmCallBackFromString(eDataType, initialValue);
+      case OilPackage.ABSOLUTE:
+        return createAbsoluteFromString(eDataType, initialValue);
+      case OilPackage.SCHDULE_SYN:
+        return createSchduleSynFromString(eDataType, initialValue);
+      case OilPackage.SCHDULE_EXPIRY_ADUSTBLE:
+        return createSchduleExpiryAdustbleFromString(eDataType, initialValue);
+      case OilPackage.IOC_RECIVER_NONE:
+        return createIocReciverNoneFromString(eDataType, initialValue);
+      case OilPackage.ENUM_IOC_SEND_REC:
+        return createEnumIocSendRecFromString(eDataType, initialValue);
+      case OilPackage.ENUM_IOC_REC:
+        return createEnumIocRecFromString(eDataType, initialValue);
+      case OilPackage.IOC_DATA_TYPE:
+        return createIocDataTypeFromString(eDataType, initialValue);
+      case OilPackage.IOC_SEMANTICSENUM:
+        return createIocSemanticsenumFromString(eDataType, initialValue);
+      case OilPackage.IOC_SEMANTICSENUMM:
+        return createIocSemanticsenummFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -152,6 +222,10 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     switch (eDataType.getClassifierID())
     {
+      case OilPackage.IMP_TASK_PARAM_ENUM:
+        return convertImpTaskParamEnumToString(eDataType, instanceValue);
+      case OilPackage.IMP_COUNTER_PARAM_ENUM:
+        return convertImpCounterParamEnumToString(eDataType, instanceValue);
       case OilPackage.APPLICATION_PARAM_ENUM:
         return convertApplicationParamEnumToString(eDataType, instanceValue);
       case OilPackage.TIMING_PROTECTION_PARAM_ENUM:
@@ -164,6 +238,42 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return convertDefaultEnumToString(eDataType, instanceValue);
       case OilPackage.OBJECT_REF_TYPE_ENUM:
         return convertObjectRefTypeEnumToString(eDataType, instanceValue);
+      case OilPackage.COM_ATTRIBUTE_NAME:
+        return convertComAttributeNameToString(eDataType, instanceValue);
+      case OilPackage.TASK_TIMINGR_LOCK_ATTRIBUTE:
+        return convertTaskTimingrLockAttributeToString(eDataType, instanceValue);
+      case OilPackage.TASK_TIMING_ATTRIBUTE_NAME:
+        return convertTaskTimingAttributeNameToString(eDataType, instanceValue);
+      case OilPackage.TASK_ATTRIBUTE_NAME:
+        return convertTaskAttributeNameToString(eDataType, instanceValue);
+      case OilPackage.RESOURCE_RANGE:
+        return convertResourceRangeToString(eDataType, instanceValue);
+      case OilPackage.ACTIVATE_TASK:
+        return convertActivateTaskToString(eDataType, instanceValue);
+      case OilPackage.INCREMENT_COUNTER:
+        return convertIncrementCounterToString(eDataType, instanceValue);
+      case OilPackage.SETEVENT:
+        return convertSeteventToString(eDataType, instanceValue);
+      case OilPackage.ALARM_CALL_BACK:
+        return convertAlarmCallBackToString(eDataType, instanceValue);
+      case OilPackage.ABSOLUTE:
+        return convertAbsoluteToString(eDataType, instanceValue);
+      case OilPackage.SCHDULE_SYN:
+        return convertSchduleSynToString(eDataType, instanceValue);
+      case OilPackage.SCHDULE_EXPIRY_ADUSTBLE:
+        return convertSchduleExpiryAdustbleToString(eDataType, instanceValue);
+      case OilPackage.IOC_RECIVER_NONE:
+        return convertIocReciverNoneToString(eDataType, instanceValue);
+      case OilPackage.ENUM_IOC_SEND_REC:
+        return convertEnumIocSendRecToString(eDataType, instanceValue);
+      case OilPackage.ENUM_IOC_REC:
+        return convertEnumIocRecToString(eDataType, instanceValue);
+      case OilPackage.IOC_DATA_TYPE:
+        return convertIocDataTypeToString(eDataType, instanceValue);
+      case OilPackage.IOC_SEMANTICSENUM:
+        return convertIocSemanticsenumToString(eDataType, instanceValue);
+      case OilPackage.IOC_SEMANTICSENUMM:
+        return convertIocSemanticsenummToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -229,10 +339,10 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OsRule createOsRule()
+  public ImpTaskRule createImpTaskRule()
   {
-    OsRuleImpl osRule = new OsRuleImpl();
-    return osRule;
+    ImpTaskRuleImpl impTaskRule = new ImpTaskRuleImpl();
+    return impTaskRule;
   }
 
   /**
@@ -240,10 +350,10 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TaskRule createTaskRule()
+  public ImpTaskParam createImpTaskParam()
   {
-    TaskRuleImpl taskRule = new TaskRuleImpl();
-    return taskRule;
+    ImpTaskParamImpl impTaskParam = new ImpTaskParamImpl();
+    return impTaskParam;
   }
 
   /**
@@ -251,10 +361,43 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CounterRule createCounterRule()
+  public ImpOsRule createImpOsRule()
   {
-    CounterRuleImpl counterRule = new CounterRuleImpl();
-    return counterRule;
+    ImpOsRuleImpl impOsRule = new ImpOsRuleImpl();
+    return impOsRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImpOsParam createImpOsParam()
+  {
+    ImpOsParamImpl impOsParam = new ImpOsParamImpl();
+    return impOsParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImpCounterRule createImpCounterRule()
+  {
+    ImpCounterRuleImpl impCounterRule = new ImpCounterRuleImpl();
+    return impCounterRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImpCounterParam createImpCounterParam()
+  {
+    ImpCounterParamImpl impCounterParam = new ImpCounterParamImpl();
+    return impCounterParam;
   }
 
   /**
@@ -277,6 +420,17 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     AppSubContainerImpl appSubContainer = new AppSubContainerImpl();
     return appSubContainer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ApplicationParam createApplicationParam()
+  {
+    ApplicationParamImpl applicationParam = new ApplicationParamImpl();
+    return applicationParam;
   }
 
   /**
@@ -317,10 +471,10 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ApplicationParam createApplicationParam()
+  public TrustedFucRule createTrustedFucRule()
   {
-    ApplicationParamImpl applicationParam = new ApplicationParamImpl();
-    return applicationParam;
+    TrustedFucRuleImpl trustedFucRule = new TrustedFucRuleImpl();
+    return trustedFucRule;
   }
 
   /**
@@ -559,6 +713,270 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ComRule createComRule()
+  {
+    ComRuleImpl comRule = new ComRuleImpl();
+    return comRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Comattribute createComattribute()
+  {
+    ComattributeImpl comattribute = new ComattributeImpl();
+    return comattribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TaskRule createTaskRule()
+  {
+    TaskRuleImpl taskRule = new TaskRuleImpl();
+    return taskRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Taskattribute createTaskattribute()
+  {
+    TaskattributeImpl taskattribute = new TaskattributeImpl();
+    return taskattribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TaskTimingAttribute createTaskTimingAttribute()
+  {
+    TaskTimingAttributeImpl taskTimingAttribute = new TaskTimingAttributeImpl();
+    return taskTimingAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TaskAutostartAttribute createTaskAutostartAttribute()
+  {
+    TaskAutostartAttributeImpl taskAutostartAttribute = new TaskAutostartAttributeImpl();
+    return taskAutostartAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ResourceRule createResourceRule()
+  {
+    ResourceRuleImpl resourceRule = new ResourceRuleImpl();
+    return resourceRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Resourceattribute createResourceattribute()
+  {
+    ResourceattributeImpl resourceattribute = new ResourceattributeImpl();
+    return resourceattribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlarmRule createAlarmRule()
+  {
+    AlarmRuleImpl alarmRule = new AlarmRuleImpl();
+    return alarmRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlarmAttribute createAlarmAttribute()
+  {
+    AlarmAttributeImpl alarmAttribute = new AlarmAttributeImpl();
+    return alarmAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlarmActionAttribute createAlarmActionAttribute()
+  {
+    AlarmActionAttributeImpl alarmActionAttribute = new AlarmActionAttributeImpl();
+    return alarmActionAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlarmAutostartAttribute createAlarmAutostartAttribute()
+  {
+    AlarmAutostartAttributeImpl alarmAutostartAttribute = new AlarmAutostartAttributeImpl();
+    return alarmAutostartAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScheduleTableRule createScheduleTableRule()
+  {
+    ScheduleTableRuleImpl scheduleTableRule = new ScheduleTableRuleImpl();
+    return scheduleTableRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScheduleTableAttribute createScheduleTableAttribute()
+  {
+    ScheduleTableAttributeImpl scheduleTableAttribute = new ScheduleTableAttributeImpl();
+    return scheduleTableAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScheduleAutoStartAttribute createScheduleAutoStartAttribute()
+  {
+    ScheduleAutoStartAttributeImpl scheduleAutoStartAttribute = new ScheduleAutoStartAttributeImpl();
+    return scheduleAutoStartAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SchduleSynAttribute createSchduleSynAttribute()
+  {
+    SchduleSynAttributeImpl schduleSynAttribute = new SchduleSynAttributeImpl();
+    return schduleSynAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExpiryAttribute createExpiryAttribute()
+  {
+    ExpiryAttributeImpl expiryAttribute = new ExpiryAttributeImpl();
+    return expiryAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SchduleActionAttribute createSchduleActionAttribute()
+  {
+    SchduleActionAttributeImpl schduleActionAttribute = new SchduleActionAttributeImpl();
+    return schduleActionAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocRule createIocRule()
+  {
+    IocRuleImpl iocRule = new IocRuleImpl();
+    return iocRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocAttribute createIocAttribute()
+  {
+    IocAttributeImpl iocAttribute = new IocAttributeImpl();
+    return iocAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocSender createIocSender()
+  {
+    IocSenderImpl iocSender = new IocSenderImpl();
+    return iocSender;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocReceiver createIocReceiver()
+  {
+    IocReceiverImpl iocReceiver = new IocReceiverImpl();
+    return iocReceiver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocDataTypeAttr createIocDataTypeAttr()
+  {
+    IocDataTypeAttrImpl iocDataTypeAttr = new IocDataTypeAttrImpl();
+    return iocDataTypeAttr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocSemantics createIocSemantics()
+  {
+    IocSemanticsImpl iocSemantics = new IocSemanticsImpl();
+    return iocSemantics;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Attribute createAttribute()
   {
     AttributeImpl attribute = new AttributeImpl();
@@ -651,6 +1069,72 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     AutoAttributeValueImpl autoAttributeValue = new AutoAttributeValueImpl();
     return autoAttributeValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OsRule createOsRule()
+  {
+    OsRuleImpl osRule = new OsRuleImpl();
+    return osRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CounterRule createCounterRule()
+  {
+    CounterRuleImpl counterRule = new CounterRuleImpl();
+    return counterRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImpTaskParamEnum createImpTaskParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    ImpTaskParamEnum result = ImpTaskParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertImpTaskParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImpCounterParamEnum createImpCounterParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    ImpCounterParamEnum result = ImpCounterParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertImpCounterParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**
@@ -781,6 +1265,402 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * @generated
    */
   public String convertObjectRefTypeEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComAttributeName createComAttributeNameFromString(EDataType eDataType, String initialValue)
+  {
+    ComAttributeName result = ComAttributeName.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertComAttributeNameToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TaskTimingrLockAttribute createTaskTimingrLockAttributeFromString(EDataType eDataType, String initialValue)
+  {
+    TaskTimingrLockAttribute result = TaskTimingrLockAttribute.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTaskTimingrLockAttributeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TaskTimingAttributeName createTaskTimingAttributeNameFromString(EDataType eDataType, String initialValue)
+  {
+    TaskTimingAttributeName result = TaskTimingAttributeName.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTaskTimingAttributeNameToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TaskAttributeName createTaskAttributeNameFromString(EDataType eDataType, String initialValue)
+  {
+    TaskAttributeName result = TaskAttributeName.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTaskAttributeNameToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ResourceRange createResourceRangeFromString(EDataType eDataType, String initialValue)
+  {
+    ResourceRange result = ResourceRange.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertResourceRangeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActivateTask createActivateTaskFromString(EDataType eDataType, String initialValue)
+  {
+    ActivateTask result = ActivateTask.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertActivateTaskToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IncrementCounter createIncrementCounterFromString(EDataType eDataType, String initialValue)
+  {
+    IncrementCounter result = IncrementCounter.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIncrementCounterToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Setevent createSeteventFromString(EDataType eDataType, String initialValue)
+  {
+    Setevent result = Setevent.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSeteventToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlarmCallBack createAlarmCallBackFromString(EDataType eDataType, String initialValue)
+  {
+    AlarmCallBack result = AlarmCallBack.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertAlarmCallBackToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Absolute createAbsoluteFromString(EDataType eDataType, String initialValue)
+  {
+    Absolute result = Absolute.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertAbsoluteToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SchduleSyn createSchduleSynFromString(EDataType eDataType, String initialValue)
+  {
+    SchduleSyn result = SchduleSyn.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSchduleSynToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SchduleExpiryAdustble createSchduleExpiryAdustbleFromString(EDataType eDataType, String initialValue)
+  {
+    SchduleExpiryAdustble result = SchduleExpiryAdustble.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSchduleExpiryAdustbleToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocReciverNone createIocReciverNoneFromString(EDataType eDataType, String initialValue)
+  {
+    IocReciverNone result = IocReciverNone.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIocReciverNoneToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumIocSendRec createEnumIocSendRecFromString(EDataType eDataType, String initialValue)
+  {
+    EnumIocSendRec result = EnumIocSendRec.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertEnumIocSendRecToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumIocRec createEnumIocRecFromString(EDataType eDataType, String initialValue)
+  {
+    EnumIocRec result = EnumIocRec.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertEnumIocRecToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocDataType createIocDataTypeFromString(EDataType eDataType, String initialValue)
+  {
+    IocDataType result = IocDataType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIocDataTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocSemanticsenum createIocSemanticsenumFromString(EDataType eDataType, String initialValue)
+  {
+    IocSemanticsenum result = IocSemanticsenum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIocSemanticsenumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IocSemanticsenumm createIocSemanticsenummFromString(EDataType eDataType, String initialValue)
+  {
+    IocSemanticsenumm result = IocSemanticsenumm.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIocSemanticsenummToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -17,9 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.oil.oil.ObjectDefinition#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.ObjectDefinition#getLibraryList <em>Library List</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.ObjectDefinition#getObject <em>Object</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.ObjectDefinition#getParameterList <em>Parameter List</em>}</li>
- *   <li>{@link org.xtext.example.oil.oil.ObjectDefinition#getDescrption <em>Descrption</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,73 +67,5 @@ public interface ObjectDefinition extends EObject
    * @generated
    */
   EList<Librayattribute> getLibraryList();
-
-  /**
-   * Returns the value of the '<em><b>Object</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Object</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Object</em>' attribute.
-   * @see #setObject(String)
-   * @see org.xtext.example.oil.oil.OilPackage#getObjectDefinition_Object()
-   * @model
-   * @generated
-   */
-  String getObject();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.oil.oil.ObjectDefinition#getObject <em>Object</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Object</em>' attribute.
-   * @see #getObject()
-   * @generated
-   */
-  void setObject(String value);
-
-  /**
-   * Returns the value of the '<em><b>Parameter List</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.oil.oil.Attribute}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Parameter List</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameter List</em>' containment reference list.
-   * @see org.xtext.example.oil.oil.OilPackage#getObjectDefinition_ParameterList()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Attribute> getParameterList();
-
-  /**
-   * Returns the value of the '<em><b>Descrption</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Descrption</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Descrption</em>' attribute.
-   * @see #setDescrption(String)
-   * @see org.xtext.example.oil.oil.OilPackage#getObjectDefinition_Descrption()
-   * @model
-   * @generated
-   */
-  String getDescrption();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.oil.oil.ObjectDefinition#getDescrption <em>Descrption</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Descrption</em>' attribute.
-   * @see #getDescrption()
-   * @generated
-   */
-  void setDescrption(String value);
 
 } // ObjectDefinition

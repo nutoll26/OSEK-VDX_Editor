@@ -20,7 +20,7 @@ import org.xtext.example.oil.oil.OilPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.oil.oil.impl.OILVersionImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.xtext.example.oil.oil.impl.OILVersionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.example.oil.oil.impl.OILVersionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -30,24 +30,24 @@ import org.xtext.example.oil.oil.OilPackage;
 public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILVersion
 {
   /**
-   * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVersion()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String VERSION_EDEFAULT = null;
+  protected static final String VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVersion()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected String version = VERSION_EDEFAULT;
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -95,9 +95,9 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVersion()
+  public String getValue()
   {
-    return version;
+    return value;
   }
 
   /**
@@ -105,12 +105,12 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVersion(String newVersion)
+  public void setValue(String newValue)
   {
-    String oldVersion = version;
-    version = newVersion;
+    String oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.OIL_VERSION__VERSION, oldVersion, version));
+      eNotify(new ENotificationImpl(this, Notification.SET, OilPackage.OIL_VERSION__VALUE, oldValue, value));
   }
 
   /**
@@ -146,8 +146,8 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
   {
     switch (featureID)
     {
-      case OilPackage.OIL_VERSION__VERSION:
-        return getVersion();
+      case OilPackage.OIL_VERSION__VALUE:
+        return getValue();
       case OilPackage.OIL_VERSION__DESCRIPTION:
         return getDescription();
     }
@@ -164,8 +164,8 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
   {
     switch (featureID)
     {
-      case OilPackage.OIL_VERSION__VERSION:
-        setVersion((String)newValue);
+      case OilPackage.OIL_VERSION__VALUE:
+        setValue((String)newValue);
         return;
       case OilPackage.OIL_VERSION__DESCRIPTION:
         setDescription((String)newValue);
@@ -184,8 +184,8 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
   {
     switch (featureID)
     {
-      case OilPackage.OIL_VERSION__VERSION:
-        setVersion(VERSION_EDEFAULT);
+      case OilPackage.OIL_VERSION__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
       case OilPackage.OIL_VERSION__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
@@ -204,8 +204,8 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
   {
     switch (featureID)
     {
-      case OilPackage.OIL_VERSION__VERSION:
-        return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+      case OilPackage.OIL_VERSION__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case OilPackage.OIL_VERSION__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
@@ -223,8 +223,8 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (version: ");
-    result.append(version);
+    result.append(" (value: ");
+    result.append(value);
     result.append(", description: ");
     result.append(description);
     result.append(')');
