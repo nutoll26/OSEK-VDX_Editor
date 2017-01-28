@@ -224,7 +224,7 @@ public class ImplAttrBooleanDefImpl extends ImplAttrDefImpl implements ImplAttrB
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_ATTR_BOOLEAN_DEF;
+    return OilPackage.eINSTANCE.getImplAttrBooleanDef();
   }
 
   /**

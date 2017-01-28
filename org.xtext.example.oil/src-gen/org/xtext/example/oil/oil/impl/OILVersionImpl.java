@@ -87,7 +87,7 @@ public class OILVersionImpl extends MinimalEObjectImpl.Container implements OILV
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.OIL_VERSION;
+    return OilPackage.eINSTANCE.getOILVersion();
   }
 
   /**

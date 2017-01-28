@@ -177,7 +177,7 @@ public class ImplAttrIntDefImpl extends ImplAttrDefImpl implements ImplAttrIntDe
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_ATTR_INT_DEF;
+    return OilPackage.eINSTANCE.getImplAttrIntDef();
   }
 
   /**

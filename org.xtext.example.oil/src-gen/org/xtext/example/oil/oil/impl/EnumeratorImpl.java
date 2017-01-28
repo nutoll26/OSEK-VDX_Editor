@@ -108,7 +108,7 @@ public class EnumeratorImpl extends MinimalEObjectImpl.Container implements Enum
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.ENUMERATOR;
+    return OilPackage.eINSTANCE.getEnumerator();
   }
 
   /**

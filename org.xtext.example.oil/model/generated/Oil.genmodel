@@ -5,7 +5,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="6.0"
     copyrightFields="false" runtimeVersion="2.10">
   <genPackages prefix="Oil" basePackage="org.xtext.example.oil" disposableProviderFactory="true"
-      fileExtensions="oil" ecorePackage="Oil.ecore#/">
+      loadInitialization="true" literalsInterface="false" fileExtensions="oil" ecorePackage="Oil.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//ImpTaskParamEnum">
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ImpTaskParamEnum/STACKSIZE"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ImpTaskParamEnum/PRIORITY"/>
@@ -74,6 +74,31 @@
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ObjectRefTypeEnum/IOC_TYPE"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ObjectRefTypeEnum/APICONFIG_TYPE"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ObjectRefTypeEnum/LIBRARY_TYPE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//Messagefilter2">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/ALWAYS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEVER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/MASKEDNEWEQUALSX"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/MASKEDNEWDIFFERSX"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISEQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISDIFFERENT"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/MASKEDNEWEQUALSMASKEDOLD"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/MASKEDNEWDIFFERSMASKEDOLD"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISWITHIN"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISOUTSIDE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISGREATER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISLESSOREQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISLESS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEWISGREATEROREQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/ONEEVERYN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//MessageTRANSFERPROPERTYenum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MessageTRANSFERPROPERTYenum/TRIGGERED"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MessageTRANSFERPROPERTYenum/PENDING"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MessageTRANSFERPROPERTYenum/AUTO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//Messagelink1">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagelink1/EBoolean"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//ComAttributeName">
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ComAttributeName/COMSTATUS"/>
@@ -348,6 +373,136 @@
     <genClasses ecoreClass="Oil.ecore#//ObjectDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ObjectDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ObjectDefinition/LibraryList"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//EventRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//EventRule/eventvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//AppmodeRule"/>
+    <genClasses ecoreClass="Oil.ecore#//MessageRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//MessageRule/MessageList"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Messageattribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute/MessageList2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute/MessageList3"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Messageattribute3">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Messageattribute3/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute3/Msetevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute3/Mcomcallback"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageSETEVENT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageSETEVENT/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageCOMCALLBACK">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageCOMCALLBACK/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageCOMCALLBACK/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Messageattribute2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/Cdata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/SSE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/SDE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/SZE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RZI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RZE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RUI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RQI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RUE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RQE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RDE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messageattribute2/RZS"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_SEND_STATIC_EXTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_STATIC_EXTERNAL/Cdata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_STATIC_EXTERNAL/Transferproperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_STATIC_EXTERNAL/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_STATIC_EXTERNAL/networkordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_STATIC_EXTERNAL/cpuordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_STATIC_EXTERNAL/initialvalue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_STATIC_EXTERNAL/networkmessage"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_SEND_DYNAMIC_EXTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_DYNAMIC_EXTERNAL/Transferproperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_DYNAMIC_EXTERNAL/networkordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_DYNAMIC_EXTERNAL/cpuordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_DYNAMIC_EXTERNAL/initialvalue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_DYNAMIC_EXTERNAL/networkmessage"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_SEND_ZERO_EXTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_ZERO_EXTERNAL/networkordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_ZERO_EXTERNAL/cpuordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_SEND_ZERO_EXTERNAL/networkmessage"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_ZERO_INTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_ZERO_INTERNAL/sendingmessage"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_ZERO_EXTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_ZERO_EXTERNAL/networkordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_ZERO_EXTERNAL/cpuordercallout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_ZERO_EXTERNAL/networkmessage"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_UNQUEUED_INTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_UNQUEUED_INTERNAL/sendingmessage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_UNQUEUED_INTERNAL/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_UNQUEUED_INTERNAL/initialvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_QUEUED_INTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_INTERNAL/sendingmessage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_INTERNAL/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_INTERNAL/initialvalue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_INTERNAL/queuesize"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_UNQUEUED_EXTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_UNQUEUED_EXTERNAL/Cdata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_UNQUEUED_EXTERNAL/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_UNQUEUED_EXTERNAL/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_UNQUEUED_EXTERNAL/initialvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_QUEUED_EXTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_EXTERNAL/Cdata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_EXTERNAL/queuesize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_EXTERNAL/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_EXTERNAL/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_QUEUED_EXTERNAL/initialvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_DYNAMIC_EXTERNAL">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_DYNAMIC_EXTERNAL/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_DYNAMIC_EXTERNAL/initialvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Message_RECEIVE_ZERO_SENDERS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_ZERO_SENDERS/Cdata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Message_RECEIVE_ZERO_SENDERS/initialvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageCDATATYPE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageCDATATYPE/descrption"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageTRANSFERPROPERTY">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageTRANSFERPROPERTY/transenum"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageNETWORKORDERCALLOUT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageNETWORKORDERCALLOUT/descrption"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageCPUORDERCALLOUT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageCPUORDERCALLOUT/descrption"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageINITIALVALUE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageINITIALVALUE/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageNETWORKMESSAGE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//MessageNETWORKMESSAGE/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageSENDINGMESSAGE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageSENDINGMESSAGE/descrption"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageQUEUESIZE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageQUEUESIZE/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Messagefilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Messagefilter/filter2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Messagefilter/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Messagefilter/messageint1"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MessageLINK">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MessageLINK/messagelink"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//Librayattribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Librayattribute/description"/>

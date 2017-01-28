@@ -65,7 +65,7 @@ public class NumberAttributeValueImpl extends AttributeValueImpl implements Numb
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.NUMBER_ATTRIBUTE_VALUE;
+    return OilPackage.eINSTANCE.getNumberAttributeValue();
   }
 
   /**

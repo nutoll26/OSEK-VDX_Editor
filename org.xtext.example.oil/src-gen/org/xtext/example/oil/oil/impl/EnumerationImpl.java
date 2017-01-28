@@ -64,7 +64,7 @@ public class EnumerationImpl extends MinimalEObjectImpl.Container implements Enu
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.ENUMERATION;
+    return OilPackage.eINSTANCE.getEnumeration();
   }
 
   /**

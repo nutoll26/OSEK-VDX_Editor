@@ -2453,6 +2453,9 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cApplicationRuleParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cMemoryProtectionRuleParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		private final RuleCall cIsrRuleParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cMessageRuleParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
+		private final RuleCall cAppmodeRuleParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
+		private final RuleCall cEventRuleParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		
 		//ObjectDefinition:
 		//	"LIBRARY" name=Name ("{" LibraryList+=Librayattribute* "}")? ";"
@@ -2464,12 +2467,16 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//	| ComRule
 		//	| ApplicationRule
 		//	| MemoryProtectionRule
-		//	| IsrRule;
+		//	| IsrRule
+		//	| MessageRule
+		//	| AppmodeRule
+		//	| EventRule;
 		@Override public ParserRule getRule() { return rule; }
 		
 		////수정(AlarmRule,scheduletableRule 추가), resourcerule, taskrule, conrule추가 (달린)
 		//"LIBRARY" name=Name ("{" LibraryList+=Librayattribute* "}")? ";" | AlarmRule | ScheduleTableRule | IocRule |
-		//ResourceRule | TaskRule | ComRule | ApplicationRule | MemoryProtectionRule | IsrRule
+		//ResourceRule | TaskRule | ComRule | ApplicationRule | MemoryProtectionRule | IsrRule | MessageRule | AppmodeRule |
+		//EventRule
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//"LIBRARY" name=Name ("{" LibraryList+=Librayattribute* "}")? ";"
@@ -2528,6 +2535,1781 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//IsrRule
 		public RuleCall getIsrRuleParserRuleCall_9() { return cIsrRuleParserRuleCall_9; }
+		
+		//MessageRule
+		public RuleCall getMessageRuleParserRuleCall_10() { return cMessageRuleParserRuleCall_10; }
+		
+		//AppmodeRule
+		public RuleCall getAppmodeRuleParserRuleCall_11() { return cAppmodeRuleParserRuleCall_11; }
+		
+		//EventRule
+		public RuleCall getEventRuleParserRuleCall_12() { return cEventRuleParserRuleCall_12; }
+	}
+	public class EventRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.EventRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEVENTKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cMASKKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cEventvalueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cEventvalueNameParserRuleCall_5_0 = (RuleCall)cEventvalueAssignment_5.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//EventRule:
+		//	"EVENT" name=Name "{" "MASK" "=" eventvalue=Name ";" "}";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"EVENT" name=Name "{" "MASK" "=" eventvalue=Name ";" "}"
+		public Group getGroup() { return cGroup; }
+		
+		//"EVENT"
+		public Keyword getEVENTKeyword_0() { return cEVENTKeyword_0; }
+		
+		//name=Name
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//Name
+		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//"MASK"
+		public Keyword getMASKKeyword_3() { return cMASKKeyword_3; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+		
+		//eventvalue=Name
+		public Assignment getEventvalueAssignment_5() { return cEventvalueAssignment_5; }
+		
+		//Name
+		public RuleCall getEventvalueNameParserRuleCall_5_0() { return cEventvalueNameParserRuleCall_5_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+	}
+	public class AppmodeRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.AppmodeRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAPPMODEKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//AppmodeRule:
+		//	"APPMODE" name=Name "{" "}" ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"APPMODE" name=Name "{" "}" ";"
+		public Group getGroup() { return cGroup; }
+		
+		//"APPMODE"
+		public Keyword getAPPMODEKeyword_0() { return cAPPMODEKeyword_0; }
+		
+		//name=Name
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//Name
+		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class MessageRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMESSAGEKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cMessageListAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cMessageListMessageattributeParserRuleCall_2_1_0 = (RuleCall)cMessageListAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//MessageRule:
+		//	"MESSAGE" name=Name ("{" MessageList+=Messageattribute* "}") ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"MESSAGE" name=Name ("{" MessageList+=Messageattribute* "}") ";"
+		public Group getGroup() { return cGroup; }
+		
+		//"MESSAGE"
+		public Keyword getMESSAGEKeyword_0() { return cMESSAGEKeyword_0; }
+		
+		//name=Name
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//Name
+		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
+		
+		//("{" MessageList+=Messageattribute* "}")
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
+		
+		//MessageList+=Messageattribute*
+		public Assignment getMessageListAssignment_2_1() { return cMessageListAssignment_2_1; }
+		
+		//Messageattribute
+		public RuleCall getMessageListMessageattributeParserRuleCall_2_1_0() { return cMessageListMessageattributeParserRuleCall_2_1_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+	public class MessageattributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Messageattribute");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cMessageattributeAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cMESSAGEPROPERTYKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cMessageList2Assignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cMessageList2Messageattribute2ParserRuleCall_0_3_0 = (RuleCall)cMessageList2Assignment_0_3.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Keyword cNOTIFICATIONKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cNOTIFICATIONERRORKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cMessageList3Assignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cMessageList3Messageattribute3ParserRuleCall_1_2_0 = (RuleCall)cMessageList3Assignment_1_2.eContents().get(0);
+		
+		//Messageattribute:
+		//	{Messageattribute}
+		//	"MESSAGEPROPERTY" "=" MessageList2+=Messageattribute2 | ("NOTIFICATION" | "NOTIFICATIONERROR") "="
+		//	MessageList3=Messageattribute3;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Messageattribute} "MESSAGEPROPERTY" "=" MessageList2+=Messageattribute2 | ("NOTIFICATION" | "NOTIFICATIONERROR") "="
+		//MessageList3=Messageattribute3
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{Messageattribute} "MESSAGEPROPERTY" "=" MessageList2+=Messageattribute2
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{Messageattribute}
+		public Action getMessageattributeAction_0_0() { return cMessageattributeAction_0_0; }
+		
+		//"MESSAGEPROPERTY"
+		public Keyword getMESSAGEPROPERTYKeyword_0_1() { return cMESSAGEPROPERTYKeyword_0_1; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_0_2() { return cEqualsSignKeyword_0_2; }
+		
+		//MessageList2+=Messageattribute2
+		public Assignment getMessageList2Assignment_0_3() { return cMessageList2Assignment_0_3; }
+		
+		//Messageattribute2
+		public RuleCall getMessageList2Messageattribute2ParserRuleCall_0_3_0() { return cMessageList2Messageattribute2ParserRuleCall_0_3_0; }
+		
+		//("NOTIFICATION" | "NOTIFICATIONERROR") "=" MessageList3=Messageattribute3
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//("NOTIFICATION" | "NOTIFICATIONERROR")
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
+		//"NOTIFICATION"
+		public Keyword getNOTIFICATIONKeyword_1_0_0() { return cNOTIFICATIONKeyword_1_0_0; }
+		
+		//"NOTIFICATIONERROR"
+		public Keyword getNOTIFICATIONERRORKeyword_1_0_1() { return cNOTIFICATIONERRORKeyword_1_0_1; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//MessageList3=Messageattribute3
+		public Assignment getMessageList3Assignment_1_2() { return cMessageList3Assignment_1_2; }
+		
+		//Messageattribute3
+		public RuleCall getMessageList3Messageattribute3ParserRuleCall_1_2_0() { return cMessageList3Messageattribute3ParserRuleCall_1_2_0; }
+	}
+	public class Messageattribute3Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Messageattribute3");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageattribute3Action_0 = (Action)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Keyword cNONEKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Keyword cACTIVATETASKKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Keyword cTASKKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
+		private final Keyword cEqualsSignKeyword_1_1_3 = (Keyword)cGroup_1_1.eContents().get(3);
+		private final Assignment cDescriptionAssignment_1_1_4 = (Assignment)cGroup_1_1.eContents().get(4);
+		private final RuleCall cDescriptionIDTerminalRuleCall_1_1_4_0 = (RuleCall)cDescriptionAssignment_1_1_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_1_5 = (Keyword)cGroup_1_1.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_1_1_6 = (Keyword)cGroup_1_1.eContents().get(6);
+		private final Keyword cSemicolonKeyword_1_1_7 = (Keyword)cGroup_1_1.eContents().get(7);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Keyword cSETEVENTKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
+		private final Assignment cMseteventAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
+		private final RuleCall cMseteventMessageSETEVENTParserRuleCall_1_2_2_0 = (RuleCall)cMseteventAssignment_1_2_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_2_4 = (Keyword)cGroup_1_2.eContents().get(4);
+		private final Group cGroup_1_3 = (Group)cAlternatives_1.eContents().get(3);
+		private final Keyword cCOMCALLBACKKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_3_1 = (Keyword)cGroup_1_3.eContents().get(1);
+		private final Keyword cCALLBACKROUTINENAMEKeyword_1_3_2 = (Keyword)cGroup_1_3.eContents().get(2);
+		private final Keyword cEqualsSignKeyword_1_3_3 = (Keyword)cGroup_1_3.eContents().get(3);
+		private final Assignment cDescriptionAssignment_1_3_4 = (Assignment)cGroup_1_3.eContents().get(4);
+		private final RuleCall cDescriptionEStringParserRuleCall_1_3_4_0 = (RuleCall)cDescriptionAssignment_1_3_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_3_5 = (Keyword)cGroup_1_3.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_1_3_6 = (Keyword)cGroup_1_3.eContents().get(6);
+		private final Keyword cSemicolonKeyword_1_3_7 = (Keyword)cGroup_1_3.eContents().get(7);
+		private final Group cGroup_1_4 = (Group)cAlternatives_1.eContents().get(4);
+		private final Keyword cFLAGKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_4_1 = (Keyword)cGroup_1_4.eContents().get(1);
+		private final Keyword cFLAGNAMEKeyword_1_4_2 = (Keyword)cGroup_1_4.eContents().get(2);
+		private final Keyword cEqualsSignKeyword_1_4_3 = (Keyword)cGroup_1_4.eContents().get(3);
+		private final Assignment cDescriptionAssignment_1_4_4 = (Assignment)cGroup_1_4.eContents().get(4);
+		private final RuleCall cDescriptionEStringParserRuleCall_1_4_4_0 = (RuleCall)cDescriptionAssignment_1_4_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_4_5 = (Keyword)cGroup_1_4.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_1_4_6 = (Keyword)cGroup_1_4.eContents().get(6);
+		private final Keyword cSemicolonKeyword_1_4_7 = (Keyword)cGroup_1_4.eContents().get(7);
+		private final Group cGroup_1_5 = (Group)cAlternatives_1.eContents().get(5);
+		private final Keyword cCOMCALLBACKKeyword_1_5_0 = (Keyword)cGroup_1_5.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_5_1 = (Keyword)cGroup_1_5.eContents().get(1);
+		private final Assignment cMcomcallbackAssignment_1_5_2 = (Assignment)cGroup_1_5.eContents().get(2);
+		private final RuleCall cMcomcallbackMessageCOMCALLBACKParserRuleCall_1_5_2_0 = (RuleCall)cMcomcallbackAssignment_1_5_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_5_3 = (Keyword)cGroup_1_5.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_5_4 = (Keyword)cGroup_1_5.eContents().get(4);
+		
+		//Messageattribute3:
+		//	{Messageattribute3} ("NONE" ";" |
+		//	"ACTIVATETASK" "{" "TASK" "=" description=ID ";" "}" ";" |
+		//	"SETEVENT" "{" Msetevent+=MessageSETEVENT+ "}" ";" |
+		//	"COMCALLBACK" "{" "CALLBACKROUTINENAME" "=" description=EString ";" "}" ";" |
+		//	"FLAG" "{" "FLAGNAME" "=" description=EString ";" "}" ";" |
+		//	"COMCALLBACK" "{" Mcomcallback+=MessageCOMCALLBACK "}" ";");
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Messageattribute3} ("NONE" ";" | "ACTIVATETASK" "{" "TASK" "=" description=ID ";" "}" ";" | "SETEVENT" "{"
+		//Msetevent+=MessageSETEVENT+ "}" ";" | "COMCALLBACK" "{" "CALLBACKROUTINENAME" "=" description=EString ";" "}" ";" |
+		//"FLAG" "{" "FLAGNAME" "=" description=EString ";" "}" ";" | "COMCALLBACK" "{" Mcomcallback+=MessageCOMCALLBACK "}"
+		//";")
+		public Group getGroup() { return cGroup; }
+		
+		//{Messageattribute3}
+		public Action getMessageattribute3Action_0() { return cMessageattribute3Action_0; }
+		
+		//("NONE" ";" | "ACTIVATETASK" "{" "TASK" "=" description=ID ";" "}" ";" | "SETEVENT" "{" Msetevent+=MessageSETEVENT+ "}"
+		//";" | "COMCALLBACK" "{" "CALLBACKROUTINENAME" "=" description=EString ";" "}" ";" | "FLAG" "{" "FLAGNAME" "="
+		//description=EString ";" "}" ";" | "COMCALLBACK" "{" Mcomcallback+=MessageCOMCALLBACK "}" ";")
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//"NONE" ";"
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//"NONE"
+		public Keyword getNONEKeyword_1_0_0() { return cNONEKeyword_1_0_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_0_1() { return cSemicolonKeyword_1_0_1; }
+		
+		//"ACTIVATETASK" "{" "TASK" "=" description=ID ";" "}" ";"
+		public Group getGroup_1_1() { return cGroup_1_1; }
+		
+		//"ACTIVATETASK"
+		public Keyword getACTIVATETASKKeyword_1_1_0() { return cACTIVATETASKKeyword_1_1_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_1_1() { return cLeftCurlyBracketKeyword_1_1_1; }
+		
+		//"TASK"
+		public Keyword getTASKKeyword_1_1_2() { return cTASKKeyword_1_1_2; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1_3() { return cEqualsSignKeyword_1_1_3; }
+		
+		//description=ID
+		public Assignment getDescriptionAssignment_1_1_4() { return cDescriptionAssignment_1_1_4; }
+		
+		//ID
+		public RuleCall getDescriptionIDTerminalRuleCall_1_1_4_0() { return cDescriptionIDTerminalRuleCall_1_1_4_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_1_5() { return cSemicolonKeyword_1_1_5; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_1_6() { return cRightCurlyBracketKeyword_1_1_6; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_1_7() { return cSemicolonKeyword_1_1_7; }
+		
+		//"SETEVENT" "{" Msetevent+=MessageSETEVENT+ "}" ";"
+		public Group getGroup_1_2() { return cGroup_1_2; }
+		
+		//"SETEVENT"
+		public Keyword getSETEVENTKeyword_1_2_0() { return cSETEVENTKeyword_1_2_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_2_1() { return cLeftCurlyBracketKeyword_1_2_1; }
+		
+		//Msetevent+=MessageSETEVENT+
+		public Assignment getMseteventAssignment_1_2_2() { return cMseteventAssignment_1_2_2; }
+		
+		//MessageSETEVENT
+		public RuleCall getMseteventMessageSETEVENTParserRuleCall_1_2_2_0() { return cMseteventMessageSETEVENTParserRuleCall_1_2_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2_3() { return cRightCurlyBracketKeyword_1_2_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_2_4() { return cSemicolonKeyword_1_2_4; }
+		
+		//"COMCALLBACK" "{" "CALLBACKROUTINENAME" "=" description=EString ";" "}" ";"
+		public Group getGroup_1_3() { return cGroup_1_3; }
+		
+		//"COMCALLBACK"
+		public Keyword getCOMCALLBACKKeyword_1_3_0() { return cCOMCALLBACKKeyword_1_3_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_3_1() { return cLeftCurlyBracketKeyword_1_3_1; }
+		
+		//"CALLBACKROUTINENAME"
+		public Keyword getCALLBACKROUTINENAMEKeyword_1_3_2() { return cCALLBACKROUTINENAMEKeyword_1_3_2; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_3_3() { return cEqualsSignKeyword_1_3_3; }
+		
+		//description=EString
+		public Assignment getDescriptionAssignment_1_3_4() { return cDescriptionAssignment_1_3_4; }
+		
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_1_3_4_0() { return cDescriptionEStringParserRuleCall_1_3_4_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3_5() { return cSemicolonKeyword_1_3_5; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_3_6() { return cRightCurlyBracketKeyword_1_3_6; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3_7() { return cSemicolonKeyword_1_3_7; }
+		
+		//"FLAG" "{" "FLAGNAME" "=" description=EString ";" "}" ";"
+		public Group getGroup_1_4() { return cGroup_1_4; }
+		
+		//"FLAG"
+		public Keyword getFLAGKeyword_1_4_0() { return cFLAGKeyword_1_4_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_4_1() { return cLeftCurlyBracketKeyword_1_4_1; }
+		
+		//"FLAGNAME"
+		public Keyword getFLAGNAMEKeyword_1_4_2() { return cFLAGNAMEKeyword_1_4_2; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_4_3() { return cEqualsSignKeyword_1_4_3; }
+		
+		//description=EString
+		public Assignment getDescriptionAssignment_1_4_4() { return cDescriptionAssignment_1_4_4; }
+		
+		//EString
+		public RuleCall getDescriptionEStringParserRuleCall_1_4_4_0() { return cDescriptionEStringParserRuleCall_1_4_4_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_4_5() { return cSemicolonKeyword_1_4_5; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_4_6() { return cRightCurlyBracketKeyword_1_4_6; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_4_7() { return cSemicolonKeyword_1_4_7; }
+		
+		//"COMCALLBACK" "{" Mcomcallback+=MessageCOMCALLBACK "}" ";"
+		public Group getGroup_1_5() { return cGroup_1_5; }
+		
+		//"COMCALLBACK"
+		public Keyword getCOMCALLBACKKeyword_1_5_0() { return cCOMCALLBACKKeyword_1_5_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_5_1() { return cLeftCurlyBracketKeyword_1_5_1; }
+		
+		//Mcomcallback+=MessageCOMCALLBACK
+		public Assignment getMcomcallbackAssignment_1_5_2() { return cMcomcallbackAssignment_1_5_2; }
+		
+		//MessageCOMCALLBACK
+		public RuleCall getMcomcallbackMessageCOMCALLBACKParserRuleCall_1_5_2_0() { return cMcomcallbackMessageCOMCALLBACKParserRuleCall_1_5_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_5_3() { return cRightCurlyBracketKeyword_1_5_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_5_4() { return cSemicolonKeyword_1_5_4; }
+	}
+	public class MessageSETEVENTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageSETEVENT");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cTASKKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cDescriptionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cDescriptionIDTerminalRuleCall_0_2_0 = (RuleCall)cDescriptionAssignment_0_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cEVENTKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cDescriptionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cDescriptionIDTerminalRuleCall_1_2_0 = (RuleCall)cDescriptionAssignment_1_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		
+		//MessageSETEVENT:
+		//	"TASK" "=" description=ID ";" | "EVENT" "=" description=ID ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"TASK" "=" description=ID ";" | "EVENT" "=" description=ID ";"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//"TASK" "=" description=ID ";"
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//"TASK"
+		public Keyword getTASKKeyword_0_0() { return cTASKKeyword_0_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
+		
+		//description=ID
+		public Assignment getDescriptionAssignment_0_2() { return cDescriptionAssignment_0_2; }
+		
+		//ID
+		public RuleCall getDescriptionIDTerminalRuleCall_0_2_0() { return cDescriptionIDTerminalRuleCall_0_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_0_3() { return cSemicolonKeyword_0_3; }
+		
+		//"EVENT" "=" description=ID ";"
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//"EVENT"
+		public Keyword getEVENTKeyword_1_0() { return cEVENTKeyword_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//description=ID
+		public Assignment getDescriptionAssignment_1_2() { return cDescriptionAssignment_1_2; }
+		
+		//ID
+		public RuleCall getDescriptionIDTerminalRuleCall_1_2_0() { return cDescriptionIDTerminalRuleCall_1_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3() { return cSemicolonKeyword_1_3; }
+	}
+	public class MessageCOMCALLBACKElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageCOMCALLBACK");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cCALLBACKROUTINENAMEKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cDescriptionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cDescriptionIDTerminalRuleCall_0_2_0 = (RuleCall)cDescriptionAssignment_0_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cMONITOREDIPDUKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cValueT_NUMBERTerminalRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		
+		//MessageCOMCALLBACK:
+		//	"CALLBACKROUTINENAME" "=" description=ID ";" | "MONITOREDIPDU" "=" value=T_NUMBER ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"CALLBACKROUTINENAME" "=" description=ID ";" | "MONITOREDIPDU" "=" value=T_NUMBER ";"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//"CALLBACKROUTINENAME" "=" description=ID ";"
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//"CALLBACKROUTINENAME"
+		public Keyword getCALLBACKROUTINENAMEKeyword_0_0() { return cCALLBACKROUTINENAMEKeyword_0_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
+		
+		//description=ID
+		public Assignment getDescriptionAssignment_0_2() { return cDescriptionAssignment_0_2; }
+		
+		//ID
+		public RuleCall getDescriptionIDTerminalRuleCall_0_2_0() { return cDescriptionIDTerminalRuleCall_0_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_0_3() { return cSemicolonKeyword_0_3; }
+		
+		//"MONITOREDIPDU" "=" value=T_NUMBER ";"
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//"MONITOREDIPDU"
+		public Keyword getMONITOREDIPDUKeyword_1_0() { return cMONITOREDIPDUKeyword_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//value=T_NUMBER
+		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
+		
+		//T_NUMBER
+		public RuleCall getValueT_NUMBERTerminalRuleCall_1_2_0() { return cValueT_NUMBERTerminalRuleCall_1_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3() { return cSemicolonKeyword_1_3; }
+	}
+	public class Messageattribute2Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Messageattribute2");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageattribute2Action_0 = (Action)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Keyword cSEND_STATIC_INTERNALKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cCdataAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final RuleCall cCdataMessageCDATATYPEParserRuleCall_1_0_2_0 = (RuleCall)cCdataAssignment_1_0_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_0_3 = (Keyword)cGroup_1_0.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_0_4 = (Keyword)cGroup_1_0.eContents().get(4);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Keyword cSEND_STATIC_EXTERNALKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Assignment cSSEAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
+		private final RuleCall cSSEMessage_SEND_STATIC_EXTERNALParserRuleCall_1_1_2_0 = (RuleCall)cSSEAssignment_1_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_1_3 = (Keyword)cGroup_1_1.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_1_4 = (Keyword)cGroup_1_1.eContents().get(4);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Keyword cSEND_DYNAMIC_EXTERNALKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
+		private final Assignment cSDEAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
+		private final RuleCall cSDEMessage_SEND_DYNAMIC_EXTERNALParserRuleCall_1_2_2_0 = (RuleCall)cSDEAssignment_1_2_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_2_4 = (Keyword)cGroup_1_2.eContents().get(4);
+		private final Group cGroup_1_3 = (Group)cAlternatives_1.eContents().get(3);
+		private final Keyword cSEND_ZERO_INTERNALKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_3_1 = (Keyword)cGroup_1_3.eContents().get(1);
+		private final Group cGroup_1_4 = (Group)cAlternatives_1.eContents().get(4);
+		private final Keyword cSEND_ZERO_EXTERNALKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_4_1 = (Keyword)cGroup_1_4.eContents().get(1);
+		private final Assignment cSZEAssignment_1_4_2 = (Assignment)cGroup_1_4.eContents().get(2);
+		private final RuleCall cSZEMessage_SEND_ZERO_EXTERNALParserRuleCall_1_4_2_0 = (RuleCall)cSZEAssignment_1_4_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_4_3 = (Keyword)cGroup_1_4.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_4_4 = (Keyword)cGroup_1_4.eContents().get(4);
+		private final Group cGroup_1_5 = (Group)cAlternatives_1.eContents().get(5);
+		private final Keyword cRECEIVE_ZERO_INTERNALKeyword_1_5_0 = (Keyword)cGroup_1_5.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_5_1 = (Keyword)cGroup_1_5.eContents().get(1);
+		private final Assignment cRZIAssignment_1_5_2 = (Assignment)cGroup_1_5.eContents().get(2);
+		private final RuleCall cRZIMessage_RECEIVE_ZERO_INTERNALParserRuleCall_1_5_2_0 = (RuleCall)cRZIAssignment_1_5_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_5_3 = (Keyword)cGroup_1_5.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_5_4 = (Keyword)cGroup_1_5.eContents().get(4);
+		private final Group cGroup_1_6 = (Group)cAlternatives_1.eContents().get(6);
+		private final Keyword cRECEIVE_ZERO_EXTERNALKeyword_1_6_0 = (Keyword)cGroup_1_6.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_6_1 = (Keyword)cGroup_1_6.eContents().get(1);
+		private final Assignment cRZEAssignment_1_6_2 = (Assignment)cGroup_1_6.eContents().get(2);
+		private final RuleCall cRZEMessage_RECEIVE_ZERO_EXTERNALParserRuleCall_1_6_2_0 = (RuleCall)cRZEAssignment_1_6_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_6_3 = (Keyword)cGroup_1_6.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_6_4 = (Keyword)cGroup_1_6.eContents().get(4);
+		private final Group cGroup_1_7 = (Group)cAlternatives_1.eContents().get(7);
+		private final Keyword cRECEIVE_UNQUEUED_INTERNALKeyword_1_7_0 = (Keyword)cGroup_1_7.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_7_1 = (Keyword)cGroup_1_7.eContents().get(1);
+		private final Assignment cRUIAssignment_1_7_2 = (Assignment)cGroup_1_7.eContents().get(2);
+		private final RuleCall cRUIMessage_RECEIVE_UNQUEUED_INTERNALParserRuleCall_1_7_2_0 = (RuleCall)cRUIAssignment_1_7_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_7_3 = (Keyword)cGroup_1_7.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_7_4 = (Keyword)cGroup_1_7.eContents().get(4);
+		private final Group cGroup_1_8 = (Group)cAlternatives_1.eContents().get(8);
+		private final Keyword cRECEIVE_QUEUED_INTERNALKeyword_1_8_0 = (Keyword)cGroup_1_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_8_1 = (Keyword)cGroup_1_8.eContents().get(1);
+		private final Assignment cRQIAssignment_1_8_2 = (Assignment)cGroup_1_8.eContents().get(2);
+		private final RuleCall cRQIMessage_RECEIVE_QUEUED_INTERNALParserRuleCall_1_8_2_0 = (RuleCall)cRQIAssignment_1_8_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_8_3 = (Keyword)cGroup_1_8.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_8_4 = (Keyword)cGroup_1_8.eContents().get(4);
+		private final Group cGroup_1_9 = (Group)cAlternatives_1.eContents().get(9);
+		private final Keyword cRECEIVE_UNQUEUED_EXTERNALKeyword_1_9_0 = (Keyword)cGroup_1_9.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_9_1 = (Keyword)cGroup_1_9.eContents().get(1);
+		private final Assignment cRUEAssignment_1_9_2 = (Assignment)cGroup_1_9.eContents().get(2);
+		private final RuleCall cRUEMessage_RECEIVE_UNQUEUED_EXTERNALParserRuleCall_1_9_2_0 = (RuleCall)cRUEAssignment_1_9_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_9_3 = (Keyword)cGroup_1_9.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_9_4 = (Keyword)cGroup_1_9.eContents().get(4);
+		private final Group cGroup_1_10 = (Group)cAlternatives_1.eContents().get(10);
+		private final Keyword cRECEIVE_QUEUED_EXTERNALKeyword_1_10_0 = (Keyword)cGroup_1_10.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_10_1 = (Keyword)cGroup_1_10.eContents().get(1);
+		private final Assignment cRQEAssignment_1_10_2 = (Assignment)cGroup_1_10.eContents().get(2);
+		private final RuleCall cRQEMessage_RECEIVE_QUEUED_EXTERNALParserRuleCall_1_10_2_0 = (RuleCall)cRQEAssignment_1_10_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_10_3 = (Keyword)cGroup_1_10.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_10_4 = (Keyword)cGroup_1_10.eContents().get(4);
+		private final Group cGroup_1_11 = (Group)cAlternatives_1.eContents().get(11);
+		private final Keyword cRECEIVE_DYNAMIC_EXTERNALKeyword_1_11_0 = (Keyword)cGroup_1_11.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_11_1 = (Keyword)cGroup_1_11.eContents().get(1);
+		private final Assignment cRDEAssignment_1_11_2 = (Assignment)cGroup_1_11.eContents().get(2);
+		private final RuleCall cRDEMessage_RECEIVE_DYNAMIC_EXTERNALParserRuleCall_1_11_2_0 = (RuleCall)cRDEAssignment_1_11_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_11_3 = (Keyword)cGroup_1_11.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_11_4 = (Keyword)cGroup_1_11.eContents().get(4);
+		private final Group cGroup_1_12 = (Group)cAlternatives_1.eContents().get(12);
+		private final Keyword cRECEIVE_ZERO_SENDERSKeyword_1_12_0 = (Keyword)cGroup_1_12.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_12_1 = (Keyword)cGroup_1_12.eContents().get(1);
+		private final Assignment cRZSAssignment_1_12_2 = (Assignment)cGroup_1_12.eContents().get(2);
+		private final RuleCall cRZSMessage_RECEIVE_ZERO_SENDERSParserRuleCall_1_12_2_0 = (RuleCall)cRZSAssignment_1_12_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_12_3 = (Keyword)cGroup_1_12.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_12_4 = (Keyword)cGroup_1_12.eContents().get(4);
+		
+		//Messageattribute2:
+		//	{Messageattribute2} ("SEND_STATIC_INTERNAL" "{" Cdata+=MessageCDATATYPE "}" ";" |
+		//	"SEND_STATIC_EXTERNAL" "{" SSE=Message_SEND_STATIC_EXTERNAL "}" ";" | / *test code not exist * /
+		//	"SEND_DYNAMIC_EXTERNAL" "{" SDE=Message_SEND_DYNAMIC_EXTERNAL "}" ";" |
+		//	"SEND_ZERO_INTERNAL" ";" / *test code not exist * / |
+		//	"SEND_ZERO_EXTERNAL" "{" SZE=Message_SEND_ZERO_EXTERNAL "}" ";" |
+		//	"RECEIVE_ZERO_INTERNAL" "{" RZI=Message_RECEIVE_ZERO_INTERNAL "}" ";" |
+		//	"RECEIVE_ZERO_EXTERNAL" "{" RZE=Message_RECEIVE_ZERO_EXTERNAL "}" ";" |
+		//	"RECEIVE_UNQUEUED_INTERNAL" "{" RUI+=Message_RECEIVE_UNQUEUED_INTERNAL* "}" ";" |
+		//	"RECEIVE_QUEUED_INTERNAL" "{" RQI=Message_RECEIVE_QUEUED_INTERNAL "}" ";" |
+		//	"RECEIVE_UNQUEUED_EXTERNAL" "{" RUE=Message_RECEIVE_UNQUEUED_EXTERNAL "}" ";" |
+		//	"RECEIVE_QUEUED_EXTERNAL" "{" RQE=Message_RECEIVE_QUEUED_EXTERNAL "}" ";" |
+		//	"RECEIVE_DYNAMIC_EXTERNAL" "{" RDE=Message_RECEIVE_DYNAMIC_EXTERNAL "}" ";" |
+		//	"RECEIVE_ZERO_SENDERS" "{" RZS=Message_RECEIVE_ZERO_SENDERS "}" ";");
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Messageattribute2} ("SEND_STATIC_INTERNAL" "{" Cdata+=MessageCDATATYPE "}" ";" | "SEND_STATIC_EXTERNAL" "{"
+		//SSE=Message_SEND_STATIC_EXTERNAL "}" ";" | / *test code not exist * / "SEND_DYNAMIC_EXTERNAL" "{"
+		//SDE=Message_SEND_DYNAMIC_EXTERNAL "}" ";" | "SEND_ZERO_INTERNAL" ";" / *test code not exist * / | "SEND_ZERO_EXTERNAL"
+		//"{" SZE=Message_SEND_ZERO_EXTERNAL "}" ";" | "RECEIVE_ZERO_INTERNAL" "{" RZI=Message_RECEIVE_ZERO_INTERNAL "}" ";" |
+		//"RECEIVE_ZERO_EXTERNAL" "{" RZE=Message_RECEIVE_ZERO_EXTERNAL "}" ";" | "RECEIVE_UNQUEUED_INTERNAL" "{"
+		//RUI+=Message_RECEIVE_UNQUEUED_INTERNAL* "}" ";" | "RECEIVE_QUEUED_INTERNAL" "{" RQI=Message_RECEIVE_QUEUED_INTERNAL
+		//"}" ";" | "RECEIVE_UNQUEUED_EXTERNAL" "{" RUE=Message_RECEIVE_UNQUEUED_EXTERNAL "}" ";" | "RECEIVE_QUEUED_EXTERNAL"
+		//"{" RQE=Message_RECEIVE_QUEUED_EXTERNAL "}" ";" | "RECEIVE_DYNAMIC_EXTERNAL" "{" RDE=Message_RECEIVE_DYNAMIC_EXTERNAL
+		//"}" ";" | "RECEIVE_ZERO_SENDERS" "{" RZS=Message_RECEIVE_ZERO_SENDERS "}" ";")
+		public Group getGroup() { return cGroup; }
+		
+		//{Messageattribute2}
+		public Action getMessageattribute2Action_0() { return cMessageattribute2Action_0; }
+		
+		//("SEND_STATIC_INTERNAL" "{" Cdata+=MessageCDATATYPE "}" ";" | "SEND_STATIC_EXTERNAL" "{"
+		//SSE=Message_SEND_STATIC_EXTERNAL "}" ";" | / *test code not exist * / "SEND_DYNAMIC_EXTERNAL" "{"
+		//SDE=Message_SEND_DYNAMIC_EXTERNAL "}" ";" | "SEND_ZERO_INTERNAL" ";" / *test code not exist * / | "SEND_ZERO_EXTERNAL"
+		//"{" SZE=Message_SEND_ZERO_EXTERNAL "}" ";" | "RECEIVE_ZERO_INTERNAL" "{" RZI=Message_RECEIVE_ZERO_INTERNAL "}" ";" |
+		//"RECEIVE_ZERO_EXTERNAL" "{" RZE=Message_RECEIVE_ZERO_EXTERNAL "}" ";" | "RECEIVE_UNQUEUED_INTERNAL" "{"
+		//RUI+=Message_RECEIVE_UNQUEUED_INTERNAL* "}" ";" | "RECEIVE_QUEUED_INTERNAL" "{" RQI=Message_RECEIVE_QUEUED_INTERNAL
+		//"}" ";" | "RECEIVE_UNQUEUED_EXTERNAL" "{" RUE=Message_RECEIVE_UNQUEUED_EXTERNAL "}" ";" | "RECEIVE_QUEUED_EXTERNAL"
+		//"{" RQE=Message_RECEIVE_QUEUED_EXTERNAL "}" ";" | "RECEIVE_DYNAMIC_EXTERNAL" "{" RDE=Message_RECEIVE_DYNAMIC_EXTERNAL
+		//"}" ";" | "RECEIVE_ZERO_SENDERS" "{" RZS=Message_RECEIVE_ZERO_SENDERS "}" ";")
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//"SEND_STATIC_INTERNAL" "{" Cdata+=MessageCDATATYPE "}" ";"
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//"SEND_STATIC_INTERNAL"
+		public Keyword getSEND_STATIC_INTERNALKeyword_1_0_0() { return cSEND_STATIC_INTERNALKeyword_1_0_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_0_1() { return cLeftCurlyBracketKeyword_1_0_1; }
+		
+		//Cdata+=MessageCDATATYPE
+		public Assignment getCdataAssignment_1_0_2() { return cCdataAssignment_1_0_2; }
+		
+		//MessageCDATATYPE
+		public RuleCall getCdataMessageCDATATYPEParserRuleCall_1_0_2_0() { return cCdataMessageCDATATYPEParserRuleCall_1_0_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_0_3() { return cRightCurlyBracketKeyword_1_0_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_0_4() { return cSemicolonKeyword_1_0_4; }
+		
+		//"SEND_STATIC_EXTERNAL" "{" SSE=Message_SEND_STATIC_EXTERNAL "}" ";"
+		public Group getGroup_1_1() { return cGroup_1_1; }
+		
+		//"SEND_STATIC_EXTERNAL"
+		public Keyword getSEND_STATIC_EXTERNALKeyword_1_1_0() { return cSEND_STATIC_EXTERNALKeyword_1_1_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_1_1() { return cLeftCurlyBracketKeyword_1_1_1; }
+		
+		//SSE=Message_SEND_STATIC_EXTERNAL
+		public Assignment getSSEAssignment_1_1_2() { return cSSEAssignment_1_1_2; }
+		
+		//Message_SEND_STATIC_EXTERNAL
+		public RuleCall getSSEMessage_SEND_STATIC_EXTERNALParserRuleCall_1_1_2_0() { return cSSEMessage_SEND_STATIC_EXTERNALParserRuleCall_1_1_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_1_3() { return cRightCurlyBracketKeyword_1_1_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_1_4() { return cSemicolonKeyword_1_1_4; }
+		
+		/// *test code not exist * / "SEND_DYNAMIC_EXTERNAL" "{" SDE=Message_SEND_DYNAMIC_EXTERNAL "}" ";"
+		public Group getGroup_1_2() { return cGroup_1_2; }
+		
+		/// *test code not exist * / "SEND_DYNAMIC_EXTERNAL"
+		public Keyword getSEND_DYNAMIC_EXTERNALKeyword_1_2_0() { return cSEND_DYNAMIC_EXTERNALKeyword_1_2_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_2_1() { return cLeftCurlyBracketKeyword_1_2_1; }
+		
+		//SDE=Message_SEND_DYNAMIC_EXTERNAL
+		public Assignment getSDEAssignment_1_2_2() { return cSDEAssignment_1_2_2; }
+		
+		//Message_SEND_DYNAMIC_EXTERNAL
+		public RuleCall getSDEMessage_SEND_DYNAMIC_EXTERNALParserRuleCall_1_2_2_0() { return cSDEMessage_SEND_DYNAMIC_EXTERNALParserRuleCall_1_2_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2_3() { return cRightCurlyBracketKeyword_1_2_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_2_4() { return cSemicolonKeyword_1_2_4; }
+		
+		//"SEND_ZERO_INTERNAL" ";"
+		public Group getGroup_1_3() { return cGroup_1_3; }
+		
+		//"SEND_ZERO_INTERNAL"
+		public Keyword getSEND_ZERO_INTERNALKeyword_1_3_0() { return cSEND_ZERO_INTERNALKeyword_1_3_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3_1() { return cSemicolonKeyword_1_3_1; }
+		
+		//"SEND_ZERO_EXTERNAL" "{" SZE=Message_SEND_ZERO_EXTERNAL "}" ";"
+		public Group getGroup_1_4() { return cGroup_1_4; }
+		
+		//"SEND_ZERO_EXTERNAL"
+		public Keyword getSEND_ZERO_EXTERNALKeyword_1_4_0() { return cSEND_ZERO_EXTERNALKeyword_1_4_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_4_1() { return cLeftCurlyBracketKeyword_1_4_1; }
+		
+		//SZE=Message_SEND_ZERO_EXTERNAL
+		public Assignment getSZEAssignment_1_4_2() { return cSZEAssignment_1_4_2; }
+		
+		//Message_SEND_ZERO_EXTERNAL
+		public RuleCall getSZEMessage_SEND_ZERO_EXTERNALParserRuleCall_1_4_2_0() { return cSZEMessage_SEND_ZERO_EXTERNALParserRuleCall_1_4_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_4_3() { return cRightCurlyBracketKeyword_1_4_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_4_4() { return cSemicolonKeyword_1_4_4; }
+		
+		//"RECEIVE_ZERO_INTERNAL" "{" RZI=Message_RECEIVE_ZERO_INTERNAL "}" ";"
+		public Group getGroup_1_5() { return cGroup_1_5; }
+		
+		//"RECEIVE_ZERO_INTERNAL"
+		public Keyword getRECEIVE_ZERO_INTERNALKeyword_1_5_0() { return cRECEIVE_ZERO_INTERNALKeyword_1_5_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_5_1() { return cLeftCurlyBracketKeyword_1_5_1; }
+		
+		//RZI=Message_RECEIVE_ZERO_INTERNAL
+		public Assignment getRZIAssignment_1_5_2() { return cRZIAssignment_1_5_2; }
+		
+		//Message_RECEIVE_ZERO_INTERNAL
+		public RuleCall getRZIMessage_RECEIVE_ZERO_INTERNALParserRuleCall_1_5_2_0() { return cRZIMessage_RECEIVE_ZERO_INTERNALParserRuleCall_1_5_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_5_3() { return cRightCurlyBracketKeyword_1_5_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_5_4() { return cSemicolonKeyword_1_5_4; }
+		
+		//"RECEIVE_ZERO_EXTERNAL" "{" RZE=Message_RECEIVE_ZERO_EXTERNAL "}" ";"
+		public Group getGroup_1_6() { return cGroup_1_6; }
+		
+		//"RECEIVE_ZERO_EXTERNAL"
+		public Keyword getRECEIVE_ZERO_EXTERNALKeyword_1_6_0() { return cRECEIVE_ZERO_EXTERNALKeyword_1_6_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_6_1() { return cLeftCurlyBracketKeyword_1_6_1; }
+		
+		//RZE=Message_RECEIVE_ZERO_EXTERNAL
+		public Assignment getRZEAssignment_1_6_2() { return cRZEAssignment_1_6_2; }
+		
+		//Message_RECEIVE_ZERO_EXTERNAL
+		public RuleCall getRZEMessage_RECEIVE_ZERO_EXTERNALParserRuleCall_1_6_2_0() { return cRZEMessage_RECEIVE_ZERO_EXTERNALParserRuleCall_1_6_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_6_3() { return cRightCurlyBracketKeyword_1_6_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_6_4() { return cSemicolonKeyword_1_6_4; }
+		
+		//"RECEIVE_UNQUEUED_INTERNAL" "{" RUI+=Message_RECEIVE_UNQUEUED_INTERNAL* "}" ";"
+		public Group getGroup_1_7() { return cGroup_1_7; }
+		
+		//"RECEIVE_UNQUEUED_INTERNAL"
+		public Keyword getRECEIVE_UNQUEUED_INTERNALKeyword_1_7_0() { return cRECEIVE_UNQUEUED_INTERNALKeyword_1_7_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_7_1() { return cLeftCurlyBracketKeyword_1_7_1; }
+		
+		//RUI+=Message_RECEIVE_UNQUEUED_INTERNAL*
+		public Assignment getRUIAssignment_1_7_2() { return cRUIAssignment_1_7_2; }
+		
+		//Message_RECEIVE_UNQUEUED_INTERNAL
+		public RuleCall getRUIMessage_RECEIVE_UNQUEUED_INTERNALParserRuleCall_1_7_2_0() { return cRUIMessage_RECEIVE_UNQUEUED_INTERNALParserRuleCall_1_7_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_7_3() { return cRightCurlyBracketKeyword_1_7_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_7_4() { return cSemicolonKeyword_1_7_4; }
+		
+		//"RECEIVE_QUEUED_INTERNAL" "{" RQI=Message_RECEIVE_QUEUED_INTERNAL "}" ";"
+		public Group getGroup_1_8() { return cGroup_1_8; }
+		
+		//"RECEIVE_QUEUED_INTERNAL"
+		public Keyword getRECEIVE_QUEUED_INTERNALKeyword_1_8_0() { return cRECEIVE_QUEUED_INTERNALKeyword_1_8_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_8_1() { return cLeftCurlyBracketKeyword_1_8_1; }
+		
+		//RQI=Message_RECEIVE_QUEUED_INTERNAL
+		public Assignment getRQIAssignment_1_8_2() { return cRQIAssignment_1_8_2; }
+		
+		//Message_RECEIVE_QUEUED_INTERNAL
+		public RuleCall getRQIMessage_RECEIVE_QUEUED_INTERNALParserRuleCall_1_8_2_0() { return cRQIMessage_RECEIVE_QUEUED_INTERNALParserRuleCall_1_8_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_8_3() { return cRightCurlyBracketKeyword_1_8_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_8_4() { return cSemicolonKeyword_1_8_4; }
+		
+		//"RECEIVE_UNQUEUED_EXTERNAL" "{" RUE=Message_RECEIVE_UNQUEUED_EXTERNAL "}" ";"
+		public Group getGroup_1_9() { return cGroup_1_9; }
+		
+		//"RECEIVE_UNQUEUED_EXTERNAL"
+		public Keyword getRECEIVE_UNQUEUED_EXTERNALKeyword_1_9_0() { return cRECEIVE_UNQUEUED_EXTERNALKeyword_1_9_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_9_1() { return cLeftCurlyBracketKeyword_1_9_1; }
+		
+		//RUE=Message_RECEIVE_UNQUEUED_EXTERNAL
+		public Assignment getRUEAssignment_1_9_2() { return cRUEAssignment_1_9_2; }
+		
+		//Message_RECEIVE_UNQUEUED_EXTERNAL
+		public RuleCall getRUEMessage_RECEIVE_UNQUEUED_EXTERNALParserRuleCall_1_9_2_0() { return cRUEMessage_RECEIVE_UNQUEUED_EXTERNALParserRuleCall_1_9_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_9_3() { return cRightCurlyBracketKeyword_1_9_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_9_4() { return cSemicolonKeyword_1_9_4; }
+		
+		//"RECEIVE_QUEUED_EXTERNAL" "{" RQE=Message_RECEIVE_QUEUED_EXTERNAL "}" ";"
+		public Group getGroup_1_10() { return cGroup_1_10; }
+		
+		//"RECEIVE_QUEUED_EXTERNAL"
+		public Keyword getRECEIVE_QUEUED_EXTERNALKeyword_1_10_0() { return cRECEIVE_QUEUED_EXTERNALKeyword_1_10_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_10_1() { return cLeftCurlyBracketKeyword_1_10_1; }
+		
+		//RQE=Message_RECEIVE_QUEUED_EXTERNAL
+		public Assignment getRQEAssignment_1_10_2() { return cRQEAssignment_1_10_2; }
+		
+		//Message_RECEIVE_QUEUED_EXTERNAL
+		public RuleCall getRQEMessage_RECEIVE_QUEUED_EXTERNALParserRuleCall_1_10_2_0() { return cRQEMessage_RECEIVE_QUEUED_EXTERNALParserRuleCall_1_10_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_10_3() { return cRightCurlyBracketKeyword_1_10_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_10_4() { return cSemicolonKeyword_1_10_4; }
+		
+		//"RECEIVE_DYNAMIC_EXTERNAL" "{" RDE=Message_RECEIVE_DYNAMIC_EXTERNAL "}" ";"
+		public Group getGroup_1_11() { return cGroup_1_11; }
+		
+		//"RECEIVE_DYNAMIC_EXTERNAL"
+		public Keyword getRECEIVE_DYNAMIC_EXTERNALKeyword_1_11_0() { return cRECEIVE_DYNAMIC_EXTERNALKeyword_1_11_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_11_1() { return cLeftCurlyBracketKeyword_1_11_1; }
+		
+		//RDE=Message_RECEIVE_DYNAMIC_EXTERNAL
+		public Assignment getRDEAssignment_1_11_2() { return cRDEAssignment_1_11_2; }
+		
+		//Message_RECEIVE_DYNAMIC_EXTERNAL
+		public RuleCall getRDEMessage_RECEIVE_DYNAMIC_EXTERNALParserRuleCall_1_11_2_0() { return cRDEMessage_RECEIVE_DYNAMIC_EXTERNALParserRuleCall_1_11_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_11_3() { return cRightCurlyBracketKeyword_1_11_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_11_4() { return cSemicolonKeyword_1_11_4; }
+		
+		//"RECEIVE_ZERO_SENDERS" "{" RZS=Message_RECEIVE_ZERO_SENDERS "}" ";"
+		public Group getGroup_1_12() { return cGroup_1_12; }
+		
+		//"RECEIVE_ZERO_SENDERS"
+		public Keyword getRECEIVE_ZERO_SENDERSKeyword_1_12_0() { return cRECEIVE_ZERO_SENDERSKeyword_1_12_0; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_12_1() { return cLeftCurlyBracketKeyword_1_12_1; }
+		
+		//RZS=Message_RECEIVE_ZERO_SENDERS
+		public Assignment getRZSAssignment_1_12_2() { return cRZSAssignment_1_12_2; }
+		
+		//Message_RECEIVE_ZERO_SENDERS
+		public RuleCall getRZSMessage_RECEIVE_ZERO_SENDERSParserRuleCall_1_12_2_0() { return cRZSMessage_RECEIVE_ZERO_SENDERSParserRuleCall_1_12_2_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_12_3() { return cRightCurlyBracketKeyword_1_12_3; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_12_4() { return cSemicolonKeyword_1_12_4; }
+	}
+	public class Message_SEND_STATIC_EXTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_SEND_STATIC_EXTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCdataAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCdataMessageCDATATYPEParserRuleCall_0_0 = (RuleCall)cCdataAssignment_0.eContents().get(0);
+		private final Assignment cTransferpropertyAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_1_0 = (RuleCall)cTransferpropertyAssignment_1.eContents().get(0);
+		private final Assignment cFilterAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cFilterMessagefilterParserRuleCall_2_0 = (RuleCall)cFilterAssignment_2.eContents().get(0);
+		private final Assignment cNetworkordercalloutAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_3_0 = (RuleCall)cNetworkordercalloutAssignment_3.eContents().get(0);
+		private final Assignment cCpuordercalloutAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_4_0 = (RuleCall)cCpuordercalloutAssignment_4.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_5_0 = (RuleCall)cInitialvalueAssignment_5.eContents().get(0);
+		private final Assignment cNetworkmessageAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final RuleCall cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_6_0 = (RuleCall)cNetworkmessageAssignment_6.eContents().get(0);
+		
+		//Message_SEND_STATIC_EXTERNAL:
+		//	Cdata=MessageCDATATYPE | Transferproperty=MessageTRANSFERPROPERTY | filter=Messagefilter |
+		//	networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+		//	initialvalue=MessageINITIALVALUE | networkmessage=MessageNETWORKMESSAGE //type not defined
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Cdata=MessageCDATATYPE | Transferproperty=MessageTRANSFERPROPERTY | filter=Messagefilter |
+		//networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+		//initialvalue=MessageINITIALVALUE | networkmessage=MessageNETWORKMESSAGE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Cdata=MessageCDATATYPE
+		public Assignment getCdataAssignment_0() { return cCdataAssignment_0; }
+		
+		//MessageCDATATYPE
+		public RuleCall getCdataMessageCDATATYPEParserRuleCall_0_0() { return cCdataMessageCDATATYPEParserRuleCall_0_0; }
+		
+		//Transferproperty=MessageTRANSFERPROPERTY
+		public Assignment getTransferpropertyAssignment_1() { return cTransferpropertyAssignment_1; }
+		
+		//MessageTRANSFERPROPERTY
+		public RuleCall getTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_1_0() { return cTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_1_0; }
+		
+		//filter=Messagefilter
+		public Assignment getFilterAssignment_2() { return cFilterAssignment_2; }
+		
+		//Messagefilter
+		public RuleCall getFilterMessagefilterParserRuleCall_2_0() { return cFilterMessagefilterParserRuleCall_2_0; }
+		
+		//networkordercallout=MessageNETWORKORDERCALLOUT
+		public Assignment getNetworkordercalloutAssignment_3() { return cNetworkordercalloutAssignment_3; }
+		
+		//MessageNETWORKORDERCALLOUT
+		public RuleCall getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_3_0() { return cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_3_0; }
+		
+		//cpuordercallout=MessageCPUORDERCALLOUT
+		public Assignment getCpuordercalloutAssignment_4() { return cCpuordercalloutAssignment_4; }
+		
+		//MessageCPUORDERCALLOUT
+		public RuleCall getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_4_0() { return cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_4_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_5() { return cInitialvalueAssignment_5; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_5_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_5_0; }
+		
+		//networkmessage=MessageNETWORKMESSAGE
+		public Assignment getNetworkmessageAssignment_6() { return cNetworkmessageAssignment_6; }
+		
+		//MessageNETWORKMESSAGE
+		public RuleCall getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_6_0() { return cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_6_0; }
+	}
+	public class Message_SEND_DYNAMIC_EXTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_SEND_DYNAMIC_EXTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cTransferpropertyAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_0_0 = (RuleCall)cTransferpropertyAssignment_0.eContents().get(0);
+		private final Assignment cNetworkordercalloutAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_1_0 = (RuleCall)cNetworkordercalloutAssignment_1.eContents().get(0);
+		private final Assignment cCpuordercalloutAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_2_0 = (RuleCall)cCpuordercalloutAssignment_2.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_3_0 = (RuleCall)cInitialvalueAssignment_3.eContents().get(0);
+		private final Assignment cNetworkmessageAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_4_0 = (RuleCall)cNetworkmessageAssignment_4.eContents().get(0);
+		
+		//Message_SEND_DYNAMIC_EXTERNAL:
+		//	Transferproperty=MessageTRANSFERPROPERTY | networkordercallout=MessageNETWORKORDERCALLOUT |
+		//	cpuordercallout=MessageCPUORDERCALLOUT | initialvalue=MessageINITIALVALUE | networkmessage=MessageNETWORKMESSAGE //type not defined
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Transferproperty=MessageTRANSFERPROPERTY | networkordercallout=MessageNETWORKORDERCALLOUT |
+		//cpuordercallout=MessageCPUORDERCALLOUT | initialvalue=MessageINITIALVALUE | networkmessage=MessageNETWORKMESSAGE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Transferproperty=MessageTRANSFERPROPERTY
+		public Assignment getTransferpropertyAssignment_0() { return cTransferpropertyAssignment_0; }
+		
+		//MessageTRANSFERPROPERTY
+		public RuleCall getTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_0_0() { return cTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_0_0; }
+		
+		//networkordercallout=MessageNETWORKORDERCALLOUT
+		public Assignment getNetworkordercalloutAssignment_1() { return cNetworkordercalloutAssignment_1; }
+		
+		//MessageNETWORKORDERCALLOUT
+		public RuleCall getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_1_0() { return cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_1_0; }
+		
+		//cpuordercallout=MessageCPUORDERCALLOUT
+		public Assignment getCpuordercalloutAssignment_2() { return cCpuordercalloutAssignment_2; }
+		
+		//MessageCPUORDERCALLOUT
+		public RuleCall getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_2_0() { return cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_2_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_3() { return cInitialvalueAssignment_3; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_3_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_3_0; }
+		
+		//networkmessage=MessageNETWORKMESSAGE
+		public Assignment getNetworkmessageAssignment_4() { return cNetworkmessageAssignment_4; }
+		
+		//MessageNETWORKMESSAGE
+		public RuleCall getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_4_0() { return cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_4_0; }
+	}
+	public class Message_SEND_ZERO_EXTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_SEND_ZERO_EXTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cNetworkordercalloutAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0 = (RuleCall)cNetworkordercalloutAssignment_0.eContents().get(0);
+		private final Assignment cCpuordercalloutAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0 = (RuleCall)cCpuordercalloutAssignment_1.eContents().get(0);
+		private final Assignment cNetworkmessageAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0 = (RuleCall)cNetworkmessageAssignment_2.eContents().get(0);
+		
+		//Message_SEND_ZERO_EXTERNAL:
+		//	networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+		//	networkmessage=MessageNETWORKMESSAGE //type not defined
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+		//networkmessage=MessageNETWORKMESSAGE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//networkordercallout=MessageNETWORKORDERCALLOUT
+		public Assignment getNetworkordercalloutAssignment_0() { return cNetworkordercalloutAssignment_0; }
+		
+		//MessageNETWORKORDERCALLOUT
+		public RuleCall getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0() { return cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0; }
+		
+		//cpuordercallout=MessageCPUORDERCALLOUT
+		public Assignment getCpuordercalloutAssignment_1() { return cCpuordercalloutAssignment_1; }
+		
+		//MessageCPUORDERCALLOUT
+		public RuleCall getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0() { return cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0; }
+		
+		//networkmessage=MessageNETWORKMESSAGE
+		public Assignment getNetworkmessageAssignment_2() { return cNetworkmessageAssignment_2; }
+		
+		//MessageNETWORKMESSAGE
+		public RuleCall getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0() { return cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0; }
+	}
+	public class Message_RECEIVE_ZERO_INTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_ZERO_INTERNAL");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessage_RECEIVE_ZERO_INTERNALAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cSendingmessageAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSendingmessageMessageSENDINGMESSAGEParserRuleCall_1_0 = (RuleCall)cSendingmessageAssignment_1.eContents().get(0);
+		
+		//Message_RECEIVE_ZERO_INTERNAL:
+		//	{Message_RECEIVE_ZERO_INTERNAL} sendingmessage=MessageSENDINGMESSAGE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Message_RECEIVE_ZERO_INTERNAL} sendingmessage=MessageSENDINGMESSAGE
+		public Group getGroup() { return cGroup; }
+		
+		//{Message_RECEIVE_ZERO_INTERNAL}
+		public Action getMessage_RECEIVE_ZERO_INTERNALAction_0() { return cMessage_RECEIVE_ZERO_INTERNALAction_0; }
+		
+		//sendingmessage=MessageSENDINGMESSAGE
+		public Assignment getSendingmessageAssignment_1() { return cSendingmessageAssignment_1; }
+		
+		//MessageSENDINGMESSAGE
+		public RuleCall getSendingmessageMessageSENDINGMESSAGEParserRuleCall_1_0() { return cSendingmessageMessageSENDINGMESSAGEParserRuleCall_1_0; }
+	}
+	public class Message_RECEIVE_ZERO_EXTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_ZERO_EXTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cNetworkordercalloutAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0 = (RuleCall)cNetworkordercalloutAssignment_0.eContents().get(0);
+		private final Assignment cCpuordercalloutAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0 = (RuleCall)cCpuordercalloutAssignment_1.eContents().get(0);
+		private final Assignment cNetworkmessageAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0 = (RuleCall)cNetworkmessageAssignment_2.eContents().get(0);
+		
+		//Message_RECEIVE_ZERO_EXTERNAL:
+		//	networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+		//	networkmessage=MessageNETWORKMESSAGE //type not defined
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+		//networkmessage=MessageNETWORKMESSAGE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//networkordercallout=MessageNETWORKORDERCALLOUT
+		public Assignment getNetworkordercalloutAssignment_0() { return cNetworkordercalloutAssignment_0; }
+		
+		//MessageNETWORKORDERCALLOUT
+		public RuleCall getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0() { return cNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0; }
+		
+		//cpuordercallout=MessageCPUORDERCALLOUT
+		public Assignment getCpuordercalloutAssignment_1() { return cCpuordercalloutAssignment_1; }
+		
+		//MessageCPUORDERCALLOUT
+		public RuleCall getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0() { return cCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0; }
+		
+		//networkmessage=MessageNETWORKMESSAGE
+		public Assignment getNetworkmessageAssignment_2() { return cNetworkmessageAssignment_2; }
+		
+		//MessageNETWORKMESSAGE
+		public RuleCall getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0() { return cNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0; }
+	}
+	public class Message_RECEIVE_UNQUEUED_INTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_UNQUEUED_INTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cSendingmessageAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0 = (RuleCall)cSendingmessageAssignment_0.eContents().get(0);
+		private final Assignment cFilterAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cFilterMessagefilterParserRuleCall_1_0 = (RuleCall)cFilterAssignment_1.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_2_0 = (RuleCall)cInitialvalueAssignment_2.eContents().get(0);
+		
+		//Message_RECEIVE_UNQUEUED_INTERNAL:
+		//	sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//sendingmessage=MessageSENDINGMESSAGE
+		public Assignment getSendingmessageAssignment_0() { return cSendingmessageAssignment_0; }
+		
+		//MessageSENDINGMESSAGE
+		public RuleCall getSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0() { return cSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0; }
+		
+		//filter=Messagefilter
+		public Assignment getFilterAssignment_1() { return cFilterAssignment_1; }
+		
+		//Messagefilter
+		public RuleCall getFilterMessagefilterParserRuleCall_1_0() { return cFilterMessagefilterParserRuleCall_1_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_2() { return cInitialvalueAssignment_2; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_2_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_2_0; }
+	}
+	public class Message_RECEIVE_QUEUED_INTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_QUEUED_INTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cSendingmessageAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0 = (RuleCall)cSendingmessageAssignment_0.eContents().get(0);
+		private final Assignment cFilterAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cFilterMessagefilterParserRuleCall_1_0 = (RuleCall)cFilterAssignment_1.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_2_0 = (RuleCall)cInitialvalueAssignment_2.eContents().get(0);
+		private final Assignment cQueuesizeAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cQueuesizeMessageQUEUESIZEParserRuleCall_3_0 = (RuleCall)cQueuesizeAssignment_3.eContents().get(0);
+		
+		//Message_RECEIVE_QUEUED_INTERNAL:
+		//	sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE |
+		//	queuesize=MessageQUEUESIZE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE |
+		//queuesize=MessageQUEUESIZE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//sendingmessage=MessageSENDINGMESSAGE
+		public Assignment getSendingmessageAssignment_0() { return cSendingmessageAssignment_0; }
+		
+		//MessageSENDINGMESSAGE
+		public RuleCall getSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0() { return cSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0; }
+		
+		//filter=Messagefilter
+		public Assignment getFilterAssignment_1() { return cFilterAssignment_1; }
+		
+		//Messagefilter
+		public RuleCall getFilterMessagefilterParserRuleCall_1_0() { return cFilterMessagefilterParserRuleCall_1_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_2() { return cInitialvalueAssignment_2; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_2_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_2_0; }
+		
+		//queuesize=MessageQUEUESIZE
+		public Assignment getQueuesizeAssignment_3() { return cQueuesizeAssignment_3; }
+		
+		//MessageQUEUESIZE
+		public RuleCall getQueuesizeMessageQUEUESIZEParserRuleCall_3_0() { return cQueuesizeMessageQUEUESIZEParserRuleCall_3_0; }
+	}
+	public class Message_RECEIVE_UNQUEUED_EXTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_UNQUEUED_EXTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCdataAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCdataMessageCDATATYPEParserRuleCall_0_0 = (RuleCall)cCdataAssignment_0.eContents().get(0);
+		private final Assignment cFilterAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cFilterMessagefilterParserRuleCall_1_0 = (RuleCall)cFilterAssignment_1.eContents().get(0);
+		private final Assignment cLinkAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cLinkMessageLINKParserRuleCall_2_0 = (RuleCall)cLinkAssignment_2.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_3_0 = (RuleCall)cInitialvalueAssignment_3.eContents().get(0);
+		
+		//Message_RECEIVE_UNQUEUED_EXTERNAL:
+		//	Cdata=MessageCDATATYPE | filter=Messagefilter | link=MessageLINK | initialvalue=MessageINITIALVALUE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Cdata=MessageCDATATYPE | filter=Messagefilter | link=MessageLINK | initialvalue=MessageINITIALVALUE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Cdata=MessageCDATATYPE
+		public Assignment getCdataAssignment_0() { return cCdataAssignment_0; }
+		
+		//MessageCDATATYPE
+		public RuleCall getCdataMessageCDATATYPEParserRuleCall_0_0() { return cCdataMessageCDATATYPEParserRuleCall_0_0; }
+		
+		//filter=Messagefilter
+		public Assignment getFilterAssignment_1() { return cFilterAssignment_1; }
+		
+		//Messagefilter
+		public RuleCall getFilterMessagefilterParserRuleCall_1_0() { return cFilterMessagefilterParserRuleCall_1_0; }
+		
+		//link=MessageLINK
+		public Assignment getLinkAssignment_2() { return cLinkAssignment_2; }
+		
+		//MessageLINK
+		public RuleCall getLinkMessageLINKParserRuleCall_2_0() { return cLinkMessageLINKParserRuleCall_2_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_3() { return cInitialvalueAssignment_3; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_3_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_3_0; }
+	}
+	public class Message_RECEIVE_QUEUED_EXTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_QUEUED_EXTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCdataAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCdataMessageCDATATYPEParserRuleCall_0_0 = (RuleCall)cCdataAssignment_0.eContents().get(0);
+		private final Assignment cQueuesizeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cQueuesizeMessageQUEUESIZEParserRuleCall_1_0 = (RuleCall)cQueuesizeAssignment_1.eContents().get(0);
+		private final Assignment cFilterAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cFilterMessagefilterParserRuleCall_2_0 = (RuleCall)cFilterAssignment_2.eContents().get(0);
+		private final Assignment cLinkAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cLinkMessageLINKParserRuleCall_3_0 = (RuleCall)cLinkAssignment_3.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_4_0 = (RuleCall)cInitialvalueAssignment_4.eContents().get(0);
+		
+		//Message_RECEIVE_QUEUED_EXTERNAL:
+		//	Cdata=MessageCDATATYPE | queuesize=MessageQUEUESIZE | filter=Messagefilter | link=MessageLINK |
+		//	initialvalue=MessageINITIALVALUE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Cdata=MessageCDATATYPE | queuesize=MessageQUEUESIZE | filter=Messagefilter | link=MessageLINK |
+		//initialvalue=MessageINITIALVALUE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Cdata=MessageCDATATYPE
+		public Assignment getCdataAssignment_0() { return cCdataAssignment_0; }
+		
+		//MessageCDATATYPE
+		public RuleCall getCdataMessageCDATATYPEParserRuleCall_0_0() { return cCdataMessageCDATATYPEParserRuleCall_0_0; }
+		
+		//queuesize=MessageQUEUESIZE
+		public Assignment getQueuesizeAssignment_1() { return cQueuesizeAssignment_1; }
+		
+		//MessageQUEUESIZE
+		public RuleCall getQueuesizeMessageQUEUESIZEParserRuleCall_1_0() { return cQueuesizeMessageQUEUESIZEParserRuleCall_1_0; }
+		
+		//filter=Messagefilter
+		public Assignment getFilterAssignment_2() { return cFilterAssignment_2; }
+		
+		//Messagefilter
+		public RuleCall getFilterMessagefilterParserRuleCall_2_0() { return cFilterMessagefilterParserRuleCall_2_0; }
+		
+		//link=MessageLINK
+		public Assignment getLinkAssignment_3() { return cLinkAssignment_3; }
+		
+		//MessageLINK
+		public RuleCall getLinkMessageLINKParserRuleCall_3_0() { return cLinkMessageLINKParserRuleCall_3_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_4() { return cInitialvalueAssignment_4; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_4_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_4_0; }
+	}
+	public class Message_RECEIVE_DYNAMIC_EXTERNALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_DYNAMIC_EXTERNAL");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cLinkAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cLinkMessageLINKParserRuleCall_0_0 = (RuleCall)cLinkAssignment_0.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_1_0 = (RuleCall)cInitialvalueAssignment_1.eContents().get(0);
+		
+		//Message_RECEIVE_DYNAMIC_EXTERNAL:
+		//	link=MessageLINK | initialvalue=MessageINITIALVALUE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//link=MessageLINK | initialvalue=MessageINITIALVALUE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//link=MessageLINK
+		public Assignment getLinkAssignment_0() { return cLinkAssignment_0; }
+		
+		//MessageLINK
+		public RuleCall getLinkMessageLINKParserRuleCall_0_0() { return cLinkMessageLINKParserRuleCall_0_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_1() { return cInitialvalueAssignment_1; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_1_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_1_0; }
+	}
+	public class Message_RECEIVE_ZERO_SENDERSElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Message_RECEIVE_ZERO_SENDERS");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cCdataAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCdataMessageCDATATYPEParserRuleCall_0_0 = (RuleCall)cCdataAssignment_0.eContents().get(0);
+		private final Assignment cInitialvalueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cInitialvalueMessageINITIALVALUEParserRuleCall_1_0 = (RuleCall)cInitialvalueAssignment_1.eContents().get(0);
+		
+		//Message_RECEIVE_ZERO_SENDERS:
+		//	Cdata=MessageCDATATYPE | initialvalue=MessageINITIALVALUE;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Cdata=MessageCDATATYPE | initialvalue=MessageINITIALVALUE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Cdata=MessageCDATATYPE
+		public Assignment getCdataAssignment_0() { return cCdataAssignment_0; }
+		
+		//MessageCDATATYPE
+		public RuleCall getCdataMessageCDATATYPEParserRuleCall_0_0() { return cCdataMessageCDATATYPEParserRuleCall_0_0; }
+		
+		//initialvalue=MessageINITIALVALUE
+		public Assignment getInitialvalueAssignment_1() { return cInitialvalueAssignment_1; }
+		
+		//MessageINITIALVALUE
+		public RuleCall getInitialvalueMessageINITIALVALUEParserRuleCall_1_0() { return cInitialvalueMessageINITIALVALUEParserRuleCall_1_0; }
+	}
+	public class MessageCDATATYPEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageCDATATYPE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageCDATATYPEAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCDATATYPEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDescrptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDescrptionEStringParserRuleCall_3_0 = (RuleCall)cDescrptionAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//MessageCDATATYPE:
+		//	{MessageCDATATYPE}
+		//	"CDATATYPE" "=" descrption=EString ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MessageCDATATYPE} "CDATATYPE" "=" descrption=EString ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{MessageCDATATYPE}
+		public Action getMessageCDATATYPEAction_0() { return cMessageCDATATYPEAction_0; }
+		
+		//"CDATATYPE"
+		public Keyword getCDATATYPEKeyword_1() { return cCDATATYPEKeyword_1; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//descrption=EString
+		public Assignment getDescrptionAssignment_3() { return cDescrptionAssignment_3; }
+		
+		//EString
+		public RuleCall getDescrptionEStringParserRuleCall_3_0() { return cDescrptionEStringParserRuleCall_3_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class MessageTRANSFERPROPERTYElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageTRANSFERPROPERTY");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTRANSFERPROPERTYKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTransenumAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTransenumMessageTRANSFERPROPERTYenumEnumRuleCall_2_0 = (RuleCall)cTransenumAssignment_2.eContents().get(0);
+		
+		//MessageTRANSFERPROPERTY:
+		//	"TRANSFERPROPERTY" "=" transenum=MessageTRANSFERPROPERTYenum;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"TRANSFERPROPERTY" "=" transenum=MessageTRANSFERPROPERTYenum
+		public Group getGroup() { return cGroup; }
+		
+		//"TRANSFERPROPERTY"
+		public Keyword getTRANSFERPROPERTYKeyword_0() { return cTRANSFERPROPERTYKeyword_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//transenum=MessageTRANSFERPROPERTYenum
+		public Assignment getTransenumAssignment_2() { return cTransenumAssignment_2; }
+		
+		//MessageTRANSFERPROPERTYenum
+		public RuleCall getTransenumMessageTRANSFERPROPERTYenumEnumRuleCall_2_0() { return cTransenumMessageTRANSFERPROPERTYenumEnumRuleCall_2_0; }
+	}
+	public class MessageNETWORKORDERCALLOUTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageNETWORKORDERCALLOUT");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageNETWORKORDERCALLOUTAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cNETWORKORDERCALLOUTKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDescrptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDescrptionEStringParserRuleCall_3_0 = (RuleCall)cDescrptionAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//MessageNETWORKORDERCALLOUT:
+		//	{MessageNETWORKORDERCALLOUT}
+		//	"NETWORKORDERCALLOUT" "=" descrption=EString ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MessageNETWORKORDERCALLOUT} "NETWORKORDERCALLOUT" "=" descrption=EString ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{MessageNETWORKORDERCALLOUT}
+		public Action getMessageNETWORKORDERCALLOUTAction_0() { return cMessageNETWORKORDERCALLOUTAction_0; }
+		
+		//"NETWORKORDERCALLOUT"
+		public Keyword getNETWORKORDERCALLOUTKeyword_1() { return cNETWORKORDERCALLOUTKeyword_1; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//descrption=EString
+		public Assignment getDescrptionAssignment_3() { return cDescrptionAssignment_3; }
+		
+		//EString
+		public RuleCall getDescrptionEStringParserRuleCall_3_0() { return cDescrptionEStringParserRuleCall_3_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class MessageCPUORDERCALLOUTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageCPUORDERCALLOUT");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageCPUORDERCALLOUTAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCPUORDERCALLOUTKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDescrptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDescrptionEStringParserRuleCall_3_0 = (RuleCall)cDescrptionAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//MessageCPUORDERCALLOUT:
+		//	{MessageCPUORDERCALLOUT}
+		//	"CPUORDERCALLOUT" "=" descrption=EString ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MessageCPUORDERCALLOUT} "CPUORDERCALLOUT" "=" descrption=EString ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{MessageCPUORDERCALLOUT}
+		public Action getMessageCPUORDERCALLOUTAction_0() { return cMessageCPUORDERCALLOUTAction_0; }
+		
+		//"CPUORDERCALLOUT"
+		public Keyword getCPUORDERCALLOUTKeyword_1() { return cCPUORDERCALLOUTKeyword_1; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//descrption=EString
+		public Assignment getDescrptionAssignment_3() { return cDescrptionAssignment_3; }
+		
+		//EString
+		public RuleCall getDescrptionEStringParserRuleCall_3_0() { return cDescrptionEStringParserRuleCall_3_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class MessageINITIALVALUEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageINITIALVALUE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageINITIALVALUEAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cINITIALVALUEKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueT_NUMBERTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//MessageINITIALVALUE:
+		//	{MessageINITIALVALUE}
+		//	"INITIALVALUE" "=" value=T_NUMBER ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MessageINITIALVALUE} "INITIALVALUE" "=" value=T_NUMBER ";"
+		public Group getGroup() { return cGroup; }
+		
+		//{MessageINITIALVALUE}
+		public Action getMessageINITIALVALUEAction_0() { return cMessageINITIALVALUEAction_0; }
+		
+		//"INITIALVALUE"
+		public Keyword getINITIALVALUEKeyword_1() { return cINITIALVALUEKeyword_1; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//value=T_NUMBER
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		
+		//T_NUMBER
+		public RuleCall getValueT_NUMBERTerminalRuleCall_3_0() { return cValueT_NUMBERTerminalRuleCall_3_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class MessageNETWORKMESSAGEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageNETWORKMESSAGE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageNETWORKMESSAGEAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cNETWORKMESSAGEKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cValueImplementationDefParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		
+		//MessageNETWORKMESSAGE:
+		//	{MessageNETWORKMESSAGE} ("NETWORKMESSAGE" "=" value=ImplementationDef ";");
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MessageNETWORKMESSAGE} ("NETWORKMESSAGE" "=" value=ImplementationDef ";")
+		public Group getGroup() { return cGroup; }
+		
+		//{MessageNETWORKMESSAGE}
+		public Action getMessageNETWORKMESSAGEAction_0() { return cMessageNETWORKMESSAGEAction_0; }
+		
+		//("NETWORKMESSAGE" "=" value=ImplementationDef ";")
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//"NETWORKMESSAGE"
+		public Keyword getNETWORKMESSAGEKeyword_1_0() { return cNETWORKMESSAGEKeyword_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//value=ImplementationDef
+		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
+		
+		//ImplementationDef
+		public RuleCall getValueImplementationDefParserRuleCall_1_2_0() { return cValueImplementationDefParserRuleCall_1_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3() { return cSemicolonKeyword_1_3; }
+	}
+	public class MessageSENDINGMESSAGEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageSENDINGMESSAGE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageSENDINGMESSAGEAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cSENDINGMESSAGEKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cDescrptionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cDescrptionIDTerminalRuleCall_1_2_0 = (RuleCall)cDescrptionAssignment_1_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		
+		//MessageSENDINGMESSAGE:
+		//	{MessageSENDINGMESSAGE} ("SENDINGMESSAGE" "=" descrption=ID ";");
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MessageSENDINGMESSAGE} ("SENDINGMESSAGE" "=" descrption=ID ";")
+		public Group getGroup() { return cGroup; }
+		
+		//{MessageSENDINGMESSAGE}
+		public Action getMessageSENDINGMESSAGEAction_0() { return cMessageSENDINGMESSAGEAction_0; }
+		
+		//("SENDINGMESSAGE" "=" descrption=ID ";")
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//"SENDINGMESSAGE"
+		public Keyword getSENDINGMESSAGEKeyword_1_0() { return cSENDINGMESSAGEKeyword_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//descrption=ID
+		public Assignment getDescrptionAssignment_1_2() { return cDescrptionAssignment_1_2; }
+		
+		//ID
+		public RuleCall getDescrptionIDTerminalRuleCall_1_2_0() { return cDescrptionIDTerminalRuleCall_1_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1_3() { return cSemicolonKeyword_1_3; }
+	}
+	public class MessageQUEUESIZEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageQUEUESIZE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMessageQUEUESIZEAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cQUEUESIZEKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cValueT_NUMBERTerminalRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
+		
+		//MessageQUEUESIZE:
+		//	{MessageQUEUESIZE} ("QUEUESIZE" "=" value=T_NUMBER);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{MessageQUEUESIZE} ("QUEUESIZE" "=" value=T_NUMBER)
+		public Group getGroup() { return cGroup; }
+		
+		//{MessageQUEUESIZE}
+		public Action getMessageQUEUESIZEAction_0() { return cMessageQUEUESIZEAction_0; }
+		
+		//("QUEUESIZE" "=" value=T_NUMBER)
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//"QUEUESIZE"
+		public Keyword getQUEUESIZEKeyword_1_0() { return cQUEUESIZEKeyword_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		
+		//value=T_NUMBER
+		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
+		
+		//T_NUMBER
+		public RuleCall getValueT_NUMBERTerminalRuleCall_1_2_0() { return cValueT_NUMBERTerminalRuleCall_1_2_0; }
+	}
+	public class MessagefilterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Messagefilter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFILTERKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cFilter2Assignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFilter2Messagefilter2EnumRuleCall_2_0 = (RuleCall)cFilter2Assignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Assignment cNameAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
+		private final RuleCall cNameNameParserRuleCall_3_1_0_0 = (RuleCall)cNameAssignment_3_1_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_3_1_1 = (Keyword)cGroup_3_1.eContents().get(1);
+		private final Assignment cMessageint1Assignment_3_1_2 = (Assignment)cGroup_3_1.eContents().get(2);
+		private final RuleCall cMessageint1AttributeValueParserRuleCall_3_1_2_0 = (RuleCall)cMessageint1Assignment_3_1_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3_1_3 = (Keyword)cGroup_3_1.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Messagefilter:
+		//	"FILTER" "=" filter2=Messagefilter2 ("{" (name=Name "=" messageint1=AttributeValue ";")+ "}")? ";";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"FILTER" "=" filter2=Messagefilter2 ("{" (name=Name "=" messageint1=AttributeValue ";")+ "}")? ";"
+		public Group getGroup() { return cGroup; }
+		
+		//"FILTER"
+		public Keyword getFILTERKeyword_0() { return cFILTERKeyword_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//filter2=Messagefilter2
+		public Assignment getFilter2Assignment_2() { return cFilter2Assignment_2; }
+		
+		//Messagefilter2
+		public RuleCall getFilter2Messagefilter2EnumRuleCall_2_0() { return cFilter2Messagefilter2EnumRuleCall_2_0; }
+		
+		//("{" (name=Name "=" messageint1=AttributeValue ";")+ "}")?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		
+		//(name=Name "=" messageint1=AttributeValue ";")+
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//name=Name
+		public Assignment getNameAssignment_3_1_0() { return cNameAssignment_3_1_0; }
+		
+		//Name
+		public RuleCall getNameNameParserRuleCall_3_1_0_0() { return cNameNameParserRuleCall_3_1_0_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_3_1_1() { return cEqualsSignKeyword_3_1_1; }
+		
+		//messageint1=AttributeValue
+		public Assignment getMessageint1Assignment_3_1_2() { return cMessageint1Assignment_3_1_2; }
+		
+		//AttributeValue
+		public RuleCall getMessageint1AttributeValueParserRuleCall_3_1_2_0() { return cMessageint1AttributeValueParserRuleCall_3_1_2_0; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_3_1_3() { return cSemicolonKeyword_3_1_3; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class MessageLINKElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageLINK");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLINKKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cMessagelinkAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMessagelinkMessagelink1EnumRuleCall_2_0 = (RuleCall)cMessagelinkAssignment_2.eContents().get(0);
+		
+		//MessageLINK:
+		//	"LINK" "=" messagelink=Messagelink1;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"LINK" "=" messagelink=Messagelink1
+		public Group getGroup() { return cGroup; }
+		
+		//"LINK"
+		public Keyword getLINKKeyword_0() { return cLINKKeyword_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//messagelink=Messagelink1
+		public Assignment getMessagelinkAssignment_2() { return cMessagelinkAssignment_2; }
+		
+		//Messagelink1
+		public RuleCall getMessagelinkMessagelink1EnumRuleCall_2_0() { return cMessagelinkMessagelink1EnumRuleCall_2_0; }
 	}
 	public class LibrayattributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Librayattribute");
@@ -5620,6 +7402,193 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		//"LIBRARY_TYPE"
 		public Keyword getLIBRARY_TYPELIBRARY_TYPEKeyword_19_0() { return cLIBRARY_TYPELIBRARY_TYPEKeyword_19_0; }
 	}
+	public class Messagefilter2Elements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Messagefilter2");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cALWAYSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cALWAYSALWAYSKeyword_0_0 = (Keyword)cALWAYSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cNEVEREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cNEVERNEVERKeyword_1_0 = (Keyword)cNEVEREnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMASKEDNEWEQUALSXEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMASKEDNEWEQUALSXMASKEDNEWEQUALSXKeyword_2_0 = (Keyword)cMASKEDNEWEQUALSXEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cMASKEDNEWDIFFERSXEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cMASKEDNEWDIFFERSXMASKEDNEWDIFFERSXKeyword_3_0 = (Keyword)cMASKEDNEWDIFFERSXEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISEQUALEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cNEWISEQUALNEWISEQUALKeyword_4_0 = (Keyword)cNEWISEQUALEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISDIFFERENTEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cNEWISDIFFERENTNEWISDIFFERENTKeyword_5_0 = (Keyword)cNEWISDIFFERENTEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cMASKEDNEWEQUALSMASKEDOLDEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cMASKEDNEWEQUALSMASKEDOLDMASKEDNEWEQUALSMASKEDOLDKeyword_6_0 = (Keyword)cMASKEDNEWEQUALSMASKEDOLDEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cMASKEDNEWDIFFERSMASKEDOLDEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cMASKEDNEWDIFFERSMASKEDOLDMASKEDNEWDIFFERSMASKEDOLDKeyword_7_0 = (Keyword)cMASKEDNEWDIFFERSMASKEDOLDEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISWITHINEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cNEWISWITHINNEWISWITHINKeyword_8_0 = (Keyword)cNEWISWITHINEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISOUTSIDEEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cNEWISOUTSIDENEWISOUTSIDEKeyword_9_0 = (Keyword)cNEWISOUTSIDEEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISGREATEREnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cNEWISGREATERNEWISGREATERKeyword_10_0 = (Keyword)cNEWISGREATEREnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISLESSOREQUALEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cNEWISLESSOREQUALNEWISLESSOREQUALKeyword_11_0 = (Keyword)cNEWISLESSOREQUALEnumLiteralDeclaration_11.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISLESSEnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
+		private final Keyword cNEWISLESSNEWISLESSKeyword_12_0 = (Keyword)cNEWISLESSEnumLiteralDeclaration_12.eContents().get(0);
+		private final EnumLiteralDeclaration cNEWISGREATEROREQUALEnumLiteralDeclaration_13 = (EnumLiteralDeclaration)cAlternatives.eContents().get(13);
+		private final Keyword cNEWISGREATEROREQUALNEWISGREATEROREQUALKeyword_13_0 = (Keyword)cNEWISGREATEROREQUALEnumLiteralDeclaration_13.eContents().get(0);
+		private final EnumLiteralDeclaration cONEEVERYNEnumLiteralDeclaration_14 = (EnumLiteralDeclaration)cAlternatives.eContents().get(14);
+		private final Keyword cONEEVERYNONEEVERYNKeyword_14_0 = (Keyword)cONEEVERYNEnumLiteralDeclaration_14.eContents().get(0);
+		
+		//enum Messagefilter2:
+		//	ALWAYS | NEVER | MASKEDNEWEQUALSX | MASKEDNEWDIFFERSX | NEWISEQUAL |
+		//	NEWISDIFFERENT | MASKEDNEWEQUALSMASKEDOLD | MASKEDNEWDIFFERSMASKEDOLD |
+		//	NEWISWITHIN | NEWISOUTSIDE | NEWISGREATER | NEWISLESSOREQUAL |
+		//	NEWISLESS | NEWISGREATEROREQUAL | ONEEVERYN;
+		public EnumRule getRule() { return rule; }
+		
+		//ALWAYS | NEVER | MASKEDNEWEQUALSX | MASKEDNEWDIFFERSX | NEWISEQUAL | NEWISDIFFERENT | MASKEDNEWEQUALSMASKEDOLD |
+		//MASKEDNEWDIFFERSMASKEDOLD | NEWISWITHIN | NEWISOUTSIDE | NEWISGREATER | NEWISLESSOREQUAL | NEWISLESS |
+		//NEWISGREATEROREQUAL | ONEEVERYN
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ALWAYS
+		public EnumLiteralDeclaration getALWAYSEnumLiteralDeclaration_0() { return cALWAYSEnumLiteralDeclaration_0; }
+		
+		//"ALWAYS"
+		public Keyword getALWAYSALWAYSKeyword_0_0() { return cALWAYSALWAYSKeyword_0_0; }
+		
+		//NEVER
+		public EnumLiteralDeclaration getNEVEREnumLiteralDeclaration_1() { return cNEVEREnumLiteralDeclaration_1; }
+		
+		//"NEVER"
+		public Keyword getNEVERNEVERKeyword_1_0() { return cNEVERNEVERKeyword_1_0; }
+		
+		//MASKEDNEWEQUALSX
+		public EnumLiteralDeclaration getMASKEDNEWEQUALSXEnumLiteralDeclaration_2() { return cMASKEDNEWEQUALSXEnumLiteralDeclaration_2; }
+		
+		//"MASKEDNEWEQUALSX"
+		public Keyword getMASKEDNEWEQUALSXMASKEDNEWEQUALSXKeyword_2_0() { return cMASKEDNEWEQUALSXMASKEDNEWEQUALSXKeyword_2_0; }
+		
+		//MASKEDNEWDIFFERSX
+		public EnumLiteralDeclaration getMASKEDNEWDIFFERSXEnumLiteralDeclaration_3() { return cMASKEDNEWDIFFERSXEnumLiteralDeclaration_3; }
+		
+		//"MASKEDNEWDIFFERSX"
+		public Keyword getMASKEDNEWDIFFERSXMASKEDNEWDIFFERSXKeyword_3_0() { return cMASKEDNEWDIFFERSXMASKEDNEWDIFFERSXKeyword_3_0; }
+		
+		//NEWISEQUAL
+		public EnumLiteralDeclaration getNEWISEQUALEnumLiteralDeclaration_4() { return cNEWISEQUALEnumLiteralDeclaration_4; }
+		
+		//"NEWISEQUAL"
+		public Keyword getNEWISEQUALNEWISEQUALKeyword_4_0() { return cNEWISEQUALNEWISEQUALKeyword_4_0; }
+		
+		//NEWISDIFFERENT
+		public EnumLiteralDeclaration getNEWISDIFFERENTEnumLiteralDeclaration_5() { return cNEWISDIFFERENTEnumLiteralDeclaration_5; }
+		
+		//"NEWISDIFFERENT"
+		public Keyword getNEWISDIFFERENTNEWISDIFFERENTKeyword_5_0() { return cNEWISDIFFERENTNEWISDIFFERENTKeyword_5_0; }
+		
+		//MASKEDNEWEQUALSMASKEDOLD
+		public EnumLiteralDeclaration getMASKEDNEWEQUALSMASKEDOLDEnumLiteralDeclaration_6() { return cMASKEDNEWEQUALSMASKEDOLDEnumLiteralDeclaration_6; }
+		
+		//"MASKEDNEWEQUALSMASKEDOLD"
+		public Keyword getMASKEDNEWEQUALSMASKEDOLDMASKEDNEWEQUALSMASKEDOLDKeyword_6_0() { return cMASKEDNEWEQUALSMASKEDOLDMASKEDNEWEQUALSMASKEDOLDKeyword_6_0; }
+		
+		//MASKEDNEWDIFFERSMASKEDOLD
+		public EnumLiteralDeclaration getMASKEDNEWDIFFERSMASKEDOLDEnumLiteralDeclaration_7() { return cMASKEDNEWDIFFERSMASKEDOLDEnumLiteralDeclaration_7; }
+		
+		//"MASKEDNEWDIFFERSMASKEDOLD"
+		public Keyword getMASKEDNEWDIFFERSMASKEDOLDMASKEDNEWDIFFERSMASKEDOLDKeyword_7_0() { return cMASKEDNEWDIFFERSMASKEDOLDMASKEDNEWDIFFERSMASKEDOLDKeyword_7_0; }
+		
+		//NEWISWITHIN
+		public EnumLiteralDeclaration getNEWISWITHINEnumLiteralDeclaration_8() { return cNEWISWITHINEnumLiteralDeclaration_8; }
+		
+		//"NEWISWITHIN"
+		public Keyword getNEWISWITHINNEWISWITHINKeyword_8_0() { return cNEWISWITHINNEWISWITHINKeyword_8_0; }
+		
+		//NEWISOUTSIDE
+		public EnumLiteralDeclaration getNEWISOUTSIDEEnumLiteralDeclaration_9() { return cNEWISOUTSIDEEnumLiteralDeclaration_9; }
+		
+		//"NEWISOUTSIDE"
+		public Keyword getNEWISOUTSIDENEWISOUTSIDEKeyword_9_0() { return cNEWISOUTSIDENEWISOUTSIDEKeyword_9_0; }
+		
+		//NEWISGREATER
+		public EnumLiteralDeclaration getNEWISGREATEREnumLiteralDeclaration_10() { return cNEWISGREATEREnumLiteralDeclaration_10; }
+		
+		//"NEWISGREATER"
+		public Keyword getNEWISGREATERNEWISGREATERKeyword_10_0() { return cNEWISGREATERNEWISGREATERKeyword_10_0; }
+		
+		//NEWISLESSOREQUAL
+		public EnumLiteralDeclaration getNEWISLESSOREQUALEnumLiteralDeclaration_11() { return cNEWISLESSOREQUALEnumLiteralDeclaration_11; }
+		
+		//"NEWISLESSOREQUAL"
+		public Keyword getNEWISLESSOREQUALNEWISLESSOREQUALKeyword_11_0() { return cNEWISLESSOREQUALNEWISLESSOREQUALKeyword_11_0; }
+		
+		//NEWISLESS
+		public EnumLiteralDeclaration getNEWISLESSEnumLiteralDeclaration_12() { return cNEWISLESSEnumLiteralDeclaration_12; }
+		
+		//"NEWISLESS"
+		public Keyword getNEWISLESSNEWISLESSKeyword_12_0() { return cNEWISLESSNEWISLESSKeyword_12_0; }
+		
+		//NEWISGREATEROREQUAL
+		public EnumLiteralDeclaration getNEWISGREATEROREQUALEnumLiteralDeclaration_13() { return cNEWISGREATEROREQUALEnumLiteralDeclaration_13; }
+		
+		//"NEWISGREATEROREQUAL"
+		public Keyword getNEWISGREATEROREQUALNEWISGREATEROREQUALKeyword_13_0() { return cNEWISGREATEROREQUALNEWISGREATEROREQUALKeyword_13_0; }
+		
+		//ONEEVERYN
+		public EnumLiteralDeclaration getONEEVERYNEnumLiteralDeclaration_14() { return cONEEVERYNEnumLiteralDeclaration_14; }
+		
+		//"ONEEVERYN"
+		public Keyword getONEEVERYNONEEVERYNKeyword_14_0() { return cONEEVERYNONEEVERYNKeyword_14_0; }
+	}
+	public class MessageTRANSFERPROPERTYenumElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.MessageTRANSFERPROPERTYenum");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cTRIGGEREDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cTRIGGEREDTRIGGEREDKeyword_0_0 = (Keyword)cTRIGGEREDEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPENDINGEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPENDINGPENDINGKeyword_1_0 = (Keyword)cPENDINGEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cAUTOEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cAUTOAUTOKeyword_2_0 = (Keyword)cAUTOEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum MessageTRANSFERPROPERTYenum:
+		//	TRIGGERED | PENDING | AUTO;
+		public EnumRule getRule() { return rule; }
+		
+		//TRIGGERED | PENDING | AUTO
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//TRIGGERED
+		public EnumLiteralDeclaration getTRIGGEREDEnumLiteralDeclaration_0() { return cTRIGGEREDEnumLiteralDeclaration_0; }
+		
+		//"TRIGGERED"
+		public Keyword getTRIGGEREDTRIGGEREDKeyword_0_0() { return cTRIGGEREDTRIGGEREDKeyword_0_0; }
+		
+		//PENDING
+		public EnumLiteralDeclaration getPENDINGEnumLiteralDeclaration_1() { return cPENDINGEnumLiteralDeclaration_1; }
+		
+		//"PENDING"
+		public Keyword getPENDINGPENDINGKeyword_1_0() { return cPENDINGPENDINGKeyword_1_0; }
+		
+		//AUTO
+		public EnumLiteralDeclaration getAUTOEnumLiteralDeclaration_2() { return cAUTOEnumLiteralDeclaration_2; }
+		
+		//"AUTO"
+		public Keyword getAUTOAUTOKeyword_2_0() { return cAUTOAUTOKeyword_2_0; }
+	}
+	public class Messagelink1Elements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.Messagelink1");
+		private final EnumLiteralDeclaration cEBooleanEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+		private final Keyword cEBooleanEBooleanKeyword_0 = (Keyword)cEBooleanEnumLiteralDeclaration.eContents().get(0);
+		
+		//enum Messagelink1: //need delete Eboolan, insert TRUE FALSE edit Dan/ last
+		//	EBoolean;
+		public EnumRule getRule() { return rule; }
+		
+		////need delete Eboolan, insert TRUE FALSE edit Dan/ last
+		//EBoolean
+		public EnumLiteralDeclaration getEBooleanEnumLiteralDeclaration() { return cEBooleanEnumLiteralDeclaration; }
+		
+		//"EBoolean"
+		public Keyword getEBooleanEBooleanKeyword_0() { return cEBooleanEBooleanKeyword_0; }
+	}
 	public class ComAttributeNameElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.oil.Oil.ComAttributeName");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -6286,6 +8255,38 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	private final MultipleSpecifierElements pMultipleSpecifier;
 	private final ApplicationDefinitionElements pApplicationDefinition;
 	private final ObjectDefinitionElements pObjectDefinition;
+	private final EventRuleElements pEventRule;
+	private final AppmodeRuleElements pAppmodeRule;
+	private final MessageRuleElements pMessageRule;
+	private final MessageattributeElements pMessageattribute;
+	private final Messageattribute3Elements pMessageattribute3;
+	private final MessageSETEVENTElements pMessageSETEVENT;
+	private final MessageCOMCALLBACKElements pMessageCOMCALLBACK;
+	private final Messageattribute2Elements pMessageattribute2;
+	private final Message_SEND_STATIC_EXTERNALElements pMessage_SEND_STATIC_EXTERNAL;
+	private final Message_SEND_DYNAMIC_EXTERNALElements pMessage_SEND_DYNAMIC_EXTERNAL;
+	private final Message_SEND_ZERO_EXTERNALElements pMessage_SEND_ZERO_EXTERNAL;
+	private final Message_RECEIVE_ZERO_INTERNALElements pMessage_RECEIVE_ZERO_INTERNAL;
+	private final Message_RECEIVE_ZERO_EXTERNALElements pMessage_RECEIVE_ZERO_EXTERNAL;
+	private final Message_RECEIVE_UNQUEUED_INTERNALElements pMessage_RECEIVE_UNQUEUED_INTERNAL;
+	private final Message_RECEIVE_QUEUED_INTERNALElements pMessage_RECEIVE_QUEUED_INTERNAL;
+	private final Message_RECEIVE_UNQUEUED_EXTERNALElements pMessage_RECEIVE_UNQUEUED_EXTERNAL;
+	private final Message_RECEIVE_QUEUED_EXTERNALElements pMessage_RECEIVE_QUEUED_EXTERNAL;
+	private final Message_RECEIVE_DYNAMIC_EXTERNALElements pMessage_RECEIVE_DYNAMIC_EXTERNAL;
+	private final Message_RECEIVE_ZERO_SENDERSElements pMessage_RECEIVE_ZERO_SENDERS;
+	private final MessageCDATATYPEElements pMessageCDATATYPE;
+	private final MessageTRANSFERPROPERTYElements pMessageTRANSFERPROPERTY;
+	private final MessageNETWORKORDERCALLOUTElements pMessageNETWORKORDERCALLOUT;
+	private final MessageCPUORDERCALLOUTElements pMessageCPUORDERCALLOUT;
+	private final MessageINITIALVALUEElements pMessageINITIALVALUE;
+	private final MessageNETWORKMESSAGEElements pMessageNETWORKMESSAGE;
+	private final MessageSENDINGMESSAGEElements pMessageSENDINGMESSAGE;
+	private final MessageQUEUESIZEElements pMessageQUEUESIZE;
+	private final MessagefilterElements pMessagefilter;
+	private final MessageLINKElements pMessageLINK;
+	private final Messagefilter2Elements eMessagefilter2;
+	private final MessageTRANSFERPROPERTYenumElements eMessageTRANSFERPROPERTYenum;
+	private final Messagelink1Elements eMessagelink1;
 	private final LibrayattributeElements pLibrayattribute;
 	private final ComRuleElements pComRule;
 	private final ComattributeElements pComattribute;
@@ -6406,6 +8407,38 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMultipleSpecifier = new MultipleSpecifierElements();
 		this.pApplicationDefinition = new ApplicationDefinitionElements();
 		this.pObjectDefinition = new ObjectDefinitionElements();
+		this.pEventRule = new EventRuleElements();
+		this.pAppmodeRule = new AppmodeRuleElements();
+		this.pMessageRule = new MessageRuleElements();
+		this.pMessageattribute = new MessageattributeElements();
+		this.pMessageattribute3 = new Messageattribute3Elements();
+		this.pMessageSETEVENT = new MessageSETEVENTElements();
+		this.pMessageCOMCALLBACK = new MessageCOMCALLBACKElements();
+		this.pMessageattribute2 = new Messageattribute2Elements();
+		this.pMessage_SEND_STATIC_EXTERNAL = new Message_SEND_STATIC_EXTERNALElements();
+		this.pMessage_SEND_DYNAMIC_EXTERNAL = new Message_SEND_DYNAMIC_EXTERNALElements();
+		this.pMessage_SEND_ZERO_EXTERNAL = new Message_SEND_ZERO_EXTERNALElements();
+		this.pMessage_RECEIVE_ZERO_INTERNAL = new Message_RECEIVE_ZERO_INTERNALElements();
+		this.pMessage_RECEIVE_ZERO_EXTERNAL = new Message_RECEIVE_ZERO_EXTERNALElements();
+		this.pMessage_RECEIVE_UNQUEUED_INTERNAL = new Message_RECEIVE_UNQUEUED_INTERNALElements();
+		this.pMessage_RECEIVE_QUEUED_INTERNAL = new Message_RECEIVE_QUEUED_INTERNALElements();
+		this.pMessage_RECEIVE_UNQUEUED_EXTERNAL = new Message_RECEIVE_UNQUEUED_EXTERNALElements();
+		this.pMessage_RECEIVE_QUEUED_EXTERNAL = new Message_RECEIVE_QUEUED_EXTERNALElements();
+		this.pMessage_RECEIVE_DYNAMIC_EXTERNAL = new Message_RECEIVE_DYNAMIC_EXTERNALElements();
+		this.pMessage_RECEIVE_ZERO_SENDERS = new Message_RECEIVE_ZERO_SENDERSElements();
+		this.pMessageCDATATYPE = new MessageCDATATYPEElements();
+		this.pMessageTRANSFERPROPERTY = new MessageTRANSFERPROPERTYElements();
+		this.pMessageNETWORKORDERCALLOUT = new MessageNETWORKORDERCALLOUTElements();
+		this.pMessageCPUORDERCALLOUT = new MessageCPUORDERCALLOUTElements();
+		this.pMessageINITIALVALUE = new MessageINITIALVALUEElements();
+		this.pMessageNETWORKMESSAGE = new MessageNETWORKMESSAGEElements();
+		this.pMessageSENDINGMESSAGE = new MessageSENDINGMESSAGEElements();
+		this.pMessageQUEUESIZE = new MessageQUEUESIZEElements();
+		this.pMessagefilter = new MessagefilterElements();
+		this.pMessageLINK = new MessageLINKElements();
+		this.eMessagefilter2 = new Messagefilter2Elements();
+		this.eMessageTRANSFERPROPERTYenum = new MessageTRANSFERPROPERTYenumElements();
+		this.eMessagelink1 = new Messagelink1Elements();
 		this.pLibrayattribute = new LibrayattributeElements();
 		this.pComRule = new ComRuleElements();
 		this.pComattribute = new ComattributeElements();
@@ -7023,13 +9056,373 @@ public class OilGrammarAccess extends AbstractGrammarElementFinder {
 	//	| ComRule
 	//	| ApplicationRule
 	//	| MemoryProtectionRule
-	//	| IsrRule;
+	//	| IsrRule
+	//	| MessageRule
+	//	| AppmodeRule
+	//	| EventRule;
 	public ObjectDefinitionElements getObjectDefinitionAccess() {
 		return pObjectDefinition;
 	}
 	
 	public ParserRule getObjectDefinitionRule() {
 		return getObjectDefinitionAccess().getRule();
+	}
+	
+	//EventRule:
+	//	"EVENT" name=Name "{" "MASK" "=" eventvalue=Name ";" "}";
+	public EventRuleElements getEventRuleAccess() {
+		return pEventRule;
+	}
+	
+	public ParserRule getEventRuleRule() {
+		return getEventRuleAccess().getRule();
+	}
+	
+	//AppmodeRule:
+	//	"APPMODE" name=Name "{" "}" ";";
+	public AppmodeRuleElements getAppmodeRuleAccess() {
+		return pAppmodeRule;
+	}
+	
+	public ParserRule getAppmodeRuleRule() {
+		return getAppmodeRuleAccess().getRule();
+	}
+	
+	//MessageRule:
+	//	"MESSAGE" name=Name ("{" MessageList+=Messageattribute* "}") ";";
+	public MessageRuleElements getMessageRuleAccess() {
+		return pMessageRule;
+	}
+	
+	public ParserRule getMessageRuleRule() {
+		return getMessageRuleAccess().getRule();
+	}
+	
+	//Messageattribute:
+	//	{Messageattribute}
+	//	"MESSAGEPROPERTY" "=" MessageList2+=Messageattribute2 | ("NOTIFICATION" | "NOTIFICATIONERROR") "="
+	//	MessageList3=Messageattribute3;
+	public MessageattributeElements getMessageattributeAccess() {
+		return pMessageattribute;
+	}
+	
+	public ParserRule getMessageattributeRule() {
+		return getMessageattributeAccess().getRule();
+	}
+	
+	//Messageattribute3:
+	//	{Messageattribute3} ("NONE" ";" |
+	//	"ACTIVATETASK" "{" "TASK" "=" description=ID ";" "}" ";" |
+	//	"SETEVENT" "{" Msetevent+=MessageSETEVENT+ "}" ";" |
+	//	"COMCALLBACK" "{" "CALLBACKROUTINENAME" "=" description=EString ";" "}" ";" |
+	//	"FLAG" "{" "FLAGNAME" "=" description=EString ";" "}" ";" |
+	//	"COMCALLBACK" "{" Mcomcallback+=MessageCOMCALLBACK "}" ";");
+	public Messageattribute3Elements getMessageattribute3Access() {
+		return pMessageattribute3;
+	}
+	
+	public ParserRule getMessageattribute3Rule() {
+		return getMessageattribute3Access().getRule();
+	}
+	
+	//MessageSETEVENT:
+	//	"TASK" "=" description=ID ";" | "EVENT" "=" description=ID ";";
+	public MessageSETEVENTElements getMessageSETEVENTAccess() {
+		return pMessageSETEVENT;
+	}
+	
+	public ParserRule getMessageSETEVENTRule() {
+		return getMessageSETEVENTAccess().getRule();
+	}
+	
+	//MessageCOMCALLBACK:
+	//	"CALLBACKROUTINENAME" "=" description=ID ";" | "MONITOREDIPDU" "=" value=T_NUMBER ";";
+	public MessageCOMCALLBACKElements getMessageCOMCALLBACKAccess() {
+		return pMessageCOMCALLBACK;
+	}
+	
+	public ParserRule getMessageCOMCALLBACKRule() {
+		return getMessageCOMCALLBACKAccess().getRule();
+	}
+	
+	//Messageattribute2:
+	//	{Messageattribute2} ("SEND_STATIC_INTERNAL" "{" Cdata+=MessageCDATATYPE "}" ";" |
+	//	"SEND_STATIC_EXTERNAL" "{" SSE=Message_SEND_STATIC_EXTERNAL "}" ";" | / *test code not exist * /
+	//	"SEND_DYNAMIC_EXTERNAL" "{" SDE=Message_SEND_DYNAMIC_EXTERNAL "}" ";" |
+	//	"SEND_ZERO_INTERNAL" ";" / *test code not exist * / |
+	//	"SEND_ZERO_EXTERNAL" "{" SZE=Message_SEND_ZERO_EXTERNAL "}" ";" |
+	//	"RECEIVE_ZERO_INTERNAL" "{" RZI=Message_RECEIVE_ZERO_INTERNAL "}" ";" |
+	//	"RECEIVE_ZERO_EXTERNAL" "{" RZE=Message_RECEIVE_ZERO_EXTERNAL "}" ";" |
+	//	"RECEIVE_UNQUEUED_INTERNAL" "{" RUI+=Message_RECEIVE_UNQUEUED_INTERNAL* "}" ";" |
+	//	"RECEIVE_QUEUED_INTERNAL" "{" RQI=Message_RECEIVE_QUEUED_INTERNAL "}" ";" |
+	//	"RECEIVE_UNQUEUED_EXTERNAL" "{" RUE=Message_RECEIVE_UNQUEUED_EXTERNAL "}" ";" |
+	//	"RECEIVE_QUEUED_EXTERNAL" "{" RQE=Message_RECEIVE_QUEUED_EXTERNAL "}" ";" |
+	//	"RECEIVE_DYNAMIC_EXTERNAL" "{" RDE=Message_RECEIVE_DYNAMIC_EXTERNAL "}" ";" |
+	//	"RECEIVE_ZERO_SENDERS" "{" RZS=Message_RECEIVE_ZERO_SENDERS "}" ";");
+	public Messageattribute2Elements getMessageattribute2Access() {
+		return pMessageattribute2;
+	}
+	
+	public ParserRule getMessageattribute2Rule() {
+		return getMessageattribute2Access().getRule();
+	}
+	
+	//Message_SEND_STATIC_EXTERNAL:
+	//	Cdata=MessageCDATATYPE | Transferproperty=MessageTRANSFERPROPERTY | filter=Messagefilter |
+	//	networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+	//	initialvalue=MessageINITIALVALUE | networkmessage=MessageNETWORKMESSAGE //type not defined
+	//;
+	public Message_SEND_STATIC_EXTERNALElements getMessage_SEND_STATIC_EXTERNALAccess() {
+		return pMessage_SEND_STATIC_EXTERNAL;
+	}
+	
+	public ParserRule getMessage_SEND_STATIC_EXTERNALRule() {
+		return getMessage_SEND_STATIC_EXTERNALAccess().getRule();
+	}
+	
+	//Message_SEND_DYNAMIC_EXTERNAL:
+	//	Transferproperty=MessageTRANSFERPROPERTY | networkordercallout=MessageNETWORKORDERCALLOUT |
+	//	cpuordercallout=MessageCPUORDERCALLOUT | initialvalue=MessageINITIALVALUE | networkmessage=MessageNETWORKMESSAGE //type not defined
+	//;
+	public Message_SEND_DYNAMIC_EXTERNALElements getMessage_SEND_DYNAMIC_EXTERNALAccess() {
+		return pMessage_SEND_DYNAMIC_EXTERNAL;
+	}
+	
+	public ParserRule getMessage_SEND_DYNAMIC_EXTERNALRule() {
+		return getMessage_SEND_DYNAMIC_EXTERNALAccess().getRule();
+	}
+	
+	//Message_SEND_ZERO_EXTERNAL:
+	//	networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+	//	networkmessage=MessageNETWORKMESSAGE //type not defined
+	//;
+	public Message_SEND_ZERO_EXTERNALElements getMessage_SEND_ZERO_EXTERNALAccess() {
+		return pMessage_SEND_ZERO_EXTERNAL;
+	}
+	
+	public ParserRule getMessage_SEND_ZERO_EXTERNALRule() {
+		return getMessage_SEND_ZERO_EXTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_ZERO_INTERNAL:
+	//	{Message_RECEIVE_ZERO_INTERNAL} sendingmessage=MessageSENDINGMESSAGE;
+	public Message_RECEIVE_ZERO_INTERNALElements getMessage_RECEIVE_ZERO_INTERNALAccess() {
+		return pMessage_RECEIVE_ZERO_INTERNAL;
+	}
+	
+	public ParserRule getMessage_RECEIVE_ZERO_INTERNALRule() {
+		return getMessage_RECEIVE_ZERO_INTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_ZERO_EXTERNAL:
+	//	networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT |
+	//	networkmessage=MessageNETWORKMESSAGE //type not defined
+	//;
+	public Message_RECEIVE_ZERO_EXTERNALElements getMessage_RECEIVE_ZERO_EXTERNALAccess() {
+		return pMessage_RECEIVE_ZERO_EXTERNAL;
+	}
+	
+	public ParserRule getMessage_RECEIVE_ZERO_EXTERNALRule() {
+		return getMessage_RECEIVE_ZERO_EXTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_UNQUEUED_INTERNAL:
+	//	sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE;
+	public Message_RECEIVE_UNQUEUED_INTERNALElements getMessage_RECEIVE_UNQUEUED_INTERNALAccess() {
+		return pMessage_RECEIVE_UNQUEUED_INTERNAL;
+	}
+	
+	public ParserRule getMessage_RECEIVE_UNQUEUED_INTERNALRule() {
+		return getMessage_RECEIVE_UNQUEUED_INTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_QUEUED_INTERNAL:
+	//	sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE |
+	//	queuesize=MessageQUEUESIZE;
+	public Message_RECEIVE_QUEUED_INTERNALElements getMessage_RECEIVE_QUEUED_INTERNALAccess() {
+		return pMessage_RECEIVE_QUEUED_INTERNAL;
+	}
+	
+	public ParserRule getMessage_RECEIVE_QUEUED_INTERNALRule() {
+		return getMessage_RECEIVE_QUEUED_INTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_UNQUEUED_EXTERNAL:
+	//	Cdata=MessageCDATATYPE | filter=Messagefilter | link=MessageLINK | initialvalue=MessageINITIALVALUE;
+	public Message_RECEIVE_UNQUEUED_EXTERNALElements getMessage_RECEIVE_UNQUEUED_EXTERNALAccess() {
+		return pMessage_RECEIVE_UNQUEUED_EXTERNAL;
+	}
+	
+	public ParserRule getMessage_RECEIVE_UNQUEUED_EXTERNALRule() {
+		return getMessage_RECEIVE_UNQUEUED_EXTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_QUEUED_EXTERNAL:
+	//	Cdata=MessageCDATATYPE | queuesize=MessageQUEUESIZE | filter=Messagefilter | link=MessageLINK |
+	//	initialvalue=MessageINITIALVALUE;
+	public Message_RECEIVE_QUEUED_EXTERNALElements getMessage_RECEIVE_QUEUED_EXTERNALAccess() {
+		return pMessage_RECEIVE_QUEUED_EXTERNAL;
+	}
+	
+	public ParserRule getMessage_RECEIVE_QUEUED_EXTERNALRule() {
+		return getMessage_RECEIVE_QUEUED_EXTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_DYNAMIC_EXTERNAL:
+	//	link=MessageLINK | initialvalue=MessageINITIALVALUE;
+	public Message_RECEIVE_DYNAMIC_EXTERNALElements getMessage_RECEIVE_DYNAMIC_EXTERNALAccess() {
+		return pMessage_RECEIVE_DYNAMIC_EXTERNAL;
+	}
+	
+	public ParserRule getMessage_RECEIVE_DYNAMIC_EXTERNALRule() {
+		return getMessage_RECEIVE_DYNAMIC_EXTERNALAccess().getRule();
+	}
+	
+	//Message_RECEIVE_ZERO_SENDERS:
+	//	Cdata=MessageCDATATYPE | initialvalue=MessageINITIALVALUE;
+	public Message_RECEIVE_ZERO_SENDERSElements getMessage_RECEIVE_ZERO_SENDERSAccess() {
+		return pMessage_RECEIVE_ZERO_SENDERS;
+	}
+	
+	public ParserRule getMessage_RECEIVE_ZERO_SENDERSRule() {
+		return getMessage_RECEIVE_ZERO_SENDERSAccess().getRule();
+	}
+	
+	//MessageCDATATYPE:
+	//	{MessageCDATATYPE}
+	//	"CDATATYPE" "=" descrption=EString ";";
+	public MessageCDATATYPEElements getMessageCDATATYPEAccess() {
+		return pMessageCDATATYPE;
+	}
+	
+	public ParserRule getMessageCDATATYPERule() {
+		return getMessageCDATATYPEAccess().getRule();
+	}
+	
+	//MessageTRANSFERPROPERTY:
+	//	"TRANSFERPROPERTY" "=" transenum=MessageTRANSFERPROPERTYenum;
+	public MessageTRANSFERPROPERTYElements getMessageTRANSFERPROPERTYAccess() {
+		return pMessageTRANSFERPROPERTY;
+	}
+	
+	public ParserRule getMessageTRANSFERPROPERTYRule() {
+		return getMessageTRANSFERPROPERTYAccess().getRule();
+	}
+	
+	//MessageNETWORKORDERCALLOUT:
+	//	{MessageNETWORKORDERCALLOUT}
+	//	"NETWORKORDERCALLOUT" "=" descrption=EString ";";
+	public MessageNETWORKORDERCALLOUTElements getMessageNETWORKORDERCALLOUTAccess() {
+		return pMessageNETWORKORDERCALLOUT;
+	}
+	
+	public ParserRule getMessageNETWORKORDERCALLOUTRule() {
+		return getMessageNETWORKORDERCALLOUTAccess().getRule();
+	}
+	
+	//MessageCPUORDERCALLOUT:
+	//	{MessageCPUORDERCALLOUT}
+	//	"CPUORDERCALLOUT" "=" descrption=EString ";";
+	public MessageCPUORDERCALLOUTElements getMessageCPUORDERCALLOUTAccess() {
+		return pMessageCPUORDERCALLOUT;
+	}
+	
+	public ParserRule getMessageCPUORDERCALLOUTRule() {
+		return getMessageCPUORDERCALLOUTAccess().getRule();
+	}
+	
+	//MessageINITIALVALUE:
+	//	{MessageINITIALVALUE}
+	//	"INITIALVALUE" "=" value=T_NUMBER ";";
+	public MessageINITIALVALUEElements getMessageINITIALVALUEAccess() {
+		return pMessageINITIALVALUE;
+	}
+	
+	public ParserRule getMessageINITIALVALUERule() {
+		return getMessageINITIALVALUEAccess().getRule();
+	}
+	
+	//MessageNETWORKMESSAGE:
+	//	{MessageNETWORKMESSAGE} ("NETWORKMESSAGE" "=" value=ImplementationDef ";");
+	public MessageNETWORKMESSAGEElements getMessageNETWORKMESSAGEAccess() {
+		return pMessageNETWORKMESSAGE;
+	}
+	
+	public ParserRule getMessageNETWORKMESSAGERule() {
+		return getMessageNETWORKMESSAGEAccess().getRule();
+	}
+	
+	//MessageSENDINGMESSAGE:
+	//	{MessageSENDINGMESSAGE} ("SENDINGMESSAGE" "=" descrption=ID ";");
+	public MessageSENDINGMESSAGEElements getMessageSENDINGMESSAGEAccess() {
+		return pMessageSENDINGMESSAGE;
+	}
+	
+	public ParserRule getMessageSENDINGMESSAGERule() {
+		return getMessageSENDINGMESSAGEAccess().getRule();
+	}
+	
+	//MessageQUEUESIZE:
+	//	{MessageQUEUESIZE} ("QUEUESIZE" "=" value=T_NUMBER);
+	public MessageQUEUESIZEElements getMessageQUEUESIZEAccess() {
+		return pMessageQUEUESIZE;
+	}
+	
+	public ParserRule getMessageQUEUESIZERule() {
+		return getMessageQUEUESIZEAccess().getRule();
+	}
+	
+	//Messagefilter:
+	//	"FILTER" "=" filter2=Messagefilter2 ("{" (name=Name "=" messageint1=AttributeValue ";")+ "}")? ";";
+	public MessagefilterElements getMessagefilterAccess() {
+		return pMessagefilter;
+	}
+	
+	public ParserRule getMessagefilterRule() {
+		return getMessagefilterAccess().getRule();
+	}
+	
+	//MessageLINK:
+	//	"LINK" "=" messagelink=Messagelink1;
+	public MessageLINKElements getMessageLINKAccess() {
+		return pMessageLINK;
+	}
+	
+	public ParserRule getMessageLINKRule() {
+		return getMessageLINKAccess().getRule();
+	}
+	
+	//enum Messagefilter2:
+	//	ALWAYS | NEVER | MASKEDNEWEQUALSX | MASKEDNEWDIFFERSX | NEWISEQUAL |
+	//	NEWISDIFFERENT | MASKEDNEWEQUALSMASKEDOLD | MASKEDNEWDIFFERSMASKEDOLD |
+	//	NEWISWITHIN | NEWISOUTSIDE | NEWISGREATER | NEWISLESSOREQUAL |
+	//	NEWISLESS | NEWISGREATEROREQUAL | ONEEVERYN;
+	public Messagefilter2Elements getMessagefilter2Access() {
+		return eMessagefilter2;
+	}
+	
+	public EnumRule getMessagefilter2Rule() {
+		return getMessagefilter2Access().getRule();
+	}
+	
+	//enum MessageTRANSFERPROPERTYenum:
+	//	TRIGGERED | PENDING | AUTO;
+	public MessageTRANSFERPROPERTYenumElements getMessageTRANSFERPROPERTYenumAccess() {
+		return eMessageTRANSFERPROPERTYenum;
+	}
+	
+	public EnumRule getMessageTRANSFERPROPERTYenumRule() {
+		return getMessageTRANSFERPROPERTYenumAccess().getRule();
+	}
+	
+	//enum Messagelink1: //need delete Eboolan, insert TRUE FALSE edit Dan/ last
+	//	EBoolean;
+	public Messagelink1Elements getMessagelink1Access() {
+		return eMessagelink1;
+	}
+	
+	public EnumRule getMessagelink1Rule() {
+		return getMessagelink1Access().getRule();
 	}
 	
 	//Librayattribute:

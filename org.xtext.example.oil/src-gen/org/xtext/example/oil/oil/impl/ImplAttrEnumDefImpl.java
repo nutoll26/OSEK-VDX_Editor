@@ -155,7 +155,7 @@ public class ImplAttrEnumDefImpl extends ImplAttrDefImpl implements ImplAttrEnum
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_ATTR_ENUM_DEF;
+    return OilPackage.eINSTANCE.getImplAttrEnumDef();
   }
 
   /**

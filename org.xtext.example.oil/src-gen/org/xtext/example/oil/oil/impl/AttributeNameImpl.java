@@ -66,7 +66,7 @@ public class AttributeNameImpl extends MinimalEObjectImpl.Container implements A
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.ATTRIBUTE_NAME;
+    return OilPackage.eINSTANCE.getAttributeName();
   }
 
   /**

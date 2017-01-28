@@ -266,6 +266,151 @@ public class OilAdapterFactory extends AdapterFactoryImpl
         return createObjectDefinitionAdapter();
       }
       @Override
+      public Adapter caseEventRule(EventRule object)
+      {
+        return createEventRuleAdapter();
+      }
+      @Override
+      public Adapter caseAppmodeRule(AppmodeRule object)
+      {
+        return createAppmodeRuleAdapter();
+      }
+      @Override
+      public Adapter caseMessageRule(MessageRule object)
+      {
+        return createMessageRuleAdapter();
+      }
+      @Override
+      public Adapter caseMessageattribute(Messageattribute object)
+      {
+        return createMessageattributeAdapter();
+      }
+      @Override
+      public Adapter caseMessageattribute3(Messageattribute3 object)
+      {
+        return createMessageattribute3Adapter();
+      }
+      @Override
+      public Adapter caseMessageSETEVENT(MessageSETEVENT object)
+      {
+        return createMessageSETEVENTAdapter();
+      }
+      @Override
+      public Adapter caseMessageCOMCALLBACK(MessageCOMCALLBACK object)
+      {
+        return createMessageCOMCALLBACKAdapter();
+      }
+      @Override
+      public Adapter caseMessageattribute2(Messageattribute2 object)
+      {
+        return createMessageattribute2Adapter();
+      }
+      @Override
+      public Adapter caseMessage_SEND_STATIC_EXTERNAL(Message_SEND_STATIC_EXTERNAL object)
+      {
+        return createMessage_SEND_STATIC_EXTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_SEND_DYNAMIC_EXTERNAL(Message_SEND_DYNAMIC_EXTERNAL object)
+      {
+        return createMessage_SEND_DYNAMIC_EXTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_SEND_ZERO_EXTERNAL(Message_SEND_ZERO_EXTERNAL object)
+      {
+        return createMessage_SEND_ZERO_EXTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_ZERO_INTERNAL(Message_RECEIVE_ZERO_INTERNAL object)
+      {
+        return createMessage_RECEIVE_ZERO_INTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_ZERO_EXTERNAL(Message_RECEIVE_ZERO_EXTERNAL object)
+      {
+        return createMessage_RECEIVE_ZERO_EXTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_UNQUEUED_INTERNAL(Message_RECEIVE_UNQUEUED_INTERNAL object)
+      {
+        return createMessage_RECEIVE_UNQUEUED_INTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_QUEUED_INTERNAL(Message_RECEIVE_QUEUED_INTERNAL object)
+      {
+        return createMessage_RECEIVE_QUEUED_INTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_UNQUEUED_EXTERNAL(Message_RECEIVE_UNQUEUED_EXTERNAL object)
+      {
+        return createMessage_RECEIVE_UNQUEUED_EXTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_QUEUED_EXTERNAL(Message_RECEIVE_QUEUED_EXTERNAL object)
+      {
+        return createMessage_RECEIVE_QUEUED_EXTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_DYNAMIC_EXTERNAL(Message_RECEIVE_DYNAMIC_EXTERNAL object)
+      {
+        return createMessage_RECEIVE_DYNAMIC_EXTERNALAdapter();
+      }
+      @Override
+      public Adapter caseMessage_RECEIVE_ZERO_SENDERS(Message_RECEIVE_ZERO_SENDERS object)
+      {
+        return createMessage_RECEIVE_ZERO_SENDERSAdapter();
+      }
+      @Override
+      public Adapter caseMessageCDATATYPE(MessageCDATATYPE object)
+      {
+        return createMessageCDATATYPEAdapter();
+      }
+      @Override
+      public Adapter caseMessageTRANSFERPROPERTY(MessageTRANSFERPROPERTY object)
+      {
+        return createMessageTRANSFERPROPERTYAdapter();
+      }
+      @Override
+      public Adapter caseMessageNETWORKORDERCALLOUT(MessageNETWORKORDERCALLOUT object)
+      {
+        return createMessageNETWORKORDERCALLOUTAdapter();
+      }
+      @Override
+      public Adapter caseMessageCPUORDERCALLOUT(MessageCPUORDERCALLOUT object)
+      {
+        return createMessageCPUORDERCALLOUTAdapter();
+      }
+      @Override
+      public Adapter caseMessageINITIALVALUE(MessageINITIALVALUE object)
+      {
+        return createMessageINITIALVALUEAdapter();
+      }
+      @Override
+      public Adapter caseMessageNETWORKMESSAGE(MessageNETWORKMESSAGE object)
+      {
+        return createMessageNETWORKMESSAGEAdapter();
+      }
+      @Override
+      public Adapter caseMessageSENDINGMESSAGE(MessageSENDINGMESSAGE object)
+      {
+        return createMessageSENDINGMESSAGEAdapter();
+      }
+      @Override
+      public Adapter caseMessageQUEUESIZE(MessageQUEUESIZE object)
+      {
+        return createMessageQUEUESIZEAdapter();
+      }
+      @Override
+      public Adapter caseMessagefilter(Messagefilter object)
+      {
+        return createMessagefilterAdapter();
+      }
+      @Override
+      public Adapter caseMessageLINK(MessageLINK object)
+      {
+        return createMessageLINKAdapter();
+      }
+      @Override
       public Adapter caseLibrayattribute(Librayattribute object)
       {
         return createLibrayattributeAdapter();
@@ -1033,6 +1178,441 @@ public class OilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createObjectDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.EventRule <em>Event Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.EventRule
+   * @generated
+   */
+  public Adapter createEventRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.AppmodeRule <em>Appmode Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.AppmodeRule
+   * @generated
+   */
+  public Adapter createAppmodeRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageRule <em>Message Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageRule
+   * @generated
+   */
+  public Adapter createMessageRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Messageattribute <em>Messageattribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Messageattribute
+   * @generated
+   */
+  public Adapter createMessageattributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Messageattribute3 <em>Messageattribute3</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Messageattribute3
+   * @generated
+   */
+  public Adapter createMessageattribute3Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageSETEVENT <em>Message SETEVENT</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageSETEVENT
+   * @generated
+   */
+  public Adapter createMessageSETEVENTAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageCOMCALLBACK <em>Message COMCALLBACK</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageCOMCALLBACK
+   * @generated
+   */
+  public Adapter createMessageCOMCALLBACKAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Messageattribute2 <em>Messageattribute2</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Messageattribute2
+   * @generated
+   */
+  public Adapter createMessageattribute2Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_SEND_STATIC_EXTERNAL <em>Message SEND STATIC EXTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_SEND_STATIC_EXTERNAL
+   * @generated
+   */
+  public Adapter createMessage_SEND_STATIC_EXTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_SEND_DYNAMIC_EXTERNAL <em>Message SEND DYNAMIC EXTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_SEND_DYNAMIC_EXTERNAL
+   * @generated
+   */
+  public Adapter createMessage_SEND_DYNAMIC_EXTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_SEND_ZERO_EXTERNAL <em>Message SEND ZERO EXTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_SEND_ZERO_EXTERNAL
+   * @generated
+   */
+  public Adapter createMessage_SEND_ZERO_EXTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_ZERO_INTERNAL <em>Message RECEIVE ZERO INTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_ZERO_INTERNAL
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_ZERO_INTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_ZERO_EXTERNAL <em>Message RECEIVE ZERO EXTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_ZERO_EXTERNAL
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_ZERO_EXTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_UNQUEUED_INTERNAL <em>Message RECEIVE UNQUEUED INTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_UNQUEUED_INTERNAL
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_UNQUEUED_INTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_QUEUED_INTERNAL <em>Message RECEIVE QUEUED INTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_QUEUED_INTERNAL
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_QUEUED_INTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_UNQUEUED_EXTERNAL <em>Message RECEIVE UNQUEUED EXTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_UNQUEUED_EXTERNAL
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_UNQUEUED_EXTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_QUEUED_EXTERNAL <em>Message RECEIVE QUEUED EXTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_QUEUED_EXTERNAL
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_QUEUED_EXTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_DYNAMIC_EXTERNAL <em>Message RECEIVE DYNAMIC EXTERNAL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_DYNAMIC_EXTERNAL
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_DYNAMIC_EXTERNALAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Message_RECEIVE_ZERO_SENDERS <em>Message RECEIVE ZERO SENDERS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Message_RECEIVE_ZERO_SENDERS
+   * @generated
+   */
+  public Adapter createMessage_RECEIVE_ZERO_SENDERSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageCDATATYPE <em>Message CDATATYPE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageCDATATYPE
+   * @generated
+   */
+  public Adapter createMessageCDATATYPEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageTRANSFERPROPERTY <em>Message TRANSFERPROPERTY</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageTRANSFERPROPERTY
+   * @generated
+   */
+  public Adapter createMessageTRANSFERPROPERTYAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageNETWORKORDERCALLOUT <em>Message NETWORKORDERCALLOUT</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageNETWORKORDERCALLOUT
+   * @generated
+   */
+  public Adapter createMessageNETWORKORDERCALLOUTAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageCPUORDERCALLOUT <em>Message CPUORDERCALLOUT</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageCPUORDERCALLOUT
+   * @generated
+   */
+  public Adapter createMessageCPUORDERCALLOUTAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageINITIALVALUE <em>Message INITIALVALUE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageINITIALVALUE
+   * @generated
+   */
+  public Adapter createMessageINITIALVALUEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageNETWORKMESSAGE <em>Message NETWORKMESSAGE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageNETWORKMESSAGE
+   * @generated
+   */
+  public Adapter createMessageNETWORKMESSAGEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageSENDINGMESSAGE <em>Message SENDINGMESSAGE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageSENDINGMESSAGE
+   * @generated
+   */
+  public Adapter createMessageSENDINGMESSAGEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageQUEUESIZE <em>Message QUEUESIZE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageQUEUESIZE
+   * @generated
+   */
+  public Adapter createMessageQUEUESIZEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.Messagefilter <em>Messagefilter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.Messagefilter
+   * @generated
+   */
+  public Adapter createMessagefilterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.oil.oil.MessageLINK <em>Message LINK</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.oil.oil.MessageLINK
+   * @generated
+   */
+  public Adapter createMessageLINKAdapter()
   {
     return null;
   }

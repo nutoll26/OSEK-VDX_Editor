@@ -66,7 +66,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.INCLUDE;
+    return OilPackage.eINSTANCE.getInclude();
   }
 
   /**

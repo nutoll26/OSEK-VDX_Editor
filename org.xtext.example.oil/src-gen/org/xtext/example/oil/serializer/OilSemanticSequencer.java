@@ -22,6 +22,7 @@ import org.xtext.example.oil.oil.AppSubContainer;
 import org.xtext.example.oil.oil.ApplicationDefinition;
 import org.xtext.example.oil.oil.ApplicationParam;
 import org.xtext.example.oil.oil.ApplicationRule;
+import org.xtext.example.oil.oil.AppmodeRule;
 import org.xtext.example.oil.oil.Attribute;
 import org.xtext.example.oil.oil.AttributeName;
 import org.xtext.example.oil.oil.AutoAttributeValue;
@@ -31,6 +32,7 @@ import org.xtext.example.oil.oil.Comattribute;
 import org.xtext.example.oil.oil.CounterRule;
 import org.xtext.example.oil.oil.Enumeration;
 import org.xtext.example.oil.oil.Enumerator;
+import org.xtext.example.oil.oil.EventRule;
 import org.xtext.example.oil.oil.ExpiryAttribute;
 import org.xtext.example.oil.oil.FloatAttributeValue;
 import org.xtext.example.oil.oil.HasRestartTaskRule;
@@ -58,6 +60,33 @@ import org.xtext.example.oil.oil.IsrRule;
 import org.xtext.example.oil.oil.IsrSubContainer;
 import org.xtext.example.oil.oil.Librayattribute;
 import org.xtext.example.oil.oil.MemoryProtectionRule;
+import org.xtext.example.oil.oil.MessageCDATATYPE;
+import org.xtext.example.oil.oil.MessageCOMCALLBACK;
+import org.xtext.example.oil.oil.MessageCPUORDERCALLOUT;
+import org.xtext.example.oil.oil.MessageINITIALVALUE;
+import org.xtext.example.oil.oil.MessageLINK;
+import org.xtext.example.oil.oil.MessageNETWORKMESSAGE;
+import org.xtext.example.oil.oil.MessageNETWORKORDERCALLOUT;
+import org.xtext.example.oil.oil.MessageQUEUESIZE;
+import org.xtext.example.oil.oil.MessageRule;
+import org.xtext.example.oil.oil.MessageSENDINGMESSAGE;
+import org.xtext.example.oil.oil.MessageSETEVENT;
+import org.xtext.example.oil.oil.MessageTRANSFERPROPERTY;
+import org.xtext.example.oil.oil.Message_RECEIVE_DYNAMIC_EXTERNAL;
+import org.xtext.example.oil.oil.Message_RECEIVE_QUEUED_EXTERNAL;
+import org.xtext.example.oil.oil.Message_RECEIVE_QUEUED_INTERNAL;
+import org.xtext.example.oil.oil.Message_RECEIVE_UNQUEUED_EXTERNAL;
+import org.xtext.example.oil.oil.Message_RECEIVE_UNQUEUED_INTERNAL;
+import org.xtext.example.oil.oil.Message_RECEIVE_ZERO_EXTERNAL;
+import org.xtext.example.oil.oil.Message_RECEIVE_ZERO_INTERNAL;
+import org.xtext.example.oil.oil.Message_RECEIVE_ZERO_SENDERS;
+import org.xtext.example.oil.oil.Message_SEND_DYNAMIC_EXTERNAL;
+import org.xtext.example.oil.oil.Message_SEND_STATIC_EXTERNAL;
+import org.xtext.example.oil.oil.Message_SEND_ZERO_EXTERNAL;
+import org.xtext.example.oil.oil.Messageattribute;
+import org.xtext.example.oil.oil.Messageattribute2;
+import org.xtext.example.oil.oil.Messageattribute3;
+import org.xtext.example.oil.oil.Messagefilter;
 import org.xtext.example.oil.oil.NameAttributeValue;
 import org.xtext.example.oil.oil.NumberAttributeValue;
 import org.xtext.example.oil.oil.OILFile;
@@ -123,6 +152,9 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case OilPackage.APPLICATION_RULE:
 				sequence_ApplicationRule(context, (ApplicationRule) semanticObject); 
 				return; 
+			case OilPackage.APPMODE_RULE:
+				sequence_AppmodeRule(context, (AppmodeRule) semanticObject); 
+				return; 
 			case OilPackage.ATTRIBUTE:
 				sequence_Attribute(context, (Attribute) semanticObject); 
 				return; 
@@ -149,6 +181,9 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case OilPackage.ENUMERATOR:
 				sequence_Enumerator(context, (Enumerator) semanticObject); 
+				return; 
+			case OilPackage.EVENT_RULE:
+				sequence_EventRule(context, (EventRule) semanticObject); 
 				return; 
 			case OilPackage.EXPIRY_ATTRIBUTE:
 				sequence_ExpiryAttribute(context, (ExpiryAttribute) semanticObject); 
@@ -230,6 +265,87 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case OilPackage.MEMORY_PROTECTION_RULE:
 				sequence_MemoryProtectionRule(context, (MemoryProtectionRule) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_CDATATYPE:
+				sequence_MessageCDATATYPE(context, (MessageCDATATYPE) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_COMCALLBACK:
+				sequence_MessageCOMCALLBACK(context, (MessageCOMCALLBACK) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_CPUORDERCALLOUT:
+				sequence_MessageCPUORDERCALLOUT(context, (MessageCPUORDERCALLOUT) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_INITIALVALUE:
+				sequence_MessageINITIALVALUE(context, (MessageINITIALVALUE) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_LINK:
+				sequence_MessageLINK(context, (MessageLINK) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_NETWORKMESSAGE:
+				sequence_MessageNETWORKMESSAGE(context, (MessageNETWORKMESSAGE) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_NETWORKORDERCALLOUT:
+				sequence_MessageNETWORKORDERCALLOUT(context, (MessageNETWORKORDERCALLOUT) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_QUEUESIZE:
+				sequence_MessageQUEUESIZE(context, (MessageQUEUESIZE) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RULE:
+				sequence_MessageRule(context, (MessageRule) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_SENDINGMESSAGE:
+				sequence_MessageSENDINGMESSAGE(context, (MessageSENDINGMESSAGE) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_SETEVENT:
+				sequence_MessageSETEVENT(context, (MessageSETEVENT) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_TRANSFERPROPERTY:
+				sequence_MessageTRANSFERPROPERTY(context, (MessageTRANSFERPROPERTY) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_DYNAMIC_EXTERNAL:
+				sequence_Message_RECEIVE_DYNAMIC_EXTERNAL(context, (Message_RECEIVE_DYNAMIC_EXTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_QUEUED_EXTERNAL:
+				sequence_Message_RECEIVE_QUEUED_EXTERNAL(context, (Message_RECEIVE_QUEUED_EXTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_QUEUED_INTERNAL:
+				sequence_Message_RECEIVE_QUEUED_INTERNAL(context, (Message_RECEIVE_QUEUED_INTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_UNQUEUED_EXTERNAL:
+				sequence_Message_RECEIVE_UNQUEUED_EXTERNAL(context, (Message_RECEIVE_UNQUEUED_EXTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_UNQUEUED_INTERNAL:
+				sequence_Message_RECEIVE_UNQUEUED_INTERNAL(context, (Message_RECEIVE_UNQUEUED_INTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_ZERO_EXTERNAL:
+				sequence_Message_RECEIVE_ZERO_EXTERNAL(context, (Message_RECEIVE_ZERO_EXTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_ZERO_INTERNAL:
+				sequence_Message_RECEIVE_ZERO_INTERNAL(context, (Message_RECEIVE_ZERO_INTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_RECEIVE_ZERO_SENDERS:
+				sequence_Message_RECEIVE_ZERO_SENDERS(context, (Message_RECEIVE_ZERO_SENDERS) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_SEND_DYNAMIC_EXTERNAL:
+				sequence_Message_SEND_DYNAMIC_EXTERNAL(context, (Message_SEND_DYNAMIC_EXTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_SEND_STATIC_EXTERNAL:
+				sequence_Message_SEND_STATIC_EXTERNAL(context, (Message_SEND_STATIC_EXTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGE_SEND_ZERO_EXTERNAL:
+				sequence_Message_SEND_ZERO_EXTERNAL(context, (Message_SEND_ZERO_EXTERNAL) semanticObject); 
+				return; 
+			case OilPackage.MESSAGEATTRIBUTE:
+				sequence_Messageattribute(context, (Messageattribute) semanticObject); 
+				return; 
+			case OilPackage.MESSAGEATTRIBUTE2:
+				sequence_Messageattribute2(context, (Messageattribute2) semanticObject); 
+				return; 
+			case OilPackage.MESSAGEATTRIBUTE3:
+				sequence_Messageattribute3(context, (Messageattribute3) semanticObject); 
+				return; 
+			case OilPackage.MESSAGEFILTER:
+				sequence_Messagefilter(context, (Messagefilter) semanticObject); 
 				return; 
 			case OilPackage.NAME_ATTRIBUTE_VALUE:
 				sequence_NameAttributeValue(context, (NameAttributeValue) semanticObject); 
@@ -403,10 +519,10 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_ApplicationParam(ISerializationContext context, ApplicationParam semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.APPLICATION_PARAM__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.APPLICATION_PARAM__TYPE));
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.APPLICATION_PARAM__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.APPLICATION_PARAM__VALUE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getApplicationParam_Type()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getApplicationParam_Type()));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getApplicationParam_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getApplicationParam_Value()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getApplicationParamAccess().getTypeApplicationParamEnumEnumRuleCall_0_0(), semanticObject.getType());
@@ -425,6 +541,25 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_ApplicationRule(ISerializationContext context, ApplicationRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ObjectDefinition returns AppmodeRule
+	 *     AppmodeRule returns AppmodeRule
+	 *
+	 * Constraint:
+	 *     name=Name
+	 */
+	protected void sequence_AppmodeRule(ISerializationContext context, AppmodeRule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getObjectDefinition_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getObjectDefinition_Name()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAppmodeRuleAccess().getNameNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -462,8 +597,8 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_AutoAttributeValue(ISerializationContext context, AutoAttributeValue semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.AUTO_ATTRIBUTE_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.AUTO_ATTRIBUTE_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getAutoAttributeValue_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getAutoAttributeValue_Value()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAutoAttributeValueAccess().getValueAUTOKeyword_0(), semanticObject.isValue());
@@ -535,6 +670,28 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     ObjectDefinition returns EventRule
+	 *     EventRule returns EventRule
+	 *
+	 * Constraint:
+	 *     (name=Name eventvalue=Name)
+	 */
+	protected void sequence_EventRule(ISerializationContext context, EventRule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getObjectDefinition_Name()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getObjectDefinition_Name()));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getEventRule_Eventvalue()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getEventRule_Eventvalue()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEventRuleAccess().getNameNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEventRuleAccess().getEventvalueNameParserRuleCall_5_0(), semanticObject.getEventvalue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ExpiryAttribute returns ExpiryAttribute
 	 *
 	 * Constraint:
@@ -555,8 +712,8 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_FloatAttributeValue(ISerializationContext context, FloatAttributeValue semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.FLOAT_ATTRIBUTE_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.FLOAT_ATTRIBUTE_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getFloatAttributeValue_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getFloatAttributeValue_Value()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFloatAttributeValueAccess().getValueEFloatParserRuleCall_0(), semanticObject.getValue());
@@ -847,8 +1004,8 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_IocDataTypeAttr(ISerializationContext context, IocDataTypeAttr semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.IOC_DATA_TYPE_ATTR__IOCDATATYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.IOC_DATA_TYPE_ATTR__IOCDATATYPE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getIocDataTypeAttr_Iocdatatype()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getIocDataTypeAttr_Iocdatatype()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getIocDataTypeAttrAccess().getIocdatatypeIocDataTypeEnumRuleCall_2_0(), semanticObject.getIocdatatype());
@@ -939,8 +1096,8 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_IsrSubContainer(ISerializationContext context, IsrSubContainer semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.ISR_SUB_CONTAINER__TIMING_PROTECTION_RULE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.ISR_SUB_CONTAINER__TIMING_PROTECTION_RULE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getIsrSubContainer_TimingProtectionRule()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getIsrSubContainer_TimingProtectionRule()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getIsrSubContainerAccess().getTimingProtectionRuleTimingProtectionRuleParserRuleCall_0(), semanticObject.getTimingProtectionRule());
@@ -975,6 +1132,418 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     MessageCDATATYPE returns MessageCDATATYPE
+	 *
+	 * Constraint:
+	 *     descrption=EString
+	 */
+	protected void sequence_MessageCDATATYPE(ISerializationContext context, MessageCDATATYPE semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageCDATATYPE_Descrption()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageCDATATYPE_Descrption()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageCDATATYPEAccess().getDescrptionEStringParserRuleCall_3_0(), semanticObject.getDescrption());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageCOMCALLBACK returns MessageCOMCALLBACK
+	 *
+	 * Constraint:
+	 *     (description=ID | value=T_NUMBER)
+	 */
+	protected void sequence_MessageCOMCALLBACK(ISerializationContext context, MessageCOMCALLBACK semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageCPUORDERCALLOUT returns MessageCPUORDERCALLOUT
+	 *
+	 * Constraint:
+	 *     descrption=EString
+	 */
+	protected void sequence_MessageCPUORDERCALLOUT(ISerializationContext context, MessageCPUORDERCALLOUT semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageCPUORDERCALLOUT_Descrption()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageCPUORDERCALLOUT_Descrption()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageCPUORDERCALLOUTAccess().getDescrptionEStringParserRuleCall_3_0(), semanticObject.getDescrption());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageINITIALVALUE returns MessageINITIALVALUE
+	 *
+	 * Constraint:
+	 *     value=T_NUMBER
+	 */
+	protected void sequence_MessageINITIALVALUE(ISerializationContext context, MessageINITIALVALUE semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageINITIALVALUE_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageINITIALVALUE_Value()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageINITIALVALUEAccess().getValueT_NUMBERTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageLINK returns MessageLINK
+	 *
+	 * Constraint:
+	 *     messagelink=Messagelink1
+	 */
+	protected void sequence_MessageLINK(ISerializationContext context, MessageLINK semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageLINK_Messagelink()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageLINK_Messagelink()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageLINKAccess().getMessagelinkMessagelink1EnumRuleCall_2_0(), semanticObject.getMessagelink());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageNETWORKMESSAGE returns MessageNETWORKMESSAGE
+	 *
+	 * Constraint:
+	 *     value=ImplementationDef
+	 */
+	protected void sequence_MessageNETWORKMESSAGE(ISerializationContext context, MessageNETWORKMESSAGE semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageNETWORKMESSAGE_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageNETWORKMESSAGE_Value()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageNETWORKMESSAGEAccess().getValueImplementationDefParserRuleCall_1_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageNETWORKORDERCALLOUT returns MessageNETWORKORDERCALLOUT
+	 *
+	 * Constraint:
+	 *     descrption=EString
+	 */
+	protected void sequence_MessageNETWORKORDERCALLOUT(ISerializationContext context, MessageNETWORKORDERCALLOUT semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageNETWORKORDERCALLOUT_Descrption()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageNETWORKORDERCALLOUT_Descrption()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageNETWORKORDERCALLOUTAccess().getDescrptionEStringParserRuleCall_3_0(), semanticObject.getDescrption());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageQUEUESIZE returns MessageQUEUESIZE
+	 *
+	 * Constraint:
+	 *     value=T_NUMBER
+	 */
+	protected void sequence_MessageQUEUESIZE(ISerializationContext context, MessageQUEUESIZE semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageQUEUESIZE_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageQUEUESIZE_Value()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageQUEUESIZEAccess().getValueT_NUMBERTerminalRuleCall_1_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ObjectDefinition returns MessageRule
+	 *     MessageRule returns MessageRule
+	 *
+	 * Constraint:
+	 *     (name=Name MessageList+=Messageattribute*)
+	 */
+	protected void sequence_MessageRule(ISerializationContext context, MessageRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageSENDINGMESSAGE returns MessageSENDINGMESSAGE
+	 *
+	 * Constraint:
+	 *     descrption=ID
+	 */
+	protected void sequence_MessageSENDINGMESSAGE(ISerializationContext context, MessageSENDINGMESSAGE semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageSENDINGMESSAGE_Descrption()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageSENDINGMESSAGE_Descrption()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageSENDINGMESSAGEAccess().getDescrptionIDTerminalRuleCall_1_2_0(), semanticObject.getDescrption());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageSETEVENT returns MessageSETEVENT
+	 *
+	 * Constraint:
+	 *     (description=ID | description=ID)
+	 */
+	protected void sequence_MessageSETEVENT(ISerializationContext context, MessageSETEVENT semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MessageTRANSFERPROPERTY returns MessageTRANSFERPROPERTY
+	 *
+	 * Constraint:
+	 *     transenum=MessageTRANSFERPROPERTYenum
+	 */
+	protected void sequence_MessageTRANSFERPROPERTY(ISerializationContext context, MessageTRANSFERPROPERTY semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessageTRANSFERPROPERTY_Transenum()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessageTRANSFERPROPERTY_Transenum()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageTRANSFERPROPERTYAccess().getTransenumMessageTRANSFERPROPERTYenumEnumRuleCall_2_0(), semanticObject.getTransenum());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_DYNAMIC_EXTERNAL returns Message_RECEIVE_DYNAMIC_EXTERNAL
+	 *
+	 * Constraint:
+	 *     (link=MessageLINK | initialvalue=MessageINITIALVALUE)
+	 */
+	protected void sequence_Message_RECEIVE_DYNAMIC_EXTERNAL(ISerializationContext context, Message_RECEIVE_DYNAMIC_EXTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_QUEUED_EXTERNAL returns Message_RECEIVE_QUEUED_EXTERNAL
+	 *
+	 * Constraint:
+	 *     (Cdata=MessageCDATATYPE | queuesize=MessageQUEUESIZE | filter=Messagefilter | link=MessageLINK | initialvalue=MessageINITIALVALUE)
+	 */
+	protected void sequence_Message_RECEIVE_QUEUED_EXTERNAL(ISerializationContext context, Message_RECEIVE_QUEUED_EXTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_QUEUED_INTERNAL returns Message_RECEIVE_QUEUED_INTERNAL
+	 *
+	 * Constraint:
+	 *     (sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE | queuesize=MessageQUEUESIZE)
+	 */
+	protected void sequence_Message_RECEIVE_QUEUED_INTERNAL(ISerializationContext context, Message_RECEIVE_QUEUED_INTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_UNQUEUED_EXTERNAL returns Message_RECEIVE_UNQUEUED_EXTERNAL
+	 *
+	 * Constraint:
+	 *     (Cdata=MessageCDATATYPE | filter=Messagefilter | link=MessageLINK | initialvalue=MessageINITIALVALUE)
+	 */
+	protected void sequence_Message_RECEIVE_UNQUEUED_EXTERNAL(ISerializationContext context, Message_RECEIVE_UNQUEUED_EXTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_UNQUEUED_INTERNAL returns Message_RECEIVE_UNQUEUED_INTERNAL
+	 *
+	 * Constraint:
+	 *     (sendingmessage=MessageSENDINGMESSAGE | filter=Messagefilter | initialvalue=MessageINITIALVALUE)
+	 */
+	protected void sequence_Message_RECEIVE_UNQUEUED_INTERNAL(ISerializationContext context, Message_RECEIVE_UNQUEUED_INTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_ZERO_EXTERNAL returns Message_RECEIVE_ZERO_EXTERNAL
+	 *
+	 * Constraint:
+	 *     (networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT | networkmessage=MessageNETWORKMESSAGE)
+	 */
+	protected void sequence_Message_RECEIVE_ZERO_EXTERNAL(ISerializationContext context, Message_RECEIVE_ZERO_EXTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_ZERO_INTERNAL returns Message_RECEIVE_ZERO_INTERNAL
+	 *
+	 * Constraint:
+	 *     sendingmessage=MessageSENDINGMESSAGE
+	 */
+	protected void sequence_Message_RECEIVE_ZERO_INTERNAL(ISerializationContext context, Message_RECEIVE_ZERO_INTERNAL semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getMessage_RECEIVE_ZERO_INTERNAL_Sendingmessage()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getMessage_RECEIVE_ZERO_INTERNAL_Sendingmessage()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessage_RECEIVE_ZERO_INTERNALAccess().getSendingmessageMessageSENDINGMESSAGEParserRuleCall_1_0(), semanticObject.getSendingmessage());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_RECEIVE_ZERO_SENDERS returns Message_RECEIVE_ZERO_SENDERS
+	 *
+	 * Constraint:
+	 *     (Cdata=MessageCDATATYPE | initialvalue=MessageINITIALVALUE)
+	 */
+	protected void sequence_Message_RECEIVE_ZERO_SENDERS(ISerializationContext context, Message_RECEIVE_ZERO_SENDERS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_SEND_DYNAMIC_EXTERNAL returns Message_SEND_DYNAMIC_EXTERNAL
+	 *
+	 * Constraint:
+	 *     (
+	 *         Transferproperty=MessageTRANSFERPROPERTY | 
+	 *         networkordercallout=MessageNETWORKORDERCALLOUT | 
+	 *         cpuordercallout=MessageCPUORDERCALLOUT | 
+	 *         initialvalue=MessageINITIALVALUE | 
+	 *         networkmessage=MessageNETWORKMESSAGE
+	 *     )
+	 */
+	protected void sequence_Message_SEND_DYNAMIC_EXTERNAL(ISerializationContext context, Message_SEND_DYNAMIC_EXTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_SEND_STATIC_EXTERNAL returns Message_SEND_STATIC_EXTERNAL
+	 *
+	 * Constraint:
+	 *     (
+	 *         Cdata=MessageCDATATYPE | 
+	 *         Transferproperty=MessageTRANSFERPROPERTY | 
+	 *         filter=Messagefilter | 
+	 *         networkordercallout=MessageNETWORKORDERCALLOUT | 
+	 *         cpuordercallout=MessageCPUORDERCALLOUT | 
+	 *         initialvalue=MessageINITIALVALUE | 
+	 *         networkmessage=MessageNETWORKMESSAGE
+	 *     )
+	 */
+	protected void sequence_Message_SEND_STATIC_EXTERNAL(ISerializationContext context, Message_SEND_STATIC_EXTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Message_SEND_ZERO_EXTERNAL returns Message_SEND_ZERO_EXTERNAL
+	 *
+	 * Constraint:
+	 *     (networkordercallout=MessageNETWORKORDERCALLOUT | cpuordercallout=MessageCPUORDERCALLOUT | networkmessage=MessageNETWORKMESSAGE)
+	 */
+	protected void sequence_Message_SEND_ZERO_EXTERNAL(ISerializationContext context, Message_SEND_ZERO_EXTERNAL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Messageattribute2 returns Messageattribute2
+	 *
+	 * Constraint:
+	 *     (
+	 *         Cdata+=MessageCDATATYPE | 
+	 *         SSE=Message_SEND_STATIC_EXTERNAL | 
+	 *         SDE=Message_SEND_DYNAMIC_EXTERNAL | 
+	 *         SZE=Message_SEND_ZERO_EXTERNAL | 
+	 *         RZI=Message_RECEIVE_ZERO_INTERNAL | 
+	 *         RZE=Message_RECEIVE_ZERO_EXTERNAL | 
+	 *         RUI+=Message_RECEIVE_UNQUEUED_INTERNAL+ | 
+	 *         RQI=Message_RECEIVE_QUEUED_INTERNAL | 
+	 *         RUE=Message_RECEIVE_UNQUEUED_EXTERNAL | 
+	 *         RQE=Message_RECEIVE_QUEUED_EXTERNAL | 
+	 *         RDE=Message_RECEIVE_DYNAMIC_EXTERNAL | 
+	 *         RZS=Message_RECEIVE_ZERO_SENDERS
+	 *     )?
+	 */
+	protected void sequence_Messageattribute2(ISerializationContext context, Messageattribute2 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Messageattribute3 returns Messageattribute3
+	 *
+	 * Constraint:
+	 *     (description=ID | Msetevent+=MessageSETEVENT+ | description=EString | description=EString | Mcomcallback+=MessageCOMCALLBACK)?
+	 */
+	protected void sequence_Messageattribute3(ISerializationContext context, Messageattribute3 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Messageattribute returns Messageattribute
+	 *
+	 * Constraint:
+	 *     (MessageList2+=Messageattribute2 | MessageList3=Messageattribute3)
+	 */
+	protected void sequence_Messageattribute(ISerializationContext context, Messageattribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Messagefilter returns Messagefilter
+	 *
+	 * Constraint:
+	 *     (filter2=Messagefilter2 (name=Name messageint1=AttributeValue)*)
+	 */
+	protected void sequence_Messagefilter(ISerializationContext context, Messagefilter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AttributeValue returns NameAttributeValue
 	 *     NameAttributeValue returns NameAttributeValue
 	 *
@@ -996,8 +1565,8 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_NumberAttributeValue(ISerializationContext context, NumberAttributeValue semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.NUMBER_ATTRIBUTE_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.NUMBER_ATTRIBUTE_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getNumberAttributeValue_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getNumberAttributeValue_Value()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getNumberAttributeValueAccess().getValueNumberParserRuleCall_0(), semanticObject.getValue());
@@ -1075,8 +1644,8 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Resourceattribute(ISerializationContext context, Resourceattribute semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.RESOURCEATTRIBUTE__RESOURCE_RANGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.RESOURCEATTRIBUTE__RESOURCE_RANGE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getResourceattribute_ResourceRange()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getResourceattribute_ResourceRange()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getResourceattributeAccess().getResourceRangeResourceRangeEnumRuleCall_2_0(), semanticObject.getResourceRange());
@@ -1174,8 +1743,8 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_StringAttributeValue(ISerializationContext context, StringAttributeValue semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.STRING_ATTRIBUTE_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.STRING_ATTRIBUTE_VALUE__VALUE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getStringAttributeValue_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getStringAttributeValue_Value()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStringAttributeValueAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
@@ -1241,10 +1810,10 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_TimingProtectionParam(ISerializationContext context, TimingProtectionParam semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.TIMING_PROTECTION_PARAM__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.TIMING_PROTECTION_PARAM__TYPE));
-			if (transientValues.isValueTransient(semanticObject, OilPackage.Literals.TIMING_PROTECTION_PARAM__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.Literals.TIMING_PROTECTION_PARAM__VALUE));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getTimingProtectionParam_Type()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getTimingProtectionParam_Type()));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getTimingProtectionParam_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getTimingProtectionParam_Value()));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTimingProtectionParamAccess().getTypeTimingProtectionParamEnumEnumRuleCall_0_0(), semanticObject.getType());

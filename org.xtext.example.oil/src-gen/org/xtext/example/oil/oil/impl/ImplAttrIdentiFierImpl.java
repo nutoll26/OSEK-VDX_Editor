@@ -79,7 +79,7 @@ public class ImplAttrIdentiFierImpl extends ImplAttrDefImpl implements ImplAttrI
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_ATTR_IDENTI_FIER;
+    return OilPackage.eINSTANCE.getImplAttrIdentiFier();
   }
 
   /**

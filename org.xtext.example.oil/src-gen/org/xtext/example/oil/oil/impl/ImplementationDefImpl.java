@@ -39,7 +39,7 @@ public class ImplementationDefImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPLEMENTATION_DEF;
+    return OilPackage.eINSTANCE.getImplementationDef();
   }
 
 } //ImplementationDefImpl

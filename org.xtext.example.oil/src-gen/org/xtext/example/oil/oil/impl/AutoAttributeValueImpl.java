@@ -65,7 +65,7 @@ public class AutoAttributeValueImpl extends AttributeValueImpl implements AutoAt
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.AUTO_ATTRIBUTE_VALUE;
+    return OilPackage.eINSTANCE.getAutoAttributeValue();
   }
 
   /**

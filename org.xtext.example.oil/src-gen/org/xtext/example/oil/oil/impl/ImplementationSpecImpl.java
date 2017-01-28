@@ -100,7 +100,7 @@ public class ImplementationSpecImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPLEMENTATION_SPEC;
+    return OilPackage.eINSTANCE.getImplementationSpec();
   }
 
   /**

@@ -3,116 +3,28 @@
  */
 package org.xtext.example.oil.oil.impl;
 
+import java.io.IOException;
+
+import java.net.URL;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.example.oil.oil.Absolute;
-import org.xtext.example.oil.oil.ActivateTask;
-import org.xtext.example.oil.oil.AlarmActionAttribute;
-import org.xtext.example.oil.oil.AlarmAttribute;
-import org.xtext.example.oil.oil.AlarmAutostartAttribute;
-import org.xtext.example.oil.oil.AlarmCallBack;
-import org.xtext.example.oil.oil.AlarmRule;
-import org.xtext.example.oil.oil.AppSubContainer;
-import org.xtext.example.oil.oil.ApplicationDefinition;
-import org.xtext.example.oil.oil.ApplicationParam;
-import org.xtext.example.oil.oil.ApplicationParamEnum;
-import org.xtext.example.oil.oil.ApplicationRule;
-import org.xtext.example.oil.oil.Attribute;
-import org.xtext.example.oil.oil.AttributeName;
-import org.xtext.example.oil.oil.AttributeValue;
-import org.xtext.example.oil.oil.AutoAttributeValue;
-import org.xtext.example.oil.oil.BooleanAttributeValue;
-import org.xtext.example.oil.oil.ComAttributeName;
-import org.xtext.example.oil.oil.ComRule;
-import org.xtext.example.oil.oil.Comattribute;
-import org.xtext.example.oil.oil.CounterRule;
-import org.xtext.example.oil.oil.DefaultEnum;
-import org.xtext.example.oil.oil.EnumIocRec;
-import org.xtext.example.oil.oil.EnumIocSendRec;
-import org.xtext.example.oil.oil.Enumeration;
-import org.xtext.example.oil.oil.Enumerator;
-import org.xtext.example.oil.oil.ExpiryAttribute;
-import org.xtext.example.oil.oil.FloatAttributeValue;
-import org.xtext.example.oil.oil.HasRestartTaskRule;
-import org.xtext.example.oil.oil.ImpCounterParam;
-import org.xtext.example.oil.oil.ImpCounterParamEnum;
-import org.xtext.example.oil.oil.ImpCounterRule;
-import org.xtext.example.oil.oil.ImpOsParam;
-import org.xtext.example.oil.oil.ImpOsRule;
-import org.xtext.example.oil.oil.ImpTaskParam;
-import org.xtext.example.oil.oil.ImpTaskParamEnum;
-import org.xtext.example.oil.oil.ImpTaskRule;
-import org.xtext.example.oil.oil.ImplAttrBooleanDef;
-import org.xtext.example.oil.oil.ImplAttrDef;
-import org.xtext.example.oil.oil.ImplAttrEnumDef;
-import org.xtext.example.oil.oil.ImplAttrFloatDef;
-import org.xtext.example.oil.oil.ImplAttrIdentiFier;
-import org.xtext.example.oil.oil.ImplAttrIntDef;
-import org.xtext.example.oil.oil.ImplAttrStringDef;
-import org.xtext.example.oil.oil.ImplRefDef;
-import org.xtext.example.oil.oil.ImplementationDef;
-import org.xtext.example.oil.oil.ImplementationDefinition;
-import org.xtext.example.oil.oil.ImplementationSpec;
-import org.xtext.example.oil.oil.Include;
-import org.xtext.example.oil.oil.IncrementCounter;
-import org.xtext.example.oil.oil.IntTypeEnum;
-import org.xtext.example.oil.oil.IocAttribute;
-import org.xtext.example.oil.oil.IocDataType;
-import org.xtext.example.oil.oil.IocDataTypeAttr;
-import org.xtext.example.oil.oil.IocReceiver;
-import org.xtext.example.oil.oil.IocReciverNone;
-import org.xtext.example.oil.oil.IocRule;
-import org.xtext.example.oil.oil.IocSemantics;
-import org.xtext.example.oil.oil.IocSemanticsenum;
-import org.xtext.example.oil.oil.IocSemanticsenumm;
-import org.xtext.example.oil.oil.IocSender;
-import org.xtext.example.oil.oil.IsrParam;
-import org.xtext.example.oil.oil.IsrParamEnum;
-import org.xtext.example.oil.oil.IsrRule;
-import org.xtext.example.oil.oil.IsrSubContainer;
-import org.xtext.example.oil.oil.Librayattribute;
-import org.xtext.example.oil.oil.MemoryProtectionRule;
-import org.xtext.example.oil.oil.NameAttributeValue;
-import org.xtext.example.oil.oil.NumberAttributeValue;
-import org.xtext.example.oil.oil.OILFile;
-import org.xtext.example.oil.oil.OILVersion;
-import org.xtext.example.oil.oil.ObjectDefinition;
-import org.xtext.example.oil.oil.ObjectRefTypeEnum;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+
 import org.xtext.example.oil.oil.OilFactory;
 import org.xtext.example.oil.oil.OilPackage;
-import org.xtext.example.oil.oil.OsRule;
-import org.xtext.example.oil.oil.Range;
-import org.xtext.example.oil.oil.ResourceRange;
-import org.xtext.example.oil.oil.ResourceRule;
-import org.xtext.example.oil.oil.Resourceattribute;
-import org.xtext.example.oil.oil.RestartTaskRule;
-import org.xtext.example.oil.oil.SchduleActionAttribute;
-import org.xtext.example.oil.oil.SchduleExpiryAdustble;
-import org.xtext.example.oil.oil.SchduleSyn;
-import org.xtext.example.oil.oil.SchduleSynAttribute;
-import org.xtext.example.oil.oil.ScheduleAutoStartAttribute;
-import org.xtext.example.oil.oil.ScheduleTableAttribute;
-import org.xtext.example.oil.oil.ScheduleTableRule;
-import org.xtext.example.oil.oil.Setevent;
-import org.xtext.example.oil.oil.StringAttributeValue;
-import org.xtext.example.oil.oil.TaskAttributeName;
-import org.xtext.example.oil.oil.TaskAutostartAttribute;
-import org.xtext.example.oil.oil.TaskRule;
-import org.xtext.example.oil.oil.TaskTimingAttribute;
-import org.xtext.example.oil.oil.TaskTimingAttributeName;
-import org.xtext.example.oil.oil.TaskTimingrLockAttribute;
-import org.xtext.example.oil.oil.Taskattribute;
-import org.xtext.example.oil.oil.TimingProtectionParam;
-import org.xtext.example.oil.oil.TimingProtectionParamEnum;
-import org.xtext.example.oil.oil.TimingProtectionRule;
-import org.xtext.example.oil.oil.TrustedFucRule;
-import org.xtext.example.oil.oil.TrustedRule;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,6 +34,13 @@ import org.xtext.example.oil.oil.TrustedRule;
  */
 public class OilPackageImpl extends EPackageImpl implements OilPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected String packageFilename = "oil.loadinitialization_ecore";
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -387,6 +306,209 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * @generated
    */
   private EClass objectDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass eventRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass appmodeRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageattributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageattribute3EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageSETEVENTEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageCOMCALLBACKEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageattribute2EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_SEND_STATIC_EXTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_SEND_DYNAMIC_EXTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_SEND_ZERO_EXTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_ZERO_INTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_ZERO_EXTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_UNQUEUED_INTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_QUEUED_INTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_UNQUEUED_EXTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_QUEUED_EXTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_DYNAMIC_EXTERNALEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass message_RECEIVE_ZERO_SENDERSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageCDATATYPEEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageTRANSFERPROPERTYEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageNETWORKORDERCALLOUTEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageCPUORDERCALLOUTEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageINITIALVALUEEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageNETWORKMESSAGEEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageSENDINGMESSAGEEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageQUEUESIZEEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messagefilterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass messageLINKEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -701,6 +823,27 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EEnum messagefilter2EEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum messageTRANSFERPROPERTYenumEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum messagelink1EEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum comAttributeNameEEnum = null;
 
   /**
@@ -857,8 +1000,6 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #eNS_URI
-   * @see #createPackageContents()
-   * @see #initializePackageContents()
    * @generated
    */
   public static OilPackage init()
@@ -870,11 +1011,11 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
 
     isInited = true;
 
-    // Create package meta-data objects
-    theOilPackage.createPackageContents();
+    // Load packages
+    theOilPackage.loadPackage();
 
-    // Initialize created meta-data
-    theOilPackage.initializePackageContents();
+    // Fix loaded packages
+    theOilPackage.fixPackageContents();
 
     // Mark meta-data to indicate it can't be changed
     theOilPackage.freeze();
@@ -892,6 +1033,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getOILFile()
   {
+    if (oilFileEClass == null)
+    {
+      oilFileEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(0);
+    }
     return oilFileEClass;
   }
 
@@ -902,7 +1047,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getOILFile_Version()
   {
-    return (EReference)oilFileEClass.getEStructuralFeatures().get(0);
+        return (EReference)getOILFile().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -912,7 +1057,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getOILFile_Include()
   {
-    return (EReference)oilFileEClass.getEStructuralFeatures().get(1);
+        return (EReference)getOILFile().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -922,7 +1067,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getOILFile_Implementation()
   {
-    return (EReference)oilFileEClass.getEStructuralFeatures().get(2);
+        return (EReference)getOILFile().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -932,7 +1077,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getOILFile_Application()
   {
-    return (EReference)oilFileEClass.getEStructuralFeatures().get(3);
+        return (EReference)getOILFile().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -942,6 +1087,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getInclude()
   {
+    if (includeEClass == null)
+    {
+      includeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(1);
+    }
     return includeEClass;
   }
 
@@ -952,7 +1101,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getInclude_Name()
   {
-    return (EAttribute)includeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getInclude().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -962,6 +1111,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getOILVersion()
   {
+    if (oilVersionEClass == null)
+    {
+      oilVersionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(2);
+    }
     return oilVersionEClass;
   }
 
@@ -972,7 +1125,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getOILVersion_Value()
   {
-    return (EAttribute)oilVersionEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getOILVersion().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -982,7 +1135,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getOILVersion_Description()
   {
-    return (EAttribute)oilVersionEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getOILVersion().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -992,6 +1145,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplementationDefinition()
   {
+    if (implementationDefinitionEClass == null)
+    {
+      implementationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(3);
+    }
     return implementationDefinitionEClass;
   }
 
@@ -1002,7 +1159,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplementationDefinition_Name()
   {
-    return (EAttribute)implementationDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImplementationDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1012,7 +1169,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplementationDefinition_ImplementationSpecs()
   {
-    return (EReference)implementationDefinitionEClass.getEStructuralFeatures().get(1);
+        return (EReference)getImplementationDefinition().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1022,7 +1179,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplementationDefinition_Description()
   {
-    return (EAttribute)implementationDefinitionEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getImplementationDefinition().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1032,6 +1189,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplementationSpec()
   {
+    if (implementationSpecEClass == null)
+    {
+      implementationSpecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(4);
+    }
     return implementationSpecEClass;
   }
 
@@ -1042,7 +1203,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplementationSpec_OsRule()
   {
-    return (EReference)implementationSpecEClass.getEStructuralFeatures().get(0);
+        return (EReference)getImplementationSpec().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1052,7 +1213,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplementationSpec_CounterRule()
   {
-    return (EReference)implementationSpecEClass.getEStructuralFeatures().get(1);
+        return (EReference)getImplementationSpec().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1062,7 +1223,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplementationSpec_IsrRule()
   {
-    return (EReference)implementationSpecEClass.getEStructuralFeatures().get(2);
+        return (EReference)getImplementationSpec().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1072,7 +1233,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplementationSpec_TaskRule()
   {
-    return (EReference)implementationSpecEClass.getEStructuralFeatures().get(3);
+        return (EReference)getImplementationSpec().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1082,6 +1243,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImpTaskRule()
   {
+    if (impTaskRuleEClass == null)
+    {
+      impTaskRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(5);
+    }
     return impTaskRuleEClass;
   }
 
@@ -1092,6 +1257,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImpTaskParam()
   {
+    if (impTaskParamEClass == null)
+    {
+      impTaskParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(6);
+    }
     return impTaskParamEClass;
   }
 
@@ -1102,7 +1271,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpTaskParam_Type()
   {
-    return (EAttribute)impTaskParamEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImpTaskParam().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1112,7 +1281,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpTaskParam_Auto()
   {
-    return (EAttribute)impTaskParamEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getImpTaskParam().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1122,7 +1291,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImpTaskParam_Range()
   {
-    return (EReference)impTaskParamEClass.getEStructuralFeatures().get(2);
+        return (EReference)getImpTaskParam().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1132,7 +1301,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpTaskParam_Param()
   {
-    return (EAttribute)impTaskParamEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImpTaskParam().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1142,7 +1311,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpTaskParam_Multiple()
   {
-    return (EAttribute)impTaskParamEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImpTaskParam().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1152,7 +1321,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpTaskParam_Value()
   {
-    return (EAttribute)impTaskParamEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getImpTaskParam().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1162,7 +1331,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpTaskParam_Default()
   {
-    return (EAttribute)impTaskParamEClass.getEStructuralFeatures().get(6);
+        return (EAttribute)getImpTaskParam().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1172,7 +1341,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpTaskParam_Description()
   {
-    return (EAttribute)impTaskParamEClass.getEStructuralFeatures().get(7);
+        return (EAttribute)getImpTaskParam().getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1182,6 +1351,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImpOsRule()
   {
+    if (impOsRuleEClass == null)
+    {
+      impOsRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(8);
+    }
     return impOsRuleEClass;
   }
 
@@ -1192,6 +1365,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImpOsParam()
   {
+    if (impOsParamEClass == null)
+    {
+      impOsParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(9);
+    }
     return impOsParamEClass;
   }
 
@@ -1202,7 +1379,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpOsParam_Auto()
   {
-    return (EAttribute)impOsParamEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImpOsParam().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1212,7 +1389,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImpOsParam_Enumeration()
   {
-    return (EReference)impOsParamEClass.getEStructuralFeatures().get(1);
+        return (EReference)getImpOsParam().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1222,7 +1399,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpOsParam_Multiple()
   {
-    return (EAttribute)impOsParamEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getImpOsParam().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1232,7 +1409,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpOsParam_Value()
   {
-    return (EAttribute)impOsParamEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImpOsParam().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1242,7 +1419,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpOsParam_Default()
   {
-    return (EAttribute)impOsParamEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImpOsParam().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1252,7 +1429,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpOsParam_Description()
   {
-    return (EAttribute)impOsParamEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getImpOsParam().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1262,6 +1439,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImpCounterRule()
   {
+    if (impCounterRuleEClass == null)
+    {
+      impCounterRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(10);
+    }
     return impCounterRuleEClass;
   }
 
@@ -1272,6 +1453,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImpCounterParam()
   {
+    if (impCounterParamEClass == null)
+    {
+      impCounterParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(11);
+    }
     return impCounterParamEClass;
   }
 
@@ -1282,7 +1467,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpCounterParam_Type()
   {
-    return (EAttribute)impCounterParamEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImpCounterParam().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1292,7 +1477,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpCounterParam_Auto()
   {
-    return (EAttribute)impCounterParamEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getImpCounterParam().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1302,7 +1487,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImpCounterParam_Range()
   {
-    return (EReference)impCounterParamEClass.getEStructuralFeatures().get(2);
+        return (EReference)getImpCounterParam().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1312,7 +1497,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImpCounterParam_Param()
   {
-    return (EAttribute)impCounterParamEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImpCounterParam().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1322,7 +1507,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImpCounterParam_Value()
   {
-    return (EReference)impCounterParamEClass.getEStructuralFeatures().get(4);
+        return (EReference)getImpCounterParam().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1332,6 +1517,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getApplicationRule()
   {
+    if (applicationRuleEClass == null)
+    {
+      applicationRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(13);
+    }
     return applicationRuleEClass;
   }
 
@@ -1342,7 +1531,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getApplicationRule_AppSubOrParam()
   {
-    return (EReference)applicationRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getApplicationRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1352,6 +1541,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAppSubContainer()
   {
+    if (appSubContainerEClass == null)
+    {
+      appSubContainerEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(14);
+    }
     return appSubContainerEClass;
   }
 
@@ -1362,7 +1555,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAppSubContainer_HasRestartTaskRule()
   {
-    return (EReference)appSubContainerEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAppSubContainer().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1372,7 +1565,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAppSubContainer_TrustedRule()
   {
-    return (EReference)appSubContainerEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAppSubContainer().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1382,6 +1575,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getApplicationParam()
   {
+    if (applicationParamEClass == null)
+    {
+      applicationParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(15);
+    }
     return applicationParamEClass;
   }
 
@@ -1392,7 +1589,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getApplicationParam_Type()
   {
-    return (EAttribute)applicationParamEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getApplicationParam().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1402,7 +1599,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getApplicationParam_Value()
   {
-    return (EReference)applicationParamEClass.getEStructuralFeatures().get(1);
+        return (EReference)getApplicationParam().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1412,6 +1609,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getHasRestartTaskRule()
   {
+    if (hasRestartTaskRuleEClass == null)
+    {
+      hasRestartTaskRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(17);
+    }
     return hasRestartTaskRuleEClass;
   }
 
@@ -1422,7 +1623,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getHasRestartTaskRule_Name()
   {
-    return (EAttribute)hasRestartTaskRuleEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getHasRestartTaskRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1432,7 +1633,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getHasRestartTaskRule_Value()
   {
-    return (EAttribute)hasRestartTaskRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getHasRestartTaskRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1442,7 +1643,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getHasRestartTaskRule_ParameterList()
   {
-    return (EReference)hasRestartTaskRuleEClass.getEStructuralFeatures().get(2);
+        return (EReference)getHasRestartTaskRule().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1452,6 +1653,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getRestartTaskRule()
   {
+    if (restartTaskRuleEClass == null)
+    {
+      restartTaskRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(18);
+    }
     return restartTaskRuleEClass;
   }
 
@@ -1462,7 +1667,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getRestartTaskRule_Name()
   {
-    return (EAttribute)restartTaskRuleEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRestartTaskRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1472,7 +1677,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getRestartTaskRule_Value()
   {
-    return (EReference)restartTaskRuleEClass.getEStructuralFeatures().get(1);
+        return (EReference)getRestartTaskRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1482,6 +1687,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTrustedRule()
   {
+    if (trustedRuleEClass == null)
+    {
+      trustedRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(19);
+    }
     return trustedRuleEClass;
   }
 
@@ -1492,7 +1701,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTrustedRule_Name()
   {
-    return (EAttribute)trustedRuleEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTrustedRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1502,7 +1711,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTrustedRule_Value()
   {
-    return (EAttribute)trustedRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getTrustedRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1512,7 +1721,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTrustedRule_ParameterList()
   {
-    return (EReference)trustedRuleEClass.getEStructuralFeatures().get(2);
+        return (EReference)getTrustedRule().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1522,6 +1731,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTrustedFucRule()
   {
+    if (trustedFucRuleEClass == null)
+    {
+      trustedFucRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(20);
+    }
     return trustedFucRuleEClass;
   }
 
@@ -1532,7 +1745,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTrustedFucRule_Name()
   {
-    return (EAttribute)trustedFucRuleEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTrustedFucRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1542,7 +1755,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTrustedFucRule_Value()
   {
-    return (EReference)trustedFucRuleEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTrustedFucRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1552,6 +1765,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIsrRule()
   {
+    if (isrRuleEClass == null)
+    {
+      isrRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(21);
+    }
     return isrRuleEClass;
   }
 
@@ -1562,7 +1779,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIsrRule_IsrParam()
   {
-    return (EReference)isrRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getIsrRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1572,7 +1789,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIsrRule_IsrSubConainer()
   {
-    return (EReference)isrRuleEClass.getEStructuralFeatures().get(1);
+        return (EReference)getIsrRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1582,7 +1799,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIsrRule_Description()
   {
-    return (EAttribute)isrRuleEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getIsrRule().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1592,6 +1809,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIsrSubContainer()
   {
+    if (isrSubContainerEClass == null)
+    {
+      isrSubContainerEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(22);
+    }
     return isrSubContainerEClass;
   }
 
@@ -1602,7 +1823,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIsrSubContainer_TimingProtectionRule()
   {
-    return (EReference)isrSubContainerEClass.getEStructuralFeatures().get(0);
+        return (EReference)getIsrSubContainer().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1612,6 +1833,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTimingProtectionRule()
   {
+    if (timingProtectionRuleEClass == null)
+    {
+      timingProtectionRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(23);
+    }
     return timingProtectionRuleEClass;
   }
 
@@ -1622,7 +1847,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTimingProtectionRule_Name()
   {
-    return (EAttribute)timingProtectionRuleEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTimingProtectionRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1632,7 +1857,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTimingProtectionRule_Value()
   {
-    return (EAttribute)timingProtectionRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getTimingProtectionRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1642,7 +1867,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTimingProtectionRule_TimingProtectionParam()
   {
-    return (EReference)timingProtectionRuleEClass.getEStructuralFeatures().get(2);
+        return (EReference)getTimingProtectionRule().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1652,6 +1877,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTimingProtectionParam()
   {
+    if (timingProtectionParamEClass == null)
+    {
+      timingProtectionParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(24);
+    }
     return timingProtectionParamEClass;
   }
 
@@ -1662,7 +1891,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTimingProtectionParam_Type()
   {
-    return (EAttribute)timingProtectionParamEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTimingProtectionParam().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1672,7 +1901,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTimingProtectionParam_Value()
   {
-    return (EReference)timingProtectionParamEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTimingProtectionParam().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1682,6 +1911,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIsrParam()
   {
+    if (isrParamEClass == null)
+    {
+      isrParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(26);
+    }
     return isrParamEClass;
   }
 
@@ -1692,7 +1925,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIsrParam_Type()
   {
-    return (EAttribute)isrParamEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIsrParam().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1702,7 +1935,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIsrParam_Range()
   {
-    return (EReference)isrParamEClass.getEStructuralFeatures().get(1);
+        return (EReference)getIsrParam().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1712,7 +1945,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIsrParam_Param()
   {
-    return (EAttribute)isrParamEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getIsrParam().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1722,7 +1955,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIsrParam_Value()
   {
-    return (EReference)isrParamEClass.getEStructuralFeatures().get(3);
+        return (EReference)getIsrParam().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1732,6 +1965,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getMemoryProtectionRule()
   {
+    if (memoryProtectionRuleEClass == null)
+    {
+      memoryProtectionRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(28);
+    }
     return memoryProtectionRuleEClass;
   }
 
@@ -1742,7 +1979,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getMemoryProtectionRule_Value()
   {
-    return (EAttribute)memoryProtectionRuleEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getMemoryProtectionRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1752,6 +1989,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplementationDef()
   {
+    if (implementationDefEClass == null)
+    {
+      implementationDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(29);
+    }
     return implementationDefEClass;
   }
 
@@ -1762,6 +2003,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplAttrDef()
   {
+    if (implAttrDefEClass == null)
+    {
+      implAttrDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(30);
+    }
     return implAttrDefEClass;
   }
 
@@ -1772,7 +2017,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrDef_Auto()
   {
-    return (EAttribute)implAttrDefEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImplAttrDef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1782,6 +2027,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplAttrIntDef()
   {
+    if (implAttrIntDefEClass == null)
+    {
+      implAttrIntDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(31);
+    }
     return implAttrIntDefEClass;
   }
 
@@ -1792,7 +2041,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrIntDef_Type()
   {
-    return (EAttribute)implAttrIntDefEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImplAttrIntDef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1802,7 +2051,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrIntDef_Range()
   {
-    return (EReference)implAttrIntDefEClass.getEStructuralFeatures().get(1);
+        return (EReference)getImplAttrIntDef().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1812,7 +2061,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrIntDef_Name()
   {
-    return (EReference)implAttrIntDefEClass.getEStructuralFeatures().get(2);
+        return (EReference)getImplAttrIntDef().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1822,7 +2071,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrIntDef_Multiple()
   {
-    return (EAttribute)implAttrIntDefEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImplAttrIntDef().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1832,7 +2081,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrIntDef_Value()
   {
-    return (EAttribute)implAttrIntDefEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImplAttrIntDef().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1842,7 +2091,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrIntDef_Default()
   {
-    return (EAttribute)implAttrIntDefEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getImplAttrIntDef().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1852,7 +2101,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrIntDef_Description()
   {
-    return (EAttribute)implAttrIntDefEClass.getEStructuralFeatures().get(6);
+        return (EAttribute)getImplAttrIntDef().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1862,6 +2111,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplAttrFloatDef()
   {
+    if (implAttrFloatDefEClass == null)
+    {
+      implAttrFloatDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(33);
+    }
     return implAttrFloatDefEClass;
   }
 
@@ -1872,7 +2125,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrFloatDef_Range()
   {
-    return (EReference)implAttrFloatDefEClass.getEStructuralFeatures().get(0);
+        return (EReference)getImplAttrFloatDef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1882,7 +2135,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrFloatDef_Name()
   {
-    return (EReference)implAttrFloatDefEClass.getEStructuralFeatures().get(1);
+        return (EReference)getImplAttrFloatDef().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1892,7 +2145,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrFloatDef_Multiple()
   {
-    return (EAttribute)implAttrFloatDefEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getImplAttrFloatDef().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1902,7 +2155,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrFloatDef_Value()
   {
-    return (EAttribute)implAttrFloatDefEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImplAttrFloatDef().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1912,7 +2165,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrFloatDef_Default()
   {
-    return (EAttribute)implAttrFloatDefEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImplAttrFloatDef().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1922,7 +2175,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrFloatDef_Description()
   {
-    return (EAttribute)implAttrFloatDefEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getImplAttrFloatDef().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1932,6 +2185,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplAttrEnumDef()
   {
+    if (implAttrEnumDefEClass == null)
+    {
+      implAttrEnumDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(34);
+    }
     return implAttrEnumDefEClass;
   }
 
@@ -1942,7 +2199,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrEnumDef_Enumeration()
   {
-    return (EReference)implAttrEnumDefEClass.getEStructuralFeatures().get(0);
+        return (EReference)getImplAttrEnumDef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1952,7 +2209,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrEnumDef_Name()
   {
-    return (EReference)implAttrEnumDefEClass.getEStructuralFeatures().get(1);
+        return (EReference)getImplAttrEnumDef().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1962,7 +2219,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrEnumDef_Multiple()
   {
-    return (EAttribute)implAttrEnumDefEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getImplAttrEnumDef().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1972,7 +2229,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrEnumDef_Value()
   {
-    return (EAttribute)implAttrEnumDefEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImplAttrEnumDef().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1982,7 +2239,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrEnumDef_Default()
   {
-    return (EAttribute)implAttrEnumDefEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImplAttrEnumDef().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1992,7 +2249,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrEnumDef_Description()
   {
-    return (EAttribute)implAttrEnumDefEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getImplAttrEnumDef().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2002,6 +2259,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplAttrStringDef()
   {
+    if (implAttrStringDefEClass == null)
+    {
+      implAttrStringDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(35);
+    }
     return implAttrStringDefEClass;
   }
 
@@ -2012,7 +2273,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrStringDef_Name()
   {
-    return (EReference)implAttrStringDefEClass.getEStructuralFeatures().get(0);
+        return (EReference)getImplAttrStringDef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2022,7 +2283,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrStringDef_Multiple()
   {
-    return (EAttribute)implAttrStringDefEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getImplAttrStringDef().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2032,7 +2293,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrStringDef_Value()
   {
-    return (EAttribute)implAttrStringDefEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getImplAttrStringDef().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2042,7 +2303,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrStringDef_Default()
   {
-    return (EAttribute)implAttrStringDefEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImplAttrStringDef().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2052,7 +2313,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrStringDef_Description()
   {
-    return (EAttribute)implAttrStringDefEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImplAttrStringDef().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2062,6 +2323,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplAttrBooleanDef()
   {
+    if (implAttrBooleanDefEClass == null)
+    {
+      implAttrBooleanDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(36);
+    }
     return implAttrBooleanDefEClass;
   }
 
@@ -2072,7 +2337,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrBooleanDef_TrueParameterList()
   {
-    return (EReference)implAttrBooleanDefEClass.getEStructuralFeatures().get(0);
+        return (EReference)getImplAttrBooleanDef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2082,7 +2347,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrBooleanDef_TrueDescription()
   {
-    return (EAttribute)implAttrBooleanDefEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getImplAttrBooleanDef().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2092,7 +2357,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrBooleanDef_FalseParameterList()
   {
-    return (EReference)implAttrBooleanDefEClass.getEStructuralFeatures().get(2);
+        return (EReference)getImplAttrBooleanDef().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2102,7 +2367,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrBooleanDef_FalseDescription()
   {
-    return (EAttribute)implAttrBooleanDefEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImplAttrBooleanDef().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2112,7 +2377,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrBooleanDef_Name()
   {
-    return (EAttribute)implAttrBooleanDefEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImplAttrBooleanDef().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2122,7 +2387,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrBooleanDef_Multiple()
   {
-    return (EAttribute)implAttrBooleanDefEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getImplAttrBooleanDef().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2132,7 +2397,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrBooleanDef_Value()
   {
-    return (EAttribute)implAttrBooleanDefEClass.getEStructuralFeatures().get(6);
+        return (EAttribute)getImplAttrBooleanDef().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -2142,7 +2407,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrBooleanDef_Default()
   {
-    return (EAttribute)implAttrBooleanDefEClass.getEStructuralFeatures().get(7);
+        return (EAttribute)getImplAttrBooleanDef().getEStructuralFeatures().get(7);
   }
 
   /**
@@ -2152,7 +2417,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrBooleanDef_Description()
   {
-    return (EAttribute)implAttrBooleanDefEClass.getEStructuralFeatures().get(8);
+        return (EAttribute)getImplAttrBooleanDef().getEStructuralFeatures().get(8);
   }
 
   /**
@@ -2162,6 +2427,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplAttrIdentiFier()
   {
+    if (implAttrIdentiFierEClass == null)
+    {
+      implAttrIdentiFierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(37);
+    }
     return implAttrIdentiFierEClass;
   }
 
@@ -2172,7 +2441,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplAttrIdentiFier_Name()
   {
-    return (EReference)implAttrIdentiFierEClass.getEStructuralFeatures().get(0);
+        return (EReference)getImplAttrIdentiFier().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2182,7 +2451,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplAttrIdentiFier_Value()
   {
-    return (EAttribute)implAttrIdentiFierEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getImplAttrIdentiFier().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2192,6 +2461,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getRange()
   {
+    if (rangeEClass == null)
+    {
+      rangeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(38);
+    }
     return rangeEClass;
   }
 
@@ -2202,7 +2475,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getRange_Value()
   {
-    return (EAttribute)rangeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRange().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2212,7 +2485,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getRange_Begin()
   {
-    return (EAttribute)rangeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getRange().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2222,7 +2495,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getRange_End()
   {
-    return (EAttribute)rangeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getRange().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2232,7 +2505,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getRange_Numbers()
   {
-    return (EAttribute)rangeEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getRange().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2242,6 +2515,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getEnumeration()
   {
+    if (enumerationEClass == null)
+    {
+      enumerationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(40);
+    }
     return enumerationEClass;
   }
 
@@ -2252,7 +2529,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getEnumeration_List()
   {
-    return (EReference)enumerationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getEnumeration().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2262,6 +2539,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getEnumerator()
   {
+    if (enumeratorEClass == null)
+    {
+      enumeratorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(41);
+    }
     return enumeratorEClass;
   }
 
@@ -2272,7 +2553,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getEnumerator_Name()
   {
-    return (EAttribute)enumeratorEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getEnumerator().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2282,7 +2563,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getEnumerator_ImplParameterList()
   {
-    return (EReference)enumeratorEClass.getEStructuralFeatures().get(1);
+        return (EReference)getEnumerator().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2292,7 +2573,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getEnumerator_Description()
   {
-    return (EAttribute)enumeratorEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getEnumerator().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2302,6 +2583,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getImplRefDef()
   {
+    if (implRefDefEClass == null)
+    {
+      implRefDefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(42);
+    }
     return implRefDefEClass;
   }
 
@@ -2312,7 +2597,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplRefDef_Type()
   {
-    return (EAttribute)implRefDefEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImplRefDef().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2322,7 +2607,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getImplRefDef_Name()
   {
-    return (EReference)implRefDefEClass.getEStructuralFeatures().get(1);
+        return (EReference)getImplRefDef().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2332,7 +2617,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplRefDef_Multiple()
   {
-    return (EAttribute)implRefDefEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getImplRefDef().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2342,7 +2627,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getImplRefDef_Description()
   {
-    return (EAttribute)implRefDefEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImplRefDef().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2352,6 +2637,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getApplicationDefinition()
   {
+    if (applicationDefinitionEClass == null)
+    {
+      applicationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(44);
+    }
     return applicationDefinitionEClass;
   }
 
@@ -2362,7 +2651,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getApplicationDefinition_Name()
   {
-    return (EAttribute)applicationDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getApplicationDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2372,7 +2661,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getApplicationDefinition_ObjectDefinitionList()
   {
-    return (EReference)applicationDefinitionEClass.getEStructuralFeatures().get(1);
+        return (EReference)getApplicationDefinition().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2382,7 +2671,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getApplicationDefinition_Description()
   {
-    return (EAttribute)applicationDefinitionEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getApplicationDefinition().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2392,6 +2681,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getObjectDefinition()
   {
+    if (objectDefinitionEClass == null)
+    {
+      objectDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(45);
+    }
     return objectDefinitionEClass;
   }
 
@@ -2402,7 +2695,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getObjectDefinition_Name()
   {
-    return (EAttribute)objectDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getObjectDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2412,7 +2705,1143 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getObjectDefinition_LibraryList()
   {
-    return (EReference)objectDefinitionEClass.getEStructuralFeatures().get(1);
+        return (EReference)getObjectDefinition().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEventRule()
+  {
+    if (eventRuleEClass == null)
+    {
+      eventRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(46);
+    }
+    return eventRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEventRule_Eventvalue()
+  {
+        return (EAttribute)getEventRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAppmodeRule()
+  {
+    if (appmodeRuleEClass == null)
+    {
+      appmodeRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(47);
+    }
+    return appmodeRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageRule()
+  {
+    if (messageRuleEClass == null)
+    {
+      messageRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(48);
+    }
+    return messageRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageRule_MessageList()
+  {
+        return (EReference)getMessageRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageattribute()
+  {
+    if (messageattributeEClass == null)
+    {
+      messageattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(49);
+    }
+    return messageattributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute_MessageList2()
+  {
+        return (EReference)getMessageattribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute_MessageList3()
+  {
+        return (EReference)getMessageattribute().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageattribute3()
+  {
+    if (messageattribute3EClass == null)
+    {
+      messageattribute3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(50);
+    }
+    return messageattribute3EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageattribute3_Description()
+  {
+        return (EAttribute)getMessageattribute3().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute3_Msetevent()
+  {
+        return (EReference)getMessageattribute3().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute3_Mcomcallback()
+  {
+        return (EReference)getMessageattribute3().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageSETEVENT()
+  {
+    if (messageSETEVENTEClass == null)
+    {
+      messageSETEVENTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(51);
+    }
+    return messageSETEVENTEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageSETEVENT_Description()
+  {
+        return (EAttribute)getMessageSETEVENT().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageCOMCALLBACK()
+  {
+    if (messageCOMCALLBACKEClass == null)
+    {
+      messageCOMCALLBACKEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(52);
+    }
+    return messageCOMCALLBACKEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageCOMCALLBACK_Description()
+  {
+        return (EAttribute)getMessageCOMCALLBACK().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageCOMCALLBACK_Value()
+  {
+        return (EAttribute)getMessageCOMCALLBACK().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageattribute2()
+  {
+    if (messageattribute2EClass == null)
+    {
+      messageattribute2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(53);
+    }
+    return messageattribute2EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_Cdata()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_SSE()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_SDE()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_SZE()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RZI()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RZE()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RUI()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RQI()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RUE()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RQE()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RDE()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageattribute2_RZS()
+  {
+        return (EReference)getMessageattribute2().getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_SEND_STATIC_EXTERNAL()
+  {
+    if (message_SEND_STATIC_EXTERNALEClass == null)
+    {
+      message_SEND_STATIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(54);
+    }
+    return message_SEND_STATIC_EXTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_STATIC_EXTERNAL_Cdata()
+  {
+        return (EReference)getMessage_SEND_STATIC_EXTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_STATIC_EXTERNAL_Transferproperty()
+  {
+        return (EReference)getMessage_SEND_STATIC_EXTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_STATIC_EXTERNAL_Filter()
+  {
+        return (EReference)getMessage_SEND_STATIC_EXTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_STATIC_EXTERNAL_Networkordercallout()
+  {
+        return (EReference)getMessage_SEND_STATIC_EXTERNAL().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_STATIC_EXTERNAL_Cpuordercallout()
+  {
+        return (EReference)getMessage_SEND_STATIC_EXTERNAL().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_STATIC_EXTERNAL_Initialvalue()
+  {
+        return (EReference)getMessage_SEND_STATIC_EXTERNAL().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_STATIC_EXTERNAL_Networkmessage()
+  {
+        return (EReference)getMessage_SEND_STATIC_EXTERNAL().getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_SEND_DYNAMIC_EXTERNAL()
+  {
+    if (message_SEND_DYNAMIC_EXTERNALEClass == null)
+    {
+      message_SEND_DYNAMIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(55);
+    }
+    return message_SEND_DYNAMIC_EXTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_DYNAMIC_EXTERNAL_Transferproperty()
+  {
+        return (EReference)getMessage_SEND_DYNAMIC_EXTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_DYNAMIC_EXTERNAL_Networkordercallout()
+  {
+        return (EReference)getMessage_SEND_DYNAMIC_EXTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_DYNAMIC_EXTERNAL_Cpuordercallout()
+  {
+        return (EReference)getMessage_SEND_DYNAMIC_EXTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_DYNAMIC_EXTERNAL_Initialvalue()
+  {
+        return (EReference)getMessage_SEND_DYNAMIC_EXTERNAL().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_DYNAMIC_EXTERNAL_Networkmessage()
+  {
+        return (EReference)getMessage_SEND_DYNAMIC_EXTERNAL().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_SEND_ZERO_EXTERNAL()
+  {
+    if (message_SEND_ZERO_EXTERNALEClass == null)
+    {
+      message_SEND_ZERO_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(56);
+    }
+    return message_SEND_ZERO_EXTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_ZERO_EXTERNAL_Networkordercallout()
+  {
+        return (EReference)getMessage_SEND_ZERO_EXTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_ZERO_EXTERNAL_Cpuordercallout()
+  {
+        return (EReference)getMessage_SEND_ZERO_EXTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_SEND_ZERO_EXTERNAL_Networkmessage()
+  {
+        return (EReference)getMessage_SEND_ZERO_EXTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_ZERO_INTERNAL()
+  {
+    if (message_RECEIVE_ZERO_INTERNALEClass == null)
+    {
+      message_RECEIVE_ZERO_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(57);
+    }
+    return message_RECEIVE_ZERO_INTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_ZERO_INTERNAL_Sendingmessage()
+  {
+        return (EReference)getMessage_RECEIVE_ZERO_INTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_ZERO_EXTERNAL()
+  {
+    if (message_RECEIVE_ZERO_EXTERNALEClass == null)
+    {
+      message_RECEIVE_ZERO_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(58);
+    }
+    return message_RECEIVE_ZERO_EXTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_ZERO_EXTERNAL_Networkordercallout()
+  {
+        return (EReference)getMessage_RECEIVE_ZERO_EXTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_ZERO_EXTERNAL_Cpuordercallout()
+  {
+        return (EReference)getMessage_RECEIVE_ZERO_EXTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_ZERO_EXTERNAL_Networkmessage()
+  {
+        return (EReference)getMessage_RECEIVE_ZERO_EXTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_UNQUEUED_INTERNAL()
+  {
+    if (message_RECEIVE_UNQUEUED_INTERNALEClass == null)
+    {
+      message_RECEIVE_UNQUEUED_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(59);
+    }
+    return message_RECEIVE_UNQUEUED_INTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_UNQUEUED_INTERNAL_Sendingmessage()
+  {
+        return (EReference)getMessage_RECEIVE_UNQUEUED_INTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_UNQUEUED_INTERNAL_Filter()
+  {
+        return (EReference)getMessage_RECEIVE_UNQUEUED_INTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_UNQUEUED_INTERNAL_Initialvalue()
+  {
+        return (EReference)getMessage_RECEIVE_UNQUEUED_INTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_QUEUED_INTERNAL()
+  {
+    if (message_RECEIVE_QUEUED_INTERNALEClass == null)
+    {
+      message_RECEIVE_QUEUED_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(60);
+    }
+    return message_RECEIVE_QUEUED_INTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_INTERNAL_Sendingmessage()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_INTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_INTERNAL_Filter()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_INTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_INTERNAL_Initialvalue()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_INTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_INTERNAL_Queuesize()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_INTERNAL().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_UNQUEUED_EXTERNAL()
+  {
+    if (message_RECEIVE_UNQUEUED_EXTERNALEClass == null)
+    {
+      message_RECEIVE_UNQUEUED_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(61);
+    }
+    return message_RECEIVE_UNQUEUED_EXTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_UNQUEUED_EXTERNAL_Cdata()
+  {
+        return (EReference)getMessage_RECEIVE_UNQUEUED_EXTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_UNQUEUED_EXTERNAL_Filter()
+  {
+        return (EReference)getMessage_RECEIVE_UNQUEUED_EXTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_UNQUEUED_EXTERNAL_Link()
+  {
+        return (EReference)getMessage_RECEIVE_UNQUEUED_EXTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_UNQUEUED_EXTERNAL_Initialvalue()
+  {
+        return (EReference)getMessage_RECEIVE_UNQUEUED_EXTERNAL().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_QUEUED_EXTERNAL()
+  {
+    if (message_RECEIVE_QUEUED_EXTERNALEClass == null)
+    {
+      message_RECEIVE_QUEUED_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(62);
+    }
+    return message_RECEIVE_QUEUED_EXTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_EXTERNAL_Cdata()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_EXTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_EXTERNAL_Queuesize()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_EXTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_EXTERNAL_Filter()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_EXTERNAL().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_EXTERNAL_Link()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_EXTERNAL().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_QUEUED_EXTERNAL_Initialvalue()
+  {
+        return (EReference)getMessage_RECEIVE_QUEUED_EXTERNAL().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_DYNAMIC_EXTERNAL()
+  {
+    if (message_RECEIVE_DYNAMIC_EXTERNALEClass == null)
+    {
+      message_RECEIVE_DYNAMIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(63);
+    }
+    return message_RECEIVE_DYNAMIC_EXTERNALEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_DYNAMIC_EXTERNAL_Link()
+  {
+        return (EReference)getMessage_RECEIVE_DYNAMIC_EXTERNAL().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_DYNAMIC_EXTERNAL_Initialvalue()
+  {
+        return (EReference)getMessage_RECEIVE_DYNAMIC_EXTERNAL().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessage_RECEIVE_ZERO_SENDERS()
+  {
+    if (message_RECEIVE_ZERO_SENDERSEClass == null)
+    {
+      message_RECEIVE_ZERO_SENDERSEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(64);
+    }
+    return message_RECEIVE_ZERO_SENDERSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_ZERO_SENDERS_Cdata()
+  {
+        return (EReference)getMessage_RECEIVE_ZERO_SENDERS().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessage_RECEIVE_ZERO_SENDERS_Initialvalue()
+  {
+        return (EReference)getMessage_RECEIVE_ZERO_SENDERS().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageCDATATYPE()
+  {
+    if (messageCDATATYPEEClass == null)
+    {
+      messageCDATATYPEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(65);
+    }
+    return messageCDATATYPEEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageCDATATYPE_Descrption()
+  {
+        return (EAttribute)getMessageCDATATYPE().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageTRANSFERPROPERTY()
+  {
+    if (messageTRANSFERPROPERTYEClass == null)
+    {
+      messageTRANSFERPROPERTYEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(66);
+    }
+    return messageTRANSFERPROPERTYEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageTRANSFERPROPERTY_Transenum()
+  {
+        return (EAttribute)getMessageTRANSFERPROPERTY().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageNETWORKORDERCALLOUT()
+  {
+    if (messageNETWORKORDERCALLOUTEClass == null)
+    {
+      messageNETWORKORDERCALLOUTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(67);
+    }
+    return messageNETWORKORDERCALLOUTEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageNETWORKORDERCALLOUT_Descrption()
+  {
+        return (EAttribute)getMessageNETWORKORDERCALLOUT().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageCPUORDERCALLOUT()
+  {
+    if (messageCPUORDERCALLOUTEClass == null)
+    {
+      messageCPUORDERCALLOUTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(68);
+    }
+    return messageCPUORDERCALLOUTEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageCPUORDERCALLOUT_Descrption()
+  {
+        return (EAttribute)getMessageCPUORDERCALLOUT().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageINITIALVALUE()
+  {
+    if (messageINITIALVALUEEClass == null)
+    {
+      messageINITIALVALUEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(69);
+    }
+    return messageINITIALVALUEEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageINITIALVALUE_Value()
+  {
+        return (EAttribute)getMessageINITIALVALUE().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageNETWORKMESSAGE()
+  {
+    if (messageNETWORKMESSAGEEClass == null)
+    {
+      messageNETWORKMESSAGEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(70);
+    }
+    return messageNETWORKMESSAGEEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessageNETWORKMESSAGE_Value()
+  {
+        return (EReference)getMessageNETWORKMESSAGE().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageSENDINGMESSAGE()
+  {
+    if (messageSENDINGMESSAGEEClass == null)
+    {
+      messageSENDINGMESSAGEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(71);
+    }
+    return messageSENDINGMESSAGEEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageSENDINGMESSAGE_Descrption()
+  {
+        return (EAttribute)getMessageSENDINGMESSAGE().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageQUEUESIZE()
+  {
+    if (messageQUEUESIZEEClass == null)
+    {
+      messageQUEUESIZEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(72);
+    }
+    return messageQUEUESIZEEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageQUEUESIZE_Value()
+  {
+        return (EAttribute)getMessageQUEUESIZE().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessagefilter()
+  {
+    if (messagefilterEClass == null)
+    {
+      messagefilterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(73);
+    }
+    return messagefilterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessagefilter_Filter2()
+  {
+        return (EAttribute)getMessagefilter().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessagefilter_Name()
+  {
+        return (EAttribute)getMessagefilter().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMessagefilter_Messageint1()
+  {
+        return (EReference)getMessagefilter().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMessageLINK()
+  {
+    if (messageLINKEClass == null)
+    {
+      messageLINKEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(74);
+    }
+    return messageLINKEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMessageLINK_Messagelink()
+  {
+        return (EAttribute)getMessageLINK().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2422,6 +3851,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getLibrayattribute()
   {
+    if (librayattributeEClass == null)
+    {
+      librayattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(78);
+    }
     return librayattributeEClass;
   }
 
@@ -2432,7 +3865,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getLibrayattribute_Description()
   {
-    return (EAttribute)librayattributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getLibrayattribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2442,6 +3875,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getComRule()
   {
+    if (comRuleEClass == null)
+    {
+      comRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(79);
+    }
     return comRuleEClass;
   }
 
@@ -2452,7 +3889,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getComRule_ComList()
   {
-    return (EReference)comRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getComRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2462,7 +3899,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getComRule_Description()
   {
-    return (EAttribute)comRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getComRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2472,6 +3909,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getComattribute()
   {
+    if (comattributeEClass == null)
+    {
+      comattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(80);
+    }
     return comattributeEClass;
   }
 
@@ -2482,7 +3923,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getComattribute_Name()
   {
-    return (EAttribute)comattributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getComattribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2492,7 +3933,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getComattribute_Value()
   {
-    return (EReference)comattributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getComattribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2502,7 +3943,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getComattribute_Description()
   {
-    return (EAttribute)comattributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getComattribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2512,6 +3953,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTaskRule()
   {
+    if (taskRuleEClass == null)
+    {
+      taskRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(82);
+    }
     return taskRuleEClass;
   }
 
@@ -2522,7 +3967,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTaskRule_Implementations()
   {
-    return (EReference)taskRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTaskRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2532,7 +3977,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTaskRule_Description()
   {
-    return (EAttribute)taskRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getTaskRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2542,7 +3987,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTaskRule_TaskList()
   {
-    return (EReference)taskRuleEClass.getEStructuralFeatures().get(2);
+        return (EReference)getTaskRule().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2552,6 +3997,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTaskattribute()
   {
+    if (taskattributeEClass == null)
+    {
+      taskattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(83);
+    }
     return taskattributeEClass;
   }
 
@@ -2562,7 +4011,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTaskattribute_Name()
   {
-    return (EAttribute)taskattributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTaskattribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2572,7 +4021,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTaskattribute_Value()
   {
-    return (EReference)taskattributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTaskattribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2582,7 +4031,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTaskattribute_Description()
   {
-    return (EAttribute)taskattributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getTaskattribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2592,7 +4041,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTaskattribute_ParameterList()
   {
-    return (EReference)taskattributeEClass.getEStructuralFeatures().get(3);
+        return (EReference)getTaskattribute().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2602,6 +4051,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTaskTimingAttribute()
   {
+    if (taskTimingAttributeEClass == null)
+    {
+      taskTimingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(84);
+    }
     return taskTimingAttributeEClass;
   }
 
@@ -2612,7 +4065,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTaskTimingAttribute_Name()
   {
-    return (EAttribute)taskTimingAttributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTaskTimingAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2622,7 +4075,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTaskTimingAttribute_Value()
   {
-    return (EReference)taskTimingAttributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTaskTimingAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2632,7 +4085,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTaskTimingAttribute_Description()
   {
-    return (EAttribute)taskTimingAttributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getTaskTimingAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2642,7 +4095,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTaskTimingAttribute_ParameterList()
   {
-    return (EAttribute)taskTimingAttributeEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getTaskTimingAttribute().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2652,6 +4105,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getTaskAutostartAttribute()
   {
+    if (taskAutostartAttributeEClass == null)
+    {
+      taskAutostartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(87);
+    }
     return taskAutostartAttributeEClass;
   }
 
@@ -2662,7 +4119,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getTaskAutostartAttribute_Value()
   {
-    return (EReference)taskAutostartAttributeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTaskAutostartAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2672,7 +4129,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getTaskAutostartAttribute_Description()
   {
-    return (EAttribute)taskAutostartAttributeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getTaskAutostartAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2682,6 +4139,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getResourceRule()
   {
+    if (resourceRuleEClass == null)
+    {
+      resourceRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(89);
+    }
     return resourceRuleEClass;
   }
 
@@ -2692,7 +4153,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getResourceRule_ResourceList()
   {
-    return (EReference)resourceRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getResourceRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2702,7 +4163,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getResourceRule_Description()
   {
-    return (EAttribute)resourceRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getResourceRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2712,6 +4173,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getResourceattribute()
   {
+    if (resourceattributeEClass == null)
+    {
+      resourceattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(90);
+    }
     return resourceattributeEClass;
   }
 
@@ -2722,7 +4187,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getResourceattribute_ResourceRange()
   {
-    return (EAttribute)resourceattributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getResourceattribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2732,6 +4197,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAlarmRule()
   {
+    if (alarmRuleEClass == null)
+    {
+      alarmRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(92);
+    }
     return alarmRuleEClass;
   }
 
@@ -2742,7 +4211,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAlarmRule_AlarmList()
   {
-    return (EReference)alarmRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAlarmRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2752,6 +4221,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAlarmAttribute()
   {
+    if (alarmAttributeEClass == null)
+    {
+      alarmAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(93);
+    }
     return alarmAttributeEClass;
   }
 
@@ -2762,7 +4235,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAlarmAttribute_Name()
   {
-    return (EAttribute)alarmAttributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAlarmAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2772,7 +4245,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAlarmAttribute_ParameterList()
   {
-    return (EReference)alarmAttributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAlarmAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2782,6 +4255,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAlarmActionAttribute()
   {
+    if (alarmActionAttributeEClass == null)
+    {
+      alarmActionAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(94);
+    }
     return alarmActionAttributeEClass;
   }
 
@@ -2792,7 +4269,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAlarmActionAttribute_Activatetask()
   {
-    return (EAttribute)alarmActionAttributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAlarmActionAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2802,7 +4279,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAlarmActionAttribute_Value()
   {
-    return (EReference)alarmActionAttributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAlarmActionAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2812,7 +4289,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAlarmActionAttribute_Description()
   {
-    return (EAttribute)alarmActionAttributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getAlarmActionAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2822,7 +4299,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAlarmActionAttribute_Incrementcounter()
   {
-    return (EAttribute)alarmActionAttributeEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getAlarmActionAttribute().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2832,7 +4309,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAlarmActionAttribute_Setevent()
   {
-    return (EAttribute)alarmActionAttributeEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getAlarmActionAttribute().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2842,7 +4319,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAlarmActionAttribute_Alarmcallback()
   {
-    return (EAttribute)alarmActionAttributeEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getAlarmActionAttribute().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2852,6 +4329,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAlarmAutostartAttribute()
   {
+    if (alarmAutostartAttributeEClass == null)
+    {
+      alarmAutostartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(95);
+    }
     return alarmAutostartAttributeEClass;
   }
 
@@ -2862,7 +4343,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAlarmAutostartAttribute_Value()
   {
-    return (EReference)alarmAutostartAttributeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAlarmAutostartAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2872,7 +4353,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAlarmAutostartAttribute_Description()
   {
-    return (EAttribute)alarmAutostartAttributeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getAlarmAutostartAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2882,6 +4363,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getScheduleTableRule()
   {
+    if (scheduleTableRuleEClass == null)
+    {
+      scheduleTableRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(100);
+    }
     return scheduleTableRuleEClass;
   }
 
@@ -2892,7 +4377,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getScheduleTableRule_Schedulelist()
   {
-    return (EReference)scheduleTableRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getScheduleTableRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2902,6 +4387,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getScheduleTableAttribute()
   {
+    if (scheduleTableAttributeEClass == null)
+    {
+      scheduleTableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(101);
+    }
     return scheduleTableAttributeEClass;
   }
 
@@ -2912,7 +4401,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getScheduleTableAttribute_Name()
   {
-    return (EAttribute)scheduleTableAttributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getScheduleTableAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2922,7 +4411,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getScheduleTableAttribute_Value()
   {
-    return (EReference)scheduleTableAttributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getScheduleTableAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2932,7 +4421,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getScheduleTableAttribute_ParameterList()
   {
-    return (EReference)scheduleTableAttributeEClass.getEStructuralFeatures().get(2);
+        return (EReference)getScheduleTableAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2942,6 +4431,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getScheduleAutoStartAttribute()
   {
+    if (scheduleAutoStartAttributeEClass == null)
+    {
+      scheduleAutoStartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(102);
+    }
     return scheduleAutoStartAttributeEClass;
   }
 
@@ -2952,7 +4445,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getScheduleAutoStartAttribute_Absolute()
   {
-    return (EAttribute)scheduleAutoStartAttributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getScheduleAutoStartAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2962,7 +4455,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getScheduleAutoStartAttribute_Value()
   {
-    return (EReference)scheduleAutoStartAttributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getScheduleAutoStartAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2972,7 +4465,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getScheduleAutoStartAttribute_Description()
   {
-    return (EAttribute)scheduleAutoStartAttributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getScheduleAutoStartAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2982,6 +4475,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getSchduleSynAttribute()
   {
+    if (schduleSynAttributeEClass == null)
+    {
+      schduleSynAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(103);
+    }
     return schduleSynAttributeEClass;
   }
 
@@ -2992,7 +4489,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getSchduleSynAttribute_Value()
   {
-    return (EReference)schduleSynAttributeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getSchduleSynAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3002,7 +4499,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getSchduleSynAttribute_Description()
   {
-    return (EAttribute)schduleSynAttributeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getSchduleSynAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3012,7 +4509,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getSchduleSynAttribute_Schdulesyn()
   {
-    return (EAttribute)schduleSynAttributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getSchduleSynAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3022,6 +4519,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getExpiryAttribute()
   {
+    if (expiryAttributeEClass == null)
+    {
+      expiryAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(104);
+    }
     return expiryAttributeEClass;
   }
 
@@ -3032,7 +4533,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getExpiryAttribute_Value()
   {
-    return (EReference)expiryAttributeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getExpiryAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3042,7 +4543,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getExpiryAttribute_Description()
   {
-    return (EAttribute)expiryAttributeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getExpiryAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3052,7 +4553,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getExpiryAttribute_Schdulexpiry()
   {
-    return (EAttribute)expiryAttributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getExpiryAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3062,7 +4563,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getExpiryAttribute_ParameterList()
   {
-    return (EReference)expiryAttributeEClass.getEStructuralFeatures().get(3);
+        return (EReference)getExpiryAttribute().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -3072,6 +4573,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getSchduleActionAttribute()
   {
+    if (schduleActionAttributeEClass == null)
+    {
+      schduleActionAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(105);
+    }
     return schduleActionAttributeEClass;
   }
 
@@ -3082,7 +4587,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getSchduleActionAttribute_Activatetask()
   {
-    return (EAttribute)schduleActionAttributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getSchduleActionAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3092,7 +4597,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getSchduleActionAttribute_Value()
   {
-    return (EReference)schduleActionAttributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getSchduleActionAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3102,7 +4607,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getSchduleActionAttribute_Description()
   {
-    return (EAttribute)schduleActionAttributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getSchduleActionAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3112,7 +4617,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getSchduleActionAttribute_Setevent()
   {
-    return (EAttribute)schduleActionAttributeEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getSchduleActionAttribute().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -3122,6 +4627,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIocRule()
   {
+    if (iocRuleEClass == null)
+    {
+      iocRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(109);
+    }
     return iocRuleEClass;
   }
 
@@ -3132,7 +4641,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocRule_Ioclist()
   {
-    return (EReference)iocRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getIocRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3142,6 +4651,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIocAttribute()
   {
+    if (iocAttributeEClass == null)
+    {
+      iocAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(110);
+    }
     return iocAttributeEClass;
   }
 
@@ -3152,7 +4665,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocAttribute_Name()
   {
-    return (EAttribute)iocAttributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIocAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3162,7 +4675,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocAttribute_DatatypeList()
   {
-    return (EReference)iocAttributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getIocAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3172,7 +4685,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocAttribute_Iocsemantics()
   {
-    return (EReference)iocAttributeEClass.getEStructuralFeatures().get(2);
+        return (EReference)getIocAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3182,7 +4695,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocAttribute_Description()
   {
-    return (EAttribute)iocAttributeEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getIocAttribute().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -3192,7 +4705,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocAttribute_ReceiverList()
   {
-    return (EReference)iocAttributeEClass.getEStructuralFeatures().get(4);
+        return (EReference)getIocAttribute().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -3202,7 +4715,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocAttribute_SenderList()
   {
-    return (EReference)iocAttributeEClass.getEStructuralFeatures().get(5);
+        return (EReference)getIocAttribute().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -3212,6 +4725,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIocSender()
   {
+    if (iocSenderEClass == null)
+    {
+      iocSenderEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(111);
+    }
     return iocSenderEClass;
   }
 
@@ -3222,7 +4739,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocSender_Enumiocsenderlist()
   {
-    return (EAttribute)iocSenderEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIocSender().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3232,7 +4749,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocSender_Value()
   {
-    return (EReference)iocSenderEClass.getEStructuralFeatures().get(1);
+        return (EReference)getIocSender().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3242,7 +4759,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocSender_Description()
   {
-    return (EAttribute)iocSenderEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getIocSender().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3252,6 +4769,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIocReceiver()
   {
+    if (iocReceiverEClass == null)
+    {
+      iocReceiverEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(112);
+    }
     return iocReceiverEClass;
   }
 
@@ -3262,7 +4783,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocReceiver_Enumioclist()
   {
-    return (EAttribute)iocReceiverEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIocReceiver().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3272,7 +4793,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocReceiver_Value()
   {
-    return (EReference)iocReceiverEClass.getEStructuralFeatures().get(1);
+        return (EReference)getIocReceiver().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3282,7 +4803,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocReceiver_Recnone()
   {
-    return (EAttribute)iocReceiverEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getIocReceiver().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3292,7 +4813,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocReceiver_Description()
   {
-    return (EAttribute)iocReceiverEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getIocReceiver().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -3302,6 +4823,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIocDataTypeAttr()
   {
+    if (iocDataTypeAttrEClass == null)
+    {
+      iocDataTypeAttrEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(113);
+    }
     return iocDataTypeAttrEClass;
   }
 
@@ -3312,7 +4837,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocDataTypeAttr_Iocdatatype()
   {
-    return (EAttribute)iocDataTypeAttrEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIocDataTypeAttr().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3322,6 +4847,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getIocSemantics()
   {
+    if (iocSemanticsEClass == null)
+    {
+      iocSemanticsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(114);
+    }
     return iocSemanticsEClass;
   }
 
@@ -3332,7 +4861,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocSemantics_IocSema()
   {
-    return (EAttribute)iocSemanticsEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIocSemantics().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3342,7 +4871,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getIocSemantics_Value()
   {
-    return (EReference)iocSemanticsEClass.getEStructuralFeatures().get(1);
+        return (EReference)getIocSemantics().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3352,7 +4881,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocSemantics_Description()
   {
-    return (EAttribute)iocSemanticsEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getIocSemantics().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3362,7 +4891,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getIocSemantics_IocSeman()
   {
-    return (EAttribute)iocSemanticsEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getIocSemantics().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -3372,6 +4901,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAttribute()
   {
+    if (attributeEClass == null)
+    {
+      attributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(121);
+    }
     return attributeEClass;
   }
 
@@ -3382,7 +4915,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAttribute_Name()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAttribute().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3392,7 +4925,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getAttribute_Value()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAttribute().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3402,7 +4935,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAttribute_Description()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getAttribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3412,6 +4945,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAttributeName()
   {
+    if (attributeNameEClass == null)
+    {
+      attributeNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(122);
+    }
     return attributeNameEClass;
   }
 
@@ -3422,7 +4959,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAttributeName_Value()
   {
-    return (EAttribute)attributeNameEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAttributeName().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3432,6 +4969,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAttributeValue()
   {
+    if (attributeValueEClass == null)
+    {
+      attributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(123);
+    }
     return attributeValueEClass;
   }
 
@@ -3442,6 +4983,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getNameAttributeValue()
   {
+    if (nameAttributeValueEClass == null)
+    {
+      nameAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(124);
+    }
     return nameAttributeValueEClass;
   }
 
@@ -3452,7 +4997,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getNameAttributeValue_Value()
   {
-    return (EAttribute)nameAttributeValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getNameAttributeValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3462,7 +5007,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getNameAttributeValue_ParameterList()
   {
-    return (EReference)nameAttributeValueEClass.getEStructuralFeatures().get(1);
+        return (EReference)getNameAttributeValue().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3472,6 +5017,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getBooleanAttributeValue()
   {
+    if (booleanAttributeValueEClass == null)
+    {
+      booleanAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(125);
+    }
     return booleanAttributeValueEClass;
   }
 
@@ -3482,7 +5031,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getBooleanAttributeValue_Value()
   {
-    return (EAttribute)booleanAttributeValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getBooleanAttributeValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3492,7 +5041,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getBooleanAttributeValue_ParameterList()
   {
-    return (EReference)booleanAttributeValueEClass.getEStructuralFeatures().get(1);
+        return (EReference)getBooleanAttributeValue().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3502,6 +5051,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getNumberAttributeValue()
   {
+    if (numberAttributeValueEClass == null)
+    {
+      numberAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(126);
+    }
     return numberAttributeValueEClass;
   }
 
@@ -3512,7 +5065,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getNumberAttributeValue_Value()
   {
-    return (EAttribute)numberAttributeValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getNumberAttributeValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3522,6 +5075,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getFloatAttributeValue()
   {
+    if (floatAttributeValueEClass == null)
+    {
+      floatAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(127);
+    }
     return floatAttributeValueEClass;
   }
 
@@ -3532,7 +5089,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getFloatAttributeValue_Value()
   {
-    return (EAttribute)floatAttributeValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getFloatAttributeValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3542,6 +5099,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getStringAttributeValue()
   {
+    if (stringAttributeValueEClass == null)
+    {
+      stringAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(128);
+    }
     return stringAttributeValueEClass;
   }
 
@@ -3552,7 +5113,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getStringAttributeValue_Value()
   {
-    return (EAttribute)stringAttributeValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getStringAttributeValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3562,6 +5123,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getAutoAttributeValue()
   {
+    if (autoAttributeValueEClass == null)
+    {
+      autoAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(129);
+    }
     return autoAttributeValueEClass;
   }
 
@@ -3572,7 +5137,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getAutoAttributeValue_Value()
   {
-    return (EAttribute)autoAttributeValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAutoAttributeValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3582,6 +5147,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getOsRule()
   {
+    if (osRuleEClass == null)
+    {
+      osRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(130);
+    }
     return osRuleEClass;
   }
 
@@ -3592,7 +5161,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getOsRule_Implementations()
   {
-    return (EReference)osRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getOsRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3602,7 +5171,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getOsRule_Description()
   {
-    return (EAttribute)osRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getOsRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3612,6 +5181,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EClass getCounterRule()
   {
+    if (counterRuleEClass == null)
+    {
+      counterRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(131);
+    }
     return counterRuleEClass;
   }
 
@@ -3622,7 +5195,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EReference getCounterRule_Implementations()
   {
-    return (EReference)counterRuleEClass.getEStructuralFeatures().get(0);
+        return (EReference)getCounterRule().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3632,7 +5205,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EAttribute getCounterRule_Description()
   {
-    return (EAttribute)counterRuleEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getCounterRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3642,6 +5215,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getImpTaskParamEnum()
   {
+    if (impTaskParamEnumEEnum == null)
+    {
+      impTaskParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(7);
+    }
     return impTaskParamEnumEEnum;
   }
 
@@ -3652,6 +5229,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getImpCounterParamEnum()
   {
+    if (impCounterParamEnumEEnum == null)
+    {
+      impCounterParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(12);
+    }
     return impCounterParamEnumEEnum;
   }
 
@@ -3662,6 +5243,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getApplicationParamEnum()
   {
+    if (applicationParamEnumEEnum == null)
+    {
+      applicationParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(16);
+    }
     return applicationParamEnumEEnum;
   }
 
@@ -3672,6 +5257,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getTimingProtectionParamEnum()
   {
+    if (timingProtectionParamEnumEEnum == null)
+    {
+      timingProtectionParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(25);
+    }
     return timingProtectionParamEnumEEnum;
   }
 
@@ -3682,6 +5271,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getIsrParamEnum()
   {
+    if (isrParamEnumEEnum == null)
+    {
+      isrParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(27);
+    }
     return isrParamEnumEEnum;
   }
 
@@ -3692,6 +5285,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getIntTypeEnum()
   {
+    if (intTypeEnumEEnum == null)
+    {
+      intTypeEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(32);
+    }
     return intTypeEnumEEnum;
   }
 
@@ -3702,6 +5299,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getDefaultEnum()
   {
+    if (defaultEnumEEnum == null)
+    {
+      defaultEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(39);
+    }
     return defaultEnumEEnum;
   }
 
@@ -3712,7 +5313,53 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getObjectRefTypeEnum()
   {
+    if (objectRefTypeEnumEEnum == null)
+    {
+      objectRefTypeEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(43);
+    }
     return objectRefTypeEnumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getMessagefilter2()
+  {
+    if (messagefilter2EEnum == null)
+    {
+      messagefilter2EEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(75);
+    }
+    return messagefilter2EEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getMessageTRANSFERPROPERTYenum()
+  {
+    if (messageTRANSFERPROPERTYenumEEnum == null)
+    {
+      messageTRANSFERPROPERTYenumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(76);
+    }
+    return messageTRANSFERPROPERTYenumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getMessagelink1()
+  {
+    if (messagelink1EEnum == null)
+    {
+      messagelink1EEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(77);
+    }
+    return messagelink1EEnum;
   }
 
   /**
@@ -3722,6 +5369,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getComAttributeName()
   {
+    if (comAttributeNameEEnum == null)
+    {
+      comAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(81);
+    }
     return comAttributeNameEEnum;
   }
 
@@ -3732,6 +5383,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getTaskTimingrLockAttribute()
   {
+    if (taskTimingrLockAttributeEEnum == null)
+    {
+      taskTimingrLockAttributeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(85);
+    }
     return taskTimingrLockAttributeEEnum;
   }
 
@@ -3742,6 +5397,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getTaskTimingAttributeName()
   {
+    if (taskTimingAttributeNameEEnum == null)
+    {
+      taskTimingAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(86);
+    }
     return taskTimingAttributeNameEEnum;
   }
 
@@ -3752,6 +5411,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getTaskAttributeName()
   {
+    if (taskAttributeNameEEnum == null)
+    {
+      taskAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(88);
+    }
     return taskAttributeNameEEnum;
   }
 
@@ -3762,6 +5425,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getResourceRange()
   {
+    if (resourceRangeEEnum == null)
+    {
+      resourceRangeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(91);
+    }
     return resourceRangeEEnum;
   }
 
@@ -3772,6 +5439,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getActivateTask()
   {
+    if (activateTaskEEnum == null)
+    {
+      activateTaskEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(96);
+    }
     return activateTaskEEnum;
   }
 
@@ -3782,6 +5453,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getIncrementCounter()
   {
+    if (incrementCounterEEnum == null)
+    {
+      incrementCounterEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(97);
+    }
     return incrementCounterEEnum;
   }
 
@@ -3792,6 +5467,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getSetevent()
   {
+    if (seteventEEnum == null)
+    {
+      seteventEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(98);
+    }
     return seteventEEnum;
   }
 
@@ -3802,6 +5481,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getAlarmCallBack()
   {
+    if (alarmCallBackEEnum == null)
+    {
+      alarmCallBackEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(99);
+    }
     return alarmCallBackEEnum;
   }
 
@@ -3812,6 +5495,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getAbsolute()
   {
+    if (absoluteEEnum == null)
+    {
+      absoluteEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(106);
+    }
     return absoluteEEnum;
   }
 
@@ -3822,6 +5509,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getSchduleSyn()
   {
+    if (schduleSynEEnum == null)
+    {
+      schduleSynEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(107);
+    }
     return schduleSynEEnum;
   }
 
@@ -3832,6 +5523,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getSchduleExpiryAdustble()
   {
+    if (schduleExpiryAdustbleEEnum == null)
+    {
+      schduleExpiryAdustbleEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(108);
+    }
     return schduleExpiryAdustbleEEnum;
   }
 
@@ -3842,6 +5537,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getIocReciverNone()
   {
+    if (iocReciverNoneEEnum == null)
+    {
+      iocReciverNoneEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(115);
+    }
     return iocReciverNoneEEnum;
   }
 
@@ -3852,6 +5551,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getEnumIocSendRec()
   {
+    if (enumIocSendRecEEnum == null)
+    {
+      enumIocSendRecEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(116);
+    }
     return enumIocSendRecEEnum;
   }
 
@@ -3862,6 +5565,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getEnumIocRec()
   {
+    if (enumIocRecEEnum == null)
+    {
+      enumIocRecEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(117);
+    }
     return enumIocRecEEnum;
   }
 
@@ -3872,6 +5579,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getIocDataType()
   {
+    if (iocDataTypeEEnum == null)
+    {
+      iocDataTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(118);
+    }
     return iocDataTypeEEnum;
   }
 
@@ -3882,6 +5593,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getIocSemanticsenum()
   {
+    if (iocSemanticsenumEEnum == null)
+    {
+      iocSemanticsenumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(119);
+    }
     return iocSemanticsenumEEnum;
   }
 
@@ -3892,6 +5607,10 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    */
   public EEnum getIocSemanticsenumm()
   {
+    if (iocSemanticsenummEEnum == null)
+    {
+      iocSemanticsenummEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(120);
+    }
     return iocSemanticsenummEEnum;
   }
 
@@ -3910,964 +5629,73 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isCreated = false;
+  private boolean isLoaded = false;
 
   /**
-   * Creates the meta-model objects for the package.  This method is
-   * guarded to have no affect on any invocation but its first.
+   * Laods the package and any sub-packages from their serialized form.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public void createPackageContents()
+  public void loadPackage()
   {
-    if (isCreated) return;
-    isCreated = true;
-
-    // Create classes and their features
-    oilFileEClass = createEClass(OIL_FILE);
-    createEReference(oilFileEClass, OIL_FILE__VERSION);
-    createEReference(oilFileEClass, OIL_FILE__INCLUDE);
-    createEReference(oilFileEClass, OIL_FILE__IMPLEMENTATION);
-    createEReference(oilFileEClass, OIL_FILE__APPLICATION);
-
-    includeEClass = createEClass(INCLUDE);
-    createEAttribute(includeEClass, INCLUDE__NAME);
-
-    oilVersionEClass = createEClass(OIL_VERSION);
-    createEAttribute(oilVersionEClass, OIL_VERSION__VALUE);
-    createEAttribute(oilVersionEClass, OIL_VERSION__DESCRIPTION);
-
-    implementationDefinitionEClass = createEClass(IMPLEMENTATION_DEFINITION);
-    createEAttribute(implementationDefinitionEClass, IMPLEMENTATION_DEFINITION__NAME);
-    createEReference(implementationDefinitionEClass, IMPLEMENTATION_DEFINITION__IMPLEMENTATION_SPECS);
-    createEAttribute(implementationDefinitionEClass, IMPLEMENTATION_DEFINITION__DESCRIPTION);
-
-    implementationSpecEClass = createEClass(IMPLEMENTATION_SPEC);
-    createEReference(implementationSpecEClass, IMPLEMENTATION_SPEC__OS_RULE);
-    createEReference(implementationSpecEClass, IMPLEMENTATION_SPEC__COUNTER_RULE);
-    createEReference(implementationSpecEClass, IMPLEMENTATION_SPEC__ISR_RULE);
-    createEReference(implementationSpecEClass, IMPLEMENTATION_SPEC__TASK_RULE);
-
-    impTaskRuleEClass = createEClass(IMP_TASK_RULE);
-
-    impTaskParamEClass = createEClass(IMP_TASK_PARAM);
-    createEAttribute(impTaskParamEClass, IMP_TASK_PARAM__TYPE);
-    createEAttribute(impTaskParamEClass, IMP_TASK_PARAM__AUTO);
-    createEReference(impTaskParamEClass, IMP_TASK_PARAM__RANGE);
-    createEAttribute(impTaskParamEClass, IMP_TASK_PARAM__PARAM);
-    createEAttribute(impTaskParamEClass, IMP_TASK_PARAM__MULTIPLE);
-    createEAttribute(impTaskParamEClass, IMP_TASK_PARAM__VALUE);
-    createEAttribute(impTaskParamEClass, IMP_TASK_PARAM__DEFAULT);
-    createEAttribute(impTaskParamEClass, IMP_TASK_PARAM__DESCRIPTION);
-
-    impOsRuleEClass = createEClass(IMP_OS_RULE);
-
-    impOsParamEClass = createEClass(IMP_OS_PARAM);
-    createEAttribute(impOsParamEClass, IMP_OS_PARAM__AUTO);
-    createEReference(impOsParamEClass, IMP_OS_PARAM__ENUMERATION);
-    createEAttribute(impOsParamEClass, IMP_OS_PARAM__MULTIPLE);
-    createEAttribute(impOsParamEClass, IMP_OS_PARAM__VALUE);
-    createEAttribute(impOsParamEClass, IMP_OS_PARAM__DEFAULT);
-    createEAttribute(impOsParamEClass, IMP_OS_PARAM__DESCRIPTION);
-
-    impCounterRuleEClass = createEClass(IMP_COUNTER_RULE);
-
-    impCounterParamEClass = createEClass(IMP_COUNTER_PARAM);
-    createEAttribute(impCounterParamEClass, IMP_COUNTER_PARAM__TYPE);
-    createEAttribute(impCounterParamEClass, IMP_COUNTER_PARAM__AUTO);
-    createEReference(impCounterParamEClass, IMP_COUNTER_PARAM__RANGE);
-    createEAttribute(impCounterParamEClass, IMP_COUNTER_PARAM__PARAM);
-    createEReference(impCounterParamEClass, IMP_COUNTER_PARAM__VALUE);
-
-    applicationRuleEClass = createEClass(APPLICATION_RULE);
-    createEReference(applicationRuleEClass, APPLICATION_RULE__APP_SUB_OR_PARAM);
-
-    appSubContainerEClass = createEClass(APP_SUB_CONTAINER);
-    createEReference(appSubContainerEClass, APP_SUB_CONTAINER__HAS_RESTART_TASK_RULE);
-    createEReference(appSubContainerEClass, APP_SUB_CONTAINER__TRUSTED_RULE);
-
-    applicationParamEClass = createEClass(APPLICATION_PARAM);
-    createEAttribute(applicationParamEClass, APPLICATION_PARAM__TYPE);
-    createEReference(applicationParamEClass, APPLICATION_PARAM__VALUE);
-
-    hasRestartTaskRuleEClass = createEClass(HAS_RESTART_TASK_RULE);
-    createEAttribute(hasRestartTaskRuleEClass, HAS_RESTART_TASK_RULE__NAME);
-    createEAttribute(hasRestartTaskRuleEClass, HAS_RESTART_TASK_RULE__VALUE);
-    createEReference(hasRestartTaskRuleEClass, HAS_RESTART_TASK_RULE__PARAMETER_LIST);
-
-    restartTaskRuleEClass = createEClass(RESTART_TASK_RULE);
-    createEAttribute(restartTaskRuleEClass, RESTART_TASK_RULE__NAME);
-    createEReference(restartTaskRuleEClass, RESTART_TASK_RULE__VALUE);
-
-    trustedRuleEClass = createEClass(TRUSTED_RULE);
-    createEAttribute(trustedRuleEClass, TRUSTED_RULE__NAME);
-    createEAttribute(trustedRuleEClass, TRUSTED_RULE__VALUE);
-    createEReference(trustedRuleEClass, TRUSTED_RULE__PARAMETER_LIST);
-
-    trustedFucRuleEClass = createEClass(TRUSTED_FUC_RULE);
-    createEAttribute(trustedFucRuleEClass, TRUSTED_FUC_RULE__NAME);
-    createEReference(trustedFucRuleEClass, TRUSTED_FUC_RULE__VALUE);
-
-    isrRuleEClass = createEClass(ISR_RULE);
-    createEReference(isrRuleEClass, ISR_RULE__ISR_PARAM);
-    createEReference(isrRuleEClass, ISR_RULE__ISR_SUB_CONAINER);
-    createEAttribute(isrRuleEClass, ISR_RULE__DESCRIPTION);
-
-    isrSubContainerEClass = createEClass(ISR_SUB_CONTAINER);
-    createEReference(isrSubContainerEClass, ISR_SUB_CONTAINER__TIMING_PROTECTION_RULE);
-
-    timingProtectionRuleEClass = createEClass(TIMING_PROTECTION_RULE);
-    createEAttribute(timingProtectionRuleEClass, TIMING_PROTECTION_RULE__NAME);
-    createEAttribute(timingProtectionRuleEClass, TIMING_PROTECTION_RULE__VALUE);
-    createEReference(timingProtectionRuleEClass, TIMING_PROTECTION_RULE__TIMING_PROTECTION_PARAM);
-
-    timingProtectionParamEClass = createEClass(TIMING_PROTECTION_PARAM);
-    createEAttribute(timingProtectionParamEClass, TIMING_PROTECTION_PARAM__TYPE);
-    createEReference(timingProtectionParamEClass, TIMING_PROTECTION_PARAM__VALUE);
-
-    isrParamEClass = createEClass(ISR_PARAM);
-    createEAttribute(isrParamEClass, ISR_PARAM__TYPE);
-    createEReference(isrParamEClass, ISR_PARAM__RANGE);
-    createEAttribute(isrParamEClass, ISR_PARAM__PARAM);
-    createEReference(isrParamEClass, ISR_PARAM__VALUE);
-
-    memoryProtectionRuleEClass = createEClass(MEMORY_PROTECTION_RULE);
-    createEAttribute(memoryProtectionRuleEClass, MEMORY_PROTECTION_RULE__VALUE);
-
-    implementationDefEClass = createEClass(IMPLEMENTATION_DEF);
-
-    implAttrDefEClass = createEClass(IMPL_ATTR_DEF);
-    createEAttribute(implAttrDefEClass, IMPL_ATTR_DEF__AUTO);
-
-    implAttrIntDefEClass = createEClass(IMPL_ATTR_INT_DEF);
-    createEAttribute(implAttrIntDefEClass, IMPL_ATTR_INT_DEF__TYPE);
-    createEReference(implAttrIntDefEClass, IMPL_ATTR_INT_DEF__RANGE);
-    createEReference(implAttrIntDefEClass, IMPL_ATTR_INT_DEF__NAME);
-    createEAttribute(implAttrIntDefEClass, IMPL_ATTR_INT_DEF__MULTIPLE);
-    createEAttribute(implAttrIntDefEClass, IMPL_ATTR_INT_DEF__VALUE);
-    createEAttribute(implAttrIntDefEClass, IMPL_ATTR_INT_DEF__DEFAULT);
-    createEAttribute(implAttrIntDefEClass, IMPL_ATTR_INT_DEF__DESCRIPTION);
-
-    implAttrFloatDefEClass = createEClass(IMPL_ATTR_FLOAT_DEF);
-    createEReference(implAttrFloatDefEClass, IMPL_ATTR_FLOAT_DEF__RANGE);
-    createEReference(implAttrFloatDefEClass, IMPL_ATTR_FLOAT_DEF__NAME);
-    createEAttribute(implAttrFloatDefEClass, IMPL_ATTR_FLOAT_DEF__MULTIPLE);
-    createEAttribute(implAttrFloatDefEClass, IMPL_ATTR_FLOAT_DEF__VALUE);
-    createEAttribute(implAttrFloatDefEClass, IMPL_ATTR_FLOAT_DEF__DEFAULT);
-    createEAttribute(implAttrFloatDefEClass, IMPL_ATTR_FLOAT_DEF__DESCRIPTION);
-
-    implAttrEnumDefEClass = createEClass(IMPL_ATTR_ENUM_DEF);
-    createEReference(implAttrEnumDefEClass, IMPL_ATTR_ENUM_DEF__ENUMERATION);
-    createEReference(implAttrEnumDefEClass, IMPL_ATTR_ENUM_DEF__NAME);
-    createEAttribute(implAttrEnumDefEClass, IMPL_ATTR_ENUM_DEF__MULTIPLE);
-    createEAttribute(implAttrEnumDefEClass, IMPL_ATTR_ENUM_DEF__VALUE);
-    createEAttribute(implAttrEnumDefEClass, IMPL_ATTR_ENUM_DEF__DEFAULT);
-    createEAttribute(implAttrEnumDefEClass, IMPL_ATTR_ENUM_DEF__DESCRIPTION);
-
-    implAttrStringDefEClass = createEClass(IMPL_ATTR_STRING_DEF);
-    createEReference(implAttrStringDefEClass, IMPL_ATTR_STRING_DEF__NAME);
-    createEAttribute(implAttrStringDefEClass, IMPL_ATTR_STRING_DEF__MULTIPLE);
-    createEAttribute(implAttrStringDefEClass, IMPL_ATTR_STRING_DEF__VALUE);
-    createEAttribute(implAttrStringDefEClass, IMPL_ATTR_STRING_DEF__DEFAULT);
-    createEAttribute(implAttrStringDefEClass, IMPL_ATTR_STRING_DEF__DESCRIPTION);
-
-    implAttrBooleanDefEClass = createEClass(IMPL_ATTR_BOOLEAN_DEF);
-    createEReference(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__TRUE_PARAMETER_LIST);
-    createEAttribute(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__TRUE_DESCRIPTION);
-    createEReference(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__FALSE_PARAMETER_LIST);
-    createEAttribute(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__FALSE_DESCRIPTION);
-    createEAttribute(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__NAME);
-    createEAttribute(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__MULTIPLE);
-    createEAttribute(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__VALUE);
-    createEAttribute(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__DEFAULT);
-    createEAttribute(implAttrBooleanDefEClass, IMPL_ATTR_BOOLEAN_DEF__DESCRIPTION);
-
-    implAttrIdentiFierEClass = createEClass(IMPL_ATTR_IDENTI_FIER);
-    createEReference(implAttrIdentiFierEClass, IMPL_ATTR_IDENTI_FIER__NAME);
-    createEAttribute(implAttrIdentiFierEClass, IMPL_ATTR_IDENTI_FIER__VALUE);
-
-    rangeEClass = createEClass(RANGE);
-    createEAttribute(rangeEClass, RANGE__VALUE);
-    createEAttribute(rangeEClass, RANGE__BEGIN);
-    createEAttribute(rangeEClass, RANGE__END);
-    createEAttribute(rangeEClass, RANGE__NUMBERS);
-
-    enumerationEClass = createEClass(ENUMERATION);
-    createEReference(enumerationEClass, ENUMERATION__LIST);
-
-    enumeratorEClass = createEClass(ENUMERATOR);
-    createEAttribute(enumeratorEClass, ENUMERATOR__NAME);
-    createEReference(enumeratorEClass, ENUMERATOR__IMPL_PARAMETER_LIST);
-    createEAttribute(enumeratorEClass, ENUMERATOR__DESCRIPTION);
-
-    implRefDefEClass = createEClass(IMPL_REF_DEF);
-    createEAttribute(implRefDefEClass, IMPL_REF_DEF__TYPE);
-    createEReference(implRefDefEClass, IMPL_REF_DEF__NAME);
-    createEAttribute(implRefDefEClass, IMPL_REF_DEF__MULTIPLE);
-    createEAttribute(implRefDefEClass, IMPL_REF_DEF__DESCRIPTION);
-
-    applicationDefinitionEClass = createEClass(APPLICATION_DEFINITION);
-    createEAttribute(applicationDefinitionEClass, APPLICATION_DEFINITION__NAME);
-    createEReference(applicationDefinitionEClass, APPLICATION_DEFINITION__OBJECT_DEFINITION_LIST);
-    createEAttribute(applicationDefinitionEClass, APPLICATION_DEFINITION__DESCRIPTION);
-
-    objectDefinitionEClass = createEClass(OBJECT_DEFINITION);
-    createEAttribute(objectDefinitionEClass, OBJECT_DEFINITION__NAME);
-    createEReference(objectDefinitionEClass, OBJECT_DEFINITION__LIBRARY_LIST);
-
-    librayattributeEClass = createEClass(LIBRAYATTRIBUTE);
-    createEAttribute(librayattributeEClass, LIBRAYATTRIBUTE__DESCRIPTION);
-
-    comRuleEClass = createEClass(COM_RULE);
-    createEReference(comRuleEClass, COM_RULE__COM_LIST);
-    createEAttribute(comRuleEClass, COM_RULE__DESCRIPTION);
-
-    comattributeEClass = createEClass(COMATTRIBUTE);
-    createEAttribute(comattributeEClass, COMATTRIBUTE__NAME);
-    createEReference(comattributeEClass, COMATTRIBUTE__VALUE);
-    createEAttribute(comattributeEClass, COMATTRIBUTE__DESCRIPTION);
-
-    taskRuleEClass = createEClass(TASK_RULE);
-    createEReference(taskRuleEClass, TASK_RULE__IMPLEMENTATIONS);
-    createEAttribute(taskRuleEClass, TASK_RULE__DESCRIPTION);
-    createEReference(taskRuleEClass, TASK_RULE__TASK_LIST);
-
-    taskattributeEClass = createEClass(TASKATTRIBUTE);
-    createEAttribute(taskattributeEClass, TASKATTRIBUTE__NAME);
-    createEReference(taskattributeEClass, TASKATTRIBUTE__VALUE);
-    createEAttribute(taskattributeEClass, TASKATTRIBUTE__DESCRIPTION);
-    createEReference(taskattributeEClass, TASKATTRIBUTE__PARAMETER_LIST);
-
-    taskTimingAttributeEClass = createEClass(TASK_TIMING_ATTRIBUTE);
-    createEAttribute(taskTimingAttributeEClass, TASK_TIMING_ATTRIBUTE__NAME);
-    createEReference(taskTimingAttributeEClass, TASK_TIMING_ATTRIBUTE__VALUE);
-    createEAttribute(taskTimingAttributeEClass, TASK_TIMING_ATTRIBUTE__DESCRIPTION);
-    createEAttribute(taskTimingAttributeEClass, TASK_TIMING_ATTRIBUTE__PARAMETER_LIST);
-
-    taskAutostartAttributeEClass = createEClass(TASK_AUTOSTART_ATTRIBUTE);
-    createEReference(taskAutostartAttributeEClass, TASK_AUTOSTART_ATTRIBUTE__VALUE);
-    createEAttribute(taskAutostartAttributeEClass, TASK_AUTOSTART_ATTRIBUTE__DESCRIPTION);
-
-    resourceRuleEClass = createEClass(RESOURCE_RULE);
-    createEReference(resourceRuleEClass, RESOURCE_RULE__RESOURCE_LIST);
-    createEAttribute(resourceRuleEClass, RESOURCE_RULE__DESCRIPTION);
-
-    resourceattributeEClass = createEClass(RESOURCEATTRIBUTE);
-    createEAttribute(resourceattributeEClass, RESOURCEATTRIBUTE__RESOURCE_RANGE);
-
-    alarmRuleEClass = createEClass(ALARM_RULE);
-    createEReference(alarmRuleEClass, ALARM_RULE__ALARM_LIST);
-
-    alarmAttributeEClass = createEClass(ALARM_ATTRIBUTE);
-    createEAttribute(alarmAttributeEClass, ALARM_ATTRIBUTE__NAME);
-    createEReference(alarmAttributeEClass, ALARM_ATTRIBUTE__PARAMETER_LIST);
-
-    alarmActionAttributeEClass = createEClass(ALARM_ACTION_ATTRIBUTE);
-    createEAttribute(alarmActionAttributeEClass, ALARM_ACTION_ATTRIBUTE__ACTIVATETASK);
-    createEReference(alarmActionAttributeEClass, ALARM_ACTION_ATTRIBUTE__VALUE);
-    createEAttribute(alarmActionAttributeEClass, ALARM_ACTION_ATTRIBUTE__DESCRIPTION);
-    createEAttribute(alarmActionAttributeEClass, ALARM_ACTION_ATTRIBUTE__INCREMENTCOUNTER);
-    createEAttribute(alarmActionAttributeEClass, ALARM_ACTION_ATTRIBUTE__SETEVENT);
-    createEAttribute(alarmActionAttributeEClass, ALARM_ACTION_ATTRIBUTE__ALARMCALLBACK);
-
-    alarmAutostartAttributeEClass = createEClass(ALARM_AUTOSTART_ATTRIBUTE);
-    createEReference(alarmAutostartAttributeEClass, ALARM_AUTOSTART_ATTRIBUTE__VALUE);
-    createEAttribute(alarmAutostartAttributeEClass, ALARM_AUTOSTART_ATTRIBUTE__DESCRIPTION);
-
-    scheduleTableRuleEClass = createEClass(SCHEDULE_TABLE_RULE);
-    createEReference(scheduleTableRuleEClass, SCHEDULE_TABLE_RULE__SCHEDULELIST);
-
-    scheduleTableAttributeEClass = createEClass(SCHEDULE_TABLE_ATTRIBUTE);
-    createEAttribute(scheduleTableAttributeEClass, SCHEDULE_TABLE_ATTRIBUTE__NAME);
-    createEReference(scheduleTableAttributeEClass, SCHEDULE_TABLE_ATTRIBUTE__VALUE);
-    createEReference(scheduleTableAttributeEClass, SCHEDULE_TABLE_ATTRIBUTE__PARAMETER_LIST);
-
-    scheduleAutoStartAttributeEClass = createEClass(SCHEDULE_AUTO_START_ATTRIBUTE);
-    createEAttribute(scheduleAutoStartAttributeEClass, SCHEDULE_AUTO_START_ATTRIBUTE__ABSOLUTE);
-    createEReference(scheduleAutoStartAttributeEClass, SCHEDULE_AUTO_START_ATTRIBUTE__VALUE);
-    createEAttribute(scheduleAutoStartAttributeEClass, SCHEDULE_AUTO_START_ATTRIBUTE__DESCRIPTION);
-
-    schduleSynAttributeEClass = createEClass(SCHDULE_SYN_ATTRIBUTE);
-    createEReference(schduleSynAttributeEClass, SCHDULE_SYN_ATTRIBUTE__VALUE);
-    createEAttribute(schduleSynAttributeEClass, SCHDULE_SYN_ATTRIBUTE__DESCRIPTION);
-    createEAttribute(schduleSynAttributeEClass, SCHDULE_SYN_ATTRIBUTE__SCHDULESYN);
-
-    expiryAttributeEClass = createEClass(EXPIRY_ATTRIBUTE);
-    createEReference(expiryAttributeEClass, EXPIRY_ATTRIBUTE__VALUE);
-    createEAttribute(expiryAttributeEClass, EXPIRY_ATTRIBUTE__DESCRIPTION);
-    createEAttribute(expiryAttributeEClass, EXPIRY_ATTRIBUTE__SCHDULEXPIRY);
-    createEReference(expiryAttributeEClass, EXPIRY_ATTRIBUTE__PARAMETER_LIST);
-
-    schduleActionAttributeEClass = createEClass(SCHDULE_ACTION_ATTRIBUTE);
-    createEAttribute(schduleActionAttributeEClass, SCHDULE_ACTION_ATTRIBUTE__ACTIVATETASK);
-    createEReference(schduleActionAttributeEClass, SCHDULE_ACTION_ATTRIBUTE__VALUE);
-    createEAttribute(schduleActionAttributeEClass, SCHDULE_ACTION_ATTRIBUTE__DESCRIPTION);
-    createEAttribute(schduleActionAttributeEClass, SCHDULE_ACTION_ATTRIBUTE__SETEVENT);
-
-    iocRuleEClass = createEClass(IOC_RULE);
-    createEReference(iocRuleEClass, IOC_RULE__IOCLIST);
-
-    iocAttributeEClass = createEClass(IOC_ATTRIBUTE);
-    createEAttribute(iocAttributeEClass, IOC_ATTRIBUTE__NAME);
-    createEReference(iocAttributeEClass, IOC_ATTRIBUTE__DATATYPE_LIST);
-    createEReference(iocAttributeEClass, IOC_ATTRIBUTE__IOCSEMANTICS);
-    createEAttribute(iocAttributeEClass, IOC_ATTRIBUTE__DESCRIPTION);
-    createEReference(iocAttributeEClass, IOC_ATTRIBUTE__RECEIVER_LIST);
-    createEReference(iocAttributeEClass, IOC_ATTRIBUTE__SENDER_LIST);
-
-    iocSenderEClass = createEClass(IOC_SENDER);
-    createEAttribute(iocSenderEClass, IOC_SENDER__ENUMIOCSENDERLIST);
-    createEReference(iocSenderEClass, IOC_SENDER__VALUE);
-    createEAttribute(iocSenderEClass, IOC_SENDER__DESCRIPTION);
-
-    iocReceiverEClass = createEClass(IOC_RECEIVER);
-    createEAttribute(iocReceiverEClass, IOC_RECEIVER__ENUMIOCLIST);
-    createEReference(iocReceiverEClass, IOC_RECEIVER__VALUE);
-    createEAttribute(iocReceiverEClass, IOC_RECEIVER__RECNONE);
-    createEAttribute(iocReceiverEClass, IOC_RECEIVER__DESCRIPTION);
-
-    iocDataTypeAttrEClass = createEClass(IOC_DATA_TYPE_ATTR);
-    createEAttribute(iocDataTypeAttrEClass, IOC_DATA_TYPE_ATTR__IOCDATATYPE);
-
-    iocSemanticsEClass = createEClass(IOC_SEMANTICS);
-    createEAttribute(iocSemanticsEClass, IOC_SEMANTICS__IOC_SEMA);
-    createEReference(iocSemanticsEClass, IOC_SEMANTICS__VALUE);
-    createEAttribute(iocSemanticsEClass, IOC_SEMANTICS__DESCRIPTION);
-    createEAttribute(iocSemanticsEClass, IOC_SEMANTICS__IOC_SEMAN);
-
-    attributeEClass = createEClass(ATTRIBUTE);
-    createEReference(attributeEClass, ATTRIBUTE__NAME);
-    createEReference(attributeEClass, ATTRIBUTE__VALUE);
-    createEAttribute(attributeEClass, ATTRIBUTE__DESCRIPTION);
-
-    attributeNameEClass = createEClass(ATTRIBUTE_NAME);
-    createEAttribute(attributeNameEClass, ATTRIBUTE_NAME__VALUE);
-
-    attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
-
-    nameAttributeValueEClass = createEClass(NAME_ATTRIBUTE_VALUE);
-    createEAttribute(nameAttributeValueEClass, NAME_ATTRIBUTE_VALUE__VALUE);
-    createEReference(nameAttributeValueEClass, NAME_ATTRIBUTE_VALUE__PARAMETER_LIST);
-
-    booleanAttributeValueEClass = createEClass(BOOLEAN_ATTRIBUTE_VALUE);
-    createEAttribute(booleanAttributeValueEClass, BOOLEAN_ATTRIBUTE_VALUE__VALUE);
-    createEReference(booleanAttributeValueEClass, BOOLEAN_ATTRIBUTE_VALUE__PARAMETER_LIST);
-
-    numberAttributeValueEClass = createEClass(NUMBER_ATTRIBUTE_VALUE);
-    createEAttribute(numberAttributeValueEClass, NUMBER_ATTRIBUTE_VALUE__VALUE);
-
-    floatAttributeValueEClass = createEClass(FLOAT_ATTRIBUTE_VALUE);
-    createEAttribute(floatAttributeValueEClass, FLOAT_ATTRIBUTE_VALUE__VALUE);
-
-    stringAttributeValueEClass = createEClass(STRING_ATTRIBUTE_VALUE);
-    createEAttribute(stringAttributeValueEClass, STRING_ATTRIBUTE_VALUE__VALUE);
-
-    autoAttributeValueEClass = createEClass(AUTO_ATTRIBUTE_VALUE);
-    createEAttribute(autoAttributeValueEClass, AUTO_ATTRIBUTE_VALUE__VALUE);
-
-    osRuleEClass = createEClass(OS_RULE);
-    createEReference(osRuleEClass, OS_RULE__IMPLEMENTATIONS);
-    createEAttribute(osRuleEClass, OS_RULE__DESCRIPTION);
-
-    counterRuleEClass = createEClass(COUNTER_RULE);
-    createEReference(counterRuleEClass, COUNTER_RULE__IMPLEMENTATIONS);
-    createEAttribute(counterRuleEClass, COUNTER_RULE__DESCRIPTION);
-
-    // Create enums
-    impTaskParamEnumEEnum = createEEnum(IMP_TASK_PARAM_ENUM);
-    impCounterParamEnumEEnum = createEEnum(IMP_COUNTER_PARAM_ENUM);
-    applicationParamEnumEEnum = createEEnum(APPLICATION_PARAM_ENUM);
-    timingProtectionParamEnumEEnum = createEEnum(TIMING_PROTECTION_PARAM_ENUM);
-    isrParamEnumEEnum = createEEnum(ISR_PARAM_ENUM);
-    intTypeEnumEEnum = createEEnum(INT_TYPE_ENUM);
-    defaultEnumEEnum = createEEnum(DEFAULT_ENUM);
-    objectRefTypeEnumEEnum = createEEnum(OBJECT_REF_TYPE_ENUM);
-    comAttributeNameEEnum = createEEnum(COM_ATTRIBUTE_NAME);
-    taskTimingrLockAttributeEEnum = createEEnum(TASK_TIMINGR_LOCK_ATTRIBUTE);
-    taskTimingAttributeNameEEnum = createEEnum(TASK_TIMING_ATTRIBUTE_NAME);
-    taskAttributeNameEEnum = createEEnum(TASK_ATTRIBUTE_NAME);
-    resourceRangeEEnum = createEEnum(RESOURCE_RANGE);
-    activateTaskEEnum = createEEnum(ACTIVATE_TASK);
-    incrementCounterEEnum = createEEnum(INCREMENT_COUNTER);
-    seteventEEnum = createEEnum(SETEVENT);
-    alarmCallBackEEnum = createEEnum(ALARM_CALL_BACK);
-    absoluteEEnum = createEEnum(ABSOLUTE);
-    schduleSynEEnum = createEEnum(SCHDULE_SYN);
-    schduleExpiryAdustbleEEnum = createEEnum(SCHDULE_EXPIRY_ADUSTBLE);
-    iocReciverNoneEEnum = createEEnum(IOC_RECIVER_NONE);
-    enumIocSendRecEEnum = createEEnum(ENUM_IOC_SEND_REC);
-    enumIocRecEEnum = createEEnum(ENUM_IOC_REC);
-    iocDataTypeEEnum = createEEnum(IOC_DATA_TYPE);
-    iocSemanticsenumEEnum = createEEnum(IOC_SEMANTICSENUM);
-    iocSemanticsenummEEnum = createEEnum(IOC_SEMANTICSENUMM);
+    if (isLoaded) return;
+    isLoaded = true;
+
+    URL url = getClass().getResource(packageFilename);
+    if (url == null)
+    {
+      throw new RuntimeException("Missing serialized package: " + packageFilename);
+    }
+    URI uri = URI.createURI(url.toString());
+    Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
+    try
+    {
+      resource.load(null);
+    }
+    catch (IOException exception)
+    {
+      throw new WrappedException(exception);
+    }
+    initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
+    createResource(eNS_URI);
+  }
+
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private boolean isFixed = false;
+
+  /**
+   * Fixes up the loaded package, to make it appear as if it had been programmatically built.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void fixPackageContents()
+  {
+    if (isFixed) return;
+    isFixed = true;
+    fixEClassifiers();
   }
 
   /**
+   * Sets the instance class on the given classifier.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isInitialized = false;
-
-  /**
-   * Complete the initialization of the package and its meta-model.  This
-   * method is guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void initializePackageContents()
+  @Override
+  protected void fixInstanceClass(EClassifier eClassifier)
   {
-    if (isInitialized) return;
-    isInitialized = true;
-
-    // Initialize package
-    setName(eNAME);
-    setNsPrefix(eNS_PREFIX);
-    setNsURI(eNS_URI);
-
-    // Create type parameters
-
-    // Set bounds for type parameters
-
-    // Add supertypes to classes
-    applicationRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    isrRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    memoryProtectionRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    implAttrDefEClass.getESuperTypes().add(this.getImplementationDef());
-    implAttrIntDefEClass.getESuperTypes().add(this.getImplAttrDef());
-    implAttrFloatDefEClass.getESuperTypes().add(this.getImplAttrDef());
-    implAttrEnumDefEClass.getESuperTypes().add(this.getImplAttrDef());
-    implAttrStringDefEClass.getESuperTypes().add(this.getImplAttrDef());
-    implAttrBooleanDefEClass.getESuperTypes().add(this.getImplAttrDef());
-    implAttrIdentiFierEClass.getESuperTypes().add(this.getImplAttrDef());
-    implRefDefEClass.getESuperTypes().add(this.getImplementationDef());
-    comRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    taskRuleEClass.getESuperTypes().add(this.getImpTaskRule());
-    taskRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    resourceRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    alarmRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    scheduleTableRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    iocRuleEClass.getESuperTypes().add(this.getObjectDefinition());
-    nameAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
-    booleanAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
-    numberAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
-    floatAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
-    stringAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
-    autoAttributeValueEClass.getESuperTypes().add(this.getAttributeValue());
-    osRuleEClass.getESuperTypes().add(this.getImpOsRule());
-    counterRuleEClass.getESuperTypes().add(this.getImpCounterRule());
-
-    // Initialize classes and features; add operations and parameters
-    initEClass(oilFileEClass, OILFile.class, "OILFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOILFile_Version(), this.getOILVersion(), null, "version", null, 0, 1, OILFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOILFile_Include(), this.getInclude(), null, "include", null, 0, -1, OILFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOILFile_Implementation(), this.getImplementationDefinition(), null, "implementation", null, 0, 1, OILFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOILFile_Application(), this.getApplicationDefinition(), null, "application", null, 0, 1, OILFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(includeEClass, Include.class, "Include", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInclude_Name(), ecorePackage.getEString(), "name", null, 0, 1, Include.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(oilVersionEClass, OILVersion.class, "OILVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOILVersion_Value(), ecorePackage.getEString(), "value", null, 0, 1, OILVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOILVersion_Description(), ecorePackage.getEString(), "description", null, 0, 1, OILVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implementationDefinitionEClass, ImplementationDefinition.class, "ImplementationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImplementationDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ImplementationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplementationDefinition_ImplementationSpecs(), this.getImplementationSpec(), null, "implementationSpecs", null, 0, -1, ImplementationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplementationDefinition_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImplementationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implementationSpecEClass, ImplementationSpec.class, "ImplementationSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImplementationSpec_OsRule(), this.getImpOsRule(), null, "osRule", null, 0, -1, ImplementationSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplementationSpec_CounterRule(), this.getImpCounterRule(), null, "counterRule", null, 0, -1, ImplementationSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplementationSpec_IsrRule(), this.getIsrRule(), null, "isrRule", null, 0, -1, ImplementationSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplementationSpec_TaskRule(), this.getImpTaskRule(), null, "taskRule", null, 0, -1, ImplementationSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(impTaskRuleEClass, ImpTaskRule.class, "ImpTaskRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(impTaskParamEClass, ImpTaskParam.class, "ImpTaskParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImpTaskParam_Type(), this.getIntTypeEnum(), "type", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpTaskParam_Auto(), ecorePackage.getEBoolean(), "auto", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImpTaskParam_Range(), this.getRange(), null, "range", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpTaskParam_Param(), this.getImpTaskParamEnum(), "param", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpTaskParam_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpTaskParam_Value(), ecorePackage.getEInt(), "value", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpTaskParam_Default(), this.getDefaultEnum(), "default", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpTaskParam_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImpTaskParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(impOsRuleEClass, ImpOsRule.class, "ImpOsRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(impOsParamEClass, ImpOsParam.class, "ImpOsParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImpOsParam_Auto(), ecorePackage.getEBoolean(), "auto", null, 0, 1, ImpOsParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImpOsParam_Enumeration(), this.getEnumeration(), null, "enumeration", null, 0, 1, ImpOsParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpOsParam_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImpOsParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpOsParam_Value(), ecorePackage.getEString(), "value", null, 0, 1, ImpOsParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpOsParam_Default(), this.getDefaultEnum(), "default", null, 0, 1, ImpOsParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpOsParam_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImpOsParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(impCounterRuleEClass, ImpCounterRule.class, "ImpCounterRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(impCounterParamEClass, ImpCounterParam.class, "ImpCounterParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImpCounterParam_Type(), this.getIntTypeEnum(), "type", null, 0, 1, ImpCounterParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpCounterParam_Auto(), ecorePackage.getEBoolean(), "auto", null, 0, 1, ImpCounterParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImpCounterParam_Range(), this.getRange(), null, "range", null, 0, 1, ImpCounterParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImpCounterParam_Param(), this.getImpCounterParamEnum(), "param", null, 0, 1, ImpCounterParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImpCounterParam_Value(), this.getAttributeValue(), null, "value", null, 0, 1, ImpCounterParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(applicationRuleEClass, ApplicationRule.class, "ApplicationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getApplicationRule_AppSubOrParam(), ecorePackage.getEObject(), null, "appSubOrParam", null, 0, -1, ApplicationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(appSubContainerEClass, AppSubContainer.class, "AppSubContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAppSubContainer_HasRestartTaskRule(), this.getHasRestartTaskRule(), null, "hasRestartTaskRule", null, 0, 1, AppSubContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAppSubContainer_TrustedRule(), this.getTrustedRule(), null, "trustedRule", null, 0, 1, AppSubContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(applicationParamEClass, ApplicationParam.class, "ApplicationParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicationParam_Type(), this.getApplicationParamEnum(), "type", null, 0, 1, ApplicationParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getApplicationParam_Value(), this.getAttributeValue(), null, "value", null, 0, 1, ApplicationParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(hasRestartTaskRuleEClass, HasRestartTaskRule.class, "HasRestartTaskRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getHasRestartTaskRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, HasRestartTaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getHasRestartTaskRule_Value(), ecorePackage.getEString(), "value", null, 0, 1, HasRestartTaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHasRestartTaskRule_ParameterList(), this.getRestartTaskRule(), null, "parameterList", null, 0, -1, HasRestartTaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(restartTaskRuleEClass, RestartTaskRule.class, "RestartTaskRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRestartTaskRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, RestartTaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRestartTaskRule_Value(), this.getAttributeValue(), null, "value", null, 0, 1, RestartTaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(trustedRuleEClass, TrustedRule.class, "TrustedRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTrustedRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, TrustedRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTrustedRule_Value(), ecorePackage.getEString(), "value", null, 0, 1, TrustedRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTrustedRule_ParameterList(), this.getTrustedFucRule(), null, "parameterList", null, 0, -1, TrustedRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(trustedFucRuleEClass, TrustedFucRule.class, "TrustedFucRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTrustedFucRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, TrustedFucRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTrustedFucRule_Value(), this.getAttributeValue(), null, "value", null, 0, 1, TrustedFucRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(isrRuleEClass, IsrRule.class, "IsrRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIsrRule_IsrParam(), this.getIsrParam(), null, "isrParam", null, 0, -1, IsrRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIsrRule_IsrSubConainer(), this.getIsrSubContainer(), null, "isrSubConainer", null, 0, -1, IsrRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIsrRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, IsrRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(isrSubContainerEClass, IsrSubContainer.class, "IsrSubContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIsrSubContainer_TimingProtectionRule(), this.getTimingProtectionRule(), null, "timingProtectionRule", null, 0, 1, IsrSubContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(timingProtectionRuleEClass, TimingProtectionRule.class, "TimingProtectionRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTimingProtectionRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, TimingProtectionRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTimingProtectionRule_Value(), ecorePackage.getEString(), "value", null, 0, 1, TimingProtectionRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTimingProtectionRule_TimingProtectionParam(), this.getTimingProtectionParam(), null, "timingProtectionParam", null, 0, -1, TimingProtectionRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(timingProtectionParamEClass, TimingProtectionParam.class, "TimingProtectionParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTimingProtectionParam_Type(), this.getTimingProtectionParamEnum(), "type", null, 0, 1, TimingProtectionParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTimingProtectionParam_Value(), this.getAttributeValue(), null, "value", null, 0, 1, TimingProtectionParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(isrParamEClass, IsrParam.class, "IsrParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIsrParam_Type(), this.getIntTypeEnum(), "type", null, 0, 1, IsrParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIsrParam_Range(), this.getRange(), null, "range", null, 0, 1, IsrParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIsrParam_Param(), this.getIsrParamEnum(), "param", null, 0, 1, IsrParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIsrParam_Value(), this.getAttributeValue(), null, "value", null, 0, 1, IsrParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(memoryProtectionRuleEClass, MemoryProtectionRule.class, "MemoryProtectionRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMemoryProtectionRule_Value(), ecorePackage.getEString(), "value", null, 0, 1, MemoryProtectionRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implementationDefEClass, ImplementationDef.class, "ImplementationDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(implAttrDefEClass, ImplAttrDef.class, "ImplAttrDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImplAttrDef_Auto(), ecorePackage.getEBoolean(), "auto", null, 0, 1, ImplAttrDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implAttrIntDefEClass, ImplAttrIntDef.class, "ImplAttrIntDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImplAttrIntDef_Type(), this.getIntTypeEnum(), "type", null, 0, 1, ImplAttrIntDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplAttrIntDef_Range(), this.getRange(), null, "range", null, 0, 1, ImplAttrIntDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplAttrIntDef_Name(), this.getAttributeName(), null, "name", null, 0, 1, ImplAttrIntDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrIntDef_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImplAttrIntDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrIntDef_Value(), ecorePackage.getEInt(), "value", null, 0, 1, ImplAttrIntDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrIntDef_Default(), this.getDefaultEnum(), "default", null, 0, 1, ImplAttrIntDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrIntDef_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImplAttrIntDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implAttrFloatDefEClass, ImplAttrFloatDef.class, "ImplAttrFloatDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImplAttrFloatDef_Range(), this.getRange(), null, "range", null, 0, 1, ImplAttrFloatDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplAttrFloatDef_Name(), this.getAttributeName(), null, "name", null, 0, 1, ImplAttrFloatDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrFloatDef_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImplAttrFloatDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrFloatDef_Value(), ecorePackage.getEFloatObject(), "value", null, 0, 1, ImplAttrFloatDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrFloatDef_Default(), this.getDefaultEnum(), "default", null, 0, 1, ImplAttrFloatDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrFloatDef_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImplAttrFloatDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implAttrEnumDefEClass, ImplAttrEnumDef.class, "ImplAttrEnumDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImplAttrEnumDef_Enumeration(), this.getEnumeration(), null, "enumeration", null, 0, 1, ImplAttrEnumDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplAttrEnumDef_Name(), this.getAttributeName(), null, "name", null, 0, 1, ImplAttrEnumDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrEnumDef_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImplAttrEnumDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrEnumDef_Value(), ecorePackage.getEString(), "value", null, 0, 1, ImplAttrEnumDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrEnumDef_Default(), this.getDefaultEnum(), "default", null, 0, 1, ImplAttrEnumDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrEnumDef_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImplAttrEnumDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implAttrStringDefEClass, ImplAttrStringDef.class, "ImplAttrStringDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImplAttrStringDef_Name(), this.getAttributeName(), null, "name", null, 0, 1, ImplAttrStringDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrStringDef_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImplAttrStringDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrStringDef_Value(), ecorePackage.getEString(), "value", null, 0, 1, ImplAttrStringDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrStringDef_Default(), this.getDefaultEnum(), "default", null, 0, 1, ImplAttrStringDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrStringDef_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImplAttrStringDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implAttrBooleanDefEClass, ImplAttrBooleanDef.class, "ImplAttrBooleanDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImplAttrBooleanDef_TrueParameterList(), this.getImplementationDef(), null, "trueParameterList", null, 0, -1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrBooleanDef_TrueDescription(), ecorePackage.getEString(), "trueDescription", null, 0, 1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplAttrBooleanDef_FalseParameterList(), this.getImplementationDef(), null, "falseParameterList", null, 0, -1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrBooleanDef_FalseDescription(), ecorePackage.getEString(), "falseDescription", null, 0, 1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrBooleanDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrBooleanDef_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrBooleanDef_Value(), ecorePackage.getEString(), "value", null, 0, 1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrBooleanDef_Default(), this.getDefaultEnum(), "default", null, 0, 1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrBooleanDef_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImplAttrBooleanDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implAttrIdentiFierEClass, ImplAttrIdentiFier.class, "ImplAttrIdentiFier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImplAttrIdentiFier_Name(), this.getAttributeName(), null, "name", null, 0, 1, ImplAttrIdentiFier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplAttrIdentiFier_Value(), ecorePackage.getEString(), "value", null, 0, 1, ImplAttrIdentiFier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRange_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRange_Begin(), ecorePackage.getEInt(), "begin", null, 0, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRange_End(), ecorePackage.getEInt(), "end", null, 0, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRange_Numbers(), ecorePackage.getEInt(), "numbers", null, 0, -1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEnumeration_List(), this.getEnumerator(), null, "list", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(enumeratorEClass, Enumerator.class, "Enumerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEnumerator_Name(), ecorePackage.getEString(), "name", null, 0, 1, Enumerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEnumerator_ImplParameterList(), this.getImplementationDef(), null, "implParameterList", null, 0, -1, Enumerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEnumerator_Description(), ecorePackage.getEString(), "description", null, 0, 1, Enumerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(implRefDefEClass, ImplRefDef.class, "ImplRefDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImplRefDef_Type(), this.getObjectRefTypeEnum(), "type", null, 0, 1, ImplRefDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImplRefDef_Name(), this.getAttributeName(), null, "name", null, 0, 1, ImplRefDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplRefDef_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, ImplRefDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImplRefDef_Description(), ecorePackage.getEString(), "description", null, 0, 1, ImplRefDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(applicationDefinitionEClass, ApplicationDefinition.class, "ApplicationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicationDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getApplicationDefinition_ObjectDefinitionList(), this.getObjectDefinition(), null, "objectDefinitionList", null, 0, -1, ApplicationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getApplicationDefinition_Description(), ecorePackage.getEString(), "description", null, 0, 1, ApplicationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(objectDefinitionEClass, ObjectDefinition.class, "ObjectDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getObjectDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ObjectDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjectDefinition_LibraryList(), this.getLibrayattribute(), null, "LibraryList", null, 0, -1, ObjectDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(librayattributeEClass, Librayattribute.class, "Librayattribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLibrayattribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, Librayattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(comRuleEClass, ComRule.class, "ComRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComRule_ComList(), this.getComattribute(), null, "ComList", null, 0, -1, ComRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, ComRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(comattributeEClass, Comattribute.class, "Comattribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComattribute_Name(), this.getComAttributeName(), "name", null, 0, 1, Comattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComattribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, Comattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComattribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, Comattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(taskRuleEClass, TaskRule.class, "TaskRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTaskRule_Implementations(), this.getImpTaskParam(), null, "implementations", null, 0, -1, TaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, TaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTaskRule_TaskList(), this.getTaskattribute(), null, "TaskList", null, 0, -1, TaskRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(taskattributeEClass, Taskattribute.class, "Taskattribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTaskattribute_Name(), this.getTaskAttributeName(), "name", null, 0, 1, Taskattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTaskattribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, Taskattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskattribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, Taskattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTaskattribute_ParameterList(), ecorePackage.getEObject(), null, "parameterList", null, 0, -1, Taskattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(taskTimingAttributeEClass, TaskTimingAttribute.class, "TaskTimingAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTaskTimingAttribute_Name(), this.getTaskTimingAttributeName(), "name", null, 0, 1, TaskTimingAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTaskTimingAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, TaskTimingAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskTimingAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, TaskTimingAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskTimingAttribute_ParameterList(), this.getTaskTimingrLockAttribute(), "parameterList", null, 0, -1, TaskTimingAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(taskAutostartAttributeEClass, TaskAutostartAttribute.class, "TaskAutostartAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTaskAutostartAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, TaskAutostartAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskAutostartAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, TaskAutostartAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(resourceRuleEClass, ResourceRule.class, "ResourceRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getResourceRule_ResourceList(), this.getResourceattribute(), null, "ResourceList", null, 0, -1, ResourceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getResourceRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, ResourceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(resourceattributeEClass, Resourceattribute.class, "Resourceattribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResourceattribute_ResourceRange(), this.getResourceRange(), "resourceRange", null, 0, 1, Resourceattribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(alarmRuleEClass, AlarmRule.class, "AlarmRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAlarmRule_AlarmList(), this.getAlarmAttribute(), null, "AlarmList", null, 0, -1, AlarmRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(alarmAttributeEClass, AlarmAttribute.class, "AlarmAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlarmAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, AlarmAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAlarmAttribute_ParameterList(), ecorePackage.getEObject(), null, "parameterList", null, 0, -1, AlarmAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(alarmActionAttributeEClass, AlarmActionAttribute.class, "AlarmActionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlarmActionAttribute_Activatetask(), this.getActivateTask(), "activatetask", null, 0, 1, AlarmActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAlarmActionAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, AlarmActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarmActionAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, AlarmActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarmActionAttribute_Incrementcounter(), this.getIncrementCounter(), "incrementcounter", null, 0, 1, AlarmActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarmActionAttribute_Setevent(), this.getSetevent(), "setevent", null, 0, 1, AlarmActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarmActionAttribute_Alarmcallback(), this.getAlarmCallBack(), "alarmcallback", null, 0, 1, AlarmActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(alarmAutostartAttributeEClass, AlarmAutostartAttribute.class, "AlarmAutostartAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAlarmAutostartAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, AlarmAutostartAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAlarmAutostartAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, AlarmAutostartAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(scheduleTableRuleEClass, ScheduleTableRule.class, "ScheduleTableRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getScheduleTableRule_Schedulelist(), this.getScheduleTableAttribute(), null, "schedulelist", null, 0, -1, ScheduleTableRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(scheduleTableAttributeEClass, ScheduleTableAttribute.class, "ScheduleTableAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getScheduleTableAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScheduleTableAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScheduleTableAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, ScheduleTableAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScheduleTableAttribute_ParameterList(), ecorePackage.getEObject(), null, "parameterList", null, 0, -1, ScheduleTableAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(scheduleAutoStartAttributeEClass, ScheduleAutoStartAttribute.class, "ScheduleAutoStartAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getScheduleAutoStartAttribute_Absolute(), this.getAbsolute(), "absolute", null, 0, 1, ScheduleAutoStartAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScheduleAutoStartAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, ScheduleAutoStartAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScheduleAutoStartAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, ScheduleAutoStartAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(schduleSynAttributeEClass, SchduleSynAttribute.class, "SchduleSynAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSchduleSynAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, SchduleSynAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSchduleSynAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, SchduleSynAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSchduleSynAttribute_Schdulesyn(), this.getSchduleSyn(), "schdulesyn", null, 0, 1, SchduleSynAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(expiryAttributeEClass, ExpiryAttribute.class, "ExpiryAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpiryAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, ExpiryAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpiryAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, ExpiryAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpiryAttribute_Schdulexpiry(), this.getSchduleExpiryAdustble(), "schdulexpiry", null, 0, 1, ExpiryAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpiryAttribute_ParameterList(), this.getSchduleActionAttribute(), null, "parameterList", null, 0, -1, ExpiryAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(schduleActionAttributeEClass, SchduleActionAttribute.class, "SchduleActionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSchduleActionAttribute_Activatetask(), this.getActivateTask(), "activatetask", null, 0, 1, SchduleActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSchduleActionAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, SchduleActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSchduleActionAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, SchduleActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSchduleActionAttribute_Setevent(), this.getSetevent(), "setevent", null, 0, 1, SchduleActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(iocRuleEClass, IocRule.class, "IocRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIocRule_Ioclist(), this.getIocAttribute(), null, "ioclist", null, 0, -1, IocRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(iocAttributeEClass, IocAttribute.class, "IocAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIocAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, IocAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIocAttribute_DatatypeList(), this.getIocDataTypeAttr(), null, "datatypeList", null, 0, -1, IocAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIocAttribute_Iocsemantics(), this.getIocSemantics(), null, "iocsemantics", null, 0, 1, IocAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIocAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, IocAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIocAttribute_ReceiverList(), this.getIocReceiver(), null, "receiverList", null, 0, -1, IocAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIocAttribute_SenderList(), this.getIocSender(), null, "senderList", null, 0, -1, IocAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(iocSenderEClass, IocSender.class, "IocSender", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIocSender_Enumiocsenderlist(), this.getEnumIocSendRec(), "enumiocsenderlist", null, 0, -1, IocSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIocSender_Value(), this.getAttributeValue(), null, "value", null, 0, 1, IocSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIocSender_Description(), ecorePackage.getEString(), "description", null, 0, 1, IocSender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(iocReceiverEClass, IocReceiver.class, "IocReceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIocReceiver_Enumioclist(), this.getEnumIocRec(), "enumioclist", null, 0, -1, IocReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIocReceiver_Value(), this.getAttributeValue(), null, "value", null, 0, 1, IocReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIocReceiver_Recnone(), this.getIocReciverNone(), "recnone", null, 0, 1, IocReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIocReceiver_Description(), ecorePackage.getEString(), "description", null, 0, 1, IocReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(iocDataTypeAttrEClass, IocDataTypeAttr.class, "IocDataTypeAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIocDataTypeAttr_Iocdatatype(), this.getIocDataType(), "iocdatatype", null, 0, 1, IocDataTypeAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(iocSemanticsEClass, IocSemantics.class, "IocSemantics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIocSemantics_IocSema(), this.getIocSemanticsenum(), "iocSema", null, 0, 1, IocSemantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIocSemantics_Value(), this.getAttributeValue(), null, "value", null, 0, 1, IocSemantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIocSemantics_Description(), ecorePackage.getEString(), "description", null, 0, 1, IocSemantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIocSemantics_IocSeman(), this.getIocSemanticsenumm(), "iocSeman", null, 0, 1, IocSemantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttribute_Name(), this.getAttributeName(), null, "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_Value(), this.getAttributeValue(), null, "value", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_Description(), ecorePackage.getEString(), "description", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(attributeNameEClass, AttributeName.class, "AttributeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeName_Value(), ecorePackage.getEString(), "value", null, 0, 1, AttributeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(nameAttributeValueEClass, NameAttributeValue.class, "NameAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNameAttributeValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, NameAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNameAttributeValue_ParameterList(), this.getAttribute(), null, "parameterList", null, 0, -1, NameAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(booleanAttributeValueEClass, BooleanAttributeValue.class, "BooleanAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBooleanAttributeValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, BooleanAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBooleanAttributeValue_ParameterList(), this.getAttribute(), null, "parameterList", null, 0, -1, BooleanAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(numberAttributeValueEClass, NumberAttributeValue.class, "NumberAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNumberAttributeValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, NumberAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(floatAttributeValueEClass, FloatAttributeValue.class, "FloatAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFloatAttributeValue_Value(), ecorePackage.getEFloatObject(), "value", null, 0, 1, FloatAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stringAttributeValueEClass, StringAttributeValue.class, "StringAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringAttributeValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(autoAttributeValueEClass, AutoAttributeValue.class, "AutoAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAutoAttributeValue_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, AutoAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(osRuleEClass, OsRule.class, "OsRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOsRule_Implementations(), this.getImpOsParam(), null, "implementations", null, 0, -1, OsRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOsRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, OsRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(counterRuleEClass, CounterRule.class, "CounterRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCounterRule_Implementations(), this.getImpCounterParam(), null, "implementations", null, 0, -1, CounterRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCounterRule_Description(), ecorePackage.getEString(), "description", null, 0, 1, CounterRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(impTaskParamEnumEEnum, ImpTaskParamEnum.class, "ImpTaskParamEnum");
-    addEEnumLiteral(impTaskParamEnumEEnum, ImpTaskParamEnum.STACKSIZE);
-    addEEnumLiteral(impTaskParamEnumEEnum, ImpTaskParamEnum.PRIORITY);
-
-    initEEnum(impCounterParamEnumEEnum, ImpCounterParamEnum.class, "ImpCounterParamEnum");
-    addEEnumLiteral(impCounterParamEnumEEnum, ImpCounterParamEnum.SOURCE);
-    addEEnumLiteral(impCounterParamEnumEEnum, ImpCounterParamEnum.FREQUENCY);
-
-    initEEnum(applicationParamEnumEEnum, ApplicationParamEnum.class, "ApplicationParamEnum");
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.CORE);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.ALARM);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.COUNTER);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.RESOURCE);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.TASK);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.ISR);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.MESSAGE);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.SCHEDULETABLE);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.IOC);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.ERRORHOOK);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.SHUTDOWNHOOK);
-    addEEnumLiteral(applicationParamEnumEEnum, ApplicationParamEnum.STARTUPHOOK);
-
-    initEEnum(timingProtectionParamEnumEEnum, TimingProtectionParamEnum.class, "TimingProtectionParamEnum");
-    addEEnumLiteral(timingProtectionParamEnumEEnum, TimingProtectionParamEnum.MAXALLINTERRUPTLOCKTIME);
-    addEEnumLiteral(timingProtectionParamEnumEEnum, TimingProtectionParamEnum.MAXOSINTERRUPTLOCKTIME);
-    addEEnumLiteral(timingProtectionParamEnumEEnum, TimingProtectionParamEnum.EXECUTIONTIME);
-    addEEnumLiteral(timingProtectionParamEnumEEnum, TimingProtectionParamEnum.TIMEFRAME);
-
-    initEEnum(isrParamEnumEEnum, IsrParamEnum.class, "IsrParamEnum");
-    addEEnumLiteral(isrParamEnumEEnum, IsrParamEnum.CATEGORY);
-    addEEnumLiteral(isrParamEnumEEnum, IsrParamEnum.RESOURCE);
-    addEEnumLiteral(isrParamEnumEEnum, IsrParamEnum.MESSAGE);
-    addEEnumLiteral(isrParamEnumEEnum, IsrParamEnum.PRIORITY);
-    addEEnumLiteral(isrParamEnumEEnum, IsrParamEnum.ENTRY);
-    addEEnumLiteral(isrParamEnumEEnum, IsrParamEnum.STACKSIZE);
-    addEEnumLiteral(isrParamEnumEEnum, IsrParamEnum.SOURCE);
-
-    initEEnum(intTypeEnumEEnum, IntTypeEnum.class, "IntTypeEnum");
-    addEEnumLiteral(intTypeEnumEEnum, IntTypeEnum.UINT32);
-    addEEnumLiteral(intTypeEnumEEnum, IntTypeEnum.INT32);
-    addEEnumLiteral(intTypeEnumEEnum, IntTypeEnum.UINT64);
-    addEEnumLiteral(intTypeEnumEEnum, IntTypeEnum.INT64);
-
-    initEEnum(defaultEnumEEnum, DefaultEnum.class, "DefaultEnum");
-    addEEnumLiteral(defaultEnumEEnum, DefaultEnum.NO_DEFAULT);
-    addEEnumLiteral(defaultEnumEEnum, DefaultEnum.AUTO);
-
-    initEEnum(objectRefTypeEnumEEnum, ObjectRefTypeEnum.class, "ObjectRefTypeEnum");
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.OS_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.TASK_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.COUNTER_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.ALARM_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.RESOURCE_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.EVENT_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.ISR_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.MESSAGE_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.COM_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.NM_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.APPMODE_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.IPDU_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.NETWORKMESSAGE_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.APPLICATION_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.MEMOTY_PROTECTION_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.SPINLOCK_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.SCHEDULETABLE_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.IOC_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.APICONFIG_TYPE);
-    addEEnumLiteral(objectRefTypeEnumEEnum, ObjectRefTypeEnum.LIBRARY_TYPE);
-
-    initEEnum(comAttributeNameEEnum, ComAttributeName.class, "ComAttributeName");
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.COMSTATUS);
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.COMERRORHOOK);
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.COMUSEGETSERVICEID);
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.COMUSEPARAMETERACCESS);
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.COMSTARTCOMEXTENSION);
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.COMTIMEBASE);
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.COMAPPMODE);
-    addEEnumLiteral(comAttributeNameEEnum, ComAttributeName.USE);
-
-    initEEnum(taskTimingrLockAttributeEEnum, TaskTimingrLockAttribute.class, "TaskTimingrLockAttribute");
-    addEEnumLiteral(taskTimingrLockAttributeEEnum, TaskTimingrLockAttribute.LOCKTIME);
-    addEEnumLiteral(taskTimingrLockAttributeEEnum, TaskTimingrLockAttribute.RESOURCENAME);
-
-    initEEnum(taskTimingAttributeNameEEnum, TaskTimingAttributeName.class, "TaskTimingAttributeName");
-    addEEnumLiteral(taskTimingAttributeNameEEnum, TaskTimingAttributeName.MAXALLINTERRUPTLOCKTIME);
-    addEEnumLiteral(taskTimingAttributeNameEEnum, TaskTimingAttributeName.EXECUTIONBUDGET);
-    addEEnumLiteral(taskTimingAttributeNameEEnum, TaskTimingAttributeName.MAXOSINTERRUPTLOCKTIME);
-    addEEnumLiteral(taskTimingAttributeNameEEnum, TaskTimingAttributeName.EXECUTIONTIME);
-    addEEnumLiteral(taskTimingAttributeNameEEnum, TaskTimingAttributeName.TIMEFRAME);
-
-    initEEnum(taskAttributeNameEEnum, TaskAttributeName.class, "TaskAttributeName");
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.ACTIVATION);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.NAME);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.PROCESSKIND);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.NONPREEMPTABLE);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.PRIORITY);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.SCHEDULE);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.EVENT);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.RESOURCE);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.USEINTERNALRESOURCE);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.ACCESSING_APPLICATION);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.INTERNALRESOURCE);
-    addEEnumLiteral(taskAttributeNameEEnum, TaskAttributeName.MESSAGE);
-
-    initEEnum(resourceRangeEEnum, ResourceRange.class, "ResourceRange");
-    addEEnumLiteral(resourceRangeEEnum, ResourceRange.STANDARD);
-    addEEnumLiteral(resourceRangeEEnum, ResourceRange.INTERNAL);
-    addEEnumLiteral(resourceRangeEEnum, ResourceRange.LINKED);
-
-    initEEnum(activateTaskEEnum, ActivateTask.class, "ActivateTask");
-    addEEnumLiteral(activateTaskEEnum, ActivateTask.TASK);
-
-    initEEnum(incrementCounterEEnum, IncrementCounter.class, "IncrementCounter");
-    addEEnumLiteral(incrementCounterEEnum, IncrementCounter.COUNTER);
-
-    initEEnum(seteventEEnum, Setevent.class, "Setevent");
-    addEEnumLiteral(seteventEEnum, Setevent.TASK);
-    addEEnumLiteral(seteventEEnum, Setevent.EVENT);
-
-    initEEnum(alarmCallBackEEnum, AlarmCallBack.class, "AlarmCallBack");
-    addEEnumLiteral(alarmCallBackEEnum, AlarmCallBack.ALARMCALLBACK);
-
-    initEEnum(absoluteEEnum, Absolute.class, "Absolute");
-    addEEnumLiteral(absoluteEEnum, Absolute.START);
-    addEEnumLiteral(absoluteEEnum, Absolute.APPMODE);
-
-    initEEnum(schduleSynEEnum, SchduleSyn.class, "SchduleSyn");
-    addEEnumLiteral(schduleSynEEnum, SchduleSyn.EXPLICIT);
-    addEEnumLiteral(schduleSynEEnum, SchduleSyn.IMPLICIT);
-
-    initEEnum(schduleExpiryAdustbleEEnum, SchduleExpiryAdustble.class, "SchduleExpiryAdustble");
-    addEEnumLiteral(schduleExpiryAdustbleEEnum, SchduleExpiryAdustble.MAX_RETARD);
-    addEEnumLiteral(schduleExpiryAdustbleEEnum, SchduleExpiryAdustble.MAX_ADVANCE);
-
-    initEEnum(iocReciverNoneEEnum, IocReciverNone.class, "IocReciverNone");
-    addEEnumLiteral(iocReciverNoneEEnum, IocReciverNone.NONE);
-
-    initEEnum(enumIocSendRecEEnum, EnumIocSendRec.class, "EnumIocSendRec");
-    addEEnumLiteral(enumIocSendRecEEnum, EnumIocSendRec.SENDER_ID);
-    addEEnumLiteral(enumIocSendRecEEnum, EnumIocSendRec.SND_OSAPPLICATION);
-
-    initEEnum(enumIocRecEEnum, EnumIocRec.class, "EnumIocRec");
-    addEEnumLiteral(enumIocRecEEnum, EnumIocRec.REV_OSAPPLICATION);
-    addEEnumLiteral(enumIocRecEEnum, EnumIocRec.RECEIVER_PULL_CB);
-    addEEnumLiteral(enumIocRecEEnum, EnumIocRec.ACTION);
-
-    initEEnum(iocDataTypeEEnum, IocDataType.class, "IocDataType");
-    addEEnumLiteral(iocDataTypeEEnum, IocDataType.DATA);
-    addEEnumLiteral(iocDataTypeEEnum, IocDataType.REFERNCE);
-
-    initEEnum(iocSemanticsenumEEnum, IocSemanticsenum.class, "IocSemanticsenum");
-    addEEnumLiteral(iocSemanticsenumEEnum, IocSemanticsenum.BUFFER_LENGTH);
-
-    initEEnum(iocSemanticsenummEEnum, IocSemanticsenumm.class, "IocSemanticsenumm");
-    addEEnumLiteral(iocSemanticsenummEEnum, IocSemanticsenumm.INIT_VALUE_SYMBOL);
-
-    // Create resource
-    createResource(eNS_URI);
+    if (eClassifier.getInstanceClassName() == null)
+    {
+      eClassifier.setInstanceClassName("org.xtext.example.oil.oil." + eClassifier.getName());
+      setGeneratedClassName(eClassifier);
+    }
   }
 
 } //OilPackageImpl

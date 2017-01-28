@@ -122,7 +122,7 @@ public class ImplRefDefImpl extends ImplementationDefImpl implements ImplRefDef
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_REF_DEF;
+    return OilPackage.eINSTANCE.getImplRefDef();
   }
 
   /**

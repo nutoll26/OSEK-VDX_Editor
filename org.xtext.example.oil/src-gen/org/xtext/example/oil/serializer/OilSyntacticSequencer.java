@@ -50,6 +50,8 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_IocSender_EqualsSignKeyword_1_q;
 	protected AbstractElementAlias match_MemoryProtectionRule_SemicolonKeyword_5_q;
 	protected AbstractElementAlias match_MemoryProtectionRule___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_1__q;
+	protected AbstractElementAlias match_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__;
+	protected AbstractElementAlias match_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0;
 	protected AbstractElementAlias match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
 	protected AbstractElementAlias match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q;
 	protected AbstractElementAlias match_SchduleActionAttribute_EqualsSignKeyword_0_3_q;
@@ -100,6 +102,8 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_IocSender_EqualsSignKeyword_1_q = new TokenAlias(false, true, grammarAccess.getIocSenderAccess().getEqualsSignKeyword_1());
 		match_MemoryProtectionRule_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getMemoryProtectionRuleAccess().getSemicolonKeyword_5());
 		match_MemoryProtectionRule___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMemoryProtectionRuleAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getMemoryProtectionRuleAccess().getRightCurlyBracketKeyword_4_1()));
+		match_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getRECEIVE_UNQUEUED_INTERNALKeyword_1_7_0()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_7_1()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_7_3()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_7_4())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getSEND_ZERO_INTERNALKeyword_1_3_0()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_3_1())));
+		match_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getMessageattributeAccess().getNOTIFICATIONERRORKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getMessageattributeAccess().getNOTIFICATIONKeyword_1_0_0()));
 		match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getRightCurlyBracketKeyword_1_2()));
 		match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getLeftCurlyBracketKeyword_0_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getRightCurlyBracketKeyword_0_2_2()));
 		match_SchduleActionAttribute_EqualsSignKeyword_0_3_q = new TokenAlias(false, true, grammarAccess.getSchduleActionAttributeAccess().getEqualsSignKeyword_0_3());
@@ -199,6 +203,10 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_MemoryProtectionRule_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_MemoryProtectionRule___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_1__q.equals(syntax))
 				emit_MemoryProtectionRule___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__.equals(syntax))
+				emit_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0.equals(syntax))
+				emit_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
 				emit_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q.equals(syntax))
@@ -575,6 +583,28 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     value='TRUE' (ambiguity) ';'? (rule end)
 	 */
 	protected void emit_MemoryProtectionRule___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('SEND_ZERO_INTERNAL' ';') | ('RECEIVE_UNQUEUED_INTERNAL' '{' '}' ';')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'NOTIFICATION' | 'NOTIFICATIONERROR'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '=' MessageList3=Messageattribute3
+	 */
+	protected void emit_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

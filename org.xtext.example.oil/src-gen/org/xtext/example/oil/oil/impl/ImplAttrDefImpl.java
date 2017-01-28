@@ -65,7 +65,7 @@ public class ImplAttrDefImpl extends ImplementationDefImpl implements ImplAttrDe
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_ATTR_DEF;
+    return OilPackage.eINSTANCE.getImplAttrDef();
   }
 
   /**

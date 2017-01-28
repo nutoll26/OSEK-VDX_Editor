@@ -356,6 +356,212 @@ public class OilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case OilPackage.EVENT_RULE:
+      {
+        EventRule eventRule = (EventRule)theEObject;
+        T result = caseEventRule(eventRule);
+        if (result == null) result = caseObjectDefinition(eventRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.APPMODE_RULE:
+      {
+        AppmodeRule appmodeRule = (AppmodeRule)theEObject;
+        T result = caseAppmodeRule(appmodeRule);
+        if (result == null) result = caseObjectDefinition(appmodeRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RULE:
+      {
+        MessageRule messageRule = (MessageRule)theEObject;
+        T result = caseMessageRule(messageRule);
+        if (result == null) result = caseObjectDefinition(messageRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGEATTRIBUTE:
+      {
+        Messageattribute messageattribute = (Messageattribute)theEObject;
+        T result = caseMessageattribute(messageattribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGEATTRIBUTE3:
+      {
+        Messageattribute3 messageattribute3 = (Messageattribute3)theEObject;
+        T result = caseMessageattribute3(messageattribute3);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_SETEVENT:
+      {
+        MessageSETEVENT messageSETEVENT = (MessageSETEVENT)theEObject;
+        T result = caseMessageSETEVENT(messageSETEVENT);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_COMCALLBACK:
+      {
+        MessageCOMCALLBACK messageCOMCALLBACK = (MessageCOMCALLBACK)theEObject;
+        T result = caseMessageCOMCALLBACK(messageCOMCALLBACK);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGEATTRIBUTE2:
+      {
+        Messageattribute2 messageattribute2 = (Messageattribute2)theEObject;
+        T result = caseMessageattribute2(messageattribute2);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_SEND_STATIC_EXTERNAL:
+      {
+        Message_SEND_STATIC_EXTERNAL message_SEND_STATIC_EXTERNAL = (Message_SEND_STATIC_EXTERNAL)theEObject;
+        T result = caseMessage_SEND_STATIC_EXTERNAL(message_SEND_STATIC_EXTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_SEND_DYNAMIC_EXTERNAL:
+      {
+        Message_SEND_DYNAMIC_EXTERNAL message_SEND_DYNAMIC_EXTERNAL = (Message_SEND_DYNAMIC_EXTERNAL)theEObject;
+        T result = caseMessage_SEND_DYNAMIC_EXTERNAL(message_SEND_DYNAMIC_EXTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_SEND_ZERO_EXTERNAL:
+      {
+        Message_SEND_ZERO_EXTERNAL message_SEND_ZERO_EXTERNAL = (Message_SEND_ZERO_EXTERNAL)theEObject;
+        T result = caseMessage_SEND_ZERO_EXTERNAL(message_SEND_ZERO_EXTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_ZERO_INTERNAL:
+      {
+        Message_RECEIVE_ZERO_INTERNAL message_RECEIVE_ZERO_INTERNAL = (Message_RECEIVE_ZERO_INTERNAL)theEObject;
+        T result = caseMessage_RECEIVE_ZERO_INTERNAL(message_RECEIVE_ZERO_INTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_ZERO_EXTERNAL:
+      {
+        Message_RECEIVE_ZERO_EXTERNAL message_RECEIVE_ZERO_EXTERNAL = (Message_RECEIVE_ZERO_EXTERNAL)theEObject;
+        T result = caseMessage_RECEIVE_ZERO_EXTERNAL(message_RECEIVE_ZERO_EXTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_UNQUEUED_INTERNAL:
+      {
+        Message_RECEIVE_UNQUEUED_INTERNAL message_RECEIVE_UNQUEUED_INTERNAL = (Message_RECEIVE_UNQUEUED_INTERNAL)theEObject;
+        T result = caseMessage_RECEIVE_UNQUEUED_INTERNAL(message_RECEIVE_UNQUEUED_INTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_QUEUED_INTERNAL:
+      {
+        Message_RECEIVE_QUEUED_INTERNAL message_RECEIVE_QUEUED_INTERNAL = (Message_RECEIVE_QUEUED_INTERNAL)theEObject;
+        T result = caseMessage_RECEIVE_QUEUED_INTERNAL(message_RECEIVE_QUEUED_INTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_UNQUEUED_EXTERNAL:
+      {
+        Message_RECEIVE_UNQUEUED_EXTERNAL message_RECEIVE_UNQUEUED_EXTERNAL = (Message_RECEIVE_UNQUEUED_EXTERNAL)theEObject;
+        T result = caseMessage_RECEIVE_UNQUEUED_EXTERNAL(message_RECEIVE_UNQUEUED_EXTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_QUEUED_EXTERNAL:
+      {
+        Message_RECEIVE_QUEUED_EXTERNAL message_RECEIVE_QUEUED_EXTERNAL = (Message_RECEIVE_QUEUED_EXTERNAL)theEObject;
+        T result = caseMessage_RECEIVE_QUEUED_EXTERNAL(message_RECEIVE_QUEUED_EXTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_DYNAMIC_EXTERNAL:
+      {
+        Message_RECEIVE_DYNAMIC_EXTERNAL message_RECEIVE_DYNAMIC_EXTERNAL = (Message_RECEIVE_DYNAMIC_EXTERNAL)theEObject;
+        T result = caseMessage_RECEIVE_DYNAMIC_EXTERNAL(message_RECEIVE_DYNAMIC_EXTERNAL);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_RECEIVE_ZERO_SENDERS:
+      {
+        Message_RECEIVE_ZERO_SENDERS message_RECEIVE_ZERO_SENDERS = (Message_RECEIVE_ZERO_SENDERS)theEObject;
+        T result = caseMessage_RECEIVE_ZERO_SENDERS(message_RECEIVE_ZERO_SENDERS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_CDATATYPE:
+      {
+        MessageCDATATYPE messageCDATATYPE = (MessageCDATATYPE)theEObject;
+        T result = caseMessageCDATATYPE(messageCDATATYPE);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_TRANSFERPROPERTY:
+      {
+        MessageTRANSFERPROPERTY messageTRANSFERPROPERTY = (MessageTRANSFERPROPERTY)theEObject;
+        T result = caseMessageTRANSFERPROPERTY(messageTRANSFERPROPERTY);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_NETWORKORDERCALLOUT:
+      {
+        MessageNETWORKORDERCALLOUT messageNETWORKORDERCALLOUT = (MessageNETWORKORDERCALLOUT)theEObject;
+        T result = caseMessageNETWORKORDERCALLOUT(messageNETWORKORDERCALLOUT);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_CPUORDERCALLOUT:
+      {
+        MessageCPUORDERCALLOUT messageCPUORDERCALLOUT = (MessageCPUORDERCALLOUT)theEObject;
+        T result = caseMessageCPUORDERCALLOUT(messageCPUORDERCALLOUT);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_INITIALVALUE:
+      {
+        MessageINITIALVALUE messageINITIALVALUE = (MessageINITIALVALUE)theEObject;
+        T result = caseMessageINITIALVALUE(messageINITIALVALUE);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_NETWORKMESSAGE:
+      {
+        MessageNETWORKMESSAGE messageNETWORKMESSAGE = (MessageNETWORKMESSAGE)theEObject;
+        T result = caseMessageNETWORKMESSAGE(messageNETWORKMESSAGE);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_SENDINGMESSAGE:
+      {
+        MessageSENDINGMESSAGE messageSENDINGMESSAGE = (MessageSENDINGMESSAGE)theEObject;
+        T result = caseMessageSENDINGMESSAGE(messageSENDINGMESSAGE);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_QUEUESIZE:
+      {
+        MessageQUEUESIZE messageQUEUESIZE = (MessageQUEUESIZE)theEObject;
+        T result = caseMessageQUEUESIZE(messageQUEUESIZE);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGEFILTER:
+      {
+        Messagefilter messagefilter = (Messagefilter)theEObject;
+        T result = caseMessagefilter(messagefilter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MESSAGE_LINK:
+      {
+        MessageLINK messageLINK = (MessageLINK)theEObject;
+        T result = caseMessageLINK(messageLINK);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case OilPackage.LIBRAYATTRIBUTE:
       {
         Librayattribute librayattribute = (Librayattribute)theEObject;
@@ -1231,6 +1437,470 @@ public class OilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseObjectDefinition(ObjectDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Event Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Event Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEventRule(EventRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Appmode Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Appmode Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAppmodeRule(AppmodeRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageRule(MessageRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Messageattribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Messageattribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageattribute(Messageattribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Messageattribute3</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Messageattribute3</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageattribute3(Messageattribute3 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message SETEVENT</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message SETEVENT</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageSETEVENT(MessageSETEVENT object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message COMCALLBACK</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message COMCALLBACK</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageCOMCALLBACK(MessageCOMCALLBACK object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Messageattribute2</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Messageattribute2</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageattribute2(Messageattribute2 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message SEND STATIC EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message SEND STATIC EXTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_SEND_STATIC_EXTERNAL(Message_SEND_STATIC_EXTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message SEND DYNAMIC EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message SEND DYNAMIC EXTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_SEND_DYNAMIC_EXTERNAL(Message_SEND_DYNAMIC_EXTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message SEND ZERO EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message SEND ZERO EXTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_SEND_ZERO_EXTERNAL(Message_SEND_ZERO_EXTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE ZERO INTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE ZERO INTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_ZERO_INTERNAL(Message_RECEIVE_ZERO_INTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE ZERO EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE ZERO EXTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_ZERO_EXTERNAL(Message_RECEIVE_ZERO_EXTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE UNQUEUED INTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE UNQUEUED INTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_UNQUEUED_INTERNAL(Message_RECEIVE_UNQUEUED_INTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE QUEUED INTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE QUEUED INTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_QUEUED_INTERNAL(Message_RECEIVE_QUEUED_INTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE UNQUEUED EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE UNQUEUED EXTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_UNQUEUED_EXTERNAL(Message_RECEIVE_UNQUEUED_EXTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE QUEUED EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE QUEUED EXTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_QUEUED_EXTERNAL(Message_RECEIVE_QUEUED_EXTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE DYNAMIC EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE DYNAMIC EXTERNAL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_DYNAMIC_EXTERNAL(Message_RECEIVE_DYNAMIC_EXTERNAL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message RECEIVE ZERO SENDERS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message RECEIVE ZERO SENDERS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessage_RECEIVE_ZERO_SENDERS(Message_RECEIVE_ZERO_SENDERS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message CDATATYPE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message CDATATYPE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageCDATATYPE(MessageCDATATYPE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message TRANSFERPROPERTY</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message TRANSFERPROPERTY</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageTRANSFERPROPERTY(MessageTRANSFERPROPERTY object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message NETWORKORDERCALLOUT</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message NETWORKORDERCALLOUT</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageNETWORKORDERCALLOUT(MessageNETWORKORDERCALLOUT object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message CPUORDERCALLOUT</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message CPUORDERCALLOUT</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageCPUORDERCALLOUT(MessageCPUORDERCALLOUT object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message INITIALVALUE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message INITIALVALUE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageINITIALVALUE(MessageINITIALVALUE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message NETWORKMESSAGE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message NETWORKMESSAGE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageNETWORKMESSAGE(MessageNETWORKMESSAGE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message SENDINGMESSAGE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message SENDINGMESSAGE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageSENDINGMESSAGE(MessageSENDINGMESSAGE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message QUEUESIZE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message QUEUESIZE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageQUEUESIZE(MessageQUEUESIZE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Messagefilter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Messagefilter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessagefilter(Messagefilter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Message LINK</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Message LINK</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMessageLINK(MessageLINK object)
   {
     return null;
   }

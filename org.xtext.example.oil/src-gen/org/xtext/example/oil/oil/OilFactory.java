@@ -366,6 +366,267 @@ public interface OilFactory extends EFactory
   ObjectDefinition createObjectDefinition();
 
   /**
+   * Returns a new object of class '<em>Event Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event Rule</em>'.
+   * @generated
+   */
+  EventRule createEventRule();
+
+  /**
+   * Returns a new object of class '<em>Appmode Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Appmode Rule</em>'.
+   * @generated
+   */
+  AppmodeRule createAppmodeRule();
+
+  /**
+   * Returns a new object of class '<em>Message Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message Rule</em>'.
+   * @generated
+   */
+  MessageRule createMessageRule();
+
+  /**
+   * Returns a new object of class '<em>Messageattribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Messageattribute</em>'.
+   * @generated
+   */
+  Messageattribute createMessageattribute();
+
+  /**
+   * Returns a new object of class '<em>Messageattribute3</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Messageattribute3</em>'.
+   * @generated
+   */
+  Messageattribute3 createMessageattribute3();
+
+  /**
+   * Returns a new object of class '<em>Message SETEVENT</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message SETEVENT</em>'.
+   * @generated
+   */
+  MessageSETEVENT createMessageSETEVENT();
+
+  /**
+   * Returns a new object of class '<em>Message COMCALLBACK</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message COMCALLBACK</em>'.
+   * @generated
+   */
+  MessageCOMCALLBACK createMessageCOMCALLBACK();
+
+  /**
+   * Returns a new object of class '<em>Messageattribute2</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Messageattribute2</em>'.
+   * @generated
+   */
+  Messageattribute2 createMessageattribute2();
+
+  /**
+   * Returns a new object of class '<em>Message SEND STATIC EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message SEND STATIC EXTERNAL</em>'.
+   * @generated
+   */
+  Message_SEND_STATIC_EXTERNAL createMessage_SEND_STATIC_EXTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message SEND DYNAMIC EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message SEND DYNAMIC EXTERNAL</em>'.
+   * @generated
+   */
+  Message_SEND_DYNAMIC_EXTERNAL createMessage_SEND_DYNAMIC_EXTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message SEND ZERO EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message SEND ZERO EXTERNAL</em>'.
+   * @generated
+   */
+  Message_SEND_ZERO_EXTERNAL createMessage_SEND_ZERO_EXTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE ZERO INTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE ZERO INTERNAL</em>'.
+   * @generated
+   */
+  Message_RECEIVE_ZERO_INTERNAL createMessage_RECEIVE_ZERO_INTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE ZERO EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE ZERO EXTERNAL</em>'.
+   * @generated
+   */
+  Message_RECEIVE_ZERO_EXTERNAL createMessage_RECEIVE_ZERO_EXTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE UNQUEUED INTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE UNQUEUED INTERNAL</em>'.
+   * @generated
+   */
+  Message_RECEIVE_UNQUEUED_INTERNAL createMessage_RECEIVE_UNQUEUED_INTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE QUEUED INTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE QUEUED INTERNAL</em>'.
+   * @generated
+   */
+  Message_RECEIVE_QUEUED_INTERNAL createMessage_RECEIVE_QUEUED_INTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE UNQUEUED EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE UNQUEUED EXTERNAL</em>'.
+   * @generated
+   */
+  Message_RECEIVE_UNQUEUED_EXTERNAL createMessage_RECEIVE_UNQUEUED_EXTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE QUEUED EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE QUEUED EXTERNAL</em>'.
+   * @generated
+   */
+  Message_RECEIVE_QUEUED_EXTERNAL createMessage_RECEIVE_QUEUED_EXTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE DYNAMIC EXTERNAL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE DYNAMIC EXTERNAL</em>'.
+   * @generated
+   */
+  Message_RECEIVE_DYNAMIC_EXTERNAL createMessage_RECEIVE_DYNAMIC_EXTERNAL();
+
+  /**
+   * Returns a new object of class '<em>Message RECEIVE ZERO SENDERS</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message RECEIVE ZERO SENDERS</em>'.
+   * @generated
+   */
+  Message_RECEIVE_ZERO_SENDERS createMessage_RECEIVE_ZERO_SENDERS();
+
+  /**
+   * Returns a new object of class '<em>Message CDATATYPE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message CDATATYPE</em>'.
+   * @generated
+   */
+  MessageCDATATYPE createMessageCDATATYPE();
+
+  /**
+   * Returns a new object of class '<em>Message TRANSFERPROPERTY</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message TRANSFERPROPERTY</em>'.
+   * @generated
+   */
+  MessageTRANSFERPROPERTY createMessageTRANSFERPROPERTY();
+
+  /**
+   * Returns a new object of class '<em>Message NETWORKORDERCALLOUT</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message NETWORKORDERCALLOUT</em>'.
+   * @generated
+   */
+  MessageNETWORKORDERCALLOUT createMessageNETWORKORDERCALLOUT();
+
+  /**
+   * Returns a new object of class '<em>Message CPUORDERCALLOUT</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message CPUORDERCALLOUT</em>'.
+   * @generated
+   */
+  MessageCPUORDERCALLOUT createMessageCPUORDERCALLOUT();
+
+  /**
+   * Returns a new object of class '<em>Message INITIALVALUE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message INITIALVALUE</em>'.
+   * @generated
+   */
+  MessageINITIALVALUE createMessageINITIALVALUE();
+
+  /**
+   * Returns a new object of class '<em>Message NETWORKMESSAGE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message NETWORKMESSAGE</em>'.
+   * @generated
+   */
+  MessageNETWORKMESSAGE createMessageNETWORKMESSAGE();
+
+  /**
+   * Returns a new object of class '<em>Message SENDINGMESSAGE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message SENDINGMESSAGE</em>'.
+   * @generated
+   */
+  MessageSENDINGMESSAGE createMessageSENDINGMESSAGE();
+
+  /**
+   * Returns a new object of class '<em>Message QUEUESIZE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message QUEUESIZE</em>'.
+   * @generated
+   */
+  MessageQUEUESIZE createMessageQUEUESIZE();
+
+  /**
+   * Returns a new object of class '<em>Messagefilter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Messagefilter</em>'.
+   * @generated
+   */
+  Messagefilter createMessagefilter();
+
+  /**
+   * Returns a new object of class '<em>Message LINK</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message LINK</em>'.
+   * @generated
+   */
+  MessageLINK createMessageLINK();
+
+  /**
    * Returns a new object of class '<em>Librayattribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

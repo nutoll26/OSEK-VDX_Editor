@@ -65,7 +65,7 @@ public class FloatAttributeValueImpl extends AttributeValueImpl implements Float
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.FLOAT_ATTRIBUTE_VALUE;
+    return OilPackage.eINSTANCE.getFloatAttributeValue();
   }
 
   /**

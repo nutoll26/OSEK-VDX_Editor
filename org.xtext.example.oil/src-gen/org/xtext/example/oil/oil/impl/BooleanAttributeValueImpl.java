@@ -86,7 +86,7 @@ public class BooleanAttributeValueImpl extends AttributeValueImpl implements Boo
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.BOOLEAN_ATTRIBUTE_VALUE;
+    return OilPackage.eINSTANCE.getBooleanAttributeValue();
   }
 
   /**

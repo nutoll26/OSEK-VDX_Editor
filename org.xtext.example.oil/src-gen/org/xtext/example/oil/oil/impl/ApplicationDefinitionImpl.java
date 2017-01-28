@@ -108,7 +108,7 @@ public class ApplicationDefinitionImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.APPLICATION_DEFINITION;
+    return OilPackage.eINSTANCE.getApplicationDefinition();
   }
 
   /**

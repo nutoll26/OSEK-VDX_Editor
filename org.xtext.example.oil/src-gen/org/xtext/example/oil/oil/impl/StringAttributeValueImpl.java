@@ -65,7 +65,7 @@ public class StringAttributeValueImpl extends AttributeValueImpl implements Stri
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.STRING_ATTRIBUTE_VALUE;
+    return OilPackage.eINSTANCE.getStringAttributeValue();
   }
 
   /**

@@ -92,7 +92,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.ATTRIBUTE;
+    return OilPackage.eINSTANCE.getAttribute();
   }
 
   /**

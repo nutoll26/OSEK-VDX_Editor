@@ -237,9 +237,178 @@ ObjectDefinition://수정(AlarmRule,scheduletableRule 추가), resourcerule, taskrul
       | ApplicationRule
       | MemoryProtectionRule
       | IsrRule
+      | MessageRule
+      | AppmodeRule
+      | EventRule
       ) 
       //object=Object name=Name ("{" (parameterList+=Attribute)* "}")? (descrption=EString)? ";")
    ;
+EventRule:
+   "EVENT" name=Name "{" "MASK" "=" eventvalue = Name ";" "}"
+;
+AppmodeRule:
+   "APPMODE" name=Name "{" "}" ";"
+;
+MessageRule:
+    "MESSAGE" name=Name ("{" (MessageList += Messageattribute)* "}") ";" 
+;
+Messageattribute:
+   {Messageattribute}
+   "MESSAGEPROPERTY" "=" (MessageList2 +=Messageattribute2) |
+    ("NOTIFICATION"|"NOTIFICATIONERROR") "=" MessageList3 = Messageattribute3
+;
+
+Messageattribute3:
+   {Messageattribute3}
+   ("NONE" ";" |
+      "ACTIVATETASK" "{" "TASK" "=" description=ID ";" "}" ";"|
+      "SETEVENT" "{" (Msetevent +=MessageSETEVENT)+ "}" ";" |
+      "COMCALLBACK" "{" "CALLBACKROUTINENAME" "=" description=EString ";" "}" ";" |
+      "FLAG" "{" "FLAGNAME" "=" description=EString ";" "}" ";"|
+      "COMCALLBACK" "{" (Mcomcallback +=MessageCOMCALLBACK) "}" ";" 
+   )
+;
+
+MessageSETEVENT:
+   ("TASK" "=" description=ID ";" | "EVENT" "=" description=ID ";")
+;
+MessageCOMCALLBACK:
+   ("CALLBACKROUTINENAME" "=" description=ID ";" | "MONITOREDIPDU" "=" value = T_NUMBER ";")
+;
+Messageattribute2 :
+   {Messageattribute2}
+   ("SEND_STATIC_INTERNAL" "{" Cdata +=MessageCDATATYPE "}" ";"|
+      "SEND_STATIC_EXTERNAL" "{" SSE=Message_SEND_STATIC_EXTERNAL "}" ";"| /*test code not exist */ 
+      "SEND_DYNAMIC_EXTERNAL" "{" SDE=Message_SEND_DYNAMIC_EXTERNAL "}" ";"|
+      "SEND_ZERO_INTERNAL" ";"/*test code not exist */| 
+      "SEND_ZERO_EXTERNAL" "{" SZE = Message_SEND_ZERO_EXTERNAL "}" ";"|
+      "RECEIVE_ZERO_INTERNAL" "{" RZI = Message_RECEIVE_ZERO_INTERNAL "}" ";"|
+      "RECEIVE_ZERO_EXTERNAL" "{" RZE= Message_RECEIVE_ZERO_EXTERNAL "}" ";"|
+      "RECEIVE_UNQUEUED_INTERNAL" "{" (RUI += Message_RECEIVE_UNQUEUED_INTERNAL)* "}" ";"|
+      "RECEIVE_QUEUED_INTERNAL" "{" RQI = Message_RECEIVE_QUEUED_INTERNAL "}" ";"|
+      "RECEIVE_UNQUEUED_EXTERNAL" "{" RUE =Message_RECEIVE_UNQUEUED_EXTERNAL "}" ";"|
+      "RECEIVE_QUEUED_EXTERNAL" "{" RQE = Message_RECEIVE_QUEUED_EXTERNAL "}" ";"|
+      "RECEIVE_DYNAMIC_EXTERNAL" "{" RDE = Message_RECEIVE_DYNAMIC_EXTERNAL "}" ";"|
+      "RECEIVE_ZERO_SENDERS" "{" RZS = Message_RECEIVE_ZERO_SENDERS "}" ";"
+   )
+;
+Message_SEND_STATIC_EXTERNAL:
+   Cdata = MessageCDATATYPE|
+    Transferproperty = MessageTRANSFERPROPERTY |
+    filter = Messagefilter|
+    networkordercallout = MessageNETWORKORDERCALLOUT|
+    cpuordercallout =MessageCPUORDERCALLOUT|
+    initialvalue = MessageINITIALVALUE|
+    networkmessage = MessageNETWORKMESSAGE //type not defined
+;
+Message_SEND_DYNAMIC_EXTERNAL:
+   Transferproperty = MessageTRANSFERPROPERTY |
+   networkordercallout = MessageNETWORKORDERCALLOUT|
+   cpuordercallout =MessageCPUORDERCALLOUT|
+   initialvalue = MessageINITIALVALUE|
+    networkmessage = MessageNETWORKMESSAGE //type not defined
+;
+Message_SEND_ZERO_EXTERNAL:
+   networkordercallout = MessageNETWORKORDERCALLOUT|
+   cpuordercallout =MessageCPUORDERCALLOUT|
+    networkmessage = MessageNETWORKMESSAGE //type not defined
+;
+Message_RECEIVE_ZERO_INTERNAL:
+   {Message_RECEIVE_ZERO_INTERNAL}
+   sendingmessage = MessageSENDINGMESSAGE
+;
+
+Message_RECEIVE_ZERO_EXTERNAL:
+   networkordercallout = MessageNETWORKORDERCALLOUT|
+   cpuordercallout =MessageCPUORDERCALLOUT|
+    networkmessage = MessageNETWORKMESSAGE //type not defined
+;
+
+Message_RECEIVE_UNQUEUED_INTERNAL:
+   sendingmessage = MessageSENDINGMESSAGE|
+   filter = Messagefilter|
+   initialvalue = MessageINITIALVALUE
+;
+Message_RECEIVE_QUEUED_INTERNAL:
+      sendingmessage = MessageSENDINGMESSAGE|
+   filter = Messagefilter|
+   initialvalue = MessageINITIALVALUE|
+   queuesize = MessageQUEUESIZE
+;
+Message_RECEIVE_UNQUEUED_EXTERNAL:
+   Cdata = MessageCDATATYPE|
+   filter = Messagefilter|
+   link = MessageLINK|
+   initialvalue = MessageINITIALVALUE
+;
+Message_RECEIVE_QUEUED_EXTERNAL:
+   Cdata = MessageCDATATYPE|
+   queuesize = MessageQUEUESIZE|
+   filter = Messagefilter|
+   link = MessageLINK|
+   initialvalue = MessageINITIALVALUE
+;
+Message_RECEIVE_DYNAMIC_EXTERNAL:
+   link = MessageLINK|
+   initialvalue = MessageINITIALVALUE
+;
+Message_RECEIVE_ZERO_SENDERS:
+   Cdata = MessageCDATATYPE|
+   initialvalue = MessageINITIALVALUE
+;
+
+MessageCDATATYPE:
+   {MessageCDATATYPE}
+   "CDATATYPE" "=" descrption=EString ";"
+;
+MessageTRANSFERPROPERTY:
+   "TRANSFERPROPERTY" "=" transenum=MessageTRANSFERPROPERTYenum
+   ;
+MessageNETWORKORDERCALLOUT:
+   {MessageNETWORKORDERCALLOUT}
+   "NETWORKORDERCALLOUT" "=" descrption=EString ";" 
+;
+MessageCPUORDERCALLOUT:
+   {MessageCPUORDERCALLOUT}
+   "CPUORDERCALLOUT" "=" descrption=EString ";" 
+;
+MessageINITIALVALUE:
+   {MessageINITIALVALUE}
+   "INITIALVALUE" "=" value = T_NUMBER ";" 
+;
+MessageNETWORKMESSAGE:
+   {MessageNETWORKMESSAGE}
+   ("NETWORKMESSAGE" "=" value = ImplementationDef ";")
+;
+MessageSENDINGMESSAGE:
+   {MessageSENDINGMESSAGE}
+   ("SENDINGMESSAGE" "=" descrption = ID ";")
+;
+MessageQUEUESIZE:
+   {MessageQUEUESIZE}
+   ("QUEUESIZE" "=" value = T_NUMBER)
+;
+Messagefilter:
+   "FILTER" "="filter2 =Messagefilter2( "{" 
+   (name=Name "=" messageint1 = AttributeValue ";")+ "}")? ";"
+;
+MessageLINK:
+   "LINK" "=" messagelink = Messagelink1
+;
+enum Messagefilter2:
+   ALWAYS| NEVER| MASKEDNEWEQUALSX| MASKEDNEWDIFFERSX| NEWISEQUAL|
+   NEWISDIFFERENT| MASKEDNEWEQUALSMASKEDOLD| MASKEDNEWDIFFERSMASKEDOLD| 
+    NEWISWITHIN| NEWISOUTSIDE| NEWISGREATER| NEWISLESSOREQUAL|
+    NEWISLESS| NEWISGREATEROREQUAL| ONEEVERYN
+;
+
+enum MessageTRANSFERPROPERTYenum:
+   TRIGGERED|PENDING|AUTO
+;
+
+enum Messagelink1: //need delete Eboolan, insert TRUE FALSE edit Dan/ last
+   EBoolean
+;
 
 Librayattribute :
     ("PATH" "=" (description=EString) ";"|

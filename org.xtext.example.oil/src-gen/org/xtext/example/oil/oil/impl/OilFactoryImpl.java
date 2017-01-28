@@ -104,6 +104,35 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.IMPL_REF_DEF: return createImplRefDef();
       case OilPackage.APPLICATION_DEFINITION: return createApplicationDefinition();
       case OilPackage.OBJECT_DEFINITION: return createObjectDefinition();
+      case OilPackage.EVENT_RULE: return createEventRule();
+      case OilPackage.APPMODE_RULE: return createAppmodeRule();
+      case OilPackage.MESSAGE_RULE: return createMessageRule();
+      case OilPackage.MESSAGEATTRIBUTE: return createMessageattribute();
+      case OilPackage.MESSAGEATTRIBUTE3: return createMessageattribute3();
+      case OilPackage.MESSAGE_SETEVENT: return createMessageSETEVENT();
+      case OilPackage.MESSAGE_COMCALLBACK: return createMessageCOMCALLBACK();
+      case OilPackage.MESSAGEATTRIBUTE2: return createMessageattribute2();
+      case OilPackage.MESSAGE_SEND_STATIC_EXTERNAL: return createMessage_SEND_STATIC_EXTERNAL();
+      case OilPackage.MESSAGE_SEND_DYNAMIC_EXTERNAL: return createMessage_SEND_DYNAMIC_EXTERNAL();
+      case OilPackage.MESSAGE_SEND_ZERO_EXTERNAL: return createMessage_SEND_ZERO_EXTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_ZERO_INTERNAL: return createMessage_RECEIVE_ZERO_INTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_ZERO_EXTERNAL: return createMessage_RECEIVE_ZERO_EXTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_UNQUEUED_INTERNAL: return createMessage_RECEIVE_UNQUEUED_INTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_QUEUED_INTERNAL: return createMessage_RECEIVE_QUEUED_INTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_UNQUEUED_EXTERNAL: return createMessage_RECEIVE_UNQUEUED_EXTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_QUEUED_EXTERNAL: return createMessage_RECEIVE_QUEUED_EXTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_DYNAMIC_EXTERNAL: return createMessage_RECEIVE_DYNAMIC_EXTERNAL();
+      case OilPackage.MESSAGE_RECEIVE_ZERO_SENDERS: return createMessage_RECEIVE_ZERO_SENDERS();
+      case OilPackage.MESSAGE_CDATATYPE: return createMessageCDATATYPE();
+      case OilPackage.MESSAGE_TRANSFERPROPERTY: return createMessageTRANSFERPROPERTY();
+      case OilPackage.MESSAGE_NETWORKORDERCALLOUT: return createMessageNETWORKORDERCALLOUT();
+      case OilPackage.MESSAGE_CPUORDERCALLOUT: return createMessageCPUORDERCALLOUT();
+      case OilPackage.MESSAGE_INITIALVALUE: return createMessageINITIALVALUE();
+      case OilPackage.MESSAGE_NETWORKMESSAGE: return createMessageNETWORKMESSAGE();
+      case OilPackage.MESSAGE_SENDINGMESSAGE: return createMessageSENDINGMESSAGE();
+      case OilPackage.MESSAGE_QUEUESIZE: return createMessageQUEUESIZE();
+      case OilPackage.MESSAGEFILTER: return createMessagefilter();
+      case OilPackage.MESSAGE_LINK: return createMessageLINK();
       case OilPackage.LIBRAYATTRIBUTE: return createLibrayattribute();
       case OilPackage.COM_RULE: return createComRule();
       case OilPackage.COMATTRIBUTE: return createComattribute();
@@ -171,6 +200,12 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return createDefaultEnumFromString(eDataType, initialValue);
       case OilPackage.OBJECT_REF_TYPE_ENUM:
         return createObjectRefTypeEnumFromString(eDataType, initialValue);
+      case OilPackage.MESSAGEFILTER2:
+        return createMessagefilter2FromString(eDataType, initialValue);
+      case OilPackage.MESSAGE_TRANSFERPROPERT_YENUM:
+        return createMessageTRANSFERPROPERTYenumFromString(eDataType, initialValue);
+      case OilPackage.MESSAGELINK1:
+        return createMessagelink1FromString(eDataType, initialValue);
       case OilPackage.COM_ATTRIBUTE_NAME:
         return createComAttributeNameFromString(eDataType, initialValue);
       case OilPackage.TASK_TIMINGR_LOCK_ATTRIBUTE:
@@ -238,6 +273,12 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return convertDefaultEnumToString(eDataType, instanceValue);
       case OilPackage.OBJECT_REF_TYPE_ENUM:
         return convertObjectRefTypeEnumToString(eDataType, instanceValue);
+      case OilPackage.MESSAGEFILTER2:
+        return convertMessagefilter2ToString(eDataType, instanceValue);
+      case OilPackage.MESSAGE_TRANSFERPROPERT_YENUM:
+        return convertMessageTRANSFERPROPERTYenumToString(eDataType, instanceValue);
+      case OilPackage.MESSAGELINK1:
+        return convertMessagelink1ToString(eDataType, instanceValue);
       case OilPackage.COM_ATTRIBUTE_NAME:
         return convertComAttributeNameToString(eDataType, instanceValue);
       case OilPackage.TASK_TIMINGR_LOCK_ATTRIBUTE:
@@ -695,6 +736,325 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     ObjectDefinitionImpl objectDefinition = new ObjectDefinitionImpl();
     return objectDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EventRule createEventRule()
+  {
+    EventRuleImpl eventRule = new EventRuleImpl();
+    return eventRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AppmodeRule createAppmodeRule()
+  {
+    AppmodeRuleImpl appmodeRule = new AppmodeRuleImpl();
+    return appmodeRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageRule createMessageRule()
+  {
+    MessageRuleImpl messageRule = new MessageRuleImpl();
+    return messageRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Messageattribute createMessageattribute()
+  {
+    MessageattributeImpl messageattribute = new MessageattributeImpl();
+    return messageattribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Messageattribute3 createMessageattribute3()
+  {
+    Messageattribute3Impl messageattribute3 = new Messageattribute3Impl();
+    return messageattribute3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageSETEVENT createMessageSETEVENT()
+  {
+    MessageSETEVENTImpl messageSETEVENT = new MessageSETEVENTImpl();
+    return messageSETEVENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageCOMCALLBACK createMessageCOMCALLBACK()
+  {
+    MessageCOMCALLBACKImpl messageCOMCALLBACK = new MessageCOMCALLBACKImpl();
+    return messageCOMCALLBACK;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Messageattribute2 createMessageattribute2()
+  {
+    Messageattribute2Impl messageattribute2 = new Messageattribute2Impl();
+    return messageattribute2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_SEND_STATIC_EXTERNAL createMessage_SEND_STATIC_EXTERNAL()
+  {
+    Message_SEND_STATIC_EXTERNALImpl message_SEND_STATIC_EXTERNAL = new Message_SEND_STATIC_EXTERNALImpl();
+    return message_SEND_STATIC_EXTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_SEND_DYNAMIC_EXTERNAL createMessage_SEND_DYNAMIC_EXTERNAL()
+  {
+    Message_SEND_DYNAMIC_EXTERNALImpl message_SEND_DYNAMIC_EXTERNAL = new Message_SEND_DYNAMIC_EXTERNALImpl();
+    return message_SEND_DYNAMIC_EXTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_SEND_ZERO_EXTERNAL createMessage_SEND_ZERO_EXTERNAL()
+  {
+    Message_SEND_ZERO_EXTERNALImpl message_SEND_ZERO_EXTERNAL = new Message_SEND_ZERO_EXTERNALImpl();
+    return message_SEND_ZERO_EXTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_ZERO_INTERNAL createMessage_RECEIVE_ZERO_INTERNAL()
+  {
+    Message_RECEIVE_ZERO_INTERNALImpl message_RECEIVE_ZERO_INTERNAL = new Message_RECEIVE_ZERO_INTERNALImpl();
+    return message_RECEIVE_ZERO_INTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_ZERO_EXTERNAL createMessage_RECEIVE_ZERO_EXTERNAL()
+  {
+    Message_RECEIVE_ZERO_EXTERNALImpl message_RECEIVE_ZERO_EXTERNAL = new Message_RECEIVE_ZERO_EXTERNALImpl();
+    return message_RECEIVE_ZERO_EXTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_UNQUEUED_INTERNAL createMessage_RECEIVE_UNQUEUED_INTERNAL()
+  {
+    Message_RECEIVE_UNQUEUED_INTERNALImpl message_RECEIVE_UNQUEUED_INTERNAL = new Message_RECEIVE_UNQUEUED_INTERNALImpl();
+    return message_RECEIVE_UNQUEUED_INTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_QUEUED_INTERNAL createMessage_RECEIVE_QUEUED_INTERNAL()
+  {
+    Message_RECEIVE_QUEUED_INTERNALImpl message_RECEIVE_QUEUED_INTERNAL = new Message_RECEIVE_QUEUED_INTERNALImpl();
+    return message_RECEIVE_QUEUED_INTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_UNQUEUED_EXTERNAL createMessage_RECEIVE_UNQUEUED_EXTERNAL()
+  {
+    Message_RECEIVE_UNQUEUED_EXTERNALImpl message_RECEIVE_UNQUEUED_EXTERNAL = new Message_RECEIVE_UNQUEUED_EXTERNALImpl();
+    return message_RECEIVE_UNQUEUED_EXTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_QUEUED_EXTERNAL createMessage_RECEIVE_QUEUED_EXTERNAL()
+  {
+    Message_RECEIVE_QUEUED_EXTERNALImpl message_RECEIVE_QUEUED_EXTERNAL = new Message_RECEIVE_QUEUED_EXTERNALImpl();
+    return message_RECEIVE_QUEUED_EXTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_DYNAMIC_EXTERNAL createMessage_RECEIVE_DYNAMIC_EXTERNAL()
+  {
+    Message_RECEIVE_DYNAMIC_EXTERNALImpl message_RECEIVE_DYNAMIC_EXTERNAL = new Message_RECEIVE_DYNAMIC_EXTERNALImpl();
+    return message_RECEIVE_DYNAMIC_EXTERNAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Message_RECEIVE_ZERO_SENDERS createMessage_RECEIVE_ZERO_SENDERS()
+  {
+    Message_RECEIVE_ZERO_SENDERSImpl message_RECEIVE_ZERO_SENDERS = new Message_RECEIVE_ZERO_SENDERSImpl();
+    return message_RECEIVE_ZERO_SENDERS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageCDATATYPE createMessageCDATATYPE()
+  {
+    MessageCDATATYPEImpl messageCDATATYPE = new MessageCDATATYPEImpl();
+    return messageCDATATYPE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageTRANSFERPROPERTY createMessageTRANSFERPROPERTY()
+  {
+    MessageTRANSFERPROPERTYImpl messageTRANSFERPROPERTY = new MessageTRANSFERPROPERTYImpl();
+    return messageTRANSFERPROPERTY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageNETWORKORDERCALLOUT createMessageNETWORKORDERCALLOUT()
+  {
+    MessageNETWORKORDERCALLOUTImpl messageNETWORKORDERCALLOUT = new MessageNETWORKORDERCALLOUTImpl();
+    return messageNETWORKORDERCALLOUT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageCPUORDERCALLOUT createMessageCPUORDERCALLOUT()
+  {
+    MessageCPUORDERCALLOUTImpl messageCPUORDERCALLOUT = new MessageCPUORDERCALLOUTImpl();
+    return messageCPUORDERCALLOUT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageINITIALVALUE createMessageINITIALVALUE()
+  {
+    MessageINITIALVALUEImpl messageINITIALVALUE = new MessageINITIALVALUEImpl();
+    return messageINITIALVALUE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageNETWORKMESSAGE createMessageNETWORKMESSAGE()
+  {
+    MessageNETWORKMESSAGEImpl messageNETWORKMESSAGE = new MessageNETWORKMESSAGEImpl();
+    return messageNETWORKMESSAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageSENDINGMESSAGE createMessageSENDINGMESSAGE()
+  {
+    MessageSENDINGMESSAGEImpl messageSENDINGMESSAGE = new MessageSENDINGMESSAGEImpl();
+    return messageSENDINGMESSAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageQUEUESIZE createMessageQUEUESIZE()
+  {
+    MessageQUEUESIZEImpl messageQUEUESIZE = new MessageQUEUESIZEImpl();
+    return messageQUEUESIZE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Messagefilter createMessagefilter()
+  {
+    MessagefilterImpl messagefilter = new MessagefilterImpl();
+    return messagefilter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageLINK createMessageLINK()
+  {
+    MessageLINKImpl messageLINK = new MessageLINKImpl();
+    return messageLINK;
   }
 
   /**
@@ -1265,6 +1625,72 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * @generated
    */
   public String convertObjectRefTypeEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Messagefilter2 createMessagefilter2FromString(EDataType eDataType, String initialValue)
+  {
+    Messagefilter2 result = Messagefilter2.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMessagefilter2ToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MessageTRANSFERPROPERTYenum createMessageTRANSFERPROPERTYenumFromString(EDataType eDataType, String initialValue)
+  {
+    MessageTRANSFERPROPERTYenum result = MessageTRANSFERPROPERTYenum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMessageTRANSFERPROPERTYenumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Messagelink1 createMessagelink1FromString(EDataType eDataType, String initialValue)
+  {
+    Messagelink1 result = Messagelink1.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMessagelink1ToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

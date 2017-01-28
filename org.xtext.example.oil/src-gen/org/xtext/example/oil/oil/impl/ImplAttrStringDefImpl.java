@@ -143,7 +143,7 @@ public class ImplAttrStringDefImpl extends ImplAttrDefImpl implements ImplAttrSt
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_ATTR_STRING_DEF;
+    return OilPackage.eINSTANCE.getImplAttrStringDef();
   }
 
   /**

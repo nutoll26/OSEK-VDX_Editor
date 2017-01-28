@@ -301,6 +301,219 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="LibraryList" upperBound="-1"
         eType="#//Librayattribute" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AppmodeRule" eSuperTypes="#//ObjectDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MessageList" upperBound="-1"
+        eType="#//Messageattribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Messageattribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MessageList2" upperBound="-1"
+        eType="#//Messageattribute2" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MessageList3" eType="#//Messageattribute3"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Messageattribute3">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Msetevent" upperBound="-1"
+        eType="#//MessageSETEVENT" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Mcomcallback" upperBound="-1"
+        eType="#//MessageCOMCALLBACK" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageSETEVENT">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageCOMCALLBACK">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Messageattribute2">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Cdata" upperBound="-1"
+        eType="#//MessageCDATATYPE" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SSE" eType="#//Message_SEND_STATIC_EXTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SDE" eType="#//Message_SEND_DYNAMIC_EXTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SZE" eType="#//Message_SEND_ZERO_EXTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RZI" eType="#//Message_RECEIVE_ZERO_INTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RZE" eType="#//Message_RECEIVE_ZERO_EXTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RUI" upperBound="-1" eType="#//Message_RECEIVE_UNQUEUED_INTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RQI" eType="#//Message_RECEIVE_QUEUED_INTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RUE" eType="#//Message_RECEIVE_UNQUEUED_EXTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RQE" eType="#//Message_RECEIVE_QUEUED_EXTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RDE" eType="#//Message_RECEIVE_DYNAMIC_EXTERNAL"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RZS" eType="#//Message_RECEIVE_ZERO_SENDERS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_SEND_STATIC_EXTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Cdata" eType="#//MessageCDATATYPE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Transferproperty" eType="#//MessageTRANSFERPROPERTY"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//Messagefilter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkordercallout" eType="#//MessageNETWORKORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cpuordercallout" eType="#//MessageCPUORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkmessage" eType="#//MessageNETWORKMESSAGE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_SEND_DYNAMIC_EXTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Transferproperty" eType="#//MessageTRANSFERPROPERTY"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkordercallout" eType="#//MessageNETWORKORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cpuordercallout" eType="#//MessageCPUORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkmessage" eType="#//MessageNETWORKMESSAGE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_SEND_ZERO_EXTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkordercallout" eType="#//MessageNETWORKORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cpuordercallout" eType="#//MessageCPUORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkmessage" eType="#//MessageNETWORKMESSAGE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_ZERO_INTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendingmessage" eType="#//MessageSENDINGMESSAGE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_ZERO_EXTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkordercallout" eType="#//MessageNETWORKORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cpuordercallout" eType="#//MessageCPUORDERCALLOUT"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkmessage" eType="#//MessageNETWORKMESSAGE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_UNQUEUED_INTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendingmessage" eType="#//MessageSENDINGMESSAGE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//Messagefilter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_QUEUED_INTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendingmessage" eType="#//MessageSENDINGMESSAGE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//Messagefilter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queuesize" eType="#//MessageQUEUESIZE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_UNQUEUED_EXTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Cdata" eType="#//MessageCDATATYPE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//Messagefilter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//MessageLINK"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_QUEUED_EXTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Cdata" eType="#//MessageCDATATYPE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queuesize" eType="#//MessageQUEUESIZE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//Messagefilter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//MessageLINK"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_DYNAMIC_EXTERNAL">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" eType="#//MessageLINK"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message_RECEIVE_ZERO_SENDERS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Cdata" eType="#//MessageCDATATYPE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialvalue" eType="#//MessageINITIALVALUE"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageCDATATYPE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descrption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageTRANSFERPROPERTY">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transenum" eType="#//MessageTRANSFERPROPERTYenum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageNETWORKORDERCALLOUT">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descrption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageCPUORDERCALLOUT">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descrption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageINITIALVALUE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageNETWORKMESSAGE">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ImplementationDef"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageSENDINGMESSAGE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descrption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageQUEUESIZE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Messagefilter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filter2" eType="#//Messagefilter2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageint1" eType="#//AttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageLINK">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messagelink" eType="#//Messagelink1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Messagefilter2">
+    <eLiterals name="ALWAYS" literal="ALWAYS"/>
+    <eLiterals name="NEVER" value="1" literal="NEVER"/>
+    <eLiterals name="MASKEDNEWEQUALSX" value="2" literal="MASKEDNEWEQUALSX"/>
+    <eLiterals name="MASKEDNEWDIFFERSX" value="3" literal="MASKEDNEWDIFFERSX"/>
+    <eLiterals name="NEWISEQUAL" value="4" literal="NEWISEQUAL"/>
+    <eLiterals name="NEWISDIFFERENT" value="5" literal="NEWISDIFFERENT"/>
+    <eLiterals name="MASKEDNEWEQUALSMASKEDOLD" value="6" literal="MASKEDNEWEQUALSMASKEDOLD"/>
+    <eLiterals name="MASKEDNEWDIFFERSMASKEDOLD" value="7" literal="MASKEDNEWDIFFERSMASKEDOLD"/>
+    <eLiterals name="NEWISWITHIN" value="8" literal="NEWISWITHIN"/>
+    <eLiterals name="NEWISOUTSIDE" value="9" literal="NEWISOUTSIDE"/>
+    <eLiterals name="NEWISGREATER" value="10" literal="NEWISGREATER"/>
+    <eLiterals name="NEWISLESSOREQUAL" value="11" literal="NEWISLESSOREQUAL"/>
+    <eLiterals name="NEWISLESS" value="12" literal="NEWISLESS"/>
+    <eLiterals name="NEWISGREATEROREQUAL" value="13" literal="NEWISGREATEROREQUAL"/>
+    <eLiterals name="ONEEVERYN" value="14" literal="ONEEVERYN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageTRANSFERPROPERTYenum">
+    <eLiterals name="TRIGGERED" literal="TRIGGERED"/>
+    <eLiterals name="PENDING" value="1" literal="PENDING"/>
+    <eLiterals name="AUTO" value="2" literal="AUTO"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Messagelink1">
+    <eLiterals name="EBoolean" literal="EBoolean"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Librayattribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

@@ -87,7 +87,7 @@ public class ObjectDefinitionImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.OBJECT_DEFINITION;
+    return OilPackage.eINSTANCE.getObjectDefinition();
   }
 
   /**

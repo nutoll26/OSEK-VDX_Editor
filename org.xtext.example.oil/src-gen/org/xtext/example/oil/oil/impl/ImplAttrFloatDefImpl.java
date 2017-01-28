@@ -155,7 +155,7 @@ public class ImplAttrFloatDefImpl extends ImplAttrDefImpl implements ImplAttrFlo
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.IMPL_ATTR_FLOAT_DEF;
+    return OilPackage.eINSTANCE.getImplAttrFloatDef();
   }
 
   /**

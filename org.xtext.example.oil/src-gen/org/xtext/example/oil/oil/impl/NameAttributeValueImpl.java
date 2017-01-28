@@ -86,7 +86,7 @@ public class NameAttributeValueImpl extends AttributeValueImpl implements NameAt
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.NAME_ATTRIBUTE_VALUE;
+    return OilPackage.eINSTANCE.getNameAttributeValue();
   }
 
   /**

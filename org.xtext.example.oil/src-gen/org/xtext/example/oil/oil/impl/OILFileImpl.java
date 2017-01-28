@@ -102,7 +102,7 @@ public class OILFileImpl extends MinimalEObjectImpl.Container implements OILFile
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.OIL_FILE;
+    return OilPackage.eINSTANCE.getOILFile();
   }
 
   /**

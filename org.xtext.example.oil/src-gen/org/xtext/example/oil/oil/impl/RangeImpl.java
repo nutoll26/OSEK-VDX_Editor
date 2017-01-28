@@ -125,7 +125,7 @@ public class RangeImpl extends MinimalEObjectImpl.Container implements Range
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.RANGE;
+    return OilPackage.eINSTANCE.getRange();
   }
 
   /**

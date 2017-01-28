@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOilParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_FILEID", "RULE_ID", "RULE_T_NUMBER", "RULE_T_FLOAT", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'#include'", "'<'", "'>'", "'OIL_VERSION'", "'='", "':'", "';'", "'IMPLEMENTATION'", "'{'", "'}'", "'TASK'", "'WITH_AUTO'", "'OS'", "'ENUM'", "'STATUS'", "'COUNTER'", "'IDENTIFIER'", "'APPLICATION'", "'HAS_RESTARTTASK'", "'TRUE'", "'FALSE'", "'RESTARTTASK'", "'TRUSTED'", "'TRUSTED_FUNCTION'", "'ISR'", "'TIMING_PROTECTION'", "'MEMORY_PROTECTION'", "'ALARM'", "'RESOURCE'", "'EVENT'", "'MESSAGE'", "'COM'", "'NM'", "'APPMODE'", "'IPDU'", "'NETWORKMESSAGE'", "'MEMOTY_PROTECTION'", "'SPINLOCK'", "'SCHEDULETABLE'", "'IOC'", "'LIBRARY'", "'FLOAT'", "'STRING'", "'BOOLEAN'", "'['", "','", "']'", "'..'", "'CPU'", "'PATH'", "'CHEADER'", "'CFILE'", "'AUTOSTART'", "'TIMINGPROTECTION'", "'RESOURCELOCK'", "'RESOURCEPROPERTY'", "'ACCESSING_APPLICATION'", "'ACTION'", "'ACTIVATETASK'", "'INCREMENTCOUNTER'", "'SETEVENT'", "'ALARMCALLBACK'", "'ALARMTIME'", "'CYCLETIME'", "'LENGTH'", "'NONE'", "'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION'", "'PERIODIC'", "'EXPIRY_POINT'", "'ABSOLUTE'", "'PRECISION'", "'SYNC_STRATEGY'", "'OFFSET'", "'ADJUSTBLE'", "'DATATYPENAME'", "'SEMANTICS'", "'RECEIVER'", "'SENDER'", "'DATATYPEPROPERTY'", "'QUEUED'", "'LAST_IS_BEST'", "'AUTO'", "'STACKSIZE'", "'PRIORITY'", "'SOURCE'", "'FREQUENCY'", "'CORE'", "'ERRORHOOK'", "'SHUTDOWNHOOK'", "'STARTUPHOOK'", "'MAXALLINTERRUPTLOCKTIME'", "'MAXOSINTERRUPTLOCKTIME'", "'EXECUTIONTIME'", "'TIMEFRAME'", "'CATEGORY'", "'ENTRY'", "'UINT32'", "'INT32'", "'UINT64'", "'INT64'", "'NO_DEFAULT'", "'OS_TYPE'", "'TASK_TYPE'", "'COUNTER_TYPE'", "'ALARM_TYPE'", "'RESOURCE_TYPE'", "'EVENT_TYPE'", "'ISR_TYPE'", "'MESSAGE_TYPE'", "'COM_TYPE'", "'NM_TYPE'", "'APPMODE_TYPE'", "'IPDU_TYPE'", "'NETWORKMESSAGE_TYPE'", "'APPLICATION_TYPE'", "'MEMOTY_PROTECTION_TYPE'", "'SPINLOCK_TYPE'", "'SCHEDULETABLE_TYPE'", "'IOC_TYPE'", "'APICONFIG_TYPE'", "'LIBRARY_TYPE'", "'COMSTATUS'", "'COMERRORHOOK'", "'COMUSEGETSERVICEID'", "'COMUSEPARAMETERACCESS'", "'COMSTARTCOMEXTENSION'", "'COMTIMEBASE'", "'COMAPPMODE'", "'USE'", "'LOCKTIME'", "'RESOURCENAME'", "'EXECUTIONBUDGET'", "'ACTIVATION'", "'NAME'", "'PROCESSKIND'", "'NONPREEMPTABLE'", "'SCHEDULE'", "'USEINTERNALRESOURCE'", "'INTERNALRESOURCE'", "'STANDARD'", "'INTERNAL'", "'LINKED'", "'START'", "'EXPLICIT'", "'IMPLICIT'", "'MAX_RETARD'", "'MAX_ADVANCE'", "'SENDER_ID'", "'SND_OSAPPLICATION'", "'REV_OSAPPLICATION'", "'RECEIVER_PULL_CB'", "'DATA'", "'REFERNCE'", "'BUFFER_LENGTH'", "'INIT_VALUE_SYMBOL'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_FILEID", "RULE_ID", "RULE_T_NUMBER", "RULE_T_FLOAT", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'#include'", "'<'", "'>'", "'OIL_VERSION'", "'='", "':'", "';'", "'IMPLEMENTATION'", "'{'", "'}'", "'TASK'", "'WITH_AUTO'", "'OS'", "'ENUM'", "'STATUS'", "'COUNTER'", "'IDENTIFIER'", "'APPLICATION'", "'HAS_RESTARTTASK'", "'TRUE'", "'FALSE'", "'RESTARTTASK'", "'TRUSTED'", "'TRUSTED_FUNCTION'", "'ISR'", "'TIMING_PROTECTION'", "'MEMORY_PROTECTION'", "'ALARM'", "'RESOURCE'", "'EVENT'", "'MESSAGE'", "'COM'", "'NM'", "'APPMODE'", "'IPDU'", "'NETWORKMESSAGE'", "'MEMOTY_PROTECTION'", "'SPINLOCK'", "'SCHEDULETABLE'", "'IOC'", "'LIBRARY'", "'FLOAT'", "'STRING'", "'BOOLEAN'", "'['", "','", "']'", "'..'", "'CPU'", "'MASK'", "'MESSAGEPROPERTY'", "'NOTIFICATION'", "'NOTIFICATIONERROR'", "'NONE'", "'ACTIVATETASK'", "'SETEVENT'", "'COMCALLBACK'", "'CALLBACKROUTINENAME'", "'FLAG'", "'FLAGNAME'", "'MONITOREDIPDU'", "'SEND_STATIC_INTERNAL'", "'SEND_STATIC_EXTERNAL'", "'SEND_DYNAMIC_EXTERNAL'", "'SEND_ZERO_INTERNAL'", "'SEND_ZERO_EXTERNAL'", "'RECEIVE_ZERO_INTERNAL'", "'RECEIVE_ZERO_EXTERNAL'", "'RECEIVE_UNQUEUED_INTERNAL'", "'RECEIVE_QUEUED_INTERNAL'", "'RECEIVE_UNQUEUED_EXTERNAL'", "'RECEIVE_QUEUED_EXTERNAL'", "'RECEIVE_DYNAMIC_EXTERNAL'", "'RECEIVE_ZERO_SENDERS'", "'CDATATYPE'", "'TRANSFERPROPERTY'", "'NETWORKORDERCALLOUT'", "'CPUORDERCALLOUT'", "'INITIALVALUE'", "'SENDINGMESSAGE'", "'QUEUESIZE'", "'FILTER'", "'LINK'", "'PATH'", "'CHEADER'", "'CFILE'", "'AUTOSTART'", "'TIMINGPROTECTION'", "'RESOURCELOCK'", "'RESOURCEPROPERTY'", "'ACCESSING_APPLICATION'", "'ACTION'", "'INCREMENTCOUNTER'", "'ALARMCALLBACK'", "'ALARMTIME'", "'CYCLETIME'", "'LENGTH'", "'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION'", "'PERIODIC'", "'EXPIRY_POINT'", "'ABSOLUTE'", "'PRECISION'", "'SYNC_STRATEGY'", "'OFFSET'", "'ADJUSTBLE'", "'DATATYPENAME'", "'SEMANTICS'", "'RECEIVER'", "'SENDER'", "'DATATYPEPROPERTY'", "'QUEUED'", "'LAST_IS_BEST'", "'AUTO'", "'STACKSIZE'", "'PRIORITY'", "'SOURCE'", "'FREQUENCY'", "'CORE'", "'ERRORHOOK'", "'SHUTDOWNHOOK'", "'STARTUPHOOK'", "'MAXALLINTERRUPTLOCKTIME'", "'MAXOSINTERRUPTLOCKTIME'", "'EXECUTIONTIME'", "'TIMEFRAME'", "'CATEGORY'", "'ENTRY'", "'UINT32'", "'INT32'", "'UINT64'", "'INT64'", "'NO_DEFAULT'", "'OS_TYPE'", "'TASK_TYPE'", "'COUNTER_TYPE'", "'ALARM_TYPE'", "'RESOURCE_TYPE'", "'EVENT_TYPE'", "'ISR_TYPE'", "'MESSAGE_TYPE'", "'COM_TYPE'", "'NM_TYPE'", "'APPMODE_TYPE'", "'IPDU_TYPE'", "'NETWORKMESSAGE_TYPE'", "'APPLICATION_TYPE'", "'MEMOTY_PROTECTION_TYPE'", "'SPINLOCK_TYPE'", "'SCHEDULETABLE_TYPE'", "'IOC_TYPE'", "'APICONFIG_TYPE'", "'LIBRARY_TYPE'", "'ALWAYS'", "'NEVER'", "'MASKEDNEWEQUALSX'", "'MASKEDNEWDIFFERSX'", "'NEWISEQUAL'", "'NEWISDIFFERENT'", "'MASKEDNEWEQUALSMASKEDOLD'", "'MASKEDNEWDIFFERSMASKEDOLD'", "'NEWISWITHIN'", "'NEWISOUTSIDE'", "'NEWISGREATER'", "'NEWISLESSOREQUAL'", "'NEWISLESS'", "'NEWISGREATEROREQUAL'", "'ONEEVERYN'", "'TRIGGERED'", "'PENDING'", "'EBoolean'", "'COMSTATUS'", "'COMERRORHOOK'", "'COMUSEGETSERVICEID'", "'COMUSEPARAMETERACCESS'", "'COMSTARTCOMEXTENSION'", "'COMTIMEBASE'", "'COMAPPMODE'", "'USE'", "'LOCKTIME'", "'RESOURCENAME'", "'EXECUTIONBUDGET'", "'ACTIVATION'", "'NAME'", "'PROCESSKIND'", "'NONPREEMPTABLE'", "'SCHEDULE'", "'USEINTERNALRESOURCE'", "'INTERNALRESOURCE'", "'STANDARD'", "'INTERNAL'", "'LINKED'", "'START'", "'EXPLICIT'", "'IMPLICIT'", "'MAX_RETARD'", "'MAX_ADVANCE'", "'SENDER_ID'", "'SND_OSAPPLICATION'", "'REV_OSAPPLICATION'", "'RECEIVER_PULL_CB'", "'DATA'", "'REFERNCE'", "'BUFFER_LENGTH'", "'INIT_VALUE_SYMBOL'"
     };
     public static final int T__144=144;
     public static final int T__143=143;
@@ -30,7 +30,6 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     public static final int T__50=50;
     public static final int T__145=145;
     public static final int T__140=140;
-    public static final int RULE_T_FLOAT=8;
     public static final int T__142=142;
     public static final int T__141=141;
     public static final int T__59=59;
@@ -57,7 +56,6 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     public static final int T__130=130;
     public static final int RULE_INT=9;
     public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=10;
     public static final int T__67=67;
     public static final int T__129=129;
     public static final int T__68=68;
@@ -70,7 +68,6 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     public static final int T__128=128;
     public static final int T__65=65;
     public static final int T__127=127;
-    public static final int RULE_T_NUMBER=7;
     public static final int T__166=166;
     public static final int T__165=165;
     public static final int T__168=168;
@@ -113,83 +110,135 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__149=149;
-    public static final int T__91=91;
     public static final int T__100=100;
-    public static final int T__92=92;
-    public static final int T__93=93;
     public static final int T__102=102;
-    public static final int T__94=94;
     public static final int T__101=101;
-    public static final int T__90=90;
     public static final int RULE_FILEID=5;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__99=99;
+    public static final int T__217=217;
     public static final int T__14=14;
-    public static final int T__95=95;
-    public static final int T__96=96;
-    public static final int T__97=97;
-    public static final int T__98=98;
+    public static final int T__214=214;
+    public static final int T__213=213;
+    public static final int T__216=216;
+    public static final int T__215=215;
+    public static final int T__210=210;
+    public static final int T__212=212;
+    public static final int T__211=211;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int T__29=29;
     public static final int T__22=22;
+    public static final int T__207=207;
     public static final int T__23=23;
+    public static final int T__206=206;
     public static final int T__24=24;
+    public static final int T__209=209;
     public static final int T__25=25;
+    public static final int T__208=208;
+    public static final int T__203=203;
+    public static final int T__202=202;
     public static final int T__20=20;
+    public static final int T__205=205;
     public static final int T__21=21;
+    public static final int T__204=204;
     public static final int T__122=122;
-    public static final int T__70=70;
     public static final int T__121=121;
-    public static final int T__71=71;
     public static final int T__124=124;
-    public static final int T__72=72;
     public static final int T__123=123;
     public static final int T__120=120;
-    public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=11;
-    public static final int T__77=77;
     public static final int T__119=119;
-    public static final int T__78=78;
     public static final int T__118=118;
-    public static final int T__79=79;
-    public static final int T__73=73;
     public static final int T__115=115;
     public static final int EOF=-1;
-    public static final int T__74=74;
     public static final int T__114=114;
-    public static final int T__75=75;
     public static final int T__117=117;
-    public static final int T__76=76;
     public static final int T__116=116;
-    public static final int T__80=80;
     public static final int T__111=111;
-    public static final int T__81=81;
     public static final int T__110=110;
-    public static final int T__82=82;
     public static final int T__113=113;
-    public static final int T__83=83;
     public static final int T__112=112;
-    public static final int RULE_WS=12;
-    public static final int RULE_ANY_OTHER=13;
-    public static final int T__88=88;
     public static final int T__108=108;
-    public static final int T__89=89;
     public static final int T__107=107;
     public static final int T__109=109;
-    public static final int T__84=84;
     public static final int T__104=104;
-    public static final int T__85=85;
     public static final int T__103=103;
-    public static final int T__86=86;
     public static final int T__106=106;
-    public static final int T__87=87;
     public static final int T__105=105;
+    public static final int RULE_T_FLOAT=8;
+    public static final int RULE_ML_COMMENT=10;
+    public static final int RULE_T_NUMBER=7;
+    public static final int T__201=201;
+    public static final int T__200=200;
+    public static final int T__91=91;
+    public static final int T__188=188;
+    public static final int T__92=92;
+    public static final int T__187=187;
+    public static final int T__93=93;
+    public static final int T__94=94;
+    public static final int T__189=189;
+    public static final int T__184=184;
+    public static final int T__183=183;
+    public static final int T__186=186;
+    public static final int T__90=90;
+    public static final int T__185=185;
+    public static final int T__180=180;
+    public static final int T__182=182;
+    public static final int T__181=181;
+    public static final int T__99=99;
+    public static final int T__95=95;
+    public static final int T__96=96;
+    public static final int T__97=97;
+    public static final int T__98=98;
+    public static final int T__177=177;
+    public static final int T__176=176;
+    public static final int T__179=179;
+    public static final int T__178=178;
+    public static final int T__173=173;
+    public static final int T__172=172;
+    public static final int T__175=175;
+    public static final int T__174=174;
+    public static final int T__171=171;
+    public static final int T__170=170;
+    public static final int T__169=169;
+    public static final int T__70=70;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=4;
+    public static final int T__77=77;
+    public static final int T__78=78;
+    public static final int T__79=79;
+    public static final int T__73=73;
+    public static final int T__74=74;
+    public static final int T__75=75;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__199=199;
+    public static final int T__81=81;
+    public static final int T__198=198;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int T__195=195;
+    public static final int T__194=194;
+    public static final int RULE_WS=12;
+    public static final int T__197=197;
+    public static final int T__196=196;
+    public static final int T__191=191;
+    public static final int T__190=190;
+    public static final int T__193=193;
+    public static final int T__192=192;
+    public static final int RULE_ANY_OTHER=13;
+    public static final int T__88=88;
+    public static final int T__89=89;
+    public static final int T__84=84;
+    public static final int T__85=85;
+    public static final int T__86=86;
+    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -1482,7 +1531,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==25||LA8_0==58||(LA8_0>=96 && LA8_0<=97)||(LA8_0>=110 && LA8_0<=113)) ) {
+                if ( (LA8_0==25||LA8_0==58||(LA8_0>=127 && LA8_0<=128)||(LA8_0>=141 && LA8_0<=144)) ) {
                     alt8=1;
                 }
 
@@ -1681,7 +1730,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( ((LA10_0>=110 && LA10_0<=113)) ) {
+            if ( ((LA10_0>=141 && LA10_0<=144)) ) {
                 alt10=1;
             }
             switch (alt10) {
@@ -1889,7 +1938,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     if ( (LA14_0==RULE_T_NUMBER) ) {
                         alt14=1;
                     }
-                    else if ( (LA14_0==95||LA14_0==114) ) {
+                    else if ( (LA14_0==126||LA14_0==145) ) {
                         alt14=2;
                     }
                     else {
@@ -2486,7 +2535,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     if ( (LA22_0==RULE_ID) ) {
                         alt22=1;
                     }
-                    else if ( (LA22_0==95||LA22_0==114) ) {
+                    else if ( (LA22_0==126||LA22_0==145) ) {
                         alt22=2;
                     }
                     else {
@@ -2743,7 +2792,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==25||LA25_0==30||LA25_0==58||(LA25_0>=98 && LA25_0<=99)||(LA25_0>=110 && LA25_0<=113)) ) {
+                if ( (LA25_0==25||LA25_0==30||LA25_0==58||(LA25_0>=129 && LA25_0<=130)||(LA25_0>=141 && LA25_0<=144)) ) {
                     alt25=1;
                 }
 
@@ -2936,7 +2985,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             int alt27=3;
             int LA27_0 = input.LA(1);
 
-            if ( ((LA27_0>=110 && LA27_0<=113)) ) {
+            if ( ((LA27_0>=141 && LA27_0<=144)) ) {
                 alt27=1;
             }
             else if ( (LA27_0==30) ) {
@@ -3289,7 +3338,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                 int alt32=2;
                 int LA32_0 = input.LA(1);
 
-                if ( (LA32_0==24||LA32_0==29||LA32_0==32||LA32_0==36||LA32_0==38||(LA32_0>=41 && LA32_0<=42)||LA32_0==44||(LA32_0>=52 && LA32_0<=53)||(LA32_0>=100 && LA32_0<=103)) ) {
+                if ( (LA32_0==24||LA32_0==29||LA32_0==32||LA32_0==36||LA32_0==38||(LA32_0>=41 && LA32_0<=42)||LA32_0==44||(LA32_0>=52 && LA32_0<=53)||(LA32_0>=131 && LA32_0<=134)) ) {
                     alt32=1;
                 }
 
@@ -3308,7 +3357,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             	    if ( (LA31_0==32||LA31_0==36) ) {
             	        alt31=1;
             	    }
-            	    else if ( (LA31_0==24||LA31_0==29||LA31_0==38||(LA31_0>=41 && LA31_0<=42)||LA31_0==44||(LA31_0>=52 && LA31_0<=53)||(LA31_0>=100 && LA31_0<=103)) ) {
+            	    else if ( (LA31_0==24||LA31_0==29||LA31_0==38||(LA31_0>=41 && LA31_0<=42)||LA31_0==44||(LA31_0>=52 && LA31_0<=53)||(LA31_0>=131 && LA31_0<=134)) ) {
             	        alt31=2;
             	    }
             	    else {
@@ -4729,7 +4778,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                 int alt44=3;
                 int LA44_0 = input.LA(1);
 
-                if ( (LA44_0==42||LA44_0==44||LA44_0==58||(LA44_0>=96 && LA44_0<=98)||(LA44_0>=108 && LA44_0<=113)) ) {
+                if ( (LA44_0==42||LA44_0==44||LA44_0==58||(LA44_0>=127 && LA44_0<=129)||(LA44_0>=139 && LA44_0<=144)) ) {
                     alt44=1;
                 }
                 else if ( (LA44_0==39) ) {
@@ -5493,7 +5542,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             int alt50=2;
             int LA50_0 = input.LA(1);
 
-            if ( ((LA50_0>=110 && LA50_0<=113)) ) {
+            if ( ((LA50_0>=141 && LA50_0<=144)) ) {
                 alt50=1;
             }
             switch (alt50) {
@@ -6352,10 +6401,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             int alt57=2;
             int LA57_0 = input.LA(1);
 
-            if ( (LA57_0==27||LA57_0==30||(LA57_0>=55 && LA57_0<=57)||(LA57_0>=110 && LA57_0<=113)) ) {
+            if ( (LA57_0==27||LA57_0==30||(LA57_0>=55 && LA57_0<=57)||(LA57_0>=141 && LA57_0<=144)) ) {
                 alt57=1;
             }
-            else if ( ((LA57_0>=115 && LA57_0<=134)) ) {
+            else if ( ((LA57_0>=146 && LA57_0<=165)) ) {
                 alt57=2;
             }
             else {
@@ -6487,10 +6536,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             // InternalOil.g:2534:2: (this_ImplAttrIntDef_0= ruleImplAttrIntDef | this_ImplAttrFloatDef_1= ruleImplAttrFloatDef | this_ImplAttrEnumDef_2= ruleImplAttrEnumDef | this_ImplAttrStringDef_3= ruleImplAttrStringDef | this_ImplAttrBooleanDef_4= ruleImplAttrBooleanDef | this_ImplAttrIdentiFier_5= ruleImplAttrIdentiFier )
             int alt58=6;
             switch ( input.LA(1) ) {
-            case 110:
-            case 111:
-            case 112:
-            case 113:
+            case 141:
+            case 142:
+            case 143:
+            case 144:
                 {
                 alt58=1;
                 }
@@ -6929,7 +6978,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     if ( (LA62_0==RULE_T_NUMBER) ) {
                         alt62=1;
                     }
-                    else if ( (LA62_0==95||LA62_0==114) ) {
+                    else if ( (LA62_0==126||LA62_0==145) ) {
                         alt62=2;
                     }
                     else {
@@ -7343,7 +7392,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     if ( (LA68_0==RULE_T_FLOAT) ) {
                         alt68=1;
                     }
-                    else if ( (LA68_0==95||LA68_0==114) ) {
+                    else if ( (LA68_0==126||LA68_0==145) ) {
                         alt68=2;
                     }
                     else {
@@ -7757,7 +7806,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     if ( (LA74_0==RULE_ID) ) {
                         alt74=1;
                     }
-                    else if ( (LA74_0==95||LA74_0==114) ) {
+                    else if ( (LA74_0==126||LA74_0==145) ) {
                         alt74=2;
                     }
                     else {
@@ -8127,7 +8176,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     if ( (LA79_0==RULE_STRING) ) {
                         alt79=1;
                     }
-                    else if ( (LA79_0==95||LA79_0==114) ) {
+                    else if ( (LA79_0==126||LA79_0==145) ) {
                         alt79=2;
                     }
                     else {
@@ -8461,7 +8510,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                                 int alt83=2;
                                 int LA83_0 = input.LA(1);
 
-                                if ( (LA83_0==27||LA83_0==30||(LA83_0>=55 && LA83_0<=57)||(LA83_0>=110 && LA83_0<=113)||(LA83_0>=115 && LA83_0<=134)) ) {
+                                if ( (LA83_0==27||LA83_0==30||(LA83_0>=55 && LA83_0<=57)||(LA83_0>=141 && LA83_0<=144)||(LA83_0>=146 && LA83_0<=165)) ) {
                                     alt83=1;
                                 }
 
@@ -8585,7 +8634,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                                 int alt86=2;
                                 int LA86_0 = input.LA(1);
 
-                                if ( (LA86_0==27||LA86_0==30||(LA86_0>=55 && LA86_0<=57)||(LA86_0>=110 && LA86_0<=113)||(LA86_0>=115 && LA86_0<=134)) ) {
+                                if ( (LA86_0==27||LA86_0==30||(LA86_0>=55 && LA86_0<=57)||(LA86_0>=141 && LA86_0<=144)||(LA86_0>=146 && LA86_0<=165)) ) {
                                     alt86=1;
                                 }
 
@@ -8836,7 +8885,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     if ( ((LA92_0>=33 && LA92_0<=34)) ) {
                         alt92=1;
                     }
-                    else if ( (LA92_0==95||LA92_0==114) ) {
+                    else if ( (LA92_0==126||LA92_0==145) ) {
                         alt92=2;
                     }
                     else {
@@ -9838,7 +9887,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                         int alt99=2;
                         int LA99_0 = input.LA(1);
 
-                        if ( (LA99_0==27||LA99_0==30||(LA99_0>=55 && LA99_0<=57)||(LA99_0>=110 && LA99_0<=113)||(LA99_0>=115 && LA99_0<=134)) ) {
+                        if ( (LA99_0==27||LA99_0==30||(LA99_0>=55 && LA99_0<=57)||(LA99_0>=141 && LA99_0<=144)||(LA99_0>=146 && LA99_0<=165)) ) {
                             alt99=1;
                         }
 
@@ -10380,7 +10429,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                 int alt104=2;
                 int LA104_0 = input.LA(1);
 
-                if ( (LA104_0==24||LA104_0==31||LA104_0==38||(LA104_0>=40 && LA104_0<=42)||LA104_0==45||(LA104_0>=52 && LA104_0<=54)) ) {
+                if ( (LA104_0==24||LA104_0==31||LA104_0==38||(LA104_0>=40 && LA104_0<=45)||LA104_0==47||(LA104_0>=52 && LA104_0<=54)) ) {
                     alt104=1;
                 }
 
@@ -10532,7 +10581,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectDefinition"
-    // InternalOil.g:4161:1: ruleObjectDefinition returns [EObject current=null] : ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule ) ;
+    // InternalOil.g:4161:1: ruleObjectDefinition returns [EObject current=null] : ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule | this_MessageRule_15= ruleMessageRule | this_AppmodeRule_16= ruleAppmodeRule | this_EventRule_17= ruleEventRule ) ;
     public final EObject ruleObjectDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -10562,16 +10611,22 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
         EObject this_IsrRule_14 = null;
 
+        EObject this_MessageRule_15 = null;
+
+        EObject this_AppmodeRule_16 = null;
+
+        EObject this_EventRule_17 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalOil.g:4167:2: ( ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule ) )
-            // InternalOil.g:4168:2: ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule )
+            // InternalOil.g:4167:2: ( ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule | this_MessageRule_15= ruleMessageRule | this_AppmodeRule_16= ruleAppmodeRule | this_EventRule_17= ruleEventRule ) )
+            // InternalOil.g:4168:2: ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule | this_MessageRule_15= ruleMessageRule | this_AppmodeRule_16= ruleAppmodeRule | this_EventRule_17= ruleEventRule )
             {
-            // InternalOil.g:4168:2: ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule )
-            int alt108=10;
+            // InternalOil.g:4168:2: ( (otherlv_0= 'LIBRARY' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_LibraryList_3_0= ruleLibrayattribute ) )* otherlv_4= '}' )? otherlv_5= ';' ) | this_AlarmRule_6= ruleAlarmRule | this_ScheduleTableRule_7= ruleScheduleTableRule | this_IocRule_8= ruleIocRule | this_ResourceRule_9= ruleResourceRule | this_TaskRule_10= ruleTaskRule | this_ComRule_11= ruleComRule | this_ApplicationRule_12= ruleApplicationRule | this_MemoryProtectionRule_13= ruleMemoryProtectionRule | this_IsrRule_14= ruleIsrRule | this_MessageRule_15= ruleMessageRule | this_AppmodeRule_16= ruleAppmodeRule | this_EventRule_17= ruleEventRule )
+            int alt108=13;
             switch ( input.LA(1) ) {
             case 54:
                 {
@@ -10621,6 +10676,21 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             case 38:
                 {
                 alt108=10;
+                }
+                break;
+            case 44:
+                {
+                alt108=11;
+                }
+                break;
+            case 47:
+                {
+                alt108=12;
+                }
+                break;
+            case 43:
+                {
+                alt108=13;
                 }
                 break;
             default:
@@ -10693,7 +10763,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                                 int alt106=2;
                                 int LA106_0 = input.LA(1);
 
-                                if ( ((LA106_0>=63 && LA106_0<=65)) ) {
+                                if ( ((LA106_0>=97 && LA106_0<=99)) ) {
                                     alt106=1;
                                 }
 
@@ -10918,6 +10988,60 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 11 :
+                    // InternalOil.g:4309:3: this_MessageRule_15= ruleMessageRule
+                    {
+
+                    			newCompositeNode(grammarAccess.getObjectDefinitionAccess().getMessageRuleParserRuleCall_10());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MessageRule_15=ruleMessageRule();
+
+                    state._fsp--;
+
+
+                    			current = this_MessageRule_15;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 12 :
+                    // InternalOil.g:4318:3: this_AppmodeRule_16= ruleAppmodeRule
+                    {
+
+                    			newCompositeNode(grammarAccess.getObjectDefinitionAccess().getAppmodeRuleParserRuleCall_11());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_AppmodeRule_16=ruleAppmodeRule();
+
+                    state._fsp--;
+
+
+                    			current = this_AppmodeRule_16;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 13 :
+                    // InternalOil.g:4327:3: this_EventRule_17= ruleEventRule
+                    {
+
+                    			newCompositeNode(grammarAccess.getObjectDefinitionAccess().getEventRuleParserRuleCall_12());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_EventRule_17=ruleEventRule();
+
+                    state._fsp--;
+
+
+                    			current = this_EventRule_17;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
 
             }
 
@@ -10940,8 +11064,6628 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleObjectDefinition"
 
 
+    // $ANTLR start "entryRuleEventRule"
+    // InternalOil.g:4339:1: entryRuleEventRule returns [EObject current=null] : iv_ruleEventRule= ruleEventRule EOF ;
+    public final EObject entryRuleEventRule() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEventRule = null;
+
+
+        try {
+            // InternalOil.g:4339:50: (iv_ruleEventRule= ruleEventRule EOF )
+            // InternalOil.g:4340:2: iv_ruleEventRule= ruleEventRule EOF
+            {
+             newCompositeNode(grammarAccess.getEventRuleRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEventRule=ruleEventRule();
+
+            state._fsp--;
+
+             current =iv_ruleEventRule; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEventRule"
+
+
+    // $ANTLR start "ruleEventRule"
+    // InternalOil.g:4346:1: ruleEventRule returns [EObject current=null] : (otherlv_0= 'EVENT' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= 'MASK' otherlv_4= '=' ( (lv_eventvalue_5_0= ruleName ) ) otherlv_6= ';' otherlv_7= '}' ) ;
+    public final EObject ruleEventRule() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_eventvalue_5_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:4352:2: ( (otherlv_0= 'EVENT' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= 'MASK' otherlv_4= '=' ( (lv_eventvalue_5_0= ruleName ) ) otherlv_6= ';' otherlv_7= '}' ) )
+            // InternalOil.g:4353:2: (otherlv_0= 'EVENT' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= 'MASK' otherlv_4= '=' ( (lv_eventvalue_5_0= ruleName ) ) otherlv_6= ';' otherlv_7= '}' )
+            {
+            // InternalOil.g:4353:2: (otherlv_0= 'EVENT' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= 'MASK' otherlv_4= '=' ( (lv_eventvalue_5_0= ruleName ) ) otherlv_6= ';' otherlv_7= '}' )
+            // InternalOil.g:4354:3: otherlv_0= 'EVENT' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= 'MASK' otherlv_4= '=' ( (lv_eventvalue_5_0= ruleName ) ) otherlv_6= ';' otherlv_7= '}'
+            {
+            otherlv_0=(Token)match(input,43,FOLLOW_11); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getEventRuleAccess().getEVENTKeyword_0());
+            		
+            // InternalOil.g:4358:3: ( (lv_name_1_0= ruleName ) )
+            // InternalOil.g:4359:4: (lv_name_1_0= ruleName )
+            {
+            // InternalOil.g:4359:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:4360:5: lv_name_1_0= ruleName
+            {
+
+            					newCompositeNode(grammarAccess.getEventRuleAccess().getNameNameParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_12);
+            lv_name_1_0=ruleName();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getEventRuleRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.xtext.example.oil.Oil.Name");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,22,FOLLOW_64); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getEventRuleAccess().getLeftCurlyBracketKeyword_2());
+            		
+            otherlv_3=(Token)match(input,63,FOLLOW_7); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getEventRuleAccess().getMASKKeyword_3());
+            		
+            otherlv_4=(Token)match(input,18,FOLLOW_11); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getEventRuleAccess().getEqualsSignKeyword_4());
+            		
+            // InternalOil.g:4389:3: ( (lv_eventvalue_5_0= ruleName ) )
+            // InternalOil.g:4390:4: (lv_eventvalue_5_0= ruleName )
+            {
+            // InternalOil.g:4390:4: (lv_eventvalue_5_0= ruleName )
+            // InternalOil.g:4391:5: lv_eventvalue_5_0= ruleName
+            {
+
+            					newCompositeNode(grammarAccess.getEventRuleAccess().getEventvalueNameParserRuleCall_5_0());
+            				
+            pushFollow(FOLLOW_10);
+            lv_eventvalue_5_0=ruleName();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getEventRuleRule());
+            					}
+            					set(
+            						current,
+            						"eventvalue",
+            						lv_eventvalue_5_0,
+            						"org.xtext.example.oil.Oil.Name");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_6=(Token)match(input,20,FOLLOW_14); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getEventRuleAccess().getSemicolonKeyword_6());
+            		
+            otherlv_7=(Token)match(input,23,FOLLOW_2); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getEventRuleAccess().getRightCurlyBracketKeyword_7());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEventRule"
+
+
+    // $ANTLR start "entryRuleAppmodeRule"
+    // InternalOil.g:4420:1: entryRuleAppmodeRule returns [EObject current=null] : iv_ruleAppmodeRule= ruleAppmodeRule EOF ;
+    public final EObject entryRuleAppmodeRule() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAppmodeRule = null;
+
+
+        try {
+            // InternalOil.g:4420:52: (iv_ruleAppmodeRule= ruleAppmodeRule EOF )
+            // InternalOil.g:4421:2: iv_ruleAppmodeRule= ruleAppmodeRule EOF
+            {
+             newCompositeNode(grammarAccess.getAppmodeRuleRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleAppmodeRule=ruleAppmodeRule();
+
+            state._fsp--;
+
+             current =iv_ruleAppmodeRule; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAppmodeRule"
+
+
+    // $ANTLR start "ruleAppmodeRule"
+    // InternalOil.g:4427:1: ruleAppmodeRule returns [EObject current=null] : (otherlv_0= 'APPMODE' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= '}' otherlv_4= ';' ) ;
+    public final EObject ruleAppmodeRule() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:4433:2: ( (otherlv_0= 'APPMODE' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= '}' otherlv_4= ';' ) )
+            // InternalOil.g:4434:2: (otherlv_0= 'APPMODE' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= '}' otherlv_4= ';' )
+            {
+            // InternalOil.g:4434:2: (otherlv_0= 'APPMODE' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= '}' otherlv_4= ';' )
+            // InternalOil.g:4435:3: otherlv_0= 'APPMODE' ( (lv_name_1_0= ruleName ) ) otherlv_2= '{' otherlv_3= '}' otherlv_4= ';'
+            {
+            otherlv_0=(Token)match(input,47,FOLLOW_11); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getAppmodeRuleAccess().getAPPMODEKeyword_0());
+            		
+            // InternalOil.g:4439:3: ( (lv_name_1_0= ruleName ) )
+            // InternalOil.g:4440:4: (lv_name_1_0= ruleName )
+            {
+            // InternalOil.g:4440:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:4441:5: lv_name_1_0= ruleName
+            {
+
+            					newCompositeNode(grammarAccess.getAppmodeRuleAccess().getNameNameParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_12);
+            lv_name_1_0=ruleName();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAppmodeRuleRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.xtext.example.oil.Oil.Name");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,22,FOLLOW_14); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getAppmodeRuleAccess().getLeftCurlyBracketKeyword_2());
+            		
+            otherlv_3=(Token)match(input,23,FOLLOW_10); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getAppmodeRuleAccess().getRightCurlyBracketKeyword_3());
+            		
+            otherlv_4=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getAppmodeRuleAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAppmodeRule"
+
+
+    // $ANTLR start "entryRuleMessageRule"
+    // InternalOil.g:4474:1: entryRuleMessageRule returns [EObject current=null] : iv_ruleMessageRule= ruleMessageRule EOF ;
+    public final EObject entryRuleMessageRule() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageRule = null;
+
+
+        try {
+            // InternalOil.g:4474:52: (iv_ruleMessageRule= ruleMessageRule EOF )
+            // InternalOil.g:4475:2: iv_ruleMessageRule= ruleMessageRule EOF
+            {
+             newCompositeNode(grammarAccess.getMessageRuleRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageRule=ruleMessageRule();
+
+            state._fsp--;
+
+             current =iv_ruleMessageRule; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageRule"
+
+
+    // $ANTLR start "ruleMessageRule"
+    // InternalOil.g:4481:1: ruleMessageRule returns [EObject current=null] : (otherlv_0= 'MESSAGE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_MessageList_3_0= ruleMessageattribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) ;
+    public final EObject ruleMessageRule() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_MessageList_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:4487:2: ( (otherlv_0= 'MESSAGE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_MessageList_3_0= ruleMessageattribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) )
+            // InternalOil.g:4488:2: (otherlv_0= 'MESSAGE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_MessageList_3_0= ruleMessageattribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            {
+            // InternalOil.g:4488:2: (otherlv_0= 'MESSAGE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_MessageList_3_0= ruleMessageattribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            // InternalOil.g:4489:3: otherlv_0= 'MESSAGE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_MessageList_3_0= ruleMessageattribute ) )* otherlv_4= '}' ) otherlv_5= ';'
+            {
+            otherlv_0=(Token)match(input,44,FOLLOW_11); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getMessageRuleAccess().getMESSAGEKeyword_0());
+            		
+            // InternalOil.g:4493:3: ( (lv_name_1_0= ruleName ) )
+            // InternalOil.g:4494:4: (lv_name_1_0= ruleName )
+            {
+            // InternalOil.g:4494:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:4495:5: lv_name_1_0= ruleName
+            {
+
+            					newCompositeNode(grammarAccess.getMessageRuleAccess().getNameNameParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_12);
+            lv_name_1_0=ruleName();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessageRuleRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.xtext.example.oil.Oil.Name");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalOil.g:4512:3: (otherlv_2= '{' ( (lv_MessageList_3_0= ruleMessageattribute ) )* otherlv_4= '}' )
+            // InternalOil.g:4513:4: otherlv_2= '{' ( (lv_MessageList_3_0= ruleMessageattribute ) )* otherlv_4= '}'
+            {
+            otherlv_2=(Token)match(input,22,FOLLOW_65); 
+
+            				newLeafNode(otherlv_2, grammarAccess.getMessageRuleAccess().getLeftCurlyBracketKeyword_2_0());
+            			
+            // InternalOil.g:4517:4: ( (lv_MessageList_3_0= ruleMessageattribute ) )*
+            loop109:
+            do {
+                int alt109=2;
+                int LA109_0 = input.LA(1);
+
+                if ( ((LA109_0>=64 && LA109_0<=66)) ) {
+                    alt109=1;
+                }
+
+
+                switch (alt109) {
+            	case 1 :
+            	    // InternalOil.g:4518:5: (lv_MessageList_3_0= ruleMessageattribute )
+            	    {
+            	    // InternalOil.g:4518:5: (lv_MessageList_3_0= ruleMessageattribute )
+            	    // InternalOil.g:4519:6: lv_MessageList_3_0= ruleMessageattribute
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getMessageRuleAccess().getMessageListMessageattributeParserRuleCall_2_1_0());
+            	    					
+            	    pushFollow(FOLLOW_65);
+            	    lv_MessageList_3_0=ruleMessageattribute();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getMessageRuleRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"MessageList",
+            	    							lv_MessageList_3_0,
+            	    							"org.xtext.example.oil.Oil.Messageattribute");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop109;
+                }
+            } while (true);
+
+            otherlv_4=(Token)match(input,23,FOLLOW_10); 
+
+            				newLeafNode(otherlv_4, grammarAccess.getMessageRuleAccess().getRightCurlyBracketKeyword_2_2());
+            			
+
+            }
+
+            otherlv_5=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getMessageRuleAccess().getSemicolonKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageRule"
+
+
+    // $ANTLR start "entryRuleMessageattribute"
+    // InternalOil.g:4549:1: entryRuleMessageattribute returns [EObject current=null] : iv_ruleMessageattribute= ruleMessageattribute EOF ;
+    public final EObject entryRuleMessageattribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageattribute = null;
+
+
+        try {
+            // InternalOil.g:4549:57: (iv_ruleMessageattribute= ruleMessageattribute EOF )
+            // InternalOil.g:4550:2: iv_ruleMessageattribute= ruleMessageattribute EOF
+            {
+             newCompositeNode(grammarAccess.getMessageattributeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageattribute=ruleMessageattribute();
+
+            state._fsp--;
+
+             current =iv_ruleMessageattribute; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageattribute"
+
+
+    // $ANTLR start "ruleMessageattribute"
+    // InternalOil.g:4556:1: ruleMessageattribute returns [EObject current=null] : ( ( () otherlv_1= 'MESSAGEPROPERTY' otherlv_2= '=' ( (lv_MessageList2_3_0= ruleMessageattribute2 ) ) ) | ( (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' ) otherlv_6= '=' ( (lv_MessageList3_7_0= ruleMessageattribute3 ) ) ) ) ;
+    public final EObject ruleMessageattribute() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        EObject lv_MessageList2_3_0 = null;
+
+        EObject lv_MessageList3_7_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:4562:2: ( ( ( () otherlv_1= 'MESSAGEPROPERTY' otherlv_2= '=' ( (lv_MessageList2_3_0= ruleMessageattribute2 ) ) ) | ( (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' ) otherlv_6= '=' ( (lv_MessageList3_7_0= ruleMessageattribute3 ) ) ) ) )
+            // InternalOil.g:4563:2: ( ( () otherlv_1= 'MESSAGEPROPERTY' otherlv_2= '=' ( (lv_MessageList2_3_0= ruleMessageattribute2 ) ) ) | ( (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' ) otherlv_6= '=' ( (lv_MessageList3_7_0= ruleMessageattribute3 ) ) ) )
+            {
+            // InternalOil.g:4563:2: ( ( () otherlv_1= 'MESSAGEPROPERTY' otherlv_2= '=' ( (lv_MessageList2_3_0= ruleMessageattribute2 ) ) ) | ( (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' ) otherlv_6= '=' ( (lv_MessageList3_7_0= ruleMessageattribute3 ) ) ) )
+            int alt111=2;
+            int LA111_0 = input.LA(1);
+
+            if ( (LA111_0==64) ) {
+                alt111=1;
+            }
+            else if ( ((LA111_0>=65 && LA111_0<=66)) ) {
+                alt111=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 111, 0, input);
+
+                throw nvae;
+            }
+            switch (alt111) {
+                case 1 :
+                    // InternalOil.g:4564:3: ( () otherlv_1= 'MESSAGEPROPERTY' otherlv_2= '=' ( (lv_MessageList2_3_0= ruleMessageattribute2 ) ) )
+                    {
+                    // InternalOil.g:4564:3: ( () otherlv_1= 'MESSAGEPROPERTY' otherlv_2= '=' ( (lv_MessageList2_3_0= ruleMessageattribute2 ) ) )
+                    // InternalOil.g:4565:4: () otherlv_1= 'MESSAGEPROPERTY' otherlv_2= '=' ( (lv_MessageList2_3_0= ruleMessageattribute2 ) )
+                    {
+                    // InternalOil.g:4565:4: ()
+                    // InternalOil.g:4566:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getMessageattributeAccess().getMessageattributeAction_0_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_1=(Token)match(input,64,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getMessageattributeAccess().getMESSAGEPROPERTYKeyword_0_1());
+                    			
+                    otherlv_2=(Token)match(input,18,FOLLOW_66); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getMessageattributeAccess().getEqualsSignKeyword_0_2());
+                    			
+                    // InternalOil.g:4580:4: ( (lv_MessageList2_3_0= ruleMessageattribute2 ) )
+                    // InternalOil.g:4581:5: (lv_MessageList2_3_0= ruleMessageattribute2 )
+                    {
+                    // InternalOil.g:4581:5: (lv_MessageList2_3_0= ruleMessageattribute2 )
+                    // InternalOil.g:4582:6: lv_MessageList2_3_0= ruleMessageattribute2
+                    {
+
+                    						newCompositeNode(grammarAccess.getMessageattributeAccess().getMessageList2Messageattribute2ParserRuleCall_0_3_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_MessageList2_3_0=ruleMessageattribute2();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getMessageattributeRule());
+                    						}
+                    						add(
+                    							current,
+                    							"MessageList2",
+                    							lv_MessageList2_3_0,
+                    							"org.xtext.example.oil.Oil.Messageattribute2");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:4601:3: ( (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' ) otherlv_6= '=' ( (lv_MessageList3_7_0= ruleMessageattribute3 ) ) )
+                    {
+                    // InternalOil.g:4601:3: ( (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' ) otherlv_6= '=' ( (lv_MessageList3_7_0= ruleMessageattribute3 ) ) )
+                    // InternalOil.g:4602:4: (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' ) otherlv_6= '=' ( (lv_MessageList3_7_0= ruleMessageattribute3 ) )
+                    {
+                    // InternalOil.g:4602:4: (otherlv_4= 'NOTIFICATION' | otherlv_5= 'NOTIFICATIONERROR' )
+                    int alt110=2;
+                    int LA110_0 = input.LA(1);
+
+                    if ( (LA110_0==65) ) {
+                        alt110=1;
+                    }
+                    else if ( (LA110_0==66) ) {
+                        alt110=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 110, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt110) {
+                        case 1 :
+                            // InternalOil.g:4603:5: otherlv_4= 'NOTIFICATION'
+                            {
+                            otherlv_4=(Token)match(input,65,FOLLOW_7); 
+
+                            					newLeafNode(otherlv_4, grammarAccess.getMessageattributeAccess().getNOTIFICATIONKeyword_1_0_0());
+                            				
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalOil.g:4608:5: otherlv_5= 'NOTIFICATIONERROR'
+                            {
+                            otherlv_5=(Token)match(input,66,FOLLOW_7); 
+
+                            					newLeafNode(otherlv_5, grammarAccess.getMessageattributeAccess().getNOTIFICATIONERRORKeyword_1_0_1());
+                            				
+
+                            }
+                            break;
+
+                    }
+
+                    otherlv_6=(Token)match(input,18,FOLLOW_67); 
+
+                    				newLeafNode(otherlv_6, grammarAccess.getMessageattributeAccess().getEqualsSignKeyword_1_1());
+                    			
+                    // InternalOil.g:4617:4: ( (lv_MessageList3_7_0= ruleMessageattribute3 ) )
+                    // InternalOil.g:4618:5: (lv_MessageList3_7_0= ruleMessageattribute3 )
+                    {
+                    // InternalOil.g:4618:5: (lv_MessageList3_7_0= ruleMessageattribute3 )
+                    // InternalOil.g:4619:6: lv_MessageList3_7_0= ruleMessageattribute3
+                    {
+
+                    						newCompositeNode(grammarAccess.getMessageattributeAccess().getMessageList3Messageattribute3ParserRuleCall_1_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_MessageList3_7_0=ruleMessageattribute3();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getMessageattributeRule());
+                    						}
+                    						set(
+                    							current,
+                    							"MessageList3",
+                    							lv_MessageList3_7_0,
+                    							"org.xtext.example.oil.Oil.Messageattribute3");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageattribute"
+
+
+    // $ANTLR start "entryRuleMessageattribute3"
+    // InternalOil.g:4641:1: entryRuleMessageattribute3 returns [EObject current=null] : iv_ruleMessageattribute3= ruleMessageattribute3 EOF ;
+    public final EObject entryRuleMessageattribute3() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageattribute3 = null;
+
+
+        try {
+            // InternalOil.g:4641:58: (iv_ruleMessageattribute3= ruleMessageattribute3 EOF )
+            // InternalOil.g:4642:2: iv_ruleMessageattribute3= ruleMessageattribute3 EOF
+            {
+             newCompositeNode(grammarAccess.getMessageattribute3Rule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageattribute3=ruleMessageattribute3();
+
+            state._fsp--;
+
+             current =iv_ruleMessageattribute3; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageattribute3"
+
+
+    // $ANTLR start "ruleMessageattribute3"
+    // InternalOil.g:4648:1: ruleMessageattribute3 returns [EObject current=null] : ( () ( (otherlv_1= 'NONE' otherlv_2= ';' ) | (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' ) | (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' ) | (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' ) ) ) ;
+    public final EObject ruleMessageattribute3() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token lv_description_7_0=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
+        Token otherlv_14=null;
+        Token otherlv_15=null;
+        Token otherlv_16=null;
+        Token otherlv_17=null;
+        Token otherlv_18=null;
+        Token otherlv_19=null;
+        Token otherlv_21=null;
+        Token otherlv_22=null;
+        Token otherlv_23=null;
+        Token otherlv_24=null;
+        Token otherlv_25=null;
+        Token otherlv_26=null;
+        Token otherlv_27=null;
+        Token otherlv_29=null;
+        Token otherlv_30=null;
+        Token otherlv_31=null;
+        Token otherlv_32=null;
+        Token otherlv_33=null;
+        Token otherlv_35=null;
+        Token otherlv_36=null;
+        EObject lv_Msetevent_13_0 = null;
+
+        AntlrDatatypeRuleToken lv_description_20_0 = null;
+
+        AntlrDatatypeRuleToken lv_description_28_0 = null;
+
+        EObject lv_Mcomcallback_34_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:4654:2: ( ( () ( (otherlv_1= 'NONE' otherlv_2= ';' ) | (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' ) | (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' ) | (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' ) ) ) )
+            // InternalOil.g:4655:2: ( () ( (otherlv_1= 'NONE' otherlv_2= ';' ) | (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' ) | (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' ) | (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' ) ) )
+            {
+            // InternalOil.g:4655:2: ( () ( (otherlv_1= 'NONE' otherlv_2= ';' ) | (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' ) | (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' ) | (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' ) ) )
+            // InternalOil.g:4656:3: () ( (otherlv_1= 'NONE' otherlv_2= ';' ) | (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' ) | (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' ) | (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' ) )
+            {
+            // InternalOil.g:4656:3: ()
+            // InternalOil.g:4657:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageattribute3Access().getMessageattribute3Action_0(),
+            					current);
+            			
+
+            }
+
+            // InternalOil.g:4663:3: ( (otherlv_1= 'NONE' otherlv_2= ';' ) | (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' ) | (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' ) | (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' ) )
+            int alt113=6;
+            alt113 = dfa113.predict(input);
+            switch (alt113) {
+                case 1 :
+                    // InternalOil.g:4664:4: (otherlv_1= 'NONE' otherlv_2= ';' )
+                    {
+                    // InternalOil.g:4664:4: (otherlv_1= 'NONE' otherlv_2= ';' )
+                    // InternalOil.g:4665:5: otherlv_1= 'NONE' otherlv_2= ';'
+                    {
+                    otherlv_1=(Token)match(input,67,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_1, grammarAccess.getMessageattribute3Access().getNONEKeyword_1_0_0());
+                    				
+                    otherlv_2=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_2, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:4675:4: (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' )
+                    {
+                    // InternalOil.g:4675:4: (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' )
+                    // InternalOil.g:4676:5: otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';'
+                    {
+                    otherlv_3=(Token)match(input,68,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_3, grammarAccess.getMessageattribute3Access().getACTIVATETASKKeyword_1_1_0());
+                    				
+                    otherlv_4=(Token)match(input,22,FOLLOW_68); 
+
+                    					newLeafNode(otherlv_4, grammarAccess.getMessageattribute3Access().getLeftCurlyBracketKeyword_1_1_1());
+                    				
+                    otherlv_5=(Token)match(input,24,FOLLOW_7); 
+
+                    					newLeafNode(otherlv_5, grammarAccess.getMessageattribute3Access().getTASKKeyword_1_1_2());
+                    				
+                    otherlv_6=(Token)match(input,18,FOLLOW_11); 
+
+                    					newLeafNode(otherlv_6, grammarAccess.getMessageattribute3Access().getEqualsSignKeyword_1_1_3());
+                    				
+                    // InternalOil.g:4692:5: ( (lv_description_7_0= RULE_ID ) )
+                    // InternalOil.g:4693:6: (lv_description_7_0= RULE_ID )
+                    {
+                    // InternalOil.g:4693:6: (lv_description_7_0= RULE_ID )
+                    // InternalOil.g:4694:7: lv_description_7_0= RULE_ID
+                    {
+                    lv_description_7_0=(Token)match(input,RULE_ID,FOLLOW_10); 
+
+                    							newLeafNode(lv_description_7_0, grammarAccess.getMessageattribute3Access().getDescriptionIDTerminalRuleCall_1_1_4_0());
+                    						
+
+                    							if (current==null) {
+                    								current = createModelElement(grammarAccess.getMessageattribute3Rule());
+                    							}
+                    							setWithLastConsumed(
+                    								current,
+                    								"description",
+                    								lv_description_7_0,
+                    								"org.xtext.example.oil.Oil.ID");
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_8=(Token)match(input,20,FOLLOW_14); 
+
+                    					newLeafNode(otherlv_8, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_1_5());
+                    				
+                    otherlv_9=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_9, grammarAccess.getMessageattribute3Access().getRightCurlyBracketKeyword_1_1_6());
+                    				
+                    otherlv_10=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_10, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_1_7());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:4724:4: (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' )
+                    {
+                    // InternalOil.g:4724:4: (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' )
+                    // InternalOil.g:4725:5: otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';'
+                    {
+                    otherlv_11=(Token)match(input,69,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_11, grammarAccess.getMessageattribute3Access().getSETEVENTKeyword_1_2_0());
+                    				
+                    otherlv_12=(Token)match(input,22,FOLLOW_69); 
+
+                    					newLeafNode(otherlv_12, grammarAccess.getMessageattribute3Access().getLeftCurlyBracketKeyword_1_2_1());
+                    				
+                    // InternalOil.g:4733:5: ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+
+                    int cnt112=0;
+                    loop112:
+                    do {
+                        int alt112=2;
+                        int LA112_0 = input.LA(1);
+
+                        if ( (LA112_0==24||LA112_0==43) ) {
+                            alt112=1;
+                        }
+
+
+                        switch (alt112) {
+                    	case 1 :
+                    	    // InternalOil.g:4734:6: (lv_Msetevent_13_0= ruleMessageSETEVENT )
+                    	    {
+                    	    // InternalOil.g:4734:6: (lv_Msetevent_13_0= ruleMessageSETEVENT )
+                    	    // InternalOil.g:4735:7: lv_Msetevent_13_0= ruleMessageSETEVENT
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getMessageattribute3Access().getMseteventMessageSETEVENTParserRuleCall_1_2_2_0());
+                    	    						
+                    	    pushFollow(FOLLOW_70);
+                    	    lv_Msetevent_13_0=ruleMessageSETEVENT();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getMessageattribute3Rule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"Msetevent",
+                    	    								lv_Msetevent_13_0,
+                    	    								"org.xtext.example.oil.Oil.MessageSETEVENT");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt112 >= 1 ) break loop112;
+                                EarlyExitException eee =
+                                    new EarlyExitException(112, input);
+                                throw eee;
+                        }
+                        cnt112++;
+                    } while (true);
+
+                    otherlv_14=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_14, grammarAccess.getMessageattribute3Access().getRightCurlyBracketKeyword_1_2_3());
+                    				
+                    otherlv_15=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_15, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_2_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:4762:4: (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' )
+                    {
+                    // InternalOil.g:4762:4: (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' )
+                    // InternalOil.g:4763:5: otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';'
+                    {
+                    otherlv_16=(Token)match(input,70,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_16, grammarAccess.getMessageattribute3Access().getCOMCALLBACKKeyword_1_3_0());
+                    				
+                    otherlv_17=(Token)match(input,22,FOLLOW_71); 
+
+                    					newLeafNode(otherlv_17, grammarAccess.getMessageattribute3Access().getLeftCurlyBracketKeyword_1_3_1());
+                    				
+                    otherlv_18=(Token)match(input,71,FOLLOW_7); 
+
+                    					newLeafNode(otherlv_18, grammarAccess.getMessageattribute3Access().getCALLBACKROUTINENAMEKeyword_1_3_2());
+                    				
+                    otherlv_19=(Token)match(input,18,FOLLOW_8); 
+
+                    					newLeafNode(otherlv_19, grammarAccess.getMessageattribute3Access().getEqualsSignKeyword_1_3_3());
+                    				
+                    // InternalOil.g:4779:5: ( (lv_description_20_0= ruleEString ) )
+                    // InternalOil.g:4780:6: (lv_description_20_0= ruleEString )
+                    {
+                    // InternalOil.g:4780:6: (lv_description_20_0= ruleEString )
+                    // InternalOil.g:4781:7: lv_description_20_0= ruleEString
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute3Access().getDescriptionEStringParserRuleCall_1_3_4_0());
+                    						
+                    pushFollow(FOLLOW_10);
+                    lv_description_20_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute3Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"description",
+                    								lv_description_20_0,
+                    								"org.xtext.example.oil.Oil.EString");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_21=(Token)match(input,20,FOLLOW_14); 
+
+                    					newLeafNode(otherlv_21, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_3_5());
+                    				
+                    otherlv_22=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_22, grammarAccess.getMessageattribute3Access().getRightCurlyBracketKeyword_1_3_6());
+                    				
+                    otherlv_23=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_23, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_3_7());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalOil.g:4812:4: (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' )
+                    {
+                    // InternalOil.g:4812:4: (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' )
+                    // InternalOil.g:4813:5: otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';'
+                    {
+                    otherlv_24=(Token)match(input,72,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_24, grammarAccess.getMessageattribute3Access().getFLAGKeyword_1_4_0());
+                    				
+                    otherlv_25=(Token)match(input,22,FOLLOW_72); 
+
+                    					newLeafNode(otherlv_25, grammarAccess.getMessageattribute3Access().getLeftCurlyBracketKeyword_1_4_1());
+                    				
+                    otherlv_26=(Token)match(input,73,FOLLOW_7); 
+
+                    					newLeafNode(otherlv_26, grammarAccess.getMessageattribute3Access().getFLAGNAMEKeyword_1_4_2());
+                    				
+                    otherlv_27=(Token)match(input,18,FOLLOW_8); 
+
+                    					newLeafNode(otherlv_27, grammarAccess.getMessageattribute3Access().getEqualsSignKeyword_1_4_3());
+                    				
+                    // InternalOil.g:4829:5: ( (lv_description_28_0= ruleEString ) )
+                    // InternalOil.g:4830:6: (lv_description_28_0= ruleEString )
+                    {
+                    // InternalOil.g:4830:6: (lv_description_28_0= ruleEString )
+                    // InternalOil.g:4831:7: lv_description_28_0= ruleEString
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute3Access().getDescriptionEStringParserRuleCall_1_4_4_0());
+                    						
+                    pushFollow(FOLLOW_10);
+                    lv_description_28_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute3Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"description",
+                    								lv_description_28_0,
+                    								"org.xtext.example.oil.Oil.EString");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_29=(Token)match(input,20,FOLLOW_14); 
+
+                    					newLeafNode(otherlv_29, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_4_5());
+                    				
+                    otherlv_30=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_30, grammarAccess.getMessageattribute3Access().getRightCurlyBracketKeyword_1_4_6());
+                    				
+                    otherlv_31=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_31, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_4_7());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalOil.g:4862:4: (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' )
+                    {
+                    // InternalOil.g:4862:4: (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' )
+                    // InternalOil.g:4863:5: otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';'
+                    {
+                    otherlv_32=(Token)match(input,70,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_32, grammarAccess.getMessageattribute3Access().getCOMCALLBACKKeyword_1_5_0());
+                    				
+                    otherlv_33=(Token)match(input,22,FOLLOW_73); 
+
+                    					newLeafNode(otherlv_33, grammarAccess.getMessageattribute3Access().getLeftCurlyBracketKeyword_1_5_1());
+                    				
+                    // InternalOil.g:4871:5: ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) )
+                    // InternalOil.g:4872:6: (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK )
+                    {
+                    // InternalOil.g:4872:6: (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK )
+                    // InternalOil.g:4873:7: lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute3Access().getMcomcallbackMessageCOMCALLBACKParserRuleCall_1_5_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_Mcomcallback_34_0=ruleMessageCOMCALLBACK();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute3Rule());
+                    							}
+                    							add(
+                    								current,
+                    								"Mcomcallback",
+                    								lv_Mcomcallback_34_0,
+                    								"org.xtext.example.oil.Oil.MessageCOMCALLBACK");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_35=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_35, grammarAccess.getMessageattribute3Access().getRightCurlyBracketKeyword_1_5_3());
+                    				
+                    otherlv_36=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_36, grammarAccess.getMessageattribute3Access().getSemicolonKeyword_1_5_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageattribute3"
+
+
+    // $ANTLR start "entryRuleMessageSETEVENT"
+    // InternalOil.g:4904:1: entryRuleMessageSETEVENT returns [EObject current=null] : iv_ruleMessageSETEVENT= ruleMessageSETEVENT EOF ;
+    public final EObject entryRuleMessageSETEVENT() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageSETEVENT = null;
+
+
+        try {
+            // InternalOil.g:4904:56: (iv_ruleMessageSETEVENT= ruleMessageSETEVENT EOF )
+            // InternalOil.g:4905:2: iv_ruleMessageSETEVENT= ruleMessageSETEVENT EOF
+            {
+             newCompositeNode(grammarAccess.getMessageSETEVENTRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageSETEVENT=ruleMessageSETEVENT();
+
+            state._fsp--;
+
+             current =iv_ruleMessageSETEVENT; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageSETEVENT"
+
+
+    // $ANTLR start "ruleMessageSETEVENT"
+    // InternalOil.g:4911:1: ruleMessageSETEVENT returns [EObject current=null] : ( (otherlv_0= 'TASK' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'EVENT' otherlv_5= '=' ( (lv_description_6_0= RULE_ID ) ) otherlv_7= ';' ) ) ;
+    public final EObject ruleMessageSETEVENT() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_description_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token lv_description_6_0=null;
+        Token otherlv_7=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:4917:2: ( ( (otherlv_0= 'TASK' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'EVENT' otherlv_5= '=' ( (lv_description_6_0= RULE_ID ) ) otherlv_7= ';' ) ) )
+            // InternalOil.g:4918:2: ( (otherlv_0= 'TASK' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'EVENT' otherlv_5= '=' ( (lv_description_6_0= RULE_ID ) ) otherlv_7= ';' ) )
+            {
+            // InternalOil.g:4918:2: ( (otherlv_0= 'TASK' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'EVENT' otherlv_5= '=' ( (lv_description_6_0= RULE_ID ) ) otherlv_7= ';' ) )
+            int alt114=2;
+            int LA114_0 = input.LA(1);
+
+            if ( (LA114_0==24) ) {
+                alt114=1;
+            }
+            else if ( (LA114_0==43) ) {
+                alt114=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 114, 0, input);
+
+                throw nvae;
+            }
+            switch (alt114) {
+                case 1 :
+                    // InternalOil.g:4919:3: (otherlv_0= 'TASK' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' )
+                    {
+                    // InternalOil.g:4919:3: (otherlv_0= 'TASK' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' )
+                    // InternalOil.g:4920:4: otherlv_0= 'TASK' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';'
+                    {
+                    otherlv_0=(Token)match(input,24,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_0, grammarAccess.getMessageSETEVENTAccess().getTASKKeyword_0_0());
+                    			
+                    otherlv_1=(Token)match(input,18,FOLLOW_11); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getMessageSETEVENTAccess().getEqualsSignKeyword_0_1());
+                    			
+                    // InternalOil.g:4928:4: ( (lv_description_2_0= RULE_ID ) )
+                    // InternalOil.g:4929:5: (lv_description_2_0= RULE_ID )
+                    {
+                    // InternalOil.g:4929:5: (lv_description_2_0= RULE_ID )
+                    // InternalOil.g:4930:6: lv_description_2_0= RULE_ID
+                    {
+                    lv_description_2_0=(Token)match(input,RULE_ID,FOLLOW_10); 
+
+                    						newLeafNode(lv_description_2_0, grammarAccess.getMessageSETEVENTAccess().getDescriptionIDTerminalRuleCall_0_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMessageSETEVENTRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"description",
+                    							lv_description_2_0,
+                    							"org.xtext.example.oil.Oil.ID");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_3=(Token)match(input,20,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getMessageSETEVENTAccess().getSemicolonKeyword_0_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:4952:3: (otherlv_4= 'EVENT' otherlv_5= '=' ( (lv_description_6_0= RULE_ID ) ) otherlv_7= ';' )
+                    {
+                    // InternalOil.g:4952:3: (otherlv_4= 'EVENT' otherlv_5= '=' ( (lv_description_6_0= RULE_ID ) ) otherlv_7= ';' )
+                    // InternalOil.g:4953:4: otherlv_4= 'EVENT' otherlv_5= '=' ( (lv_description_6_0= RULE_ID ) ) otherlv_7= ';'
+                    {
+                    otherlv_4=(Token)match(input,43,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getMessageSETEVENTAccess().getEVENTKeyword_1_0());
+                    			
+                    otherlv_5=(Token)match(input,18,FOLLOW_11); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getMessageSETEVENTAccess().getEqualsSignKeyword_1_1());
+                    			
+                    // InternalOil.g:4961:4: ( (lv_description_6_0= RULE_ID ) )
+                    // InternalOil.g:4962:5: (lv_description_6_0= RULE_ID )
+                    {
+                    // InternalOil.g:4962:5: (lv_description_6_0= RULE_ID )
+                    // InternalOil.g:4963:6: lv_description_6_0= RULE_ID
+                    {
+                    lv_description_6_0=(Token)match(input,RULE_ID,FOLLOW_10); 
+
+                    						newLeafNode(lv_description_6_0, grammarAccess.getMessageSETEVENTAccess().getDescriptionIDTerminalRuleCall_1_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMessageSETEVENTRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"description",
+                    							lv_description_6_0,
+                    							"org.xtext.example.oil.Oil.ID");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_7=(Token)match(input,20,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getMessageSETEVENTAccess().getSemicolonKeyword_1_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageSETEVENT"
+
+
+    // $ANTLR start "entryRuleMessageCOMCALLBACK"
+    // InternalOil.g:4988:1: entryRuleMessageCOMCALLBACK returns [EObject current=null] : iv_ruleMessageCOMCALLBACK= ruleMessageCOMCALLBACK EOF ;
+    public final EObject entryRuleMessageCOMCALLBACK() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageCOMCALLBACK = null;
+
+
+        try {
+            // InternalOil.g:4988:59: (iv_ruleMessageCOMCALLBACK= ruleMessageCOMCALLBACK EOF )
+            // InternalOil.g:4989:2: iv_ruleMessageCOMCALLBACK= ruleMessageCOMCALLBACK EOF
+            {
+             newCompositeNode(grammarAccess.getMessageCOMCALLBACKRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageCOMCALLBACK=ruleMessageCOMCALLBACK();
+
+            state._fsp--;
+
+             current =iv_ruleMessageCOMCALLBACK; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageCOMCALLBACK"
+
+
+    // $ANTLR start "ruleMessageCOMCALLBACK"
+    // InternalOil.g:4995:1: ruleMessageCOMCALLBACK returns [EObject current=null] : ( (otherlv_0= 'CALLBACKROUTINENAME' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'MONITOREDIPDU' otherlv_5= '=' ( (lv_value_6_0= RULE_T_NUMBER ) ) otherlv_7= ';' ) ) ;
+    public final EObject ruleMessageCOMCALLBACK() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_description_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token lv_value_6_0=null;
+        Token otherlv_7=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:5001:2: ( ( (otherlv_0= 'CALLBACKROUTINENAME' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'MONITOREDIPDU' otherlv_5= '=' ( (lv_value_6_0= RULE_T_NUMBER ) ) otherlv_7= ';' ) ) )
+            // InternalOil.g:5002:2: ( (otherlv_0= 'CALLBACKROUTINENAME' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'MONITOREDIPDU' otherlv_5= '=' ( (lv_value_6_0= RULE_T_NUMBER ) ) otherlv_7= ';' ) )
+            {
+            // InternalOil.g:5002:2: ( (otherlv_0= 'CALLBACKROUTINENAME' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' ) | (otherlv_4= 'MONITOREDIPDU' otherlv_5= '=' ( (lv_value_6_0= RULE_T_NUMBER ) ) otherlv_7= ';' ) )
+            int alt115=2;
+            int LA115_0 = input.LA(1);
+
+            if ( (LA115_0==71) ) {
+                alt115=1;
+            }
+            else if ( (LA115_0==74) ) {
+                alt115=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 115, 0, input);
+
+                throw nvae;
+            }
+            switch (alt115) {
+                case 1 :
+                    // InternalOil.g:5003:3: (otherlv_0= 'CALLBACKROUTINENAME' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' )
+                    {
+                    // InternalOil.g:5003:3: (otherlv_0= 'CALLBACKROUTINENAME' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';' )
+                    // InternalOil.g:5004:4: otherlv_0= 'CALLBACKROUTINENAME' otherlv_1= '=' ( (lv_description_2_0= RULE_ID ) ) otherlv_3= ';'
+                    {
+                    otherlv_0=(Token)match(input,71,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_0, grammarAccess.getMessageCOMCALLBACKAccess().getCALLBACKROUTINENAMEKeyword_0_0());
+                    			
+                    otherlv_1=(Token)match(input,18,FOLLOW_11); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getMessageCOMCALLBACKAccess().getEqualsSignKeyword_0_1());
+                    			
+                    // InternalOil.g:5012:4: ( (lv_description_2_0= RULE_ID ) )
+                    // InternalOil.g:5013:5: (lv_description_2_0= RULE_ID )
+                    {
+                    // InternalOil.g:5013:5: (lv_description_2_0= RULE_ID )
+                    // InternalOil.g:5014:6: lv_description_2_0= RULE_ID
+                    {
+                    lv_description_2_0=(Token)match(input,RULE_ID,FOLLOW_10); 
+
+                    						newLeafNode(lv_description_2_0, grammarAccess.getMessageCOMCALLBACKAccess().getDescriptionIDTerminalRuleCall_0_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMessageCOMCALLBACKRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"description",
+                    							lv_description_2_0,
+                    							"org.xtext.example.oil.Oil.ID");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_3=(Token)match(input,20,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getMessageCOMCALLBACKAccess().getSemicolonKeyword_0_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:5036:3: (otherlv_4= 'MONITOREDIPDU' otherlv_5= '=' ( (lv_value_6_0= RULE_T_NUMBER ) ) otherlv_7= ';' )
+                    {
+                    // InternalOil.g:5036:3: (otherlv_4= 'MONITOREDIPDU' otherlv_5= '=' ( (lv_value_6_0= RULE_T_NUMBER ) ) otherlv_7= ';' )
+                    // InternalOil.g:5037:4: otherlv_4= 'MONITOREDIPDU' otherlv_5= '=' ( (lv_value_6_0= RULE_T_NUMBER ) ) otherlv_7= ';'
+                    {
+                    otherlv_4=(Token)match(input,74,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getMessageCOMCALLBACKAccess().getMONITOREDIPDUKeyword_1_0());
+                    			
+                    otherlv_5=(Token)match(input,18,FOLLOW_56); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getMessageCOMCALLBACKAccess().getEqualsSignKeyword_1_1());
+                    			
+                    // InternalOil.g:5045:4: ( (lv_value_6_0= RULE_T_NUMBER ) )
+                    // InternalOil.g:5046:5: (lv_value_6_0= RULE_T_NUMBER )
+                    {
+                    // InternalOil.g:5046:5: (lv_value_6_0= RULE_T_NUMBER )
+                    // InternalOil.g:5047:6: lv_value_6_0= RULE_T_NUMBER
+                    {
+                    lv_value_6_0=(Token)match(input,RULE_T_NUMBER,FOLLOW_10); 
+
+                    						newLeafNode(lv_value_6_0, grammarAccess.getMessageCOMCALLBACKAccess().getValueT_NUMBERTerminalRuleCall_1_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMessageCOMCALLBACKRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"value",
+                    							lv_value_6_0,
+                    							"org.xtext.example.oil.Oil.T_NUMBER");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_7=(Token)match(input,20,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getMessageCOMCALLBACKAccess().getSemicolonKeyword_1_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageCOMCALLBACK"
+
+
+    // $ANTLR start "entryRuleMessageattribute2"
+    // InternalOil.g:5072:1: entryRuleMessageattribute2 returns [EObject current=null] : iv_ruleMessageattribute2= ruleMessageattribute2 EOF ;
+    public final EObject entryRuleMessageattribute2() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageattribute2 = null;
+
+
+        try {
+            // InternalOil.g:5072:58: (iv_ruleMessageattribute2= ruleMessageattribute2 EOF )
+            // InternalOil.g:5073:2: iv_ruleMessageattribute2= ruleMessageattribute2 EOF
+            {
+             newCompositeNode(grammarAccess.getMessageattribute2Rule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageattribute2=ruleMessageattribute2();
+
+            state._fsp--;
+
+             current =iv_ruleMessageattribute2; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageattribute2"
+
+
+    // $ANTLR start "ruleMessageattribute2"
+    // InternalOil.g:5079:1: ruleMessageattribute2 returns [EObject current=null] : ( () ( (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' ) | (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' ) | (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' ) | (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' ) | (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' ) | (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' ) | (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' ) | (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' ) | (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' ) | (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' ) | (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' ) ) ) ;
+    public final EObject ruleMessageattribute2() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
+        Token otherlv_14=null;
+        Token otherlv_15=null;
+        Token otherlv_16=null;
+        Token otherlv_17=null;
+        Token otherlv_18=null;
+        Token otherlv_19=null;
+        Token otherlv_21=null;
+        Token otherlv_22=null;
+        Token otherlv_23=null;
+        Token otherlv_24=null;
+        Token otherlv_26=null;
+        Token otherlv_27=null;
+        Token otherlv_28=null;
+        Token otherlv_29=null;
+        Token otherlv_31=null;
+        Token otherlv_32=null;
+        Token otherlv_33=null;
+        Token otherlv_34=null;
+        Token otherlv_36=null;
+        Token otherlv_37=null;
+        Token otherlv_38=null;
+        Token otherlv_39=null;
+        Token otherlv_41=null;
+        Token otherlv_42=null;
+        Token otherlv_43=null;
+        Token otherlv_44=null;
+        Token otherlv_46=null;
+        Token otherlv_47=null;
+        Token otherlv_48=null;
+        Token otherlv_49=null;
+        Token otherlv_51=null;
+        Token otherlv_52=null;
+        Token otherlv_53=null;
+        Token otherlv_54=null;
+        Token otherlv_56=null;
+        Token otherlv_57=null;
+        Token otherlv_58=null;
+        Token otherlv_59=null;
+        Token otherlv_61=null;
+        Token otherlv_62=null;
+        EObject lv_Cdata_3_0 = null;
+
+        EObject lv_SSE_8_0 = null;
+
+        EObject lv_SDE_13_0 = null;
+
+        EObject lv_SZE_20_0 = null;
+
+        EObject lv_RZI_25_0 = null;
+
+        EObject lv_RZE_30_0 = null;
+
+        EObject lv_RUI_35_0 = null;
+
+        EObject lv_RQI_40_0 = null;
+
+        EObject lv_RUE_45_0 = null;
+
+        EObject lv_RQE_50_0 = null;
+
+        EObject lv_RDE_55_0 = null;
+
+        EObject lv_RZS_60_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:5085:2: ( ( () ( (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' ) | (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' ) | (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' ) | (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' ) | (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' ) | (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' ) | (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' ) | (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' ) | (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' ) | (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' ) | (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' ) ) ) )
+            // InternalOil.g:5086:2: ( () ( (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' ) | (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' ) | (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' ) | (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' ) | (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' ) | (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' ) | (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' ) | (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' ) | (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' ) | (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' ) | (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' ) ) )
+            {
+            // InternalOil.g:5086:2: ( () ( (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' ) | (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' ) | (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' ) | (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' ) | (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' ) | (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' ) | (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' ) | (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' ) | (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' ) | (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' ) | (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' ) ) )
+            // InternalOil.g:5087:3: () ( (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' ) | (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' ) | (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' ) | (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' ) | (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' ) | (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' ) | (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' ) | (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' ) | (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' ) | (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' ) | (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' ) )
+            {
+            // InternalOil.g:5087:3: ()
+            // InternalOil.g:5088:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageattribute2Access().getMessageattribute2Action_0(),
+            					current);
+            			
+
+            }
+
+            // InternalOil.g:5094:3: ( (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' ) | (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' ) | (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' ) | (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' ) | (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' ) | (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' ) | (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' ) | (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' ) | (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' ) | (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' ) | (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' ) )
+            int alt117=13;
+            switch ( input.LA(1) ) {
+            case 75:
+                {
+                alt117=1;
+                }
+                break;
+            case 76:
+                {
+                alt117=2;
+                }
+                break;
+            case 77:
+                {
+                alt117=3;
+                }
+                break;
+            case 78:
+                {
+                alt117=4;
+                }
+                break;
+            case 79:
+                {
+                alt117=5;
+                }
+                break;
+            case 80:
+                {
+                alt117=6;
+                }
+                break;
+            case 81:
+                {
+                alt117=7;
+                }
+                break;
+            case 82:
+                {
+                alt117=8;
+                }
+                break;
+            case 83:
+                {
+                alt117=9;
+                }
+                break;
+            case 84:
+                {
+                alt117=10;
+                }
+                break;
+            case 85:
+                {
+                alt117=11;
+                }
+                break;
+            case 86:
+                {
+                alt117=12;
+                }
+                break;
+            case 87:
+                {
+                alt117=13;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 117, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt117) {
+                case 1 :
+                    // InternalOil.g:5095:4: (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' )
+                    {
+                    // InternalOil.g:5095:4: (otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';' )
+                    // InternalOil.g:5096:5: otherlv_1= 'SEND_STATIC_INTERNAL' otherlv_2= '{' ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) ) otherlv_4= '}' otherlv_5= ';'
+                    {
+                    otherlv_1=(Token)match(input,75,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_1, grammarAccess.getMessageattribute2Access().getSEND_STATIC_INTERNALKeyword_1_0_0());
+                    				
+                    otherlv_2=(Token)match(input,22,FOLLOW_74); 
+
+                    					newLeafNode(otherlv_2, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_0_1());
+                    				
+                    // InternalOil.g:5104:5: ( (lv_Cdata_3_0= ruleMessageCDATATYPE ) )
+                    // InternalOil.g:5105:6: (lv_Cdata_3_0= ruleMessageCDATATYPE )
+                    {
+                    // InternalOil.g:5105:6: (lv_Cdata_3_0= ruleMessageCDATATYPE )
+                    // InternalOil.g:5106:7: lv_Cdata_3_0= ruleMessageCDATATYPE
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getCdataMessageCDATATYPEParserRuleCall_1_0_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_Cdata_3_0=ruleMessageCDATATYPE();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							add(
+                    								current,
+                    								"Cdata",
+                    								lv_Cdata_3_0,
+                    								"org.xtext.example.oil.Oil.MessageCDATATYPE");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_4=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_4, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_0_3());
+                    				
+                    otherlv_5=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_5, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_0_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:5133:4: (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' )
+                    {
+                    // InternalOil.g:5133:4: (otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';' )
+                    // InternalOil.g:5134:5: otherlv_6= 'SEND_STATIC_EXTERNAL' otherlv_7= '{' ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) ) otherlv_9= '}' otherlv_10= ';'
+                    {
+                    otherlv_6=(Token)match(input,76,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_6, grammarAccess.getMessageattribute2Access().getSEND_STATIC_EXTERNALKeyword_1_1_0());
+                    				
+                    otherlv_7=(Token)match(input,22,FOLLOW_75); 
+
+                    					newLeafNode(otherlv_7, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_1_1());
+                    				
+                    // InternalOil.g:5142:5: ( (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL ) )
+                    // InternalOil.g:5143:6: (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL )
+                    {
+                    // InternalOil.g:5143:6: (lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL )
+                    // InternalOil.g:5144:7: lv_SSE_8_0= ruleMessage_SEND_STATIC_EXTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getSSEMessage_SEND_STATIC_EXTERNALParserRuleCall_1_1_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_SSE_8_0=ruleMessage_SEND_STATIC_EXTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"SSE",
+                    								lv_SSE_8_0,
+                    								"org.xtext.example.oil.Oil.Message_SEND_STATIC_EXTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_9=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_9, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_1_3());
+                    				
+                    otherlv_10=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_10, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_1_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:5171:4: (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' )
+                    {
+                    // InternalOil.g:5171:4: (otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';' )
+                    // InternalOil.g:5172:5: otherlv_11= 'SEND_DYNAMIC_EXTERNAL' otherlv_12= '{' ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) ) otherlv_14= '}' otherlv_15= ';'
+                    {
+                    otherlv_11=(Token)match(input,77,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_11, grammarAccess.getMessageattribute2Access().getSEND_DYNAMIC_EXTERNALKeyword_1_2_0());
+                    				
+                    otherlv_12=(Token)match(input,22,FOLLOW_75); 
+
+                    					newLeafNode(otherlv_12, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_2_1());
+                    				
+                    // InternalOil.g:5180:5: ( (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL ) )
+                    // InternalOil.g:5181:6: (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL )
+                    {
+                    // InternalOil.g:5181:6: (lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL )
+                    // InternalOil.g:5182:7: lv_SDE_13_0= ruleMessage_SEND_DYNAMIC_EXTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getSDEMessage_SEND_DYNAMIC_EXTERNALParserRuleCall_1_2_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_SDE_13_0=ruleMessage_SEND_DYNAMIC_EXTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"SDE",
+                    								lv_SDE_13_0,
+                    								"org.xtext.example.oil.Oil.Message_SEND_DYNAMIC_EXTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_14=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_14, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_2_3());
+                    				
+                    otherlv_15=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_15, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_2_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:5209:4: (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' )
+                    {
+                    // InternalOil.g:5209:4: (otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';' )
+                    // InternalOil.g:5210:5: otherlv_16= 'SEND_ZERO_INTERNAL' otherlv_17= ';'
+                    {
+                    otherlv_16=(Token)match(input,78,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_16, grammarAccess.getMessageattribute2Access().getSEND_ZERO_INTERNALKeyword_1_3_0());
+                    				
+                    otherlv_17=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_17, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_3_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalOil.g:5220:4: (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' )
+                    {
+                    // InternalOil.g:5220:4: (otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';' )
+                    // InternalOil.g:5221:5: otherlv_18= 'SEND_ZERO_EXTERNAL' otherlv_19= '{' ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) ) otherlv_21= '}' otherlv_22= ';'
+                    {
+                    otherlv_18=(Token)match(input,79,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_18, grammarAccess.getMessageattribute2Access().getSEND_ZERO_EXTERNALKeyword_1_4_0());
+                    				
+                    otherlv_19=(Token)match(input,22,FOLLOW_75); 
+
+                    					newLeafNode(otherlv_19, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_4_1());
+                    				
+                    // InternalOil.g:5229:5: ( (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL ) )
+                    // InternalOil.g:5230:6: (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL )
+                    {
+                    // InternalOil.g:5230:6: (lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL )
+                    // InternalOil.g:5231:7: lv_SZE_20_0= ruleMessage_SEND_ZERO_EXTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getSZEMessage_SEND_ZERO_EXTERNALParserRuleCall_1_4_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_SZE_20_0=ruleMessage_SEND_ZERO_EXTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"SZE",
+                    								lv_SZE_20_0,
+                    								"org.xtext.example.oil.Oil.Message_SEND_ZERO_EXTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_21=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_21, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_4_3());
+                    				
+                    otherlv_22=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_22, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_4_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalOil.g:5258:4: (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' )
+                    {
+                    // InternalOil.g:5258:4: (otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';' )
+                    // InternalOil.g:5259:5: otherlv_23= 'RECEIVE_ZERO_INTERNAL' otherlv_24= '{' ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) ) otherlv_26= '}' otherlv_27= ';'
+                    {
+                    otherlv_23=(Token)match(input,80,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_23, grammarAccess.getMessageattribute2Access().getRECEIVE_ZERO_INTERNALKeyword_1_5_0());
+                    				
+                    otherlv_24=(Token)match(input,22,FOLLOW_76); 
+
+                    					newLeafNode(otherlv_24, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_5_1());
+                    				
+                    // InternalOil.g:5267:5: ( (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL ) )
+                    // InternalOil.g:5268:6: (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL )
+                    {
+                    // InternalOil.g:5268:6: (lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL )
+                    // InternalOil.g:5269:7: lv_RZI_25_0= ruleMessage_RECEIVE_ZERO_INTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRZIMessage_RECEIVE_ZERO_INTERNALParserRuleCall_1_5_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_RZI_25_0=ruleMessage_RECEIVE_ZERO_INTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"RZI",
+                    								lv_RZI_25_0,
+                    								"org.xtext.example.oil.Oil.Message_RECEIVE_ZERO_INTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_26=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_26, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_5_3());
+                    				
+                    otherlv_27=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_27, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_5_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalOil.g:5296:4: (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' )
+                    {
+                    // InternalOil.g:5296:4: (otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';' )
+                    // InternalOil.g:5297:5: otherlv_28= 'RECEIVE_ZERO_EXTERNAL' otherlv_29= '{' ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) ) otherlv_31= '}' otherlv_32= ';'
+                    {
+                    otherlv_28=(Token)match(input,81,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_28, grammarAccess.getMessageattribute2Access().getRECEIVE_ZERO_EXTERNALKeyword_1_6_0());
+                    				
+                    otherlv_29=(Token)match(input,22,FOLLOW_75); 
+
+                    					newLeafNode(otherlv_29, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_6_1());
+                    				
+                    // InternalOil.g:5305:5: ( (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL ) )
+                    // InternalOil.g:5306:6: (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL )
+                    {
+                    // InternalOil.g:5306:6: (lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL )
+                    // InternalOil.g:5307:7: lv_RZE_30_0= ruleMessage_RECEIVE_ZERO_EXTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRZEMessage_RECEIVE_ZERO_EXTERNALParserRuleCall_1_6_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_RZE_30_0=ruleMessage_RECEIVE_ZERO_EXTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"RZE",
+                    								lv_RZE_30_0,
+                    								"org.xtext.example.oil.Oil.Message_RECEIVE_ZERO_EXTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_31=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_31, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_6_3());
+                    				
+                    otherlv_32=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_32, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_6_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalOil.g:5334:4: (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' )
+                    {
+                    // InternalOil.g:5334:4: (otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';' )
+                    // InternalOil.g:5335:5: otherlv_33= 'RECEIVE_UNQUEUED_INTERNAL' otherlv_34= '{' ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )* otherlv_36= '}' otherlv_37= ';'
+                    {
+                    otherlv_33=(Token)match(input,82,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_33, grammarAccess.getMessageattribute2Access().getRECEIVE_UNQUEUED_INTERNALKeyword_1_7_0());
+                    				
+                    otherlv_34=(Token)match(input,22,FOLLOW_77); 
+
+                    					newLeafNode(otherlv_34, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_7_1());
+                    				
+                    // InternalOil.g:5343:5: ( (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL ) )*
+                    loop116:
+                    do {
+                        int alt116=2;
+                        int LA116_0 = input.LA(1);
+
+                        if ( ((LA116_0>=92 && LA116_0<=93)||LA116_0==95) ) {
+                            alt116=1;
+                        }
+
+
+                        switch (alt116) {
+                    	case 1 :
+                    	    // InternalOil.g:5344:6: (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL )
+                    	    {
+                    	    // InternalOil.g:5344:6: (lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL )
+                    	    // InternalOil.g:5345:7: lv_RUI_35_0= ruleMessage_RECEIVE_UNQUEUED_INTERNAL
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRUIMessage_RECEIVE_UNQUEUED_INTERNALParserRuleCall_1_7_2_0());
+                    	    						
+                    	    pushFollow(FOLLOW_77);
+                    	    lv_RUI_35_0=ruleMessage_RECEIVE_UNQUEUED_INTERNAL();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"RUI",
+                    	    								lv_RUI_35_0,
+                    	    								"org.xtext.example.oil.Oil.Message_RECEIVE_UNQUEUED_INTERNAL");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop116;
+                        }
+                    } while (true);
+
+                    otherlv_36=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_36, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_7_3());
+                    				
+                    otherlv_37=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_37, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_7_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // InternalOil.g:5372:4: (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' )
+                    {
+                    // InternalOil.g:5372:4: (otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';' )
+                    // InternalOil.g:5373:5: otherlv_38= 'RECEIVE_QUEUED_INTERNAL' otherlv_39= '{' ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) ) otherlv_41= '}' otherlv_42= ';'
+                    {
+                    otherlv_38=(Token)match(input,83,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_38, grammarAccess.getMessageattribute2Access().getRECEIVE_QUEUED_INTERNALKeyword_1_8_0());
+                    				
+                    otherlv_39=(Token)match(input,22,FOLLOW_78); 
+
+                    					newLeafNode(otherlv_39, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_8_1());
+                    				
+                    // InternalOil.g:5381:5: ( (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL ) )
+                    // InternalOil.g:5382:6: (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL )
+                    {
+                    // InternalOil.g:5382:6: (lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL )
+                    // InternalOil.g:5383:7: lv_RQI_40_0= ruleMessage_RECEIVE_QUEUED_INTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRQIMessage_RECEIVE_QUEUED_INTERNALParserRuleCall_1_8_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_RQI_40_0=ruleMessage_RECEIVE_QUEUED_INTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"RQI",
+                    								lv_RQI_40_0,
+                    								"org.xtext.example.oil.Oil.Message_RECEIVE_QUEUED_INTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_41=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_41, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_8_3());
+                    				
+                    otherlv_42=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_42, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_8_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 10 :
+                    // InternalOil.g:5410:4: (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' )
+                    {
+                    // InternalOil.g:5410:4: (otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';' )
+                    // InternalOil.g:5411:5: otherlv_43= 'RECEIVE_UNQUEUED_EXTERNAL' otherlv_44= '{' ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) ) otherlv_46= '}' otherlv_47= ';'
+                    {
+                    otherlv_43=(Token)match(input,84,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_43, grammarAccess.getMessageattribute2Access().getRECEIVE_UNQUEUED_EXTERNALKeyword_1_9_0());
+                    				
+                    otherlv_44=(Token)match(input,22,FOLLOW_79); 
+
+                    					newLeafNode(otherlv_44, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_9_1());
+                    				
+                    // InternalOil.g:5419:5: ( (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL ) )
+                    // InternalOil.g:5420:6: (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL )
+                    {
+                    // InternalOil.g:5420:6: (lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL )
+                    // InternalOil.g:5421:7: lv_RUE_45_0= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRUEMessage_RECEIVE_UNQUEUED_EXTERNALParserRuleCall_1_9_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_RUE_45_0=ruleMessage_RECEIVE_UNQUEUED_EXTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"RUE",
+                    								lv_RUE_45_0,
+                    								"org.xtext.example.oil.Oil.Message_RECEIVE_UNQUEUED_EXTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_46=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_46, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_9_3());
+                    				
+                    otherlv_47=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_47, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_9_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 11 :
+                    // InternalOil.g:5448:4: (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' )
+                    {
+                    // InternalOil.g:5448:4: (otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';' )
+                    // InternalOil.g:5449:5: otherlv_48= 'RECEIVE_QUEUED_EXTERNAL' otherlv_49= '{' ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) ) otherlv_51= '}' otherlv_52= ';'
+                    {
+                    otherlv_48=(Token)match(input,85,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_48, grammarAccess.getMessageattribute2Access().getRECEIVE_QUEUED_EXTERNALKeyword_1_10_0());
+                    				
+                    otherlv_49=(Token)match(input,22,FOLLOW_80); 
+
+                    					newLeafNode(otherlv_49, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_10_1());
+                    				
+                    // InternalOil.g:5457:5: ( (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL ) )
+                    // InternalOil.g:5458:6: (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL )
+                    {
+                    // InternalOil.g:5458:6: (lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL )
+                    // InternalOil.g:5459:7: lv_RQE_50_0= ruleMessage_RECEIVE_QUEUED_EXTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRQEMessage_RECEIVE_QUEUED_EXTERNALParserRuleCall_1_10_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_RQE_50_0=ruleMessage_RECEIVE_QUEUED_EXTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"RQE",
+                    								lv_RQE_50_0,
+                    								"org.xtext.example.oil.Oil.Message_RECEIVE_QUEUED_EXTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_51=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_51, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_10_3());
+                    				
+                    otherlv_52=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_52, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_10_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 12 :
+                    // InternalOil.g:5486:4: (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' )
+                    {
+                    // InternalOil.g:5486:4: (otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';' )
+                    // InternalOil.g:5487:5: otherlv_53= 'RECEIVE_DYNAMIC_EXTERNAL' otherlv_54= '{' ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) ) otherlv_56= '}' otherlv_57= ';'
+                    {
+                    otherlv_53=(Token)match(input,86,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_53, grammarAccess.getMessageattribute2Access().getRECEIVE_DYNAMIC_EXTERNALKeyword_1_11_0());
+                    				
+                    otherlv_54=(Token)match(input,22,FOLLOW_81); 
+
+                    					newLeafNode(otherlv_54, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_11_1());
+                    				
+                    // InternalOil.g:5495:5: ( (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL ) )
+                    // InternalOil.g:5496:6: (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL )
+                    {
+                    // InternalOil.g:5496:6: (lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL )
+                    // InternalOil.g:5497:7: lv_RDE_55_0= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRDEMessage_RECEIVE_DYNAMIC_EXTERNALParserRuleCall_1_11_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_RDE_55_0=ruleMessage_RECEIVE_DYNAMIC_EXTERNAL();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"RDE",
+                    								lv_RDE_55_0,
+                    								"org.xtext.example.oil.Oil.Message_RECEIVE_DYNAMIC_EXTERNAL");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_56=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_56, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_11_3());
+                    				
+                    otherlv_57=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_57, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_11_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 13 :
+                    // InternalOil.g:5524:4: (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' )
+                    {
+                    // InternalOil.g:5524:4: (otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';' )
+                    // InternalOil.g:5525:5: otherlv_58= 'RECEIVE_ZERO_SENDERS' otherlv_59= '{' ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) ) otherlv_61= '}' otherlv_62= ';'
+                    {
+                    otherlv_58=(Token)match(input,87,FOLLOW_12); 
+
+                    					newLeafNode(otherlv_58, grammarAccess.getMessageattribute2Access().getRECEIVE_ZERO_SENDERSKeyword_1_12_0());
+                    				
+                    otherlv_59=(Token)match(input,22,FOLLOW_82); 
+
+                    					newLeafNode(otherlv_59, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_12_1());
+                    				
+                    // InternalOil.g:5533:5: ( (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS ) )
+                    // InternalOil.g:5534:6: (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS )
+                    {
+                    // InternalOil.g:5534:6: (lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS )
+                    // InternalOil.g:5535:7: lv_RZS_60_0= ruleMessage_RECEIVE_ZERO_SENDERS
+                    {
+
+                    							newCompositeNode(grammarAccess.getMessageattribute2Access().getRZSMessage_RECEIVE_ZERO_SENDERSParserRuleCall_1_12_2_0());
+                    						
+                    pushFollow(FOLLOW_14);
+                    lv_RZS_60_0=ruleMessage_RECEIVE_ZERO_SENDERS();
+
+                    state._fsp--;
+
+
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getMessageattribute2Rule());
+                    							}
+                    							set(
+                    								current,
+                    								"RZS",
+                    								lv_RZS_60_0,
+                    								"org.xtext.example.oil.Oil.Message_RECEIVE_ZERO_SENDERS");
+                    							afterParserOrEnumRuleCall();
+                    						
+
+                    }
+
+
+                    }
+
+                    otherlv_61=(Token)match(input,23,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_61, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_12_3());
+                    				
+                    otherlv_62=(Token)match(input,20,FOLLOW_2); 
+
+                    					newLeafNode(otherlv_62, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_12_4());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageattribute2"
+
+
+    // $ANTLR start "entryRuleMessage_SEND_STATIC_EXTERNAL"
+    // InternalOil.g:5566:1: entryRuleMessage_SEND_STATIC_EXTERNAL returns [EObject current=null] : iv_ruleMessage_SEND_STATIC_EXTERNAL= ruleMessage_SEND_STATIC_EXTERNAL EOF ;
+    public final EObject entryRuleMessage_SEND_STATIC_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_SEND_STATIC_EXTERNAL = null;
+
+
+        try {
+            // InternalOil.g:5566:69: (iv_ruleMessage_SEND_STATIC_EXTERNAL= ruleMessage_SEND_STATIC_EXTERNAL EOF )
+            // InternalOil.g:5567:2: iv_ruleMessage_SEND_STATIC_EXTERNAL= ruleMessage_SEND_STATIC_EXTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_SEND_STATIC_EXTERNAL=ruleMessage_SEND_STATIC_EXTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_SEND_STATIC_EXTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_SEND_STATIC_EXTERNAL"
+
+
+    // $ANTLR start "ruleMessage_SEND_STATIC_EXTERNAL"
+    // InternalOil.g:5573:1: ruleMessage_SEND_STATIC_EXTERNAL returns [EObject current=null] : ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_5_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE ) ) ) ;
+    public final EObject ruleMessage_SEND_STATIC_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_Cdata_0_0 = null;
+
+        EObject lv_Transferproperty_1_0 = null;
+
+        EObject lv_filter_2_0 = null;
+
+        EObject lv_networkordercallout_3_0 = null;
+
+        EObject lv_cpuordercallout_4_0 = null;
+
+        EObject lv_initialvalue_5_0 = null;
+
+        EObject lv_networkmessage_6_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:5579:2: ( ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_5_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE ) ) ) )
+            // InternalOil.g:5580:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_5_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE ) ) )
+            {
+            // InternalOil.g:5580:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_5_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE ) ) )
+            int alt118=7;
+            switch ( input.LA(1) ) {
+            case 88:
+                {
+                alt118=1;
+                }
+                break;
+            case 89:
+                {
+                alt118=2;
+                }
+                break;
+            case 95:
+                {
+                alt118=3;
+                }
+                break;
+            case 90:
+                {
+                alt118=4;
+                }
+                break;
+            case 91:
+                {
+                alt118=5;
+                }
+                break;
+            case 92:
+                {
+                alt118=6;
+                }
+                break;
+            case 49:
+                {
+                alt118=7;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 118, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt118) {
+                case 1 :
+                    // InternalOil.g:5581:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    {
+                    // InternalOil.g:5581:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    // InternalOil.g:5582:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    {
+                    // InternalOil.g:5582:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    // InternalOil.g:5583:5: lv_Cdata_0_0= ruleMessageCDATATYPE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALAccess().getCdataMessageCDATATYPEParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_Cdata_0_0=ruleMessageCDATATYPE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"Cdata",
+                    						lv_Cdata_0_0,
+                    						"org.xtext.example.oil.Oil.MessageCDATATYPE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:5601:3: ( (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY ) )
+                    {
+                    // InternalOil.g:5601:3: ( (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY ) )
+                    // InternalOil.g:5602:4: (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY )
+                    {
+                    // InternalOil.g:5602:4: (lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY )
+                    // InternalOil.g:5603:5: lv_Transferproperty_1_0= ruleMessageTRANSFERPROPERTY
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALAccess().getTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_Transferproperty_1_0=ruleMessageTRANSFERPROPERTY();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"Transferproperty",
+                    						lv_Transferproperty_1_0,
+                    						"org.xtext.example.oil.Oil.MessageTRANSFERPROPERTY");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:5621:3: ( (lv_filter_2_0= ruleMessagefilter ) )
+                    {
+                    // InternalOil.g:5621:3: ( (lv_filter_2_0= ruleMessagefilter ) )
+                    // InternalOil.g:5622:4: (lv_filter_2_0= ruleMessagefilter )
+                    {
+                    // InternalOil.g:5622:4: (lv_filter_2_0= ruleMessagefilter )
+                    // InternalOil.g:5623:5: lv_filter_2_0= ruleMessagefilter
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALAccess().getFilterMessagefilterParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_filter_2_0=ruleMessagefilter();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"filter",
+                    						lv_filter_2_0,
+                    						"org.xtext.example.oil.Oil.Messagefilter");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:5641:3: ( (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:5641:3: ( (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    // InternalOil.g:5642:4: (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT )
+                    {
+                    // InternalOil.g:5642:4: (lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT )
+                    // InternalOil.g:5643:5: lv_networkordercallout_3_0= ruleMessageNETWORKORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALAccess().getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_3_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkordercallout_3_0=ruleMessageNETWORKORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkordercallout",
+                    						lv_networkordercallout_3_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalOil.g:5661:3: ( (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:5661:3: ( (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT ) )
+                    // InternalOil.g:5662:4: (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT )
+                    {
+                    // InternalOil.g:5662:4: (lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT )
+                    // InternalOil.g:5663:5: lv_cpuordercallout_4_0= ruleMessageCPUORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALAccess().getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_4_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_cpuordercallout_4_0=ruleMessageCPUORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"cpuordercallout",
+                    						lv_cpuordercallout_4_0,
+                    						"org.xtext.example.oil.Oil.MessageCPUORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalOil.g:5681:3: ( (lv_initialvalue_5_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:5681:3: ( (lv_initialvalue_5_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:5682:4: (lv_initialvalue_5_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:5682:4: (lv_initialvalue_5_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:5683:5: lv_initialvalue_5_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_5_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_5_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_5_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalOil.g:5701:3: ( (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE ) )
+                    {
+                    // InternalOil.g:5701:3: ( (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE ) )
+                    // InternalOil.g:5702:4: (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE )
+                    {
+                    // InternalOil.g:5702:4: (lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE )
+                    // InternalOil.g:5703:5: lv_networkmessage_6_0= ruleMessageNETWORKMESSAGE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_STATIC_EXTERNALAccess().getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_6_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkmessage_6_0=ruleMessageNETWORKMESSAGE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_STATIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkmessage",
+                    						lv_networkmessage_6_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKMESSAGE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_SEND_STATIC_EXTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_SEND_DYNAMIC_EXTERNAL"
+    // InternalOil.g:5724:1: entryRuleMessage_SEND_DYNAMIC_EXTERNAL returns [EObject current=null] : iv_ruleMessage_SEND_DYNAMIC_EXTERNAL= ruleMessage_SEND_DYNAMIC_EXTERNAL EOF ;
+    public final EObject entryRuleMessage_SEND_DYNAMIC_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_SEND_DYNAMIC_EXTERNAL = null;
+
+
+        try {
+            // InternalOil.g:5724:70: (iv_ruleMessage_SEND_DYNAMIC_EXTERNAL= ruleMessage_SEND_DYNAMIC_EXTERNAL EOF )
+            // InternalOil.g:5725:2: iv_ruleMessage_SEND_DYNAMIC_EXTERNAL= ruleMessage_SEND_DYNAMIC_EXTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_SEND_DYNAMIC_EXTERNAL=ruleMessage_SEND_DYNAMIC_EXTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_SEND_DYNAMIC_EXTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_SEND_DYNAMIC_EXTERNAL"
+
+
+    // $ANTLR start "ruleMessage_SEND_DYNAMIC_EXTERNAL"
+    // InternalOil.g:5731:1: ruleMessage_SEND_DYNAMIC_EXTERNAL returns [EObject current=null] : ( ( (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE ) ) ) ;
+    public final EObject ruleMessage_SEND_DYNAMIC_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_Transferproperty_0_0 = null;
+
+        EObject lv_networkordercallout_1_0 = null;
+
+        EObject lv_cpuordercallout_2_0 = null;
+
+        EObject lv_initialvalue_3_0 = null;
+
+        EObject lv_networkmessage_4_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:5737:2: ( ( ( (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE ) ) ) )
+            // InternalOil.g:5738:2: ( ( (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE ) ) )
+            {
+            // InternalOil.g:5738:2: ( ( (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY ) ) | ( (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) | ( (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE ) ) )
+            int alt119=5;
+            switch ( input.LA(1) ) {
+            case 89:
+                {
+                alt119=1;
+                }
+                break;
+            case 90:
+                {
+                alt119=2;
+                }
+                break;
+            case 91:
+                {
+                alt119=3;
+                }
+                break;
+            case 92:
+                {
+                alt119=4;
+                }
+                break;
+            case 49:
+                {
+                alt119=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 119, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt119) {
+                case 1 :
+                    // InternalOil.g:5739:3: ( (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY ) )
+                    {
+                    // InternalOil.g:5739:3: ( (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY ) )
+                    // InternalOil.g:5740:4: (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY )
+                    {
+                    // InternalOil.g:5740:4: (lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY )
+                    // InternalOil.g:5741:5: lv_Transferproperty_0_0= ruleMessageTRANSFERPROPERTY
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALAccess().getTransferpropertyMessageTRANSFERPROPERTYParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_Transferproperty_0_0=ruleMessageTRANSFERPROPERTY();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"Transferproperty",
+                    						lv_Transferproperty_0_0,
+                    						"org.xtext.example.oil.Oil.MessageTRANSFERPROPERTY");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:5759:3: ( (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:5759:3: ( (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    // InternalOil.g:5760:4: (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT )
+                    {
+                    // InternalOil.g:5760:4: (lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT )
+                    // InternalOil.g:5761:5: lv_networkordercallout_1_0= ruleMessageNETWORKORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALAccess().getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkordercallout_1_0=ruleMessageNETWORKORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkordercallout",
+                    						lv_networkordercallout_1_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:5779:3: ( (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:5779:3: ( (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT ) )
+                    // InternalOil.g:5780:4: (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT )
+                    {
+                    // InternalOil.g:5780:4: (lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT )
+                    // InternalOil.g:5781:5: lv_cpuordercallout_2_0= ruleMessageCPUORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALAccess().getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_cpuordercallout_2_0=ruleMessageCPUORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"cpuordercallout",
+                    						lv_cpuordercallout_2_0,
+                    						"org.xtext.example.oil.Oil.MessageCPUORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:5799:3: ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:5799:3: ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:5800:4: (lv_initialvalue_3_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:5800:4: (lv_initialvalue_3_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:5801:5: lv_initialvalue_3_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_3_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_3_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_3_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalOil.g:5819:3: ( (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE ) )
+                    {
+                    // InternalOil.g:5819:3: ( (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE ) )
+                    // InternalOil.g:5820:4: (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE )
+                    {
+                    // InternalOil.g:5820:4: (lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE )
+                    // InternalOil.g:5821:5: lv_networkmessage_4_0= ruleMessageNETWORKMESSAGE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALAccess().getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_4_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkmessage_4_0=ruleMessageNETWORKMESSAGE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_DYNAMIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkmessage",
+                    						lv_networkmessage_4_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKMESSAGE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_SEND_DYNAMIC_EXTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_SEND_ZERO_EXTERNAL"
+    // InternalOil.g:5842:1: entryRuleMessage_SEND_ZERO_EXTERNAL returns [EObject current=null] : iv_ruleMessage_SEND_ZERO_EXTERNAL= ruleMessage_SEND_ZERO_EXTERNAL EOF ;
+    public final EObject entryRuleMessage_SEND_ZERO_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_SEND_ZERO_EXTERNAL = null;
+
+
+        try {
+            // InternalOil.g:5842:67: (iv_ruleMessage_SEND_ZERO_EXTERNAL= ruleMessage_SEND_ZERO_EXTERNAL EOF )
+            // InternalOil.g:5843:2: iv_ruleMessage_SEND_ZERO_EXTERNAL= ruleMessage_SEND_ZERO_EXTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_SEND_ZERO_EXTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_SEND_ZERO_EXTERNAL=ruleMessage_SEND_ZERO_EXTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_SEND_ZERO_EXTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_SEND_ZERO_EXTERNAL"
+
+
+    // $ANTLR start "ruleMessage_SEND_ZERO_EXTERNAL"
+    // InternalOil.g:5849:1: ruleMessage_SEND_ZERO_EXTERNAL returns [EObject current=null] : ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) ) ;
+    public final EObject ruleMessage_SEND_ZERO_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_networkordercallout_0_0 = null;
+
+        EObject lv_cpuordercallout_1_0 = null;
+
+        EObject lv_networkmessage_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:5855:2: ( ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) ) )
+            // InternalOil.g:5856:2: ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) )
+            {
+            // InternalOil.g:5856:2: ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) )
+            int alt120=3;
+            switch ( input.LA(1) ) {
+            case 90:
+                {
+                alt120=1;
+                }
+                break;
+            case 91:
+                {
+                alt120=2;
+                }
+                break;
+            case 49:
+                {
+                alt120=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 120, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt120) {
+                case 1 :
+                    // InternalOil.g:5857:3: ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:5857:3: ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    // InternalOil.g:5858:4: (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT )
+                    {
+                    // InternalOil.g:5858:4: (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT )
+                    // InternalOil.g:5859:5: lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_ZERO_EXTERNALAccess().getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkordercallout_0_0=ruleMessageNETWORKORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_ZERO_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkordercallout",
+                    						lv_networkordercallout_0_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:5877:3: ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:5877:3: ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) )
+                    // InternalOil.g:5878:4: (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT )
+                    {
+                    // InternalOil.g:5878:4: (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT )
+                    // InternalOil.g:5879:5: lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_ZERO_EXTERNALAccess().getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_cpuordercallout_1_0=ruleMessageCPUORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_ZERO_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"cpuordercallout",
+                    						lv_cpuordercallout_1_0,
+                    						"org.xtext.example.oil.Oil.MessageCPUORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:5897:3: ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) )
+                    {
+                    // InternalOil.g:5897:3: ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) )
+                    // InternalOil.g:5898:4: (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE )
+                    {
+                    // InternalOil.g:5898:4: (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE )
+                    // InternalOil.g:5899:5: lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_SEND_ZERO_EXTERNALAccess().getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkmessage_2_0=ruleMessageNETWORKMESSAGE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_SEND_ZERO_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkmessage",
+                    						lv_networkmessage_2_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKMESSAGE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_SEND_ZERO_EXTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_ZERO_INTERNAL"
+    // InternalOil.g:5920:1: entryRuleMessage_RECEIVE_ZERO_INTERNAL returns [EObject current=null] : iv_ruleMessage_RECEIVE_ZERO_INTERNAL= ruleMessage_RECEIVE_ZERO_INTERNAL EOF ;
+    public final EObject entryRuleMessage_RECEIVE_ZERO_INTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_ZERO_INTERNAL = null;
+
+
+        try {
+            // InternalOil.g:5920:70: (iv_ruleMessage_RECEIVE_ZERO_INTERNAL= ruleMessage_RECEIVE_ZERO_INTERNAL EOF )
+            // InternalOil.g:5921:2: iv_ruleMessage_RECEIVE_ZERO_INTERNAL= ruleMessage_RECEIVE_ZERO_INTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_INTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_ZERO_INTERNAL=ruleMessage_RECEIVE_ZERO_INTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_ZERO_INTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_ZERO_INTERNAL"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_ZERO_INTERNAL"
+    // InternalOil.g:5927:1: ruleMessage_RECEIVE_ZERO_INTERNAL returns [EObject current=null] : ( () ( (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_ZERO_INTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_sendingmessage_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:5933:2: ( ( () ( (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE ) ) ) )
+            // InternalOil.g:5934:2: ( () ( (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE ) ) )
+            {
+            // InternalOil.g:5934:2: ( () ( (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE ) ) )
+            // InternalOil.g:5935:3: () ( (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE ) )
+            {
+            // InternalOil.g:5935:3: ()
+            // InternalOil.g:5936:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessage_RECEIVE_ZERO_INTERNALAccess().getMessage_RECEIVE_ZERO_INTERNALAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalOil.g:5942:3: ( (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE ) )
+            // InternalOil.g:5943:4: (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE )
+            {
+            // InternalOil.g:5943:4: (lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE )
+            // InternalOil.g:5944:5: lv_sendingmessage_1_0= ruleMessageSENDINGMESSAGE
+            {
+
+            					newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_INTERNALAccess().getSendingmessageMessageSENDINGMESSAGEParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_sendingmessage_1_0=ruleMessageSENDINGMESSAGE();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_ZERO_INTERNALRule());
+            					}
+            					set(
+            						current,
+            						"sendingmessage",
+            						lv_sendingmessage_1_0,
+            						"org.xtext.example.oil.Oil.MessageSENDINGMESSAGE");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_ZERO_INTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_ZERO_EXTERNAL"
+    // InternalOil.g:5965:1: entryRuleMessage_RECEIVE_ZERO_EXTERNAL returns [EObject current=null] : iv_ruleMessage_RECEIVE_ZERO_EXTERNAL= ruleMessage_RECEIVE_ZERO_EXTERNAL EOF ;
+    public final EObject entryRuleMessage_RECEIVE_ZERO_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_ZERO_EXTERNAL = null;
+
+
+        try {
+            // InternalOil.g:5965:70: (iv_ruleMessage_RECEIVE_ZERO_EXTERNAL= ruleMessage_RECEIVE_ZERO_EXTERNAL EOF )
+            // InternalOil.g:5966:2: iv_ruleMessage_RECEIVE_ZERO_EXTERNAL= ruleMessage_RECEIVE_ZERO_EXTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_EXTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_ZERO_EXTERNAL=ruleMessage_RECEIVE_ZERO_EXTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_ZERO_EXTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_ZERO_EXTERNAL"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_ZERO_EXTERNAL"
+    // InternalOil.g:5972:1: ruleMessage_RECEIVE_ZERO_EXTERNAL returns [EObject current=null] : ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_ZERO_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_networkordercallout_0_0 = null;
+
+        EObject lv_cpuordercallout_1_0 = null;
+
+        EObject lv_networkmessage_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:5978:2: ( ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) ) )
+            // InternalOil.g:5979:2: ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) )
+            {
+            // InternalOil.g:5979:2: ( ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) ) | ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) ) | ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) ) )
+            int alt121=3;
+            switch ( input.LA(1) ) {
+            case 90:
+                {
+                alt121=1;
+                }
+                break;
+            case 91:
+                {
+                alt121=2;
+                }
+                break;
+            case 49:
+                {
+                alt121=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 121, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt121) {
+                case 1 :
+                    // InternalOil.g:5980:3: ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:5980:3: ( (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT ) )
+                    // InternalOil.g:5981:4: (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT )
+                    {
+                    // InternalOil.g:5981:4: (lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT )
+                    // InternalOil.g:5982:5: lv_networkordercallout_0_0= ruleMessageNETWORKORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_EXTERNALAccess().getNetworkordercalloutMessageNETWORKORDERCALLOUTParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkordercallout_0_0=ruleMessageNETWORKORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_ZERO_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkordercallout",
+                    						lv_networkordercallout_0_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:6000:3: ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) )
+                    {
+                    // InternalOil.g:6000:3: ( (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT ) )
+                    // InternalOil.g:6001:4: (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT )
+                    {
+                    // InternalOil.g:6001:4: (lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT )
+                    // InternalOil.g:6002:5: lv_cpuordercallout_1_0= ruleMessageCPUORDERCALLOUT
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_EXTERNALAccess().getCpuordercalloutMessageCPUORDERCALLOUTParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_cpuordercallout_1_0=ruleMessageCPUORDERCALLOUT();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_ZERO_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"cpuordercallout",
+                    						lv_cpuordercallout_1_0,
+                    						"org.xtext.example.oil.Oil.MessageCPUORDERCALLOUT");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:6020:3: ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) )
+                    {
+                    // InternalOil.g:6020:3: ( (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE ) )
+                    // InternalOil.g:6021:4: (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE )
+                    {
+                    // InternalOil.g:6021:4: (lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE )
+                    // InternalOil.g:6022:5: lv_networkmessage_2_0= ruleMessageNETWORKMESSAGE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_EXTERNALAccess().getNetworkmessageMessageNETWORKMESSAGEParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_networkmessage_2_0=ruleMessageNETWORKMESSAGE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_ZERO_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"networkmessage",
+                    						lv_networkmessage_2_0,
+                    						"org.xtext.example.oil.Oil.MessageNETWORKMESSAGE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_ZERO_EXTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_UNQUEUED_INTERNAL"
+    // InternalOil.g:6043:1: entryRuleMessage_RECEIVE_UNQUEUED_INTERNAL returns [EObject current=null] : iv_ruleMessage_RECEIVE_UNQUEUED_INTERNAL= ruleMessage_RECEIVE_UNQUEUED_INTERNAL EOF ;
+    public final EObject entryRuleMessage_RECEIVE_UNQUEUED_INTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_UNQUEUED_INTERNAL = null;
+
+
+        try {
+            // InternalOil.g:6043:74: (iv_ruleMessage_RECEIVE_UNQUEUED_INTERNAL= ruleMessage_RECEIVE_UNQUEUED_INTERNAL EOF )
+            // InternalOil.g:6044:2: iv_ruleMessage_RECEIVE_UNQUEUED_INTERNAL= ruleMessage_RECEIVE_UNQUEUED_INTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_INTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_UNQUEUED_INTERNAL=ruleMessage_RECEIVE_UNQUEUED_INTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_UNQUEUED_INTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_UNQUEUED_INTERNAL"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_UNQUEUED_INTERNAL"
+    // InternalOil.g:6050:1: ruleMessage_RECEIVE_UNQUEUED_INTERNAL returns [EObject current=null] : ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_UNQUEUED_INTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_sendingmessage_0_0 = null;
+
+        EObject lv_filter_1_0 = null;
+
+        EObject lv_initialvalue_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6056:2: ( ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) ) )
+            // InternalOil.g:6057:2: ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) )
+            {
+            // InternalOil.g:6057:2: ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) )
+            int alt122=3;
+            switch ( input.LA(1) ) {
+            case 93:
+                {
+                alt122=1;
+                }
+                break;
+            case 95:
+                {
+                alt122=2;
+                }
+                break;
+            case 92:
+                {
+                alt122=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 122, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt122) {
+                case 1 :
+                    // InternalOil.g:6058:3: ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) )
+                    {
+                    // InternalOil.g:6058:3: ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) )
+                    // InternalOil.g:6059:4: (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE )
+                    {
+                    // InternalOil.g:6059:4: (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE )
+                    // InternalOil.g:6060:5: lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_INTERNALAccess().getSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_sendingmessage_0_0=ruleMessageSENDINGMESSAGE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_UNQUEUED_INTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"sendingmessage",
+                    						lv_sendingmessage_0_0,
+                    						"org.xtext.example.oil.Oil.MessageSENDINGMESSAGE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:6078:3: ( (lv_filter_1_0= ruleMessagefilter ) )
+                    {
+                    // InternalOil.g:6078:3: ( (lv_filter_1_0= ruleMessagefilter ) )
+                    // InternalOil.g:6079:4: (lv_filter_1_0= ruleMessagefilter )
+                    {
+                    // InternalOil.g:6079:4: (lv_filter_1_0= ruleMessagefilter )
+                    // InternalOil.g:6080:5: lv_filter_1_0= ruleMessagefilter
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_INTERNALAccess().getFilterMessagefilterParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_filter_1_0=ruleMessagefilter();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_UNQUEUED_INTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"filter",
+                    						lv_filter_1_0,
+                    						"org.xtext.example.oil.Oil.Messagefilter");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:6098:3: ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:6098:3: ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:6099:4: (lv_initialvalue_2_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:6099:4: (lv_initialvalue_2_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:6100:5: lv_initialvalue_2_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_INTERNALAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_2_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_UNQUEUED_INTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_2_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_UNQUEUED_INTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_QUEUED_INTERNAL"
+    // InternalOil.g:6121:1: entryRuleMessage_RECEIVE_QUEUED_INTERNAL returns [EObject current=null] : iv_ruleMessage_RECEIVE_QUEUED_INTERNAL= ruleMessage_RECEIVE_QUEUED_INTERNAL EOF ;
+    public final EObject entryRuleMessage_RECEIVE_QUEUED_INTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_QUEUED_INTERNAL = null;
+
+
+        try {
+            // InternalOil.g:6121:72: (iv_ruleMessage_RECEIVE_QUEUED_INTERNAL= ruleMessage_RECEIVE_QUEUED_INTERNAL EOF )
+            // InternalOil.g:6122:2: iv_ruleMessage_RECEIVE_QUEUED_INTERNAL= ruleMessage_RECEIVE_QUEUED_INTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_QUEUED_INTERNAL=ruleMessage_RECEIVE_QUEUED_INTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_QUEUED_INTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_QUEUED_INTERNAL"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_QUEUED_INTERNAL"
+    // InternalOil.g:6128:1: ruleMessage_RECEIVE_QUEUED_INTERNAL returns [EObject current=null] : ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) | ( (lv_queuesize_3_0= ruleMessageQUEUESIZE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_QUEUED_INTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_sendingmessage_0_0 = null;
+
+        EObject lv_filter_1_0 = null;
+
+        EObject lv_initialvalue_2_0 = null;
+
+        EObject lv_queuesize_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6134:2: ( ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) | ( (lv_queuesize_3_0= ruleMessageQUEUESIZE ) ) ) )
+            // InternalOil.g:6135:2: ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) | ( (lv_queuesize_3_0= ruleMessageQUEUESIZE ) ) )
+            {
+            // InternalOil.g:6135:2: ( ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) ) | ( (lv_queuesize_3_0= ruleMessageQUEUESIZE ) ) )
+            int alt123=4;
+            switch ( input.LA(1) ) {
+            case 93:
+                {
+                alt123=1;
+                }
+                break;
+            case 95:
+                {
+                alt123=2;
+                }
+                break;
+            case 92:
+                {
+                alt123=3;
+                }
+                break;
+            case 94:
+                {
+                alt123=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 123, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt123) {
+                case 1 :
+                    // InternalOil.g:6136:3: ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) )
+                    {
+                    // InternalOil.g:6136:3: ( (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE ) )
+                    // InternalOil.g:6137:4: (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE )
+                    {
+                    // InternalOil.g:6137:4: (lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE )
+                    // InternalOil.g:6138:5: lv_sendingmessage_0_0= ruleMessageSENDINGMESSAGE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALAccess().getSendingmessageMessageSENDINGMESSAGEParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_sendingmessage_0_0=ruleMessageSENDINGMESSAGE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"sendingmessage",
+                    						lv_sendingmessage_0_0,
+                    						"org.xtext.example.oil.Oil.MessageSENDINGMESSAGE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:6156:3: ( (lv_filter_1_0= ruleMessagefilter ) )
+                    {
+                    // InternalOil.g:6156:3: ( (lv_filter_1_0= ruleMessagefilter ) )
+                    // InternalOil.g:6157:4: (lv_filter_1_0= ruleMessagefilter )
+                    {
+                    // InternalOil.g:6157:4: (lv_filter_1_0= ruleMessagefilter )
+                    // InternalOil.g:6158:5: lv_filter_1_0= ruleMessagefilter
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALAccess().getFilterMessagefilterParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_filter_1_0=ruleMessagefilter();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"filter",
+                    						lv_filter_1_0,
+                    						"org.xtext.example.oil.Oil.Messagefilter");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:6176:3: ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:6176:3: ( (lv_initialvalue_2_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:6177:4: (lv_initialvalue_2_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:6177:4: (lv_initialvalue_2_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:6178:5: lv_initialvalue_2_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_2_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_2_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:6196:3: ( (lv_queuesize_3_0= ruleMessageQUEUESIZE ) )
+                    {
+                    // InternalOil.g:6196:3: ( (lv_queuesize_3_0= ruleMessageQUEUESIZE ) )
+                    // InternalOil.g:6197:4: (lv_queuesize_3_0= ruleMessageQUEUESIZE )
+                    {
+                    // InternalOil.g:6197:4: (lv_queuesize_3_0= ruleMessageQUEUESIZE )
+                    // InternalOil.g:6198:5: lv_queuesize_3_0= ruleMessageQUEUESIZE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALAccess().getQueuesizeMessageQUEUESIZEParserRuleCall_3_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_queuesize_3_0=ruleMessageQUEUESIZE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_INTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"queuesize",
+                    						lv_queuesize_3_0,
+                    						"org.xtext.example.oil.Oil.MessageQUEUESIZE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_QUEUED_INTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_UNQUEUED_EXTERNAL"
+    // InternalOil.g:6219:1: entryRuleMessage_RECEIVE_UNQUEUED_EXTERNAL returns [EObject current=null] : iv_ruleMessage_RECEIVE_UNQUEUED_EXTERNAL= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL EOF ;
+    public final EObject entryRuleMessage_RECEIVE_UNQUEUED_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_UNQUEUED_EXTERNAL = null;
+
+
+        try {
+            // InternalOil.g:6219:74: (iv_ruleMessage_RECEIVE_UNQUEUED_EXTERNAL= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL EOF )
+            // InternalOil.g:6220:2: iv_ruleMessage_RECEIVE_UNQUEUED_EXTERNAL= ruleMessage_RECEIVE_UNQUEUED_EXTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_UNQUEUED_EXTERNAL=ruleMessage_RECEIVE_UNQUEUED_EXTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_UNQUEUED_EXTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_UNQUEUED_EXTERNAL"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_UNQUEUED_EXTERNAL"
+    // InternalOil.g:6226:1: ruleMessage_RECEIVE_UNQUEUED_EXTERNAL returns [EObject current=null] : ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_link_2_0= ruleMessageLINK ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_UNQUEUED_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_Cdata_0_0 = null;
+
+        EObject lv_filter_1_0 = null;
+
+        EObject lv_link_2_0 = null;
+
+        EObject lv_initialvalue_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6232:2: ( ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_link_2_0= ruleMessageLINK ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) ) )
+            // InternalOil.g:6233:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_link_2_0= ruleMessageLINK ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) )
+            {
+            // InternalOil.g:6233:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_filter_1_0= ruleMessagefilter ) ) | ( (lv_link_2_0= ruleMessageLINK ) ) | ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) ) )
+            int alt124=4;
+            switch ( input.LA(1) ) {
+            case 88:
+                {
+                alt124=1;
+                }
+                break;
+            case 95:
+                {
+                alt124=2;
+                }
+                break;
+            case 96:
+                {
+                alt124=3;
+                }
+                break;
+            case 92:
+                {
+                alt124=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 124, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt124) {
+                case 1 :
+                    // InternalOil.g:6234:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    {
+                    // InternalOil.g:6234:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    // InternalOil.g:6235:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    {
+                    // InternalOil.g:6235:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    // InternalOil.g:6236:5: lv_Cdata_0_0= ruleMessageCDATATYPE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALAccess().getCdataMessageCDATATYPEParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_Cdata_0_0=ruleMessageCDATATYPE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"Cdata",
+                    						lv_Cdata_0_0,
+                    						"org.xtext.example.oil.Oil.MessageCDATATYPE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:6254:3: ( (lv_filter_1_0= ruleMessagefilter ) )
+                    {
+                    // InternalOil.g:6254:3: ( (lv_filter_1_0= ruleMessagefilter ) )
+                    // InternalOil.g:6255:4: (lv_filter_1_0= ruleMessagefilter )
+                    {
+                    // InternalOil.g:6255:4: (lv_filter_1_0= ruleMessagefilter )
+                    // InternalOil.g:6256:5: lv_filter_1_0= ruleMessagefilter
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALAccess().getFilterMessagefilterParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_filter_1_0=ruleMessagefilter();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"filter",
+                    						lv_filter_1_0,
+                    						"org.xtext.example.oil.Oil.Messagefilter");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:6274:3: ( (lv_link_2_0= ruleMessageLINK ) )
+                    {
+                    // InternalOil.g:6274:3: ( (lv_link_2_0= ruleMessageLINK ) )
+                    // InternalOil.g:6275:4: (lv_link_2_0= ruleMessageLINK )
+                    {
+                    // InternalOil.g:6275:4: (lv_link_2_0= ruleMessageLINK )
+                    // InternalOil.g:6276:5: lv_link_2_0= ruleMessageLINK
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALAccess().getLinkMessageLINKParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_link_2_0=ruleMessageLINK();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"link",
+                    						lv_link_2_0,
+                    						"org.xtext.example.oil.Oil.MessageLINK");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:6294:3: ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:6294:3: ( (lv_initialvalue_3_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:6295:4: (lv_initialvalue_3_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:6295:4: (lv_initialvalue_3_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:6296:5: lv_initialvalue_3_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_3_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_3_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_UNQUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_3_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_UNQUEUED_EXTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_QUEUED_EXTERNAL"
+    // InternalOil.g:6317:1: entryRuleMessage_RECEIVE_QUEUED_EXTERNAL returns [EObject current=null] : iv_ruleMessage_RECEIVE_QUEUED_EXTERNAL= ruleMessage_RECEIVE_QUEUED_EXTERNAL EOF ;
+    public final EObject entryRuleMessage_RECEIVE_QUEUED_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_QUEUED_EXTERNAL = null;
+
+
+        try {
+            // InternalOil.g:6317:72: (iv_ruleMessage_RECEIVE_QUEUED_EXTERNAL= ruleMessage_RECEIVE_QUEUED_EXTERNAL EOF )
+            // InternalOil.g:6318:2: iv_ruleMessage_RECEIVE_QUEUED_EXTERNAL= ruleMessage_RECEIVE_QUEUED_EXTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_QUEUED_EXTERNAL=ruleMessage_RECEIVE_QUEUED_EXTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_QUEUED_EXTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_QUEUED_EXTERNAL"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_QUEUED_EXTERNAL"
+    // InternalOil.g:6324:1: ruleMessage_RECEIVE_QUEUED_EXTERNAL returns [EObject current=null] : ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_queuesize_1_0= ruleMessageQUEUESIZE ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_link_3_0= ruleMessageLINK ) ) | ( (lv_initialvalue_4_0= ruleMessageINITIALVALUE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_QUEUED_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_Cdata_0_0 = null;
+
+        EObject lv_queuesize_1_0 = null;
+
+        EObject lv_filter_2_0 = null;
+
+        EObject lv_link_3_0 = null;
+
+        EObject lv_initialvalue_4_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6330:2: ( ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_queuesize_1_0= ruleMessageQUEUESIZE ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_link_3_0= ruleMessageLINK ) ) | ( (lv_initialvalue_4_0= ruleMessageINITIALVALUE ) ) ) )
+            // InternalOil.g:6331:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_queuesize_1_0= ruleMessageQUEUESIZE ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_link_3_0= ruleMessageLINK ) ) | ( (lv_initialvalue_4_0= ruleMessageINITIALVALUE ) ) )
+            {
+            // InternalOil.g:6331:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_queuesize_1_0= ruleMessageQUEUESIZE ) ) | ( (lv_filter_2_0= ruleMessagefilter ) ) | ( (lv_link_3_0= ruleMessageLINK ) ) | ( (lv_initialvalue_4_0= ruleMessageINITIALVALUE ) ) )
+            int alt125=5;
+            switch ( input.LA(1) ) {
+            case 88:
+                {
+                alt125=1;
+                }
+                break;
+            case 94:
+                {
+                alt125=2;
+                }
+                break;
+            case 95:
+                {
+                alt125=3;
+                }
+                break;
+            case 96:
+                {
+                alt125=4;
+                }
+                break;
+            case 92:
+                {
+                alt125=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 125, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt125) {
+                case 1 :
+                    // InternalOil.g:6332:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    {
+                    // InternalOil.g:6332:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    // InternalOil.g:6333:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    {
+                    // InternalOil.g:6333:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    // InternalOil.g:6334:5: lv_Cdata_0_0= ruleMessageCDATATYPE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALAccess().getCdataMessageCDATATYPEParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_Cdata_0_0=ruleMessageCDATATYPE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"Cdata",
+                    						lv_Cdata_0_0,
+                    						"org.xtext.example.oil.Oil.MessageCDATATYPE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:6352:3: ( (lv_queuesize_1_0= ruleMessageQUEUESIZE ) )
+                    {
+                    // InternalOil.g:6352:3: ( (lv_queuesize_1_0= ruleMessageQUEUESIZE ) )
+                    // InternalOil.g:6353:4: (lv_queuesize_1_0= ruleMessageQUEUESIZE )
+                    {
+                    // InternalOil.g:6353:4: (lv_queuesize_1_0= ruleMessageQUEUESIZE )
+                    // InternalOil.g:6354:5: lv_queuesize_1_0= ruleMessageQUEUESIZE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALAccess().getQueuesizeMessageQUEUESIZEParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_queuesize_1_0=ruleMessageQUEUESIZE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"queuesize",
+                    						lv_queuesize_1_0,
+                    						"org.xtext.example.oil.Oil.MessageQUEUESIZE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:6372:3: ( (lv_filter_2_0= ruleMessagefilter ) )
+                    {
+                    // InternalOil.g:6372:3: ( (lv_filter_2_0= ruleMessagefilter ) )
+                    // InternalOil.g:6373:4: (lv_filter_2_0= ruleMessagefilter )
+                    {
+                    // InternalOil.g:6373:4: (lv_filter_2_0= ruleMessagefilter )
+                    // InternalOil.g:6374:5: lv_filter_2_0= ruleMessagefilter
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALAccess().getFilterMessagefilterParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_filter_2_0=ruleMessagefilter();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"filter",
+                    						lv_filter_2_0,
+                    						"org.xtext.example.oil.Oil.Messagefilter");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:6392:3: ( (lv_link_3_0= ruleMessageLINK ) )
+                    {
+                    // InternalOil.g:6392:3: ( (lv_link_3_0= ruleMessageLINK ) )
+                    // InternalOil.g:6393:4: (lv_link_3_0= ruleMessageLINK )
+                    {
+                    // InternalOil.g:6393:4: (lv_link_3_0= ruleMessageLINK )
+                    // InternalOil.g:6394:5: lv_link_3_0= ruleMessageLINK
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALAccess().getLinkMessageLINKParserRuleCall_3_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_link_3_0=ruleMessageLINK();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"link",
+                    						lv_link_3_0,
+                    						"org.xtext.example.oil.Oil.MessageLINK");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalOil.g:6412:3: ( (lv_initialvalue_4_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:6412:3: ( (lv_initialvalue_4_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:6413:4: (lv_initialvalue_4_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:6413:4: (lv_initialvalue_4_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:6414:5: lv_initialvalue_4_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_4_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_4_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_QUEUED_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_4_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_QUEUED_EXTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_DYNAMIC_EXTERNAL"
+    // InternalOil.g:6435:1: entryRuleMessage_RECEIVE_DYNAMIC_EXTERNAL returns [EObject current=null] : iv_ruleMessage_RECEIVE_DYNAMIC_EXTERNAL= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL EOF ;
+    public final EObject entryRuleMessage_RECEIVE_DYNAMIC_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_DYNAMIC_EXTERNAL = null;
+
+
+        try {
+            // InternalOil.g:6435:73: (iv_ruleMessage_RECEIVE_DYNAMIC_EXTERNAL= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL EOF )
+            // InternalOil.g:6436:2: iv_ruleMessage_RECEIVE_DYNAMIC_EXTERNAL= ruleMessage_RECEIVE_DYNAMIC_EXTERNAL EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_DYNAMIC_EXTERNALRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_DYNAMIC_EXTERNAL=ruleMessage_RECEIVE_DYNAMIC_EXTERNAL();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_DYNAMIC_EXTERNAL; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_DYNAMIC_EXTERNAL"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_DYNAMIC_EXTERNAL"
+    // InternalOil.g:6442:1: ruleMessage_RECEIVE_DYNAMIC_EXTERNAL returns [EObject current=null] : ( ( (lv_link_0_0= ruleMessageLINK ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_DYNAMIC_EXTERNAL() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_link_0_0 = null;
+
+        EObject lv_initialvalue_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6448:2: ( ( ( (lv_link_0_0= ruleMessageLINK ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) ) )
+            // InternalOil.g:6449:2: ( ( (lv_link_0_0= ruleMessageLINK ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) )
+            {
+            // InternalOil.g:6449:2: ( ( (lv_link_0_0= ruleMessageLINK ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) )
+            int alt126=2;
+            int LA126_0 = input.LA(1);
+
+            if ( (LA126_0==96) ) {
+                alt126=1;
+            }
+            else if ( (LA126_0==92) ) {
+                alt126=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 126, 0, input);
+
+                throw nvae;
+            }
+            switch (alt126) {
+                case 1 :
+                    // InternalOil.g:6450:3: ( (lv_link_0_0= ruleMessageLINK ) )
+                    {
+                    // InternalOil.g:6450:3: ( (lv_link_0_0= ruleMessageLINK ) )
+                    // InternalOil.g:6451:4: (lv_link_0_0= ruleMessageLINK )
+                    {
+                    // InternalOil.g:6451:4: (lv_link_0_0= ruleMessageLINK )
+                    // InternalOil.g:6452:5: lv_link_0_0= ruleMessageLINK
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_DYNAMIC_EXTERNALAccess().getLinkMessageLINKParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_link_0_0=ruleMessageLINK();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_DYNAMIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"link",
+                    						lv_link_0_0,
+                    						"org.xtext.example.oil.Oil.MessageLINK");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:6470:3: ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:6470:3: ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:6471:4: (lv_initialvalue_1_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:6471:4: (lv_initialvalue_1_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:6472:5: lv_initialvalue_1_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_DYNAMIC_EXTERNALAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_1_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_DYNAMIC_EXTERNALRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_1_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_DYNAMIC_EXTERNAL"
+
+
+    // $ANTLR start "entryRuleMessage_RECEIVE_ZERO_SENDERS"
+    // InternalOil.g:6493:1: entryRuleMessage_RECEIVE_ZERO_SENDERS returns [EObject current=null] : iv_ruleMessage_RECEIVE_ZERO_SENDERS= ruleMessage_RECEIVE_ZERO_SENDERS EOF ;
+    public final EObject entryRuleMessage_RECEIVE_ZERO_SENDERS() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessage_RECEIVE_ZERO_SENDERS = null;
+
+
+        try {
+            // InternalOil.g:6493:69: (iv_ruleMessage_RECEIVE_ZERO_SENDERS= ruleMessage_RECEIVE_ZERO_SENDERS EOF )
+            // InternalOil.g:6494:2: iv_ruleMessage_RECEIVE_ZERO_SENDERS= ruleMessage_RECEIVE_ZERO_SENDERS EOF
+            {
+             newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_SENDERSRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessage_RECEIVE_ZERO_SENDERS=ruleMessage_RECEIVE_ZERO_SENDERS();
+
+            state._fsp--;
+
+             current =iv_ruleMessage_RECEIVE_ZERO_SENDERS; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessage_RECEIVE_ZERO_SENDERS"
+
+
+    // $ANTLR start "ruleMessage_RECEIVE_ZERO_SENDERS"
+    // InternalOil.g:6500:1: ruleMessage_RECEIVE_ZERO_SENDERS returns [EObject current=null] : ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) ) ;
+    public final EObject ruleMessage_RECEIVE_ZERO_SENDERS() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_Cdata_0_0 = null;
+
+        EObject lv_initialvalue_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6506:2: ( ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) ) )
+            // InternalOil.g:6507:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) )
+            {
+            // InternalOil.g:6507:2: ( ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) ) | ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) ) )
+            int alt127=2;
+            int LA127_0 = input.LA(1);
+
+            if ( (LA127_0==88) ) {
+                alt127=1;
+            }
+            else if ( (LA127_0==92) ) {
+                alt127=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 127, 0, input);
+
+                throw nvae;
+            }
+            switch (alt127) {
+                case 1 :
+                    // InternalOil.g:6508:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    {
+                    // InternalOil.g:6508:3: ( (lv_Cdata_0_0= ruleMessageCDATATYPE ) )
+                    // InternalOil.g:6509:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    {
+                    // InternalOil.g:6509:4: (lv_Cdata_0_0= ruleMessageCDATATYPE )
+                    // InternalOil.g:6510:5: lv_Cdata_0_0= ruleMessageCDATATYPE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_SENDERSAccess().getCdataMessageCDATATYPEParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_Cdata_0_0=ruleMessageCDATATYPE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_ZERO_SENDERSRule());
+                    					}
+                    					set(
+                    						current,
+                    						"Cdata",
+                    						lv_Cdata_0_0,
+                    						"org.xtext.example.oil.Oil.MessageCDATATYPE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:6528:3: ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) )
+                    {
+                    // InternalOil.g:6528:3: ( (lv_initialvalue_1_0= ruleMessageINITIALVALUE ) )
+                    // InternalOil.g:6529:4: (lv_initialvalue_1_0= ruleMessageINITIALVALUE )
+                    {
+                    // InternalOil.g:6529:4: (lv_initialvalue_1_0= ruleMessageINITIALVALUE )
+                    // InternalOil.g:6530:5: lv_initialvalue_1_0= ruleMessageINITIALVALUE
+                    {
+
+                    					newCompositeNode(grammarAccess.getMessage_RECEIVE_ZERO_SENDERSAccess().getInitialvalueMessageINITIALVALUEParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_initialvalue_1_0=ruleMessageINITIALVALUE();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getMessage_RECEIVE_ZERO_SENDERSRule());
+                    					}
+                    					set(
+                    						current,
+                    						"initialvalue",
+                    						lv_initialvalue_1_0,
+                    						"org.xtext.example.oil.Oil.MessageINITIALVALUE");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessage_RECEIVE_ZERO_SENDERS"
+
+
+    // $ANTLR start "entryRuleMessageCDATATYPE"
+    // InternalOil.g:6551:1: entryRuleMessageCDATATYPE returns [EObject current=null] : iv_ruleMessageCDATATYPE= ruleMessageCDATATYPE EOF ;
+    public final EObject entryRuleMessageCDATATYPE() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageCDATATYPE = null;
+
+
+        try {
+            // InternalOil.g:6551:57: (iv_ruleMessageCDATATYPE= ruleMessageCDATATYPE EOF )
+            // InternalOil.g:6552:2: iv_ruleMessageCDATATYPE= ruleMessageCDATATYPE EOF
+            {
+             newCompositeNode(grammarAccess.getMessageCDATATYPERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageCDATATYPE=ruleMessageCDATATYPE();
+
+            state._fsp--;
+
+             current =iv_ruleMessageCDATATYPE; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageCDATATYPE"
+
+
+    // $ANTLR start "ruleMessageCDATATYPE"
+    // InternalOil.g:6558:1: ruleMessageCDATATYPE returns [EObject current=null] : ( () otherlv_1= 'CDATATYPE' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' ) ;
+    public final EObject ruleMessageCDATATYPE() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        AntlrDatatypeRuleToken lv_descrption_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6564:2: ( ( () otherlv_1= 'CDATATYPE' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' ) )
+            // InternalOil.g:6565:2: ( () otherlv_1= 'CDATATYPE' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' )
+            {
+            // InternalOil.g:6565:2: ( () otherlv_1= 'CDATATYPE' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' )
+            // InternalOil.g:6566:3: () otherlv_1= 'CDATATYPE' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';'
+            {
+            // InternalOil.g:6566:3: ()
+            // InternalOil.g:6567:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageCDATATYPEAccess().getMessageCDATATYPEAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,88,FOLLOW_7); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMessageCDATATYPEAccess().getCDATATYPEKeyword_1());
+            		
+            otherlv_2=(Token)match(input,18,FOLLOW_8); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMessageCDATATYPEAccess().getEqualsSignKeyword_2());
+            		
+            // InternalOil.g:6581:3: ( (lv_descrption_3_0= ruleEString ) )
+            // InternalOil.g:6582:4: (lv_descrption_3_0= ruleEString )
+            {
+            // InternalOil.g:6582:4: (lv_descrption_3_0= ruleEString )
+            // InternalOil.g:6583:5: lv_descrption_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getMessageCDATATYPEAccess().getDescrptionEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_10);
+            lv_descrption_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessageCDATATYPERule());
+            					}
+            					set(
+            						current,
+            						"descrption",
+            						lv_descrption_3_0,
+            						"org.xtext.example.oil.Oil.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getMessageCDATATYPEAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageCDATATYPE"
+
+
+    // $ANTLR start "entryRuleMessageTRANSFERPROPERTY"
+    // InternalOil.g:6608:1: entryRuleMessageTRANSFERPROPERTY returns [EObject current=null] : iv_ruleMessageTRANSFERPROPERTY= ruleMessageTRANSFERPROPERTY EOF ;
+    public final EObject entryRuleMessageTRANSFERPROPERTY() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageTRANSFERPROPERTY = null;
+
+
+        try {
+            // InternalOil.g:6608:64: (iv_ruleMessageTRANSFERPROPERTY= ruleMessageTRANSFERPROPERTY EOF )
+            // InternalOil.g:6609:2: iv_ruleMessageTRANSFERPROPERTY= ruleMessageTRANSFERPROPERTY EOF
+            {
+             newCompositeNode(grammarAccess.getMessageTRANSFERPROPERTYRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageTRANSFERPROPERTY=ruleMessageTRANSFERPROPERTY();
+
+            state._fsp--;
+
+             current =iv_ruleMessageTRANSFERPROPERTY; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageTRANSFERPROPERTY"
+
+
+    // $ANTLR start "ruleMessageTRANSFERPROPERTY"
+    // InternalOil.g:6615:1: ruleMessageTRANSFERPROPERTY returns [EObject current=null] : (otherlv_0= 'TRANSFERPROPERTY' otherlv_1= '=' ( (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum ) ) ) ;
+    public final EObject ruleMessageTRANSFERPROPERTY() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Enumerator lv_transenum_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6621:2: ( (otherlv_0= 'TRANSFERPROPERTY' otherlv_1= '=' ( (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum ) ) ) )
+            // InternalOil.g:6622:2: (otherlv_0= 'TRANSFERPROPERTY' otherlv_1= '=' ( (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum ) ) )
+            {
+            // InternalOil.g:6622:2: (otherlv_0= 'TRANSFERPROPERTY' otherlv_1= '=' ( (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum ) ) )
+            // InternalOil.g:6623:3: otherlv_0= 'TRANSFERPROPERTY' otherlv_1= '=' ( (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum ) )
+            {
+            otherlv_0=(Token)match(input,89,FOLLOW_7); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getMessageTRANSFERPROPERTYAccess().getTRANSFERPROPERTYKeyword_0());
+            		
+            otherlv_1=(Token)match(input,18,FOLLOW_83); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMessageTRANSFERPROPERTYAccess().getEqualsSignKeyword_1());
+            		
+            // InternalOil.g:6631:3: ( (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum ) )
+            // InternalOil.g:6632:4: (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum )
+            {
+            // InternalOil.g:6632:4: (lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum )
+            // InternalOil.g:6633:5: lv_transenum_2_0= ruleMessageTRANSFERPROPERTYenum
+            {
+
+            					newCompositeNode(grammarAccess.getMessageTRANSFERPROPERTYAccess().getTransenumMessageTRANSFERPROPERTYenumEnumRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_transenum_2_0=ruleMessageTRANSFERPROPERTYenum();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessageTRANSFERPROPERTYRule());
+            					}
+            					set(
+            						current,
+            						"transenum",
+            						lv_transenum_2_0,
+            						"org.xtext.example.oil.Oil.MessageTRANSFERPROPERTYenum");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageTRANSFERPROPERTY"
+
+
+    // $ANTLR start "entryRuleMessageNETWORKORDERCALLOUT"
+    // InternalOil.g:6654:1: entryRuleMessageNETWORKORDERCALLOUT returns [EObject current=null] : iv_ruleMessageNETWORKORDERCALLOUT= ruleMessageNETWORKORDERCALLOUT EOF ;
+    public final EObject entryRuleMessageNETWORKORDERCALLOUT() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageNETWORKORDERCALLOUT = null;
+
+
+        try {
+            // InternalOil.g:6654:67: (iv_ruleMessageNETWORKORDERCALLOUT= ruleMessageNETWORKORDERCALLOUT EOF )
+            // InternalOil.g:6655:2: iv_ruleMessageNETWORKORDERCALLOUT= ruleMessageNETWORKORDERCALLOUT EOF
+            {
+             newCompositeNode(grammarAccess.getMessageNETWORKORDERCALLOUTRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageNETWORKORDERCALLOUT=ruleMessageNETWORKORDERCALLOUT();
+
+            state._fsp--;
+
+             current =iv_ruleMessageNETWORKORDERCALLOUT; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageNETWORKORDERCALLOUT"
+
+
+    // $ANTLR start "ruleMessageNETWORKORDERCALLOUT"
+    // InternalOil.g:6661:1: ruleMessageNETWORKORDERCALLOUT returns [EObject current=null] : ( () otherlv_1= 'NETWORKORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' ) ;
+    public final EObject ruleMessageNETWORKORDERCALLOUT() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        AntlrDatatypeRuleToken lv_descrption_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6667:2: ( ( () otherlv_1= 'NETWORKORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' ) )
+            // InternalOil.g:6668:2: ( () otherlv_1= 'NETWORKORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' )
+            {
+            // InternalOil.g:6668:2: ( () otherlv_1= 'NETWORKORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' )
+            // InternalOil.g:6669:3: () otherlv_1= 'NETWORKORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';'
+            {
+            // InternalOil.g:6669:3: ()
+            // InternalOil.g:6670:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageNETWORKORDERCALLOUTAccess().getMessageNETWORKORDERCALLOUTAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,90,FOLLOW_7); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMessageNETWORKORDERCALLOUTAccess().getNETWORKORDERCALLOUTKeyword_1());
+            		
+            otherlv_2=(Token)match(input,18,FOLLOW_8); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMessageNETWORKORDERCALLOUTAccess().getEqualsSignKeyword_2());
+            		
+            // InternalOil.g:6684:3: ( (lv_descrption_3_0= ruleEString ) )
+            // InternalOil.g:6685:4: (lv_descrption_3_0= ruleEString )
+            {
+            // InternalOil.g:6685:4: (lv_descrption_3_0= ruleEString )
+            // InternalOil.g:6686:5: lv_descrption_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getMessageNETWORKORDERCALLOUTAccess().getDescrptionEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_10);
+            lv_descrption_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessageNETWORKORDERCALLOUTRule());
+            					}
+            					set(
+            						current,
+            						"descrption",
+            						lv_descrption_3_0,
+            						"org.xtext.example.oil.Oil.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getMessageNETWORKORDERCALLOUTAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageNETWORKORDERCALLOUT"
+
+
+    // $ANTLR start "entryRuleMessageCPUORDERCALLOUT"
+    // InternalOil.g:6711:1: entryRuleMessageCPUORDERCALLOUT returns [EObject current=null] : iv_ruleMessageCPUORDERCALLOUT= ruleMessageCPUORDERCALLOUT EOF ;
+    public final EObject entryRuleMessageCPUORDERCALLOUT() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageCPUORDERCALLOUT = null;
+
+
+        try {
+            // InternalOil.g:6711:63: (iv_ruleMessageCPUORDERCALLOUT= ruleMessageCPUORDERCALLOUT EOF )
+            // InternalOil.g:6712:2: iv_ruleMessageCPUORDERCALLOUT= ruleMessageCPUORDERCALLOUT EOF
+            {
+             newCompositeNode(grammarAccess.getMessageCPUORDERCALLOUTRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageCPUORDERCALLOUT=ruleMessageCPUORDERCALLOUT();
+
+            state._fsp--;
+
+             current =iv_ruleMessageCPUORDERCALLOUT; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageCPUORDERCALLOUT"
+
+
+    // $ANTLR start "ruleMessageCPUORDERCALLOUT"
+    // InternalOil.g:6718:1: ruleMessageCPUORDERCALLOUT returns [EObject current=null] : ( () otherlv_1= 'CPUORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' ) ;
+    public final EObject ruleMessageCPUORDERCALLOUT() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        AntlrDatatypeRuleToken lv_descrption_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6724:2: ( ( () otherlv_1= 'CPUORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' ) )
+            // InternalOil.g:6725:2: ( () otherlv_1= 'CPUORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' )
+            {
+            // InternalOil.g:6725:2: ( () otherlv_1= 'CPUORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';' )
+            // InternalOil.g:6726:3: () otherlv_1= 'CPUORDERCALLOUT' otherlv_2= '=' ( (lv_descrption_3_0= ruleEString ) ) otherlv_4= ';'
+            {
+            // InternalOil.g:6726:3: ()
+            // InternalOil.g:6727:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageCPUORDERCALLOUTAccess().getMessageCPUORDERCALLOUTAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,91,FOLLOW_7); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMessageCPUORDERCALLOUTAccess().getCPUORDERCALLOUTKeyword_1());
+            		
+            otherlv_2=(Token)match(input,18,FOLLOW_8); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMessageCPUORDERCALLOUTAccess().getEqualsSignKeyword_2());
+            		
+            // InternalOil.g:6741:3: ( (lv_descrption_3_0= ruleEString ) )
+            // InternalOil.g:6742:4: (lv_descrption_3_0= ruleEString )
+            {
+            // InternalOil.g:6742:4: (lv_descrption_3_0= ruleEString )
+            // InternalOil.g:6743:5: lv_descrption_3_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getMessageCPUORDERCALLOUTAccess().getDescrptionEStringParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_10);
+            lv_descrption_3_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessageCPUORDERCALLOUTRule());
+            					}
+            					set(
+            						current,
+            						"descrption",
+            						lv_descrption_3_0,
+            						"org.xtext.example.oil.Oil.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getMessageCPUORDERCALLOUTAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageCPUORDERCALLOUT"
+
+
+    // $ANTLR start "entryRuleMessageINITIALVALUE"
+    // InternalOil.g:6768:1: entryRuleMessageINITIALVALUE returns [EObject current=null] : iv_ruleMessageINITIALVALUE= ruleMessageINITIALVALUE EOF ;
+    public final EObject entryRuleMessageINITIALVALUE() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageINITIALVALUE = null;
+
+
+        try {
+            // InternalOil.g:6768:60: (iv_ruleMessageINITIALVALUE= ruleMessageINITIALVALUE EOF )
+            // InternalOil.g:6769:2: iv_ruleMessageINITIALVALUE= ruleMessageINITIALVALUE EOF
+            {
+             newCompositeNode(grammarAccess.getMessageINITIALVALUERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageINITIALVALUE=ruleMessageINITIALVALUE();
+
+            state._fsp--;
+
+             current =iv_ruleMessageINITIALVALUE; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageINITIALVALUE"
+
+
+    // $ANTLR start "ruleMessageINITIALVALUE"
+    // InternalOil.g:6775:1: ruleMessageINITIALVALUE returns [EObject current=null] : ( () otherlv_1= 'INITIALVALUE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) otherlv_4= ';' ) ;
+    public final EObject ruleMessageINITIALVALUE() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_value_3_0=null;
+        Token otherlv_4=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6781:2: ( ( () otherlv_1= 'INITIALVALUE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) otherlv_4= ';' ) )
+            // InternalOil.g:6782:2: ( () otherlv_1= 'INITIALVALUE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) otherlv_4= ';' )
+            {
+            // InternalOil.g:6782:2: ( () otherlv_1= 'INITIALVALUE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) otherlv_4= ';' )
+            // InternalOil.g:6783:3: () otherlv_1= 'INITIALVALUE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) otherlv_4= ';'
+            {
+            // InternalOil.g:6783:3: ()
+            // InternalOil.g:6784:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageINITIALVALUEAccess().getMessageINITIALVALUEAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,92,FOLLOW_7); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMessageINITIALVALUEAccess().getINITIALVALUEKeyword_1());
+            		
+            otherlv_2=(Token)match(input,18,FOLLOW_56); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMessageINITIALVALUEAccess().getEqualsSignKeyword_2());
+            		
+            // InternalOil.g:6798:3: ( (lv_value_3_0= RULE_T_NUMBER ) )
+            // InternalOil.g:6799:4: (lv_value_3_0= RULE_T_NUMBER )
+            {
+            // InternalOil.g:6799:4: (lv_value_3_0= RULE_T_NUMBER )
+            // InternalOil.g:6800:5: lv_value_3_0= RULE_T_NUMBER
+            {
+            lv_value_3_0=(Token)match(input,RULE_T_NUMBER,FOLLOW_10); 
+
+            					newLeafNode(lv_value_3_0, grammarAccess.getMessageINITIALVALUEAccess().getValueT_NUMBERTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getMessageINITIALVALUERule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"value",
+            						lv_value_3_0,
+            						"org.xtext.example.oil.Oil.T_NUMBER");
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getMessageINITIALVALUEAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageINITIALVALUE"
+
+
+    // $ANTLR start "entryRuleMessageNETWORKMESSAGE"
+    // InternalOil.g:6824:1: entryRuleMessageNETWORKMESSAGE returns [EObject current=null] : iv_ruleMessageNETWORKMESSAGE= ruleMessageNETWORKMESSAGE EOF ;
+    public final EObject entryRuleMessageNETWORKMESSAGE() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageNETWORKMESSAGE = null;
+
+
+        try {
+            // InternalOil.g:6824:62: (iv_ruleMessageNETWORKMESSAGE= ruleMessageNETWORKMESSAGE EOF )
+            // InternalOil.g:6825:2: iv_ruleMessageNETWORKMESSAGE= ruleMessageNETWORKMESSAGE EOF
+            {
+             newCompositeNode(grammarAccess.getMessageNETWORKMESSAGERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageNETWORKMESSAGE=ruleMessageNETWORKMESSAGE();
+
+            state._fsp--;
+
+             current =iv_ruleMessageNETWORKMESSAGE; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageNETWORKMESSAGE"
+
+
+    // $ANTLR start "ruleMessageNETWORKMESSAGE"
+    // InternalOil.g:6831:1: ruleMessageNETWORKMESSAGE returns [EObject current=null] : ( () (otherlv_1= 'NETWORKMESSAGE' otherlv_2= '=' ( (lv_value_3_0= ruleImplementationDef ) ) otherlv_4= ';' ) ) ;
+    public final EObject ruleMessageNETWORKMESSAGE() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_value_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6837:2: ( ( () (otherlv_1= 'NETWORKMESSAGE' otherlv_2= '=' ( (lv_value_3_0= ruleImplementationDef ) ) otherlv_4= ';' ) ) )
+            // InternalOil.g:6838:2: ( () (otherlv_1= 'NETWORKMESSAGE' otherlv_2= '=' ( (lv_value_3_0= ruleImplementationDef ) ) otherlv_4= ';' ) )
+            {
+            // InternalOil.g:6838:2: ( () (otherlv_1= 'NETWORKMESSAGE' otherlv_2= '=' ( (lv_value_3_0= ruleImplementationDef ) ) otherlv_4= ';' ) )
+            // InternalOil.g:6839:3: () (otherlv_1= 'NETWORKMESSAGE' otherlv_2= '=' ( (lv_value_3_0= ruleImplementationDef ) ) otherlv_4= ';' )
+            {
+            // InternalOil.g:6839:3: ()
+            // InternalOil.g:6840:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageNETWORKMESSAGEAccess().getMessageNETWORKMESSAGEAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalOil.g:6846:3: (otherlv_1= 'NETWORKMESSAGE' otherlv_2= '=' ( (lv_value_3_0= ruleImplementationDef ) ) otherlv_4= ';' )
+            // InternalOil.g:6847:4: otherlv_1= 'NETWORKMESSAGE' otherlv_2= '=' ( (lv_value_3_0= ruleImplementationDef ) ) otherlv_4= ';'
+            {
+            otherlv_1=(Token)match(input,49,FOLLOW_7); 
+
+            				newLeafNode(otherlv_1, grammarAccess.getMessageNETWORKMESSAGEAccess().getNETWORKMESSAGEKeyword_1_0());
+            			
+            otherlv_2=(Token)match(input,18,FOLLOW_84); 
+
+            				newLeafNode(otherlv_2, grammarAccess.getMessageNETWORKMESSAGEAccess().getEqualsSignKeyword_1_1());
+            			
+            // InternalOil.g:6855:4: ( (lv_value_3_0= ruleImplementationDef ) )
+            // InternalOil.g:6856:5: (lv_value_3_0= ruleImplementationDef )
+            {
+            // InternalOil.g:6856:5: (lv_value_3_0= ruleImplementationDef )
+            // InternalOil.g:6857:6: lv_value_3_0= ruleImplementationDef
+            {
+
+            						newCompositeNode(grammarAccess.getMessageNETWORKMESSAGEAccess().getValueImplementationDefParserRuleCall_1_2_0());
+            					
+            pushFollow(FOLLOW_10);
+            lv_value_3_0=ruleImplementationDef();
+
+            state._fsp--;
+
+
+            						if (current==null) {
+            							current = createModelElementForParent(grammarAccess.getMessageNETWORKMESSAGERule());
+            						}
+            						set(
+            							current,
+            							"value",
+            							lv_value_3_0,
+            							"org.xtext.example.oil.Oil.ImplementationDef");
+            						afterParserOrEnumRuleCall();
+            					
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,20,FOLLOW_2); 
+
+            				newLeafNode(otherlv_4, grammarAccess.getMessageNETWORKMESSAGEAccess().getSemicolonKeyword_1_3());
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageNETWORKMESSAGE"
+
+
+    // $ANTLR start "entryRuleMessageSENDINGMESSAGE"
+    // InternalOil.g:6883:1: entryRuleMessageSENDINGMESSAGE returns [EObject current=null] : iv_ruleMessageSENDINGMESSAGE= ruleMessageSENDINGMESSAGE EOF ;
+    public final EObject entryRuleMessageSENDINGMESSAGE() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageSENDINGMESSAGE = null;
+
+
+        try {
+            // InternalOil.g:6883:62: (iv_ruleMessageSENDINGMESSAGE= ruleMessageSENDINGMESSAGE EOF )
+            // InternalOil.g:6884:2: iv_ruleMessageSENDINGMESSAGE= ruleMessageSENDINGMESSAGE EOF
+            {
+             newCompositeNode(grammarAccess.getMessageSENDINGMESSAGERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageSENDINGMESSAGE=ruleMessageSENDINGMESSAGE();
+
+            state._fsp--;
+
+             current =iv_ruleMessageSENDINGMESSAGE; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageSENDINGMESSAGE"
+
+
+    // $ANTLR start "ruleMessageSENDINGMESSAGE"
+    // InternalOil.g:6890:1: ruleMessageSENDINGMESSAGE returns [EObject current=null] : ( () (otherlv_1= 'SENDINGMESSAGE' otherlv_2= '=' ( (lv_descrption_3_0= RULE_ID ) ) otherlv_4= ';' ) ) ;
+    public final EObject ruleMessageSENDINGMESSAGE() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_descrption_3_0=null;
+        Token otherlv_4=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6896:2: ( ( () (otherlv_1= 'SENDINGMESSAGE' otherlv_2= '=' ( (lv_descrption_3_0= RULE_ID ) ) otherlv_4= ';' ) ) )
+            // InternalOil.g:6897:2: ( () (otherlv_1= 'SENDINGMESSAGE' otherlv_2= '=' ( (lv_descrption_3_0= RULE_ID ) ) otherlv_4= ';' ) )
+            {
+            // InternalOil.g:6897:2: ( () (otherlv_1= 'SENDINGMESSAGE' otherlv_2= '=' ( (lv_descrption_3_0= RULE_ID ) ) otherlv_4= ';' ) )
+            // InternalOil.g:6898:3: () (otherlv_1= 'SENDINGMESSAGE' otherlv_2= '=' ( (lv_descrption_3_0= RULE_ID ) ) otherlv_4= ';' )
+            {
+            // InternalOil.g:6898:3: ()
+            // InternalOil.g:6899:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageSENDINGMESSAGEAccess().getMessageSENDINGMESSAGEAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalOil.g:6905:3: (otherlv_1= 'SENDINGMESSAGE' otherlv_2= '=' ( (lv_descrption_3_0= RULE_ID ) ) otherlv_4= ';' )
+            // InternalOil.g:6906:4: otherlv_1= 'SENDINGMESSAGE' otherlv_2= '=' ( (lv_descrption_3_0= RULE_ID ) ) otherlv_4= ';'
+            {
+            otherlv_1=(Token)match(input,93,FOLLOW_7); 
+
+            				newLeafNode(otherlv_1, grammarAccess.getMessageSENDINGMESSAGEAccess().getSENDINGMESSAGEKeyword_1_0());
+            			
+            otherlv_2=(Token)match(input,18,FOLLOW_11); 
+
+            				newLeafNode(otherlv_2, grammarAccess.getMessageSENDINGMESSAGEAccess().getEqualsSignKeyword_1_1());
+            			
+            // InternalOil.g:6914:4: ( (lv_descrption_3_0= RULE_ID ) )
+            // InternalOil.g:6915:5: (lv_descrption_3_0= RULE_ID )
+            {
+            // InternalOil.g:6915:5: (lv_descrption_3_0= RULE_ID )
+            // InternalOil.g:6916:6: lv_descrption_3_0= RULE_ID
+            {
+            lv_descrption_3_0=(Token)match(input,RULE_ID,FOLLOW_10); 
+
+            						newLeafNode(lv_descrption_3_0, grammarAccess.getMessageSENDINGMESSAGEAccess().getDescrptionIDTerminalRuleCall_1_2_0());
+            					
+
+            						if (current==null) {
+            							current = createModelElement(grammarAccess.getMessageSENDINGMESSAGERule());
+            						}
+            						setWithLastConsumed(
+            							current,
+            							"descrption",
+            							lv_descrption_3_0,
+            							"org.xtext.example.oil.Oil.ID");
+            					
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,20,FOLLOW_2); 
+
+            				newLeafNode(otherlv_4, grammarAccess.getMessageSENDINGMESSAGEAccess().getSemicolonKeyword_1_3());
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageSENDINGMESSAGE"
+
+
+    // $ANTLR start "entryRuleMessageQUEUESIZE"
+    // InternalOil.g:6941:1: entryRuleMessageQUEUESIZE returns [EObject current=null] : iv_ruleMessageQUEUESIZE= ruleMessageQUEUESIZE EOF ;
+    public final EObject entryRuleMessageQUEUESIZE() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageQUEUESIZE = null;
+
+
+        try {
+            // InternalOil.g:6941:57: (iv_ruleMessageQUEUESIZE= ruleMessageQUEUESIZE EOF )
+            // InternalOil.g:6942:2: iv_ruleMessageQUEUESIZE= ruleMessageQUEUESIZE EOF
+            {
+             newCompositeNode(grammarAccess.getMessageQUEUESIZERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageQUEUESIZE=ruleMessageQUEUESIZE();
+
+            state._fsp--;
+
+             current =iv_ruleMessageQUEUESIZE; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageQUEUESIZE"
+
+
+    // $ANTLR start "ruleMessageQUEUESIZE"
+    // InternalOil.g:6948:1: ruleMessageQUEUESIZE returns [EObject current=null] : ( () (otherlv_1= 'QUEUESIZE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) ) ) ;
+    public final EObject ruleMessageQUEUESIZE() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_value_3_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:6954:2: ( ( () (otherlv_1= 'QUEUESIZE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) ) ) )
+            // InternalOil.g:6955:2: ( () (otherlv_1= 'QUEUESIZE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) ) )
+            {
+            // InternalOil.g:6955:2: ( () (otherlv_1= 'QUEUESIZE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) ) )
+            // InternalOil.g:6956:3: () (otherlv_1= 'QUEUESIZE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) )
+            {
+            // InternalOil.g:6956:3: ()
+            // InternalOil.g:6957:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getMessageQUEUESIZEAccess().getMessageQUEUESIZEAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalOil.g:6963:3: (otherlv_1= 'QUEUESIZE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) ) )
+            // InternalOil.g:6964:4: otherlv_1= 'QUEUESIZE' otherlv_2= '=' ( (lv_value_3_0= RULE_T_NUMBER ) )
+            {
+            otherlv_1=(Token)match(input,94,FOLLOW_7); 
+
+            				newLeafNode(otherlv_1, grammarAccess.getMessageQUEUESIZEAccess().getQUEUESIZEKeyword_1_0());
+            			
+            otherlv_2=(Token)match(input,18,FOLLOW_56); 
+
+            				newLeafNode(otherlv_2, grammarAccess.getMessageQUEUESIZEAccess().getEqualsSignKeyword_1_1());
+            			
+            // InternalOil.g:6972:4: ( (lv_value_3_0= RULE_T_NUMBER ) )
+            // InternalOil.g:6973:5: (lv_value_3_0= RULE_T_NUMBER )
+            {
+            // InternalOil.g:6973:5: (lv_value_3_0= RULE_T_NUMBER )
+            // InternalOil.g:6974:6: lv_value_3_0= RULE_T_NUMBER
+            {
+            lv_value_3_0=(Token)match(input,RULE_T_NUMBER,FOLLOW_2); 
+
+            						newLeafNode(lv_value_3_0, grammarAccess.getMessageQUEUESIZEAccess().getValueT_NUMBERTerminalRuleCall_1_2_0());
+            					
+
+            						if (current==null) {
+            							current = createModelElement(grammarAccess.getMessageQUEUESIZERule());
+            						}
+            						setWithLastConsumed(
+            							current,
+            							"value",
+            							lv_value_3_0,
+            							"org.xtext.example.oil.Oil.T_NUMBER");
+            					
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageQUEUESIZE"
+
+
+    // $ANTLR start "entryRuleMessagefilter"
+    // InternalOil.g:6995:1: entryRuleMessagefilter returns [EObject current=null] : iv_ruleMessagefilter= ruleMessagefilter EOF ;
+    public final EObject entryRuleMessagefilter() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessagefilter = null;
+
+
+        try {
+            // InternalOil.g:6995:54: (iv_ruleMessagefilter= ruleMessagefilter EOF )
+            // InternalOil.g:6996:2: iv_ruleMessagefilter= ruleMessagefilter EOF
+            {
+             newCompositeNode(grammarAccess.getMessagefilterRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessagefilter=ruleMessagefilter();
+
+            state._fsp--;
+
+             current =iv_ruleMessagefilter; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessagefilter"
+
+
+    // $ANTLR start "ruleMessagefilter"
+    // InternalOil.g:7002:1: ruleMessagefilter returns [EObject current=null] : (otherlv_0= 'FILTER' otherlv_1= '=' ( (lv_filter2_2_0= ruleMessagefilter2 ) ) (otherlv_3= '{' ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+ otherlv_8= '}' )? otherlv_9= ';' ) ;
+    public final EObject ruleMessagefilter() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
+        Enumerator lv_filter2_2_0 = null;
+
+        AntlrDatatypeRuleToken lv_name_4_0 = null;
+
+        EObject lv_messageint1_6_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:7008:2: ( (otherlv_0= 'FILTER' otherlv_1= '=' ( (lv_filter2_2_0= ruleMessagefilter2 ) ) (otherlv_3= '{' ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+ otherlv_8= '}' )? otherlv_9= ';' ) )
+            // InternalOil.g:7009:2: (otherlv_0= 'FILTER' otherlv_1= '=' ( (lv_filter2_2_0= ruleMessagefilter2 ) ) (otherlv_3= '{' ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+ otherlv_8= '}' )? otherlv_9= ';' )
+            {
+            // InternalOil.g:7009:2: (otherlv_0= 'FILTER' otherlv_1= '=' ( (lv_filter2_2_0= ruleMessagefilter2 ) ) (otherlv_3= '{' ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+ otherlv_8= '}' )? otherlv_9= ';' )
+            // InternalOil.g:7010:3: otherlv_0= 'FILTER' otherlv_1= '=' ( (lv_filter2_2_0= ruleMessagefilter2 ) ) (otherlv_3= '{' ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+ otherlv_8= '}' )? otherlv_9= ';'
+            {
+            otherlv_0=(Token)match(input,95,FOLLOW_7); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getMessagefilterAccess().getFILTERKeyword_0());
+            		
+            otherlv_1=(Token)match(input,18,FOLLOW_85); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMessagefilterAccess().getEqualsSignKeyword_1());
+            		
+            // InternalOil.g:7018:3: ( (lv_filter2_2_0= ruleMessagefilter2 ) )
+            // InternalOil.g:7019:4: (lv_filter2_2_0= ruleMessagefilter2 )
+            {
+            // InternalOil.g:7019:4: (lv_filter2_2_0= ruleMessagefilter2 )
+            // InternalOil.g:7020:5: lv_filter2_2_0= ruleMessagefilter2
+            {
+
+            					newCompositeNode(grammarAccess.getMessagefilterAccess().getFilter2Messagefilter2EnumRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_34);
+            lv_filter2_2_0=ruleMessagefilter2();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessagefilterRule());
+            					}
+            					set(
+            						current,
+            						"filter2",
+            						lv_filter2_2_0,
+            						"org.xtext.example.oil.Oil.Messagefilter2");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalOil.g:7037:3: (otherlv_3= '{' ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+ otherlv_8= '}' )?
+            int alt129=2;
+            int LA129_0 = input.LA(1);
+
+            if ( (LA129_0==22) ) {
+                alt129=1;
+            }
+            switch (alt129) {
+                case 1 :
+                    // InternalOil.g:7038:4: otherlv_3= '{' ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+ otherlv_8= '}'
+                    {
+                    otherlv_3=(Token)match(input,22,FOLLOW_11); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getMessagefilterAccess().getLeftCurlyBracketKeyword_3_0());
+                    			
+                    // InternalOil.g:7042:4: ( ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';' )+
+                    int cnt128=0;
+                    loop128:
+                    do {
+                        int alt128=2;
+                        int LA128_0 = input.LA(1);
+
+                        if ( (LA128_0==RULE_ID) ) {
+                            alt128=1;
+                        }
+
+
+                        switch (alt128) {
+                    	case 1 :
+                    	    // InternalOil.g:7043:5: ( (lv_name_4_0= ruleName ) ) otherlv_5= '=' ( (lv_messageint1_6_0= ruleAttributeValue ) ) otherlv_7= ';'
+                    	    {
+                    	    // InternalOil.g:7043:5: ( (lv_name_4_0= ruleName ) )
+                    	    // InternalOil.g:7044:6: (lv_name_4_0= ruleName )
+                    	    {
+                    	    // InternalOil.g:7044:6: (lv_name_4_0= ruleName )
+                    	    // InternalOil.g:7045:7: lv_name_4_0= ruleName
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getMessagefilterAccess().getNameNameParserRuleCall_3_1_0_0());
+                    	    						
+                    	    pushFollow(FOLLOW_7);
+                    	    lv_name_4_0=ruleName();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getMessagefilterRule());
+                    	    							}
+                    	    							set(
+                    	    								current,
+                    	    								"name",
+                    	    								lv_name_4_0,
+                    	    								"org.xtext.example.oil.Oil.Name");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+                    	    otherlv_5=(Token)match(input,18,FOLLOW_29); 
+
+                    	    					newLeafNode(otherlv_5, grammarAccess.getMessagefilterAccess().getEqualsSignKeyword_3_1_1());
+                    	    				
+                    	    // InternalOil.g:7066:5: ( (lv_messageint1_6_0= ruleAttributeValue ) )
+                    	    // InternalOil.g:7067:6: (lv_messageint1_6_0= ruleAttributeValue )
+                    	    {
+                    	    // InternalOil.g:7067:6: (lv_messageint1_6_0= ruleAttributeValue )
+                    	    // InternalOil.g:7068:7: lv_messageint1_6_0= ruleAttributeValue
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getMessagefilterAccess().getMessageint1AttributeValueParserRuleCall_3_1_2_0());
+                    	    						
+                    	    pushFollow(FOLLOW_10);
+                    	    lv_messageint1_6_0=ruleAttributeValue();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getMessagefilterRule());
+                    	    							}
+                    	    							set(
+                    	    								current,
+                    	    								"messageint1",
+                    	    								lv_messageint1_6_0,
+                    	    								"org.xtext.example.oil.Oil.AttributeValue");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+                    	    otherlv_7=(Token)match(input,20,FOLLOW_86); 
+
+                    	    					newLeafNode(otherlv_7, grammarAccess.getMessagefilterAccess().getSemicolonKeyword_3_1_3());
+                    	    				
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt128 >= 1 ) break loop128;
+                                EarlyExitException eee =
+                                    new EarlyExitException(128, input);
+                                throw eee;
+                        }
+                        cnt128++;
+                    } while (true);
+
+                    otherlv_8=(Token)match(input,23,FOLLOW_10); 
+
+                    				newLeafNode(otherlv_8, grammarAccess.getMessagefilterAccess().getRightCurlyBracketKeyword_3_2());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_9=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getMessagefilterAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessagefilter"
+
+
+    // $ANTLR start "entryRuleMessageLINK"
+    // InternalOil.g:7103:1: entryRuleMessageLINK returns [EObject current=null] : iv_ruleMessageLINK= ruleMessageLINK EOF ;
+    public final EObject entryRuleMessageLINK() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMessageLINK = null;
+
+
+        try {
+            // InternalOil.g:7103:52: (iv_ruleMessageLINK= ruleMessageLINK EOF )
+            // InternalOil.g:7104:2: iv_ruleMessageLINK= ruleMessageLINK EOF
+            {
+             newCompositeNode(grammarAccess.getMessageLINKRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMessageLINK=ruleMessageLINK();
+
+            state._fsp--;
+
+             current =iv_ruleMessageLINK; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMessageLINK"
+
+
+    // $ANTLR start "ruleMessageLINK"
+    // InternalOil.g:7110:1: ruleMessageLINK returns [EObject current=null] : (otherlv_0= 'LINK' otherlv_1= '=' ( (lv_messagelink_2_0= ruleMessagelink1 ) ) ) ;
+    public final EObject ruleMessageLINK() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Enumerator lv_messagelink_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:7116:2: ( (otherlv_0= 'LINK' otherlv_1= '=' ( (lv_messagelink_2_0= ruleMessagelink1 ) ) ) )
+            // InternalOil.g:7117:2: (otherlv_0= 'LINK' otherlv_1= '=' ( (lv_messagelink_2_0= ruleMessagelink1 ) ) )
+            {
+            // InternalOil.g:7117:2: (otherlv_0= 'LINK' otherlv_1= '=' ( (lv_messagelink_2_0= ruleMessagelink1 ) ) )
+            // InternalOil.g:7118:3: otherlv_0= 'LINK' otherlv_1= '=' ( (lv_messagelink_2_0= ruleMessagelink1 ) )
+            {
+            otherlv_0=(Token)match(input,96,FOLLOW_7); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getMessageLINKAccess().getLINKKeyword_0());
+            		
+            otherlv_1=(Token)match(input,18,FOLLOW_87); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMessageLINKAccess().getEqualsSignKeyword_1());
+            		
+            // InternalOil.g:7126:3: ( (lv_messagelink_2_0= ruleMessagelink1 ) )
+            // InternalOil.g:7127:4: (lv_messagelink_2_0= ruleMessagelink1 )
+            {
+            // InternalOil.g:7127:4: (lv_messagelink_2_0= ruleMessagelink1 )
+            // InternalOil.g:7128:5: lv_messagelink_2_0= ruleMessagelink1
+            {
+
+            					newCompositeNode(grammarAccess.getMessageLINKAccess().getMessagelinkMessagelink1EnumRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_messagelink_2_0=ruleMessagelink1();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMessageLINKRule());
+            					}
+            					set(
+            						current,
+            						"messagelink",
+            						lv_messagelink_2_0,
+            						"org.xtext.example.oil.Oil.Messagelink1");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageLINK"
+
+
     // $ANTLR start "entryRuleLibrayattribute"
-    // InternalOil.g:4312:1: entryRuleLibrayattribute returns [EObject current=null] : iv_ruleLibrayattribute= ruleLibrayattribute EOF ;
+    // InternalOil.g:7149:1: entryRuleLibrayattribute returns [EObject current=null] : iv_ruleLibrayattribute= ruleLibrayattribute EOF ;
     public final EObject entryRuleLibrayattribute() throws RecognitionException {
         EObject current = null;
 
@@ -10949,8 +17693,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:4312:56: (iv_ruleLibrayattribute= ruleLibrayattribute EOF )
-            // InternalOil.g:4313:2: iv_ruleLibrayattribute= ruleLibrayattribute EOF
+            // InternalOil.g:7149:56: (iv_ruleLibrayattribute= ruleLibrayattribute EOF )
+            // InternalOil.g:7150:2: iv_ruleLibrayattribute= ruleLibrayattribute EOF
             {
              newCompositeNode(grammarAccess.getLibrayattributeRule()); 
             pushFollow(FOLLOW_1);
@@ -10977,7 +17721,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLibrayattribute"
-    // InternalOil.g:4319:1: ruleLibrayattribute returns [EObject current=null] : ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) ) ;
+    // InternalOil.g:7156:1: ruleLibrayattribute returns [EObject current=null] : ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) ) ;
     public final EObject ruleLibrayattribute() throws RecognitionException {
         EObject current = null;
 
@@ -11001,42 +17745,42 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:4325:2: ( ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) ) )
-            // InternalOil.g:4326:2: ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) )
+            // InternalOil.g:7162:2: ( ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) ) )
+            // InternalOil.g:7163:2: ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) )
             {
-            // InternalOil.g:4326:2: ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) )
-            int alt109=3;
+            // InternalOil.g:7163:2: ( (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' ) | (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' ) | (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' ) )
+            int alt130=3;
             switch ( input.LA(1) ) {
-            case 63:
+            case 97:
                 {
-                alt109=1;
+                alt130=1;
                 }
                 break;
-            case 64:
+            case 98:
                 {
-                alt109=2;
+                alt130=2;
                 }
                 break;
-            case 65:
+            case 99:
                 {
-                alt109=3;
+                alt130=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 109, 0, input);
+                    new NoViableAltException("", 130, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt109) {
+            switch (alt130) {
                 case 1 :
-                    // InternalOil.g:4327:3: (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' )
+                    // InternalOil.g:7164:3: (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' )
                     {
-                    // InternalOil.g:4327:3: (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' )
-                    // InternalOil.g:4328:4: otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';'
+                    // InternalOil.g:7164:3: (otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';' )
+                    // InternalOil.g:7165:4: otherlv_0= 'PATH' otherlv_1= '=' ( (lv_description_2_0= ruleEString ) ) otherlv_3= ';'
                     {
-                    otherlv_0=(Token)match(input,63,FOLLOW_7); 
+                    otherlv_0=(Token)match(input,97,FOLLOW_7); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getLibrayattributeAccess().getPATHKeyword_0_0());
                     			
@@ -11044,11 +17788,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_1, grammarAccess.getLibrayattributeAccess().getEqualsSignKeyword_0_1());
                     			
-                    // InternalOil.g:4336:4: ( (lv_description_2_0= ruleEString ) )
-                    // InternalOil.g:4337:5: (lv_description_2_0= ruleEString )
+                    // InternalOil.g:7173:4: ( (lv_description_2_0= ruleEString ) )
+                    // InternalOil.g:7174:5: (lv_description_2_0= ruleEString )
                     {
-                    // InternalOil.g:4337:5: (lv_description_2_0= ruleEString )
-                    // InternalOil.g:4338:6: lv_description_2_0= ruleEString
+                    // InternalOil.g:7174:5: (lv_description_2_0= ruleEString )
+                    // InternalOil.g:7175:6: lv_description_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getLibrayattributeAccess().getDescriptionEStringParserRuleCall_0_2_0());
@@ -11086,12 +17830,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:4361:3: (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' )
+                    // InternalOil.g:7198:3: (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' )
                     {
-                    // InternalOil.g:4361:3: (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' )
-                    // InternalOil.g:4362:4: otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';'
+                    // InternalOil.g:7198:3: (otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';' )
+                    // InternalOil.g:7199:4: otherlv_4= 'CHEADER' otherlv_5= '=' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ';'
                     {
-                    otherlv_4=(Token)match(input,64,FOLLOW_7); 
+                    otherlv_4=(Token)match(input,98,FOLLOW_7); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getLibrayattributeAccess().getCHEADERKeyword_1_0());
                     			
@@ -11099,11 +17843,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_5, grammarAccess.getLibrayattributeAccess().getEqualsSignKeyword_1_1());
                     			
-                    // InternalOil.g:4370:4: ( (lv_description_6_0= ruleEString ) )
-                    // InternalOil.g:4371:5: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:7207:4: ( (lv_description_6_0= ruleEString ) )
+                    // InternalOil.g:7208:5: (lv_description_6_0= ruleEString )
                     {
-                    // InternalOil.g:4371:5: (lv_description_6_0= ruleEString )
-                    // InternalOil.g:4372:6: lv_description_6_0= ruleEString
+                    // InternalOil.g:7208:5: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:7209:6: lv_description_6_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getLibrayattributeAccess().getDescriptionEStringParserRuleCall_1_2_0());
@@ -11141,12 +17885,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:4395:3: (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' )
+                    // InternalOil.g:7232:3: (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' )
                     {
-                    // InternalOil.g:4395:3: (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' )
-                    // InternalOil.g:4396:4: otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';'
+                    // InternalOil.g:7232:3: (otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';' )
+                    // InternalOil.g:7233:4: otherlv_8= 'CFILE' otherlv_9= '=' ( (lv_description_10_0= ruleEString ) ) otherlv_11= ';'
                     {
-                    otherlv_8=(Token)match(input,65,FOLLOW_7); 
+                    otherlv_8=(Token)match(input,99,FOLLOW_7); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getLibrayattributeAccess().getCFILEKeyword_2_0());
                     			
@@ -11154,11 +17898,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_9, grammarAccess.getLibrayattributeAccess().getEqualsSignKeyword_2_1());
                     			
-                    // InternalOil.g:4404:4: ( (lv_description_10_0= ruleEString ) )
-                    // InternalOil.g:4405:5: (lv_description_10_0= ruleEString )
+                    // InternalOil.g:7241:4: ( (lv_description_10_0= ruleEString ) )
+                    // InternalOil.g:7242:5: (lv_description_10_0= ruleEString )
                     {
-                    // InternalOil.g:4405:5: (lv_description_10_0= ruleEString )
-                    // InternalOil.g:4406:6: lv_description_10_0= ruleEString
+                    // InternalOil.g:7242:5: (lv_description_10_0= ruleEString )
+                    // InternalOil.g:7243:6: lv_description_10_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getLibrayattributeAccess().getDescriptionEStringParserRuleCall_2_2_0());
@@ -11218,7 +17962,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComRule"
-    // InternalOil.g:4432:1: entryRuleComRule returns [EObject current=null] : iv_ruleComRule= ruleComRule EOF ;
+    // InternalOil.g:7269:1: entryRuleComRule returns [EObject current=null] : iv_ruleComRule= ruleComRule EOF ;
     public final EObject entryRuleComRule() throws RecognitionException {
         EObject current = null;
 
@@ -11226,8 +17970,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:4432:48: (iv_ruleComRule= ruleComRule EOF )
-            // InternalOil.g:4433:2: iv_ruleComRule= ruleComRule EOF
+            // InternalOil.g:7269:48: (iv_ruleComRule= ruleComRule EOF )
+            // InternalOil.g:7270:2: iv_ruleComRule= ruleComRule EOF
             {
              newCompositeNode(grammarAccess.getComRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -11254,7 +17998,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComRule"
-    // InternalOil.g:4439:1: ruleComRule returns [EObject current=null] : ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) ;
+    // InternalOil.g:7276:1: ruleComRule returns [EObject current=null] : ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) ;
     public final EObject ruleComRule() throws RecognitionException {
         EObject current = null;
 
@@ -11273,14 +18017,14 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:4445:2: ( ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) )
-            // InternalOil.g:4446:2: ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
+            // InternalOil.g:7282:2: ( ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) )
+            // InternalOil.g:7283:2: ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
             {
-            // InternalOil.g:4446:2: ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
-            // InternalOil.g:4447:3: () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';'
+            // InternalOil.g:7283:2: ( () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
+            // InternalOil.g:7284:3: () otherlv_1= 'COM' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';'
             {
-            // InternalOil.g:4447:3: ()
-            // InternalOil.g:4448:4: 
+            // InternalOil.g:7284:3: ()
+            // InternalOil.g:7285:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11294,16 +18038,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getComRuleAccess().getCOMKeyword_1());
             		
-            // InternalOil.g:4458:3: ( (lv_name_2_0= ruleName ) )
-            // InternalOil.g:4459:4: (lv_name_2_0= ruleName )
+            // InternalOil.g:7295:3: ( (lv_name_2_0= ruleName ) )
+            // InternalOil.g:7296:4: (lv_name_2_0= ruleName )
             {
-            // InternalOil.g:4459:4: (lv_name_2_0= ruleName )
-            // InternalOil.g:4460:5: lv_name_2_0= ruleName
+            // InternalOil.g:7296:4: (lv_name_2_0= ruleName )
+            // InternalOil.g:7297:5: lv_name_2_0= ruleName
             {
 
             					newCompositeNode(grammarAccess.getComRuleAccess().getNameNameParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_64);
+            pushFollow(FOLLOW_88);
             lv_name_2_0=ruleName();
 
             state._fsp--;
@@ -11325,43 +18069,43 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:4477:3: (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )?
-            int alt111=2;
-            int LA111_0 = input.LA(1);
+            // InternalOil.g:7314:3: (otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}' )?
+            int alt132=2;
+            int LA132_0 = input.LA(1);
 
-            if ( (LA111_0==22) ) {
-                alt111=1;
+            if ( (LA132_0==22) ) {
+                alt132=1;
             }
-            switch (alt111) {
+            switch (alt132) {
                 case 1 :
-                    // InternalOil.g:4478:4: otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}'
+                    // InternalOil.g:7315:4: otherlv_3= '{' ( (lv_ComList_4_0= ruleComattribute ) )* otherlv_5= '}'
                     {
-                    otherlv_3=(Token)match(input,22,FOLLOW_65); 
+                    otherlv_3=(Token)match(input,22,FOLLOW_89); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getComRuleAccess().getLeftCurlyBracketKeyword_3_0());
                     			
-                    // InternalOil.g:4482:4: ( (lv_ComList_4_0= ruleComattribute ) )*
-                    loop110:
+                    // InternalOil.g:7319:4: ( (lv_ComList_4_0= ruleComattribute ) )*
+                    loop131:
                     do {
-                        int alt110=2;
-                        int LA110_0 = input.LA(1);
+                        int alt131=2;
+                        int LA131_0 = input.LA(1);
 
-                        if ( ((LA110_0>=135 && LA110_0<=142)) ) {
-                            alt110=1;
+                        if ( ((LA131_0>=184 && LA131_0<=191)) ) {
+                            alt131=1;
                         }
 
 
-                        switch (alt110) {
+                        switch (alt131) {
                     	case 1 :
-                    	    // InternalOil.g:4483:5: (lv_ComList_4_0= ruleComattribute )
+                    	    // InternalOil.g:7320:5: (lv_ComList_4_0= ruleComattribute )
                     	    {
-                    	    // InternalOil.g:4483:5: (lv_ComList_4_0= ruleComattribute )
-                    	    // InternalOil.g:4484:6: lv_ComList_4_0= ruleComattribute
+                    	    // InternalOil.g:7320:5: (lv_ComList_4_0= ruleComattribute )
+                    	    // InternalOil.g:7321:6: lv_ComList_4_0= ruleComattribute
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getComRuleAccess().getComListComattributeParserRuleCall_3_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_65);
+                    	    pushFollow(FOLLOW_89);
                     	    lv_ComList_4_0=ruleComattribute();
 
                     	    state._fsp--;
@@ -11385,7 +18129,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop110;
+                    	    break loop131;
                         }
                     } while (true);
 
@@ -11399,19 +18143,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:4506:3: ( (lv_description_6_0= ruleEString ) )?
-            int alt112=2;
-            int LA112_0 = input.LA(1);
+            // InternalOil.g:7343:3: ( (lv_description_6_0= ruleEString ) )?
+            int alt133=2;
+            int LA133_0 = input.LA(1);
 
-            if ( (LA112_0==RULE_STRING) ) {
-                alt112=1;
+            if ( (LA133_0==RULE_STRING) ) {
+                alt133=1;
             }
-            switch (alt112) {
+            switch (alt133) {
                 case 1 :
-                    // InternalOil.g:4507:4: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:7344:4: (lv_description_6_0= ruleEString )
                     {
-                    // InternalOil.g:4507:4: (lv_description_6_0= ruleEString )
-                    // InternalOil.g:4508:5: lv_description_6_0= ruleEString
+                    // InternalOil.g:7344:4: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:7345:5: lv_description_6_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getComRuleAccess().getDescriptionEStringParserRuleCall_4_0());
@@ -11468,7 +18212,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComattribute"
-    // InternalOil.g:4533:1: entryRuleComattribute returns [EObject current=null] : iv_ruleComattribute= ruleComattribute EOF ;
+    // InternalOil.g:7370:1: entryRuleComattribute returns [EObject current=null] : iv_ruleComattribute= ruleComattribute EOF ;
     public final EObject entryRuleComattribute() throws RecognitionException {
         EObject current = null;
 
@@ -11476,8 +18220,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:4533:53: (iv_ruleComattribute= ruleComattribute EOF )
-            // InternalOil.g:4534:2: iv_ruleComattribute= ruleComattribute EOF
+            // InternalOil.g:7370:53: (iv_ruleComattribute= ruleComattribute EOF )
+            // InternalOil.g:7371:2: iv_ruleComattribute= ruleComattribute EOF
             {
              newCompositeNode(grammarAccess.getComattributeRule()); 
             pushFollow(FOLLOW_1);
@@ -11504,7 +18248,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComattribute"
-    // InternalOil.g:4540:1: ruleComattribute returns [EObject current=null] : ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
+    // InternalOil.g:7377:1: ruleComattribute returns [EObject current=null] : ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
     public final EObject ruleComattribute() throws RecognitionException {
         EObject current = null;
 
@@ -11521,22 +18265,22 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:4546:2: ( ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
-            // InternalOil.g:4547:2: ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:7383:2: ( ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
+            // InternalOil.g:7384:2: ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
             {
-            // InternalOil.g:4547:2: ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-            // InternalOil.g:4548:3: ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+            // InternalOil.g:7384:2: ( ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:7385:3: ( (lv_name_0_0= ruleComAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
             {
-            // InternalOil.g:4548:3: ( (lv_name_0_0= ruleComAttributeName ) )
-            // InternalOil.g:4549:4: (lv_name_0_0= ruleComAttributeName )
+            // InternalOil.g:7385:3: ( (lv_name_0_0= ruleComAttributeName ) )
+            // InternalOil.g:7386:4: (lv_name_0_0= ruleComAttributeName )
             {
-            // InternalOil.g:4549:4: (lv_name_0_0= ruleComAttributeName )
-            // InternalOil.g:4550:5: lv_name_0_0= ruleComAttributeName
+            // InternalOil.g:7386:4: (lv_name_0_0= ruleComAttributeName )
+            // InternalOil.g:7387:5: lv_name_0_0= ruleComAttributeName
             {
 
             					newCompositeNode(grammarAccess.getComattributeAccess().getNameComAttributeNameEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_66);
+            pushFollow(FOLLOW_90);
             lv_name_0_0=ruleComAttributeName();
 
             state._fsp--;
@@ -11558,16 +18302,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:4567:3: (otherlv_1= '=' )?
-            int alt113=2;
-            int LA113_0 = input.LA(1);
+            // InternalOil.g:7404:3: (otherlv_1= '=' )?
+            int alt134=2;
+            int LA134_0 = input.LA(1);
 
-            if ( (LA113_0==18) ) {
-                alt113=1;
+            if ( (LA134_0==18) ) {
+                alt134=1;
             }
-            switch (alt113) {
+            switch (alt134) {
                 case 1 :
-                    // InternalOil.g:4568:4: otherlv_1= '='
+                    // InternalOil.g:7405:4: otherlv_1= '='
                     {
                     otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -11579,11 +18323,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:4573:3: ( (lv_value_2_0= ruleAttributeValue ) )
-            // InternalOil.g:4574:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:7410:3: ( (lv_value_2_0= ruleAttributeValue ) )
+            // InternalOil.g:7411:4: (lv_value_2_0= ruleAttributeValue )
             {
-            // InternalOil.g:4574:4: (lv_value_2_0= ruleAttributeValue )
-            // InternalOil.g:4575:5: lv_value_2_0= ruleAttributeValue
+            // InternalOil.g:7411:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:7412:5: lv_value_2_0= ruleAttributeValue
             {
 
             					newCompositeNode(grammarAccess.getComattributeAccess().getValueAttributeValueParserRuleCall_2_0());
@@ -11610,19 +18354,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:4592:3: ( (lv_description_3_0= ruleEString ) )?
-            int alt114=2;
-            int LA114_0 = input.LA(1);
+            // InternalOil.g:7429:3: ( (lv_description_3_0= ruleEString ) )?
+            int alt135=2;
+            int LA135_0 = input.LA(1);
 
-            if ( (LA114_0==RULE_STRING) ) {
-                alt114=1;
+            if ( (LA135_0==RULE_STRING) ) {
+                alt135=1;
             }
-            switch (alt114) {
+            switch (alt135) {
                 case 1 :
-                    // InternalOil.g:4593:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:7430:4: (lv_description_3_0= ruleEString )
                     {
-                    // InternalOil.g:4593:4: (lv_description_3_0= ruleEString )
-                    // InternalOil.g:4594:5: lv_description_3_0= ruleEString
+                    // InternalOil.g:7430:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:7431:5: lv_description_3_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getComattributeAccess().getDescriptionEStringParserRuleCall_3_0());
@@ -11679,7 +18423,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskRule"
-    // InternalOil.g:4619:1: entryRuleTaskRule returns [EObject current=null] : iv_ruleTaskRule= ruleTaskRule EOF ;
+    // InternalOil.g:7456:1: entryRuleTaskRule returns [EObject current=null] : iv_ruleTaskRule= ruleTaskRule EOF ;
     public final EObject entryRuleTaskRule() throws RecognitionException {
         EObject current = null;
 
@@ -11687,8 +18431,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:4619:49: (iv_ruleTaskRule= ruleTaskRule EOF )
-            // InternalOil.g:4620:2: iv_ruleTaskRule= ruleTaskRule EOF
+            // InternalOil.g:7456:49: (iv_ruleTaskRule= ruleTaskRule EOF )
+            // InternalOil.g:7457:2: iv_ruleTaskRule= ruleTaskRule EOF
             {
              newCompositeNode(grammarAccess.getTaskRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -11715,7 +18459,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskRule"
-    // InternalOil.g:4626:1: ruleTaskRule returns [EObject current=null] : ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) ;
+    // InternalOil.g:7463:1: ruleTaskRule returns [EObject current=null] : ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) ;
     public final EObject ruleTaskRule() throws RecognitionException {
         EObject current = null;
 
@@ -11734,14 +18478,14 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:4632:2: ( ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) )
-            // InternalOil.g:4633:2: ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
+            // InternalOil.g:7469:2: ( ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) )
+            // InternalOil.g:7470:2: ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
             {
-            // InternalOil.g:4633:2: ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
-            // InternalOil.g:4634:3: () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';'
+            // InternalOil.g:7470:2: ( () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
+            // InternalOil.g:7471:3: () otherlv_1= 'TASK' ( (lv_name_2_0= ruleName ) ) (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )? ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';'
             {
-            // InternalOil.g:4634:3: ()
-            // InternalOil.g:4635:4: 
+            // InternalOil.g:7471:3: ()
+            // InternalOil.g:7472:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11755,16 +18499,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTaskRuleAccess().getTASKKeyword_1());
             		
-            // InternalOil.g:4645:3: ( (lv_name_2_0= ruleName ) )
-            // InternalOil.g:4646:4: (lv_name_2_0= ruleName )
+            // InternalOil.g:7482:3: ( (lv_name_2_0= ruleName ) )
+            // InternalOil.g:7483:4: (lv_name_2_0= ruleName )
             {
-            // InternalOil.g:4646:4: (lv_name_2_0= ruleName )
-            // InternalOil.g:4647:5: lv_name_2_0= ruleName
+            // InternalOil.g:7483:4: (lv_name_2_0= ruleName )
+            // InternalOil.g:7484:5: lv_name_2_0= ruleName
             {
 
             					newCompositeNode(grammarAccess.getTaskRuleAccess().getNameNameParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_64);
+            pushFollow(FOLLOW_88);
             lv_name_2_0=ruleName();
 
             state._fsp--;
@@ -11786,43 +18530,43 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:4664:3: (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )?
-            int alt116=2;
-            int LA116_0 = input.LA(1);
+            // InternalOil.g:7501:3: (otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}' )?
+            int alt137=2;
+            int LA137_0 = input.LA(1);
 
-            if ( (LA116_0==22) ) {
-                alt116=1;
+            if ( (LA137_0==22) ) {
+                alt137=1;
             }
-            switch (alt116) {
+            switch (alt137) {
                 case 1 :
-                    // InternalOil.g:4665:4: otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}'
+                    // InternalOil.g:7502:4: otherlv_3= '{' ( (lv_TaskList_4_0= ruleTaskattribute ) )* otherlv_5= '}'
                     {
-                    otherlv_3=(Token)match(input,22,FOLLOW_67); 
+                    otherlv_3=(Token)match(input,22,FOLLOW_91); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getTaskRuleAccess().getLeftCurlyBracketKeyword_3_0());
                     			
-                    // InternalOil.g:4669:4: ( (lv_TaskList_4_0= ruleTaskattribute ) )*
-                    loop115:
+                    // InternalOil.g:7506:4: ( (lv_TaskList_4_0= ruleTaskattribute ) )*
+                    loop136:
                     do {
-                        int alt115=2;
-                        int LA115_0 = input.LA(1);
+                        int alt136=2;
+                        int LA136_0 = input.LA(1);
 
-                        if ( ((LA115_0>=42 && LA115_0<=44)||(LA115_0>=66 && LA115_0<=67)||LA115_0==70||LA115_0==97||(LA115_0>=146 && LA115_0<=152)) ) {
-                            alt115=1;
+                        if ( ((LA136_0>=42 && LA136_0<=44)||(LA136_0>=100 && LA136_0<=101)||LA136_0==104||LA136_0==128||(LA136_0>=195 && LA136_0<=201)) ) {
+                            alt136=1;
                         }
 
 
-                        switch (alt115) {
+                        switch (alt136) {
                     	case 1 :
-                    	    // InternalOil.g:4670:5: (lv_TaskList_4_0= ruleTaskattribute )
+                    	    // InternalOil.g:7507:5: (lv_TaskList_4_0= ruleTaskattribute )
                     	    {
-                    	    // InternalOil.g:4670:5: (lv_TaskList_4_0= ruleTaskattribute )
-                    	    // InternalOil.g:4671:6: lv_TaskList_4_0= ruleTaskattribute
+                    	    // InternalOil.g:7507:5: (lv_TaskList_4_0= ruleTaskattribute )
+                    	    // InternalOil.g:7508:6: lv_TaskList_4_0= ruleTaskattribute
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getTaskRuleAccess().getTaskListTaskattributeParserRuleCall_3_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_67);
+                    	    pushFollow(FOLLOW_91);
                     	    lv_TaskList_4_0=ruleTaskattribute();
 
                     	    state._fsp--;
@@ -11846,7 +18590,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop115;
+                    	    break loop136;
                         }
                     } while (true);
 
@@ -11860,19 +18604,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:4693:3: ( (lv_description_6_0= ruleEString ) )?
-            int alt117=2;
-            int LA117_0 = input.LA(1);
+            // InternalOil.g:7530:3: ( (lv_description_6_0= ruleEString ) )?
+            int alt138=2;
+            int LA138_0 = input.LA(1);
 
-            if ( (LA117_0==RULE_STRING) ) {
-                alt117=1;
+            if ( (LA138_0==RULE_STRING) ) {
+                alt138=1;
             }
-            switch (alt117) {
+            switch (alt138) {
                 case 1 :
-                    // InternalOil.g:4694:4: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:7531:4: (lv_description_6_0= ruleEString )
                     {
-                    // InternalOil.g:4694:4: (lv_description_6_0= ruleEString )
-                    // InternalOil.g:4695:5: lv_description_6_0= ruleEString
+                    // InternalOil.g:7531:4: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:7532:5: lv_description_6_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getTaskRuleAccess().getDescriptionEStringParserRuleCall_4_0());
@@ -11929,7 +18673,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskattribute"
-    // InternalOil.g:4720:1: entryRuleTaskattribute returns [EObject current=null] : iv_ruleTaskattribute= ruleTaskattribute EOF ;
+    // InternalOil.g:7557:1: entryRuleTaskattribute returns [EObject current=null] : iv_ruleTaskattribute= ruleTaskattribute EOF ;
     public final EObject entryRuleTaskattribute() throws RecognitionException {
         EObject current = null;
 
@@ -11937,8 +18681,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:4720:54: (iv_ruleTaskattribute= ruleTaskattribute EOF )
-            // InternalOil.g:4721:2: iv_ruleTaskattribute= ruleTaskattribute EOF
+            // InternalOil.g:7557:54: (iv_ruleTaskattribute= ruleTaskattribute EOF )
+            // InternalOil.g:7558:2: iv_ruleTaskattribute= ruleTaskattribute EOF
             {
              newCompositeNode(grammarAccess.getTaskattributeRule()); 
             pushFollow(FOLLOW_1);
@@ -11965,7 +18709,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskattribute"
-    // InternalOil.g:4727:1: ruleTaskattribute returns [EObject current=null] : ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) ) ;
+    // InternalOil.g:7564:1: ruleTaskattribute returns [EObject current=null] : ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) ) ;
     public final EObject ruleTaskattribute() throws RecognitionException {
         EObject current = null;
 
@@ -12000,62 +18744,62 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:4733:2: ( ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) ) )
-            // InternalOil.g:4734:2: ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) )
+            // InternalOil.g:7570:2: ( ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) ) )
+            // InternalOil.g:7571:2: ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) )
             {
-            // InternalOil.g:4734:2: ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) )
-            int alt126=3;
+            // InternalOil.g:7571:2: ( ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) | (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' ) )
+            int alt147=3;
             switch ( input.LA(1) ) {
             case 42:
             case 43:
             case 44:
-            case 70:
-            case 97:
-            case 146:
-            case 147:
-            case 148:
-            case 149:
-            case 150:
-            case 151:
-            case 152:
+            case 104:
+            case 128:
+            case 195:
+            case 196:
+            case 197:
+            case 198:
+            case 199:
+            case 200:
+            case 201:
                 {
-                alt126=1;
+                alt147=1;
                 }
                 break;
-            case 66:
+            case 100:
                 {
-                alt126=2;
+                alt147=2;
                 }
                 break;
-            case 67:
+            case 101:
                 {
-                alt126=3;
+                alt147=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 126, 0, input);
+                    new NoViableAltException("", 147, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt126) {
+            switch (alt147) {
                 case 1 :
-                    // InternalOil.g:4735:3: ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:7572:3: ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
                     {
-                    // InternalOil.g:4735:3: ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-                    // InternalOil.g:4736:4: ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+                    // InternalOil.g:7572:3: ( ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:7573:4: ( (lv_name_0_0= ruleTaskAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
                     {
-                    // InternalOil.g:4736:4: ( (lv_name_0_0= ruleTaskAttributeName ) )
-                    // InternalOil.g:4737:5: (lv_name_0_0= ruleTaskAttributeName )
+                    // InternalOil.g:7573:4: ( (lv_name_0_0= ruleTaskAttributeName ) )
+                    // InternalOil.g:7574:5: (lv_name_0_0= ruleTaskAttributeName )
                     {
-                    // InternalOil.g:4737:5: (lv_name_0_0= ruleTaskAttributeName )
-                    // InternalOil.g:4738:6: lv_name_0_0= ruleTaskAttributeName
+                    // InternalOil.g:7574:5: (lv_name_0_0= ruleTaskAttributeName )
+                    // InternalOil.g:7575:6: lv_name_0_0= ruleTaskAttributeName
                     {
 
                     						newCompositeNode(grammarAccess.getTaskattributeAccess().getNameTaskAttributeNameEnumRuleCall_0_0_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_name_0_0=ruleTaskAttributeName();
 
                     state._fsp--;
@@ -12077,16 +18821,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4755:4: (otherlv_1= '=' )?
-                    int alt118=2;
-                    int LA118_0 = input.LA(1);
+                    // InternalOil.g:7592:4: (otherlv_1= '=' )?
+                    int alt139=2;
+                    int LA139_0 = input.LA(1);
 
-                    if ( (LA118_0==18) ) {
-                        alt118=1;
+                    if ( (LA139_0==18) ) {
+                        alt139=1;
                     }
-                    switch (alt118) {
+                    switch (alt139) {
                         case 1 :
-                            // InternalOil.g:4756:5: otherlv_1= '='
+                            // InternalOil.g:7593:5: otherlv_1= '='
                             {
                             otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -12098,11 +18842,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4761:4: ( (lv_value_2_0= ruleAttributeValue ) )
-                    // InternalOil.g:4762:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:7598:4: ( (lv_value_2_0= ruleAttributeValue ) )
+                    // InternalOil.g:7599:5: (lv_value_2_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:4762:5: (lv_value_2_0= ruleAttributeValue )
-                    // InternalOil.g:4763:6: lv_value_2_0= ruleAttributeValue
+                    // InternalOil.g:7599:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:7600:6: lv_value_2_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getTaskattributeAccess().getValueAttributeValueParserRuleCall_0_2_0());
@@ -12129,19 +18873,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4780:4: ( (lv_description_3_0= ruleEString ) )?
-                    int alt119=2;
-                    int LA119_0 = input.LA(1);
+                    // InternalOil.g:7617:4: ( (lv_description_3_0= ruleEString ) )?
+                    int alt140=2;
+                    int LA140_0 = input.LA(1);
 
-                    if ( (LA119_0==RULE_STRING) ) {
-                        alt119=1;
+                    if ( (LA140_0==RULE_STRING) ) {
+                        alt140=1;
                     }
-                    switch (alt119) {
+                    switch (alt140) {
                         case 1 :
-                            // InternalOil.g:4781:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:7618:5: (lv_description_3_0= ruleEString )
                             {
-                            // InternalOil.g:4781:5: (lv_description_3_0= ruleEString )
-                            // InternalOil.g:4782:6: lv_description_3_0= ruleEString
+                            // InternalOil.g:7618:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:7619:6: lv_description_3_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getTaskattributeAccess().getDescriptionEStringParserRuleCall_0_3_0());
@@ -12182,25 +18926,25 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:4805:3: (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
+                    // InternalOil.g:7642:3: (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
                     {
-                    // InternalOil.g:4805:3: (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
-                    // InternalOil.g:4806:4: otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';'
+                    // InternalOil.g:7642:3: (otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
+                    // InternalOil.g:7643:4: otherlv_5= 'AUTOSTART' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';'
                     {
-                    otherlv_5=(Token)match(input,66,FOLLOW_68); 
+                    otherlv_5=(Token)match(input,100,FOLLOW_92); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getTaskattributeAccess().getAUTOSTARTKeyword_1_0());
                     			
-                    // InternalOil.g:4810:4: (otherlv_6= '=' )?
-                    int alt120=2;
-                    int LA120_0 = input.LA(1);
+                    // InternalOil.g:7647:4: (otherlv_6= '=' )?
+                    int alt141=2;
+                    int LA141_0 = input.LA(1);
 
-                    if ( (LA120_0==18) ) {
-                        alt120=1;
+                    if ( (LA141_0==18) ) {
+                        alt141=1;
                     }
-                    switch (alt120) {
+                    switch (alt141) {
                         case 1 :
-                            // InternalOil.g:4811:5: otherlv_6= '='
+                            // InternalOil.g:7648:5: otherlv_6= '='
                             {
                             otherlv_6=(Token)match(input,18,FOLLOW_33); 
 
@@ -12212,59 +18956,59 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4816:4: ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' )
-                    int alt122=2;
-                    int LA122_0 = input.LA(1);
+                    // InternalOil.g:7653:4: ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' )
+                    int alt143=2;
+                    int LA143_0 = input.LA(1);
 
-                    if ( (LA122_0==33) ) {
-                        alt122=1;
+                    if ( (LA143_0==33) ) {
+                        alt143=1;
                     }
-                    else if ( (LA122_0==34) ) {
-                        alt122=2;
+                    else if ( (LA143_0==34) ) {
+                        alt143=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 122, 0, input);
+                            new NoViableAltException("", 143, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt122) {
+                    switch (alt143) {
                         case 1 :
-                            // InternalOil.g:4817:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' )
+                            // InternalOil.g:7654:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' )
                             {
-                            // InternalOil.g:4817:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' )
-                            // InternalOil.g:4818:6: otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}'
+                            // InternalOil.g:7654:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}' )
+                            // InternalOil.g:7655:6: otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )* otherlv_10= '}'
                             {
                             otherlv_7=(Token)match(input,33,FOLLOW_12); 
 
                             						newLeafNode(otherlv_7, grammarAccess.getTaskattributeAccess().getTRUEKeyword_1_2_0_0());
                             					
-                            otherlv_8=(Token)match(input,22,FOLLOW_69); 
+                            otherlv_8=(Token)match(input,22,FOLLOW_93); 
 
                             						newLeafNode(otherlv_8, grammarAccess.getTaskattributeAccess().getLeftCurlyBracketKeyword_1_2_0_1());
                             					
-                            // InternalOil.g:4826:6: ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )*
-                            loop121:
+                            // InternalOil.g:7663:6: ( (lv_parameterList_9_0= ruleTaskAutostartAttribute ) )*
+                            loop142:
                             do {
-                                int alt121=2;
-                                int LA121_0 = input.LA(1);
+                                int alt142=2;
+                                int LA142_0 = input.LA(1);
 
-                                if ( (LA121_0==47) ) {
-                                    alt121=1;
+                                if ( (LA142_0==47) ) {
+                                    alt142=1;
                                 }
 
 
-                                switch (alt121) {
+                                switch (alt142) {
                             	case 1 :
-                            	    // InternalOil.g:4827:7: (lv_parameterList_9_0= ruleTaskAutostartAttribute )
+                            	    // InternalOil.g:7664:7: (lv_parameterList_9_0= ruleTaskAutostartAttribute )
                             	    {
-                            	    // InternalOil.g:4827:7: (lv_parameterList_9_0= ruleTaskAutostartAttribute )
-                            	    // InternalOil.g:4828:8: lv_parameterList_9_0= ruleTaskAutostartAttribute
+                            	    // InternalOil.g:7664:7: (lv_parameterList_9_0= ruleTaskAutostartAttribute )
+                            	    // InternalOil.g:7665:8: lv_parameterList_9_0= ruleTaskAutostartAttribute
                             	    {
 
                             	    								newCompositeNode(grammarAccess.getTaskattributeAccess().getParameterListTaskAutostartAttributeParserRuleCall_1_2_0_2_0());
                             	    							
-                            	    pushFollow(FOLLOW_69);
+                            	    pushFollow(FOLLOW_93);
                             	    lv_parameterList_9_0=ruleTaskAutostartAttribute();
 
                             	    state._fsp--;
@@ -12288,7 +19032,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop121;
+                            	    break loop142;
                                 }
                             } while (true);
 
@@ -12303,7 +19047,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalOil.g:4851:5: otherlv_11= 'FALSE'
+                            // InternalOil.g:7688:5: otherlv_11= 'FALSE'
                             {
                             otherlv_11=(Token)match(input,34,FOLLOW_10); 
 
@@ -12326,25 +19070,25 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:4862:3: (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' )
+                    // InternalOil.g:7699:3: (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' )
                     {
-                    // InternalOil.g:4862:3: (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' )
-                    // InternalOil.g:4863:4: otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';'
+                    // InternalOil.g:7699:3: (otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';' )
+                    // InternalOil.g:7700:4: otherlv_13= 'TIMINGPROTECTION' (otherlv_14= '=' )? ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' ) otherlv_20= ';'
                     {
-                    otherlv_13=(Token)match(input,67,FOLLOW_68); 
+                    otherlv_13=(Token)match(input,101,FOLLOW_92); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getTaskattributeAccess().getTIMINGPROTECTIONKeyword_2_0());
                     			
-                    // InternalOil.g:4867:4: (otherlv_14= '=' )?
-                    int alt123=2;
-                    int LA123_0 = input.LA(1);
+                    // InternalOil.g:7704:4: (otherlv_14= '=' )?
+                    int alt144=2;
+                    int LA144_0 = input.LA(1);
 
-                    if ( (LA123_0==18) ) {
-                        alt123=1;
+                    if ( (LA144_0==18) ) {
+                        alt144=1;
                     }
-                    switch (alt123) {
+                    switch (alt144) {
                         case 1 :
-                            // InternalOil.g:4868:5: otherlv_14= '='
+                            // InternalOil.g:7705:5: otherlv_14= '='
                             {
                             otherlv_14=(Token)match(input,18,FOLLOW_33); 
 
@@ -12356,59 +19100,59 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4873:4: ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' )
-                    int alt125=2;
-                    int LA125_0 = input.LA(1);
+                    // InternalOil.g:7710:4: ( (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' ) | otherlv_19= 'FALSE' )
+                    int alt146=2;
+                    int LA146_0 = input.LA(1);
 
-                    if ( (LA125_0==33) ) {
-                        alt125=1;
+                    if ( (LA146_0==33) ) {
+                        alt146=1;
                     }
-                    else if ( (LA125_0==34) ) {
-                        alt125=2;
+                    else if ( (LA146_0==34) ) {
+                        alt146=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 125, 0, input);
+                            new NoViableAltException("", 146, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt125) {
+                    switch (alt146) {
                         case 1 :
-                            // InternalOil.g:4874:5: (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' )
+                            // InternalOil.g:7711:5: (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' )
                             {
-                            // InternalOil.g:4874:5: (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' )
-                            // InternalOil.g:4875:6: otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}'
+                            // InternalOil.g:7711:5: (otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}' )
+                            // InternalOil.g:7712:6: otherlv_15= 'TRUE' otherlv_16= '{' ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )* otherlv_18= '}'
                             {
                             otherlv_15=(Token)match(input,33,FOLLOW_12); 
 
                             						newLeafNode(otherlv_15, grammarAccess.getTaskattributeAccess().getTRUEKeyword_2_2_0_0());
                             					
-                            otherlv_16=(Token)match(input,22,FOLLOW_70); 
+                            otherlv_16=(Token)match(input,22,FOLLOW_94); 
 
                             						newLeafNode(otherlv_16, grammarAccess.getTaskattributeAccess().getLeftCurlyBracketKeyword_2_2_0_1());
                             					
-                            // InternalOil.g:4883:6: ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )*
-                            loop124:
+                            // InternalOil.g:7720:6: ( (lv_parameterList_17_0= ruleTaskTimingAttribute ) )*
+                            loop145:
                             do {
-                                int alt124=2;
-                                int LA124_0 = input.LA(1);
+                                int alt145=2;
+                                int LA145_0 = input.LA(1);
 
-                                if ( (LA124_0==68||(LA124_0>=104 && LA124_0<=107)||LA124_0==145) ) {
-                                    alt124=1;
+                                if ( (LA145_0==102||(LA145_0>=135 && LA145_0<=138)||LA145_0==194) ) {
+                                    alt145=1;
                                 }
 
 
-                                switch (alt124) {
+                                switch (alt145) {
                             	case 1 :
-                            	    // InternalOil.g:4884:7: (lv_parameterList_17_0= ruleTaskTimingAttribute )
+                            	    // InternalOil.g:7721:7: (lv_parameterList_17_0= ruleTaskTimingAttribute )
                             	    {
-                            	    // InternalOil.g:4884:7: (lv_parameterList_17_0= ruleTaskTimingAttribute )
-                            	    // InternalOil.g:4885:8: lv_parameterList_17_0= ruleTaskTimingAttribute
+                            	    // InternalOil.g:7721:7: (lv_parameterList_17_0= ruleTaskTimingAttribute )
+                            	    // InternalOil.g:7722:8: lv_parameterList_17_0= ruleTaskTimingAttribute
                             	    {
 
                             	    								newCompositeNode(grammarAccess.getTaskattributeAccess().getParameterListTaskTimingAttributeParserRuleCall_2_2_0_2_0());
                             	    							
-                            	    pushFollow(FOLLOW_70);
+                            	    pushFollow(FOLLOW_94);
                             	    lv_parameterList_17_0=ruleTaskTimingAttribute();
 
                             	    state._fsp--;
@@ -12432,7 +19176,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop124;
+                            	    break loop145;
                                 }
                             } while (true);
 
@@ -12447,7 +19191,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalOil.g:4908:5: otherlv_19= 'FALSE'
+                            // InternalOil.g:7745:5: otherlv_19= 'FALSE'
                             {
                             otherlv_19=(Token)match(input,34,FOLLOW_10); 
 
@@ -12492,7 +19236,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskTimingAttribute"
-    // InternalOil.g:4922:1: entryRuleTaskTimingAttribute returns [EObject current=null] : iv_ruleTaskTimingAttribute= ruleTaskTimingAttribute EOF ;
+    // InternalOil.g:7759:1: entryRuleTaskTimingAttribute returns [EObject current=null] : iv_ruleTaskTimingAttribute= ruleTaskTimingAttribute EOF ;
     public final EObject entryRuleTaskTimingAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12500,8 +19244,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:4922:60: (iv_ruleTaskTimingAttribute= ruleTaskTimingAttribute EOF )
-            // InternalOil.g:4923:2: iv_ruleTaskTimingAttribute= ruleTaskTimingAttribute EOF
+            // InternalOil.g:7759:60: (iv_ruleTaskTimingAttribute= ruleTaskTimingAttribute EOF )
+            // InternalOil.g:7760:2: iv_ruleTaskTimingAttribute= ruleTaskTimingAttribute EOF
             {
              newCompositeNode(grammarAccess.getTaskTimingAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -12528,7 +19272,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskTimingAttribute"
-    // InternalOil.g:4929:1: ruleTaskTimingAttribute returns [EObject current=null] : ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) ) ;
+    // InternalOil.g:7766:1: ruleTaskTimingAttribute returns [EObject current=null] : ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) ) ;
     public final EObject ruleTaskTimingAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12554,42 +19298,42 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:4935:2: ( ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) ) )
-            // InternalOil.g:4936:2: ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) )
+            // InternalOil.g:7772:2: ( ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) ) )
+            // InternalOil.g:7773:2: ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) )
             {
-            // InternalOil.g:4936:2: ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) )
-            int alt132=2;
-            int LA132_0 = input.LA(1);
+            // InternalOil.g:7773:2: ( ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' ) )
+            int alt153=2;
+            int LA153_0 = input.LA(1);
 
-            if ( ((LA132_0>=104 && LA132_0<=107)||LA132_0==145) ) {
-                alt132=1;
+            if ( ((LA153_0>=135 && LA153_0<=138)||LA153_0==194) ) {
+                alt153=1;
             }
-            else if ( (LA132_0==68) ) {
-                alt132=2;
+            else if ( (LA153_0==102) ) {
+                alt153=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 132, 0, input);
+                    new NoViableAltException("", 153, 0, input);
 
                 throw nvae;
             }
-            switch (alt132) {
+            switch (alt153) {
                 case 1 :
-                    // InternalOil.g:4937:3: ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:7774:3: ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
                     {
-                    // InternalOil.g:4937:3: ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-                    // InternalOil.g:4938:4: ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+                    // InternalOil.g:7774:3: ( ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:7775:4: ( (lv_name_0_0= ruleTaskTimingAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
                     {
-                    // InternalOil.g:4938:4: ( (lv_name_0_0= ruleTaskTimingAttributeName ) )
-                    // InternalOil.g:4939:5: (lv_name_0_0= ruleTaskTimingAttributeName )
+                    // InternalOil.g:7775:4: ( (lv_name_0_0= ruleTaskTimingAttributeName ) )
+                    // InternalOil.g:7776:5: (lv_name_0_0= ruleTaskTimingAttributeName )
                     {
-                    // InternalOil.g:4939:5: (lv_name_0_0= ruleTaskTimingAttributeName )
-                    // InternalOil.g:4940:6: lv_name_0_0= ruleTaskTimingAttributeName
+                    // InternalOil.g:7776:5: (lv_name_0_0= ruleTaskTimingAttributeName )
+                    // InternalOil.g:7777:6: lv_name_0_0= ruleTaskTimingAttributeName
                     {
 
                     						newCompositeNode(grammarAccess.getTaskTimingAttributeAccess().getNameTaskTimingAttributeNameEnumRuleCall_0_0_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_name_0_0=ruleTaskTimingAttributeName();
 
                     state._fsp--;
@@ -12611,16 +19355,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4957:4: (otherlv_1= '=' )?
-                    int alt127=2;
-                    int LA127_0 = input.LA(1);
+                    // InternalOil.g:7794:4: (otherlv_1= '=' )?
+                    int alt148=2;
+                    int LA148_0 = input.LA(1);
 
-                    if ( (LA127_0==18) ) {
-                        alt127=1;
+                    if ( (LA148_0==18) ) {
+                        alt148=1;
                     }
-                    switch (alt127) {
+                    switch (alt148) {
                         case 1 :
-                            // InternalOil.g:4958:5: otherlv_1= '='
+                            // InternalOil.g:7795:5: otherlv_1= '='
                             {
                             otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -12632,11 +19376,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4963:4: ( (lv_value_2_0= ruleAttributeValue ) )
-                    // InternalOil.g:4964:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:7800:4: ( (lv_value_2_0= ruleAttributeValue ) )
+                    // InternalOil.g:7801:5: (lv_value_2_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:4964:5: (lv_value_2_0= ruleAttributeValue )
-                    // InternalOil.g:4965:6: lv_value_2_0= ruleAttributeValue
+                    // InternalOil.g:7801:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:7802:6: lv_value_2_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getTaskTimingAttributeAccess().getValueAttributeValueParserRuleCall_0_2_0());
@@ -12663,19 +19407,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:4982:4: ( (lv_description_3_0= ruleEString ) )?
-                    int alt128=2;
-                    int LA128_0 = input.LA(1);
+                    // InternalOil.g:7819:4: ( (lv_description_3_0= ruleEString ) )?
+                    int alt149=2;
+                    int LA149_0 = input.LA(1);
 
-                    if ( (LA128_0==RULE_STRING) ) {
-                        alt128=1;
+                    if ( (LA149_0==RULE_STRING) ) {
+                        alt149=1;
                     }
-                    switch (alt128) {
+                    switch (alt149) {
                         case 1 :
-                            // InternalOil.g:4983:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:7820:5: (lv_description_3_0= ruleEString )
                             {
-                            // InternalOil.g:4983:5: (lv_description_3_0= ruleEString )
-                            // InternalOil.g:4984:6: lv_description_3_0= ruleEString
+                            // InternalOil.g:7820:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:7821:6: lv_description_3_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getTaskTimingAttributeAccess().getDescriptionEStringParserRuleCall_0_3_0());
@@ -12716,25 +19460,25 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:5007:3: (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
+                    // InternalOil.g:7844:3: (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
                     {
-                    // InternalOil.g:5007:3: (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
-                    // InternalOil.g:5008:4: otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';'
+                    // InternalOil.g:7844:3: (otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';' )
+                    // InternalOil.g:7845:4: otherlv_5= 'RESOURCELOCK' (otherlv_6= '=' )? ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' ) otherlv_12= ';'
                     {
-                    otherlv_5=(Token)match(input,68,FOLLOW_68); 
+                    otherlv_5=(Token)match(input,102,FOLLOW_92); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getTaskTimingAttributeAccess().getRESOURCELOCKKeyword_1_0());
                     			
-                    // InternalOil.g:5012:4: (otherlv_6= '=' )?
-                    int alt129=2;
-                    int LA129_0 = input.LA(1);
+                    // InternalOil.g:7849:4: (otherlv_6= '=' )?
+                    int alt150=2;
+                    int LA150_0 = input.LA(1);
 
-                    if ( (LA129_0==18) ) {
-                        alt129=1;
+                    if ( (LA150_0==18) ) {
+                        alt150=1;
                     }
-                    switch (alt129) {
+                    switch (alt150) {
                         case 1 :
-                            // InternalOil.g:5013:5: otherlv_6= '='
+                            // InternalOil.g:7850:5: otherlv_6= '='
                             {
                             otherlv_6=(Token)match(input,18,FOLLOW_33); 
 
@@ -12746,59 +19490,59 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5018:4: ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' )
-                    int alt131=2;
-                    int LA131_0 = input.LA(1);
+                    // InternalOil.g:7855:4: ( (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' ) | otherlv_11= 'FALSE' )
+                    int alt152=2;
+                    int LA152_0 = input.LA(1);
 
-                    if ( (LA131_0==33) ) {
-                        alt131=1;
+                    if ( (LA152_0==33) ) {
+                        alt152=1;
                     }
-                    else if ( (LA131_0==34) ) {
-                        alt131=2;
+                    else if ( (LA152_0==34) ) {
+                        alt152=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 131, 0, input);
+                            new NoViableAltException("", 152, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt131) {
+                    switch (alt152) {
                         case 1 :
-                            // InternalOil.g:5019:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' )
+                            // InternalOil.g:7856:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' )
                             {
-                            // InternalOil.g:5019:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' )
-                            // InternalOil.g:5020:6: otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}'
+                            // InternalOil.g:7856:5: (otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}' )
+                            // InternalOil.g:7857:6: otherlv_7= 'TRUE' otherlv_8= '{' ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )* otherlv_10= '}'
                             {
                             otherlv_7=(Token)match(input,33,FOLLOW_12); 
 
                             						newLeafNode(otherlv_7, grammarAccess.getTaskTimingAttributeAccess().getTRUEKeyword_1_2_0_0());
                             					
-                            otherlv_8=(Token)match(input,22,FOLLOW_71); 
+                            otherlv_8=(Token)match(input,22,FOLLOW_95); 
 
                             						newLeafNode(otherlv_8, grammarAccess.getTaskTimingAttributeAccess().getLeftCurlyBracketKeyword_1_2_0_1());
                             					
-                            // InternalOil.g:5028:6: ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )*
-                            loop130:
+                            // InternalOil.g:7865:6: ( (lv_parameterList_9_0= ruleTaskTimingrLockAttribute ) )*
+                            loop151:
                             do {
-                                int alt130=2;
-                                int LA130_0 = input.LA(1);
+                                int alt151=2;
+                                int LA151_0 = input.LA(1);
 
-                                if ( ((LA130_0>=143 && LA130_0<=144)) ) {
-                                    alt130=1;
+                                if ( ((LA151_0>=192 && LA151_0<=193)) ) {
+                                    alt151=1;
                                 }
 
 
-                                switch (alt130) {
+                                switch (alt151) {
                             	case 1 :
-                            	    // InternalOil.g:5029:7: (lv_parameterList_9_0= ruleTaskTimingrLockAttribute )
+                            	    // InternalOil.g:7866:7: (lv_parameterList_9_0= ruleTaskTimingrLockAttribute )
                             	    {
-                            	    // InternalOil.g:5029:7: (lv_parameterList_9_0= ruleTaskTimingrLockAttribute )
-                            	    // InternalOil.g:5030:8: lv_parameterList_9_0= ruleTaskTimingrLockAttribute
+                            	    // InternalOil.g:7866:7: (lv_parameterList_9_0= ruleTaskTimingrLockAttribute )
+                            	    // InternalOil.g:7867:8: lv_parameterList_9_0= ruleTaskTimingrLockAttribute
                             	    {
 
                             	    								newCompositeNode(grammarAccess.getTaskTimingAttributeAccess().getParameterListTaskTimingrLockAttributeEnumRuleCall_1_2_0_2_0());
                             	    							
-                            	    pushFollow(FOLLOW_71);
+                            	    pushFollow(FOLLOW_95);
                             	    lv_parameterList_9_0=ruleTaskTimingrLockAttribute();
 
                             	    state._fsp--;
@@ -12822,7 +19566,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop130;
+                            	    break loop151;
                                 }
                             } while (true);
 
@@ -12837,7 +19581,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalOil.g:5053:5: otherlv_11= 'FALSE'
+                            // InternalOil.g:7890:5: otherlv_11= 'FALSE'
                             {
                             otherlv_11=(Token)match(input,34,FOLLOW_10); 
 
@@ -12882,7 +19626,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskAutostartAttribute"
-    // InternalOil.g:5067:1: entryRuleTaskAutostartAttribute returns [EObject current=null] : iv_ruleTaskAutostartAttribute= ruleTaskAutostartAttribute EOF ;
+    // InternalOil.g:7904:1: entryRuleTaskAutostartAttribute returns [EObject current=null] : iv_ruleTaskAutostartAttribute= ruleTaskAutostartAttribute EOF ;
     public final EObject entryRuleTaskAutostartAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12890,8 +19634,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:5067:63: (iv_ruleTaskAutostartAttribute= ruleTaskAutostartAttribute EOF )
-            // InternalOil.g:5068:2: iv_ruleTaskAutostartAttribute= ruleTaskAutostartAttribute EOF
+            // InternalOil.g:7904:63: (iv_ruleTaskAutostartAttribute= ruleTaskAutostartAttribute EOF )
+            // InternalOil.g:7905:2: iv_ruleTaskAutostartAttribute= ruleTaskAutostartAttribute EOF
             {
              newCompositeNode(grammarAccess.getTaskAutostartAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -12918,7 +19662,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskAutostartAttribute"
-    // InternalOil.g:5074:1: ruleTaskAutostartAttribute returns [EObject current=null] : (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
+    // InternalOil.g:7911:1: ruleTaskAutostartAttribute returns [EObject current=null] : (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
     public final EObject ruleTaskAutostartAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12934,26 +19678,26 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:5080:2: ( (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
-            // InternalOil.g:5081:2: (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:7917:2: ( (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
+            // InternalOil.g:7918:2: (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
             {
-            // InternalOil.g:5081:2: (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-            // InternalOil.g:5082:3: otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+            // InternalOil.g:7918:2: (otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:7919:3: otherlv_0= 'APPMODE' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
             {
-            otherlv_0=(Token)match(input,47,FOLLOW_66); 
+            otherlv_0=(Token)match(input,47,FOLLOW_90); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTaskAutostartAttributeAccess().getAPPMODEKeyword_0());
             		
-            // InternalOil.g:5086:3: (otherlv_1= '=' )?
-            int alt133=2;
-            int LA133_0 = input.LA(1);
+            // InternalOil.g:7923:3: (otherlv_1= '=' )?
+            int alt154=2;
+            int LA154_0 = input.LA(1);
 
-            if ( (LA133_0==18) ) {
-                alt133=1;
+            if ( (LA154_0==18) ) {
+                alt154=1;
             }
-            switch (alt133) {
+            switch (alt154) {
                 case 1 :
-                    // InternalOil.g:5087:4: otherlv_1= '='
+                    // InternalOil.g:7924:4: otherlv_1= '='
                     {
                     otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -12965,11 +19709,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:5092:3: ( (lv_value_2_0= ruleAttributeValue ) )
-            // InternalOil.g:5093:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:7929:3: ( (lv_value_2_0= ruleAttributeValue ) )
+            // InternalOil.g:7930:4: (lv_value_2_0= ruleAttributeValue )
             {
-            // InternalOil.g:5093:4: (lv_value_2_0= ruleAttributeValue )
-            // InternalOil.g:5094:5: lv_value_2_0= ruleAttributeValue
+            // InternalOil.g:7930:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:7931:5: lv_value_2_0= ruleAttributeValue
             {
 
             					newCompositeNode(grammarAccess.getTaskAutostartAttributeAccess().getValueAttributeValueParserRuleCall_2_0());
@@ -12996,19 +19740,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:5111:3: ( (lv_description_3_0= ruleEString ) )?
-            int alt134=2;
-            int LA134_0 = input.LA(1);
+            // InternalOil.g:7948:3: ( (lv_description_3_0= ruleEString ) )?
+            int alt155=2;
+            int LA155_0 = input.LA(1);
 
-            if ( (LA134_0==RULE_STRING) ) {
-                alt134=1;
+            if ( (LA155_0==RULE_STRING) ) {
+                alt155=1;
             }
-            switch (alt134) {
+            switch (alt155) {
                 case 1 :
-                    // InternalOil.g:5112:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:7949:4: (lv_description_3_0= ruleEString )
                     {
-                    // InternalOil.g:5112:4: (lv_description_3_0= ruleEString )
-                    // InternalOil.g:5113:5: lv_description_3_0= ruleEString
+                    // InternalOil.g:7949:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:7950:5: lv_description_3_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getTaskAutostartAttributeAccess().getDescriptionEStringParserRuleCall_3_0());
@@ -13065,7 +19809,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResourceRule"
-    // InternalOil.g:5138:1: entryRuleResourceRule returns [EObject current=null] : iv_ruleResourceRule= ruleResourceRule EOF ;
+    // InternalOil.g:7975:1: entryRuleResourceRule returns [EObject current=null] : iv_ruleResourceRule= ruleResourceRule EOF ;
     public final EObject entryRuleResourceRule() throws RecognitionException {
         EObject current = null;
 
@@ -13073,8 +19817,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:5138:53: (iv_ruleResourceRule= ruleResourceRule EOF )
-            // InternalOil.g:5139:2: iv_ruleResourceRule= ruleResourceRule EOF
+            // InternalOil.g:7975:53: (iv_ruleResourceRule= ruleResourceRule EOF )
+            // InternalOil.g:7976:2: iv_ruleResourceRule= ruleResourceRule EOF
             {
              newCompositeNode(grammarAccess.getResourceRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -13101,7 +19845,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResourceRule"
-    // InternalOil.g:5145:1: ruleResourceRule returns [EObject current=null] : ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) ;
+    // InternalOil.g:7982:1: ruleResourceRule returns [EObject current=null] : ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) ;
     public final EObject ruleResourceRule() throws RecognitionException {
         EObject current = null;
 
@@ -13120,14 +19864,14 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:5151:2: ( ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) )
-            // InternalOil.g:5152:2: ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
+            // InternalOil.g:7988:2: ( ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' ) )
+            // InternalOil.g:7989:2: ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
             {
-            // InternalOil.g:5152:2: ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
-            // InternalOil.g:5153:3: () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';'
+            // InternalOil.g:7989:2: ( () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';' )
+            // InternalOil.g:7990:3: () otherlv_1= 'RESOURCE' ( (lv_name_2_0= ruleName ) ) otherlv_3= '{' ( (lv_ResourceList_4_0= ruleResourceattribute ) )* otherlv_5= '}' ( (lv_description_6_0= ruleEString ) )? otherlv_7= ';'
             {
-            // InternalOil.g:5153:3: ()
-            // InternalOil.g:5154:4: 
+            // InternalOil.g:7990:3: ()
+            // InternalOil.g:7991:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13141,11 +19885,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getResourceRuleAccess().getRESOURCEKeyword_1());
             		
-            // InternalOil.g:5164:3: ( (lv_name_2_0= ruleName ) )
-            // InternalOil.g:5165:4: (lv_name_2_0= ruleName )
+            // InternalOil.g:8001:3: ( (lv_name_2_0= ruleName ) )
+            // InternalOil.g:8002:4: (lv_name_2_0= ruleName )
             {
-            // InternalOil.g:5165:4: (lv_name_2_0= ruleName )
-            // InternalOil.g:5166:5: lv_name_2_0= ruleName
+            // InternalOil.g:8002:4: (lv_name_2_0= ruleName )
+            // InternalOil.g:8003:5: lv_name_2_0= ruleName
             {
 
             					newCompositeNode(grammarAccess.getResourceRuleAccess().getNameNameParserRuleCall_2_0());
@@ -13172,32 +19916,32 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,22,FOLLOW_72); 
+            otherlv_3=(Token)match(input,22,FOLLOW_96); 
 
             			newLeafNode(otherlv_3, grammarAccess.getResourceRuleAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalOil.g:5187:3: ( (lv_ResourceList_4_0= ruleResourceattribute ) )*
-            loop135:
+            // InternalOil.g:8024:3: ( (lv_ResourceList_4_0= ruleResourceattribute ) )*
+            loop156:
             do {
-                int alt135=2;
-                int LA135_0 = input.LA(1);
+                int alt156=2;
+                int LA156_0 = input.LA(1);
 
-                if ( (LA135_0==69) ) {
-                    alt135=1;
+                if ( (LA156_0==103) ) {
+                    alt156=1;
                 }
 
 
-                switch (alt135) {
+                switch (alt156) {
             	case 1 :
-            	    // InternalOil.g:5188:4: (lv_ResourceList_4_0= ruleResourceattribute )
+            	    // InternalOil.g:8025:4: (lv_ResourceList_4_0= ruleResourceattribute )
             	    {
-            	    // InternalOil.g:5188:4: (lv_ResourceList_4_0= ruleResourceattribute )
-            	    // InternalOil.g:5189:5: lv_ResourceList_4_0= ruleResourceattribute
+            	    // InternalOil.g:8025:4: (lv_ResourceList_4_0= ruleResourceattribute )
+            	    // InternalOil.g:8026:5: lv_ResourceList_4_0= ruleResourceattribute
             	    {
 
             	    					newCompositeNode(grammarAccess.getResourceRuleAccess().getResourceListResourceattributeParserRuleCall_4_0());
             	    				
-            	    pushFollow(FOLLOW_72);
+            	    pushFollow(FOLLOW_96);
             	    lv_ResourceList_4_0=ruleResourceattribute();
 
             	    state._fsp--;
@@ -13221,7 +19965,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop135;
+            	    break loop156;
                 }
             } while (true);
 
@@ -13229,19 +19973,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getResourceRuleAccess().getRightCurlyBracketKeyword_5());
             		
-            // InternalOil.g:5210:3: ( (lv_description_6_0= ruleEString ) )?
-            int alt136=2;
-            int LA136_0 = input.LA(1);
+            // InternalOil.g:8047:3: ( (lv_description_6_0= ruleEString ) )?
+            int alt157=2;
+            int LA157_0 = input.LA(1);
 
-            if ( (LA136_0==RULE_STRING) ) {
-                alt136=1;
+            if ( (LA157_0==RULE_STRING) ) {
+                alt157=1;
             }
-            switch (alt136) {
+            switch (alt157) {
                 case 1 :
-                    // InternalOil.g:5211:4: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:8048:4: (lv_description_6_0= ruleEString )
                     {
-                    // InternalOil.g:5211:4: (lv_description_6_0= ruleEString )
-                    // InternalOil.g:5212:5: lv_description_6_0= ruleEString
+                    // InternalOil.g:8048:4: (lv_description_6_0= ruleEString )
+                    // InternalOil.g:8049:5: lv_description_6_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getResourceRuleAccess().getDescriptionEStringParserRuleCall_6_0());
@@ -13298,7 +20042,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResourceattribute"
-    // InternalOil.g:5237:1: entryRuleResourceattribute returns [EObject current=null] : iv_ruleResourceattribute= ruleResourceattribute EOF ;
+    // InternalOil.g:8074:1: entryRuleResourceattribute returns [EObject current=null] : iv_ruleResourceattribute= ruleResourceattribute EOF ;
     public final EObject entryRuleResourceattribute() throws RecognitionException {
         EObject current = null;
 
@@ -13306,8 +20050,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:5237:58: (iv_ruleResourceattribute= ruleResourceattribute EOF )
-            // InternalOil.g:5238:2: iv_ruleResourceattribute= ruleResourceattribute EOF
+            // InternalOil.g:8074:58: (iv_ruleResourceattribute= ruleResourceattribute EOF )
+            // InternalOil.g:8075:2: iv_ruleResourceattribute= ruleResourceattribute EOF
             {
              newCompositeNode(grammarAccess.getResourceattributeRule()); 
             pushFollow(FOLLOW_1);
@@ -13334,7 +20078,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResourceattribute"
-    // InternalOil.g:5244:1: ruleResourceattribute returns [EObject current=null] : (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' ) ;
+    // InternalOil.g:8081:1: ruleResourceattribute returns [EObject current=null] : (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' ) ;
     public final EObject ruleResourceattribute() throws RecognitionException {
         EObject current = null;
 
@@ -13348,25 +20092,25 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:5250:2: ( (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' ) )
-            // InternalOil.g:5251:2: (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' )
+            // InternalOil.g:8087:2: ( (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' ) )
+            // InternalOil.g:8088:2: (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' )
             {
-            // InternalOil.g:5251:2: (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' )
-            // InternalOil.g:5252:3: otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';'
+            // InternalOil.g:8088:2: (otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';' )
+            // InternalOil.g:8089:3: otherlv_0= 'RESOURCEPROPERTY' otherlv_1= '=' ( (lv_resourceRange_2_0= ruleResourceRange ) ) otherlv_3= ';'
             {
-            otherlv_0=(Token)match(input,69,FOLLOW_7); 
+            otherlv_0=(Token)match(input,103,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getResourceattributeAccess().getRESOURCEPROPERTYKeyword_0());
             		
-            otherlv_1=(Token)match(input,18,FOLLOW_73); 
+            otherlv_1=(Token)match(input,18,FOLLOW_97); 
 
             			newLeafNode(otherlv_1, grammarAccess.getResourceattributeAccess().getEqualsSignKeyword_1());
             		
-            // InternalOil.g:5260:3: ( (lv_resourceRange_2_0= ruleResourceRange ) )
-            // InternalOil.g:5261:4: (lv_resourceRange_2_0= ruleResourceRange )
+            // InternalOil.g:8097:3: ( (lv_resourceRange_2_0= ruleResourceRange ) )
+            // InternalOil.g:8098:4: (lv_resourceRange_2_0= ruleResourceRange )
             {
-            // InternalOil.g:5261:4: (lv_resourceRange_2_0= ruleResourceRange )
-            // InternalOil.g:5262:5: lv_resourceRange_2_0= ruleResourceRange
+            // InternalOil.g:8098:4: (lv_resourceRange_2_0= ruleResourceRange )
+            // InternalOil.g:8099:5: lv_resourceRange_2_0= ruleResourceRange
             {
 
             					newCompositeNode(grammarAccess.getResourceattributeAccess().getResourceRangeResourceRangeEnumRuleCall_2_0());
@@ -13420,7 +20164,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAlarmRule"
-    // InternalOil.g:5287:1: entryRuleAlarmRule returns [EObject current=null] : iv_ruleAlarmRule= ruleAlarmRule EOF ;
+    // InternalOil.g:8124:1: entryRuleAlarmRule returns [EObject current=null] : iv_ruleAlarmRule= ruleAlarmRule EOF ;
     public final EObject entryRuleAlarmRule() throws RecognitionException {
         EObject current = null;
 
@@ -13428,8 +20172,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:5287:50: (iv_ruleAlarmRule= ruleAlarmRule EOF )
-            // InternalOil.g:5288:2: iv_ruleAlarmRule= ruleAlarmRule EOF
+            // InternalOil.g:8124:50: (iv_ruleAlarmRule= ruleAlarmRule EOF )
+            // InternalOil.g:8125:2: iv_ruleAlarmRule= ruleAlarmRule EOF
             {
              newCompositeNode(grammarAccess.getAlarmRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -13456,7 +20200,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlarmRule"
-    // InternalOil.g:5294:1: ruleAlarmRule returns [EObject current=null] : (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) ;
+    // InternalOil.g:8131:1: ruleAlarmRule returns [EObject current=null] : (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) ;
     public final EObject ruleAlarmRule() throws RecognitionException {
         EObject current = null;
 
@@ -13473,21 +20217,21 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:5300:2: ( (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) )
-            // InternalOil.g:5301:2: (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            // InternalOil.g:8137:2: ( (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) )
+            // InternalOil.g:8138:2: (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
             {
-            // InternalOil.g:5301:2: (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
-            // InternalOil.g:5302:3: otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';'
+            // InternalOil.g:8138:2: (otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            // InternalOil.g:8139:3: otherlv_0= 'ALARM' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' ) otherlv_5= ';'
             {
             otherlv_0=(Token)match(input,41,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAlarmRuleAccess().getALARMKeyword_0());
             		
-            // InternalOil.g:5306:3: ( (lv_name_1_0= ruleName ) )
-            // InternalOil.g:5307:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:8143:3: ( (lv_name_1_0= ruleName ) )
+            // InternalOil.g:8144:4: (lv_name_1_0= ruleName )
             {
-            // InternalOil.g:5307:4: (lv_name_1_0= ruleName )
-            // InternalOil.g:5308:5: lv_name_1_0= ruleName
+            // InternalOil.g:8144:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:8145:5: lv_name_1_0= ruleName
             {
 
             					newCompositeNode(grammarAccess.getAlarmRuleAccess().getNameNameParserRuleCall_1_0());
@@ -13514,35 +20258,35 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:5325:3: (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' )
-            // InternalOil.g:5326:4: otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}'
+            // InternalOil.g:8162:3: (otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}' )
+            // InternalOil.g:8163:4: otherlv_2= '{' ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )* otherlv_4= '}'
             {
-            otherlv_2=(Token)match(input,22,FOLLOW_74); 
+            otherlv_2=(Token)match(input,22,FOLLOW_98); 
 
             				newLeafNode(otherlv_2, grammarAccess.getAlarmRuleAccess().getLeftCurlyBracketKeyword_2_0());
             			
-            // InternalOil.g:5330:4: ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )*
-            loop137:
+            // InternalOil.g:8167:4: ( (lv_AlarmList_3_0= ruleAlarmAttribute ) )*
+            loop158:
             do {
-                int alt137=2;
-                int LA137_0 = input.LA(1);
+                int alt158=2;
+                int LA158_0 = input.LA(1);
 
-                if ( (LA137_0==29||LA137_0==66||(LA137_0>=70 && LA137_0<=71)) ) {
-                    alt137=1;
+                if ( (LA158_0==29||LA158_0==100||(LA158_0>=104 && LA158_0<=105)) ) {
+                    alt158=1;
                 }
 
 
-                switch (alt137) {
+                switch (alt158) {
             	case 1 :
-            	    // InternalOil.g:5331:5: (lv_AlarmList_3_0= ruleAlarmAttribute )
+            	    // InternalOil.g:8168:5: (lv_AlarmList_3_0= ruleAlarmAttribute )
             	    {
-            	    // InternalOil.g:5331:5: (lv_AlarmList_3_0= ruleAlarmAttribute )
-            	    // InternalOil.g:5332:6: lv_AlarmList_3_0= ruleAlarmAttribute
+            	    // InternalOil.g:8168:5: (lv_AlarmList_3_0= ruleAlarmAttribute )
+            	    // InternalOil.g:8169:6: lv_AlarmList_3_0= ruleAlarmAttribute
             	    {
 
             	    						newCompositeNode(grammarAccess.getAlarmRuleAccess().getAlarmListAlarmAttributeParserRuleCall_2_1_0());
             	    					
-            	    pushFollow(FOLLOW_74);
+            	    pushFollow(FOLLOW_98);
             	    lv_AlarmList_3_0=ruleAlarmAttribute();
 
             	    state._fsp--;
@@ -13566,7 +20310,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop137;
+            	    break loop158;
                 }
             } while (true);
 
@@ -13604,7 +20348,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAlarmAttribute"
-    // InternalOil.g:5362:1: entryRuleAlarmAttribute returns [EObject current=null] : iv_ruleAlarmAttribute= ruleAlarmAttribute EOF ;
+    // InternalOil.g:8199:1: entryRuleAlarmAttribute returns [EObject current=null] : iv_ruleAlarmAttribute= ruleAlarmAttribute EOF ;
     public final EObject entryRuleAlarmAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -13612,8 +20356,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:5362:55: (iv_ruleAlarmAttribute= ruleAlarmAttribute EOF )
-            // InternalOil.g:5363:2: iv_ruleAlarmAttribute= ruleAlarmAttribute EOF
+            // InternalOil.g:8199:55: (iv_ruleAlarmAttribute= ruleAlarmAttribute EOF )
+            // InternalOil.g:8200:2: iv_ruleAlarmAttribute= ruleAlarmAttribute EOF
             {
              newCompositeNode(grammarAccess.getAlarmAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -13640,7 +20384,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlarmAttribute"
-    // InternalOil.g:5369:1: ruleAlarmAttribute returns [EObject current=null] : ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) ) ;
+    // InternalOil.g:8206:1: ruleAlarmAttribute returns [EObject current=null] : ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) ) ;
     public final EObject ruleAlarmAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -13673,45 +20417,45 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:5375:2: ( ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) ) )
-            // InternalOil.g:5376:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) )
+            // InternalOil.g:8212:2: ( ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) ) )
+            // InternalOil.g:8213:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) )
             {
-            // InternalOil.g:5376:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) )
-            int alt140=4;
+            // InternalOil.g:8213:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' ) )
+            int alt161=4;
             switch ( input.LA(1) ) {
             case 29:
                 {
-                alt140=1;
+                alt161=1;
                 }
                 break;
-            case 70:
+            case 104:
                 {
-                alt140=2;
+                alt161=2;
                 }
                 break;
-            case 71:
+            case 105:
                 {
-                alt140=3;
+                alt161=3;
                 }
                 break;
-            case 66:
+            case 100:
                 {
-                alt140=4;
+                alt161=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 140, 0, input);
+                    new NoViableAltException("", 161, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt140) {
+            switch (alt161) {
                 case 1 :
-                    // InternalOil.g:5377:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
+                    // InternalOil.g:8214:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
                     {
-                    // InternalOil.g:5377:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
-                    // InternalOil.g:5378:4: otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';'
+                    // InternalOil.g:8214:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
+                    // InternalOil.g:8215:4: otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';'
                     {
                     otherlv_0=(Token)match(input,29,FOLLOW_7); 
 
@@ -13721,11 +20465,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_1, grammarAccess.getAlarmAttributeAccess().getEqualsSignKeyword_0_1());
                     			
-                    // InternalOil.g:5386:4: ( (lv_name_2_0= ruleName ) )
-                    // InternalOil.g:5387:5: (lv_name_2_0= ruleName )
+                    // InternalOil.g:8223:4: ( (lv_name_2_0= ruleName ) )
+                    // InternalOil.g:8224:5: (lv_name_2_0= ruleName )
                     {
-                    // InternalOil.g:5387:5: (lv_name_2_0= ruleName )
-                    // InternalOil.g:5388:6: lv_name_2_0= ruleName
+                    // InternalOil.g:8224:5: (lv_name_2_0= ruleName )
+                    // InternalOil.g:8225:6: lv_name_2_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmAttributeAccess().getNameNameParserRuleCall_0_2_0());
@@ -13763,12 +20507,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:5411:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
+                    // InternalOil.g:8248:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
                     {
-                    // InternalOil.g:5411:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
-                    // InternalOil.g:5412:4: otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';'
+                    // InternalOil.g:8248:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
+                    // InternalOil.g:8249:4: otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';'
                     {
-                    otherlv_4=(Token)match(input,70,FOLLOW_7); 
+                    otherlv_4=(Token)match(input,104,FOLLOW_7); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getAlarmAttributeAccess().getACCESSING_APPLICATIONKeyword_1_0());
                     			
@@ -13776,11 +20520,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_5, grammarAccess.getAlarmAttributeAccess().getEqualsSignKeyword_1_1());
                     			
-                    // InternalOil.g:5420:4: ( (lv_name_6_0= ruleName ) )
-                    // InternalOil.g:5421:5: (lv_name_6_0= ruleName )
+                    // InternalOil.g:8257:4: ( (lv_name_6_0= ruleName ) )
+                    // InternalOil.g:8258:5: (lv_name_6_0= ruleName )
                     {
-                    // InternalOil.g:5421:5: (lv_name_6_0= ruleName )
-                    // InternalOil.g:5422:6: lv_name_6_0= ruleName
+                    // InternalOil.g:8258:5: (lv_name_6_0= ruleName )
+                    // InternalOil.g:8259:6: lv_name_6_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmAttributeAccess().getNameNameParserRuleCall_1_2_0());
@@ -13818,24 +20562,24 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:5445:3: (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' )
+                    // InternalOil.g:8282:3: (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' )
                     {
-                    // InternalOil.g:5445:3: (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' )
-                    // InternalOil.g:5446:4: otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';'
+                    // InternalOil.g:8282:3: (otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';' )
+                    // InternalOil.g:8283:4: otherlv_8= 'ACTION' otherlv_9= '=' ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) ) otherlv_11= ';'
                     {
-                    otherlv_8=(Token)match(input,71,FOLLOW_7); 
+                    otherlv_8=(Token)match(input,105,FOLLOW_7); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getAlarmAttributeAccess().getACTIONKeyword_2_0());
                     			
-                    otherlv_9=(Token)match(input,18,FOLLOW_75); 
+                    otherlv_9=(Token)match(input,18,FOLLOW_99); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getAlarmAttributeAccess().getEqualsSignKeyword_2_1());
                     			
-                    // InternalOil.g:5454:4: ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) )
-                    // InternalOil.g:5455:5: (lv_parameterList_10_0= ruleAlarmActionAttribute )
+                    // InternalOil.g:8291:4: ( (lv_parameterList_10_0= ruleAlarmActionAttribute ) )
+                    // InternalOil.g:8292:5: (lv_parameterList_10_0= ruleAlarmActionAttribute )
                     {
-                    // InternalOil.g:5455:5: (lv_parameterList_10_0= ruleAlarmActionAttribute )
-                    // InternalOil.g:5456:6: lv_parameterList_10_0= ruleAlarmActionAttribute
+                    // InternalOil.g:8292:5: (lv_parameterList_10_0= ruleAlarmActionAttribute )
+                    // InternalOil.g:8293:6: lv_parameterList_10_0= ruleAlarmActionAttribute
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmAttributeAccess().getParameterListAlarmActionAttributeParserRuleCall_2_2_0());
@@ -13873,12 +20617,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:5479:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' )
+                    // InternalOil.g:8316:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' )
                     {
-                    // InternalOil.g:5479:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' )
-                    // InternalOil.g:5480:4: otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';'
+                    // InternalOil.g:8316:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';' )
+                    // InternalOil.g:8317:4: otherlv_12= 'AUTOSTART' otherlv_13= '=' ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' ) otherlv_19= ';'
                     {
-                    otherlv_12=(Token)match(input,66,FOLLOW_7); 
+                    otherlv_12=(Token)match(input,100,FOLLOW_7); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getAlarmAttributeAccess().getAUTOSTARTKeyword_3_0());
                     			
@@ -13886,59 +20630,59 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_13, grammarAccess.getAlarmAttributeAccess().getEqualsSignKeyword_3_1());
                     			
-                    // InternalOil.g:5488:4: ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' )
-                    int alt139=2;
-                    int LA139_0 = input.LA(1);
+                    // InternalOil.g:8325:4: ( (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' ) | otherlv_18= 'FALSE' )
+                    int alt160=2;
+                    int LA160_0 = input.LA(1);
 
-                    if ( (LA139_0==33) ) {
-                        alt139=1;
+                    if ( (LA160_0==33) ) {
+                        alt160=1;
                     }
-                    else if ( (LA139_0==34) ) {
-                        alt139=2;
+                    else if ( (LA160_0==34) ) {
+                        alt160=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 139, 0, input);
+                            new NoViableAltException("", 160, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt139) {
+                    switch (alt160) {
                         case 1 :
-                            // InternalOil.g:5489:5: (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' )
+                            // InternalOil.g:8326:5: (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' )
                             {
-                            // InternalOil.g:5489:5: (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' )
-                            // InternalOil.g:5490:6: otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}'
+                            // InternalOil.g:8326:5: (otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}' )
+                            // InternalOil.g:8327:6: otherlv_14= 'TRUE' otherlv_15= '{' ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )* otherlv_17= '}'
                             {
                             otherlv_14=(Token)match(input,33,FOLLOW_12); 
 
                             						newLeafNode(otherlv_14, grammarAccess.getAlarmAttributeAccess().getTRUEKeyword_3_2_0_0());
                             					
-                            otherlv_15=(Token)match(input,22,FOLLOW_76); 
+                            otherlv_15=(Token)match(input,22,FOLLOW_100); 
 
                             						newLeafNode(otherlv_15, grammarAccess.getAlarmAttributeAccess().getLeftCurlyBracketKeyword_3_2_0_1());
                             					
-                            // InternalOil.g:5498:6: ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )*
-                            loop138:
+                            // InternalOil.g:8335:6: ( (lv_parameterList_16_0= ruleAlarmAutostartAttribute ) )*
+                            loop159:
                             do {
-                                int alt138=2;
-                                int LA138_0 = input.LA(1);
+                                int alt159=2;
+                                int LA159_0 = input.LA(1);
 
-                                if ( (LA138_0==47||(LA138_0>=76 && LA138_0<=77)) ) {
-                                    alt138=1;
+                                if ( (LA159_0==47||(LA159_0>=108 && LA159_0<=109)) ) {
+                                    alt159=1;
                                 }
 
 
-                                switch (alt138) {
+                                switch (alt159) {
                             	case 1 :
-                            	    // InternalOil.g:5499:7: (lv_parameterList_16_0= ruleAlarmAutostartAttribute )
+                            	    // InternalOil.g:8336:7: (lv_parameterList_16_0= ruleAlarmAutostartAttribute )
                             	    {
-                            	    // InternalOil.g:5499:7: (lv_parameterList_16_0= ruleAlarmAutostartAttribute )
-                            	    // InternalOil.g:5500:8: lv_parameterList_16_0= ruleAlarmAutostartAttribute
+                            	    // InternalOil.g:8336:7: (lv_parameterList_16_0= ruleAlarmAutostartAttribute )
+                            	    // InternalOil.g:8337:8: lv_parameterList_16_0= ruleAlarmAutostartAttribute
                             	    {
 
                             	    								newCompositeNode(grammarAccess.getAlarmAttributeAccess().getParameterListAlarmAutostartAttributeParserRuleCall_3_2_0_2_0());
                             	    							
-                            	    pushFollow(FOLLOW_76);
+                            	    pushFollow(FOLLOW_100);
                             	    lv_parameterList_16_0=ruleAlarmAutostartAttribute();
 
                             	    state._fsp--;
@@ -13962,7 +20706,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop138;
+                            	    break loop159;
                                 }
                             } while (true);
 
@@ -13977,7 +20721,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalOil.g:5523:5: otherlv_18= 'FALSE'
+                            // InternalOil.g:8360:5: otherlv_18= 'FALSE'
                             {
                             otherlv_18=(Token)match(input,34,FOLLOW_10); 
 
@@ -14022,7 +20766,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAlarmActionAttribute"
-    // InternalOil.g:5537:1: entryRuleAlarmActionAttribute returns [EObject current=null] : iv_ruleAlarmActionAttribute= ruleAlarmActionAttribute EOF ;
+    // InternalOil.g:8374:1: entryRuleAlarmActionAttribute returns [EObject current=null] : iv_ruleAlarmActionAttribute= ruleAlarmActionAttribute EOF ;
     public final EObject entryRuleAlarmActionAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -14030,8 +20774,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:5537:61: (iv_ruleAlarmActionAttribute= ruleAlarmActionAttribute EOF )
-            // InternalOil.g:5538:2: iv_ruleAlarmActionAttribute= ruleAlarmActionAttribute EOF
+            // InternalOil.g:8374:61: (iv_ruleAlarmActionAttribute= ruleAlarmActionAttribute EOF )
+            // InternalOil.g:8375:2: iv_ruleAlarmActionAttribute= ruleAlarmActionAttribute EOF
             {
              newCompositeNode(grammarAccess.getAlarmActionAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -14058,7 +20802,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlarmActionAttribute"
-    // InternalOil.g:5544:1: ruleAlarmActionAttribute returns [EObject current=null] : ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) ) ;
+    // InternalOil.g:8381:1: ruleAlarmActionAttribute returns [EObject current=null] : ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) ) ;
     public final EObject ruleAlarmActionAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -14111,64 +20855,64 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:5550:2: ( ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) ) )
-            // InternalOil.g:5551:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) )
+            // InternalOil.g:8387:2: ( ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) ) )
+            // InternalOil.g:8388:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) )
             {
-            // InternalOil.g:5551:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) )
-            int alt149=4;
+            // InternalOil.g:8388:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) | (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' ) | (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' ) )
+            int alt170=4;
             switch ( input.LA(1) ) {
-            case 72:
+            case 68:
                 {
-                alt149=1;
+                alt170=1;
                 }
                 break;
-            case 73:
+            case 106:
                 {
-                alt149=2;
+                alt170=2;
                 }
                 break;
-            case 74:
+            case 69:
                 {
-                alt149=3;
+                alt170=3;
                 }
                 break;
-            case 75:
+            case 107:
                 {
-                alt149=4;
+                alt170=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 149, 0, input);
+                    new NoViableAltException("", 170, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt149) {
+            switch (alt170) {
                 case 1 :
-                    // InternalOil.g:5552:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
+                    // InternalOil.g:8389:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
                     {
-                    // InternalOil.g:5552:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
-                    // InternalOil.g:5553:4: otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}'
+                    // InternalOil.g:8389:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
+                    // InternalOil.g:8390:4: otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}'
                     {
-                    otherlv_0=(Token)match(input,72,FOLLOW_12); 
+                    otherlv_0=(Token)match(input,68,FOLLOW_12); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getAlarmActionAttributeAccess().getACTIVATETASKKeyword_0_0());
                     			
-                    otherlv_1=(Token)match(input,22,FOLLOW_77); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_68); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAlarmActionAttributeAccess().getLeftCurlyBracketKeyword_0_1());
                     			
-                    // InternalOil.g:5561:4: ( (lv_activatetask_2_0= ruleActivateTask ) )
-                    // InternalOil.g:5562:5: (lv_activatetask_2_0= ruleActivateTask )
+                    // InternalOil.g:8398:4: ( (lv_activatetask_2_0= ruleActivateTask ) )
+                    // InternalOil.g:8399:5: (lv_activatetask_2_0= ruleActivateTask )
                     {
-                    // InternalOil.g:5562:5: (lv_activatetask_2_0= ruleActivateTask )
-                    // InternalOil.g:5563:6: lv_activatetask_2_0= ruleActivateTask
+                    // InternalOil.g:8399:5: (lv_activatetask_2_0= ruleActivateTask )
+                    // InternalOil.g:8400:6: lv_activatetask_2_0= ruleActivateTask
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getActivatetaskActivateTaskEnumRuleCall_0_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_activatetask_2_0=ruleActivateTask();
 
                     state._fsp--;
@@ -14190,16 +20934,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5580:4: (otherlv_3= '=' )?
-                    int alt141=2;
-                    int LA141_0 = input.LA(1);
+                    // InternalOil.g:8417:4: (otherlv_3= '=' )?
+                    int alt162=2;
+                    int LA162_0 = input.LA(1);
 
-                    if ( (LA141_0==18) ) {
-                        alt141=1;
+                    if ( (LA162_0==18) ) {
+                        alt162=1;
                     }
-                    switch (alt141) {
+                    switch (alt162) {
                         case 1 :
-                            // InternalOil.g:5581:5: otherlv_3= '='
+                            // InternalOil.g:8418:5: otherlv_3= '='
                             {
                             otherlv_3=(Token)match(input,18,FOLLOW_29); 
 
@@ -14211,11 +20955,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5586:4: ( (lv_value_4_0= ruleAttributeValue ) )
-                    // InternalOil.g:5587:5: (lv_value_4_0= ruleAttributeValue )
+                    // InternalOil.g:8423:4: ( (lv_value_4_0= ruleAttributeValue ) )
+                    // InternalOil.g:8424:5: (lv_value_4_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:5587:5: (lv_value_4_0= ruleAttributeValue )
-                    // InternalOil.g:5588:6: lv_value_4_0= ruleAttributeValue
+                    // InternalOil.g:8424:5: (lv_value_4_0= ruleAttributeValue )
+                    // InternalOil.g:8425:6: lv_value_4_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getValueAttributeValueParserRuleCall_0_4_0());
@@ -14242,19 +20986,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5605:4: ( (lv_description_5_0= ruleEString ) )?
-                    int alt142=2;
-                    int LA142_0 = input.LA(1);
+                    // InternalOil.g:8442:4: ( (lv_description_5_0= ruleEString ) )?
+                    int alt163=2;
+                    int LA163_0 = input.LA(1);
 
-                    if ( (LA142_0==RULE_STRING) ) {
-                        alt142=1;
+                    if ( (LA163_0==RULE_STRING) ) {
+                        alt163=1;
                     }
-                    switch (alt142) {
+                    switch (alt163) {
                         case 1 :
-                            // InternalOil.g:5606:5: (lv_description_5_0= ruleEString )
+                            // InternalOil.g:8443:5: (lv_description_5_0= ruleEString )
                             {
-                            // InternalOil.g:5606:5: (lv_description_5_0= ruleEString )
-                            // InternalOil.g:5607:6: lv_description_5_0= ruleEString
+                            // InternalOil.g:8443:5: (lv_description_5_0= ruleEString )
+                            // InternalOil.g:8444:6: lv_description_5_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getDescriptionEStringParserRuleCall_0_5_0());
@@ -14299,29 +21043,29 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:5634:3: (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
+                    // InternalOil.g:8471:3: (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
                     {
-                    // InternalOil.g:5634:3: (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
-                    // InternalOil.g:5635:4: otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}'
+                    // InternalOil.g:8471:3: (otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
+                    // InternalOil.g:8472:4: otherlv_8= 'INCREMENTCOUNTER' otherlv_9= '{' ( (lv_incrementcounter_10_0= ruleIncrementCounter ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}'
                     {
-                    otherlv_8=(Token)match(input,73,FOLLOW_12); 
+                    otherlv_8=(Token)match(input,106,FOLLOW_12); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getAlarmActionAttributeAccess().getINCREMENTCOUNTERKeyword_1_0());
                     			
-                    otherlv_9=(Token)match(input,22,FOLLOW_78); 
+                    otherlv_9=(Token)match(input,22,FOLLOW_101); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getAlarmActionAttributeAccess().getLeftCurlyBracketKeyword_1_1());
                     			
-                    // InternalOil.g:5643:4: ( (lv_incrementcounter_10_0= ruleIncrementCounter ) )
-                    // InternalOil.g:5644:5: (lv_incrementcounter_10_0= ruleIncrementCounter )
+                    // InternalOil.g:8480:4: ( (lv_incrementcounter_10_0= ruleIncrementCounter ) )
+                    // InternalOil.g:8481:5: (lv_incrementcounter_10_0= ruleIncrementCounter )
                     {
-                    // InternalOil.g:5644:5: (lv_incrementcounter_10_0= ruleIncrementCounter )
-                    // InternalOil.g:5645:6: lv_incrementcounter_10_0= ruleIncrementCounter
+                    // InternalOil.g:8481:5: (lv_incrementcounter_10_0= ruleIncrementCounter )
+                    // InternalOil.g:8482:6: lv_incrementcounter_10_0= ruleIncrementCounter
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getIncrementcounterIncrementCounterEnumRuleCall_1_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_incrementcounter_10_0=ruleIncrementCounter();
 
                     state._fsp--;
@@ -14343,16 +21087,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5662:4: (otherlv_11= '=' )?
-                    int alt143=2;
-                    int LA143_0 = input.LA(1);
+                    // InternalOil.g:8499:4: (otherlv_11= '=' )?
+                    int alt164=2;
+                    int LA164_0 = input.LA(1);
 
-                    if ( (LA143_0==18) ) {
-                        alt143=1;
+                    if ( (LA164_0==18) ) {
+                        alt164=1;
                     }
-                    switch (alt143) {
+                    switch (alt164) {
                         case 1 :
-                            // InternalOil.g:5663:5: otherlv_11= '='
+                            // InternalOil.g:8500:5: otherlv_11= '='
                             {
                             otherlv_11=(Token)match(input,18,FOLLOW_29); 
 
@@ -14364,11 +21108,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5668:4: ( (lv_value_12_0= ruleAttributeValue ) )
-                    // InternalOil.g:5669:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:8505:4: ( (lv_value_12_0= ruleAttributeValue ) )
+                    // InternalOil.g:8506:5: (lv_value_12_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:5669:5: (lv_value_12_0= ruleAttributeValue )
-                    // InternalOil.g:5670:6: lv_value_12_0= ruleAttributeValue
+                    // InternalOil.g:8506:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:8507:6: lv_value_12_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getValueAttributeValueParserRuleCall_1_4_0());
@@ -14395,19 +21139,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5687:4: ( (lv_description_13_0= ruleEString ) )?
-                    int alt144=2;
-                    int LA144_0 = input.LA(1);
+                    // InternalOil.g:8524:4: ( (lv_description_13_0= ruleEString ) )?
+                    int alt165=2;
+                    int LA165_0 = input.LA(1);
 
-                    if ( (LA144_0==RULE_STRING) ) {
-                        alt144=1;
+                    if ( (LA165_0==RULE_STRING) ) {
+                        alt165=1;
                     }
-                    switch (alt144) {
+                    switch (alt165) {
                         case 1 :
-                            // InternalOil.g:5688:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:8525:5: (lv_description_13_0= ruleEString )
                             {
-                            // InternalOil.g:5688:5: (lv_description_13_0= ruleEString )
-                            // InternalOil.g:5689:6: lv_description_13_0= ruleEString
+                            // InternalOil.g:8525:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:8526:6: lv_description_13_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getDescriptionEStringParserRuleCall_1_5_0());
@@ -14452,29 +21196,29 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:5716:3: (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' )
+                    // InternalOil.g:8553:3: (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' )
                     {
-                    // InternalOil.g:5716:3: (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' )
-                    // InternalOil.g:5717:4: otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}'
+                    // InternalOil.g:8553:3: (otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}' )
+                    // InternalOil.g:8554:4: otherlv_16= 'SETEVENT' otherlv_17= '{' ( (lv_setevent_18_0= ruleSetevent ) ) (otherlv_19= '=' )? ( (lv_value_20_0= ruleAttributeValue ) ) ( (lv_description_21_0= ruleEString ) )? otherlv_22= ';' otherlv_23= '}'
                     {
-                    otherlv_16=(Token)match(input,74,FOLLOW_12); 
+                    otherlv_16=(Token)match(input,69,FOLLOW_12); 
 
                     				newLeafNode(otherlv_16, grammarAccess.getAlarmActionAttributeAccess().getSETEVENTKeyword_2_0());
                     			
-                    otherlv_17=(Token)match(input,22,FOLLOW_79); 
+                    otherlv_17=(Token)match(input,22,FOLLOW_69); 
 
                     				newLeafNode(otherlv_17, grammarAccess.getAlarmActionAttributeAccess().getLeftCurlyBracketKeyword_2_1());
                     			
-                    // InternalOil.g:5725:4: ( (lv_setevent_18_0= ruleSetevent ) )
-                    // InternalOil.g:5726:5: (lv_setevent_18_0= ruleSetevent )
+                    // InternalOil.g:8562:4: ( (lv_setevent_18_0= ruleSetevent ) )
+                    // InternalOil.g:8563:5: (lv_setevent_18_0= ruleSetevent )
                     {
-                    // InternalOil.g:5726:5: (lv_setevent_18_0= ruleSetevent )
-                    // InternalOil.g:5727:6: lv_setevent_18_0= ruleSetevent
+                    // InternalOil.g:8563:5: (lv_setevent_18_0= ruleSetevent )
+                    // InternalOil.g:8564:6: lv_setevent_18_0= ruleSetevent
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getSeteventSeteventEnumRuleCall_2_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_setevent_18_0=ruleSetevent();
 
                     state._fsp--;
@@ -14496,16 +21240,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5744:4: (otherlv_19= '=' )?
-                    int alt145=2;
-                    int LA145_0 = input.LA(1);
+                    // InternalOil.g:8581:4: (otherlv_19= '=' )?
+                    int alt166=2;
+                    int LA166_0 = input.LA(1);
 
-                    if ( (LA145_0==18) ) {
-                        alt145=1;
+                    if ( (LA166_0==18) ) {
+                        alt166=1;
                     }
-                    switch (alt145) {
+                    switch (alt166) {
                         case 1 :
-                            // InternalOil.g:5745:5: otherlv_19= '='
+                            // InternalOil.g:8582:5: otherlv_19= '='
                             {
                             otherlv_19=(Token)match(input,18,FOLLOW_29); 
 
@@ -14517,11 +21261,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5750:4: ( (lv_value_20_0= ruleAttributeValue ) )
-                    // InternalOil.g:5751:5: (lv_value_20_0= ruleAttributeValue )
+                    // InternalOil.g:8587:4: ( (lv_value_20_0= ruleAttributeValue ) )
+                    // InternalOil.g:8588:5: (lv_value_20_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:5751:5: (lv_value_20_0= ruleAttributeValue )
-                    // InternalOil.g:5752:6: lv_value_20_0= ruleAttributeValue
+                    // InternalOil.g:8588:5: (lv_value_20_0= ruleAttributeValue )
+                    // InternalOil.g:8589:6: lv_value_20_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getValueAttributeValueParserRuleCall_2_4_0());
@@ -14548,19 +21292,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5769:4: ( (lv_description_21_0= ruleEString ) )?
-                    int alt146=2;
-                    int LA146_0 = input.LA(1);
+                    // InternalOil.g:8606:4: ( (lv_description_21_0= ruleEString ) )?
+                    int alt167=2;
+                    int LA167_0 = input.LA(1);
 
-                    if ( (LA146_0==RULE_STRING) ) {
-                        alt146=1;
+                    if ( (LA167_0==RULE_STRING) ) {
+                        alt167=1;
                     }
-                    switch (alt146) {
+                    switch (alt167) {
                         case 1 :
-                            // InternalOil.g:5770:5: (lv_description_21_0= ruleEString )
+                            // InternalOil.g:8607:5: (lv_description_21_0= ruleEString )
                             {
-                            // InternalOil.g:5770:5: (lv_description_21_0= ruleEString )
-                            // InternalOil.g:5771:6: lv_description_21_0= ruleEString
+                            // InternalOil.g:8607:5: (lv_description_21_0= ruleEString )
+                            // InternalOil.g:8608:6: lv_description_21_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getDescriptionEStringParserRuleCall_2_5_0());
@@ -14605,29 +21349,29 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:5798:3: (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' )
+                    // InternalOil.g:8635:3: (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' )
                     {
-                    // InternalOil.g:5798:3: (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' )
-                    // InternalOil.g:5799:4: otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}'
+                    // InternalOil.g:8635:3: (otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}' )
+                    // InternalOil.g:8636:4: otherlv_24= 'ALARMCALLBACK' otherlv_25= '{' ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) ) (otherlv_27= '=' )? ( (lv_value_28_0= ruleAttributeValue ) ) ( (lv_description_29_0= ruleEString ) )? otherlv_30= ';' otherlv_31= '}'
                     {
-                    otherlv_24=(Token)match(input,75,FOLLOW_12); 
+                    otherlv_24=(Token)match(input,107,FOLLOW_12); 
 
                     				newLeafNode(otherlv_24, grammarAccess.getAlarmActionAttributeAccess().getALARMCALLBACKKeyword_3_0());
                     			
-                    otherlv_25=(Token)match(input,22,FOLLOW_80); 
+                    otherlv_25=(Token)match(input,22,FOLLOW_102); 
 
                     				newLeafNode(otherlv_25, grammarAccess.getAlarmActionAttributeAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalOil.g:5807:4: ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) )
-                    // InternalOil.g:5808:5: (lv_alarmcallback_26_0= ruleAlarmCallBack )
+                    // InternalOil.g:8644:4: ( (lv_alarmcallback_26_0= ruleAlarmCallBack ) )
+                    // InternalOil.g:8645:5: (lv_alarmcallback_26_0= ruleAlarmCallBack )
                     {
-                    // InternalOil.g:5808:5: (lv_alarmcallback_26_0= ruleAlarmCallBack )
-                    // InternalOil.g:5809:6: lv_alarmcallback_26_0= ruleAlarmCallBack
+                    // InternalOil.g:8645:5: (lv_alarmcallback_26_0= ruleAlarmCallBack )
+                    // InternalOil.g:8646:6: lv_alarmcallback_26_0= ruleAlarmCallBack
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getAlarmcallbackAlarmCallBackEnumRuleCall_3_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_alarmcallback_26_0=ruleAlarmCallBack();
 
                     state._fsp--;
@@ -14649,16 +21393,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5826:4: (otherlv_27= '=' )?
-                    int alt147=2;
-                    int LA147_0 = input.LA(1);
+                    // InternalOil.g:8663:4: (otherlv_27= '=' )?
+                    int alt168=2;
+                    int LA168_0 = input.LA(1);
 
-                    if ( (LA147_0==18) ) {
-                        alt147=1;
+                    if ( (LA168_0==18) ) {
+                        alt168=1;
                     }
-                    switch (alt147) {
+                    switch (alt168) {
                         case 1 :
-                            // InternalOil.g:5827:5: otherlv_27= '='
+                            // InternalOil.g:8664:5: otherlv_27= '='
                             {
                             otherlv_27=(Token)match(input,18,FOLLOW_29); 
 
@@ -14670,11 +21414,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5832:4: ( (lv_value_28_0= ruleAttributeValue ) )
-                    // InternalOil.g:5833:5: (lv_value_28_0= ruleAttributeValue )
+                    // InternalOil.g:8669:4: ( (lv_value_28_0= ruleAttributeValue ) )
+                    // InternalOil.g:8670:5: (lv_value_28_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:5833:5: (lv_value_28_0= ruleAttributeValue )
-                    // InternalOil.g:5834:6: lv_value_28_0= ruleAttributeValue
+                    // InternalOil.g:8670:5: (lv_value_28_0= ruleAttributeValue )
+                    // InternalOil.g:8671:6: lv_value_28_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getValueAttributeValueParserRuleCall_3_4_0());
@@ -14701,19 +21445,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5851:4: ( (lv_description_29_0= ruleEString ) )?
-                    int alt148=2;
-                    int LA148_0 = input.LA(1);
+                    // InternalOil.g:8688:4: ( (lv_description_29_0= ruleEString ) )?
+                    int alt169=2;
+                    int LA169_0 = input.LA(1);
 
-                    if ( (LA148_0==RULE_STRING) ) {
-                        alt148=1;
+                    if ( (LA169_0==RULE_STRING) ) {
+                        alt169=1;
                     }
-                    switch (alt148) {
+                    switch (alt169) {
                         case 1 :
-                            // InternalOil.g:5852:5: (lv_description_29_0= ruleEString )
+                            // InternalOil.g:8689:5: (lv_description_29_0= ruleEString )
                             {
-                            // InternalOil.g:5852:5: (lv_description_29_0= ruleEString )
-                            // InternalOil.g:5853:6: lv_description_29_0= ruleEString
+                            // InternalOil.g:8689:5: (lv_description_29_0= ruleEString )
+                            // InternalOil.g:8690:6: lv_description_29_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getAlarmActionAttributeAccess().getDescriptionEStringParserRuleCall_3_5_0());
@@ -14780,7 +21524,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAlarmAutostartAttribute"
-    // InternalOil.g:5883:1: entryRuleAlarmAutostartAttribute returns [EObject current=null] : iv_ruleAlarmAutostartAttribute= ruleAlarmAutostartAttribute EOF ;
+    // InternalOil.g:8720:1: entryRuleAlarmAutostartAttribute returns [EObject current=null] : iv_ruleAlarmAutostartAttribute= ruleAlarmAutostartAttribute EOF ;
     public final EObject entryRuleAlarmAutostartAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -14788,8 +21532,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:5883:64: (iv_ruleAlarmAutostartAttribute= ruleAlarmAutostartAttribute EOF )
-            // InternalOil.g:5884:2: iv_ruleAlarmAutostartAttribute= ruleAlarmAutostartAttribute EOF
+            // InternalOil.g:8720:64: (iv_ruleAlarmAutostartAttribute= ruleAlarmAutostartAttribute EOF )
+            // InternalOil.g:8721:2: iv_ruleAlarmAutostartAttribute= ruleAlarmAutostartAttribute EOF
             {
              newCompositeNode(grammarAccess.getAlarmAutostartAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -14816,7 +21560,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlarmAutostartAttribute"
-    // InternalOil.g:5890:1: ruleAlarmAutostartAttribute returns [EObject current=null] : ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) ) ;
+    // InternalOil.g:8727:1: ruleAlarmAutostartAttribute returns [EObject current=null] : ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) ) ;
     public final EObject ruleAlarmAutostartAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -14846,55 +21590,55 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:5896:2: ( ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) ) )
-            // InternalOil.g:5897:2: ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) )
+            // InternalOil.g:8733:2: ( ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) ) )
+            // InternalOil.g:8734:2: ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) )
             {
-            // InternalOil.g:5897:2: ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) )
-            int alt156=3;
+            // InternalOil.g:8734:2: ( (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' ) )
+            int alt177=3;
             switch ( input.LA(1) ) {
-            case 76:
+            case 108:
                 {
-                alt156=1;
+                alt177=1;
                 }
                 break;
-            case 77:
+            case 109:
                 {
-                alt156=2;
+                alt177=2;
                 }
                 break;
             case 47:
                 {
-                alt156=3;
+                alt177=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 156, 0, input);
+                    new NoViableAltException("", 177, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt156) {
+            switch (alt177) {
                 case 1 :
-                    // InternalOil.g:5898:3: (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:8735:3: (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
                     {
-                    // InternalOil.g:5898:3: (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-                    // InternalOil.g:5899:4: otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+                    // InternalOil.g:8735:3: (otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:8736:4: otherlv_0= 'ALARMTIME' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
                     {
-                    otherlv_0=(Token)match(input,76,FOLLOW_66); 
+                    otherlv_0=(Token)match(input,108,FOLLOW_90); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getAlarmAutostartAttributeAccess().getALARMTIMEKeyword_0_0());
                     			
-                    // InternalOil.g:5903:4: (otherlv_1= '=' )?
-                    int alt150=2;
-                    int LA150_0 = input.LA(1);
+                    // InternalOil.g:8740:4: (otherlv_1= '=' )?
+                    int alt171=2;
+                    int LA171_0 = input.LA(1);
 
-                    if ( (LA150_0==18) ) {
-                        alt150=1;
+                    if ( (LA171_0==18) ) {
+                        alt171=1;
                     }
-                    switch (alt150) {
+                    switch (alt171) {
                         case 1 :
-                            // InternalOil.g:5904:5: otherlv_1= '='
+                            // InternalOil.g:8741:5: otherlv_1= '='
                             {
                             otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -14906,11 +21650,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5909:4: ( (lv_value_2_0= ruleAttributeValue ) )
-                    // InternalOil.g:5910:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:8746:4: ( (lv_value_2_0= ruleAttributeValue ) )
+                    // InternalOil.g:8747:5: (lv_value_2_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:5910:5: (lv_value_2_0= ruleAttributeValue )
-                    // InternalOil.g:5911:6: lv_value_2_0= ruleAttributeValue
+                    // InternalOil.g:8747:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:8748:6: lv_value_2_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmAutostartAttributeAccess().getValueAttributeValueParserRuleCall_0_2_0());
@@ -14937,19 +21681,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5928:4: ( (lv_description_3_0= ruleEString ) )?
-                    int alt151=2;
-                    int LA151_0 = input.LA(1);
+                    // InternalOil.g:8765:4: ( (lv_description_3_0= ruleEString ) )?
+                    int alt172=2;
+                    int LA172_0 = input.LA(1);
 
-                    if ( (LA151_0==RULE_STRING) ) {
-                        alt151=1;
+                    if ( (LA172_0==RULE_STRING) ) {
+                        alt172=1;
                     }
-                    switch (alt151) {
+                    switch (alt172) {
                         case 1 :
-                            // InternalOil.g:5929:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:8766:5: (lv_description_3_0= ruleEString )
                             {
-                            // InternalOil.g:5929:5: (lv_description_3_0= ruleEString )
-                            // InternalOil.g:5930:6: lv_description_3_0= ruleEString
+                            // InternalOil.g:8766:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:8767:6: lv_description_3_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getAlarmAutostartAttributeAccess().getDescriptionEStringParserRuleCall_0_3_0());
@@ -14990,25 +21734,25 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:5953:3: (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
+                    // InternalOil.g:8790:3: (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
                     {
-                    // InternalOil.g:5953:3: (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
-                    // InternalOil.g:5954:4: otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';'
+                    // InternalOil.g:8790:3: (otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
+                    // InternalOil.g:8791:4: otherlv_5= 'CYCLETIME' (otherlv_6= '=' )? ( (lv_value_7_0= ruleAttributeValue ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';'
                     {
-                    otherlv_5=(Token)match(input,77,FOLLOW_66); 
+                    otherlv_5=(Token)match(input,109,FOLLOW_90); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getAlarmAutostartAttributeAccess().getCYCLETIMEKeyword_1_0());
                     			
-                    // InternalOil.g:5958:4: (otherlv_6= '=' )?
-                    int alt152=2;
-                    int LA152_0 = input.LA(1);
+                    // InternalOil.g:8795:4: (otherlv_6= '=' )?
+                    int alt173=2;
+                    int LA173_0 = input.LA(1);
 
-                    if ( (LA152_0==18) ) {
-                        alt152=1;
+                    if ( (LA173_0==18) ) {
+                        alt173=1;
                     }
-                    switch (alt152) {
+                    switch (alt173) {
                         case 1 :
-                            // InternalOil.g:5959:5: otherlv_6= '='
+                            // InternalOil.g:8796:5: otherlv_6= '='
                             {
                             otherlv_6=(Token)match(input,18,FOLLOW_29); 
 
@@ -15020,11 +21764,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5964:4: ( (lv_value_7_0= ruleAttributeValue ) )
-                    // InternalOil.g:5965:5: (lv_value_7_0= ruleAttributeValue )
+                    // InternalOil.g:8801:4: ( (lv_value_7_0= ruleAttributeValue ) )
+                    // InternalOil.g:8802:5: (lv_value_7_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:5965:5: (lv_value_7_0= ruleAttributeValue )
-                    // InternalOil.g:5966:6: lv_value_7_0= ruleAttributeValue
+                    // InternalOil.g:8802:5: (lv_value_7_0= ruleAttributeValue )
+                    // InternalOil.g:8803:6: lv_value_7_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmAutostartAttributeAccess().getValueAttributeValueParserRuleCall_1_2_0());
@@ -15051,19 +21795,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:5983:4: ( (lv_description_8_0= ruleEString ) )?
-                    int alt153=2;
-                    int LA153_0 = input.LA(1);
+                    // InternalOil.g:8820:4: ( (lv_description_8_0= ruleEString ) )?
+                    int alt174=2;
+                    int LA174_0 = input.LA(1);
 
-                    if ( (LA153_0==RULE_STRING) ) {
-                        alt153=1;
+                    if ( (LA174_0==RULE_STRING) ) {
+                        alt174=1;
                     }
-                    switch (alt153) {
+                    switch (alt174) {
                         case 1 :
-                            // InternalOil.g:5984:5: (lv_description_8_0= ruleEString )
+                            // InternalOil.g:8821:5: (lv_description_8_0= ruleEString )
                             {
-                            // InternalOil.g:5984:5: (lv_description_8_0= ruleEString )
-                            // InternalOil.g:5985:6: lv_description_8_0= ruleEString
+                            // InternalOil.g:8821:5: (lv_description_8_0= ruleEString )
+                            // InternalOil.g:8822:6: lv_description_8_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getAlarmAutostartAttributeAccess().getDescriptionEStringParserRuleCall_1_3_0());
@@ -15104,25 +21848,25 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:6008:3: (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' )
+                    // InternalOil.g:8845:3: (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' )
                     {
-                    // InternalOil.g:6008:3: (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' )
-                    // InternalOil.g:6009:4: otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';'
+                    // InternalOil.g:8845:3: (otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' )
+                    // InternalOil.g:8846:4: otherlv_10= 'APPMODE' (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';'
                     {
-                    otherlv_10=(Token)match(input,47,FOLLOW_66); 
+                    otherlv_10=(Token)match(input,47,FOLLOW_90); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getAlarmAutostartAttributeAccess().getAPPMODEKeyword_2_0());
                     			
-                    // InternalOil.g:6013:4: (otherlv_11= '=' )?
-                    int alt154=2;
-                    int LA154_0 = input.LA(1);
+                    // InternalOil.g:8850:4: (otherlv_11= '=' )?
+                    int alt175=2;
+                    int LA175_0 = input.LA(1);
 
-                    if ( (LA154_0==18) ) {
-                        alt154=1;
+                    if ( (LA175_0==18) ) {
+                        alt175=1;
                     }
-                    switch (alt154) {
+                    switch (alt175) {
                         case 1 :
-                            // InternalOil.g:6014:5: otherlv_11= '='
+                            // InternalOil.g:8851:5: otherlv_11= '='
                             {
                             otherlv_11=(Token)match(input,18,FOLLOW_29); 
 
@@ -15134,11 +21878,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6019:4: ( (lv_value_12_0= ruleAttributeValue ) )
-                    // InternalOil.g:6020:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:8856:4: ( (lv_value_12_0= ruleAttributeValue ) )
+                    // InternalOil.g:8857:5: (lv_value_12_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:6020:5: (lv_value_12_0= ruleAttributeValue )
-                    // InternalOil.g:6021:6: lv_value_12_0= ruleAttributeValue
+                    // InternalOil.g:8857:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:8858:6: lv_value_12_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getAlarmAutostartAttributeAccess().getValueAttributeValueParserRuleCall_2_2_0());
@@ -15165,19 +21909,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6038:4: ( (lv_description_13_0= ruleEString ) )?
-                    int alt155=2;
-                    int LA155_0 = input.LA(1);
+                    // InternalOil.g:8875:4: ( (lv_description_13_0= ruleEString ) )?
+                    int alt176=2;
+                    int LA176_0 = input.LA(1);
 
-                    if ( (LA155_0==RULE_STRING) ) {
-                        alt155=1;
+                    if ( (LA176_0==RULE_STRING) ) {
+                        alt176=1;
                     }
-                    switch (alt155) {
+                    switch (alt176) {
                         case 1 :
-                            // InternalOil.g:6039:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:8876:5: (lv_description_13_0= ruleEString )
                             {
-                            // InternalOil.g:6039:5: (lv_description_13_0= ruleEString )
-                            // InternalOil.g:6040:6: lv_description_13_0= ruleEString
+                            // InternalOil.g:8876:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:8877:6: lv_description_13_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getAlarmAutostartAttributeAccess().getDescriptionEStringParserRuleCall_2_3_0());
@@ -15240,7 +21984,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleScheduleTableRule"
-    // InternalOil.g:6066:1: entryRuleScheduleTableRule returns [EObject current=null] : iv_ruleScheduleTableRule= ruleScheduleTableRule EOF ;
+    // InternalOil.g:8903:1: entryRuleScheduleTableRule returns [EObject current=null] : iv_ruleScheduleTableRule= ruleScheduleTableRule EOF ;
     public final EObject entryRuleScheduleTableRule() throws RecognitionException {
         EObject current = null;
 
@@ -15248,8 +21992,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:6066:58: (iv_ruleScheduleTableRule= ruleScheduleTableRule EOF )
-            // InternalOil.g:6067:2: iv_ruleScheduleTableRule= ruleScheduleTableRule EOF
+            // InternalOil.g:8903:58: (iv_ruleScheduleTableRule= ruleScheduleTableRule EOF )
+            // InternalOil.g:8904:2: iv_ruleScheduleTableRule= ruleScheduleTableRule EOF
             {
              newCompositeNode(grammarAccess.getScheduleTableRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -15276,7 +22020,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScheduleTableRule"
-    // InternalOil.g:6073:1: ruleScheduleTableRule returns [EObject current=null] : (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) ;
+    // InternalOil.g:8910:1: ruleScheduleTableRule returns [EObject current=null] : (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) ;
     public final EObject ruleScheduleTableRule() throws RecognitionException {
         EObject current = null;
 
@@ -15293,21 +22037,21 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:6079:2: ( (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) )
-            // InternalOil.g:6080:2: (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            // InternalOil.g:8916:2: ( (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) )
+            // InternalOil.g:8917:2: (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
             {
-            // InternalOil.g:6080:2: (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
-            // InternalOil.g:6081:3: otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';'
+            // InternalOil.g:8917:2: (otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            // InternalOil.g:8918:3: otherlv_0= 'SCHEDULETABLE' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' ) otherlv_5= ';'
             {
             otherlv_0=(Token)match(input,52,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getScheduleTableRuleAccess().getSCHEDULETABLEKeyword_0());
             		
-            // InternalOil.g:6085:3: ( (lv_name_1_0= ruleName ) )
-            // InternalOil.g:6086:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:8922:3: ( (lv_name_1_0= ruleName ) )
+            // InternalOil.g:8923:4: (lv_name_1_0= ruleName )
             {
-            // InternalOil.g:6086:4: (lv_name_1_0= ruleName )
-            // InternalOil.g:6087:5: lv_name_1_0= ruleName
+            // InternalOil.g:8923:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:8924:5: lv_name_1_0= ruleName
             {
 
             					newCompositeNode(grammarAccess.getScheduleTableRuleAccess().getNameNameParserRuleCall_1_0());
@@ -15334,35 +22078,35 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:6104:3: (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' )
-            // InternalOil.g:6105:4: otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}'
+            // InternalOil.g:8941:3: (otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}' )
+            // InternalOil.g:8942:4: otherlv_2= '{' ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )* otherlv_4= '}'
             {
-            otherlv_2=(Token)match(input,22,FOLLOW_81); 
+            otherlv_2=(Token)match(input,22,FOLLOW_103); 
 
             				newLeafNode(otherlv_2, grammarAccess.getScheduleTableRuleAccess().getLeftCurlyBracketKeyword_2_0());
             			
-            // InternalOil.g:6109:4: ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )*
-            loop157:
+            // InternalOil.g:8946:4: ( (lv_schedulelist_3_0= ruleScheduleTableAttribute ) )*
+            loop178:
             do {
-                int alt157=2;
-                int LA157_0 = input.LA(1);
+                int alt178=2;
+                int LA178_0 = input.LA(1);
 
-                if ( (LA157_0==29||LA157_0==66||LA157_0==70||LA157_0==78||(LA157_0>=80 && LA157_0<=82)) ) {
-                    alt157=1;
+                if ( (LA178_0==29||LA178_0==100||LA178_0==104||(LA178_0>=110 && LA178_0<=113)) ) {
+                    alt178=1;
                 }
 
 
-                switch (alt157) {
+                switch (alt178) {
             	case 1 :
-            	    // InternalOil.g:6110:5: (lv_schedulelist_3_0= ruleScheduleTableAttribute )
+            	    // InternalOil.g:8947:5: (lv_schedulelist_3_0= ruleScheduleTableAttribute )
             	    {
-            	    // InternalOil.g:6110:5: (lv_schedulelist_3_0= ruleScheduleTableAttribute )
-            	    // InternalOil.g:6111:6: lv_schedulelist_3_0= ruleScheduleTableAttribute
+            	    // InternalOil.g:8947:5: (lv_schedulelist_3_0= ruleScheduleTableAttribute )
+            	    // InternalOil.g:8948:6: lv_schedulelist_3_0= ruleScheduleTableAttribute
             	    {
 
             	    						newCompositeNode(grammarAccess.getScheduleTableRuleAccess().getSchedulelistScheduleTableAttributeParserRuleCall_2_1_0());
             	    					
-            	    pushFollow(FOLLOW_81);
+            	    pushFollow(FOLLOW_103);
             	    lv_schedulelist_3_0=ruleScheduleTableAttribute();
 
             	    state._fsp--;
@@ -15386,7 +22130,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop157;
+            	    break loop178;
                 }
             } while (true);
 
@@ -15424,7 +22168,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleScheduleTableAttribute"
-    // InternalOil.g:6141:1: entryRuleScheduleTableAttribute returns [EObject current=null] : iv_ruleScheduleTableAttribute= ruleScheduleTableAttribute EOF ;
+    // InternalOil.g:8978:1: entryRuleScheduleTableAttribute returns [EObject current=null] : iv_ruleScheduleTableAttribute= ruleScheduleTableAttribute EOF ;
     public final EObject entryRuleScheduleTableAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -15432,8 +22176,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:6141:63: (iv_ruleScheduleTableAttribute= ruleScheduleTableAttribute EOF )
-            // InternalOil.g:6142:2: iv_ruleScheduleTableAttribute= ruleScheduleTableAttribute EOF
+            // InternalOil.g:8978:63: (iv_ruleScheduleTableAttribute= ruleScheduleTableAttribute EOF )
+            // InternalOil.g:8979:2: iv_ruleScheduleTableAttribute= ruleScheduleTableAttribute EOF
             {
              newCompositeNode(grammarAccess.getScheduleTableAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -15460,7 +22204,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScheduleTableAttribute"
-    // InternalOil.g:6148:1: ruleScheduleTableAttribute returns [EObject current=null] : ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) ) ;
+    // InternalOil.g:8985:1: ruleScheduleTableAttribute returns [EObject current=null] : ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) ) ;
     public final EObject ruleScheduleTableAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -15512,60 +22256,60 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:6154:2: ( ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) ) )
-            // InternalOil.g:6155:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) )
+            // InternalOil.g:8991:2: ( ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) ) )
+            // InternalOil.g:8992:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) )
             {
-            // InternalOil.g:6155:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) )
-            int alt163=7;
+            // InternalOil.g:8992:2: ( (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' ) | (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' ) | (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' ) | (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' ) | (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' ) | (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' ) | (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' ) )
+            int alt184=7;
             switch ( input.LA(1) ) {
             case 29:
                 {
-                alt163=1;
+                alt184=1;
                 }
                 break;
-            case 70:
+            case 104:
                 {
-                alt163=2;
+                alt184=2;
                 }
                 break;
-            case 78:
+            case 110:
                 {
-                alt163=3;
+                alt184=3;
                 }
                 break;
-            case 66:
+            case 100:
                 {
-                alt163=4;
+                alt184=4;
                 }
                 break;
-            case 80:
+            case 111:
                 {
-                alt163=5;
+                alt184=5;
                 }
                 break;
-            case 81:
+            case 112:
                 {
-                alt163=6;
+                alt184=6;
                 }
                 break;
-            case 82:
+            case 113:
                 {
-                alt163=7;
+                alt184=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 163, 0, input);
+                    new NoViableAltException("", 184, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt163) {
+            switch (alt184) {
                 case 1 :
-                    // InternalOil.g:6156:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
+                    // InternalOil.g:8993:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
                     {
-                    // InternalOil.g:6156:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
-                    // InternalOil.g:6157:4: otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';'
+                    // InternalOil.g:8993:3: (otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';' )
+                    // InternalOil.g:8994:4: otherlv_0= 'COUNTER' otherlv_1= '=' ( (lv_name_2_0= ruleName ) ) otherlv_3= ';'
                     {
                     otherlv_0=(Token)match(input,29,FOLLOW_7); 
 
@@ -15575,11 +22319,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_1, grammarAccess.getScheduleTableAttributeAccess().getEqualsSignKeyword_0_1());
                     			
-                    // InternalOil.g:6165:4: ( (lv_name_2_0= ruleName ) )
-                    // InternalOil.g:6166:5: (lv_name_2_0= ruleName )
+                    // InternalOil.g:9002:4: ( (lv_name_2_0= ruleName ) )
+                    // InternalOil.g:9003:5: (lv_name_2_0= ruleName )
                     {
-                    // InternalOil.g:6166:5: (lv_name_2_0= ruleName )
-                    // InternalOil.g:6167:6: lv_name_2_0= ruleName
+                    // InternalOil.g:9003:5: (lv_name_2_0= ruleName )
+                    // InternalOil.g:9004:6: lv_name_2_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getScheduleTableAttributeAccess().getNameNameParserRuleCall_0_2_0());
@@ -15617,12 +22361,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:6190:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
+                    // InternalOil.g:9027:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
                     {
-                    // InternalOil.g:6190:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
-                    // InternalOil.g:6191:4: otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';'
+                    // InternalOil.g:9027:3: (otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';' )
+                    // InternalOil.g:9028:4: otherlv_4= 'ACCESSING_APPLICATION' otherlv_5= '=' ( (lv_name_6_0= ruleName ) ) otherlv_7= ';'
                     {
-                    otherlv_4=(Token)match(input,70,FOLLOW_7); 
+                    otherlv_4=(Token)match(input,104,FOLLOW_7); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getScheduleTableAttributeAccess().getACCESSING_APPLICATIONKeyword_1_0());
                     			
@@ -15630,11 +22374,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_5, grammarAccess.getScheduleTableAttributeAccess().getEqualsSignKeyword_1_1());
                     			
-                    // InternalOil.g:6199:4: ( (lv_name_6_0= ruleName ) )
-                    // InternalOil.g:6200:5: (lv_name_6_0= ruleName )
+                    // InternalOil.g:9036:4: ( (lv_name_6_0= ruleName ) )
+                    // InternalOil.g:9037:5: (lv_name_6_0= ruleName )
                     {
-                    // InternalOil.g:6200:5: (lv_name_6_0= ruleName )
-                    // InternalOil.g:6201:6: lv_name_6_0= ruleName
+                    // InternalOil.g:9037:5: (lv_name_6_0= ruleName )
+                    // InternalOil.g:9038:6: lv_name_6_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getScheduleTableAttributeAccess().getNameNameParserRuleCall_1_2_0());
@@ -15672,12 +22416,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:6224:3: (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' )
+                    // InternalOil.g:9061:3: (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' )
                     {
-                    // InternalOil.g:6224:3: (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' )
-                    // InternalOil.g:6225:4: otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';'
+                    // InternalOil.g:9061:3: (otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';' )
+                    // InternalOil.g:9062:4: otherlv_8= 'LENGTH' otherlv_9= '=' ( (lv_value_10_0= ruleAttributeValue ) ) otherlv_11= ';'
                     {
-                    otherlv_8=(Token)match(input,78,FOLLOW_7); 
+                    otherlv_8=(Token)match(input,110,FOLLOW_7); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getScheduleTableAttributeAccess().getLENGTHKeyword_2_0());
                     			
@@ -15685,11 +22429,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_9, grammarAccess.getScheduleTableAttributeAccess().getEqualsSignKeyword_2_1());
                     			
-                    // InternalOil.g:6233:4: ( (lv_value_10_0= ruleAttributeValue ) )
-                    // InternalOil.g:6234:5: (lv_value_10_0= ruleAttributeValue )
+                    // InternalOil.g:9070:4: ( (lv_value_10_0= ruleAttributeValue ) )
+                    // InternalOil.g:9071:5: (lv_value_10_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:6234:5: (lv_value_10_0= ruleAttributeValue )
-                    // InternalOil.g:6235:6: lv_value_10_0= ruleAttributeValue
+                    // InternalOil.g:9071:5: (lv_value_10_0= ruleAttributeValue )
+                    // InternalOil.g:9072:6: lv_value_10_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getScheduleTableAttributeAccess().getValueAttributeValueParserRuleCall_2_2_0());
@@ -15727,40 +22471,40 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:6258:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' )
+                    // InternalOil.g:9095:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' )
                     {
-                    // InternalOil.g:6258:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' )
-                    // InternalOil.g:6259:4: otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';'
+                    // InternalOil.g:9095:3: (otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';' )
+                    // InternalOil.g:9096:4: otherlv_12= 'AUTOSTART' otherlv_13= '=' (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) ) otherlv_16= ';'
                     {
-                    otherlv_12=(Token)match(input,66,FOLLOW_7); 
+                    otherlv_12=(Token)match(input,100,FOLLOW_7); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getScheduleTableAttributeAccess().getAUTOSTARTKeyword_3_0());
                     			
-                    otherlv_13=(Token)match(input,18,FOLLOW_82); 
+                    otherlv_13=(Token)match(input,18,FOLLOW_104); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getScheduleTableAttributeAccess().getEqualsSignKeyword_3_1());
                     			
-                    // InternalOil.g:6267:4: (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) )
-                    int alt158=2;
-                    int LA158_0 = input.LA(1);
+                    // InternalOil.g:9104:4: (otherlv_14= 'NONE' | ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) ) )
+                    int alt179=2;
+                    int LA179_0 = input.LA(1);
 
-                    if ( (LA158_0==79) ) {
-                        alt158=1;
+                    if ( (LA179_0==67) ) {
+                        alt179=1;
                     }
-                    else if ( (LA158_0==83) ) {
-                        alt158=2;
+                    else if ( (LA179_0==114) ) {
+                        alt179=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 158, 0, input);
+                            new NoViableAltException("", 179, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt158) {
+                    switch (alt179) {
                         case 1 :
-                            // InternalOil.g:6268:5: otherlv_14= 'NONE'
+                            // InternalOil.g:9105:5: otherlv_14= 'NONE'
                             {
-                            otherlv_14=(Token)match(input,79,FOLLOW_10); 
+                            otherlv_14=(Token)match(input,67,FOLLOW_10); 
 
                             					newLeafNode(otherlv_14, grammarAccess.getScheduleTableAttributeAccess().getNONEKeyword_3_2_0());
                             				
@@ -15768,13 +22512,13 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalOil.g:6273:5: ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) )
+                            // InternalOil.g:9110:5: ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) )
                             {
-                            // InternalOil.g:6273:5: ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) )
-                            // InternalOil.g:6274:6: (lv_parameterList_15_0= ruleScheduleAutoStartAttribute )
+                            // InternalOil.g:9110:5: ( (lv_parameterList_15_0= ruleScheduleAutoStartAttribute ) )
+                            // InternalOil.g:9111:6: (lv_parameterList_15_0= ruleScheduleAutoStartAttribute )
                             {
-                            // InternalOil.g:6274:6: (lv_parameterList_15_0= ruleScheduleAutoStartAttribute )
-                            // InternalOil.g:6275:7: lv_parameterList_15_0= ruleScheduleAutoStartAttribute
+                            // InternalOil.g:9111:6: (lv_parameterList_15_0= ruleScheduleAutoStartAttribute )
+                            // InternalOil.g:9112:7: lv_parameterList_15_0= ruleScheduleAutoStartAttribute
                             {
 
                             							newCompositeNode(grammarAccess.getScheduleTableAttributeAccess().getParameterListScheduleAutoStartAttributeParserRuleCall_3_2_1_0());
@@ -15818,12 +22562,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:6299:3: (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' )
+                    // InternalOil.g:9136:3: (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' )
                     {
-                    // InternalOil.g:6299:3: (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' )
-                    // InternalOil.g:6300:4: otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';'
+                    // InternalOil.g:9136:3: (otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';' )
+                    // InternalOil.g:9137:4: otherlv_17= 'LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION' otherlv_18= '=' ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' ) otherlv_24= ';'
                     {
-                    otherlv_17=(Token)match(input,80,FOLLOW_7); 
+                    otherlv_17=(Token)match(input,111,FOLLOW_7); 
 
                     				newLeafNode(otherlv_17, grammarAccess.getScheduleTableAttributeAccess().getLOCAL_TO_GLOBAL_TIME_SYNCHRONIZATIONKeyword_4_0());
                     			
@@ -15831,59 +22575,59 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_18, grammarAccess.getScheduleTableAttributeAccess().getEqualsSignKeyword_4_1());
                     			
-                    // InternalOil.g:6308:4: ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' )
-                    int alt160=2;
-                    int LA160_0 = input.LA(1);
+                    // InternalOil.g:9145:4: ( (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' ) | otherlv_23= 'FALSE' )
+                    int alt181=2;
+                    int LA181_0 = input.LA(1);
 
-                    if ( (LA160_0==33) ) {
-                        alt160=1;
+                    if ( (LA181_0==33) ) {
+                        alt181=1;
                     }
-                    else if ( (LA160_0==34) ) {
-                        alt160=2;
+                    else if ( (LA181_0==34) ) {
+                        alt181=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 160, 0, input);
+                            new NoViableAltException("", 181, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt160) {
+                    switch (alt181) {
                         case 1 :
-                            // InternalOil.g:6309:5: (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' )
+                            // InternalOil.g:9146:5: (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' )
                             {
-                            // InternalOil.g:6309:5: (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' )
-                            // InternalOil.g:6310:6: otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}'
+                            // InternalOil.g:9146:5: (otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}' )
+                            // InternalOil.g:9147:6: otherlv_19= 'TRUE' otherlv_20= '{' ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )* otherlv_22= '}'
                             {
                             otherlv_19=(Token)match(input,33,FOLLOW_12); 
 
                             						newLeafNode(otherlv_19, grammarAccess.getScheduleTableAttributeAccess().getTRUEKeyword_4_2_0_0());
                             					
-                            otherlv_20=(Token)match(input,22,FOLLOW_83); 
+                            otherlv_20=(Token)match(input,22,FOLLOW_105); 
 
                             						newLeafNode(otherlv_20, grammarAccess.getScheduleTableAttributeAccess().getLeftCurlyBracketKeyword_4_2_0_1());
                             					
-                            // InternalOil.g:6318:6: ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )*
-                            loop159:
+                            // InternalOil.g:9155:6: ( (lv_parameterList_21_0= ruleSchduleSynAttribute ) )*
+                            loop180:
                             do {
-                                int alt159=2;
-                                int LA159_0 = input.LA(1);
+                                int alt180=2;
+                                int LA180_0 = input.LA(1);
 
-                                if ( ((LA159_0>=84 && LA159_0<=85)) ) {
-                                    alt159=1;
+                                if ( ((LA180_0>=115 && LA180_0<=116)) ) {
+                                    alt180=1;
                                 }
 
 
-                                switch (alt159) {
+                                switch (alt180) {
                             	case 1 :
-                            	    // InternalOil.g:6319:7: (lv_parameterList_21_0= ruleSchduleSynAttribute )
+                            	    // InternalOil.g:9156:7: (lv_parameterList_21_0= ruleSchduleSynAttribute )
                             	    {
-                            	    // InternalOil.g:6319:7: (lv_parameterList_21_0= ruleSchduleSynAttribute )
-                            	    // InternalOil.g:6320:8: lv_parameterList_21_0= ruleSchduleSynAttribute
+                            	    // InternalOil.g:9156:7: (lv_parameterList_21_0= ruleSchduleSynAttribute )
+                            	    // InternalOil.g:9157:8: lv_parameterList_21_0= ruleSchduleSynAttribute
                             	    {
 
                             	    								newCompositeNode(grammarAccess.getScheduleTableAttributeAccess().getParameterListSchduleSynAttributeParserRuleCall_4_2_0_2_0());
                             	    							
-                            	    pushFollow(FOLLOW_83);
+                            	    pushFollow(FOLLOW_105);
                             	    lv_parameterList_21_0=ruleSchduleSynAttribute();
 
                             	    state._fsp--;
@@ -15907,7 +22651,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             	    break;
 
                             	default :
-                            	    break loop159;
+                            	    break loop180;
                                 }
                             } while (true);
 
@@ -15922,7 +22666,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalOil.g:6343:5: otherlv_23= 'FALSE'
+                            // InternalOil.g:9180:5: otherlv_23= 'FALSE'
                             {
                             otherlv_23=(Token)match(input,34,FOLLOW_10); 
 
@@ -15945,12 +22689,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOil.g:6354:3: (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' )
+                    // InternalOil.g:9191:3: (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' )
                     {
-                    // InternalOil.g:6354:3: (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' )
-                    // InternalOil.g:6355:4: otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';'
+                    // InternalOil.g:9191:3: (otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';' )
+                    // InternalOil.g:9192:4: otherlv_25= 'PERIODIC' otherlv_26= '=' (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' ) otherlv_29= ';'
                     {
-                    otherlv_25=(Token)match(input,81,FOLLOW_7); 
+                    otherlv_25=(Token)match(input,112,FOLLOW_7); 
 
                     				newLeafNode(otherlv_25, grammarAccess.getScheduleTableAttributeAccess().getPERIODICKeyword_5_0());
                     			
@@ -15958,25 +22702,25 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_26, grammarAccess.getScheduleTableAttributeAccess().getEqualsSignKeyword_5_1());
                     			
-                    // InternalOil.g:6363:4: (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' )
-                    int alt161=2;
-                    int LA161_0 = input.LA(1);
+                    // InternalOil.g:9200:4: (otherlv_27= 'TRUE' | otherlv_28= 'FALSE' )
+                    int alt182=2;
+                    int LA182_0 = input.LA(1);
 
-                    if ( (LA161_0==33) ) {
-                        alt161=1;
+                    if ( (LA182_0==33) ) {
+                        alt182=1;
                     }
-                    else if ( (LA161_0==34) ) {
-                        alt161=2;
+                    else if ( (LA182_0==34) ) {
+                        alt182=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 161, 0, input);
+                            new NoViableAltException("", 182, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt161) {
+                    switch (alt182) {
                         case 1 :
-                            // InternalOil.g:6364:5: otherlv_27= 'TRUE'
+                            // InternalOil.g:9201:5: otherlv_27= 'TRUE'
                             {
                             otherlv_27=(Token)match(input,33,FOLLOW_10); 
 
@@ -15986,7 +22730,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalOil.g:6369:5: otherlv_28= 'FALSE'
+                            // InternalOil.g:9206:5: otherlv_28= 'FALSE'
                             {
                             otherlv_28=(Token)match(input,34,FOLLOW_10); 
 
@@ -16009,20 +22753,20 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOil.g:6380:3: (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' )
+                    // InternalOil.g:9217:3: (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' )
                     {
-                    // InternalOil.g:6380:3: (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' )
-                    // InternalOil.g:6381:4: otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';'
+                    // InternalOil.g:9217:3: (otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';' )
+                    // InternalOil.g:9218:4: otherlv_30= 'EXPIRY_POINT' ( (lv_name_31_0= ruleName ) ) (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' ) otherlv_35= ';'
                     {
-                    otherlv_30=(Token)match(input,82,FOLLOW_11); 
+                    otherlv_30=(Token)match(input,113,FOLLOW_11); 
 
                     				newLeafNode(otherlv_30, grammarAccess.getScheduleTableAttributeAccess().getEXPIRY_POINTKeyword_6_0());
                     			
-                    // InternalOil.g:6385:4: ( (lv_name_31_0= ruleName ) )
-                    // InternalOil.g:6386:5: (lv_name_31_0= ruleName )
+                    // InternalOil.g:9222:4: ( (lv_name_31_0= ruleName ) )
+                    // InternalOil.g:9223:5: (lv_name_31_0= ruleName )
                     {
-                    // InternalOil.g:6386:5: (lv_name_31_0= ruleName )
-                    // InternalOil.g:6387:6: lv_name_31_0= ruleName
+                    // InternalOil.g:9223:5: (lv_name_31_0= ruleName )
+                    // InternalOil.g:9224:6: lv_name_31_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getScheduleTableAttributeAccess().getNameNameParserRuleCall_6_1_0());
@@ -16049,35 +22793,35 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6404:4: (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' )
-                    // InternalOil.g:6405:5: otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}'
+                    // InternalOil.g:9241:4: (otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}' )
+                    // InternalOil.g:9242:5: otherlv_32= '{' ( (lv_parameterList_33_0= ruleExpiryAttribute ) )* otherlv_34= '}'
                     {
-                    otherlv_32=(Token)match(input,22,FOLLOW_84); 
+                    otherlv_32=(Token)match(input,22,FOLLOW_106); 
 
                     					newLeafNode(otherlv_32, grammarAccess.getScheduleTableAttributeAccess().getLeftCurlyBracketKeyword_6_2_0());
                     				
-                    // InternalOil.g:6409:5: ( (lv_parameterList_33_0= ruleExpiryAttribute ) )*
-                    loop162:
+                    // InternalOil.g:9246:5: ( (lv_parameterList_33_0= ruleExpiryAttribute ) )*
+                    loop183:
                     do {
-                        int alt162=2;
-                        int LA162_0 = input.LA(1);
+                        int alt183=2;
+                        int LA183_0 = input.LA(1);
 
-                        if ( (LA162_0==71||(LA162_0>=86 && LA162_0<=87)) ) {
-                            alt162=1;
+                        if ( (LA183_0==105||(LA183_0>=117 && LA183_0<=118)) ) {
+                            alt183=1;
                         }
 
 
-                        switch (alt162) {
+                        switch (alt183) {
                     	case 1 :
-                    	    // InternalOil.g:6410:6: (lv_parameterList_33_0= ruleExpiryAttribute )
+                    	    // InternalOil.g:9247:6: (lv_parameterList_33_0= ruleExpiryAttribute )
                     	    {
-                    	    // InternalOil.g:6410:6: (lv_parameterList_33_0= ruleExpiryAttribute )
-                    	    // InternalOil.g:6411:7: lv_parameterList_33_0= ruleExpiryAttribute
+                    	    // InternalOil.g:9247:6: (lv_parameterList_33_0= ruleExpiryAttribute )
+                    	    // InternalOil.g:9248:7: lv_parameterList_33_0= ruleExpiryAttribute
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getScheduleTableAttributeAccess().getParameterListExpiryAttributeParserRuleCall_6_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_84);
+                    	    pushFollow(FOLLOW_106);
                     	    lv_parameterList_33_0=ruleExpiryAttribute();
 
                     	    state._fsp--;
@@ -16101,7 +22845,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop162;
+                    	    break loop183;
                         }
                     } while (true);
 
@@ -16145,7 +22889,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleScheduleAutoStartAttribute"
-    // InternalOil.g:6442:1: entryRuleScheduleAutoStartAttribute returns [EObject current=null] : iv_ruleScheduleAutoStartAttribute= ruleScheduleAutoStartAttribute EOF ;
+    // InternalOil.g:9279:1: entryRuleScheduleAutoStartAttribute returns [EObject current=null] : iv_ruleScheduleAutoStartAttribute= ruleScheduleAutoStartAttribute EOF ;
     public final EObject entryRuleScheduleAutoStartAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -16153,8 +22897,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:6442:67: (iv_ruleScheduleAutoStartAttribute= ruleScheduleAutoStartAttribute EOF )
-            // InternalOil.g:6443:2: iv_ruleScheduleAutoStartAttribute= ruleScheduleAutoStartAttribute EOF
+            // InternalOil.g:9279:67: (iv_ruleScheduleAutoStartAttribute= ruleScheduleAutoStartAttribute EOF )
+            // InternalOil.g:9280:2: iv_ruleScheduleAutoStartAttribute= ruleScheduleAutoStartAttribute EOF
             {
              newCompositeNode(grammarAccess.getScheduleAutoStartAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -16181,7 +22925,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScheduleAutoStartAttribute"
-    // InternalOil.g:6449:1: ruleScheduleAutoStartAttribute returns [EObject current=null] : (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' ) ;
+    // InternalOil.g:9286:1: ruleScheduleAutoStartAttribute returns [EObject current=null] : (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' ) ;
     public final EObject ruleScheduleAutoStartAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -16201,45 +22945,45 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:6455:2: ( (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' ) )
-            // InternalOil.g:6456:2: (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' )
+            // InternalOil.g:9292:2: ( (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' ) )
+            // InternalOil.g:9293:2: (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' )
             {
-            // InternalOil.g:6456:2: (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' )
-            // InternalOil.g:6457:3: otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}'
+            // InternalOil.g:9293:2: (otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}' )
+            // InternalOil.g:9294:3: otherlv_0= 'ABSOLUTE' otherlv_1= '{' ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )* otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,83,FOLLOW_12); 
+            otherlv_0=(Token)match(input,114,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getScheduleAutoStartAttributeAccess().getABSOLUTEKeyword_0());
             		
-            otherlv_1=(Token)match(input,22,FOLLOW_85); 
+            otherlv_1=(Token)match(input,22,FOLLOW_107); 
 
             			newLeafNode(otherlv_1, grammarAccess.getScheduleAutoStartAttributeAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalOil.g:6465:3: ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )*
-            loop166:
+            // InternalOil.g:9302:3: ( ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' )*
+            loop187:
             do {
-                int alt166=2;
-                int LA166_0 = input.LA(1);
+                int alt187=2;
+                int LA187_0 = input.LA(1);
 
-                if ( (LA166_0==47||LA166_0==156) ) {
-                    alt166=1;
+                if ( (LA187_0==47||LA187_0==205) ) {
+                    alt187=1;
                 }
 
 
-                switch (alt166) {
+                switch (alt187) {
             	case 1 :
-            	    // InternalOil.g:6466:4: ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';'
+            	    // InternalOil.g:9303:4: ( (lv_absolute_2_0= ruleAbsolute ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';'
             	    {
-            	    // InternalOil.g:6466:4: ( (lv_absolute_2_0= ruleAbsolute ) )
-            	    // InternalOil.g:6467:5: (lv_absolute_2_0= ruleAbsolute )
+            	    // InternalOil.g:9303:4: ( (lv_absolute_2_0= ruleAbsolute ) )
+            	    // InternalOil.g:9304:5: (lv_absolute_2_0= ruleAbsolute )
             	    {
-            	    // InternalOil.g:6467:5: (lv_absolute_2_0= ruleAbsolute )
-            	    // InternalOil.g:6468:6: lv_absolute_2_0= ruleAbsolute
+            	    // InternalOil.g:9304:5: (lv_absolute_2_0= ruleAbsolute )
+            	    // InternalOil.g:9305:6: lv_absolute_2_0= ruleAbsolute
             	    {
 
             	    						newCompositeNode(grammarAccess.getScheduleAutoStartAttributeAccess().getAbsoluteAbsoluteEnumRuleCall_2_0_0());
             	    					
-            	    pushFollow(FOLLOW_66);
+            	    pushFollow(FOLLOW_90);
             	    lv_absolute_2_0=ruleAbsolute();
 
             	    state._fsp--;
@@ -16261,16 +23005,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalOil.g:6485:4: (otherlv_3= '=' )?
-            	    int alt164=2;
-            	    int LA164_0 = input.LA(1);
+            	    // InternalOil.g:9322:4: (otherlv_3= '=' )?
+            	    int alt185=2;
+            	    int LA185_0 = input.LA(1);
 
-            	    if ( (LA164_0==18) ) {
-            	        alt164=1;
+            	    if ( (LA185_0==18) ) {
+            	        alt185=1;
             	    }
-            	    switch (alt164) {
+            	    switch (alt185) {
             	        case 1 :
-            	            // InternalOil.g:6486:5: otherlv_3= '='
+            	            // InternalOil.g:9323:5: otherlv_3= '='
             	            {
             	            otherlv_3=(Token)match(input,18,FOLLOW_29); 
 
@@ -16282,11 +23026,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalOil.g:6491:4: ( (lv_value_4_0= ruleAttributeValue ) )
-            	    // InternalOil.g:6492:5: (lv_value_4_0= ruleAttributeValue )
+            	    // InternalOil.g:9328:4: ( (lv_value_4_0= ruleAttributeValue ) )
+            	    // InternalOil.g:9329:5: (lv_value_4_0= ruleAttributeValue )
             	    {
-            	    // InternalOil.g:6492:5: (lv_value_4_0= ruleAttributeValue )
-            	    // InternalOil.g:6493:6: lv_value_4_0= ruleAttributeValue
+            	    // InternalOil.g:9329:5: (lv_value_4_0= ruleAttributeValue )
+            	    // InternalOil.g:9330:6: lv_value_4_0= ruleAttributeValue
             	    {
 
             	    						newCompositeNode(grammarAccess.getScheduleAutoStartAttributeAccess().getValueAttributeValueParserRuleCall_2_2_0());
@@ -16313,19 +23057,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalOil.g:6510:4: ( (lv_description_5_0= ruleEString ) )?
-            	    int alt165=2;
-            	    int LA165_0 = input.LA(1);
+            	    // InternalOil.g:9347:4: ( (lv_description_5_0= ruleEString ) )?
+            	    int alt186=2;
+            	    int LA186_0 = input.LA(1);
 
-            	    if ( (LA165_0==RULE_STRING) ) {
-            	        alt165=1;
+            	    if ( (LA186_0==RULE_STRING) ) {
+            	        alt186=1;
             	    }
-            	    switch (alt165) {
+            	    switch (alt186) {
             	        case 1 :
-            	            // InternalOil.g:6511:5: (lv_description_5_0= ruleEString )
+            	            // InternalOil.g:9348:5: (lv_description_5_0= ruleEString )
             	            {
-            	            // InternalOil.g:6511:5: (lv_description_5_0= ruleEString )
-            	            // InternalOil.g:6512:6: lv_description_5_0= ruleEString
+            	            // InternalOil.g:9348:5: (lv_description_5_0= ruleEString )
+            	            // InternalOil.g:9349:6: lv_description_5_0= ruleEString
             	            {
 
             	            						newCompositeNode(grammarAccess.getScheduleAutoStartAttributeAccess().getDescriptionEStringParserRuleCall_2_3_0());
@@ -16355,7 +23099,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_6=(Token)match(input,20,FOLLOW_85); 
+            	    otherlv_6=(Token)match(input,20,FOLLOW_107); 
 
             	    				newLeafNode(otherlv_6, grammarAccess.getScheduleAutoStartAttributeAccess().getSemicolonKeyword_2_4());
             	    			
@@ -16364,7 +23108,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop166;
+            	    break loop187;
                 }
             } while (true);
 
@@ -16395,7 +23139,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSchduleSynAttribute"
-    // InternalOil.g:6542:1: entryRuleSchduleSynAttribute returns [EObject current=null] : iv_ruleSchduleSynAttribute= ruleSchduleSynAttribute EOF ;
+    // InternalOil.g:9379:1: entryRuleSchduleSynAttribute returns [EObject current=null] : iv_ruleSchduleSynAttribute= ruleSchduleSynAttribute EOF ;
     public final EObject entryRuleSchduleSynAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -16403,8 +23147,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:6542:60: (iv_ruleSchduleSynAttribute= ruleSchduleSynAttribute EOF )
-            // InternalOil.g:6543:2: iv_ruleSchduleSynAttribute= ruleSchduleSynAttribute EOF
+            // InternalOil.g:9379:60: (iv_ruleSchduleSynAttribute= ruleSchduleSynAttribute EOF )
+            // InternalOil.g:9380:2: iv_ruleSchduleSynAttribute= ruleSchduleSynAttribute EOF
             {
              newCompositeNode(grammarAccess.getSchduleSynAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -16431,7 +23175,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSchduleSynAttribute"
-    // InternalOil.g:6549:1: ruleSchduleSynAttribute returns [EObject current=null] : ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) ) ;
+    // InternalOil.g:9386:1: ruleSchduleSynAttribute returns [EObject current=null] : ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) ) ;
     public final EObject ruleSchduleSynAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -16454,46 +23198,46 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:6555:2: ( ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) ) )
-            // InternalOil.g:6556:2: ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) )
+            // InternalOil.g:9392:2: ( ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) ) )
+            // InternalOil.g:9393:2: ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) )
             {
-            // InternalOil.g:6556:2: ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) )
-            int alt171=2;
-            int LA171_0 = input.LA(1);
+            // InternalOil.g:9393:2: ( (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) )
+            int alt192=2;
+            int LA192_0 = input.LA(1);
 
-            if ( (LA171_0==84) ) {
-                alt171=1;
+            if ( (LA192_0==115) ) {
+                alt192=1;
             }
-            else if ( (LA171_0==85) ) {
-                alt171=2;
+            else if ( (LA192_0==116) ) {
+                alt192=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 171, 0, input);
+                    new NoViableAltException("", 192, 0, input);
 
                 throw nvae;
             }
-            switch (alt171) {
+            switch (alt192) {
                 case 1 :
-                    // InternalOil.g:6557:3: (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:9394:3: (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
                     {
-                    // InternalOil.g:6557:3: (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-                    // InternalOil.g:6558:4: otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+                    // InternalOil.g:9394:3: (otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:9395:4: otherlv_0= 'PRECISION' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
                     {
-                    otherlv_0=(Token)match(input,84,FOLLOW_66); 
+                    otherlv_0=(Token)match(input,115,FOLLOW_90); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getSchduleSynAttributeAccess().getPRECISIONKeyword_0_0());
                     			
-                    // InternalOil.g:6562:4: (otherlv_1= '=' )?
-                    int alt167=2;
-                    int LA167_0 = input.LA(1);
+                    // InternalOil.g:9399:4: (otherlv_1= '=' )?
+                    int alt188=2;
+                    int LA188_0 = input.LA(1);
 
-                    if ( (LA167_0==18) ) {
-                        alt167=1;
+                    if ( (LA188_0==18) ) {
+                        alt188=1;
                     }
-                    switch (alt167) {
+                    switch (alt188) {
                         case 1 :
-                            // InternalOil.g:6563:5: otherlv_1= '='
+                            // InternalOil.g:9400:5: otherlv_1= '='
                             {
                             otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -16505,11 +23249,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6568:4: ( (lv_value_2_0= ruleAttributeValue ) )
-                    // InternalOil.g:6569:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:9405:4: ( (lv_value_2_0= ruleAttributeValue ) )
+                    // InternalOil.g:9406:5: (lv_value_2_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:6569:5: (lv_value_2_0= ruleAttributeValue )
-                    // InternalOil.g:6570:6: lv_value_2_0= ruleAttributeValue
+                    // InternalOil.g:9406:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:9407:6: lv_value_2_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getSchduleSynAttributeAccess().getValueAttributeValueParserRuleCall_0_2_0());
@@ -16536,19 +23280,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6587:4: ( (lv_description_3_0= ruleEString ) )?
-                    int alt168=2;
-                    int LA168_0 = input.LA(1);
+                    // InternalOil.g:9424:4: ( (lv_description_3_0= ruleEString ) )?
+                    int alt189=2;
+                    int LA189_0 = input.LA(1);
 
-                    if ( (LA168_0==RULE_STRING) ) {
-                        alt168=1;
+                    if ( (LA189_0==RULE_STRING) ) {
+                        alt189=1;
                     }
-                    switch (alt168) {
+                    switch (alt189) {
                         case 1 :
-                            // InternalOil.g:6588:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:9425:5: (lv_description_3_0= ruleEString )
                             {
-                            // InternalOil.g:6588:5: (lv_description_3_0= ruleEString )
-                            // InternalOil.g:6589:6: lv_description_3_0= ruleEString
+                            // InternalOil.g:9425:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:9426:6: lv_description_3_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getSchduleSynAttributeAccess().getDescriptionEStringParserRuleCall_0_3_0());
@@ -16589,27 +23333,27 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:6612:3: (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
+                    // InternalOil.g:9449:3: (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
                     {
-                    // InternalOil.g:6612:3: (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
-                    // InternalOil.g:6613:4: otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';'
+                    // InternalOil.g:9449:3: (otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
+                    // InternalOil.g:9450:4: otherlv_5= 'SYNC_STRATEGY' (otherlv_6= '=' )? ( (lv_schdulesyn_7_0= ruleSchduleSyn ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';'
                     {
-                    otherlv_5=(Token)match(input,85,FOLLOW_86); 
+                    otherlv_5=(Token)match(input,116,FOLLOW_108); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getSchduleSynAttributeAccess().getSYNC_STRATEGYKeyword_1_0());
                     			
-                    // InternalOil.g:6617:4: (otherlv_6= '=' )?
-                    int alt169=2;
-                    int LA169_0 = input.LA(1);
+                    // InternalOil.g:9454:4: (otherlv_6= '=' )?
+                    int alt190=2;
+                    int LA190_0 = input.LA(1);
 
-                    if ( (LA169_0==18) ) {
-                        alt169=1;
+                    if ( (LA190_0==18) ) {
+                        alt190=1;
                     }
-                    switch (alt169) {
+                    switch (alt190) {
                         case 1 :
-                            // InternalOil.g:6618:5: otherlv_6= '='
+                            // InternalOil.g:9455:5: otherlv_6= '='
                             {
-                            otherlv_6=(Token)match(input,18,FOLLOW_86); 
+                            otherlv_6=(Token)match(input,18,FOLLOW_108); 
 
                             					newLeafNode(otherlv_6, grammarAccess.getSchduleSynAttributeAccess().getEqualsSignKeyword_1_1());
                             				
@@ -16619,11 +23363,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6623:4: ( (lv_schdulesyn_7_0= ruleSchduleSyn ) )
-                    // InternalOil.g:6624:5: (lv_schdulesyn_7_0= ruleSchduleSyn )
+                    // InternalOil.g:9460:4: ( (lv_schdulesyn_7_0= ruleSchduleSyn ) )
+                    // InternalOil.g:9461:5: (lv_schdulesyn_7_0= ruleSchduleSyn )
                     {
-                    // InternalOil.g:6624:5: (lv_schdulesyn_7_0= ruleSchduleSyn )
-                    // InternalOil.g:6625:6: lv_schdulesyn_7_0= ruleSchduleSyn
+                    // InternalOil.g:9461:5: (lv_schdulesyn_7_0= ruleSchduleSyn )
+                    // InternalOil.g:9462:6: lv_schdulesyn_7_0= ruleSchduleSyn
                     {
 
                     						newCompositeNode(grammarAccess.getSchduleSynAttributeAccess().getSchdulesynSchduleSynEnumRuleCall_1_2_0());
@@ -16650,19 +23394,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6642:4: ( (lv_description_8_0= ruleEString ) )?
-                    int alt170=2;
-                    int LA170_0 = input.LA(1);
+                    // InternalOil.g:9479:4: ( (lv_description_8_0= ruleEString ) )?
+                    int alt191=2;
+                    int LA191_0 = input.LA(1);
 
-                    if ( (LA170_0==RULE_STRING) ) {
-                        alt170=1;
+                    if ( (LA191_0==RULE_STRING) ) {
+                        alt191=1;
                     }
-                    switch (alt170) {
+                    switch (alt191) {
                         case 1 :
-                            // InternalOil.g:6643:5: (lv_description_8_0= ruleEString )
+                            // InternalOil.g:9480:5: (lv_description_8_0= ruleEString )
                             {
-                            // InternalOil.g:6643:5: (lv_description_8_0= ruleEString )
-                            // InternalOil.g:6644:6: lv_description_8_0= ruleEString
+                            // InternalOil.g:9480:5: (lv_description_8_0= ruleEString )
+                            // InternalOil.g:9481:6: lv_description_8_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getSchduleSynAttributeAccess().getDescriptionEStringParserRuleCall_1_3_0());
@@ -16725,7 +23469,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpiryAttribute"
-    // InternalOil.g:6670:1: entryRuleExpiryAttribute returns [EObject current=null] : iv_ruleExpiryAttribute= ruleExpiryAttribute EOF ;
+    // InternalOil.g:9507:1: entryRuleExpiryAttribute returns [EObject current=null] : iv_ruleExpiryAttribute= ruleExpiryAttribute EOF ;
     public final EObject entryRuleExpiryAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -16733,8 +23477,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:6670:56: (iv_ruleExpiryAttribute= ruleExpiryAttribute EOF )
-            // InternalOil.g:6671:2: iv_ruleExpiryAttribute= ruleExpiryAttribute EOF
+            // InternalOil.g:9507:56: (iv_ruleExpiryAttribute= ruleExpiryAttribute EOF )
+            // InternalOil.g:9508:2: iv_ruleExpiryAttribute= ruleExpiryAttribute EOF
             {
              newCompositeNode(grammarAccess.getExpiryAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -16761,7 +23505,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpiryAttribute"
-    // InternalOil.g:6677:1: ruleExpiryAttribute returns [EObject current=null] : ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) ) ;
+    // InternalOil.g:9514:1: ruleExpiryAttribute returns [EObject current=null] : ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) ) ;
     public final EObject ruleExpiryAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -16789,55 +23533,55 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:6683:2: ( ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) ) )
-            // InternalOil.g:6684:2: ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) )
+            // InternalOil.g:9520:2: ( ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) ) )
+            // InternalOil.g:9521:2: ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) )
             {
-            // InternalOil.g:6684:2: ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) )
-            int alt176=3;
+            // InternalOil.g:9521:2: ( (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) | (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' ) | (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' ) )
+            int alt197=3;
             switch ( input.LA(1) ) {
-            case 86:
+            case 117:
                 {
-                alt176=1;
+                alt197=1;
                 }
                 break;
-            case 87:
+            case 118:
                 {
-                alt176=2;
+                alt197=2;
                 }
                 break;
-            case 71:
+            case 105:
                 {
-                alt176=3;
+                alt197=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 176, 0, input);
+                    new NoViableAltException("", 197, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt176) {
+            switch (alt197) {
                 case 1 :
-                    // InternalOil.g:6685:3: (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:9522:3: (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
                     {
-                    // InternalOil.g:6685:3: (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-                    // InternalOil.g:6686:4: otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+                    // InternalOil.g:9522:3: (otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+                    // InternalOil.g:9523:4: otherlv_0= 'OFFSET' (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
                     {
-                    otherlv_0=(Token)match(input,86,FOLLOW_66); 
+                    otherlv_0=(Token)match(input,117,FOLLOW_90); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getExpiryAttributeAccess().getOFFSETKeyword_0_0());
                     			
-                    // InternalOil.g:6690:4: (otherlv_1= '=' )?
-                    int alt172=2;
-                    int LA172_0 = input.LA(1);
+                    // InternalOil.g:9527:4: (otherlv_1= '=' )?
+                    int alt193=2;
+                    int LA193_0 = input.LA(1);
 
-                    if ( (LA172_0==18) ) {
-                        alt172=1;
+                    if ( (LA193_0==18) ) {
+                        alt193=1;
                     }
-                    switch (alt172) {
+                    switch (alt193) {
                         case 1 :
-                            // InternalOil.g:6691:5: otherlv_1= '='
+                            // InternalOil.g:9528:5: otherlv_1= '='
                             {
                             otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -16849,11 +23593,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6696:4: ( (lv_value_2_0= ruleAttributeValue ) )
-                    // InternalOil.g:6697:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:9533:4: ( (lv_value_2_0= ruleAttributeValue ) )
+                    // InternalOil.g:9534:5: (lv_value_2_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:6697:5: (lv_value_2_0= ruleAttributeValue )
-                    // InternalOil.g:6698:6: lv_value_2_0= ruleAttributeValue
+                    // InternalOil.g:9534:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:9535:6: lv_value_2_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getExpiryAttributeAccess().getValueAttributeValueParserRuleCall_0_2_0());
@@ -16880,19 +23624,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6715:4: ( (lv_description_3_0= ruleEString ) )?
-                    int alt173=2;
-                    int LA173_0 = input.LA(1);
+                    // InternalOil.g:9552:4: ( (lv_description_3_0= ruleEString ) )?
+                    int alt194=2;
+                    int LA194_0 = input.LA(1);
 
-                    if ( (LA173_0==RULE_STRING) ) {
-                        alt173=1;
+                    if ( (LA194_0==RULE_STRING) ) {
+                        alt194=1;
                     }
-                    switch (alt173) {
+                    switch (alt194) {
                         case 1 :
-                            // InternalOil.g:6716:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:9553:5: (lv_description_3_0= ruleEString )
                             {
-                            // InternalOil.g:6716:5: (lv_description_3_0= ruleEString )
-                            // InternalOil.g:6717:6: lv_description_3_0= ruleEString
+                            // InternalOil.g:9553:5: (lv_description_3_0= ruleEString )
+                            // InternalOil.g:9554:6: lv_description_3_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getExpiryAttributeAccess().getDescriptionEStringParserRuleCall_0_3_0());
@@ -16933,27 +23677,27 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:6740:3: (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
+                    // InternalOil.g:9577:3: (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
                     {
-                    // InternalOil.g:6740:3: (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
-                    // InternalOil.g:6741:4: otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';'
+                    // InternalOil.g:9577:3: (otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';' )
+                    // InternalOil.g:9578:4: otherlv_5= 'ADJUSTBLE' (otherlv_6= '=' )? ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) ) ( (lv_description_8_0= ruleEString ) )? otherlv_9= ';'
                     {
-                    otherlv_5=(Token)match(input,87,FOLLOW_87); 
+                    otherlv_5=(Token)match(input,118,FOLLOW_109); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getExpiryAttributeAccess().getADJUSTBLEKeyword_1_0());
                     			
-                    // InternalOil.g:6745:4: (otherlv_6= '=' )?
-                    int alt174=2;
-                    int LA174_0 = input.LA(1);
+                    // InternalOil.g:9582:4: (otherlv_6= '=' )?
+                    int alt195=2;
+                    int LA195_0 = input.LA(1);
 
-                    if ( (LA174_0==18) ) {
-                        alt174=1;
+                    if ( (LA195_0==18) ) {
+                        alt195=1;
                     }
-                    switch (alt174) {
+                    switch (alt195) {
                         case 1 :
-                            // InternalOil.g:6746:5: otherlv_6= '='
+                            // InternalOil.g:9583:5: otherlv_6= '='
                             {
-                            otherlv_6=(Token)match(input,18,FOLLOW_87); 
+                            otherlv_6=(Token)match(input,18,FOLLOW_109); 
 
                             					newLeafNode(otherlv_6, grammarAccess.getExpiryAttributeAccess().getEqualsSignKeyword_1_1());
                             				
@@ -16963,11 +23707,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6751:4: ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) )
-                    // InternalOil.g:6752:5: (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble )
+                    // InternalOil.g:9588:4: ( (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble ) )
+                    // InternalOil.g:9589:5: (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble )
                     {
-                    // InternalOil.g:6752:5: (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble )
-                    // InternalOil.g:6753:6: lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble
+                    // InternalOil.g:9589:5: (lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble )
+                    // InternalOil.g:9590:6: lv_schdulexpiry_7_0= ruleSchduleExpiryAdustble
                     {
 
                     						newCompositeNode(grammarAccess.getExpiryAttributeAccess().getSchdulexpirySchduleExpiryAdustbleEnumRuleCall_1_2_0());
@@ -16994,19 +23738,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6770:4: ( (lv_description_8_0= ruleEString ) )?
-                    int alt175=2;
-                    int LA175_0 = input.LA(1);
+                    // InternalOil.g:9607:4: ( (lv_description_8_0= ruleEString ) )?
+                    int alt196=2;
+                    int LA196_0 = input.LA(1);
 
-                    if ( (LA175_0==RULE_STRING) ) {
-                        alt175=1;
+                    if ( (LA196_0==RULE_STRING) ) {
+                        alt196=1;
                     }
-                    switch (alt175) {
+                    switch (alt196) {
                         case 1 :
-                            // InternalOil.g:6771:5: (lv_description_8_0= ruleEString )
+                            // InternalOil.g:9608:5: (lv_description_8_0= ruleEString )
                             {
-                            // InternalOil.g:6771:5: (lv_description_8_0= ruleEString )
-                            // InternalOil.g:6772:6: lv_description_8_0= ruleEString
+                            // InternalOil.g:9608:5: (lv_description_8_0= ruleEString )
+                            // InternalOil.g:9609:6: lv_description_8_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getExpiryAttributeAccess().getDescriptionEStringParserRuleCall_1_3_0());
@@ -17047,24 +23791,24 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:6795:3: (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' )
+                    // InternalOil.g:9632:3: (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' )
                     {
-                    // InternalOil.g:6795:3: (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' )
-                    // InternalOil.g:6796:4: otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';'
+                    // InternalOil.g:9632:3: (otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';' )
+                    // InternalOil.g:9633:4: otherlv_10= 'ACTION' otherlv_11= '=' ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) ) otherlv_13= ';'
                     {
-                    otherlv_10=(Token)match(input,71,FOLLOW_7); 
+                    otherlv_10=(Token)match(input,105,FOLLOW_7); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getExpiryAttributeAccess().getACTIONKeyword_2_0());
                     			
-                    otherlv_11=(Token)match(input,18,FOLLOW_88); 
+                    otherlv_11=(Token)match(input,18,FOLLOW_110); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getExpiryAttributeAccess().getEqualsSignKeyword_2_1());
                     			
-                    // InternalOil.g:6804:4: ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) )
-                    // InternalOil.g:6805:5: (lv_parameterList_12_0= ruleSchduleActionAttribute )
+                    // InternalOil.g:9641:4: ( (lv_parameterList_12_0= ruleSchduleActionAttribute ) )
+                    // InternalOil.g:9642:5: (lv_parameterList_12_0= ruleSchduleActionAttribute )
                     {
-                    // InternalOil.g:6805:5: (lv_parameterList_12_0= ruleSchduleActionAttribute )
-                    // InternalOil.g:6806:6: lv_parameterList_12_0= ruleSchduleActionAttribute
+                    // InternalOil.g:9642:5: (lv_parameterList_12_0= ruleSchduleActionAttribute )
+                    // InternalOil.g:9643:6: lv_parameterList_12_0= ruleSchduleActionAttribute
                     {
 
                     						newCompositeNode(grammarAccess.getExpiryAttributeAccess().getParameterListSchduleActionAttributeParserRuleCall_2_2_0());
@@ -17124,7 +23868,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSchduleActionAttribute"
-    // InternalOil.g:6832:1: entryRuleSchduleActionAttribute returns [EObject current=null] : iv_ruleSchduleActionAttribute= ruleSchduleActionAttribute EOF ;
+    // InternalOil.g:9669:1: entryRuleSchduleActionAttribute returns [EObject current=null] : iv_ruleSchduleActionAttribute= ruleSchduleActionAttribute EOF ;
     public final EObject entryRuleSchduleActionAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -17132,8 +23876,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:6832:63: (iv_ruleSchduleActionAttribute= ruleSchduleActionAttribute EOF )
-            // InternalOil.g:6833:2: iv_ruleSchduleActionAttribute= ruleSchduleActionAttribute EOF
+            // InternalOil.g:9669:63: (iv_ruleSchduleActionAttribute= ruleSchduleActionAttribute EOF )
+            // InternalOil.g:9670:2: iv_ruleSchduleActionAttribute= ruleSchduleActionAttribute EOF
             {
              newCompositeNode(grammarAccess.getSchduleActionAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -17160,7 +23904,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSchduleActionAttribute"
-    // InternalOil.g:6839:1: ruleSchduleActionAttribute returns [EObject current=null] : ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) ;
+    // InternalOil.g:9676:1: ruleSchduleActionAttribute returns [EObject current=null] : ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) ;
     public final EObject ruleSchduleActionAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -17191,50 +23935,50 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:6845:2: ( ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) )
-            // InternalOil.g:6846:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
+            // InternalOil.g:9682:2: ( ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) )
+            // InternalOil.g:9683:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
             {
-            // InternalOil.g:6846:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
-            int alt181=2;
-            int LA181_0 = input.LA(1);
+            // InternalOil.g:9683:2: ( (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
+            int alt202=2;
+            int LA202_0 = input.LA(1);
 
-            if ( (LA181_0==72) ) {
-                alt181=1;
+            if ( (LA202_0==68) ) {
+                alt202=1;
             }
-            else if ( (LA181_0==74) ) {
-                alt181=2;
+            else if ( (LA202_0==69) ) {
+                alt202=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 181, 0, input);
+                    new NoViableAltException("", 202, 0, input);
 
                 throw nvae;
             }
-            switch (alt181) {
+            switch (alt202) {
                 case 1 :
-                    // InternalOil.g:6847:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
+                    // InternalOil.g:9684:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
                     {
-                    // InternalOil.g:6847:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
-                    // InternalOil.g:6848:4: otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}'
+                    // InternalOil.g:9684:3: (otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
+                    // InternalOil.g:9685:4: otherlv_0= 'ACTIVATETASK' otherlv_1= '{' ( (lv_activatetask_2_0= ruleActivateTask ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}'
                     {
-                    otherlv_0=(Token)match(input,72,FOLLOW_12); 
+                    otherlv_0=(Token)match(input,68,FOLLOW_12); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getSchduleActionAttributeAccess().getACTIVATETASKKeyword_0_0());
                     			
-                    otherlv_1=(Token)match(input,22,FOLLOW_77); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_68); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getSchduleActionAttributeAccess().getLeftCurlyBracketKeyword_0_1());
                     			
-                    // InternalOil.g:6856:4: ( (lv_activatetask_2_0= ruleActivateTask ) )
-                    // InternalOil.g:6857:5: (lv_activatetask_2_0= ruleActivateTask )
+                    // InternalOil.g:9693:4: ( (lv_activatetask_2_0= ruleActivateTask ) )
+                    // InternalOil.g:9694:5: (lv_activatetask_2_0= ruleActivateTask )
                     {
-                    // InternalOil.g:6857:5: (lv_activatetask_2_0= ruleActivateTask )
-                    // InternalOil.g:6858:6: lv_activatetask_2_0= ruleActivateTask
+                    // InternalOil.g:9694:5: (lv_activatetask_2_0= ruleActivateTask )
+                    // InternalOil.g:9695:6: lv_activatetask_2_0= ruleActivateTask
                     {
 
                     						newCompositeNode(grammarAccess.getSchduleActionAttributeAccess().getActivatetaskActivateTaskEnumRuleCall_0_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_activatetask_2_0=ruleActivateTask();
 
                     state._fsp--;
@@ -17256,16 +24000,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6875:4: (otherlv_3= '=' )?
-                    int alt177=2;
-                    int LA177_0 = input.LA(1);
+                    // InternalOil.g:9712:4: (otherlv_3= '=' )?
+                    int alt198=2;
+                    int LA198_0 = input.LA(1);
 
-                    if ( (LA177_0==18) ) {
-                        alt177=1;
+                    if ( (LA198_0==18) ) {
+                        alt198=1;
                     }
-                    switch (alt177) {
+                    switch (alt198) {
                         case 1 :
-                            // InternalOil.g:6876:5: otherlv_3= '='
+                            // InternalOil.g:9713:5: otherlv_3= '='
                             {
                             otherlv_3=(Token)match(input,18,FOLLOW_29); 
 
@@ -17277,11 +24021,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6881:4: ( (lv_value_4_0= ruleAttributeValue ) )
-                    // InternalOil.g:6882:5: (lv_value_4_0= ruleAttributeValue )
+                    // InternalOil.g:9718:4: ( (lv_value_4_0= ruleAttributeValue ) )
+                    // InternalOil.g:9719:5: (lv_value_4_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:6882:5: (lv_value_4_0= ruleAttributeValue )
-                    // InternalOil.g:6883:6: lv_value_4_0= ruleAttributeValue
+                    // InternalOil.g:9719:5: (lv_value_4_0= ruleAttributeValue )
+                    // InternalOil.g:9720:6: lv_value_4_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getSchduleActionAttributeAccess().getValueAttributeValueParserRuleCall_0_4_0());
@@ -17308,19 +24052,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6900:4: ( (lv_description_5_0= ruleEString ) )?
-                    int alt178=2;
-                    int LA178_0 = input.LA(1);
+                    // InternalOil.g:9737:4: ( (lv_description_5_0= ruleEString ) )?
+                    int alt199=2;
+                    int LA199_0 = input.LA(1);
 
-                    if ( (LA178_0==RULE_STRING) ) {
-                        alt178=1;
+                    if ( (LA199_0==RULE_STRING) ) {
+                        alt199=1;
                     }
-                    switch (alt178) {
+                    switch (alt199) {
                         case 1 :
-                            // InternalOil.g:6901:5: (lv_description_5_0= ruleEString )
+                            // InternalOil.g:9738:5: (lv_description_5_0= ruleEString )
                             {
-                            // InternalOil.g:6901:5: (lv_description_5_0= ruleEString )
-                            // InternalOil.g:6902:6: lv_description_5_0= ruleEString
+                            // InternalOil.g:9738:5: (lv_description_5_0= ruleEString )
+                            // InternalOil.g:9739:6: lv_description_5_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getSchduleActionAttributeAccess().getDescriptionEStringParserRuleCall_0_5_0());
@@ -17365,29 +24109,29 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:6929:3: (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
+                    // InternalOil.g:9766:3: (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
                     {
-                    // InternalOil.g:6929:3: (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
-                    // InternalOil.g:6930:4: otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}'
+                    // InternalOil.g:9766:3: (otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
+                    // InternalOil.g:9767:4: otherlv_8= 'SETEVENT' otherlv_9= '{' ( (lv_setevent_10_0= ruleSetevent ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}'
                     {
-                    otherlv_8=(Token)match(input,74,FOLLOW_12); 
+                    otherlv_8=(Token)match(input,69,FOLLOW_12); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getSchduleActionAttributeAccess().getSETEVENTKeyword_1_0());
                     			
-                    otherlv_9=(Token)match(input,22,FOLLOW_79); 
+                    otherlv_9=(Token)match(input,22,FOLLOW_69); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getSchduleActionAttributeAccess().getLeftCurlyBracketKeyword_1_1());
                     			
-                    // InternalOil.g:6938:4: ( (lv_setevent_10_0= ruleSetevent ) )
-                    // InternalOil.g:6939:5: (lv_setevent_10_0= ruleSetevent )
+                    // InternalOil.g:9775:4: ( (lv_setevent_10_0= ruleSetevent ) )
+                    // InternalOil.g:9776:5: (lv_setevent_10_0= ruleSetevent )
                     {
-                    // InternalOil.g:6939:5: (lv_setevent_10_0= ruleSetevent )
-                    // InternalOil.g:6940:6: lv_setevent_10_0= ruleSetevent
+                    // InternalOil.g:9776:5: (lv_setevent_10_0= ruleSetevent )
+                    // InternalOil.g:9777:6: lv_setevent_10_0= ruleSetevent
                     {
 
                     						newCompositeNode(grammarAccess.getSchduleActionAttributeAccess().getSeteventSeteventEnumRuleCall_1_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_setevent_10_0=ruleSetevent();
 
                     state._fsp--;
@@ -17409,16 +24153,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6957:4: (otherlv_11= '=' )?
-                    int alt179=2;
-                    int LA179_0 = input.LA(1);
+                    // InternalOil.g:9794:4: (otherlv_11= '=' )?
+                    int alt200=2;
+                    int LA200_0 = input.LA(1);
 
-                    if ( (LA179_0==18) ) {
-                        alt179=1;
+                    if ( (LA200_0==18) ) {
+                        alt200=1;
                     }
-                    switch (alt179) {
+                    switch (alt200) {
                         case 1 :
-                            // InternalOil.g:6958:5: otherlv_11= '='
+                            // InternalOil.g:9795:5: otherlv_11= '='
                             {
                             otherlv_11=(Token)match(input,18,FOLLOW_29); 
 
@@ -17430,11 +24174,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6963:4: ( (lv_value_12_0= ruleAttributeValue ) )
-                    // InternalOil.g:6964:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:9800:4: ( (lv_value_12_0= ruleAttributeValue ) )
+                    // InternalOil.g:9801:5: (lv_value_12_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:6964:5: (lv_value_12_0= ruleAttributeValue )
-                    // InternalOil.g:6965:6: lv_value_12_0= ruleAttributeValue
+                    // InternalOil.g:9801:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:9802:6: lv_value_12_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getSchduleActionAttributeAccess().getValueAttributeValueParserRuleCall_1_4_0());
@@ -17461,19 +24205,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:6982:4: ( (lv_description_13_0= ruleEString ) )?
-                    int alt180=2;
-                    int LA180_0 = input.LA(1);
+                    // InternalOil.g:9819:4: ( (lv_description_13_0= ruleEString ) )?
+                    int alt201=2;
+                    int LA201_0 = input.LA(1);
 
-                    if ( (LA180_0==RULE_STRING) ) {
-                        alt180=1;
+                    if ( (LA201_0==RULE_STRING) ) {
+                        alt201=1;
                     }
-                    switch (alt180) {
+                    switch (alt201) {
                         case 1 :
-                            // InternalOil.g:6983:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:9820:5: (lv_description_13_0= ruleEString )
                             {
-                            // InternalOil.g:6983:5: (lv_description_13_0= ruleEString )
-                            // InternalOil.g:6984:6: lv_description_13_0= ruleEString
+                            // InternalOil.g:9820:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:9821:6: lv_description_13_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getSchduleActionAttributeAccess().getDescriptionEStringParserRuleCall_1_5_0());
@@ -17540,7 +24284,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIocRule"
-    // InternalOil.g:7014:1: entryRuleIocRule returns [EObject current=null] : iv_ruleIocRule= ruleIocRule EOF ;
+    // InternalOil.g:9851:1: entryRuleIocRule returns [EObject current=null] : iv_ruleIocRule= ruleIocRule EOF ;
     public final EObject entryRuleIocRule() throws RecognitionException {
         EObject current = null;
 
@@ -17548,8 +24292,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7014:48: (iv_ruleIocRule= ruleIocRule EOF )
-            // InternalOil.g:7015:2: iv_ruleIocRule= ruleIocRule EOF
+            // InternalOil.g:9851:48: (iv_ruleIocRule= ruleIocRule EOF )
+            // InternalOil.g:9852:2: iv_ruleIocRule= ruleIocRule EOF
             {
              newCompositeNode(grammarAccess.getIocRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -17576,7 +24320,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocRule"
-    // InternalOil.g:7021:1: ruleIocRule returns [EObject current=null] : (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) ;
+    // InternalOil.g:9858:1: ruleIocRule returns [EObject current=null] : (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) ;
     public final EObject ruleIocRule() throws RecognitionException {
         EObject current = null;
 
@@ -17593,21 +24337,21 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7027:2: ( (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) )
-            // InternalOil.g:7028:2: (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            // InternalOil.g:9864:2: ( (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' ) )
+            // InternalOil.g:9865:2: (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
             {
-            // InternalOil.g:7028:2: (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
-            // InternalOil.g:7029:3: otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';'
+            // InternalOil.g:9865:2: (otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';' )
+            // InternalOil.g:9866:3: otherlv_0= 'IOC' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' ) otherlv_5= ';'
             {
             otherlv_0=(Token)match(input,53,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIocRuleAccess().getIOCKeyword_0());
             		
-            // InternalOil.g:7033:3: ( (lv_name_1_0= ruleName ) )
-            // InternalOil.g:7034:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:9870:3: ( (lv_name_1_0= ruleName ) )
+            // InternalOil.g:9871:4: (lv_name_1_0= ruleName )
             {
-            // InternalOil.g:7034:4: (lv_name_1_0= ruleName )
-            // InternalOil.g:7035:5: lv_name_1_0= ruleName
+            // InternalOil.g:9871:4: (lv_name_1_0= ruleName )
+            // InternalOil.g:9872:5: lv_name_1_0= ruleName
             {
 
             					newCompositeNode(grammarAccess.getIocRuleAccess().getNameNameParserRuleCall_1_0());
@@ -17634,35 +24378,35 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7052:3: (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' )
-            // InternalOil.g:7053:4: otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}'
+            // InternalOil.g:9889:3: (otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}' )
+            // InternalOil.g:9890:4: otherlv_2= '{' ( (lv_ioclist_3_0= ruleIocAttribute ) )* otherlv_4= '}'
             {
-            otherlv_2=(Token)match(input,22,FOLLOW_89); 
+            otherlv_2=(Token)match(input,22,FOLLOW_111); 
 
             				newLeafNode(otherlv_2, grammarAccess.getIocRuleAccess().getLeftCurlyBracketKeyword_2_0());
             			
-            // InternalOil.g:7057:4: ( (lv_ioclist_3_0= ruleIocAttribute ) )*
-            loop182:
+            // InternalOil.g:9894:4: ( (lv_ioclist_3_0= ruleIocAttribute ) )*
+            loop203:
             do {
-                int alt182=2;
-                int LA182_0 = input.LA(1);
+                int alt203=2;
+                int LA203_0 = input.LA(1);
 
-                if ( ((LA182_0>=88 && LA182_0<=91)) ) {
-                    alt182=1;
+                if ( ((LA203_0>=119 && LA203_0<=122)) ) {
+                    alt203=1;
                 }
 
 
-                switch (alt182) {
+                switch (alt203) {
             	case 1 :
-            	    // InternalOil.g:7058:5: (lv_ioclist_3_0= ruleIocAttribute )
+            	    // InternalOil.g:9895:5: (lv_ioclist_3_0= ruleIocAttribute )
             	    {
-            	    // InternalOil.g:7058:5: (lv_ioclist_3_0= ruleIocAttribute )
-            	    // InternalOil.g:7059:6: lv_ioclist_3_0= ruleIocAttribute
+            	    // InternalOil.g:9895:5: (lv_ioclist_3_0= ruleIocAttribute )
+            	    // InternalOil.g:9896:6: lv_ioclist_3_0= ruleIocAttribute
             	    {
 
             	    						newCompositeNode(grammarAccess.getIocRuleAccess().getIoclistIocAttributeParserRuleCall_2_1_0());
             	    					
-            	    pushFollow(FOLLOW_89);
+            	    pushFollow(FOLLOW_111);
             	    lv_ioclist_3_0=ruleIocAttribute();
 
             	    state._fsp--;
@@ -17686,7 +24430,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop182;
+            	    break loop203;
                 }
             } while (true);
 
@@ -17724,7 +24468,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIocAttribute"
-    // InternalOil.g:7089:1: entryRuleIocAttribute returns [EObject current=null] : iv_ruleIocAttribute= ruleIocAttribute EOF ;
+    // InternalOil.g:9926:1: entryRuleIocAttribute returns [EObject current=null] : iv_ruleIocAttribute= ruleIocAttribute EOF ;
     public final EObject entryRuleIocAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -17732,8 +24476,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7089:53: (iv_ruleIocAttribute= ruleIocAttribute EOF )
-            // InternalOil.g:7090:2: iv_ruleIocAttribute= ruleIocAttribute EOF
+            // InternalOil.g:9926:53: (iv_ruleIocAttribute= ruleIocAttribute EOF )
+            // InternalOil.g:9927:2: iv_ruleIocAttribute= ruleIocAttribute EOF
             {
              newCompositeNode(grammarAccess.getIocAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -17760,7 +24504,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocAttribute"
-    // InternalOil.g:7096:1: ruleIocAttribute returns [EObject current=null] : ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) ) ;
+    // InternalOil.g:9933:1: ruleIocAttribute returns [EObject current=null] : ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) ) ;
     public final EObject ruleIocAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -17800,55 +24544,55 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7102:2: ( ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) ) )
-            // InternalOil.g:7103:2: ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) )
+            // InternalOil.g:9939:2: ( ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) ) )
+            // InternalOil.g:9940:2: ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) )
             {
-            // InternalOil.g:7103:2: ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) )
-            int alt188=4;
+            // InternalOil.g:9940:2: ( (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' ) | (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' ) | (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' ) | (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' ) )
+            int alt209=4;
             switch ( input.LA(1) ) {
-            case 88:
+            case 119:
                 {
-                alt188=1;
+                alt209=1;
                 }
                 break;
-            case 89:
+            case 120:
                 {
-                alt188=2;
+                alt209=2;
                 }
                 break;
-            case 90:
+            case 121:
                 {
-                alt188=3;
+                alt209=3;
                 }
                 break;
-            case 91:
+            case 122:
                 {
-                alt188=4;
+                alt209=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 188, 0, input);
+                    new NoViableAltException("", 209, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt188) {
+            switch (alt209) {
                 case 1 :
-                    // InternalOil.g:7104:3: (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' )
+                    // InternalOil.g:9941:3: (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' )
                     {
-                    // InternalOil.g:7104:3: (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' )
-                    // InternalOil.g:7105:4: otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';'
+                    // InternalOil.g:9941:3: (otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';' )
+                    // InternalOil.g:9942:4: otherlv_0= 'DATATYPENAME' ( (lv_name_1_0= ruleName ) ) (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' ) otherlv_5= ';'
                     {
-                    otherlv_0=(Token)match(input,88,FOLLOW_11); 
+                    otherlv_0=(Token)match(input,119,FOLLOW_11); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getIocAttributeAccess().getDATATYPENAMEKeyword_0_0());
                     			
-                    // InternalOil.g:7109:4: ( (lv_name_1_0= ruleName ) )
-                    // InternalOil.g:7110:5: (lv_name_1_0= ruleName )
+                    // InternalOil.g:9946:4: ( (lv_name_1_0= ruleName ) )
+                    // InternalOil.g:9947:5: (lv_name_1_0= ruleName )
                     {
-                    // InternalOil.g:7110:5: (lv_name_1_0= ruleName )
-                    // InternalOil.g:7111:6: lv_name_1_0= ruleName
+                    // InternalOil.g:9947:5: (lv_name_1_0= ruleName )
+                    // InternalOil.g:9948:6: lv_name_1_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getIocAttributeAccess().getNameNameParserRuleCall_0_1_0());
@@ -17875,35 +24619,35 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7128:4: (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' )
-                    // InternalOil.g:7129:5: otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}'
+                    // InternalOil.g:9965:4: (otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}' )
+                    // InternalOil.g:9966:5: otherlv_2= '{' ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )* otherlv_4= '}'
                     {
-                    otherlv_2=(Token)match(input,22,FOLLOW_90); 
+                    otherlv_2=(Token)match(input,22,FOLLOW_112); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getIocAttributeAccess().getLeftCurlyBracketKeyword_0_2_0());
                     				
-                    // InternalOil.g:7133:5: ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )*
-                    loop183:
+                    // InternalOil.g:9970:5: ( (lv_datatypeList_3_0= ruleIocDataTypeAttr ) )*
+                    loop204:
                     do {
-                        int alt183=2;
-                        int LA183_0 = input.LA(1);
+                        int alt204=2;
+                        int LA204_0 = input.LA(1);
 
-                        if ( (LA183_0==92) ) {
-                            alt183=1;
+                        if ( (LA204_0==123) ) {
+                            alt204=1;
                         }
 
 
-                        switch (alt183) {
+                        switch (alt204) {
                     	case 1 :
-                    	    // InternalOil.g:7134:6: (lv_datatypeList_3_0= ruleIocDataTypeAttr )
+                    	    // InternalOil.g:9971:6: (lv_datatypeList_3_0= ruleIocDataTypeAttr )
                     	    {
-                    	    // InternalOil.g:7134:6: (lv_datatypeList_3_0= ruleIocDataTypeAttr )
-                    	    // InternalOil.g:7135:7: lv_datatypeList_3_0= ruleIocDataTypeAttr
+                    	    // InternalOil.g:9971:6: (lv_datatypeList_3_0= ruleIocDataTypeAttr )
+                    	    // InternalOil.g:9972:7: lv_datatypeList_3_0= ruleIocDataTypeAttr
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getIocAttributeAccess().getDatatypeListIocDataTypeAttrParserRuleCall_0_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_90);
+                    	    pushFollow(FOLLOW_112);
                     	    lv_datatypeList_3_0=ruleIocDataTypeAttr();
 
                     	    state._fsp--;
@@ -17927,7 +24671,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop183;
+                    	    break loop204;
                         }
                     } while (true);
 
@@ -17949,27 +24693,27 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:7163:3: (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' )
+                    // InternalOil.g:10000:3: (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' )
                     {
-                    // InternalOil.g:7163:3: (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' )
-                    // InternalOil.g:7164:4: otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';'
+                    // InternalOil.g:10000:3: (otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';' )
+                    // InternalOil.g:10001:4: otherlv_6= 'SEMANTICS' (otherlv_7= '=' )? ( (lv_iocsemantics_8_0= ruleIocSemantics ) ) ( (lv_description_9_0= ruleEString ) )? otherlv_10= ';'
                     {
-                    otherlv_6=(Token)match(input,89,FOLLOW_91); 
+                    otherlv_6=(Token)match(input,120,FOLLOW_113); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getIocAttributeAccess().getSEMANTICSKeyword_1_0());
                     			
-                    // InternalOil.g:7168:4: (otherlv_7= '=' )?
-                    int alt184=2;
-                    int LA184_0 = input.LA(1);
+                    // InternalOil.g:10005:4: (otherlv_7= '=' )?
+                    int alt205=2;
+                    int LA205_0 = input.LA(1);
 
-                    if ( (LA184_0==18) ) {
-                        alt184=1;
+                    if ( (LA205_0==18) ) {
+                        alt205=1;
                     }
-                    switch (alt184) {
+                    switch (alt205) {
                         case 1 :
-                            // InternalOil.g:7169:5: otherlv_7= '='
+                            // InternalOil.g:10006:5: otherlv_7= '='
                             {
-                            otherlv_7=(Token)match(input,18,FOLLOW_91); 
+                            otherlv_7=(Token)match(input,18,FOLLOW_113); 
 
                             					newLeafNode(otherlv_7, grammarAccess.getIocAttributeAccess().getEqualsSignKeyword_1_1());
                             				
@@ -17979,11 +24723,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7174:4: ( (lv_iocsemantics_8_0= ruleIocSemantics ) )
-                    // InternalOil.g:7175:5: (lv_iocsemantics_8_0= ruleIocSemantics )
+                    // InternalOil.g:10011:4: ( (lv_iocsemantics_8_0= ruleIocSemantics ) )
+                    // InternalOil.g:10012:5: (lv_iocsemantics_8_0= ruleIocSemantics )
                     {
-                    // InternalOil.g:7175:5: (lv_iocsemantics_8_0= ruleIocSemantics )
-                    // InternalOil.g:7176:6: lv_iocsemantics_8_0= ruleIocSemantics
+                    // InternalOil.g:10012:5: (lv_iocsemantics_8_0= ruleIocSemantics )
+                    // InternalOil.g:10013:6: lv_iocsemantics_8_0= ruleIocSemantics
                     {
 
                     						newCompositeNode(grammarAccess.getIocAttributeAccess().getIocsemanticsIocSemanticsParserRuleCall_1_2_0());
@@ -18010,19 +24754,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7193:4: ( (lv_description_9_0= ruleEString ) )?
-                    int alt185=2;
-                    int LA185_0 = input.LA(1);
+                    // InternalOil.g:10030:4: ( (lv_description_9_0= ruleEString ) )?
+                    int alt206=2;
+                    int LA206_0 = input.LA(1);
 
-                    if ( (LA185_0==RULE_STRING) ) {
-                        alt185=1;
+                    if ( (LA206_0==RULE_STRING) ) {
+                        alt206=1;
                     }
-                    switch (alt185) {
+                    switch (alt206) {
                         case 1 :
-                            // InternalOil.g:7194:5: (lv_description_9_0= ruleEString )
+                            // InternalOil.g:10031:5: (lv_description_9_0= ruleEString )
                             {
-                            // InternalOil.g:7194:5: (lv_description_9_0= ruleEString )
-                            // InternalOil.g:7195:6: lv_description_9_0= ruleEString
+                            // InternalOil.g:10031:5: (lv_description_9_0= ruleEString )
+                            // InternalOil.g:10032:6: lv_description_9_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getIocAttributeAccess().getDescriptionEStringParserRuleCall_1_3_0());
@@ -18063,20 +24807,20 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:7218:3: (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' )
+                    // InternalOil.g:10055:3: (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' )
                     {
-                    // InternalOil.g:7218:3: (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' )
-                    // InternalOil.g:7219:4: otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';'
+                    // InternalOil.g:10055:3: (otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';' )
+                    // InternalOil.g:10056:4: otherlv_11= 'RECEIVER' ( (lv_name_12_0= ruleName ) ) (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' ) otherlv_16= ';'
                     {
-                    otherlv_11=(Token)match(input,90,FOLLOW_11); 
+                    otherlv_11=(Token)match(input,121,FOLLOW_11); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getIocAttributeAccess().getRECEIVERKeyword_2_0());
                     			
-                    // InternalOil.g:7223:4: ( (lv_name_12_0= ruleName ) )
-                    // InternalOil.g:7224:5: (lv_name_12_0= ruleName )
+                    // InternalOil.g:10060:4: ( (lv_name_12_0= ruleName ) )
+                    // InternalOil.g:10061:5: (lv_name_12_0= ruleName )
                     {
-                    // InternalOil.g:7224:5: (lv_name_12_0= ruleName )
-                    // InternalOil.g:7225:6: lv_name_12_0= ruleName
+                    // InternalOil.g:10061:5: (lv_name_12_0= ruleName )
+                    // InternalOil.g:10062:6: lv_name_12_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getIocAttributeAccess().getNameNameParserRuleCall_2_1_0());
@@ -18103,35 +24847,35 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7242:4: (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' )
-                    // InternalOil.g:7243:5: otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}'
+                    // InternalOil.g:10079:4: (otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}' )
+                    // InternalOil.g:10080:5: otherlv_13= '{' ( (lv_receiverList_14_0= ruleIocReceiver ) )* otherlv_15= '}'
                     {
-                    otherlv_13=(Token)match(input,22,FOLLOW_92); 
+                    otherlv_13=(Token)match(input,22,FOLLOW_114); 
 
                     					newLeafNode(otherlv_13, grammarAccess.getIocAttributeAccess().getLeftCurlyBracketKeyword_2_2_0());
                     				
-                    // InternalOil.g:7247:5: ( (lv_receiverList_14_0= ruleIocReceiver ) )*
-                    loop186:
+                    // InternalOil.g:10084:5: ( (lv_receiverList_14_0= ruleIocReceiver ) )*
+                    loop207:
                     do {
-                        int alt186=2;
-                        int LA186_0 = input.LA(1);
+                        int alt207=2;
+                        int LA207_0 = input.LA(1);
 
-                        if ( (LA186_0==71||(LA186_0>=163 && LA186_0<=164)) ) {
-                            alt186=1;
+                        if ( (LA207_0==105||(LA207_0>=212 && LA207_0<=213)) ) {
+                            alt207=1;
                         }
 
 
-                        switch (alt186) {
+                        switch (alt207) {
                     	case 1 :
-                    	    // InternalOil.g:7248:6: (lv_receiverList_14_0= ruleIocReceiver )
+                    	    // InternalOil.g:10085:6: (lv_receiverList_14_0= ruleIocReceiver )
                     	    {
-                    	    // InternalOil.g:7248:6: (lv_receiverList_14_0= ruleIocReceiver )
-                    	    // InternalOil.g:7249:7: lv_receiverList_14_0= ruleIocReceiver
+                    	    // InternalOil.g:10085:6: (lv_receiverList_14_0= ruleIocReceiver )
+                    	    // InternalOil.g:10086:7: lv_receiverList_14_0= ruleIocReceiver
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getIocAttributeAccess().getReceiverListIocReceiverParserRuleCall_2_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_92);
+                    	    pushFollow(FOLLOW_114);
                     	    lv_receiverList_14_0=ruleIocReceiver();
 
                     	    state._fsp--;
@@ -18155,7 +24899,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop186;
+                    	    break loop207;
                         }
                     } while (true);
 
@@ -18177,20 +24921,20 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:7277:3: (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' )
+                    // InternalOil.g:10114:3: (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' )
                     {
-                    // InternalOil.g:7277:3: (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' )
-                    // InternalOil.g:7278:4: otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';'
+                    // InternalOil.g:10114:3: (otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';' )
+                    // InternalOil.g:10115:4: otherlv_17= 'SENDER' ( (lv_name_18_0= ruleName ) ) (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' ) otherlv_22= ';'
                     {
-                    otherlv_17=(Token)match(input,91,FOLLOW_11); 
+                    otherlv_17=(Token)match(input,122,FOLLOW_11); 
 
                     				newLeafNode(otherlv_17, grammarAccess.getIocAttributeAccess().getSENDERKeyword_3_0());
                     			
-                    // InternalOil.g:7282:4: ( (lv_name_18_0= ruleName ) )
-                    // InternalOil.g:7283:5: (lv_name_18_0= ruleName )
+                    // InternalOil.g:10119:4: ( (lv_name_18_0= ruleName ) )
+                    // InternalOil.g:10120:5: (lv_name_18_0= ruleName )
                     {
-                    // InternalOil.g:7283:5: (lv_name_18_0= ruleName )
-                    // InternalOil.g:7284:6: lv_name_18_0= ruleName
+                    // InternalOil.g:10120:5: (lv_name_18_0= ruleName )
+                    // InternalOil.g:10121:6: lv_name_18_0= ruleName
                     {
 
                     						newCompositeNode(grammarAccess.getIocAttributeAccess().getNameNameParserRuleCall_3_1_0());
@@ -18217,35 +24961,35 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7301:4: (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' )
-                    // InternalOil.g:7302:5: otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}'
+                    // InternalOil.g:10138:4: (otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}' )
+                    // InternalOil.g:10139:5: otherlv_19= '{' ( (lv_senderList_20_0= ruleIocSender ) )* otherlv_21= '}'
                     {
-                    otherlv_19=(Token)match(input,22,FOLLOW_93); 
+                    otherlv_19=(Token)match(input,22,FOLLOW_115); 
 
                     					newLeafNode(otherlv_19, grammarAccess.getIocAttributeAccess().getLeftCurlyBracketKeyword_3_2_0());
                     				
-                    // InternalOil.g:7306:5: ( (lv_senderList_20_0= ruleIocSender ) )*
-                    loop187:
+                    // InternalOil.g:10143:5: ( (lv_senderList_20_0= ruleIocSender ) )*
+                    loop208:
                     do {
-                        int alt187=2;
-                        int LA187_0 = input.LA(1);
+                        int alt208=2;
+                        int LA208_0 = input.LA(1);
 
-                        if ( ((LA187_0>=161 && LA187_0<=162)) ) {
-                            alt187=1;
+                        if ( ((LA208_0>=210 && LA208_0<=211)) ) {
+                            alt208=1;
                         }
 
 
-                        switch (alt187) {
+                        switch (alt208) {
                     	case 1 :
-                    	    // InternalOil.g:7307:6: (lv_senderList_20_0= ruleIocSender )
+                    	    // InternalOil.g:10144:6: (lv_senderList_20_0= ruleIocSender )
                     	    {
-                    	    // InternalOil.g:7307:6: (lv_senderList_20_0= ruleIocSender )
-                    	    // InternalOil.g:7308:7: lv_senderList_20_0= ruleIocSender
+                    	    // InternalOil.g:10144:6: (lv_senderList_20_0= ruleIocSender )
+                    	    // InternalOil.g:10145:7: lv_senderList_20_0= ruleIocSender
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getIocAttributeAccess().getSenderListIocSenderParserRuleCall_3_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_93);
+                    	    pushFollow(FOLLOW_115);
                     	    lv_senderList_20_0=ruleIocSender();
 
                     	    state._fsp--;
@@ -18269,7 +25013,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop187;
+                    	    break loop208;
                         }
                     } while (true);
 
@@ -18313,7 +25057,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIocSender"
-    // InternalOil.g:7339:1: entryRuleIocSender returns [EObject current=null] : iv_ruleIocSender= ruleIocSender EOF ;
+    // InternalOil.g:10176:1: entryRuleIocSender returns [EObject current=null] : iv_ruleIocSender= ruleIocSender EOF ;
     public final EObject entryRuleIocSender() throws RecognitionException {
         EObject current = null;
 
@@ -18321,8 +25065,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7339:50: (iv_ruleIocSender= ruleIocSender EOF )
-            // InternalOil.g:7340:2: iv_ruleIocSender= ruleIocSender EOF
+            // InternalOil.g:10176:50: (iv_ruleIocSender= ruleIocSender EOF )
+            // InternalOil.g:10177:2: iv_ruleIocSender= ruleIocSender EOF
             {
              newCompositeNode(grammarAccess.getIocSenderRule()); 
             pushFollow(FOLLOW_1);
@@ -18349,7 +25093,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocSender"
-    // InternalOil.g:7346:1: ruleIocSender returns [EObject current=null] : ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
+    // InternalOil.g:10183:1: ruleIocSender returns [EObject current=null] : ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
     public final EObject ruleIocSender() throws RecognitionException {
         EObject current = null;
 
@@ -18366,22 +25110,22 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7352:2: ( ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
-            // InternalOil.g:7353:2: ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:10189:2: ( ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
+            // InternalOil.g:10190:2: ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
             {
-            // InternalOil.g:7353:2: ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-            // InternalOil.g:7354:3: ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+            // InternalOil.g:10190:2: ( ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:10191:3: ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
             {
-            // InternalOil.g:7354:3: ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) )
-            // InternalOil.g:7355:4: (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec )
+            // InternalOil.g:10191:3: ( (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec ) )
+            // InternalOil.g:10192:4: (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec )
             {
-            // InternalOil.g:7355:4: (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec )
-            // InternalOil.g:7356:5: lv_enumiocsenderlist_0_0= ruleEnumIocSendRec
+            // InternalOil.g:10192:4: (lv_enumiocsenderlist_0_0= ruleEnumIocSendRec )
+            // InternalOil.g:10193:5: lv_enumiocsenderlist_0_0= ruleEnumIocSendRec
             {
 
             					newCompositeNode(grammarAccess.getIocSenderAccess().getEnumiocsenderlistEnumIocSendRecEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_66);
+            pushFollow(FOLLOW_90);
             lv_enumiocsenderlist_0_0=ruleEnumIocSendRec();
 
             state._fsp--;
@@ -18403,16 +25147,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7373:3: (otherlv_1= '=' )?
-            int alt189=2;
-            int LA189_0 = input.LA(1);
+            // InternalOil.g:10210:3: (otherlv_1= '=' )?
+            int alt210=2;
+            int LA210_0 = input.LA(1);
 
-            if ( (LA189_0==18) ) {
-                alt189=1;
+            if ( (LA210_0==18) ) {
+                alt210=1;
             }
-            switch (alt189) {
+            switch (alt210) {
                 case 1 :
-                    // InternalOil.g:7374:4: otherlv_1= '='
+                    // InternalOil.g:10211:4: otherlv_1= '='
                     {
                     otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -18424,11 +25168,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7379:3: ( (lv_value_2_0= ruleAttributeValue ) )
-            // InternalOil.g:7380:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:10216:3: ( (lv_value_2_0= ruleAttributeValue ) )
+            // InternalOil.g:10217:4: (lv_value_2_0= ruleAttributeValue )
             {
-            // InternalOil.g:7380:4: (lv_value_2_0= ruleAttributeValue )
-            // InternalOil.g:7381:5: lv_value_2_0= ruleAttributeValue
+            // InternalOil.g:10217:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:10218:5: lv_value_2_0= ruleAttributeValue
             {
 
             					newCompositeNode(grammarAccess.getIocSenderAccess().getValueAttributeValueParserRuleCall_2_0());
@@ -18455,19 +25199,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7398:3: ( (lv_description_3_0= ruleEString ) )?
-            int alt190=2;
-            int LA190_0 = input.LA(1);
+            // InternalOil.g:10235:3: ( (lv_description_3_0= ruleEString ) )?
+            int alt211=2;
+            int LA211_0 = input.LA(1);
 
-            if ( (LA190_0==RULE_STRING) ) {
-                alt190=1;
+            if ( (LA211_0==RULE_STRING) ) {
+                alt211=1;
             }
-            switch (alt190) {
+            switch (alt211) {
                 case 1 :
-                    // InternalOil.g:7399:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:10236:4: (lv_description_3_0= ruleEString )
                     {
-                    // InternalOil.g:7399:4: (lv_description_3_0= ruleEString )
-                    // InternalOil.g:7400:5: lv_description_3_0= ruleEString
+                    // InternalOil.g:10236:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:10237:5: lv_description_3_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getIocSenderAccess().getDescriptionEStringParserRuleCall_3_0());
@@ -18524,7 +25268,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIocReceiver"
-    // InternalOil.g:7425:1: entryRuleIocReceiver returns [EObject current=null] : iv_ruleIocReceiver= ruleIocReceiver EOF ;
+    // InternalOil.g:10262:1: entryRuleIocReceiver returns [EObject current=null] : iv_ruleIocReceiver= ruleIocReceiver EOF ;
     public final EObject entryRuleIocReceiver() throws RecognitionException {
         EObject current = null;
 
@@ -18532,8 +25276,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7425:52: (iv_ruleIocReceiver= ruleIocReceiver EOF )
-            // InternalOil.g:7426:2: iv_ruleIocReceiver= ruleIocReceiver EOF
+            // InternalOil.g:10262:52: (iv_ruleIocReceiver= ruleIocReceiver EOF )
+            // InternalOil.g:10263:2: iv_ruleIocReceiver= ruleIocReceiver EOF
             {
              newCompositeNode(grammarAccess.getIocReceiverRule()); 
             pushFollow(FOLLOW_1);
@@ -18560,7 +25304,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocReceiver"
-    // InternalOil.g:7432:1: ruleIocReceiver returns [EObject current=null] : ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' ) ;
+    // InternalOil.g:10269:1: ruleIocReceiver returns [EObject current=null] : ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' ) ;
     public final EObject ruleIocReceiver() throws RecognitionException {
         EObject current = null;
 
@@ -18579,22 +25323,22 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7438:2: ( ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' ) )
-            // InternalOil.g:7439:2: ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' )
+            // InternalOil.g:10275:2: ( ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' ) )
+            // InternalOil.g:10276:2: ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' )
             {
-            // InternalOil.g:7439:2: ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' )
-            // InternalOil.g:7440:3: ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';'
+            // InternalOil.g:10276:2: ( ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';' )
+            // InternalOil.g:10277:3: ( (lv_enumioclist_0_0= ruleEnumIocRec ) ) (otherlv_1= '=' )? ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) ) ( (lv_description_4_0= ruleEString ) )? otherlv_5= ';'
             {
-            // InternalOil.g:7440:3: ( (lv_enumioclist_0_0= ruleEnumIocRec ) )
-            // InternalOil.g:7441:4: (lv_enumioclist_0_0= ruleEnumIocRec )
+            // InternalOil.g:10277:3: ( (lv_enumioclist_0_0= ruleEnumIocRec ) )
+            // InternalOil.g:10278:4: (lv_enumioclist_0_0= ruleEnumIocRec )
             {
-            // InternalOil.g:7441:4: (lv_enumioclist_0_0= ruleEnumIocRec )
-            // InternalOil.g:7442:5: lv_enumioclist_0_0= ruleEnumIocRec
+            // InternalOil.g:10278:4: (lv_enumioclist_0_0= ruleEnumIocRec )
+            // InternalOil.g:10279:5: lv_enumioclist_0_0= ruleEnumIocRec
             {
 
             					newCompositeNode(grammarAccess.getIocReceiverAccess().getEnumioclistEnumIocRecEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_94);
+            pushFollow(FOLLOW_116);
             lv_enumioclist_0_0=ruleEnumIocRec();
 
             state._fsp--;
@@ -18616,18 +25360,18 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7459:3: (otherlv_1= '=' )?
-            int alt191=2;
-            int LA191_0 = input.LA(1);
+            // InternalOil.g:10296:3: (otherlv_1= '=' )?
+            int alt212=2;
+            int LA212_0 = input.LA(1);
 
-            if ( (LA191_0==18) ) {
-                alt191=1;
+            if ( (LA212_0==18) ) {
+                alt212=1;
             }
-            switch (alt191) {
+            switch (alt212) {
                 case 1 :
-                    // InternalOil.g:7460:4: otherlv_1= '='
+                    // InternalOil.g:10297:4: otherlv_1= '='
                     {
-                    otherlv_1=(Token)match(input,18,FOLLOW_94); 
+                    otherlv_1=(Token)match(input,18,FOLLOW_116); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getIocReceiverAccess().getEqualsSignKeyword_1());
                     			
@@ -18637,31 +25381,31 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7465:3: ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) )
-            int alt192=2;
-            int LA192_0 = input.LA(1);
+            // InternalOil.g:10302:3: ( ( (lv_value_2_0= ruleAttributeValue ) ) | ( (lv_recnone_3_0= ruleIocReciverNone ) ) )
+            int alt213=2;
+            int LA213_0 = input.LA(1);
 
-            if ( (LA192_0==RULE_STRING||(LA192_0>=RULE_ID && LA192_0<=RULE_T_FLOAT)||(LA192_0>=33 && LA192_0<=34)||LA192_0==95) ) {
-                alt192=1;
+            if ( (LA213_0==RULE_STRING||(LA213_0>=RULE_ID && LA213_0<=RULE_T_FLOAT)||(LA213_0>=33 && LA213_0<=34)||LA213_0==126) ) {
+                alt213=1;
             }
-            else if ( (LA192_0==79) ) {
-                alt192=2;
+            else if ( (LA213_0==67) ) {
+                alt213=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 192, 0, input);
+                    new NoViableAltException("", 213, 0, input);
 
                 throw nvae;
             }
-            switch (alt192) {
+            switch (alt213) {
                 case 1 :
-                    // InternalOil.g:7466:4: ( (lv_value_2_0= ruleAttributeValue ) )
+                    // InternalOil.g:10303:4: ( (lv_value_2_0= ruleAttributeValue ) )
                     {
-                    // InternalOil.g:7466:4: ( (lv_value_2_0= ruleAttributeValue ) )
-                    // InternalOil.g:7467:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:10303:4: ( (lv_value_2_0= ruleAttributeValue ) )
+                    // InternalOil.g:10304:5: (lv_value_2_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:7467:5: (lv_value_2_0= ruleAttributeValue )
-                    // InternalOil.g:7468:6: lv_value_2_0= ruleAttributeValue
+                    // InternalOil.g:10304:5: (lv_value_2_0= ruleAttributeValue )
+                    // InternalOil.g:10305:6: lv_value_2_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getIocReceiverAccess().getValueAttributeValueParserRuleCall_2_0_0());
@@ -18692,13 +25436,13 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:7486:4: ( (lv_recnone_3_0= ruleIocReciverNone ) )
+                    // InternalOil.g:10323:4: ( (lv_recnone_3_0= ruleIocReciverNone ) )
                     {
-                    // InternalOil.g:7486:4: ( (lv_recnone_3_0= ruleIocReciverNone ) )
-                    // InternalOil.g:7487:5: (lv_recnone_3_0= ruleIocReciverNone )
+                    // InternalOil.g:10323:4: ( (lv_recnone_3_0= ruleIocReciverNone ) )
+                    // InternalOil.g:10324:5: (lv_recnone_3_0= ruleIocReciverNone )
                     {
-                    // InternalOil.g:7487:5: (lv_recnone_3_0= ruleIocReciverNone )
-                    // InternalOil.g:7488:6: lv_recnone_3_0= ruleIocReciverNone
+                    // InternalOil.g:10324:5: (lv_recnone_3_0= ruleIocReciverNone )
+                    // InternalOil.g:10325:6: lv_recnone_3_0= ruleIocReciverNone
                     {
 
                     						newCompositeNode(grammarAccess.getIocReceiverAccess().getRecnoneIocReciverNoneEnumRuleCall_2_1_0());
@@ -18731,19 +25475,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7506:3: ( (lv_description_4_0= ruleEString ) )?
-            int alt193=2;
-            int LA193_0 = input.LA(1);
+            // InternalOil.g:10343:3: ( (lv_description_4_0= ruleEString ) )?
+            int alt214=2;
+            int LA214_0 = input.LA(1);
 
-            if ( (LA193_0==RULE_STRING) ) {
-                alt193=1;
+            if ( (LA214_0==RULE_STRING) ) {
+                alt214=1;
             }
-            switch (alt193) {
+            switch (alt214) {
                 case 1 :
-                    // InternalOil.g:7507:4: (lv_description_4_0= ruleEString )
+                    // InternalOil.g:10344:4: (lv_description_4_0= ruleEString )
                     {
-                    // InternalOil.g:7507:4: (lv_description_4_0= ruleEString )
-                    // InternalOil.g:7508:5: lv_description_4_0= ruleEString
+                    // InternalOil.g:10344:4: (lv_description_4_0= ruleEString )
+                    // InternalOil.g:10345:5: lv_description_4_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getIocReceiverAccess().getDescriptionEStringParserRuleCall_3_0());
@@ -18800,7 +25544,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIocDataTypeAttr"
-    // InternalOil.g:7533:1: entryRuleIocDataTypeAttr returns [EObject current=null] : iv_ruleIocDataTypeAttr= ruleIocDataTypeAttr EOF ;
+    // InternalOil.g:10370:1: entryRuleIocDataTypeAttr returns [EObject current=null] : iv_ruleIocDataTypeAttr= ruleIocDataTypeAttr EOF ;
     public final EObject entryRuleIocDataTypeAttr() throws RecognitionException {
         EObject current = null;
 
@@ -18808,8 +25552,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7533:56: (iv_ruleIocDataTypeAttr= ruleIocDataTypeAttr EOF )
-            // InternalOil.g:7534:2: iv_ruleIocDataTypeAttr= ruleIocDataTypeAttr EOF
+            // InternalOil.g:10370:56: (iv_ruleIocDataTypeAttr= ruleIocDataTypeAttr EOF )
+            // InternalOil.g:10371:2: iv_ruleIocDataTypeAttr= ruleIocDataTypeAttr EOF
             {
              newCompositeNode(grammarAccess.getIocDataTypeAttrRule()); 
             pushFollow(FOLLOW_1);
@@ -18836,7 +25580,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocDataTypeAttr"
-    // InternalOil.g:7540:1: ruleIocDataTypeAttr returns [EObject current=null] : (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' ) ;
+    // InternalOil.g:10377:1: ruleIocDataTypeAttr returns [EObject current=null] : (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' ) ;
     public final EObject ruleIocDataTypeAttr() throws RecognitionException {
         EObject current = null;
 
@@ -18852,28 +25596,28 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7546:2: ( (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' ) )
-            // InternalOil.g:7547:2: (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' )
+            // InternalOil.g:10383:2: ( (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' ) )
+            // InternalOil.g:10384:2: (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' )
             {
-            // InternalOil.g:7547:2: (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' )
-            // InternalOil.g:7548:3: otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';'
+            // InternalOil.g:10384:2: (otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';' )
+            // InternalOil.g:10385:3: otherlv_0= 'DATATYPEPROPERTY' (otherlv_1= '=' )? ( (lv_iocdatatype_2_0= ruleIocDataType ) ) otherlv_3= ';' otherlv_4= '}' otherlv_5= ';'
             {
-            otherlv_0=(Token)match(input,92,FOLLOW_95); 
+            otherlv_0=(Token)match(input,123,FOLLOW_117); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIocDataTypeAttrAccess().getDATATYPEPROPERTYKeyword_0());
             		
-            // InternalOil.g:7552:3: (otherlv_1= '=' )?
-            int alt194=2;
-            int LA194_0 = input.LA(1);
+            // InternalOil.g:10389:3: (otherlv_1= '=' )?
+            int alt215=2;
+            int LA215_0 = input.LA(1);
 
-            if ( (LA194_0==18) ) {
-                alt194=1;
+            if ( (LA215_0==18) ) {
+                alt215=1;
             }
-            switch (alt194) {
+            switch (alt215) {
                 case 1 :
-                    // InternalOil.g:7553:4: otherlv_1= '='
+                    // InternalOil.g:10390:4: otherlv_1= '='
                     {
-                    otherlv_1=(Token)match(input,18,FOLLOW_95); 
+                    otherlv_1=(Token)match(input,18,FOLLOW_117); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getIocDataTypeAttrAccess().getEqualsSignKeyword_1());
                     			
@@ -18883,11 +25627,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7558:3: ( (lv_iocdatatype_2_0= ruleIocDataType ) )
-            // InternalOil.g:7559:4: (lv_iocdatatype_2_0= ruleIocDataType )
+            // InternalOil.g:10395:3: ( (lv_iocdatatype_2_0= ruleIocDataType ) )
+            // InternalOil.g:10396:4: (lv_iocdatatype_2_0= ruleIocDataType )
             {
-            // InternalOil.g:7559:4: (lv_iocdatatype_2_0= ruleIocDataType )
-            // InternalOil.g:7560:5: lv_iocdatatype_2_0= ruleIocDataType
+            // InternalOil.g:10396:4: (lv_iocdatatype_2_0= ruleIocDataType )
+            // InternalOil.g:10397:5: lv_iocdatatype_2_0= ruleIocDataType
             {
 
             					newCompositeNode(grammarAccess.getIocDataTypeAttrAccess().getIocdatatypeIocDataTypeEnumRuleCall_2_0());
@@ -18949,7 +25693,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIocSemantics"
-    // InternalOil.g:7593:1: entryRuleIocSemantics returns [EObject current=null] : iv_ruleIocSemantics= ruleIocSemantics EOF ;
+    // InternalOil.g:10430:1: entryRuleIocSemantics returns [EObject current=null] : iv_ruleIocSemantics= ruleIocSemantics EOF ;
     public final EObject entryRuleIocSemantics() throws RecognitionException {
         EObject current = null;
 
@@ -18957,8 +25701,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7593:53: (iv_ruleIocSemantics= ruleIocSemantics EOF )
-            // InternalOil.g:7594:2: iv_ruleIocSemantics= ruleIocSemantics EOF
+            // InternalOil.g:10430:53: (iv_ruleIocSemantics= ruleIocSemantics EOF )
+            // InternalOil.g:10431:2: iv_ruleIocSemantics= ruleIocSemantics EOF
             {
              newCompositeNode(grammarAccess.getIocSemanticsRule()); 
             pushFollow(FOLLOW_1);
@@ -18985,7 +25729,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocSemantics"
-    // InternalOil.g:7600:1: ruleIocSemantics returns [EObject current=null] : ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) ;
+    // InternalOil.g:10437:1: ruleIocSemantics returns [EObject current=null] : ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) ;
     public final EObject ruleIocSemantics() throws RecognitionException {
         EObject current = null;
 
@@ -19016,50 +25760,50 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7606:2: ( ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) )
-            // InternalOil.g:7607:2: ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
+            // InternalOil.g:10443:2: ( ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) ) )
+            // InternalOil.g:10444:2: ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
             {
-            // InternalOil.g:7607:2: ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
-            int alt199=2;
-            int LA199_0 = input.LA(1);
+            // InternalOil.g:10444:2: ( (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' ) | (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' ) )
+            int alt220=2;
+            int LA220_0 = input.LA(1);
 
-            if ( (LA199_0==93) ) {
-                alt199=1;
+            if ( (LA220_0==124) ) {
+                alt220=1;
             }
-            else if ( (LA199_0==94) ) {
-                alt199=2;
+            else if ( (LA220_0==125) ) {
+                alt220=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 199, 0, input);
+                    new NoViableAltException("", 220, 0, input);
 
                 throw nvae;
             }
-            switch (alt199) {
+            switch (alt220) {
                 case 1 :
-                    // InternalOil.g:7608:3: (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
+                    // InternalOil.g:10445:3: (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
                     {
-                    // InternalOil.g:7608:3: (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
-                    // InternalOil.g:7609:4: otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}'
+                    // InternalOil.g:10445:3: (otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}' )
+                    // InternalOil.g:10446:4: otherlv_0= 'QUEUED' otherlv_1= '{' ( (lv_iocSema_2_0= ruleIocSemanticsenum ) ) (otherlv_3= '=' )? ( (lv_value_4_0= ruleAttributeValue ) ) ( (lv_description_5_0= ruleEString ) )? otherlv_6= ';' otherlv_7= '}'
                     {
-                    otherlv_0=(Token)match(input,93,FOLLOW_12); 
+                    otherlv_0=(Token)match(input,124,FOLLOW_12); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getIocSemanticsAccess().getQUEUEDKeyword_0_0());
                     			
-                    otherlv_1=(Token)match(input,22,FOLLOW_96); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_118); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getIocSemanticsAccess().getLeftCurlyBracketKeyword_0_1());
                     			
-                    // InternalOil.g:7617:4: ( (lv_iocSema_2_0= ruleIocSemanticsenum ) )
-                    // InternalOil.g:7618:5: (lv_iocSema_2_0= ruleIocSemanticsenum )
+                    // InternalOil.g:10454:4: ( (lv_iocSema_2_0= ruleIocSemanticsenum ) )
+                    // InternalOil.g:10455:5: (lv_iocSema_2_0= ruleIocSemanticsenum )
                     {
-                    // InternalOil.g:7618:5: (lv_iocSema_2_0= ruleIocSemanticsenum )
-                    // InternalOil.g:7619:6: lv_iocSema_2_0= ruleIocSemanticsenum
+                    // InternalOil.g:10455:5: (lv_iocSema_2_0= ruleIocSemanticsenum )
+                    // InternalOil.g:10456:6: lv_iocSema_2_0= ruleIocSemanticsenum
                     {
 
                     						newCompositeNode(grammarAccess.getIocSemanticsAccess().getIocSemaIocSemanticsenumEnumRuleCall_0_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_iocSema_2_0=ruleIocSemanticsenum();
 
                     state._fsp--;
@@ -19081,16 +25825,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7636:4: (otherlv_3= '=' )?
-                    int alt195=2;
-                    int LA195_0 = input.LA(1);
+                    // InternalOil.g:10473:4: (otherlv_3= '=' )?
+                    int alt216=2;
+                    int LA216_0 = input.LA(1);
 
-                    if ( (LA195_0==18) ) {
-                        alt195=1;
+                    if ( (LA216_0==18) ) {
+                        alt216=1;
                     }
-                    switch (alt195) {
+                    switch (alt216) {
                         case 1 :
-                            // InternalOil.g:7637:5: otherlv_3= '='
+                            // InternalOil.g:10474:5: otherlv_3= '='
                             {
                             otherlv_3=(Token)match(input,18,FOLLOW_29); 
 
@@ -19102,11 +25846,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7642:4: ( (lv_value_4_0= ruleAttributeValue ) )
-                    // InternalOil.g:7643:5: (lv_value_4_0= ruleAttributeValue )
+                    // InternalOil.g:10479:4: ( (lv_value_4_0= ruleAttributeValue ) )
+                    // InternalOil.g:10480:5: (lv_value_4_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:7643:5: (lv_value_4_0= ruleAttributeValue )
-                    // InternalOil.g:7644:6: lv_value_4_0= ruleAttributeValue
+                    // InternalOil.g:10480:5: (lv_value_4_0= ruleAttributeValue )
+                    // InternalOil.g:10481:6: lv_value_4_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getIocSemanticsAccess().getValueAttributeValueParserRuleCall_0_4_0());
@@ -19133,19 +25877,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7661:4: ( (lv_description_5_0= ruleEString ) )?
-                    int alt196=2;
-                    int LA196_0 = input.LA(1);
+                    // InternalOil.g:10498:4: ( (lv_description_5_0= ruleEString ) )?
+                    int alt217=2;
+                    int LA217_0 = input.LA(1);
 
-                    if ( (LA196_0==RULE_STRING) ) {
-                        alt196=1;
+                    if ( (LA217_0==RULE_STRING) ) {
+                        alt217=1;
                     }
-                    switch (alt196) {
+                    switch (alt217) {
                         case 1 :
-                            // InternalOil.g:7662:5: (lv_description_5_0= ruleEString )
+                            // InternalOil.g:10499:5: (lv_description_5_0= ruleEString )
                             {
-                            // InternalOil.g:7662:5: (lv_description_5_0= ruleEString )
-                            // InternalOil.g:7663:6: lv_description_5_0= ruleEString
+                            // InternalOil.g:10499:5: (lv_description_5_0= ruleEString )
+                            // InternalOil.g:10500:6: lv_description_5_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getIocSemanticsAccess().getDescriptionEStringParserRuleCall_0_5_0());
@@ -19190,29 +25934,29 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:7690:3: (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
+                    // InternalOil.g:10527:3: (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
                     {
-                    // InternalOil.g:7690:3: (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
-                    // InternalOil.g:7691:4: otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}'
+                    // InternalOil.g:10527:3: (otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}' )
+                    // InternalOil.g:10528:4: otherlv_8= 'LAST_IS_BEST' otherlv_9= '{' ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) ) (otherlv_11= '=' )? ( (lv_value_12_0= ruleAttributeValue ) ) ( (lv_description_13_0= ruleEString ) )? otherlv_14= ';' otherlv_15= '}'
                     {
-                    otherlv_8=(Token)match(input,94,FOLLOW_12); 
+                    otherlv_8=(Token)match(input,125,FOLLOW_12); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getIocSemanticsAccess().getLAST_IS_BESTKeyword_1_0());
                     			
-                    otherlv_9=(Token)match(input,22,FOLLOW_97); 
+                    otherlv_9=(Token)match(input,22,FOLLOW_119); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getIocSemanticsAccess().getLeftCurlyBracketKeyword_1_1());
                     			
-                    // InternalOil.g:7699:4: ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) )
-                    // InternalOil.g:7700:5: (lv_iocSeman_10_0= ruleIocSemanticsenumm )
+                    // InternalOil.g:10536:4: ( (lv_iocSeman_10_0= ruleIocSemanticsenumm ) )
+                    // InternalOil.g:10537:5: (lv_iocSeman_10_0= ruleIocSemanticsenumm )
                     {
-                    // InternalOil.g:7700:5: (lv_iocSeman_10_0= ruleIocSemanticsenumm )
-                    // InternalOil.g:7701:6: lv_iocSeman_10_0= ruleIocSemanticsenumm
+                    // InternalOil.g:10537:5: (lv_iocSeman_10_0= ruleIocSemanticsenumm )
+                    // InternalOil.g:10538:6: lv_iocSeman_10_0= ruleIocSemanticsenumm
                     {
 
                     						newCompositeNode(grammarAccess.getIocSemanticsAccess().getIocSemanIocSemanticsenummEnumRuleCall_1_2_0());
                     					
-                    pushFollow(FOLLOW_66);
+                    pushFollow(FOLLOW_90);
                     lv_iocSeman_10_0=ruleIocSemanticsenumm();
 
                     state._fsp--;
@@ -19234,16 +25978,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7718:4: (otherlv_11= '=' )?
-                    int alt197=2;
-                    int LA197_0 = input.LA(1);
+                    // InternalOil.g:10555:4: (otherlv_11= '=' )?
+                    int alt218=2;
+                    int LA218_0 = input.LA(1);
 
-                    if ( (LA197_0==18) ) {
-                        alt197=1;
+                    if ( (LA218_0==18) ) {
+                        alt218=1;
                     }
-                    switch (alt197) {
+                    switch (alt218) {
                         case 1 :
-                            // InternalOil.g:7719:5: otherlv_11= '='
+                            // InternalOil.g:10556:5: otherlv_11= '='
                             {
                             otherlv_11=(Token)match(input,18,FOLLOW_29); 
 
@@ -19255,11 +25999,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7724:4: ( (lv_value_12_0= ruleAttributeValue ) )
-                    // InternalOil.g:7725:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:10561:4: ( (lv_value_12_0= ruleAttributeValue ) )
+                    // InternalOil.g:10562:5: (lv_value_12_0= ruleAttributeValue )
                     {
-                    // InternalOil.g:7725:5: (lv_value_12_0= ruleAttributeValue )
-                    // InternalOil.g:7726:6: lv_value_12_0= ruleAttributeValue
+                    // InternalOil.g:10562:5: (lv_value_12_0= ruleAttributeValue )
+                    // InternalOil.g:10563:6: lv_value_12_0= ruleAttributeValue
                     {
 
                     						newCompositeNode(grammarAccess.getIocSemanticsAccess().getValueAttributeValueParserRuleCall_1_4_0());
@@ -19286,19 +26030,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOil.g:7743:4: ( (lv_description_13_0= ruleEString ) )?
-                    int alt198=2;
-                    int LA198_0 = input.LA(1);
+                    // InternalOil.g:10580:4: ( (lv_description_13_0= ruleEString ) )?
+                    int alt219=2;
+                    int LA219_0 = input.LA(1);
 
-                    if ( (LA198_0==RULE_STRING) ) {
-                        alt198=1;
+                    if ( (LA219_0==RULE_STRING) ) {
+                        alt219=1;
                     }
-                    switch (alt198) {
+                    switch (alt219) {
                         case 1 :
-                            // InternalOil.g:7744:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:10581:5: (lv_description_13_0= ruleEString )
                             {
-                            // InternalOil.g:7744:5: (lv_description_13_0= ruleEString )
-                            // InternalOil.g:7745:6: lv_description_13_0= ruleEString
+                            // InternalOil.g:10581:5: (lv_description_13_0= ruleEString )
+                            // InternalOil.g:10582:6: lv_description_13_0= ruleEString
                             {
 
                             						newCompositeNode(grammarAccess.getIocSemanticsAccess().getDescriptionEStringParserRuleCall_1_5_0());
@@ -19365,7 +26109,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute"
-    // InternalOil.g:7775:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // InternalOil.g:10612:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -19373,8 +26117,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7775:50: (iv_ruleAttribute= ruleAttribute EOF )
-            // InternalOil.g:7776:2: iv_ruleAttribute= ruleAttribute EOF
+            // InternalOil.g:10612:50: (iv_ruleAttribute= ruleAttribute EOF )
+            // InternalOil.g:10613:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -19401,7 +26145,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalOil.g:7782:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
+    // InternalOil.g:10619:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -19418,22 +26162,22 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7788:2: ( ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
-            // InternalOil.g:7789:2: ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:10625:2: ( ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' ) )
+            // InternalOil.g:10626:2: ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
             {
-            // InternalOil.g:7789:2: ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
-            // InternalOil.g:7790:3: ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
+            // InternalOil.g:10626:2: ( ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';' )
+            // InternalOil.g:10627:3: ( (lv_name_0_0= ruleAttributeName ) ) (otherlv_1= '=' )? ( (lv_value_2_0= ruleAttributeValue ) ) ( (lv_description_3_0= ruleEString ) )? otherlv_4= ';'
             {
-            // InternalOil.g:7790:3: ( (lv_name_0_0= ruleAttributeName ) )
-            // InternalOil.g:7791:4: (lv_name_0_0= ruleAttributeName )
+            // InternalOil.g:10627:3: ( (lv_name_0_0= ruleAttributeName ) )
+            // InternalOil.g:10628:4: (lv_name_0_0= ruleAttributeName )
             {
-            // InternalOil.g:7791:4: (lv_name_0_0= ruleAttributeName )
-            // InternalOil.g:7792:5: lv_name_0_0= ruleAttributeName
+            // InternalOil.g:10628:4: (lv_name_0_0= ruleAttributeName )
+            // InternalOil.g:10629:5: lv_name_0_0= ruleAttributeName
             {
 
             					newCompositeNode(grammarAccess.getAttributeAccess().getNameAttributeNameParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_66);
+            pushFollow(FOLLOW_90);
             lv_name_0_0=ruleAttributeName();
 
             state._fsp--;
@@ -19455,16 +26199,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7809:3: (otherlv_1= '=' )?
-            int alt200=2;
-            int LA200_0 = input.LA(1);
+            // InternalOil.g:10646:3: (otherlv_1= '=' )?
+            int alt221=2;
+            int LA221_0 = input.LA(1);
 
-            if ( (LA200_0==18) ) {
-                alt200=1;
+            if ( (LA221_0==18) ) {
+                alt221=1;
             }
-            switch (alt200) {
+            switch (alt221) {
                 case 1 :
-                    // InternalOil.g:7810:4: otherlv_1= '='
+                    // InternalOil.g:10647:4: otherlv_1= '='
                     {
                     otherlv_1=(Token)match(input,18,FOLLOW_29); 
 
@@ -19476,11 +26220,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7815:3: ( (lv_value_2_0= ruleAttributeValue ) )
-            // InternalOil.g:7816:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:10652:3: ( (lv_value_2_0= ruleAttributeValue ) )
+            // InternalOil.g:10653:4: (lv_value_2_0= ruleAttributeValue )
             {
-            // InternalOil.g:7816:4: (lv_value_2_0= ruleAttributeValue )
-            // InternalOil.g:7817:5: lv_value_2_0= ruleAttributeValue
+            // InternalOil.g:10653:4: (lv_value_2_0= ruleAttributeValue )
+            // InternalOil.g:10654:5: lv_value_2_0= ruleAttributeValue
             {
 
             					newCompositeNode(grammarAccess.getAttributeAccess().getValueAttributeValueParserRuleCall_2_0());
@@ -19507,19 +26251,19 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:7834:3: ( (lv_description_3_0= ruleEString ) )?
-            int alt201=2;
-            int LA201_0 = input.LA(1);
+            // InternalOil.g:10671:3: ( (lv_description_3_0= ruleEString ) )?
+            int alt222=2;
+            int LA222_0 = input.LA(1);
 
-            if ( (LA201_0==RULE_STRING) ) {
-                alt201=1;
+            if ( (LA222_0==RULE_STRING) ) {
+                alt222=1;
             }
-            switch (alt201) {
+            switch (alt222) {
                 case 1 :
-                    // InternalOil.g:7835:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:10672:4: (lv_description_3_0= ruleEString )
                     {
-                    // InternalOil.g:7835:4: (lv_description_3_0= ruleEString )
-                    // InternalOil.g:7836:5: lv_description_3_0= ruleEString
+                    // InternalOil.g:10672:4: (lv_description_3_0= ruleEString )
+                    // InternalOil.g:10673:5: lv_description_3_0= ruleEString
                     {
 
                     					newCompositeNode(grammarAccess.getAttributeAccess().getDescriptionEStringParserRuleCall_3_0());
@@ -19576,7 +26320,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeName"
-    // InternalOil.g:7861:1: entryRuleAttributeName returns [EObject current=null] : iv_ruleAttributeName= ruleAttributeName EOF ;
+    // InternalOil.g:10698:1: entryRuleAttributeName returns [EObject current=null] : iv_ruleAttributeName= ruleAttributeName EOF ;
     public final EObject entryRuleAttributeName() throws RecognitionException {
         EObject current = null;
 
@@ -19584,8 +26328,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7861:54: (iv_ruleAttributeName= ruleAttributeName EOF )
-            // InternalOil.g:7862:2: iv_ruleAttributeName= ruleAttributeName EOF
+            // InternalOil.g:10698:54: (iv_ruleAttributeName= ruleAttributeName EOF )
+            // InternalOil.g:10699:2: iv_ruleAttributeName= ruleAttributeName EOF
             {
              newCompositeNode(grammarAccess.getAttributeNameRule()); 
             pushFollow(FOLLOW_1);
@@ -19612,7 +26356,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeName"
-    // InternalOil.g:7868:1: ruleAttributeName returns [EObject current=null] : ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) ) ;
+    // InternalOil.g:10705:1: ruleAttributeName returns [EObject current=null] : ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) ) ;
     public final EObject ruleAttributeName() throws RecognitionException {
         EObject current = null;
 
@@ -19625,34 +26369,34 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7874:2: ( ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) ) )
-            // InternalOil.g:7875:2: ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) )
+            // InternalOil.g:10711:2: ( ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) ) )
+            // InternalOil.g:10712:2: ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) )
             {
-            // InternalOil.g:7875:2: ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) )
-            // InternalOil.g:7876:3: ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) )
+            // InternalOil.g:10712:2: ( ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) ) )
+            // InternalOil.g:10713:3: ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) )
             {
-            // InternalOil.g:7876:3: ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) )
-            // InternalOil.g:7877:4: (lv_value_0_1= ruleName | lv_value_0_2= ruleObject )
+            // InternalOil.g:10713:3: ( (lv_value_0_1= ruleName | lv_value_0_2= ruleObject ) )
+            // InternalOil.g:10714:4: (lv_value_0_1= ruleName | lv_value_0_2= ruleObject )
             {
-            // InternalOil.g:7877:4: (lv_value_0_1= ruleName | lv_value_0_2= ruleObject )
-            int alt202=2;
-            int LA202_0 = input.LA(1);
+            // InternalOil.g:10714:4: (lv_value_0_1= ruleName | lv_value_0_2= ruleObject )
+            int alt223=2;
+            int LA223_0 = input.LA(1);
 
-            if ( (LA202_0==RULE_ID) ) {
-                alt202=1;
+            if ( (LA223_0==RULE_ID) ) {
+                alt223=1;
             }
-            else if ( (LA202_0==24||LA202_0==26||LA202_0==29||LA202_0==31||LA202_0==38||(LA202_0>=41 && LA202_0<=54)) ) {
-                alt202=2;
+            else if ( (LA223_0==24||LA223_0==26||LA223_0==29||LA223_0==31||LA223_0==38||(LA223_0>=41 && LA223_0<=54)) ) {
+                alt223=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 202, 0, input);
+                    new NoViableAltException("", 223, 0, input);
 
                 throw nvae;
             }
-            switch (alt202) {
+            switch (alt223) {
                 case 1 :
-                    // InternalOil.g:7878:5: lv_value_0_1= ruleName
+                    // InternalOil.g:10715:5: lv_value_0_1= ruleName
                     {
 
                     					newCompositeNode(grammarAccess.getAttributeNameAccess().getValueNameParserRuleCall_0_0());
@@ -19677,7 +26421,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:7894:5: lv_value_0_2= ruleObject
+                    // InternalOil.g:10731:5: lv_value_0_2= ruleObject
                     {
 
                     					newCompositeNode(grammarAccess.getAttributeNameAccess().getValueObjectParserRuleCall_0_1());
@@ -19730,7 +26474,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeValue"
-    // InternalOil.g:7915:1: entryRuleAttributeValue returns [EObject current=null] : iv_ruleAttributeValue= ruleAttributeValue EOF ;
+    // InternalOil.g:10752:1: entryRuleAttributeValue returns [EObject current=null] : iv_ruleAttributeValue= ruleAttributeValue EOF ;
     public final EObject entryRuleAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -19738,8 +26482,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7915:55: (iv_ruleAttributeValue= ruleAttributeValue EOF )
-            // InternalOil.g:7916:2: iv_ruleAttributeValue= ruleAttributeValue EOF
+            // InternalOil.g:10752:55: (iv_ruleAttributeValue= ruleAttributeValue EOF )
+            // InternalOil.g:10753:2: iv_ruleAttributeValue= ruleAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getAttributeValueRule()); 
             pushFollow(FOLLOW_1);
@@ -19766,7 +26510,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeValue"
-    // InternalOil.g:7922:1: ruleAttributeValue returns [EObject current=null] : (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue ) ;
+    // InternalOil.g:10759:1: ruleAttributeValue returns [EObject current=null] : (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue ) ;
     public final EObject ruleAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -19787,53 +26531,53 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:7928:2: ( (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue ) )
-            // InternalOil.g:7929:2: (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue )
+            // InternalOil.g:10765:2: ( (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue ) )
+            // InternalOil.g:10766:2: (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue )
             {
-            // InternalOil.g:7929:2: (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue )
-            int alt203=6;
+            // InternalOil.g:10766:2: (this_NameAttributeValue_0= ruleNameAttributeValue | this_BooleanAttributeValue_1= ruleBooleanAttributeValue | this_NumberAttributeValue_2= ruleNumberAttributeValue | this_FloatAttributeValue_3= ruleFloatAttributeValue | this_StringAttributeValue_4= ruleStringAttributeValue | this_AutoAttributeValue_5= ruleAutoAttributeValue )
+            int alt224=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
                 {
-                alt203=1;
+                alt224=1;
                 }
                 break;
             case 33:
             case 34:
                 {
-                alt203=2;
+                alt224=2;
                 }
                 break;
             case RULE_T_NUMBER:
                 {
-                alt203=3;
+                alt224=3;
                 }
                 break;
             case RULE_T_FLOAT:
                 {
-                alt203=4;
+                alt224=4;
                 }
                 break;
             case RULE_STRING:
                 {
-                alt203=5;
+                alt224=5;
                 }
                 break;
-            case 95:
+            case 126:
                 {
-                alt203=6;
+                alt224=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 203, 0, input);
+                    new NoViableAltException("", 224, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt203) {
+            switch (alt224) {
                 case 1 :
-                    // InternalOil.g:7930:3: this_NameAttributeValue_0= ruleNameAttributeValue
+                    // InternalOil.g:10767:3: this_NameAttributeValue_0= ruleNameAttributeValue
                     {
 
                     			newCompositeNode(grammarAccess.getAttributeValueAccess().getNameAttributeValueParserRuleCall_0());
@@ -19851,7 +26595,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:7939:3: this_BooleanAttributeValue_1= ruleBooleanAttributeValue
+                    // InternalOil.g:10776:3: this_BooleanAttributeValue_1= ruleBooleanAttributeValue
                     {
 
                     			newCompositeNode(grammarAccess.getAttributeValueAccess().getBooleanAttributeValueParserRuleCall_1());
@@ -19869,7 +26613,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:7948:3: this_NumberAttributeValue_2= ruleNumberAttributeValue
+                    // InternalOil.g:10785:3: this_NumberAttributeValue_2= ruleNumberAttributeValue
                     {
 
                     			newCompositeNode(grammarAccess.getAttributeValueAccess().getNumberAttributeValueParserRuleCall_2());
@@ -19887,7 +26631,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:7957:3: this_FloatAttributeValue_3= ruleFloatAttributeValue
+                    // InternalOil.g:10794:3: this_FloatAttributeValue_3= ruleFloatAttributeValue
                     {
 
                     			newCompositeNode(grammarAccess.getAttributeValueAccess().getFloatAttributeValueParserRuleCall_3());
@@ -19905,7 +26649,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:7966:3: this_StringAttributeValue_4= ruleStringAttributeValue
+                    // InternalOil.g:10803:3: this_StringAttributeValue_4= ruleStringAttributeValue
                     {
 
                     			newCompositeNode(grammarAccess.getAttributeValueAccess().getStringAttributeValueParserRuleCall_4());
@@ -19923,7 +26667,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOil.g:7975:3: this_AutoAttributeValue_5= ruleAutoAttributeValue
+                    // InternalOil.g:10812:3: this_AutoAttributeValue_5= ruleAutoAttributeValue
                     {
 
                     			newCompositeNode(grammarAccess.getAttributeValueAccess().getAutoAttributeValueParserRuleCall_5());
@@ -19963,7 +26707,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNameAttributeValue"
-    // InternalOil.g:7987:1: entryRuleNameAttributeValue returns [EObject current=null] : iv_ruleNameAttributeValue= ruleNameAttributeValue EOF ;
+    // InternalOil.g:10824:1: entryRuleNameAttributeValue returns [EObject current=null] : iv_ruleNameAttributeValue= ruleNameAttributeValue EOF ;
     public final EObject entryRuleNameAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -19971,8 +26715,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:7987:59: (iv_ruleNameAttributeValue= ruleNameAttributeValue EOF )
-            // InternalOil.g:7988:2: iv_ruleNameAttributeValue= ruleNameAttributeValue EOF
+            // InternalOil.g:10824:59: (iv_ruleNameAttributeValue= ruleNameAttributeValue EOF )
+            // InternalOil.g:10825:2: iv_ruleNameAttributeValue= ruleNameAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getNameAttributeValueRule()); 
             pushFollow(FOLLOW_1);
@@ -19999,7 +26743,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNameAttributeValue"
-    // InternalOil.g:7994:1: ruleNameAttributeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) ;
+    // InternalOil.g:10831:1: ruleNameAttributeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) ;
     public final EObject ruleNameAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20014,22 +26758,22 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8000:2: ( ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) )
-            // InternalOil.g:8001:2: ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
+            // InternalOil.g:10837:2: ( ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) )
+            // InternalOil.g:10838:2: ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
             {
-            // InternalOil.g:8001:2: ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
-            // InternalOil.g:8002:3: ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
+            // InternalOil.g:10838:2: ( ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
+            // InternalOil.g:10839:3: ( (lv_value_0_0= ruleName ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
             {
-            // InternalOil.g:8002:3: ( (lv_value_0_0= ruleName ) )
-            // InternalOil.g:8003:4: (lv_value_0_0= ruleName )
+            // InternalOil.g:10839:3: ( (lv_value_0_0= ruleName ) )
+            // InternalOil.g:10840:4: (lv_value_0_0= ruleName )
             {
-            // InternalOil.g:8003:4: (lv_value_0_0= ruleName )
-            // InternalOil.g:8004:5: lv_value_0_0= ruleName
+            // InternalOil.g:10840:4: (lv_value_0_0= ruleName )
+            // InternalOil.g:10841:5: lv_value_0_0= ruleName
             {
 
             					newCompositeNode(grammarAccess.getNameAttributeValueAccess().getValueNameParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_98);
+            pushFollow(FOLLOW_120);
             lv_value_0_0=ruleName();
 
             state._fsp--;
@@ -20051,43 +26795,43 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:8021:3: (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
-            int alt205=2;
-            int LA205_0 = input.LA(1);
+            // InternalOil.g:10858:3: (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
+            int alt226=2;
+            int LA226_0 = input.LA(1);
 
-            if ( (LA205_0==22) ) {
-                alt205=1;
+            if ( (LA226_0==22) ) {
+                alt226=1;
             }
-            switch (alt205) {
+            switch (alt226) {
                 case 1 :
-                    // InternalOil.g:8022:4: otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}'
+                    // InternalOil.g:10859:4: otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}'
                     {
-                    otherlv_1=(Token)match(input,22,FOLLOW_99); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_121); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getNameAttributeValueAccess().getLeftCurlyBracketKeyword_1_0());
                     			
-                    // InternalOil.g:8026:4: ( (lv_parameterList_2_0= ruleAttribute ) )*
-                    loop204:
+                    // InternalOil.g:10863:4: ( (lv_parameterList_2_0= ruleAttribute ) )*
+                    loop225:
                     do {
-                        int alt204=2;
-                        int LA204_0 = input.LA(1);
+                        int alt225=2;
+                        int LA225_0 = input.LA(1);
 
-                        if ( (LA204_0==RULE_ID||LA204_0==24||LA204_0==26||LA204_0==29||LA204_0==31||LA204_0==38||(LA204_0>=41 && LA204_0<=54)) ) {
-                            alt204=1;
+                        if ( (LA225_0==RULE_ID||LA225_0==24||LA225_0==26||LA225_0==29||LA225_0==31||LA225_0==38||(LA225_0>=41 && LA225_0<=54)) ) {
+                            alt225=1;
                         }
 
 
-                        switch (alt204) {
+                        switch (alt225) {
                     	case 1 :
-                    	    // InternalOil.g:8027:5: (lv_parameterList_2_0= ruleAttribute )
+                    	    // InternalOil.g:10864:5: (lv_parameterList_2_0= ruleAttribute )
                     	    {
-                    	    // InternalOil.g:8027:5: (lv_parameterList_2_0= ruleAttribute )
-                    	    // InternalOil.g:8028:6: lv_parameterList_2_0= ruleAttribute
+                    	    // InternalOil.g:10864:5: (lv_parameterList_2_0= ruleAttribute )
+                    	    // InternalOil.g:10865:6: lv_parameterList_2_0= ruleAttribute
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getNameAttributeValueAccess().getParameterListAttributeParserRuleCall_1_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_99);
+                    	    pushFollow(FOLLOW_121);
                     	    lv_parameterList_2_0=ruleAttribute();
 
                     	    state._fsp--;
@@ -20111,7 +26855,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop204;
+                    	    break loop225;
                         }
                     } while (true);
 
@@ -20148,7 +26892,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanAttributeValue"
-    // InternalOil.g:8054:1: entryRuleBooleanAttributeValue returns [EObject current=null] : iv_ruleBooleanAttributeValue= ruleBooleanAttributeValue EOF ;
+    // InternalOil.g:10891:1: entryRuleBooleanAttributeValue returns [EObject current=null] : iv_ruleBooleanAttributeValue= ruleBooleanAttributeValue EOF ;
     public final EObject entryRuleBooleanAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20156,8 +26900,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8054:62: (iv_ruleBooleanAttributeValue= ruleBooleanAttributeValue EOF )
-            // InternalOil.g:8055:2: iv_ruleBooleanAttributeValue= ruleBooleanAttributeValue EOF
+            // InternalOil.g:10891:62: (iv_ruleBooleanAttributeValue= ruleBooleanAttributeValue EOF )
+            // InternalOil.g:10892:2: iv_ruleBooleanAttributeValue= ruleBooleanAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getBooleanAttributeValueRule()); 
             pushFollow(FOLLOW_1);
@@ -20184,7 +26928,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanAttributeValue"
-    // InternalOil.g:8061:1: ruleBooleanAttributeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) ;
+    // InternalOil.g:10898:1: ruleBooleanAttributeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) ;
     public final EObject ruleBooleanAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20199,22 +26943,22 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8067:2: ( ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) )
-            // InternalOil.g:8068:2: ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
+            // InternalOil.g:10904:2: ( ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? ) )
+            // InternalOil.g:10905:2: ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
             {
-            // InternalOil.g:8068:2: ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
-            // InternalOil.g:8069:3: ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
+            // InternalOil.g:10905:2: ( ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )? )
+            // InternalOil.g:10906:3: ( (lv_value_0_0= ruleEBoolean ) ) (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
             {
-            // InternalOil.g:8069:3: ( (lv_value_0_0= ruleEBoolean ) )
-            // InternalOil.g:8070:4: (lv_value_0_0= ruleEBoolean )
+            // InternalOil.g:10906:3: ( (lv_value_0_0= ruleEBoolean ) )
+            // InternalOil.g:10907:4: (lv_value_0_0= ruleEBoolean )
             {
-            // InternalOil.g:8070:4: (lv_value_0_0= ruleEBoolean )
-            // InternalOil.g:8071:5: lv_value_0_0= ruleEBoolean
+            // InternalOil.g:10907:4: (lv_value_0_0= ruleEBoolean )
+            // InternalOil.g:10908:5: lv_value_0_0= ruleEBoolean
             {
 
             					newCompositeNode(grammarAccess.getBooleanAttributeValueAccess().getValueEBooleanParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_98);
+            pushFollow(FOLLOW_120);
             lv_value_0_0=ruleEBoolean();
 
             state._fsp--;
@@ -20236,43 +26980,43 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOil.g:8088:3: (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
-            int alt207=2;
-            int LA207_0 = input.LA(1);
+            // InternalOil.g:10925:3: (otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}' )?
+            int alt228=2;
+            int LA228_0 = input.LA(1);
 
-            if ( (LA207_0==22) ) {
-                alt207=1;
+            if ( (LA228_0==22) ) {
+                alt228=1;
             }
-            switch (alt207) {
+            switch (alt228) {
                 case 1 :
-                    // InternalOil.g:8089:4: otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}'
+                    // InternalOil.g:10926:4: otherlv_1= '{' ( (lv_parameterList_2_0= ruleAttribute ) )* otherlv_3= '}'
                     {
-                    otherlv_1=(Token)match(input,22,FOLLOW_99); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_121); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getBooleanAttributeValueAccess().getLeftCurlyBracketKeyword_1_0());
                     			
-                    // InternalOil.g:8093:4: ( (lv_parameterList_2_0= ruleAttribute ) )*
-                    loop206:
+                    // InternalOil.g:10930:4: ( (lv_parameterList_2_0= ruleAttribute ) )*
+                    loop227:
                     do {
-                        int alt206=2;
-                        int LA206_0 = input.LA(1);
+                        int alt227=2;
+                        int LA227_0 = input.LA(1);
 
-                        if ( (LA206_0==RULE_ID||LA206_0==24||LA206_0==26||LA206_0==29||LA206_0==31||LA206_0==38||(LA206_0>=41 && LA206_0<=54)) ) {
-                            alt206=1;
+                        if ( (LA227_0==RULE_ID||LA227_0==24||LA227_0==26||LA227_0==29||LA227_0==31||LA227_0==38||(LA227_0>=41 && LA227_0<=54)) ) {
+                            alt227=1;
                         }
 
 
-                        switch (alt206) {
+                        switch (alt227) {
                     	case 1 :
-                    	    // InternalOil.g:8094:5: (lv_parameterList_2_0= ruleAttribute )
+                    	    // InternalOil.g:10931:5: (lv_parameterList_2_0= ruleAttribute )
                     	    {
-                    	    // InternalOil.g:8094:5: (lv_parameterList_2_0= ruleAttribute )
-                    	    // InternalOil.g:8095:6: lv_parameterList_2_0= ruleAttribute
+                    	    // InternalOil.g:10931:5: (lv_parameterList_2_0= ruleAttribute )
+                    	    // InternalOil.g:10932:6: lv_parameterList_2_0= ruleAttribute
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getBooleanAttributeValueAccess().getParameterListAttributeParserRuleCall_1_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_99);
+                    	    pushFollow(FOLLOW_121);
                     	    lv_parameterList_2_0=ruleAttribute();
 
                     	    state._fsp--;
@@ -20296,7 +27040,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop206;
+                    	    break loop227;
                         }
                     } while (true);
 
@@ -20333,7 +27077,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberAttributeValue"
-    // InternalOil.g:8121:1: entryRuleNumberAttributeValue returns [EObject current=null] : iv_ruleNumberAttributeValue= ruleNumberAttributeValue EOF ;
+    // InternalOil.g:10958:1: entryRuleNumberAttributeValue returns [EObject current=null] : iv_ruleNumberAttributeValue= ruleNumberAttributeValue EOF ;
     public final EObject entryRuleNumberAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20341,8 +27085,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8121:61: (iv_ruleNumberAttributeValue= ruleNumberAttributeValue EOF )
-            // InternalOil.g:8122:2: iv_ruleNumberAttributeValue= ruleNumberAttributeValue EOF
+            // InternalOil.g:10958:61: (iv_ruleNumberAttributeValue= ruleNumberAttributeValue EOF )
+            // InternalOil.g:10959:2: iv_ruleNumberAttributeValue= ruleNumberAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getNumberAttributeValueRule()); 
             pushFollow(FOLLOW_1);
@@ -20369,7 +27113,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberAttributeValue"
-    // InternalOil.g:8128:1: ruleNumberAttributeValue returns [EObject current=null] : ( (lv_value_0_0= ruleNumber ) ) ;
+    // InternalOil.g:10965:1: ruleNumberAttributeValue returns [EObject current=null] : ( (lv_value_0_0= ruleNumber ) ) ;
     public final EObject ruleNumberAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20380,14 +27124,14 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8134:2: ( ( (lv_value_0_0= ruleNumber ) ) )
-            // InternalOil.g:8135:2: ( (lv_value_0_0= ruleNumber ) )
+            // InternalOil.g:10971:2: ( ( (lv_value_0_0= ruleNumber ) ) )
+            // InternalOil.g:10972:2: ( (lv_value_0_0= ruleNumber ) )
             {
-            // InternalOil.g:8135:2: ( (lv_value_0_0= ruleNumber ) )
-            // InternalOil.g:8136:3: (lv_value_0_0= ruleNumber )
+            // InternalOil.g:10972:2: ( (lv_value_0_0= ruleNumber ) )
+            // InternalOil.g:10973:3: (lv_value_0_0= ruleNumber )
             {
-            // InternalOil.g:8136:3: (lv_value_0_0= ruleNumber )
-            // InternalOil.g:8137:4: lv_value_0_0= ruleNumber
+            // InternalOil.g:10973:3: (lv_value_0_0= ruleNumber )
+            // InternalOil.g:10974:4: lv_value_0_0= ruleNumber
             {
 
             				newCompositeNode(grammarAccess.getNumberAttributeValueAccess().getValueNumberParserRuleCall_0());
@@ -20434,7 +27178,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloatAttributeValue"
-    // InternalOil.g:8157:1: entryRuleFloatAttributeValue returns [EObject current=null] : iv_ruleFloatAttributeValue= ruleFloatAttributeValue EOF ;
+    // InternalOil.g:10994:1: entryRuleFloatAttributeValue returns [EObject current=null] : iv_ruleFloatAttributeValue= ruleFloatAttributeValue EOF ;
     public final EObject entryRuleFloatAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20442,8 +27186,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8157:60: (iv_ruleFloatAttributeValue= ruleFloatAttributeValue EOF )
-            // InternalOil.g:8158:2: iv_ruleFloatAttributeValue= ruleFloatAttributeValue EOF
+            // InternalOil.g:10994:60: (iv_ruleFloatAttributeValue= ruleFloatAttributeValue EOF )
+            // InternalOil.g:10995:2: iv_ruleFloatAttributeValue= ruleFloatAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getFloatAttributeValueRule()); 
             pushFollow(FOLLOW_1);
@@ -20470,7 +27214,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatAttributeValue"
-    // InternalOil.g:8164:1: ruleFloatAttributeValue returns [EObject current=null] : ( (lv_value_0_0= ruleEFloat ) ) ;
+    // InternalOil.g:11001:1: ruleFloatAttributeValue returns [EObject current=null] : ( (lv_value_0_0= ruleEFloat ) ) ;
     public final EObject ruleFloatAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20481,14 +27225,14 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8170:2: ( ( (lv_value_0_0= ruleEFloat ) ) )
-            // InternalOil.g:8171:2: ( (lv_value_0_0= ruleEFloat ) )
+            // InternalOil.g:11007:2: ( ( (lv_value_0_0= ruleEFloat ) ) )
+            // InternalOil.g:11008:2: ( (lv_value_0_0= ruleEFloat ) )
             {
-            // InternalOil.g:8171:2: ( (lv_value_0_0= ruleEFloat ) )
-            // InternalOil.g:8172:3: (lv_value_0_0= ruleEFloat )
+            // InternalOil.g:11008:2: ( (lv_value_0_0= ruleEFloat ) )
+            // InternalOil.g:11009:3: (lv_value_0_0= ruleEFloat )
             {
-            // InternalOil.g:8172:3: (lv_value_0_0= ruleEFloat )
-            // InternalOil.g:8173:4: lv_value_0_0= ruleEFloat
+            // InternalOil.g:11009:3: (lv_value_0_0= ruleEFloat )
+            // InternalOil.g:11010:4: lv_value_0_0= ruleEFloat
             {
 
             				newCompositeNode(grammarAccess.getFloatAttributeValueAccess().getValueEFloatParserRuleCall_0());
@@ -20535,7 +27279,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringAttributeValue"
-    // InternalOil.g:8193:1: entryRuleStringAttributeValue returns [EObject current=null] : iv_ruleStringAttributeValue= ruleStringAttributeValue EOF ;
+    // InternalOil.g:11030:1: entryRuleStringAttributeValue returns [EObject current=null] : iv_ruleStringAttributeValue= ruleStringAttributeValue EOF ;
     public final EObject entryRuleStringAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20543,8 +27287,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8193:61: (iv_ruleStringAttributeValue= ruleStringAttributeValue EOF )
-            // InternalOil.g:8194:2: iv_ruleStringAttributeValue= ruleStringAttributeValue EOF
+            // InternalOil.g:11030:61: (iv_ruleStringAttributeValue= ruleStringAttributeValue EOF )
+            // InternalOil.g:11031:2: iv_ruleStringAttributeValue= ruleStringAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getStringAttributeValueRule()); 
             pushFollow(FOLLOW_1);
@@ -20571,7 +27315,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringAttributeValue"
-    // InternalOil.g:8200:1: ruleStringAttributeValue returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalOil.g:11037:1: ruleStringAttributeValue returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject ruleStringAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20582,14 +27326,14 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8206:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalOil.g:8207:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalOil.g:11043:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalOil.g:11044:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalOil.g:8207:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalOil.g:8208:3: (lv_value_0_0= ruleEString )
+            // InternalOil.g:11044:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalOil.g:11045:3: (lv_value_0_0= ruleEString )
             {
-            // InternalOil.g:8208:3: (lv_value_0_0= ruleEString )
-            // InternalOil.g:8209:4: lv_value_0_0= ruleEString
+            // InternalOil.g:11045:3: (lv_value_0_0= ruleEString )
+            // InternalOil.g:11046:4: lv_value_0_0= ruleEString
             {
 
             				newCompositeNode(grammarAccess.getStringAttributeValueAccess().getValueEStringParserRuleCall_0());
@@ -20636,7 +27380,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAutoAttributeValue"
-    // InternalOil.g:8229:1: entryRuleAutoAttributeValue returns [EObject current=null] : iv_ruleAutoAttributeValue= ruleAutoAttributeValue EOF ;
+    // InternalOil.g:11066:1: entryRuleAutoAttributeValue returns [EObject current=null] : iv_ruleAutoAttributeValue= ruleAutoAttributeValue EOF ;
     public final EObject entryRuleAutoAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20644,8 +27388,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8229:59: (iv_ruleAutoAttributeValue= ruleAutoAttributeValue EOF )
-            // InternalOil.g:8230:2: iv_ruleAutoAttributeValue= ruleAutoAttributeValue EOF
+            // InternalOil.g:11066:59: (iv_ruleAutoAttributeValue= ruleAutoAttributeValue EOF )
+            // InternalOil.g:11067:2: iv_ruleAutoAttributeValue= ruleAutoAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getAutoAttributeValueRule()); 
             pushFollow(FOLLOW_1);
@@ -20672,7 +27416,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAutoAttributeValue"
-    // InternalOil.g:8236:1: ruleAutoAttributeValue returns [EObject current=null] : ( (lv_value_0_0= 'AUTO' ) ) ;
+    // InternalOil.g:11073:1: ruleAutoAttributeValue returns [EObject current=null] : ( (lv_value_0_0= 'AUTO' ) ) ;
     public final EObject ruleAutoAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -20682,16 +27426,16 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8242:2: ( ( (lv_value_0_0= 'AUTO' ) ) )
-            // InternalOil.g:8243:2: ( (lv_value_0_0= 'AUTO' ) )
+            // InternalOil.g:11079:2: ( ( (lv_value_0_0= 'AUTO' ) ) )
+            // InternalOil.g:11080:2: ( (lv_value_0_0= 'AUTO' ) )
             {
-            // InternalOil.g:8243:2: ( (lv_value_0_0= 'AUTO' ) )
-            // InternalOil.g:8244:3: (lv_value_0_0= 'AUTO' )
+            // InternalOil.g:11080:2: ( (lv_value_0_0= 'AUTO' ) )
+            // InternalOil.g:11081:3: (lv_value_0_0= 'AUTO' )
             {
-            // InternalOil.g:8244:3: (lv_value_0_0= 'AUTO' )
-            // InternalOil.g:8245:4: lv_value_0_0= 'AUTO'
+            // InternalOil.g:11081:3: (lv_value_0_0= 'AUTO' )
+            // InternalOil.g:11082:4: lv_value_0_0= 'AUTO'
             {
-            lv_value_0_0=(Token)match(input,95,FOLLOW_2); 
+            lv_value_0_0=(Token)match(input,126,FOLLOW_2); 
 
             				newLeafNode(lv_value_0_0, grammarAccess.getAutoAttributeValueAccess().getValueAUTOKeyword_0());
             			
@@ -20727,7 +27471,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBoolean"
-    // InternalOil.g:8260:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
+    // InternalOil.g:11097:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
     public final String entryRuleEBoolean() throws RecognitionException {
         String current = null;
 
@@ -20735,8 +27479,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8260:48: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // InternalOil.g:8261:2: iv_ruleEBoolean= ruleEBoolean EOF
+            // InternalOil.g:11097:48: (iv_ruleEBoolean= ruleEBoolean EOF )
+            // InternalOil.g:11098:2: iv_ruleEBoolean= ruleEBoolean EOF
             {
              newCompositeNode(grammarAccess.getEBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -20763,7 +27507,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBoolean"
-    // InternalOil.g:8267:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'TRUE' | kw= 'FALSE' ) ;
+    // InternalOil.g:11104:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'TRUE' | kw= 'FALSE' ) ;
     public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -20773,28 +27517,28 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8273:2: ( (kw= 'TRUE' | kw= 'FALSE' ) )
-            // InternalOil.g:8274:2: (kw= 'TRUE' | kw= 'FALSE' )
+            // InternalOil.g:11110:2: ( (kw= 'TRUE' | kw= 'FALSE' ) )
+            // InternalOil.g:11111:2: (kw= 'TRUE' | kw= 'FALSE' )
             {
-            // InternalOil.g:8274:2: (kw= 'TRUE' | kw= 'FALSE' )
-            int alt208=2;
-            int LA208_0 = input.LA(1);
+            // InternalOil.g:11111:2: (kw= 'TRUE' | kw= 'FALSE' )
+            int alt229=2;
+            int LA229_0 = input.LA(1);
 
-            if ( (LA208_0==33) ) {
-                alt208=1;
+            if ( (LA229_0==33) ) {
+                alt229=1;
             }
-            else if ( (LA208_0==34) ) {
-                alt208=2;
+            else if ( (LA229_0==34) ) {
+                alt229=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 208, 0, input);
+                    new NoViableAltException("", 229, 0, input);
 
                 throw nvae;
             }
-            switch (alt208) {
+            switch (alt229) {
                 case 1 :
-                    // InternalOil.g:8275:3: kw= 'TRUE'
+                    // InternalOil.g:11112:3: kw= 'TRUE'
                     {
                     kw=(Token)match(input,33,FOLLOW_2); 
 
@@ -20805,7 +27549,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8281:3: kw= 'FALSE'
+                    // InternalOil.g:11118:3: kw= 'FALSE'
                     {
                     kw=(Token)match(input,34,FOLLOW_2); 
 
@@ -20838,7 +27582,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalOil.g:8290:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalOil.g:11127:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -20846,8 +27590,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8290:47: (iv_ruleEString= ruleEString EOF )
-            // InternalOil.g:8291:2: iv_ruleEString= ruleEString EOF
+            // InternalOil.g:11127:47: (iv_ruleEString= ruleEString EOF )
+            // InternalOil.g:11128:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -20874,7 +27618,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalOil.g:8297:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // InternalOil.g:11134:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -20884,8 +27628,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8303:2: (this_STRING_0= RULE_STRING )
-            // InternalOil.g:8304:2: this_STRING_0= RULE_STRING
+            // InternalOil.g:11140:2: (this_STRING_0= RULE_STRING )
+            // InternalOil.g:11141:2: this_STRING_0= RULE_STRING
             {
             this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -20914,7 +27658,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumber"
-    // InternalOil.g:8314:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
+    // InternalOil.g:11151:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
     public final String entryRuleNumber() throws RecognitionException {
         String current = null;
 
@@ -20922,8 +27666,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8314:46: (iv_ruleNumber= ruleNumber EOF )
-            // InternalOil.g:8315:2: iv_ruleNumber= ruleNumber EOF
+            // InternalOil.g:11151:46: (iv_ruleNumber= ruleNumber EOF )
+            // InternalOil.g:11152:2: iv_ruleNumber= ruleNumber EOF
             {
              newCompositeNode(grammarAccess.getNumberRule()); 
             pushFollow(FOLLOW_1);
@@ -20950,7 +27694,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumber"
-    // InternalOil.g:8321:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_T_NUMBER_0= RULE_T_NUMBER ;
+    // InternalOil.g:11158:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_T_NUMBER_0= RULE_T_NUMBER ;
     public final AntlrDatatypeRuleToken ruleNumber() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -20960,8 +27704,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8327:2: (this_T_NUMBER_0= RULE_T_NUMBER )
-            // InternalOil.g:8328:2: this_T_NUMBER_0= RULE_T_NUMBER
+            // InternalOil.g:11164:2: (this_T_NUMBER_0= RULE_T_NUMBER )
+            // InternalOil.g:11165:2: this_T_NUMBER_0= RULE_T_NUMBER
             {
             this_T_NUMBER_0=(Token)match(input,RULE_T_NUMBER,FOLLOW_2); 
 
@@ -20990,7 +27734,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEFloat"
-    // InternalOil.g:8338:1: entryRuleEFloat returns [String current=null] : iv_ruleEFloat= ruleEFloat EOF ;
+    // InternalOil.g:11175:1: entryRuleEFloat returns [String current=null] : iv_ruleEFloat= ruleEFloat EOF ;
     public final String entryRuleEFloat() throws RecognitionException {
         String current = null;
 
@@ -20998,8 +27742,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8338:46: (iv_ruleEFloat= ruleEFloat EOF )
-            // InternalOil.g:8339:2: iv_ruleEFloat= ruleEFloat EOF
+            // InternalOil.g:11175:46: (iv_ruleEFloat= ruleEFloat EOF )
+            // InternalOil.g:11176:2: iv_ruleEFloat= ruleEFloat EOF
             {
              newCompositeNode(grammarAccess.getEFloatRule()); 
             pushFollow(FOLLOW_1);
@@ -21026,7 +27770,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEFloat"
-    // InternalOil.g:8345:1: ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_T_FLOAT_0= RULE_T_FLOAT ;
+    // InternalOil.g:11182:1: ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_T_FLOAT_0= RULE_T_FLOAT ;
     public final AntlrDatatypeRuleToken ruleEFloat() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -21036,8 +27780,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8351:2: (this_T_FLOAT_0= RULE_T_FLOAT )
-            // InternalOil.g:8352:2: this_T_FLOAT_0= RULE_T_FLOAT
+            // InternalOil.g:11188:2: (this_T_FLOAT_0= RULE_T_FLOAT )
+            // InternalOil.g:11189:2: this_T_FLOAT_0= RULE_T_FLOAT
             {
             this_T_FLOAT_0=(Token)match(input,RULE_T_FLOAT,FOLLOW_2); 
 
@@ -21066,7 +27810,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleName"
-    // InternalOil.g:8362:1: entryRuleName returns [String current=null] : iv_ruleName= ruleName EOF ;
+    // InternalOil.g:11199:1: entryRuleName returns [String current=null] : iv_ruleName= ruleName EOF ;
     public final String entryRuleName() throws RecognitionException {
         String current = null;
 
@@ -21074,8 +27818,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOil.g:8362:44: (iv_ruleName= ruleName EOF )
-            // InternalOil.g:8363:2: iv_ruleName= ruleName EOF
+            // InternalOil.g:11199:44: (iv_ruleName= ruleName EOF )
+            // InternalOil.g:11200:2: iv_ruleName= ruleName EOF
             {
              newCompositeNode(grammarAccess.getNameRule()); 
             pushFollow(FOLLOW_1);
@@ -21102,7 +27846,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleName"
-    // InternalOil.g:8369:1: ruleName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    // InternalOil.g:11206:1: ruleName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
     public final AntlrDatatypeRuleToken ruleName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -21112,8 +27856,8 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8375:2: (this_ID_0= RULE_ID )
-            // InternalOil.g:8376:2: this_ID_0= RULE_ID
+            // InternalOil.g:11212:2: (this_ID_0= RULE_ID )
+            // InternalOil.g:11213:2: this_ID_0= RULE_ID
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -21142,7 +27886,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImpTaskParamEnum"
-    // InternalOil.g:8386:1: ruleImpTaskParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) ) ;
+    // InternalOil.g:11223:1: ruleImpTaskParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) ) ;
     public final Enumerator ruleImpTaskParamEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -21153,33 +27897,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8392:2: ( ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) ) )
-            // InternalOil.g:8393:2: ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) )
+            // InternalOil.g:11229:2: ( ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) ) )
+            // InternalOil.g:11230:2: ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) )
             {
-            // InternalOil.g:8393:2: ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) )
-            int alt209=2;
-            int LA209_0 = input.LA(1);
+            // InternalOil.g:11230:2: ( (enumLiteral_0= 'STACKSIZE' ) | (enumLiteral_1= 'PRIORITY' ) )
+            int alt230=2;
+            int LA230_0 = input.LA(1);
 
-            if ( (LA209_0==96) ) {
-                alt209=1;
+            if ( (LA230_0==127) ) {
+                alt230=1;
             }
-            else if ( (LA209_0==97) ) {
-                alt209=2;
+            else if ( (LA230_0==128) ) {
+                alt230=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 209, 0, input);
+                    new NoViableAltException("", 230, 0, input);
 
                 throw nvae;
             }
-            switch (alt209) {
+            switch (alt230) {
                 case 1 :
-                    // InternalOil.g:8394:3: (enumLiteral_0= 'STACKSIZE' )
+                    // InternalOil.g:11231:3: (enumLiteral_0= 'STACKSIZE' )
                     {
-                    // InternalOil.g:8394:3: (enumLiteral_0= 'STACKSIZE' )
-                    // InternalOil.g:8395:4: enumLiteral_0= 'STACKSIZE'
+                    // InternalOil.g:11231:3: (enumLiteral_0= 'STACKSIZE' )
+                    // InternalOil.g:11232:4: enumLiteral_0= 'STACKSIZE'
                     {
-                    enumLiteral_0=(Token)match(input,96,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,127,FOLLOW_2); 
 
                     				current = grammarAccess.getImpTaskParamEnumAccess().getSTACKSIZEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getImpTaskParamEnumAccess().getSTACKSIZEEnumLiteralDeclaration_0());
@@ -21191,12 +27935,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8402:3: (enumLiteral_1= 'PRIORITY' )
+                    // InternalOil.g:11239:3: (enumLiteral_1= 'PRIORITY' )
                     {
-                    // InternalOil.g:8402:3: (enumLiteral_1= 'PRIORITY' )
-                    // InternalOil.g:8403:4: enumLiteral_1= 'PRIORITY'
+                    // InternalOil.g:11239:3: (enumLiteral_1= 'PRIORITY' )
+                    // InternalOil.g:11240:4: enumLiteral_1= 'PRIORITY'
                     {
-                    enumLiteral_1=(Token)match(input,97,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,128,FOLLOW_2); 
 
                     				current = grammarAccess.getImpTaskParamEnumAccess().getPRIORITYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getImpTaskParamEnumAccess().getPRIORITYEnumLiteralDeclaration_1());
@@ -21230,7 +27974,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImpCounterParamEnum"
-    // InternalOil.g:8413:1: ruleImpCounterParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) ) ;
+    // InternalOil.g:11250:1: ruleImpCounterParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) ) ;
     public final Enumerator ruleImpCounterParamEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -21241,33 +27985,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8419:2: ( ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) ) )
-            // InternalOil.g:8420:2: ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) )
+            // InternalOil.g:11256:2: ( ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) ) )
+            // InternalOil.g:11257:2: ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) )
             {
-            // InternalOil.g:8420:2: ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) )
-            int alt210=2;
-            int LA210_0 = input.LA(1);
+            // InternalOil.g:11257:2: ( (enumLiteral_0= 'SOURCE' ) | (enumLiteral_1= 'FREQUENCY' ) )
+            int alt231=2;
+            int LA231_0 = input.LA(1);
 
-            if ( (LA210_0==98) ) {
-                alt210=1;
+            if ( (LA231_0==129) ) {
+                alt231=1;
             }
-            else if ( (LA210_0==99) ) {
-                alt210=2;
+            else if ( (LA231_0==130) ) {
+                alt231=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 210, 0, input);
+                    new NoViableAltException("", 231, 0, input);
 
                 throw nvae;
             }
-            switch (alt210) {
+            switch (alt231) {
                 case 1 :
-                    // InternalOil.g:8421:3: (enumLiteral_0= 'SOURCE' )
+                    // InternalOil.g:11258:3: (enumLiteral_0= 'SOURCE' )
                     {
-                    // InternalOil.g:8421:3: (enumLiteral_0= 'SOURCE' )
-                    // InternalOil.g:8422:4: enumLiteral_0= 'SOURCE'
+                    // InternalOil.g:11258:3: (enumLiteral_0= 'SOURCE' )
+                    // InternalOil.g:11259:4: enumLiteral_0= 'SOURCE'
                     {
-                    enumLiteral_0=(Token)match(input,98,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,129,FOLLOW_2); 
 
                     				current = grammarAccess.getImpCounterParamEnumAccess().getSOURCEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getImpCounterParamEnumAccess().getSOURCEEnumLiteralDeclaration_0());
@@ -21279,12 +28023,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8429:3: (enumLiteral_1= 'FREQUENCY' )
+                    // InternalOil.g:11266:3: (enumLiteral_1= 'FREQUENCY' )
                     {
-                    // InternalOil.g:8429:3: (enumLiteral_1= 'FREQUENCY' )
-                    // InternalOil.g:8430:4: enumLiteral_1= 'FREQUENCY'
+                    // InternalOil.g:11266:3: (enumLiteral_1= 'FREQUENCY' )
+                    // InternalOil.g:11267:4: enumLiteral_1= 'FREQUENCY'
                     {
-                    enumLiteral_1=(Token)match(input,99,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,130,FOLLOW_2); 
 
                     				current = grammarAccess.getImpCounterParamEnumAccess().getFREQUENCYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getImpCounterParamEnumAccess().getFREQUENCYEnumLiteralDeclaration_1());
@@ -21318,7 +28062,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationParamEnum"
-    // InternalOil.g:8440:1: ruleApplicationParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) ) ;
+    // InternalOil.g:11277:1: ruleApplicationParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) ) ;
     public final Enumerator ruleApplicationParamEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -21339,87 +28083,87 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8446:2: ( ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) ) )
-            // InternalOil.g:8447:2: ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) )
+            // InternalOil.g:11283:2: ( ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) ) )
+            // InternalOil.g:11284:2: ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) )
             {
-            // InternalOil.g:8447:2: ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) )
-            int alt211=12;
+            // InternalOil.g:11284:2: ( (enumLiteral_0= 'CORE' ) | (enumLiteral_1= 'ALARM' ) | (enumLiteral_2= 'COUNTER' ) | (enumLiteral_3= 'RESOURCE' ) | (enumLiteral_4= 'TASK' ) | (enumLiteral_5= 'ISR' ) | (enumLiteral_6= 'MESSAGE' ) | (enumLiteral_7= 'SCHEDULETABLE' ) | (enumLiteral_8= 'IOC' ) | (enumLiteral_9= 'ERRORHOOK' ) | (enumLiteral_10= 'SHUTDOWNHOOK' ) | (enumLiteral_11= 'STARTUPHOOK' ) )
+            int alt232=12;
             switch ( input.LA(1) ) {
-            case 100:
+            case 131:
                 {
-                alt211=1;
+                alt232=1;
                 }
                 break;
             case 41:
                 {
-                alt211=2;
+                alt232=2;
                 }
                 break;
             case 29:
                 {
-                alt211=3;
+                alt232=3;
                 }
                 break;
             case 42:
                 {
-                alt211=4;
+                alt232=4;
                 }
                 break;
             case 24:
                 {
-                alt211=5;
+                alt232=5;
                 }
                 break;
             case 38:
                 {
-                alt211=6;
+                alt232=6;
                 }
                 break;
             case 44:
                 {
-                alt211=7;
+                alt232=7;
                 }
                 break;
             case 52:
                 {
-                alt211=8;
+                alt232=8;
                 }
                 break;
             case 53:
                 {
-                alt211=9;
+                alt232=9;
                 }
                 break;
-            case 101:
+            case 132:
                 {
-                alt211=10;
+                alt232=10;
                 }
                 break;
-            case 102:
+            case 133:
                 {
-                alt211=11;
+                alt232=11;
                 }
                 break;
-            case 103:
+            case 134:
                 {
-                alt211=12;
+                alt232=12;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 211, 0, input);
+                    new NoViableAltException("", 232, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt211) {
+            switch (alt232) {
                 case 1 :
-                    // InternalOil.g:8448:3: (enumLiteral_0= 'CORE' )
+                    // InternalOil.g:11285:3: (enumLiteral_0= 'CORE' )
                     {
-                    // InternalOil.g:8448:3: (enumLiteral_0= 'CORE' )
-                    // InternalOil.g:8449:4: enumLiteral_0= 'CORE'
+                    // InternalOil.g:11285:3: (enumLiteral_0= 'CORE' )
+                    // InternalOil.g:11286:4: enumLiteral_0= 'CORE'
                     {
-                    enumLiteral_0=(Token)match(input,100,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,131,FOLLOW_2); 
 
                     				current = grammarAccess.getApplicationParamEnumAccess().getCOREEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getApplicationParamEnumAccess().getCOREEnumLiteralDeclaration_0());
@@ -21431,10 +28175,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8456:3: (enumLiteral_1= 'ALARM' )
+                    // InternalOil.g:11293:3: (enumLiteral_1= 'ALARM' )
                     {
-                    // InternalOil.g:8456:3: (enumLiteral_1= 'ALARM' )
-                    // InternalOil.g:8457:4: enumLiteral_1= 'ALARM'
+                    // InternalOil.g:11293:3: (enumLiteral_1= 'ALARM' )
+                    // InternalOil.g:11294:4: enumLiteral_1= 'ALARM'
                     {
                     enumLiteral_1=(Token)match(input,41,FOLLOW_2); 
 
@@ -21448,10 +28192,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:8464:3: (enumLiteral_2= 'COUNTER' )
+                    // InternalOil.g:11301:3: (enumLiteral_2= 'COUNTER' )
                     {
-                    // InternalOil.g:8464:3: (enumLiteral_2= 'COUNTER' )
-                    // InternalOil.g:8465:4: enumLiteral_2= 'COUNTER'
+                    // InternalOil.g:11301:3: (enumLiteral_2= 'COUNTER' )
+                    // InternalOil.g:11302:4: enumLiteral_2= 'COUNTER'
                     {
                     enumLiteral_2=(Token)match(input,29,FOLLOW_2); 
 
@@ -21465,10 +28209,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:8472:3: (enumLiteral_3= 'RESOURCE' )
+                    // InternalOil.g:11309:3: (enumLiteral_3= 'RESOURCE' )
                     {
-                    // InternalOil.g:8472:3: (enumLiteral_3= 'RESOURCE' )
-                    // InternalOil.g:8473:4: enumLiteral_3= 'RESOURCE'
+                    // InternalOil.g:11309:3: (enumLiteral_3= 'RESOURCE' )
+                    // InternalOil.g:11310:4: enumLiteral_3= 'RESOURCE'
                     {
                     enumLiteral_3=(Token)match(input,42,FOLLOW_2); 
 
@@ -21482,10 +28226,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:8480:3: (enumLiteral_4= 'TASK' )
+                    // InternalOil.g:11317:3: (enumLiteral_4= 'TASK' )
                     {
-                    // InternalOil.g:8480:3: (enumLiteral_4= 'TASK' )
-                    // InternalOil.g:8481:4: enumLiteral_4= 'TASK'
+                    // InternalOil.g:11317:3: (enumLiteral_4= 'TASK' )
+                    // InternalOil.g:11318:4: enumLiteral_4= 'TASK'
                     {
                     enumLiteral_4=(Token)match(input,24,FOLLOW_2); 
 
@@ -21499,10 +28243,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOil.g:8488:3: (enumLiteral_5= 'ISR' )
+                    // InternalOil.g:11325:3: (enumLiteral_5= 'ISR' )
                     {
-                    // InternalOil.g:8488:3: (enumLiteral_5= 'ISR' )
-                    // InternalOil.g:8489:4: enumLiteral_5= 'ISR'
+                    // InternalOil.g:11325:3: (enumLiteral_5= 'ISR' )
+                    // InternalOil.g:11326:4: enumLiteral_5= 'ISR'
                     {
                     enumLiteral_5=(Token)match(input,38,FOLLOW_2); 
 
@@ -21516,10 +28260,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOil.g:8496:3: (enumLiteral_6= 'MESSAGE' )
+                    // InternalOil.g:11333:3: (enumLiteral_6= 'MESSAGE' )
                     {
-                    // InternalOil.g:8496:3: (enumLiteral_6= 'MESSAGE' )
-                    // InternalOil.g:8497:4: enumLiteral_6= 'MESSAGE'
+                    // InternalOil.g:11333:3: (enumLiteral_6= 'MESSAGE' )
+                    // InternalOil.g:11334:4: enumLiteral_6= 'MESSAGE'
                     {
                     enumLiteral_6=(Token)match(input,44,FOLLOW_2); 
 
@@ -21533,10 +28277,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalOil.g:8504:3: (enumLiteral_7= 'SCHEDULETABLE' )
+                    // InternalOil.g:11341:3: (enumLiteral_7= 'SCHEDULETABLE' )
                     {
-                    // InternalOil.g:8504:3: (enumLiteral_7= 'SCHEDULETABLE' )
-                    // InternalOil.g:8505:4: enumLiteral_7= 'SCHEDULETABLE'
+                    // InternalOil.g:11341:3: (enumLiteral_7= 'SCHEDULETABLE' )
+                    // InternalOil.g:11342:4: enumLiteral_7= 'SCHEDULETABLE'
                     {
                     enumLiteral_7=(Token)match(input,52,FOLLOW_2); 
 
@@ -21550,10 +28294,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalOil.g:8512:3: (enumLiteral_8= 'IOC' )
+                    // InternalOil.g:11349:3: (enumLiteral_8= 'IOC' )
                     {
-                    // InternalOil.g:8512:3: (enumLiteral_8= 'IOC' )
-                    // InternalOil.g:8513:4: enumLiteral_8= 'IOC'
+                    // InternalOil.g:11349:3: (enumLiteral_8= 'IOC' )
+                    // InternalOil.g:11350:4: enumLiteral_8= 'IOC'
                     {
                     enumLiteral_8=(Token)match(input,53,FOLLOW_2); 
 
@@ -21567,12 +28311,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalOil.g:8520:3: (enumLiteral_9= 'ERRORHOOK' )
+                    // InternalOil.g:11357:3: (enumLiteral_9= 'ERRORHOOK' )
                     {
-                    // InternalOil.g:8520:3: (enumLiteral_9= 'ERRORHOOK' )
-                    // InternalOil.g:8521:4: enumLiteral_9= 'ERRORHOOK'
+                    // InternalOil.g:11357:3: (enumLiteral_9= 'ERRORHOOK' )
+                    // InternalOil.g:11358:4: enumLiteral_9= 'ERRORHOOK'
                     {
-                    enumLiteral_9=(Token)match(input,101,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,132,FOLLOW_2); 
 
                     				current = grammarAccess.getApplicationParamEnumAccess().getERRORHOOKEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getApplicationParamEnumAccess().getERRORHOOKEnumLiteralDeclaration_9());
@@ -21584,12 +28328,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalOil.g:8528:3: (enumLiteral_10= 'SHUTDOWNHOOK' )
+                    // InternalOil.g:11365:3: (enumLiteral_10= 'SHUTDOWNHOOK' )
                     {
-                    // InternalOil.g:8528:3: (enumLiteral_10= 'SHUTDOWNHOOK' )
-                    // InternalOil.g:8529:4: enumLiteral_10= 'SHUTDOWNHOOK'
+                    // InternalOil.g:11365:3: (enumLiteral_10= 'SHUTDOWNHOOK' )
+                    // InternalOil.g:11366:4: enumLiteral_10= 'SHUTDOWNHOOK'
                     {
-                    enumLiteral_10=(Token)match(input,102,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,133,FOLLOW_2); 
 
                     				current = grammarAccess.getApplicationParamEnumAccess().getSHUTDOWNHOOKEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_10, grammarAccess.getApplicationParamEnumAccess().getSHUTDOWNHOOKEnumLiteralDeclaration_10());
@@ -21601,12 +28345,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalOil.g:8536:3: (enumLiteral_11= 'STARTUPHOOK' )
+                    // InternalOil.g:11373:3: (enumLiteral_11= 'STARTUPHOOK' )
                     {
-                    // InternalOil.g:8536:3: (enumLiteral_11= 'STARTUPHOOK' )
-                    // InternalOil.g:8537:4: enumLiteral_11= 'STARTUPHOOK'
+                    // InternalOil.g:11373:3: (enumLiteral_11= 'STARTUPHOOK' )
+                    // InternalOil.g:11374:4: enumLiteral_11= 'STARTUPHOOK'
                     {
-                    enumLiteral_11=(Token)match(input,103,FOLLOW_2); 
+                    enumLiteral_11=(Token)match(input,134,FOLLOW_2); 
 
                     				current = grammarAccess.getApplicationParamEnumAccess().getSTARTUPHOOKEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_11, grammarAccess.getApplicationParamEnumAccess().getSTARTUPHOOKEnumLiteralDeclaration_11());
@@ -21640,7 +28384,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimingProtectionParamEnum"
-    // InternalOil.g:8547:1: ruleTimingProtectionParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) ) ;
+    // InternalOil.g:11384:1: ruleTimingProtectionParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) ) ;
     public final Enumerator ruleTimingProtectionParamEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -21653,47 +28397,47 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8553:2: ( ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) ) )
-            // InternalOil.g:8554:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) )
+            // InternalOil.g:11390:2: ( ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) ) )
+            // InternalOil.g:11391:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) )
             {
-            // InternalOil.g:8554:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) )
-            int alt212=4;
+            // InternalOil.g:11391:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_2= 'EXECUTIONTIME' ) | (enumLiteral_3= 'TIMEFRAME' ) )
+            int alt233=4;
             switch ( input.LA(1) ) {
-            case 104:
+            case 135:
                 {
-                alt212=1;
+                alt233=1;
                 }
                 break;
-            case 105:
+            case 136:
                 {
-                alt212=2;
+                alt233=2;
                 }
                 break;
-            case 106:
+            case 137:
                 {
-                alt212=3;
+                alt233=3;
                 }
                 break;
-            case 107:
+            case 138:
                 {
-                alt212=4;
+                alt233=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 212, 0, input);
+                    new NoViableAltException("", 233, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt212) {
+            switch (alt233) {
                 case 1 :
-                    // InternalOil.g:8555:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
+                    // InternalOil.g:11392:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
                     {
-                    // InternalOil.g:8555:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
-                    // InternalOil.g:8556:4: enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME'
+                    // InternalOil.g:11392:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
+                    // InternalOil.g:11393:4: enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME'
                     {
-                    enumLiteral_0=(Token)match(input,104,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,135,FOLLOW_2); 
 
                     				current = grammarAccess.getTimingProtectionParamEnumAccess().getMAXALLINTERRUPTLOCKTIMEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTimingProtectionParamEnumAccess().getMAXALLINTERRUPTLOCKTIMEEnumLiteralDeclaration_0());
@@ -21705,12 +28449,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8563:3: (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' )
+                    // InternalOil.g:11400:3: (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' )
                     {
-                    // InternalOil.g:8563:3: (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' )
-                    // InternalOil.g:8564:4: enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME'
+                    // InternalOil.g:11400:3: (enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME' )
+                    // InternalOil.g:11401:4: enumLiteral_1= 'MAXOSINTERRUPTLOCKTIME'
                     {
-                    enumLiteral_1=(Token)match(input,105,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,136,FOLLOW_2); 
 
                     				current = grammarAccess.getTimingProtectionParamEnumAccess().getMAXOSINTERRUPTLOCKTIMEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTimingProtectionParamEnumAccess().getMAXOSINTERRUPTLOCKTIMEEnumLiteralDeclaration_1());
@@ -21722,12 +28466,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:8571:3: (enumLiteral_2= 'EXECUTIONTIME' )
+                    // InternalOil.g:11408:3: (enumLiteral_2= 'EXECUTIONTIME' )
                     {
-                    // InternalOil.g:8571:3: (enumLiteral_2= 'EXECUTIONTIME' )
-                    // InternalOil.g:8572:4: enumLiteral_2= 'EXECUTIONTIME'
+                    // InternalOil.g:11408:3: (enumLiteral_2= 'EXECUTIONTIME' )
+                    // InternalOil.g:11409:4: enumLiteral_2= 'EXECUTIONTIME'
                     {
-                    enumLiteral_2=(Token)match(input,106,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,137,FOLLOW_2); 
 
                     				current = grammarAccess.getTimingProtectionParamEnumAccess().getEXECUTIONTIMEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getTimingProtectionParamEnumAccess().getEXECUTIONTIMEEnumLiteralDeclaration_2());
@@ -21739,12 +28483,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:8579:3: (enumLiteral_3= 'TIMEFRAME' )
+                    // InternalOil.g:11416:3: (enumLiteral_3= 'TIMEFRAME' )
                     {
-                    // InternalOil.g:8579:3: (enumLiteral_3= 'TIMEFRAME' )
-                    // InternalOil.g:8580:4: enumLiteral_3= 'TIMEFRAME'
+                    // InternalOil.g:11416:3: (enumLiteral_3= 'TIMEFRAME' )
+                    // InternalOil.g:11417:4: enumLiteral_3= 'TIMEFRAME'
                     {
-                    enumLiteral_3=(Token)match(input,107,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,138,FOLLOW_2); 
 
                     				current = grammarAccess.getTimingProtectionParamEnumAccess().getTIMEFRAMEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getTimingProtectionParamEnumAccess().getTIMEFRAMEEnumLiteralDeclaration_3());
@@ -21778,7 +28522,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIsrParamEnum"
-    // InternalOil.g:8590:1: ruleIsrParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) ) ;
+    // InternalOil.g:11427:1: ruleIsrParamEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) ) ;
     public final Enumerator ruleIsrParamEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -21794,62 +28538,62 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8596:2: ( ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) ) )
-            // InternalOil.g:8597:2: ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) )
+            // InternalOil.g:11433:2: ( ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) ) )
+            // InternalOil.g:11434:2: ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) )
             {
-            // InternalOil.g:8597:2: ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) )
-            int alt213=7;
+            // InternalOil.g:11434:2: ( (enumLiteral_0= 'CATEGORY' ) | (enumLiteral_1= 'RESOURCE' ) | (enumLiteral_2= 'MESSAGE' ) | (enumLiteral_3= 'PRIORITY' ) | (enumLiteral_4= 'ENTRY' ) | (enumLiteral_5= 'STACKSIZE' ) | (enumLiteral_6= 'SOURCE' ) )
+            int alt234=7;
             switch ( input.LA(1) ) {
-            case 108:
+            case 139:
                 {
-                alt213=1;
+                alt234=1;
                 }
                 break;
             case 42:
                 {
-                alt213=2;
+                alt234=2;
                 }
                 break;
             case 44:
                 {
-                alt213=3;
+                alt234=3;
                 }
                 break;
-            case 97:
+            case 128:
                 {
-                alt213=4;
+                alt234=4;
                 }
                 break;
-            case 109:
+            case 140:
                 {
-                alt213=5;
+                alt234=5;
                 }
                 break;
-            case 96:
+            case 127:
                 {
-                alt213=6;
+                alt234=6;
                 }
                 break;
-            case 98:
+            case 129:
                 {
-                alt213=7;
+                alt234=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 213, 0, input);
+                    new NoViableAltException("", 234, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt213) {
+            switch (alt234) {
                 case 1 :
-                    // InternalOil.g:8598:3: (enumLiteral_0= 'CATEGORY' )
+                    // InternalOil.g:11435:3: (enumLiteral_0= 'CATEGORY' )
                     {
-                    // InternalOil.g:8598:3: (enumLiteral_0= 'CATEGORY' )
-                    // InternalOil.g:8599:4: enumLiteral_0= 'CATEGORY'
+                    // InternalOil.g:11435:3: (enumLiteral_0= 'CATEGORY' )
+                    // InternalOil.g:11436:4: enumLiteral_0= 'CATEGORY'
                     {
-                    enumLiteral_0=(Token)match(input,108,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,139,FOLLOW_2); 
 
                     				current = grammarAccess.getIsrParamEnumAccess().getCATEGORYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getIsrParamEnumAccess().getCATEGORYEnumLiteralDeclaration_0());
@@ -21861,10 +28605,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8606:3: (enumLiteral_1= 'RESOURCE' )
+                    // InternalOil.g:11443:3: (enumLiteral_1= 'RESOURCE' )
                     {
-                    // InternalOil.g:8606:3: (enumLiteral_1= 'RESOURCE' )
-                    // InternalOil.g:8607:4: enumLiteral_1= 'RESOURCE'
+                    // InternalOil.g:11443:3: (enumLiteral_1= 'RESOURCE' )
+                    // InternalOil.g:11444:4: enumLiteral_1= 'RESOURCE'
                     {
                     enumLiteral_1=(Token)match(input,42,FOLLOW_2); 
 
@@ -21878,10 +28622,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:8614:3: (enumLiteral_2= 'MESSAGE' )
+                    // InternalOil.g:11451:3: (enumLiteral_2= 'MESSAGE' )
                     {
-                    // InternalOil.g:8614:3: (enumLiteral_2= 'MESSAGE' )
-                    // InternalOil.g:8615:4: enumLiteral_2= 'MESSAGE'
+                    // InternalOil.g:11451:3: (enumLiteral_2= 'MESSAGE' )
+                    // InternalOil.g:11452:4: enumLiteral_2= 'MESSAGE'
                     {
                     enumLiteral_2=(Token)match(input,44,FOLLOW_2); 
 
@@ -21895,12 +28639,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:8622:3: (enumLiteral_3= 'PRIORITY' )
+                    // InternalOil.g:11459:3: (enumLiteral_3= 'PRIORITY' )
                     {
-                    // InternalOil.g:8622:3: (enumLiteral_3= 'PRIORITY' )
-                    // InternalOil.g:8623:4: enumLiteral_3= 'PRIORITY'
+                    // InternalOil.g:11459:3: (enumLiteral_3= 'PRIORITY' )
+                    // InternalOil.g:11460:4: enumLiteral_3= 'PRIORITY'
                     {
-                    enumLiteral_3=(Token)match(input,97,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,128,FOLLOW_2); 
 
                     				current = grammarAccess.getIsrParamEnumAccess().getPRIORITYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getIsrParamEnumAccess().getPRIORITYEnumLiteralDeclaration_3());
@@ -21912,12 +28656,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:8630:3: (enumLiteral_4= 'ENTRY' )
+                    // InternalOil.g:11467:3: (enumLiteral_4= 'ENTRY' )
                     {
-                    // InternalOil.g:8630:3: (enumLiteral_4= 'ENTRY' )
-                    // InternalOil.g:8631:4: enumLiteral_4= 'ENTRY'
+                    // InternalOil.g:11467:3: (enumLiteral_4= 'ENTRY' )
+                    // InternalOil.g:11468:4: enumLiteral_4= 'ENTRY'
                     {
-                    enumLiteral_4=(Token)match(input,109,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,140,FOLLOW_2); 
 
                     				current = grammarAccess.getIsrParamEnumAccess().getENTRYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getIsrParamEnumAccess().getENTRYEnumLiteralDeclaration_4());
@@ -21929,12 +28673,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOil.g:8638:3: (enumLiteral_5= 'STACKSIZE' )
+                    // InternalOil.g:11475:3: (enumLiteral_5= 'STACKSIZE' )
                     {
-                    // InternalOil.g:8638:3: (enumLiteral_5= 'STACKSIZE' )
-                    // InternalOil.g:8639:4: enumLiteral_5= 'STACKSIZE'
+                    // InternalOil.g:11475:3: (enumLiteral_5= 'STACKSIZE' )
+                    // InternalOil.g:11476:4: enumLiteral_5= 'STACKSIZE'
                     {
-                    enumLiteral_5=(Token)match(input,96,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,127,FOLLOW_2); 
 
                     				current = grammarAccess.getIsrParamEnumAccess().getSTACKSIZEEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getIsrParamEnumAccess().getSTACKSIZEEnumLiteralDeclaration_5());
@@ -21946,12 +28690,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOil.g:8646:3: (enumLiteral_6= 'SOURCE' )
+                    // InternalOil.g:11483:3: (enumLiteral_6= 'SOURCE' )
                     {
-                    // InternalOil.g:8646:3: (enumLiteral_6= 'SOURCE' )
-                    // InternalOil.g:8647:4: enumLiteral_6= 'SOURCE'
+                    // InternalOil.g:11483:3: (enumLiteral_6= 'SOURCE' )
+                    // InternalOil.g:11484:4: enumLiteral_6= 'SOURCE'
                     {
-                    enumLiteral_6=(Token)match(input,98,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,129,FOLLOW_2); 
 
                     				current = grammarAccess.getIsrParamEnumAccess().getSOURCEEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getIsrParamEnumAccess().getSOURCEEnumLiteralDeclaration_6());
@@ -21985,7 +28729,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntTypeEnum"
-    // InternalOil.g:8657:1: ruleIntTypeEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) ) ;
+    // InternalOil.g:11494:1: ruleIntTypeEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) ) ;
     public final Enumerator ruleIntTypeEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -21998,47 +28742,47 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8663:2: ( ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) ) )
-            // InternalOil.g:8664:2: ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) )
+            // InternalOil.g:11500:2: ( ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) ) )
+            // InternalOil.g:11501:2: ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) )
             {
-            // InternalOil.g:8664:2: ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) )
-            int alt214=4;
+            // InternalOil.g:11501:2: ( (enumLiteral_0= 'UINT32' ) | (enumLiteral_1= 'INT32' ) | (enumLiteral_2= 'UINT64' ) | (enumLiteral_3= 'INT64' ) )
+            int alt235=4;
             switch ( input.LA(1) ) {
-            case 110:
+            case 141:
                 {
-                alt214=1;
+                alt235=1;
                 }
                 break;
-            case 111:
+            case 142:
                 {
-                alt214=2;
+                alt235=2;
                 }
                 break;
-            case 112:
+            case 143:
                 {
-                alt214=3;
+                alt235=3;
                 }
                 break;
-            case 113:
+            case 144:
                 {
-                alt214=4;
+                alt235=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 214, 0, input);
+                    new NoViableAltException("", 235, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt214) {
+            switch (alt235) {
                 case 1 :
-                    // InternalOil.g:8665:3: (enumLiteral_0= 'UINT32' )
+                    // InternalOil.g:11502:3: (enumLiteral_0= 'UINT32' )
                     {
-                    // InternalOil.g:8665:3: (enumLiteral_0= 'UINT32' )
-                    // InternalOil.g:8666:4: enumLiteral_0= 'UINT32'
+                    // InternalOil.g:11502:3: (enumLiteral_0= 'UINT32' )
+                    // InternalOil.g:11503:4: enumLiteral_0= 'UINT32'
                     {
-                    enumLiteral_0=(Token)match(input,110,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,141,FOLLOW_2); 
 
                     				current = grammarAccess.getIntTypeEnumAccess().getUINT32EnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getIntTypeEnumAccess().getUINT32EnumLiteralDeclaration_0());
@@ -22050,12 +28794,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8673:3: (enumLiteral_1= 'INT32' )
+                    // InternalOil.g:11510:3: (enumLiteral_1= 'INT32' )
                     {
-                    // InternalOil.g:8673:3: (enumLiteral_1= 'INT32' )
-                    // InternalOil.g:8674:4: enumLiteral_1= 'INT32'
+                    // InternalOil.g:11510:3: (enumLiteral_1= 'INT32' )
+                    // InternalOil.g:11511:4: enumLiteral_1= 'INT32'
                     {
-                    enumLiteral_1=(Token)match(input,111,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,142,FOLLOW_2); 
 
                     				current = grammarAccess.getIntTypeEnumAccess().getINT32EnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getIntTypeEnumAccess().getINT32EnumLiteralDeclaration_1());
@@ -22067,12 +28811,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:8681:3: (enumLiteral_2= 'UINT64' )
+                    // InternalOil.g:11518:3: (enumLiteral_2= 'UINT64' )
                     {
-                    // InternalOil.g:8681:3: (enumLiteral_2= 'UINT64' )
-                    // InternalOil.g:8682:4: enumLiteral_2= 'UINT64'
+                    // InternalOil.g:11518:3: (enumLiteral_2= 'UINT64' )
+                    // InternalOil.g:11519:4: enumLiteral_2= 'UINT64'
                     {
-                    enumLiteral_2=(Token)match(input,112,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,143,FOLLOW_2); 
 
                     				current = grammarAccess.getIntTypeEnumAccess().getUINT64EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getIntTypeEnumAccess().getUINT64EnumLiteralDeclaration_2());
@@ -22084,12 +28828,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:8689:3: (enumLiteral_3= 'INT64' )
+                    // InternalOil.g:11526:3: (enumLiteral_3= 'INT64' )
                     {
-                    // InternalOil.g:8689:3: (enumLiteral_3= 'INT64' )
-                    // InternalOil.g:8690:4: enumLiteral_3= 'INT64'
+                    // InternalOil.g:11526:3: (enumLiteral_3= 'INT64' )
+                    // InternalOil.g:11527:4: enumLiteral_3= 'INT64'
                     {
-                    enumLiteral_3=(Token)match(input,113,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,144,FOLLOW_2); 
 
                     				current = grammarAccess.getIntTypeEnumAccess().getINT64EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getIntTypeEnumAccess().getINT64EnumLiteralDeclaration_3());
@@ -22123,7 +28867,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefaultEnum"
-    // InternalOil.g:8700:1: ruleDefaultEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) ) ;
+    // InternalOil.g:11537:1: ruleDefaultEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) ) ;
     public final Enumerator ruleDefaultEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -22134,33 +28878,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8706:2: ( ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) ) )
-            // InternalOil.g:8707:2: ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) )
+            // InternalOil.g:11543:2: ( ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) ) )
+            // InternalOil.g:11544:2: ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) )
             {
-            // InternalOil.g:8707:2: ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) )
-            int alt215=2;
-            int LA215_0 = input.LA(1);
+            // InternalOil.g:11544:2: ( (enumLiteral_0= 'NO_DEFAULT' ) | (enumLiteral_1= 'AUTO' ) )
+            int alt236=2;
+            int LA236_0 = input.LA(1);
 
-            if ( (LA215_0==114) ) {
-                alt215=1;
+            if ( (LA236_0==145) ) {
+                alt236=1;
             }
-            else if ( (LA215_0==95) ) {
-                alt215=2;
+            else if ( (LA236_0==126) ) {
+                alt236=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 215, 0, input);
+                    new NoViableAltException("", 236, 0, input);
 
                 throw nvae;
             }
-            switch (alt215) {
+            switch (alt236) {
                 case 1 :
-                    // InternalOil.g:8708:3: (enumLiteral_0= 'NO_DEFAULT' )
+                    // InternalOil.g:11545:3: (enumLiteral_0= 'NO_DEFAULT' )
                     {
-                    // InternalOil.g:8708:3: (enumLiteral_0= 'NO_DEFAULT' )
-                    // InternalOil.g:8709:4: enumLiteral_0= 'NO_DEFAULT'
+                    // InternalOil.g:11545:3: (enumLiteral_0= 'NO_DEFAULT' )
+                    // InternalOil.g:11546:4: enumLiteral_0= 'NO_DEFAULT'
                     {
-                    enumLiteral_0=(Token)match(input,114,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,145,FOLLOW_2); 
 
                     				current = grammarAccess.getDefaultEnumAccess().getNO_DEFAULTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getDefaultEnumAccess().getNO_DEFAULTEnumLiteralDeclaration_0());
@@ -22172,12 +28916,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8716:3: (enumLiteral_1= 'AUTO' )
+                    // InternalOil.g:11553:3: (enumLiteral_1= 'AUTO' )
                     {
-                    // InternalOil.g:8716:3: (enumLiteral_1= 'AUTO' )
-                    // InternalOil.g:8717:4: enumLiteral_1= 'AUTO'
+                    // InternalOil.g:11553:3: (enumLiteral_1= 'AUTO' )
+                    // InternalOil.g:11554:4: enumLiteral_1= 'AUTO'
                     {
-                    enumLiteral_1=(Token)match(input,95,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,126,FOLLOW_2); 
 
                     				current = grammarAccess.getDefaultEnumAccess().getAUTOEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getDefaultEnumAccess().getAUTOEnumLiteralDeclaration_1());
@@ -22211,7 +28955,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectRefTypeEnum"
-    // InternalOil.g:8727:1: ruleObjectRefTypeEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) ) ;
+    // InternalOil.g:11564:1: ruleObjectRefTypeEnum returns [Enumerator current=null] : ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) ) ;
     public final Enumerator ruleObjectRefTypeEnum() throws RecognitionException {
         Enumerator current = null;
 
@@ -22240,127 +28984,127 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8733:2: ( ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) ) )
-            // InternalOil.g:8734:2: ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) )
+            // InternalOil.g:11570:2: ( ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) ) )
+            // InternalOil.g:11571:2: ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) )
             {
-            // InternalOil.g:8734:2: ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) )
-            int alt216=20;
+            // InternalOil.g:11571:2: ( (enumLiteral_0= 'OS_TYPE' ) | (enumLiteral_1= 'TASK_TYPE' ) | (enumLiteral_2= 'COUNTER_TYPE' ) | (enumLiteral_3= 'ALARM_TYPE' ) | (enumLiteral_4= 'RESOURCE_TYPE' ) | (enumLiteral_5= 'EVENT_TYPE' ) | (enumLiteral_6= 'ISR_TYPE' ) | (enumLiteral_7= 'MESSAGE_TYPE' ) | (enumLiteral_8= 'COM_TYPE' ) | (enumLiteral_9= 'NM_TYPE' ) | (enumLiteral_10= 'APPMODE_TYPE' ) | (enumLiteral_11= 'IPDU_TYPE' ) | (enumLiteral_12= 'NETWORKMESSAGE_TYPE' ) | (enumLiteral_13= 'APPLICATION_TYPE' ) | (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' ) | (enumLiteral_15= 'SPINLOCK_TYPE' ) | (enumLiteral_16= 'SCHEDULETABLE_TYPE' ) | (enumLiteral_17= 'IOC_TYPE' ) | (enumLiteral_18= 'APICONFIG_TYPE' ) | (enumLiteral_19= 'LIBRARY_TYPE' ) )
+            int alt237=20;
             switch ( input.LA(1) ) {
-            case 115:
+            case 146:
                 {
-                alt216=1;
+                alt237=1;
                 }
                 break;
-            case 116:
+            case 147:
                 {
-                alt216=2;
+                alt237=2;
                 }
                 break;
-            case 117:
+            case 148:
                 {
-                alt216=3;
+                alt237=3;
                 }
                 break;
-            case 118:
+            case 149:
                 {
-                alt216=4;
+                alt237=4;
                 }
                 break;
-            case 119:
+            case 150:
                 {
-                alt216=5;
+                alt237=5;
                 }
                 break;
-            case 120:
+            case 151:
                 {
-                alt216=6;
+                alt237=6;
                 }
                 break;
-            case 121:
+            case 152:
                 {
-                alt216=7;
+                alt237=7;
                 }
                 break;
-            case 122:
+            case 153:
                 {
-                alt216=8;
+                alt237=8;
                 }
                 break;
-            case 123:
+            case 154:
                 {
-                alt216=9;
+                alt237=9;
                 }
                 break;
-            case 124:
+            case 155:
                 {
-                alt216=10;
+                alt237=10;
                 }
                 break;
-            case 125:
+            case 156:
                 {
-                alt216=11;
+                alt237=11;
                 }
                 break;
-            case 126:
+            case 157:
                 {
-                alt216=12;
+                alt237=12;
                 }
                 break;
-            case 127:
+            case 158:
                 {
-                alt216=13;
+                alt237=13;
                 }
                 break;
-            case 128:
+            case 159:
                 {
-                alt216=14;
+                alt237=14;
                 }
                 break;
-            case 129:
+            case 160:
                 {
-                alt216=15;
+                alt237=15;
                 }
                 break;
-            case 130:
+            case 161:
                 {
-                alt216=16;
+                alt237=16;
                 }
                 break;
-            case 131:
+            case 162:
                 {
-                alt216=17;
+                alt237=17;
                 }
                 break;
-            case 132:
+            case 163:
                 {
-                alt216=18;
+                alt237=18;
                 }
                 break;
-            case 133:
+            case 164:
                 {
-                alt216=19;
+                alt237=19;
                 }
                 break;
-            case 134:
+            case 165:
                 {
-                alt216=20;
+                alt237=20;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 216, 0, input);
+                    new NoViableAltException("", 237, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt216) {
+            switch (alt237) {
                 case 1 :
-                    // InternalOil.g:8735:3: (enumLiteral_0= 'OS_TYPE' )
+                    // InternalOil.g:11572:3: (enumLiteral_0= 'OS_TYPE' )
                     {
-                    // InternalOil.g:8735:3: (enumLiteral_0= 'OS_TYPE' )
-                    // InternalOil.g:8736:4: enumLiteral_0= 'OS_TYPE'
+                    // InternalOil.g:11572:3: (enumLiteral_0= 'OS_TYPE' )
+                    // InternalOil.g:11573:4: enumLiteral_0= 'OS_TYPE'
                     {
-                    enumLiteral_0=(Token)match(input,115,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,146,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getOS_TYPEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getObjectRefTypeEnumAccess().getOS_TYPEEnumLiteralDeclaration_0());
@@ -22372,12 +29116,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8743:3: (enumLiteral_1= 'TASK_TYPE' )
+                    // InternalOil.g:11580:3: (enumLiteral_1= 'TASK_TYPE' )
                     {
-                    // InternalOil.g:8743:3: (enumLiteral_1= 'TASK_TYPE' )
-                    // InternalOil.g:8744:4: enumLiteral_1= 'TASK_TYPE'
+                    // InternalOil.g:11580:3: (enumLiteral_1= 'TASK_TYPE' )
+                    // InternalOil.g:11581:4: enumLiteral_1= 'TASK_TYPE'
                     {
-                    enumLiteral_1=(Token)match(input,116,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,147,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getTASK_TYPEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getObjectRefTypeEnumAccess().getTASK_TYPEEnumLiteralDeclaration_1());
@@ -22389,12 +29133,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:8751:3: (enumLiteral_2= 'COUNTER_TYPE' )
+                    // InternalOil.g:11588:3: (enumLiteral_2= 'COUNTER_TYPE' )
                     {
-                    // InternalOil.g:8751:3: (enumLiteral_2= 'COUNTER_TYPE' )
-                    // InternalOil.g:8752:4: enumLiteral_2= 'COUNTER_TYPE'
+                    // InternalOil.g:11588:3: (enumLiteral_2= 'COUNTER_TYPE' )
+                    // InternalOil.g:11589:4: enumLiteral_2= 'COUNTER_TYPE'
                     {
-                    enumLiteral_2=(Token)match(input,117,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,148,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getCOUNTER_TYPEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getObjectRefTypeEnumAccess().getCOUNTER_TYPEEnumLiteralDeclaration_2());
@@ -22406,12 +29150,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:8759:3: (enumLiteral_3= 'ALARM_TYPE' )
+                    // InternalOil.g:11596:3: (enumLiteral_3= 'ALARM_TYPE' )
                     {
-                    // InternalOil.g:8759:3: (enumLiteral_3= 'ALARM_TYPE' )
-                    // InternalOil.g:8760:4: enumLiteral_3= 'ALARM_TYPE'
+                    // InternalOil.g:11596:3: (enumLiteral_3= 'ALARM_TYPE' )
+                    // InternalOil.g:11597:4: enumLiteral_3= 'ALARM_TYPE'
                     {
-                    enumLiteral_3=(Token)match(input,118,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,149,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getALARM_TYPEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getObjectRefTypeEnumAccess().getALARM_TYPEEnumLiteralDeclaration_3());
@@ -22423,12 +29167,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:8767:3: (enumLiteral_4= 'RESOURCE_TYPE' )
+                    // InternalOil.g:11604:3: (enumLiteral_4= 'RESOURCE_TYPE' )
                     {
-                    // InternalOil.g:8767:3: (enumLiteral_4= 'RESOURCE_TYPE' )
-                    // InternalOil.g:8768:4: enumLiteral_4= 'RESOURCE_TYPE'
+                    // InternalOil.g:11604:3: (enumLiteral_4= 'RESOURCE_TYPE' )
+                    // InternalOil.g:11605:4: enumLiteral_4= 'RESOURCE_TYPE'
                     {
-                    enumLiteral_4=(Token)match(input,119,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,150,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getRESOURCE_TYPEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getObjectRefTypeEnumAccess().getRESOURCE_TYPEEnumLiteralDeclaration_4());
@@ -22440,12 +29184,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOil.g:8775:3: (enumLiteral_5= 'EVENT_TYPE' )
+                    // InternalOil.g:11612:3: (enumLiteral_5= 'EVENT_TYPE' )
                     {
-                    // InternalOil.g:8775:3: (enumLiteral_5= 'EVENT_TYPE' )
-                    // InternalOil.g:8776:4: enumLiteral_5= 'EVENT_TYPE'
+                    // InternalOil.g:11612:3: (enumLiteral_5= 'EVENT_TYPE' )
+                    // InternalOil.g:11613:4: enumLiteral_5= 'EVENT_TYPE'
                     {
-                    enumLiteral_5=(Token)match(input,120,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,151,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getEVENT_TYPEEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getObjectRefTypeEnumAccess().getEVENT_TYPEEnumLiteralDeclaration_5());
@@ -22457,12 +29201,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOil.g:8783:3: (enumLiteral_6= 'ISR_TYPE' )
+                    // InternalOil.g:11620:3: (enumLiteral_6= 'ISR_TYPE' )
                     {
-                    // InternalOil.g:8783:3: (enumLiteral_6= 'ISR_TYPE' )
-                    // InternalOil.g:8784:4: enumLiteral_6= 'ISR_TYPE'
+                    // InternalOil.g:11620:3: (enumLiteral_6= 'ISR_TYPE' )
+                    // InternalOil.g:11621:4: enumLiteral_6= 'ISR_TYPE'
                     {
-                    enumLiteral_6=(Token)match(input,121,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,152,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getISR_TYPEEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getObjectRefTypeEnumAccess().getISR_TYPEEnumLiteralDeclaration_6());
@@ -22474,12 +29218,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalOil.g:8791:3: (enumLiteral_7= 'MESSAGE_TYPE' )
+                    // InternalOil.g:11628:3: (enumLiteral_7= 'MESSAGE_TYPE' )
                     {
-                    // InternalOil.g:8791:3: (enumLiteral_7= 'MESSAGE_TYPE' )
-                    // InternalOil.g:8792:4: enumLiteral_7= 'MESSAGE_TYPE'
+                    // InternalOil.g:11628:3: (enumLiteral_7= 'MESSAGE_TYPE' )
+                    // InternalOil.g:11629:4: enumLiteral_7= 'MESSAGE_TYPE'
                     {
-                    enumLiteral_7=(Token)match(input,122,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,153,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getMESSAGE_TYPEEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getObjectRefTypeEnumAccess().getMESSAGE_TYPEEnumLiteralDeclaration_7());
@@ -22491,12 +29235,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalOil.g:8799:3: (enumLiteral_8= 'COM_TYPE' )
+                    // InternalOil.g:11636:3: (enumLiteral_8= 'COM_TYPE' )
                     {
-                    // InternalOil.g:8799:3: (enumLiteral_8= 'COM_TYPE' )
-                    // InternalOil.g:8800:4: enumLiteral_8= 'COM_TYPE'
+                    // InternalOil.g:11636:3: (enumLiteral_8= 'COM_TYPE' )
+                    // InternalOil.g:11637:4: enumLiteral_8= 'COM_TYPE'
                     {
-                    enumLiteral_8=(Token)match(input,123,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,154,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getCOM_TYPEEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_8, grammarAccess.getObjectRefTypeEnumAccess().getCOM_TYPEEnumLiteralDeclaration_8());
@@ -22508,12 +29252,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalOil.g:8807:3: (enumLiteral_9= 'NM_TYPE' )
+                    // InternalOil.g:11644:3: (enumLiteral_9= 'NM_TYPE' )
                     {
-                    // InternalOil.g:8807:3: (enumLiteral_9= 'NM_TYPE' )
-                    // InternalOil.g:8808:4: enumLiteral_9= 'NM_TYPE'
+                    // InternalOil.g:11644:3: (enumLiteral_9= 'NM_TYPE' )
+                    // InternalOil.g:11645:4: enumLiteral_9= 'NM_TYPE'
                     {
-                    enumLiteral_9=(Token)match(input,124,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,155,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getNM_TYPEEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getObjectRefTypeEnumAccess().getNM_TYPEEnumLiteralDeclaration_9());
@@ -22525,12 +29269,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalOil.g:8815:3: (enumLiteral_10= 'APPMODE_TYPE' )
+                    // InternalOil.g:11652:3: (enumLiteral_10= 'APPMODE_TYPE' )
                     {
-                    // InternalOil.g:8815:3: (enumLiteral_10= 'APPMODE_TYPE' )
-                    // InternalOil.g:8816:4: enumLiteral_10= 'APPMODE_TYPE'
+                    // InternalOil.g:11652:3: (enumLiteral_10= 'APPMODE_TYPE' )
+                    // InternalOil.g:11653:4: enumLiteral_10= 'APPMODE_TYPE'
                     {
-                    enumLiteral_10=(Token)match(input,125,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,156,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getAPPMODE_TYPEEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_10, grammarAccess.getObjectRefTypeEnumAccess().getAPPMODE_TYPEEnumLiteralDeclaration_10());
@@ -22542,12 +29286,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalOil.g:8823:3: (enumLiteral_11= 'IPDU_TYPE' )
+                    // InternalOil.g:11660:3: (enumLiteral_11= 'IPDU_TYPE' )
                     {
-                    // InternalOil.g:8823:3: (enumLiteral_11= 'IPDU_TYPE' )
-                    // InternalOil.g:8824:4: enumLiteral_11= 'IPDU_TYPE'
+                    // InternalOil.g:11660:3: (enumLiteral_11= 'IPDU_TYPE' )
+                    // InternalOil.g:11661:4: enumLiteral_11= 'IPDU_TYPE'
                     {
-                    enumLiteral_11=(Token)match(input,126,FOLLOW_2); 
+                    enumLiteral_11=(Token)match(input,157,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getIPDU_TYPEEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_11, grammarAccess.getObjectRefTypeEnumAccess().getIPDU_TYPEEnumLiteralDeclaration_11());
@@ -22559,12 +29303,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalOil.g:8831:3: (enumLiteral_12= 'NETWORKMESSAGE_TYPE' )
+                    // InternalOil.g:11668:3: (enumLiteral_12= 'NETWORKMESSAGE_TYPE' )
                     {
-                    // InternalOil.g:8831:3: (enumLiteral_12= 'NETWORKMESSAGE_TYPE' )
-                    // InternalOil.g:8832:4: enumLiteral_12= 'NETWORKMESSAGE_TYPE'
+                    // InternalOil.g:11668:3: (enumLiteral_12= 'NETWORKMESSAGE_TYPE' )
+                    // InternalOil.g:11669:4: enumLiteral_12= 'NETWORKMESSAGE_TYPE'
                     {
-                    enumLiteral_12=(Token)match(input,127,FOLLOW_2); 
+                    enumLiteral_12=(Token)match(input,158,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getNETWORKMESSAGE_TYPEEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_12, grammarAccess.getObjectRefTypeEnumAccess().getNETWORKMESSAGE_TYPEEnumLiteralDeclaration_12());
@@ -22576,12 +29320,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalOil.g:8839:3: (enumLiteral_13= 'APPLICATION_TYPE' )
+                    // InternalOil.g:11676:3: (enumLiteral_13= 'APPLICATION_TYPE' )
                     {
-                    // InternalOil.g:8839:3: (enumLiteral_13= 'APPLICATION_TYPE' )
-                    // InternalOil.g:8840:4: enumLiteral_13= 'APPLICATION_TYPE'
+                    // InternalOil.g:11676:3: (enumLiteral_13= 'APPLICATION_TYPE' )
+                    // InternalOil.g:11677:4: enumLiteral_13= 'APPLICATION_TYPE'
                     {
-                    enumLiteral_13=(Token)match(input,128,FOLLOW_2); 
+                    enumLiteral_13=(Token)match(input,159,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getAPPLICATION_TYPEEnumLiteralDeclaration_13().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_13, grammarAccess.getObjectRefTypeEnumAccess().getAPPLICATION_TYPEEnumLiteralDeclaration_13());
@@ -22593,12 +29337,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalOil.g:8847:3: (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' )
+                    // InternalOil.g:11684:3: (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' )
                     {
-                    // InternalOil.g:8847:3: (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' )
-                    // InternalOil.g:8848:4: enumLiteral_14= 'MEMOTY_PROTECTION_TYPE'
+                    // InternalOil.g:11684:3: (enumLiteral_14= 'MEMOTY_PROTECTION_TYPE' )
+                    // InternalOil.g:11685:4: enumLiteral_14= 'MEMOTY_PROTECTION_TYPE'
                     {
-                    enumLiteral_14=(Token)match(input,129,FOLLOW_2); 
+                    enumLiteral_14=(Token)match(input,160,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getMEMOTY_PROTECTION_TYPEEnumLiteralDeclaration_14().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_14, grammarAccess.getObjectRefTypeEnumAccess().getMEMOTY_PROTECTION_TYPEEnumLiteralDeclaration_14());
@@ -22610,12 +29354,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalOil.g:8855:3: (enumLiteral_15= 'SPINLOCK_TYPE' )
+                    // InternalOil.g:11692:3: (enumLiteral_15= 'SPINLOCK_TYPE' )
                     {
-                    // InternalOil.g:8855:3: (enumLiteral_15= 'SPINLOCK_TYPE' )
-                    // InternalOil.g:8856:4: enumLiteral_15= 'SPINLOCK_TYPE'
+                    // InternalOil.g:11692:3: (enumLiteral_15= 'SPINLOCK_TYPE' )
+                    // InternalOil.g:11693:4: enumLiteral_15= 'SPINLOCK_TYPE'
                     {
-                    enumLiteral_15=(Token)match(input,130,FOLLOW_2); 
+                    enumLiteral_15=(Token)match(input,161,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getSPINLOCK_TYPEEnumLiteralDeclaration_15().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_15, grammarAccess.getObjectRefTypeEnumAccess().getSPINLOCK_TYPEEnumLiteralDeclaration_15());
@@ -22627,12 +29371,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalOil.g:8863:3: (enumLiteral_16= 'SCHEDULETABLE_TYPE' )
+                    // InternalOil.g:11700:3: (enumLiteral_16= 'SCHEDULETABLE_TYPE' )
                     {
-                    // InternalOil.g:8863:3: (enumLiteral_16= 'SCHEDULETABLE_TYPE' )
-                    // InternalOil.g:8864:4: enumLiteral_16= 'SCHEDULETABLE_TYPE'
+                    // InternalOil.g:11700:3: (enumLiteral_16= 'SCHEDULETABLE_TYPE' )
+                    // InternalOil.g:11701:4: enumLiteral_16= 'SCHEDULETABLE_TYPE'
                     {
-                    enumLiteral_16=(Token)match(input,131,FOLLOW_2); 
+                    enumLiteral_16=(Token)match(input,162,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getSCHEDULETABLE_TYPEEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_16, grammarAccess.getObjectRefTypeEnumAccess().getSCHEDULETABLE_TYPEEnumLiteralDeclaration_16());
@@ -22644,12 +29388,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalOil.g:8871:3: (enumLiteral_17= 'IOC_TYPE' )
+                    // InternalOil.g:11708:3: (enumLiteral_17= 'IOC_TYPE' )
                     {
-                    // InternalOil.g:8871:3: (enumLiteral_17= 'IOC_TYPE' )
-                    // InternalOil.g:8872:4: enumLiteral_17= 'IOC_TYPE'
+                    // InternalOil.g:11708:3: (enumLiteral_17= 'IOC_TYPE' )
+                    // InternalOil.g:11709:4: enumLiteral_17= 'IOC_TYPE'
                     {
-                    enumLiteral_17=(Token)match(input,132,FOLLOW_2); 
+                    enumLiteral_17=(Token)match(input,163,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getIOC_TYPEEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_17, grammarAccess.getObjectRefTypeEnumAccess().getIOC_TYPEEnumLiteralDeclaration_17());
@@ -22661,12 +29405,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalOil.g:8879:3: (enumLiteral_18= 'APICONFIG_TYPE' )
+                    // InternalOil.g:11716:3: (enumLiteral_18= 'APICONFIG_TYPE' )
                     {
-                    // InternalOil.g:8879:3: (enumLiteral_18= 'APICONFIG_TYPE' )
-                    // InternalOil.g:8880:4: enumLiteral_18= 'APICONFIG_TYPE'
+                    // InternalOil.g:11716:3: (enumLiteral_18= 'APICONFIG_TYPE' )
+                    // InternalOil.g:11717:4: enumLiteral_18= 'APICONFIG_TYPE'
                     {
-                    enumLiteral_18=(Token)match(input,133,FOLLOW_2); 
+                    enumLiteral_18=(Token)match(input,164,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getAPICONFIG_TYPEEnumLiteralDeclaration_18().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_18, grammarAccess.getObjectRefTypeEnumAccess().getAPICONFIG_TYPEEnumLiteralDeclaration_18());
@@ -22678,12 +29422,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalOil.g:8887:3: (enumLiteral_19= 'LIBRARY_TYPE' )
+                    // InternalOil.g:11724:3: (enumLiteral_19= 'LIBRARY_TYPE' )
                     {
-                    // InternalOil.g:8887:3: (enumLiteral_19= 'LIBRARY_TYPE' )
-                    // InternalOil.g:8888:4: enumLiteral_19= 'LIBRARY_TYPE'
+                    // InternalOil.g:11724:3: (enumLiteral_19= 'LIBRARY_TYPE' )
+                    // InternalOil.g:11725:4: enumLiteral_19= 'LIBRARY_TYPE'
                     {
-                    enumLiteral_19=(Token)match(input,134,FOLLOW_2); 
+                    enumLiteral_19=(Token)match(input,165,FOLLOW_2); 
 
                     				current = grammarAccess.getObjectRefTypeEnumAccess().getLIBRARY_TYPEEnumLiteralDeclaration_19().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_19, grammarAccess.getObjectRefTypeEnumAccess().getLIBRARY_TYPEEnumLiteralDeclaration_19());
@@ -22716,8 +29460,558 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleObjectRefTypeEnum"
 
 
+    // $ANTLR start "ruleMessagefilter2"
+    // InternalOil.g:11735:1: ruleMessagefilter2 returns [Enumerator current=null] : ( (enumLiteral_0= 'ALWAYS' ) | (enumLiteral_1= 'NEVER' ) | (enumLiteral_2= 'MASKEDNEWEQUALSX' ) | (enumLiteral_3= 'MASKEDNEWDIFFERSX' ) | (enumLiteral_4= 'NEWISEQUAL' ) | (enumLiteral_5= 'NEWISDIFFERENT' ) | (enumLiteral_6= 'MASKEDNEWEQUALSMASKEDOLD' ) | (enumLiteral_7= 'MASKEDNEWDIFFERSMASKEDOLD' ) | (enumLiteral_8= 'NEWISWITHIN' ) | (enumLiteral_9= 'NEWISOUTSIDE' ) | (enumLiteral_10= 'NEWISGREATER' ) | (enumLiteral_11= 'NEWISLESSOREQUAL' ) | (enumLiteral_12= 'NEWISLESS' ) | (enumLiteral_13= 'NEWISGREATEROREQUAL' ) | (enumLiteral_14= 'ONEEVERYN' ) ) ;
+    public final Enumerator ruleMessagefilter2() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
+        Token enumLiteral_4=null;
+        Token enumLiteral_5=null;
+        Token enumLiteral_6=null;
+        Token enumLiteral_7=null;
+        Token enumLiteral_8=null;
+        Token enumLiteral_9=null;
+        Token enumLiteral_10=null;
+        Token enumLiteral_11=null;
+        Token enumLiteral_12=null;
+        Token enumLiteral_13=null;
+        Token enumLiteral_14=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:11741:2: ( ( (enumLiteral_0= 'ALWAYS' ) | (enumLiteral_1= 'NEVER' ) | (enumLiteral_2= 'MASKEDNEWEQUALSX' ) | (enumLiteral_3= 'MASKEDNEWDIFFERSX' ) | (enumLiteral_4= 'NEWISEQUAL' ) | (enumLiteral_5= 'NEWISDIFFERENT' ) | (enumLiteral_6= 'MASKEDNEWEQUALSMASKEDOLD' ) | (enumLiteral_7= 'MASKEDNEWDIFFERSMASKEDOLD' ) | (enumLiteral_8= 'NEWISWITHIN' ) | (enumLiteral_9= 'NEWISOUTSIDE' ) | (enumLiteral_10= 'NEWISGREATER' ) | (enumLiteral_11= 'NEWISLESSOREQUAL' ) | (enumLiteral_12= 'NEWISLESS' ) | (enumLiteral_13= 'NEWISGREATEROREQUAL' ) | (enumLiteral_14= 'ONEEVERYN' ) ) )
+            // InternalOil.g:11742:2: ( (enumLiteral_0= 'ALWAYS' ) | (enumLiteral_1= 'NEVER' ) | (enumLiteral_2= 'MASKEDNEWEQUALSX' ) | (enumLiteral_3= 'MASKEDNEWDIFFERSX' ) | (enumLiteral_4= 'NEWISEQUAL' ) | (enumLiteral_5= 'NEWISDIFFERENT' ) | (enumLiteral_6= 'MASKEDNEWEQUALSMASKEDOLD' ) | (enumLiteral_7= 'MASKEDNEWDIFFERSMASKEDOLD' ) | (enumLiteral_8= 'NEWISWITHIN' ) | (enumLiteral_9= 'NEWISOUTSIDE' ) | (enumLiteral_10= 'NEWISGREATER' ) | (enumLiteral_11= 'NEWISLESSOREQUAL' ) | (enumLiteral_12= 'NEWISLESS' ) | (enumLiteral_13= 'NEWISGREATEROREQUAL' ) | (enumLiteral_14= 'ONEEVERYN' ) )
+            {
+            // InternalOil.g:11742:2: ( (enumLiteral_0= 'ALWAYS' ) | (enumLiteral_1= 'NEVER' ) | (enumLiteral_2= 'MASKEDNEWEQUALSX' ) | (enumLiteral_3= 'MASKEDNEWDIFFERSX' ) | (enumLiteral_4= 'NEWISEQUAL' ) | (enumLiteral_5= 'NEWISDIFFERENT' ) | (enumLiteral_6= 'MASKEDNEWEQUALSMASKEDOLD' ) | (enumLiteral_7= 'MASKEDNEWDIFFERSMASKEDOLD' ) | (enumLiteral_8= 'NEWISWITHIN' ) | (enumLiteral_9= 'NEWISOUTSIDE' ) | (enumLiteral_10= 'NEWISGREATER' ) | (enumLiteral_11= 'NEWISLESSOREQUAL' ) | (enumLiteral_12= 'NEWISLESS' ) | (enumLiteral_13= 'NEWISGREATEROREQUAL' ) | (enumLiteral_14= 'ONEEVERYN' ) )
+            int alt238=15;
+            switch ( input.LA(1) ) {
+            case 166:
+                {
+                alt238=1;
+                }
+                break;
+            case 167:
+                {
+                alt238=2;
+                }
+                break;
+            case 168:
+                {
+                alt238=3;
+                }
+                break;
+            case 169:
+                {
+                alt238=4;
+                }
+                break;
+            case 170:
+                {
+                alt238=5;
+                }
+                break;
+            case 171:
+                {
+                alt238=6;
+                }
+                break;
+            case 172:
+                {
+                alt238=7;
+                }
+                break;
+            case 173:
+                {
+                alt238=8;
+                }
+                break;
+            case 174:
+                {
+                alt238=9;
+                }
+                break;
+            case 175:
+                {
+                alt238=10;
+                }
+                break;
+            case 176:
+                {
+                alt238=11;
+                }
+                break;
+            case 177:
+                {
+                alt238=12;
+                }
+                break;
+            case 178:
+                {
+                alt238=13;
+                }
+                break;
+            case 179:
+                {
+                alt238=14;
+                }
+                break;
+            case 180:
+                {
+                alt238=15;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 238, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt238) {
+                case 1 :
+                    // InternalOil.g:11743:3: (enumLiteral_0= 'ALWAYS' )
+                    {
+                    // InternalOil.g:11743:3: (enumLiteral_0= 'ALWAYS' )
+                    // InternalOil.g:11744:4: enumLiteral_0= 'ALWAYS'
+                    {
+                    enumLiteral_0=(Token)match(input,166,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getALWAYSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getMessagefilter2Access().getALWAYSEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:11751:3: (enumLiteral_1= 'NEVER' )
+                    {
+                    // InternalOil.g:11751:3: (enumLiteral_1= 'NEVER' )
+                    // InternalOil.g:11752:4: enumLiteral_1= 'NEVER'
+                    {
+                    enumLiteral_1=(Token)match(input,167,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEVEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getMessagefilter2Access().getNEVEREnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:11759:3: (enumLiteral_2= 'MASKEDNEWEQUALSX' )
+                    {
+                    // InternalOil.g:11759:3: (enumLiteral_2= 'MASKEDNEWEQUALSX' )
+                    // InternalOil.g:11760:4: enumLiteral_2= 'MASKEDNEWEQUALSX'
+                    {
+                    enumLiteral_2=(Token)match(input,168,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getMASKEDNEWEQUALSXEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getMessagefilter2Access().getMASKEDNEWEQUALSXEnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalOil.g:11767:3: (enumLiteral_3= 'MASKEDNEWDIFFERSX' )
+                    {
+                    // InternalOil.g:11767:3: (enumLiteral_3= 'MASKEDNEWDIFFERSX' )
+                    // InternalOil.g:11768:4: enumLiteral_3= 'MASKEDNEWDIFFERSX'
+                    {
+                    enumLiteral_3=(Token)match(input,169,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getMASKEDNEWDIFFERSXEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getMessagefilter2Access().getMASKEDNEWDIFFERSXEnumLiteralDeclaration_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalOil.g:11775:3: (enumLiteral_4= 'NEWISEQUAL' )
+                    {
+                    // InternalOil.g:11775:3: (enumLiteral_4= 'NEWISEQUAL' )
+                    // InternalOil.g:11776:4: enumLiteral_4= 'NEWISEQUAL'
+                    {
+                    enumLiteral_4=(Token)match(input,170,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISEQUALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_4, grammarAccess.getMessagefilter2Access().getNEWISEQUALEnumLiteralDeclaration_4());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalOil.g:11783:3: (enumLiteral_5= 'NEWISDIFFERENT' )
+                    {
+                    // InternalOil.g:11783:3: (enumLiteral_5= 'NEWISDIFFERENT' )
+                    // InternalOil.g:11784:4: enumLiteral_5= 'NEWISDIFFERENT'
+                    {
+                    enumLiteral_5=(Token)match(input,171,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISDIFFERENTEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_5, grammarAccess.getMessagefilter2Access().getNEWISDIFFERENTEnumLiteralDeclaration_5());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalOil.g:11791:3: (enumLiteral_6= 'MASKEDNEWEQUALSMASKEDOLD' )
+                    {
+                    // InternalOil.g:11791:3: (enumLiteral_6= 'MASKEDNEWEQUALSMASKEDOLD' )
+                    // InternalOil.g:11792:4: enumLiteral_6= 'MASKEDNEWEQUALSMASKEDOLD'
+                    {
+                    enumLiteral_6=(Token)match(input,172,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getMASKEDNEWEQUALSMASKEDOLDEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_6, grammarAccess.getMessagefilter2Access().getMASKEDNEWEQUALSMASKEDOLDEnumLiteralDeclaration_6());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalOil.g:11799:3: (enumLiteral_7= 'MASKEDNEWDIFFERSMASKEDOLD' )
+                    {
+                    // InternalOil.g:11799:3: (enumLiteral_7= 'MASKEDNEWDIFFERSMASKEDOLD' )
+                    // InternalOil.g:11800:4: enumLiteral_7= 'MASKEDNEWDIFFERSMASKEDOLD'
+                    {
+                    enumLiteral_7=(Token)match(input,173,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getMASKEDNEWDIFFERSMASKEDOLDEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_7, grammarAccess.getMessagefilter2Access().getMASKEDNEWDIFFERSMASKEDOLDEnumLiteralDeclaration_7());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // InternalOil.g:11807:3: (enumLiteral_8= 'NEWISWITHIN' )
+                    {
+                    // InternalOil.g:11807:3: (enumLiteral_8= 'NEWISWITHIN' )
+                    // InternalOil.g:11808:4: enumLiteral_8= 'NEWISWITHIN'
+                    {
+                    enumLiteral_8=(Token)match(input,174,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISWITHINEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_8, grammarAccess.getMessagefilter2Access().getNEWISWITHINEnumLiteralDeclaration_8());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 10 :
+                    // InternalOil.g:11815:3: (enumLiteral_9= 'NEWISOUTSIDE' )
+                    {
+                    // InternalOil.g:11815:3: (enumLiteral_9= 'NEWISOUTSIDE' )
+                    // InternalOil.g:11816:4: enumLiteral_9= 'NEWISOUTSIDE'
+                    {
+                    enumLiteral_9=(Token)match(input,175,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISOUTSIDEEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_9, grammarAccess.getMessagefilter2Access().getNEWISOUTSIDEEnumLiteralDeclaration_9());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 11 :
+                    // InternalOil.g:11823:3: (enumLiteral_10= 'NEWISGREATER' )
+                    {
+                    // InternalOil.g:11823:3: (enumLiteral_10= 'NEWISGREATER' )
+                    // InternalOil.g:11824:4: enumLiteral_10= 'NEWISGREATER'
+                    {
+                    enumLiteral_10=(Token)match(input,176,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISGREATEREnumLiteralDeclaration_10().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_10, grammarAccess.getMessagefilter2Access().getNEWISGREATEREnumLiteralDeclaration_10());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 12 :
+                    // InternalOil.g:11831:3: (enumLiteral_11= 'NEWISLESSOREQUAL' )
+                    {
+                    // InternalOil.g:11831:3: (enumLiteral_11= 'NEWISLESSOREQUAL' )
+                    // InternalOil.g:11832:4: enumLiteral_11= 'NEWISLESSOREQUAL'
+                    {
+                    enumLiteral_11=(Token)match(input,177,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISLESSOREQUALEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_11, grammarAccess.getMessagefilter2Access().getNEWISLESSOREQUALEnumLiteralDeclaration_11());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 13 :
+                    // InternalOil.g:11839:3: (enumLiteral_12= 'NEWISLESS' )
+                    {
+                    // InternalOil.g:11839:3: (enumLiteral_12= 'NEWISLESS' )
+                    // InternalOil.g:11840:4: enumLiteral_12= 'NEWISLESS'
+                    {
+                    enumLiteral_12=(Token)match(input,178,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISLESSEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_12, grammarAccess.getMessagefilter2Access().getNEWISLESSEnumLiteralDeclaration_12());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 14 :
+                    // InternalOil.g:11847:3: (enumLiteral_13= 'NEWISGREATEROREQUAL' )
+                    {
+                    // InternalOil.g:11847:3: (enumLiteral_13= 'NEWISGREATEROREQUAL' )
+                    // InternalOil.g:11848:4: enumLiteral_13= 'NEWISGREATEROREQUAL'
+                    {
+                    enumLiteral_13=(Token)match(input,179,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getNEWISGREATEROREQUALEnumLiteralDeclaration_13().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_13, grammarAccess.getMessagefilter2Access().getNEWISGREATEROREQUALEnumLiteralDeclaration_13());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 15 :
+                    // InternalOil.g:11855:3: (enumLiteral_14= 'ONEEVERYN' )
+                    {
+                    // InternalOil.g:11855:3: (enumLiteral_14= 'ONEEVERYN' )
+                    // InternalOil.g:11856:4: enumLiteral_14= 'ONEEVERYN'
+                    {
+                    enumLiteral_14=(Token)match(input,180,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessagefilter2Access().getONEEVERYNEnumLiteralDeclaration_14().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_14, grammarAccess.getMessagefilter2Access().getONEEVERYNEnumLiteralDeclaration_14());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessagefilter2"
+
+
+    // $ANTLR start "ruleMessageTRANSFERPROPERTYenum"
+    // InternalOil.g:11866:1: ruleMessageTRANSFERPROPERTYenum returns [Enumerator current=null] : ( (enumLiteral_0= 'TRIGGERED' ) | (enumLiteral_1= 'PENDING' ) | (enumLiteral_2= 'AUTO' ) ) ;
+    public final Enumerator ruleMessageTRANSFERPROPERTYenum() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:11872:2: ( ( (enumLiteral_0= 'TRIGGERED' ) | (enumLiteral_1= 'PENDING' ) | (enumLiteral_2= 'AUTO' ) ) )
+            // InternalOil.g:11873:2: ( (enumLiteral_0= 'TRIGGERED' ) | (enumLiteral_1= 'PENDING' ) | (enumLiteral_2= 'AUTO' ) )
+            {
+            // InternalOil.g:11873:2: ( (enumLiteral_0= 'TRIGGERED' ) | (enumLiteral_1= 'PENDING' ) | (enumLiteral_2= 'AUTO' ) )
+            int alt239=3;
+            switch ( input.LA(1) ) {
+            case 181:
+                {
+                alt239=1;
+                }
+                break;
+            case 182:
+                {
+                alt239=2;
+                }
+                break;
+            case 126:
+                {
+                alt239=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 239, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt239) {
+                case 1 :
+                    // InternalOil.g:11874:3: (enumLiteral_0= 'TRIGGERED' )
+                    {
+                    // InternalOil.g:11874:3: (enumLiteral_0= 'TRIGGERED' )
+                    // InternalOil.g:11875:4: enumLiteral_0= 'TRIGGERED'
+                    {
+                    enumLiteral_0=(Token)match(input,181,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessageTRANSFERPROPERTYenumAccess().getTRIGGEREDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getMessageTRANSFERPROPERTYenumAccess().getTRIGGEREDEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalOil.g:11882:3: (enumLiteral_1= 'PENDING' )
+                    {
+                    // InternalOil.g:11882:3: (enumLiteral_1= 'PENDING' )
+                    // InternalOil.g:11883:4: enumLiteral_1= 'PENDING'
+                    {
+                    enumLiteral_1=(Token)match(input,182,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessageTRANSFERPROPERTYenumAccess().getPENDINGEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getMessageTRANSFERPROPERTYenumAccess().getPENDINGEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalOil.g:11890:3: (enumLiteral_2= 'AUTO' )
+                    {
+                    // InternalOil.g:11890:3: (enumLiteral_2= 'AUTO' )
+                    // InternalOil.g:11891:4: enumLiteral_2= 'AUTO'
+                    {
+                    enumLiteral_2=(Token)match(input,126,FOLLOW_2); 
+
+                    				current = grammarAccess.getMessageTRANSFERPROPERTYenumAccess().getAUTOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getMessageTRANSFERPROPERTYenumAccess().getAUTOEnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessageTRANSFERPROPERTYenum"
+
+
+    // $ANTLR start "ruleMessagelink1"
+    // InternalOil.g:11901:1: ruleMessagelink1 returns [Enumerator current=null] : (enumLiteral_0= 'EBoolean' ) ;
+    public final Enumerator ruleMessagelink1() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalOil.g:11907:2: ( (enumLiteral_0= 'EBoolean' ) )
+            // InternalOil.g:11908:2: (enumLiteral_0= 'EBoolean' )
+            {
+            // InternalOil.g:11908:2: (enumLiteral_0= 'EBoolean' )
+            // InternalOil.g:11909:3: enumLiteral_0= 'EBoolean'
+            {
+            enumLiteral_0=(Token)match(input,183,FOLLOW_2); 
+
+            			current = grammarAccess.getMessagelink1Access().getEBooleanEnumLiteralDeclaration().getEnumLiteral().getInstance();
+            			newLeafNode(enumLiteral_0, grammarAccess.getMessagelink1Access().getEBooleanEnumLiteralDeclaration());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMessagelink1"
+
+
     // $ANTLR start "ruleComAttributeName"
-    // InternalOil.g:8898:1: ruleComAttributeName returns [Enumerator current=null] : ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) ) ;
+    // InternalOil.g:11918:1: ruleComAttributeName returns [Enumerator current=null] : ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) ) ;
     public final Enumerator ruleComAttributeName() throws RecognitionException {
         Enumerator current = null;
 
@@ -22734,67 +30028,67 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8904:2: ( ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) ) )
-            // InternalOil.g:8905:2: ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) )
+            // InternalOil.g:11924:2: ( ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) ) )
+            // InternalOil.g:11925:2: ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) )
             {
-            // InternalOil.g:8905:2: ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) )
-            int alt217=8;
+            // InternalOil.g:11925:2: ( (enumLiteral_0= 'COMSTATUS' ) | (enumLiteral_1= 'COMERRORHOOK' ) | (enumLiteral_2= 'COMUSEGETSERVICEID' ) | (enumLiteral_3= 'COMUSEPARAMETERACCESS' ) | (enumLiteral_4= 'COMSTARTCOMEXTENSION' ) | (enumLiteral_5= 'COMTIMEBASE' ) | (enumLiteral_6= 'COMAPPMODE' ) | (enumLiteral_7= 'USE' ) )
+            int alt240=8;
             switch ( input.LA(1) ) {
-            case 135:
+            case 184:
                 {
-                alt217=1;
+                alt240=1;
                 }
                 break;
-            case 136:
+            case 185:
                 {
-                alt217=2;
+                alt240=2;
                 }
                 break;
-            case 137:
+            case 186:
                 {
-                alt217=3;
+                alt240=3;
                 }
                 break;
-            case 138:
+            case 187:
                 {
-                alt217=4;
+                alt240=4;
                 }
                 break;
-            case 139:
+            case 188:
                 {
-                alt217=5;
+                alt240=5;
                 }
                 break;
-            case 140:
+            case 189:
                 {
-                alt217=6;
+                alt240=6;
                 }
                 break;
-            case 141:
+            case 190:
                 {
-                alt217=7;
+                alt240=7;
                 }
                 break;
-            case 142:
+            case 191:
                 {
-                alt217=8;
+                alt240=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 217, 0, input);
+                    new NoViableAltException("", 240, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt217) {
+            switch (alt240) {
                 case 1 :
-                    // InternalOil.g:8906:3: (enumLiteral_0= 'COMSTATUS' )
+                    // InternalOil.g:11926:3: (enumLiteral_0= 'COMSTATUS' )
                     {
-                    // InternalOil.g:8906:3: (enumLiteral_0= 'COMSTATUS' )
-                    // InternalOil.g:8907:4: enumLiteral_0= 'COMSTATUS'
+                    // InternalOil.g:11926:3: (enumLiteral_0= 'COMSTATUS' )
+                    // InternalOil.g:11927:4: enumLiteral_0= 'COMSTATUS'
                     {
-                    enumLiteral_0=(Token)match(input,135,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,184,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getCOMSTATUSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getComAttributeNameAccess().getCOMSTATUSEnumLiteralDeclaration_0());
@@ -22806,12 +30100,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8914:3: (enumLiteral_1= 'COMERRORHOOK' )
+                    // InternalOil.g:11934:3: (enumLiteral_1= 'COMERRORHOOK' )
                     {
-                    // InternalOil.g:8914:3: (enumLiteral_1= 'COMERRORHOOK' )
-                    // InternalOil.g:8915:4: enumLiteral_1= 'COMERRORHOOK'
+                    // InternalOil.g:11934:3: (enumLiteral_1= 'COMERRORHOOK' )
+                    // InternalOil.g:11935:4: enumLiteral_1= 'COMERRORHOOK'
                     {
-                    enumLiteral_1=(Token)match(input,136,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,185,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getCOMERRORHOOKEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getComAttributeNameAccess().getCOMERRORHOOKEnumLiteralDeclaration_1());
@@ -22823,12 +30117,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:8922:3: (enumLiteral_2= 'COMUSEGETSERVICEID' )
+                    // InternalOil.g:11942:3: (enumLiteral_2= 'COMUSEGETSERVICEID' )
                     {
-                    // InternalOil.g:8922:3: (enumLiteral_2= 'COMUSEGETSERVICEID' )
-                    // InternalOil.g:8923:4: enumLiteral_2= 'COMUSEGETSERVICEID'
+                    // InternalOil.g:11942:3: (enumLiteral_2= 'COMUSEGETSERVICEID' )
+                    // InternalOil.g:11943:4: enumLiteral_2= 'COMUSEGETSERVICEID'
                     {
-                    enumLiteral_2=(Token)match(input,137,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,186,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getCOMUSEGETSERVICEIDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getComAttributeNameAccess().getCOMUSEGETSERVICEIDEnumLiteralDeclaration_2());
@@ -22840,12 +30134,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:8930:3: (enumLiteral_3= 'COMUSEPARAMETERACCESS' )
+                    // InternalOil.g:11950:3: (enumLiteral_3= 'COMUSEPARAMETERACCESS' )
                     {
-                    // InternalOil.g:8930:3: (enumLiteral_3= 'COMUSEPARAMETERACCESS' )
-                    // InternalOil.g:8931:4: enumLiteral_3= 'COMUSEPARAMETERACCESS'
+                    // InternalOil.g:11950:3: (enumLiteral_3= 'COMUSEPARAMETERACCESS' )
+                    // InternalOil.g:11951:4: enumLiteral_3= 'COMUSEPARAMETERACCESS'
                     {
-                    enumLiteral_3=(Token)match(input,138,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,187,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getCOMUSEPARAMETERACCESSEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getComAttributeNameAccess().getCOMUSEPARAMETERACCESSEnumLiteralDeclaration_3());
@@ -22857,12 +30151,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:8938:3: (enumLiteral_4= 'COMSTARTCOMEXTENSION' )
+                    // InternalOil.g:11958:3: (enumLiteral_4= 'COMSTARTCOMEXTENSION' )
                     {
-                    // InternalOil.g:8938:3: (enumLiteral_4= 'COMSTARTCOMEXTENSION' )
-                    // InternalOil.g:8939:4: enumLiteral_4= 'COMSTARTCOMEXTENSION'
+                    // InternalOil.g:11958:3: (enumLiteral_4= 'COMSTARTCOMEXTENSION' )
+                    // InternalOil.g:11959:4: enumLiteral_4= 'COMSTARTCOMEXTENSION'
                     {
-                    enumLiteral_4=(Token)match(input,139,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,188,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getCOMSTARTCOMEXTENSIONEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getComAttributeNameAccess().getCOMSTARTCOMEXTENSIONEnumLiteralDeclaration_4());
@@ -22874,12 +30168,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOil.g:8946:3: (enumLiteral_5= 'COMTIMEBASE' )
+                    // InternalOil.g:11966:3: (enumLiteral_5= 'COMTIMEBASE' )
                     {
-                    // InternalOil.g:8946:3: (enumLiteral_5= 'COMTIMEBASE' )
-                    // InternalOil.g:8947:4: enumLiteral_5= 'COMTIMEBASE'
+                    // InternalOil.g:11966:3: (enumLiteral_5= 'COMTIMEBASE' )
+                    // InternalOil.g:11967:4: enumLiteral_5= 'COMTIMEBASE'
                     {
-                    enumLiteral_5=(Token)match(input,140,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,189,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getCOMTIMEBASEEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getComAttributeNameAccess().getCOMTIMEBASEEnumLiteralDeclaration_5());
@@ -22891,12 +30185,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOil.g:8954:3: (enumLiteral_6= 'COMAPPMODE' )
+                    // InternalOil.g:11974:3: (enumLiteral_6= 'COMAPPMODE' )
                     {
-                    // InternalOil.g:8954:3: (enumLiteral_6= 'COMAPPMODE' )
-                    // InternalOil.g:8955:4: enumLiteral_6= 'COMAPPMODE'
+                    // InternalOil.g:11974:3: (enumLiteral_6= 'COMAPPMODE' )
+                    // InternalOil.g:11975:4: enumLiteral_6= 'COMAPPMODE'
                     {
-                    enumLiteral_6=(Token)match(input,141,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,190,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getCOMAPPMODEEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getComAttributeNameAccess().getCOMAPPMODEEnumLiteralDeclaration_6());
@@ -22908,12 +30202,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalOil.g:8962:3: (enumLiteral_7= 'USE' )
+                    // InternalOil.g:11982:3: (enumLiteral_7= 'USE' )
                     {
-                    // InternalOil.g:8962:3: (enumLiteral_7= 'USE' )
-                    // InternalOil.g:8963:4: enumLiteral_7= 'USE'
+                    // InternalOil.g:11982:3: (enumLiteral_7= 'USE' )
+                    // InternalOil.g:11983:4: enumLiteral_7= 'USE'
                     {
-                    enumLiteral_7=(Token)match(input,142,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,191,FOLLOW_2); 
 
                     				current = grammarAccess.getComAttributeNameAccess().getUSEEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getComAttributeNameAccess().getUSEEnumLiteralDeclaration_7());
@@ -22947,7 +30241,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskTimingrLockAttribute"
-    // InternalOil.g:8973:1: ruleTaskTimingrLockAttribute returns [Enumerator current=null] : ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) ) ;
+    // InternalOil.g:11993:1: ruleTaskTimingrLockAttribute returns [Enumerator current=null] : ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) ) ;
     public final Enumerator ruleTaskTimingrLockAttribute() throws RecognitionException {
         Enumerator current = null;
 
@@ -22958,33 +30252,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:8979:2: ( ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) ) )
-            // InternalOil.g:8980:2: ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) )
+            // InternalOil.g:11999:2: ( ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) ) )
+            // InternalOil.g:12000:2: ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) )
             {
-            // InternalOil.g:8980:2: ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) )
-            int alt218=2;
-            int LA218_0 = input.LA(1);
+            // InternalOil.g:12000:2: ( (enumLiteral_0= 'LOCKTIME' ) | (enumLiteral_1= 'RESOURCENAME' ) )
+            int alt241=2;
+            int LA241_0 = input.LA(1);
 
-            if ( (LA218_0==143) ) {
-                alt218=1;
+            if ( (LA241_0==192) ) {
+                alt241=1;
             }
-            else if ( (LA218_0==144) ) {
-                alt218=2;
+            else if ( (LA241_0==193) ) {
+                alt241=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 218, 0, input);
+                    new NoViableAltException("", 241, 0, input);
 
                 throw nvae;
             }
-            switch (alt218) {
+            switch (alt241) {
                 case 1 :
-                    // InternalOil.g:8981:3: (enumLiteral_0= 'LOCKTIME' )
+                    // InternalOil.g:12001:3: (enumLiteral_0= 'LOCKTIME' )
                     {
-                    // InternalOil.g:8981:3: (enumLiteral_0= 'LOCKTIME' )
-                    // InternalOil.g:8982:4: enumLiteral_0= 'LOCKTIME'
+                    // InternalOil.g:12001:3: (enumLiteral_0= 'LOCKTIME' )
+                    // InternalOil.g:12002:4: enumLiteral_0= 'LOCKTIME'
                     {
-                    enumLiteral_0=(Token)match(input,143,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,192,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTimingrLockAttributeAccess().getLOCKTIMEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTaskTimingrLockAttributeAccess().getLOCKTIMEEnumLiteralDeclaration_0());
@@ -22996,12 +30290,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:8989:3: (enumLiteral_1= 'RESOURCENAME' )
+                    // InternalOil.g:12009:3: (enumLiteral_1= 'RESOURCENAME' )
                     {
-                    // InternalOil.g:8989:3: (enumLiteral_1= 'RESOURCENAME' )
-                    // InternalOil.g:8990:4: enumLiteral_1= 'RESOURCENAME'
+                    // InternalOil.g:12009:3: (enumLiteral_1= 'RESOURCENAME' )
+                    // InternalOil.g:12010:4: enumLiteral_1= 'RESOURCENAME'
                     {
-                    enumLiteral_1=(Token)match(input,144,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,193,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTimingrLockAttributeAccess().getRESOURCENAMEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTaskTimingrLockAttributeAccess().getRESOURCENAMEEnumLiteralDeclaration_1());
@@ -23035,7 +30329,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskTimingAttributeName"
-    // InternalOil.g:9000:1: ruleTaskTimingAttributeName returns [Enumerator current=null] : ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) ) ;
+    // InternalOil.g:12020:1: ruleTaskTimingAttributeName returns [Enumerator current=null] : ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) ) ;
     public final Enumerator ruleTaskTimingAttributeName() throws RecognitionException {
         Enumerator current = null;
 
@@ -23049,52 +30343,52 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9006:2: ( ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) ) )
-            // InternalOil.g:9007:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) )
+            // InternalOil.g:12026:2: ( ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) ) )
+            // InternalOil.g:12027:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) )
             {
-            // InternalOil.g:9007:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) )
-            int alt219=5;
+            // InternalOil.g:12027:2: ( (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' ) | (enumLiteral_1= 'EXECUTIONBUDGET' ) | (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' ) | (enumLiteral_3= 'EXECUTIONTIME' ) | (enumLiteral_4= 'TIMEFRAME' ) )
+            int alt242=5;
             switch ( input.LA(1) ) {
-            case 104:
+            case 135:
                 {
-                alt219=1;
+                alt242=1;
                 }
                 break;
-            case 145:
+            case 194:
                 {
-                alt219=2;
+                alt242=2;
                 }
                 break;
-            case 105:
+            case 136:
                 {
-                alt219=3;
+                alt242=3;
                 }
                 break;
-            case 106:
+            case 137:
                 {
-                alt219=4;
+                alt242=4;
                 }
                 break;
-            case 107:
+            case 138:
                 {
-                alt219=5;
+                alt242=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 219, 0, input);
+                    new NoViableAltException("", 242, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt219) {
+            switch (alt242) {
                 case 1 :
-                    // InternalOil.g:9008:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
+                    // InternalOil.g:12028:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
                     {
-                    // InternalOil.g:9008:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
-                    // InternalOil.g:9009:4: enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME'
+                    // InternalOil.g:12028:3: (enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME' )
+                    // InternalOil.g:12029:4: enumLiteral_0= 'MAXALLINTERRUPTLOCKTIME'
                     {
-                    enumLiteral_0=(Token)match(input,104,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,135,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTimingAttributeNameAccess().getMAXALLINTERRUPTLOCKTIMEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTaskTimingAttributeNameAccess().getMAXALLINTERRUPTLOCKTIMEEnumLiteralDeclaration_0());
@@ -23106,12 +30400,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9016:3: (enumLiteral_1= 'EXECUTIONBUDGET' )
+                    // InternalOil.g:12036:3: (enumLiteral_1= 'EXECUTIONBUDGET' )
                     {
-                    // InternalOil.g:9016:3: (enumLiteral_1= 'EXECUTIONBUDGET' )
-                    // InternalOil.g:9017:4: enumLiteral_1= 'EXECUTIONBUDGET'
+                    // InternalOil.g:12036:3: (enumLiteral_1= 'EXECUTIONBUDGET' )
+                    // InternalOil.g:12037:4: enumLiteral_1= 'EXECUTIONBUDGET'
                     {
-                    enumLiteral_1=(Token)match(input,145,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,194,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTimingAttributeNameAccess().getEXECUTIONBUDGETEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTaskTimingAttributeNameAccess().getEXECUTIONBUDGETEnumLiteralDeclaration_1());
@@ -23123,12 +30417,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:9024:3: (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' )
+                    // InternalOil.g:12044:3: (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' )
                     {
-                    // InternalOil.g:9024:3: (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' )
-                    // InternalOil.g:9025:4: enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME'
+                    // InternalOil.g:12044:3: (enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME' )
+                    // InternalOil.g:12045:4: enumLiteral_2= 'MAXOSINTERRUPTLOCKTIME'
                     {
-                    enumLiteral_2=(Token)match(input,105,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,136,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTimingAttributeNameAccess().getMAXOSINTERRUPTLOCKTIMEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getTaskTimingAttributeNameAccess().getMAXOSINTERRUPTLOCKTIMEEnumLiteralDeclaration_2());
@@ -23140,12 +30434,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:9032:3: (enumLiteral_3= 'EXECUTIONTIME' )
+                    // InternalOil.g:12052:3: (enumLiteral_3= 'EXECUTIONTIME' )
                     {
-                    // InternalOil.g:9032:3: (enumLiteral_3= 'EXECUTIONTIME' )
-                    // InternalOil.g:9033:4: enumLiteral_3= 'EXECUTIONTIME'
+                    // InternalOil.g:12052:3: (enumLiteral_3= 'EXECUTIONTIME' )
+                    // InternalOil.g:12053:4: enumLiteral_3= 'EXECUTIONTIME'
                     {
-                    enumLiteral_3=(Token)match(input,106,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,137,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTimingAttributeNameAccess().getEXECUTIONTIMEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getTaskTimingAttributeNameAccess().getEXECUTIONTIMEEnumLiteralDeclaration_3());
@@ -23157,12 +30451,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:9040:3: (enumLiteral_4= 'TIMEFRAME' )
+                    // InternalOil.g:12060:3: (enumLiteral_4= 'TIMEFRAME' )
                     {
-                    // InternalOil.g:9040:3: (enumLiteral_4= 'TIMEFRAME' )
-                    // InternalOil.g:9041:4: enumLiteral_4= 'TIMEFRAME'
+                    // InternalOil.g:12060:3: (enumLiteral_4= 'TIMEFRAME' )
+                    // InternalOil.g:12061:4: enumLiteral_4= 'TIMEFRAME'
                     {
-                    enumLiteral_4=(Token)match(input,107,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,138,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTimingAttributeNameAccess().getTIMEFRAMEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getTaskTimingAttributeNameAccess().getTIMEFRAMEEnumLiteralDeclaration_4());
@@ -23196,7 +30490,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskAttributeName"
-    // InternalOil.g:9051:1: ruleTaskAttributeName returns [Enumerator current=null] : ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) ) ;
+    // InternalOil.g:12071:1: ruleTaskAttributeName returns [Enumerator current=null] : ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) ) ;
     public final Enumerator ruleTaskAttributeName() throws RecognitionException {
         Enumerator current = null;
 
@@ -23217,87 +30511,87 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9057:2: ( ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) ) )
-            // InternalOil.g:9058:2: ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) )
+            // InternalOil.g:12077:2: ( ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) ) )
+            // InternalOil.g:12078:2: ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) )
             {
-            // InternalOil.g:9058:2: ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) )
-            int alt220=12;
+            // InternalOil.g:12078:2: ( (enumLiteral_0= 'ACTIVATION' ) | (enumLiteral_1= 'NAME' ) | (enumLiteral_2= 'PROCESSKIND' ) | (enumLiteral_3= 'NONPREEMPTABLE' ) | (enumLiteral_4= 'PRIORITY' ) | (enumLiteral_5= 'SCHEDULE' ) | (enumLiteral_6= 'EVENT' ) | (enumLiteral_7= 'RESOURCE' ) | (enumLiteral_8= 'USEINTERNALRESOURCE' ) | (enumLiteral_9= 'ACCESSING_APPLICATION' ) | (enumLiteral_10= 'INTERNALRESOURCE' ) | (enumLiteral_11= 'MESSAGE' ) )
+            int alt243=12;
             switch ( input.LA(1) ) {
-            case 146:
+            case 195:
                 {
-                alt220=1;
+                alt243=1;
                 }
                 break;
-            case 147:
+            case 196:
                 {
-                alt220=2;
+                alt243=2;
                 }
                 break;
-            case 148:
+            case 197:
                 {
-                alt220=3;
+                alt243=3;
                 }
                 break;
-            case 149:
+            case 198:
                 {
-                alt220=4;
+                alt243=4;
                 }
                 break;
-            case 97:
+            case 128:
                 {
-                alt220=5;
+                alt243=5;
                 }
                 break;
-            case 150:
+            case 199:
                 {
-                alt220=6;
+                alt243=6;
                 }
                 break;
             case 43:
                 {
-                alt220=7;
+                alt243=7;
                 }
                 break;
             case 42:
                 {
-                alt220=8;
+                alt243=8;
                 }
                 break;
-            case 151:
+            case 200:
                 {
-                alt220=9;
+                alt243=9;
                 }
                 break;
-            case 70:
+            case 104:
                 {
-                alt220=10;
+                alt243=10;
                 }
                 break;
-            case 152:
+            case 201:
                 {
-                alt220=11;
+                alt243=11;
                 }
                 break;
             case 44:
                 {
-                alt220=12;
+                alt243=12;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 220, 0, input);
+                    new NoViableAltException("", 243, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt220) {
+            switch (alt243) {
                 case 1 :
-                    // InternalOil.g:9059:3: (enumLiteral_0= 'ACTIVATION' )
+                    // InternalOil.g:12079:3: (enumLiteral_0= 'ACTIVATION' )
                     {
-                    // InternalOil.g:9059:3: (enumLiteral_0= 'ACTIVATION' )
-                    // InternalOil.g:9060:4: enumLiteral_0= 'ACTIVATION'
+                    // InternalOil.g:12079:3: (enumLiteral_0= 'ACTIVATION' )
+                    // InternalOil.g:12080:4: enumLiteral_0= 'ACTIVATION'
                     {
-                    enumLiteral_0=(Token)match(input,146,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,195,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getACTIVATIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTaskAttributeNameAccess().getACTIVATIONEnumLiteralDeclaration_0());
@@ -23309,12 +30603,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9067:3: (enumLiteral_1= 'NAME' )
+                    // InternalOil.g:12087:3: (enumLiteral_1= 'NAME' )
                     {
-                    // InternalOil.g:9067:3: (enumLiteral_1= 'NAME' )
-                    // InternalOil.g:9068:4: enumLiteral_1= 'NAME'
+                    // InternalOil.g:12087:3: (enumLiteral_1= 'NAME' )
+                    // InternalOil.g:12088:4: enumLiteral_1= 'NAME'
                     {
-                    enumLiteral_1=(Token)match(input,147,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,196,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getNAMEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTaskAttributeNameAccess().getNAMEEnumLiteralDeclaration_1());
@@ -23326,12 +30620,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:9075:3: (enumLiteral_2= 'PROCESSKIND' )
+                    // InternalOil.g:12095:3: (enumLiteral_2= 'PROCESSKIND' )
                     {
-                    // InternalOil.g:9075:3: (enumLiteral_2= 'PROCESSKIND' )
-                    // InternalOil.g:9076:4: enumLiteral_2= 'PROCESSKIND'
+                    // InternalOil.g:12095:3: (enumLiteral_2= 'PROCESSKIND' )
+                    // InternalOil.g:12096:4: enumLiteral_2= 'PROCESSKIND'
                     {
-                    enumLiteral_2=(Token)match(input,148,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,197,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getPROCESSKINDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getTaskAttributeNameAccess().getPROCESSKINDEnumLiteralDeclaration_2());
@@ -23343,12 +30637,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOil.g:9083:3: (enumLiteral_3= 'NONPREEMPTABLE' )
+                    // InternalOil.g:12103:3: (enumLiteral_3= 'NONPREEMPTABLE' )
                     {
-                    // InternalOil.g:9083:3: (enumLiteral_3= 'NONPREEMPTABLE' )
-                    // InternalOil.g:9084:4: enumLiteral_3= 'NONPREEMPTABLE'
+                    // InternalOil.g:12103:3: (enumLiteral_3= 'NONPREEMPTABLE' )
+                    // InternalOil.g:12104:4: enumLiteral_3= 'NONPREEMPTABLE'
                     {
-                    enumLiteral_3=(Token)match(input,149,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,198,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getNONPREEMPTABLEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getTaskAttributeNameAccess().getNONPREEMPTABLEEnumLiteralDeclaration_3());
@@ -23360,12 +30654,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOil.g:9091:3: (enumLiteral_4= 'PRIORITY' )
+                    // InternalOil.g:12111:3: (enumLiteral_4= 'PRIORITY' )
                     {
-                    // InternalOil.g:9091:3: (enumLiteral_4= 'PRIORITY' )
-                    // InternalOil.g:9092:4: enumLiteral_4= 'PRIORITY'
+                    // InternalOil.g:12111:3: (enumLiteral_4= 'PRIORITY' )
+                    // InternalOil.g:12112:4: enumLiteral_4= 'PRIORITY'
                     {
-                    enumLiteral_4=(Token)match(input,97,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,128,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getPRIORITYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getTaskAttributeNameAccess().getPRIORITYEnumLiteralDeclaration_4());
@@ -23377,12 +30671,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOil.g:9099:3: (enumLiteral_5= 'SCHEDULE' )
+                    // InternalOil.g:12119:3: (enumLiteral_5= 'SCHEDULE' )
                     {
-                    // InternalOil.g:9099:3: (enumLiteral_5= 'SCHEDULE' )
-                    // InternalOil.g:9100:4: enumLiteral_5= 'SCHEDULE'
+                    // InternalOil.g:12119:3: (enumLiteral_5= 'SCHEDULE' )
+                    // InternalOil.g:12120:4: enumLiteral_5= 'SCHEDULE'
                     {
-                    enumLiteral_5=(Token)match(input,150,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,199,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getSCHEDULEEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getTaskAttributeNameAccess().getSCHEDULEEnumLiteralDeclaration_5());
@@ -23394,10 +30688,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalOil.g:9107:3: (enumLiteral_6= 'EVENT' )
+                    // InternalOil.g:12127:3: (enumLiteral_6= 'EVENT' )
                     {
-                    // InternalOil.g:9107:3: (enumLiteral_6= 'EVENT' )
-                    // InternalOil.g:9108:4: enumLiteral_6= 'EVENT'
+                    // InternalOil.g:12127:3: (enumLiteral_6= 'EVENT' )
+                    // InternalOil.g:12128:4: enumLiteral_6= 'EVENT'
                     {
                     enumLiteral_6=(Token)match(input,43,FOLLOW_2); 
 
@@ -23411,10 +30705,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalOil.g:9115:3: (enumLiteral_7= 'RESOURCE' )
+                    // InternalOil.g:12135:3: (enumLiteral_7= 'RESOURCE' )
                     {
-                    // InternalOil.g:9115:3: (enumLiteral_7= 'RESOURCE' )
-                    // InternalOil.g:9116:4: enumLiteral_7= 'RESOURCE'
+                    // InternalOil.g:12135:3: (enumLiteral_7= 'RESOURCE' )
+                    // InternalOil.g:12136:4: enumLiteral_7= 'RESOURCE'
                     {
                     enumLiteral_7=(Token)match(input,42,FOLLOW_2); 
 
@@ -23428,12 +30722,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalOil.g:9123:3: (enumLiteral_8= 'USEINTERNALRESOURCE' )
+                    // InternalOil.g:12143:3: (enumLiteral_8= 'USEINTERNALRESOURCE' )
                     {
-                    // InternalOil.g:9123:3: (enumLiteral_8= 'USEINTERNALRESOURCE' )
-                    // InternalOil.g:9124:4: enumLiteral_8= 'USEINTERNALRESOURCE'
+                    // InternalOil.g:12143:3: (enumLiteral_8= 'USEINTERNALRESOURCE' )
+                    // InternalOil.g:12144:4: enumLiteral_8= 'USEINTERNALRESOURCE'
                     {
-                    enumLiteral_8=(Token)match(input,151,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,200,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getUSEINTERNALRESOURCEEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_8, grammarAccess.getTaskAttributeNameAccess().getUSEINTERNALRESOURCEEnumLiteralDeclaration_8());
@@ -23445,12 +30739,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalOil.g:9131:3: (enumLiteral_9= 'ACCESSING_APPLICATION' )
+                    // InternalOil.g:12151:3: (enumLiteral_9= 'ACCESSING_APPLICATION' )
                     {
-                    // InternalOil.g:9131:3: (enumLiteral_9= 'ACCESSING_APPLICATION' )
-                    // InternalOil.g:9132:4: enumLiteral_9= 'ACCESSING_APPLICATION'
+                    // InternalOil.g:12151:3: (enumLiteral_9= 'ACCESSING_APPLICATION' )
+                    // InternalOil.g:12152:4: enumLiteral_9= 'ACCESSING_APPLICATION'
                     {
-                    enumLiteral_9=(Token)match(input,70,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,104,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getACCESSING_APPLICATIONEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getTaskAttributeNameAccess().getACCESSING_APPLICATIONEnumLiteralDeclaration_9());
@@ -23462,12 +30756,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalOil.g:9139:3: (enumLiteral_10= 'INTERNALRESOURCE' )
+                    // InternalOil.g:12159:3: (enumLiteral_10= 'INTERNALRESOURCE' )
                     {
-                    // InternalOil.g:9139:3: (enumLiteral_10= 'INTERNALRESOURCE' )
-                    // InternalOil.g:9140:4: enumLiteral_10= 'INTERNALRESOURCE'
+                    // InternalOil.g:12159:3: (enumLiteral_10= 'INTERNALRESOURCE' )
+                    // InternalOil.g:12160:4: enumLiteral_10= 'INTERNALRESOURCE'
                     {
-                    enumLiteral_10=(Token)match(input,152,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,201,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskAttributeNameAccess().getINTERNALRESOURCEEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_10, grammarAccess.getTaskAttributeNameAccess().getINTERNALRESOURCEEnumLiteralDeclaration_10());
@@ -23479,10 +30773,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalOil.g:9147:3: (enumLiteral_11= 'MESSAGE' )
+                    // InternalOil.g:12167:3: (enumLiteral_11= 'MESSAGE' )
                     {
-                    // InternalOil.g:9147:3: (enumLiteral_11= 'MESSAGE' )
-                    // InternalOil.g:9148:4: enumLiteral_11= 'MESSAGE'
+                    // InternalOil.g:12167:3: (enumLiteral_11= 'MESSAGE' )
+                    // InternalOil.g:12168:4: enumLiteral_11= 'MESSAGE'
                     {
                     enumLiteral_11=(Token)match(input,44,FOLLOW_2); 
 
@@ -23518,7 +30812,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResourceRange"
-    // InternalOil.g:9158:1: ruleResourceRange returns [Enumerator current=null] : ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) ) ;
+    // InternalOil.g:12178:1: ruleResourceRange returns [Enumerator current=null] : ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) ) ;
     public final Enumerator ruleResourceRange() throws RecognitionException {
         Enumerator current = null;
 
@@ -23530,42 +30824,42 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9164:2: ( ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) ) )
-            // InternalOil.g:9165:2: ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) )
+            // InternalOil.g:12184:2: ( ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) ) )
+            // InternalOil.g:12185:2: ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) )
             {
-            // InternalOil.g:9165:2: ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) )
-            int alt221=3;
+            // InternalOil.g:12185:2: ( (enumLiteral_0= 'STANDARD' ) | (enumLiteral_1= 'INTERNAL' ) | (enumLiteral_2= 'LINKED' ) )
+            int alt244=3;
             switch ( input.LA(1) ) {
-            case 153:
+            case 202:
                 {
-                alt221=1;
+                alt244=1;
                 }
                 break;
-            case 154:
+            case 203:
                 {
-                alt221=2;
+                alt244=2;
                 }
                 break;
-            case 155:
+            case 204:
                 {
-                alt221=3;
+                alt244=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 221, 0, input);
+                    new NoViableAltException("", 244, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt221) {
+            switch (alt244) {
                 case 1 :
-                    // InternalOil.g:9166:3: (enumLiteral_0= 'STANDARD' )
+                    // InternalOil.g:12186:3: (enumLiteral_0= 'STANDARD' )
                     {
-                    // InternalOil.g:9166:3: (enumLiteral_0= 'STANDARD' )
-                    // InternalOil.g:9167:4: enumLiteral_0= 'STANDARD'
+                    // InternalOil.g:12186:3: (enumLiteral_0= 'STANDARD' )
+                    // InternalOil.g:12187:4: enumLiteral_0= 'STANDARD'
                     {
-                    enumLiteral_0=(Token)match(input,153,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,202,FOLLOW_2); 
 
                     				current = grammarAccess.getResourceRangeAccess().getSTANDARDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getResourceRangeAccess().getSTANDARDEnumLiteralDeclaration_0());
@@ -23577,12 +30871,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9174:3: (enumLiteral_1= 'INTERNAL' )
+                    // InternalOil.g:12194:3: (enumLiteral_1= 'INTERNAL' )
                     {
-                    // InternalOil.g:9174:3: (enumLiteral_1= 'INTERNAL' )
-                    // InternalOil.g:9175:4: enumLiteral_1= 'INTERNAL'
+                    // InternalOil.g:12194:3: (enumLiteral_1= 'INTERNAL' )
+                    // InternalOil.g:12195:4: enumLiteral_1= 'INTERNAL'
                     {
-                    enumLiteral_1=(Token)match(input,154,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,203,FOLLOW_2); 
 
                     				current = grammarAccess.getResourceRangeAccess().getINTERNALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getResourceRangeAccess().getINTERNALEnumLiteralDeclaration_1());
@@ -23594,12 +30888,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:9182:3: (enumLiteral_2= 'LINKED' )
+                    // InternalOil.g:12202:3: (enumLiteral_2= 'LINKED' )
                     {
-                    // InternalOil.g:9182:3: (enumLiteral_2= 'LINKED' )
-                    // InternalOil.g:9183:4: enumLiteral_2= 'LINKED'
+                    // InternalOil.g:12202:3: (enumLiteral_2= 'LINKED' )
+                    // InternalOil.g:12203:4: enumLiteral_2= 'LINKED'
                     {
-                    enumLiteral_2=(Token)match(input,155,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,204,FOLLOW_2); 
 
                     				current = grammarAccess.getResourceRangeAccess().getLINKEDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getResourceRangeAccess().getLINKEDEnumLiteralDeclaration_2());
@@ -23633,7 +30927,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActivateTask"
-    // InternalOil.g:9193:1: ruleActivateTask returns [Enumerator current=null] : (enumLiteral_0= 'TASK' ) ;
+    // InternalOil.g:12213:1: ruleActivateTask returns [Enumerator current=null] : (enumLiteral_0= 'TASK' ) ;
     public final Enumerator ruleActivateTask() throws RecognitionException {
         Enumerator current = null;
 
@@ -23643,11 +30937,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9199:2: ( (enumLiteral_0= 'TASK' ) )
-            // InternalOil.g:9200:2: (enumLiteral_0= 'TASK' )
+            // InternalOil.g:12219:2: ( (enumLiteral_0= 'TASK' ) )
+            // InternalOil.g:12220:2: (enumLiteral_0= 'TASK' )
             {
-            // InternalOil.g:9200:2: (enumLiteral_0= 'TASK' )
-            // InternalOil.g:9201:3: enumLiteral_0= 'TASK'
+            // InternalOil.g:12220:2: (enumLiteral_0= 'TASK' )
+            // InternalOil.g:12221:3: enumLiteral_0= 'TASK'
             {
             enumLiteral_0=(Token)match(input,24,FOLLOW_2); 
 
@@ -23677,7 +30971,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIncrementCounter"
-    // InternalOil.g:9210:1: ruleIncrementCounter returns [Enumerator current=null] : (enumLiteral_0= 'COUNTER' ) ;
+    // InternalOil.g:12230:1: ruleIncrementCounter returns [Enumerator current=null] : (enumLiteral_0= 'COUNTER' ) ;
     public final Enumerator ruleIncrementCounter() throws RecognitionException {
         Enumerator current = null;
 
@@ -23687,11 +30981,11 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9216:2: ( (enumLiteral_0= 'COUNTER' ) )
-            // InternalOil.g:9217:2: (enumLiteral_0= 'COUNTER' )
+            // InternalOil.g:12236:2: ( (enumLiteral_0= 'COUNTER' ) )
+            // InternalOil.g:12237:2: (enumLiteral_0= 'COUNTER' )
             {
-            // InternalOil.g:9217:2: (enumLiteral_0= 'COUNTER' )
-            // InternalOil.g:9218:3: enumLiteral_0= 'COUNTER'
+            // InternalOil.g:12237:2: (enumLiteral_0= 'COUNTER' )
+            // InternalOil.g:12238:3: enumLiteral_0= 'COUNTER'
             {
             enumLiteral_0=(Token)match(input,29,FOLLOW_2); 
 
@@ -23721,7 +31015,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSetevent"
-    // InternalOil.g:9227:1: ruleSetevent returns [Enumerator current=null] : ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) ) ;
+    // InternalOil.g:12247:1: ruleSetevent returns [Enumerator current=null] : ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) ) ;
     public final Enumerator ruleSetevent() throws RecognitionException {
         Enumerator current = null;
 
@@ -23732,31 +31026,31 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9233:2: ( ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) ) )
-            // InternalOil.g:9234:2: ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) )
+            // InternalOil.g:12253:2: ( ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) ) )
+            // InternalOil.g:12254:2: ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) )
             {
-            // InternalOil.g:9234:2: ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) )
-            int alt222=2;
-            int LA222_0 = input.LA(1);
+            // InternalOil.g:12254:2: ( (enumLiteral_0= 'TASK' ) | (enumLiteral_1= 'EVENT' ) )
+            int alt245=2;
+            int LA245_0 = input.LA(1);
 
-            if ( (LA222_0==24) ) {
-                alt222=1;
+            if ( (LA245_0==24) ) {
+                alt245=1;
             }
-            else if ( (LA222_0==43) ) {
-                alt222=2;
+            else if ( (LA245_0==43) ) {
+                alt245=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 222, 0, input);
+                    new NoViableAltException("", 245, 0, input);
 
                 throw nvae;
             }
-            switch (alt222) {
+            switch (alt245) {
                 case 1 :
-                    // InternalOil.g:9235:3: (enumLiteral_0= 'TASK' )
+                    // InternalOil.g:12255:3: (enumLiteral_0= 'TASK' )
                     {
-                    // InternalOil.g:9235:3: (enumLiteral_0= 'TASK' )
-                    // InternalOil.g:9236:4: enumLiteral_0= 'TASK'
+                    // InternalOil.g:12255:3: (enumLiteral_0= 'TASK' )
+                    // InternalOil.g:12256:4: enumLiteral_0= 'TASK'
                     {
                     enumLiteral_0=(Token)match(input,24,FOLLOW_2); 
 
@@ -23770,10 +31064,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9243:3: (enumLiteral_1= 'EVENT' )
+                    // InternalOil.g:12263:3: (enumLiteral_1= 'EVENT' )
                     {
-                    // InternalOil.g:9243:3: (enumLiteral_1= 'EVENT' )
-                    // InternalOil.g:9244:4: enumLiteral_1= 'EVENT'
+                    // InternalOil.g:12263:3: (enumLiteral_1= 'EVENT' )
+                    // InternalOil.g:12264:4: enumLiteral_1= 'EVENT'
                     {
                     enumLiteral_1=(Token)match(input,43,FOLLOW_2); 
 
@@ -23809,7 +31103,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlarmCallBack"
-    // InternalOil.g:9254:1: ruleAlarmCallBack returns [Enumerator current=null] : (enumLiteral_0= 'ALARMCALLBACK' ) ;
+    // InternalOil.g:12274:1: ruleAlarmCallBack returns [Enumerator current=null] : (enumLiteral_0= 'ALARMCALLBACK' ) ;
     public final Enumerator ruleAlarmCallBack() throws RecognitionException {
         Enumerator current = null;
 
@@ -23819,13 +31113,13 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9260:2: ( (enumLiteral_0= 'ALARMCALLBACK' ) )
-            // InternalOil.g:9261:2: (enumLiteral_0= 'ALARMCALLBACK' )
+            // InternalOil.g:12280:2: ( (enumLiteral_0= 'ALARMCALLBACK' ) )
+            // InternalOil.g:12281:2: (enumLiteral_0= 'ALARMCALLBACK' )
             {
-            // InternalOil.g:9261:2: (enumLiteral_0= 'ALARMCALLBACK' )
-            // InternalOil.g:9262:3: enumLiteral_0= 'ALARMCALLBACK'
+            // InternalOil.g:12281:2: (enumLiteral_0= 'ALARMCALLBACK' )
+            // InternalOil.g:12282:3: enumLiteral_0= 'ALARMCALLBACK'
             {
-            enumLiteral_0=(Token)match(input,75,FOLLOW_2); 
+            enumLiteral_0=(Token)match(input,107,FOLLOW_2); 
 
             			current = grammarAccess.getAlarmCallBackAccess().getALARMCALLBACKEnumLiteralDeclaration().getEnumLiteral().getInstance();
             			newLeafNode(enumLiteral_0, grammarAccess.getAlarmCallBackAccess().getALARMCALLBACKEnumLiteralDeclaration());
@@ -23853,7 +31147,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbsolute"
-    // InternalOil.g:9271:1: ruleAbsolute returns [Enumerator current=null] : ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) ) ;
+    // InternalOil.g:12291:1: ruleAbsolute returns [Enumerator current=null] : ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) ) ;
     public final Enumerator ruleAbsolute() throws RecognitionException {
         Enumerator current = null;
 
@@ -23864,33 +31158,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9277:2: ( ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) ) )
-            // InternalOil.g:9278:2: ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) )
+            // InternalOil.g:12297:2: ( ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) ) )
+            // InternalOil.g:12298:2: ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) )
             {
-            // InternalOil.g:9278:2: ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) )
-            int alt223=2;
-            int LA223_0 = input.LA(1);
+            // InternalOil.g:12298:2: ( (enumLiteral_0= 'START' ) | (enumLiteral_1= 'APPMODE' ) )
+            int alt246=2;
+            int LA246_0 = input.LA(1);
 
-            if ( (LA223_0==156) ) {
-                alt223=1;
+            if ( (LA246_0==205) ) {
+                alt246=1;
             }
-            else if ( (LA223_0==47) ) {
-                alt223=2;
+            else if ( (LA246_0==47) ) {
+                alt246=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 223, 0, input);
+                    new NoViableAltException("", 246, 0, input);
 
                 throw nvae;
             }
-            switch (alt223) {
+            switch (alt246) {
                 case 1 :
-                    // InternalOil.g:9279:3: (enumLiteral_0= 'START' )
+                    // InternalOil.g:12299:3: (enumLiteral_0= 'START' )
                     {
-                    // InternalOil.g:9279:3: (enumLiteral_0= 'START' )
-                    // InternalOil.g:9280:4: enumLiteral_0= 'START'
+                    // InternalOil.g:12299:3: (enumLiteral_0= 'START' )
+                    // InternalOil.g:12300:4: enumLiteral_0= 'START'
                     {
-                    enumLiteral_0=(Token)match(input,156,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,205,FOLLOW_2); 
 
                     				current = grammarAccess.getAbsoluteAccess().getSTARTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getAbsoluteAccess().getSTARTEnumLiteralDeclaration_0());
@@ -23902,10 +31196,10 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9287:3: (enumLiteral_1= 'APPMODE' )
+                    // InternalOil.g:12307:3: (enumLiteral_1= 'APPMODE' )
                     {
-                    // InternalOil.g:9287:3: (enumLiteral_1= 'APPMODE' )
-                    // InternalOil.g:9288:4: enumLiteral_1= 'APPMODE'
+                    // InternalOil.g:12307:3: (enumLiteral_1= 'APPMODE' )
+                    // InternalOil.g:12308:4: enumLiteral_1= 'APPMODE'
                     {
                     enumLiteral_1=(Token)match(input,47,FOLLOW_2); 
 
@@ -23941,7 +31235,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSchduleSyn"
-    // InternalOil.g:9298:1: ruleSchduleSyn returns [Enumerator current=null] : ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) ) ;
+    // InternalOil.g:12318:1: ruleSchduleSyn returns [Enumerator current=null] : ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) ) ;
     public final Enumerator ruleSchduleSyn() throws RecognitionException {
         Enumerator current = null;
 
@@ -23952,33 +31246,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9304:2: ( ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) ) )
-            // InternalOil.g:9305:2: ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) )
+            // InternalOil.g:12324:2: ( ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) ) )
+            // InternalOil.g:12325:2: ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) )
             {
-            // InternalOil.g:9305:2: ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) )
-            int alt224=2;
-            int LA224_0 = input.LA(1);
+            // InternalOil.g:12325:2: ( (enumLiteral_0= 'EXPLICIT' ) | (enumLiteral_1= 'IMPLICIT' ) )
+            int alt247=2;
+            int LA247_0 = input.LA(1);
 
-            if ( (LA224_0==157) ) {
-                alt224=1;
+            if ( (LA247_0==206) ) {
+                alt247=1;
             }
-            else if ( (LA224_0==158) ) {
-                alt224=2;
+            else if ( (LA247_0==207) ) {
+                alt247=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 224, 0, input);
+                    new NoViableAltException("", 247, 0, input);
 
                 throw nvae;
             }
-            switch (alt224) {
+            switch (alt247) {
                 case 1 :
-                    // InternalOil.g:9306:3: (enumLiteral_0= 'EXPLICIT' )
+                    // InternalOil.g:12326:3: (enumLiteral_0= 'EXPLICIT' )
                     {
-                    // InternalOil.g:9306:3: (enumLiteral_0= 'EXPLICIT' )
-                    // InternalOil.g:9307:4: enumLiteral_0= 'EXPLICIT'
+                    // InternalOil.g:12326:3: (enumLiteral_0= 'EXPLICIT' )
+                    // InternalOil.g:12327:4: enumLiteral_0= 'EXPLICIT'
                     {
-                    enumLiteral_0=(Token)match(input,157,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,206,FOLLOW_2); 
 
                     				current = grammarAccess.getSchduleSynAccess().getEXPLICITEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getSchduleSynAccess().getEXPLICITEnumLiteralDeclaration_0());
@@ -23990,12 +31284,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9314:3: (enumLiteral_1= 'IMPLICIT' )
+                    // InternalOil.g:12334:3: (enumLiteral_1= 'IMPLICIT' )
                     {
-                    // InternalOil.g:9314:3: (enumLiteral_1= 'IMPLICIT' )
-                    // InternalOil.g:9315:4: enumLiteral_1= 'IMPLICIT'
+                    // InternalOil.g:12334:3: (enumLiteral_1= 'IMPLICIT' )
+                    // InternalOil.g:12335:4: enumLiteral_1= 'IMPLICIT'
                     {
-                    enumLiteral_1=(Token)match(input,158,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,207,FOLLOW_2); 
 
                     				current = grammarAccess.getSchduleSynAccess().getIMPLICITEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getSchduleSynAccess().getIMPLICITEnumLiteralDeclaration_1());
@@ -24029,7 +31323,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSchduleExpiryAdustble"
-    // InternalOil.g:9325:1: ruleSchduleExpiryAdustble returns [Enumerator current=null] : ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) ) ;
+    // InternalOil.g:12345:1: ruleSchduleExpiryAdustble returns [Enumerator current=null] : ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) ) ;
     public final Enumerator ruleSchduleExpiryAdustble() throws RecognitionException {
         Enumerator current = null;
 
@@ -24040,33 +31334,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9331:2: ( ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) ) )
-            // InternalOil.g:9332:2: ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) )
+            // InternalOil.g:12351:2: ( ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) ) )
+            // InternalOil.g:12352:2: ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) )
             {
-            // InternalOil.g:9332:2: ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) )
-            int alt225=2;
-            int LA225_0 = input.LA(1);
+            // InternalOil.g:12352:2: ( (enumLiteral_0= 'MAX_RETARD' ) | (enumLiteral_1= 'MAX_ADVANCE' ) )
+            int alt248=2;
+            int LA248_0 = input.LA(1);
 
-            if ( (LA225_0==159) ) {
-                alt225=1;
+            if ( (LA248_0==208) ) {
+                alt248=1;
             }
-            else if ( (LA225_0==160) ) {
-                alt225=2;
+            else if ( (LA248_0==209) ) {
+                alt248=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 225, 0, input);
+                    new NoViableAltException("", 248, 0, input);
 
                 throw nvae;
             }
-            switch (alt225) {
+            switch (alt248) {
                 case 1 :
-                    // InternalOil.g:9333:3: (enumLiteral_0= 'MAX_RETARD' )
+                    // InternalOil.g:12353:3: (enumLiteral_0= 'MAX_RETARD' )
                     {
-                    // InternalOil.g:9333:3: (enumLiteral_0= 'MAX_RETARD' )
-                    // InternalOil.g:9334:4: enumLiteral_0= 'MAX_RETARD'
+                    // InternalOil.g:12353:3: (enumLiteral_0= 'MAX_RETARD' )
+                    // InternalOil.g:12354:4: enumLiteral_0= 'MAX_RETARD'
                     {
-                    enumLiteral_0=(Token)match(input,159,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,208,FOLLOW_2); 
 
                     				current = grammarAccess.getSchduleExpiryAdustbleAccess().getMAX_RETARDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getSchduleExpiryAdustbleAccess().getMAX_RETARDEnumLiteralDeclaration_0());
@@ -24078,12 +31372,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9341:3: (enumLiteral_1= 'MAX_ADVANCE' )
+                    // InternalOil.g:12361:3: (enumLiteral_1= 'MAX_ADVANCE' )
                     {
-                    // InternalOil.g:9341:3: (enumLiteral_1= 'MAX_ADVANCE' )
-                    // InternalOil.g:9342:4: enumLiteral_1= 'MAX_ADVANCE'
+                    // InternalOil.g:12361:3: (enumLiteral_1= 'MAX_ADVANCE' )
+                    // InternalOil.g:12362:4: enumLiteral_1= 'MAX_ADVANCE'
                     {
-                    enumLiteral_1=(Token)match(input,160,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,209,FOLLOW_2); 
 
                     				current = grammarAccess.getSchduleExpiryAdustbleAccess().getMAX_ADVANCEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getSchduleExpiryAdustbleAccess().getMAX_ADVANCEEnumLiteralDeclaration_1());
@@ -24117,7 +31411,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocReciverNone"
-    // InternalOil.g:9352:1: ruleIocReciverNone returns [Enumerator current=null] : (enumLiteral_0= 'NONE' ) ;
+    // InternalOil.g:12372:1: ruleIocReciverNone returns [Enumerator current=null] : (enumLiteral_0= 'NONE' ) ;
     public final Enumerator ruleIocReciverNone() throws RecognitionException {
         Enumerator current = null;
 
@@ -24127,13 +31421,13 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9358:2: ( (enumLiteral_0= 'NONE' ) )
-            // InternalOil.g:9359:2: (enumLiteral_0= 'NONE' )
+            // InternalOil.g:12378:2: ( (enumLiteral_0= 'NONE' ) )
+            // InternalOil.g:12379:2: (enumLiteral_0= 'NONE' )
             {
-            // InternalOil.g:9359:2: (enumLiteral_0= 'NONE' )
-            // InternalOil.g:9360:3: enumLiteral_0= 'NONE'
+            // InternalOil.g:12379:2: (enumLiteral_0= 'NONE' )
+            // InternalOil.g:12380:3: enumLiteral_0= 'NONE'
             {
-            enumLiteral_0=(Token)match(input,79,FOLLOW_2); 
+            enumLiteral_0=(Token)match(input,67,FOLLOW_2); 
 
             			current = grammarAccess.getIocReciverNoneAccess().getNONEEnumLiteralDeclaration().getEnumLiteral().getInstance();
             			newLeafNode(enumLiteral_0, grammarAccess.getIocReciverNoneAccess().getNONEEnumLiteralDeclaration());
@@ -24161,7 +31455,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumIocSendRec"
-    // InternalOil.g:9369:1: ruleEnumIocSendRec returns [Enumerator current=null] : ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) ) ;
+    // InternalOil.g:12389:1: ruleEnumIocSendRec returns [Enumerator current=null] : ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) ) ;
     public final Enumerator ruleEnumIocSendRec() throws RecognitionException {
         Enumerator current = null;
 
@@ -24172,33 +31466,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9375:2: ( ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) ) )
-            // InternalOil.g:9376:2: ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) )
+            // InternalOil.g:12395:2: ( ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) ) )
+            // InternalOil.g:12396:2: ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) )
             {
-            // InternalOil.g:9376:2: ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) )
-            int alt226=2;
-            int LA226_0 = input.LA(1);
+            // InternalOil.g:12396:2: ( (enumLiteral_0= 'SENDER_ID' ) | (enumLiteral_1= 'SND_OSAPPLICATION' ) )
+            int alt249=2;
+            int LA249_0 = input.LA(1);
 
-            if ( (LA226_0==161) ) {
-                alt226=1;
+            if ( (LA249_0==210) ) {
+                alt249=1;
             }
-            else if ( (LA226_0==162) ) {
-                alt226=2;
+            else if ( (LA249_0==211) ) {
+                alt249=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 226, 0, input);
+                    new NoViableAltException("", 249, 0, input);
 
                 throw nvae;
             }
-            switch (alt226) {
+            switch (alt249) {
                 case 1 :
-                    // InternalOil.g:9377:3: (enumLiteral_0= 'SENDER_ID' )
+                    // InternalOil.g:12397:3: (enumLiteral_0= 'SENDER_ID' )
                     {
-                    // InternalOil.g:9377:3: (enumLiteral_0= 'SENDER_ID' )
-                    // InternalOil.g:9378:4: enumLiteral_0= 'SENDER_ID'
+                    // InternalOil.g:12397:3: (enumLiteral_0= 'SENDER_ID' )
+                    // InternalOil.g:12398:4: enumLiteral_0= 'SENDER_ID'
                     {
-                    enumLiteral_0=(Token)match(input,161,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,210,FOLLOW_2); 
 
                     				current = grammarAccess.getEnumIocSendRecAccess().getSENDER_IDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getEnumIocSendRecAccess().getSENDER_IDEnumLiteralDeclaration_0());
@@ -24210,12 +31504,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9385:3: (enumLiteral_1= 'SND_OSAPPLICATION' )
+                    // InternalOil.g:12405:3: (enumLiteral_1= 'SND_OSAPPLICATION' )
                     {
-                    // InternalOil.g:9385:3: (enumLiteral_1= 'SND_OSAPPLICATION' )
-                    // InternalOil.g:9386:4: enumLiteral_1= 'SND_OSAPPLICATION'
+                    // InternalOil.g:12405:3: (enumLiteral_1= 'SND_OSAPPLICATION' )
+                    // InternalOil.g:12406:4: enumLiteral_1= 'SND_OSAPPLICATION'
                     {
-                    enumLiteral_1=(Token)match(input,162,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,211,FOLLOW_2); 
 
                     				current = grammarAccess.getEnumIocSendRecAccess().getSND_OSAPPLICATIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getEnumIocSendRecAccess().getSND_OSAPPLICATIONEnumLiteralDeclaration_1());
@@ -24249,7 +31543,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumIocRec"
-    // InternalOil.g:9396:1: ruleEnumIocRec returns [Enumerator current=null] : ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) ) ;
+    // InternalOil.g:12416:1: ruleEnumIocRec returns [Enumerator current=null] : ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) ) ;
     public final Enumerator ruleEnumIocRec() throws RecognitionException {
         Enumerator current = null;
 
@@ -24261,42 +31555,42 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9402:2: ( ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) ) )
-            // InternalOil.g:9403:2: ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) )
+            // InternalOil.g:12422:2: ( ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) ) )
+            // InternalOil.g:12423:2: ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) )
             {
-            // InternalOil.g:9403:2: ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) )
-            int alt227=3;
+            // InternalOil.g:12423:2: ( (enumLiteral_0= 'REV_OSAPPLICATION' ) | (enumLiteral_1= 'RECEIVER_PULL_CB' ) | (enumLiteral_2= 'ACTION' ) )
+            int alt250=3;
             switch ( input.LA(1) ) {
-            case 163:
+            case 212:
                 {
-                alt227=1;
+                alt250=1;
                 }
                 break;
-            case 164:
+            case 213:
                 {
-                alt227=2;
+                alt250=2;
                 }
                 break;
-            case 71:
+            case 105:
                 {
-                alt227=3;
+                alt250=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 227, 0, input);
+                    new NoViableAltException("", 250, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt227) {
+            switch (alt250) {
                 case 1 :
-                    // InternalOil.g:9404:3: (enumLiteral_0= 'REV_OSAPPLICATION' )
+                    // InternalOil.g:12424:3: (enumLiteral_0= 'REV_OSAPPLICATION' )
                     {
-                    // InternalOil.g:9404:3: (enumLiteral_0= 'REV_OSAPPLICATION' )
-                    // InternalOil.g:9405:4: enumLiteral_0= 'REV_OSAPPLICATION'
+                    // InternalOil.g:12424:3: (enumLiteral_0= 'REV_OSAPPLICATION' )
+                    // InternalOil.g:12425:4: enumLiteral_0= 'REV_OSAPPLICATION'
                     {
-                    enumLiteral_0=(Token)match(input,163,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,212,FOLLOW_2); 
 
                     				current = grammarAccess.getEnumIocRecAccess().getREV_OSAPPLICATIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getEnumIocRecAccess().getREV_OSAPPLICATIONEnumLiteralDeclaration_0());
@@ -24308,12 +31602,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9412:3: (enumLiteral_1= 'RECEIVER_PULL_CB' )
+                    // InternalOil.g:12432:3: (enumLiteral_1= 'RECEIVER_PULL_CB' )
                     {
-                    // InternalOil.g:9412:3: (enumLiteral_1= 'RECEIVER_PULL_CB' )
-                    // InternalOil.g:9413:4: enumLiteral_1= 'RECEIVER_PULL_CB'
+                    // InternalOil.g:12432:3: (enumLiteral_1= 'RECEIVER_PULL_CB' )
+                    // InternalOil.g:12433:4: enumLiteral_1= 'RECEIVER_PULL_CB'
                     {
-                    enumLiteral_1=(Token)match(input,164,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,213,FOLLOW_2); 
 
                     				current = grammarAccess.getEnumIocRecAccess().getRECEIVER_PULL_CBEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getEnumIocRecAccess().getRECEIVER_PULL_CBEnumLiteralDeclaration_1());
@@ -24325,12 +31619,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOil.g:9420:3: (enumLiteral_2= 'ACTION' )
+                    // InternalOil.g:12440:3: (enumLiteral_2= 'ACTION' )
                     {
-                    // InternalOil.g:9420:3: (enumLiteral_2= 'ACTION' )
-                    // InternalOil.g:9421:4: enumLiteral_2= 'ACTION'
+                    // InternalOil.g:12440:3: (enumLiteral_2= 'ACTION' )
+                    // InternalOil.g:12441:4: enumLiteral_2= 'ACTION'
                     {
-                    enumLiteral_2=(Token)match(input,71,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,105,FOLLOW_2); 
 
                     				current = grammarAccess.getEnumIocRecAccess().getACTIONEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getEnumIocRecAccess().getACTIONEnumLiteralDeclaration_2());
@@ -24364,7 +31658,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocDataType"
-    // InternalOil.g:9431:1: ruleIocDataType returns [Enumerator current=null] : ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) ) ;
+    // InternalOil.g:12451:1: ruleIocDataType returns [Enumerator current=null] : ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) ) ;
     public final Enumerator ruleIocDataType() throws RecognitionException {
         Enumerator current = null;
 
@@ -24375,33 +31669,33 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9437:2: ( ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) ) )
-            // InternalOil.g:9438:2: ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) )
+            // InternalOil.g:12457:2: ( ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) ) )
+            // InternalOil.g:12458:2: ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) )
             {
-            // InternalOil.g:9438:2: ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) )
-            int alt228=2;
-            int LA228_0 = input.LA(1);
+            // InternalOil.g:12458:2: ( (enumLiteral_0= 'DATA' ) | (enumLiteral_1= 'REFERNCE' ) )
+            int alt251=2;
+            int LA251_0 = input.LA(1);
 
-            if ( (LA228_0==165) ) {
-                alt228=1;
+            if ( (LA251_0==214) ) {
+                alt251=1;
             }
-            else if ( (LA228_0==166) ) {
-                alt228=2;
+            else if ( (LA251_0==215) ) {
+                alt251=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 228, 0, input);
+                    new NoViableAltException("", 251, 0, input);
 
                 throw nvae;
             }
-            switch (alt228) {
+            switch (alt251) {
                 case 1 :
-                    // InternalOil.g:9439:3: (enumLiteral_0= 'DATA' )
+                    // InternalOil.g:12459:3: (enumLiteral_0= 'DATA' )
                     {
-                    // InternalOil.g:9439:3: (enumLiteral_0= 'DATA' )
-                    // InternalOil.g:9440:4: enumLiteral_0= 'DATA'
+                    // InternalOil.g:12459:3: (enumLiteral_0= 'DATA' )
+                    // InternalOil.g:12460:4: enumLiteral_0= 'DATA'
                     {
-                    enumLiteral_0=(Token)match(input,165,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,214,FOLLOW_2); 
 
                     				current = grammarAccess.getIocDataTypeAccess().getDATAEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getIocDataTypeAccess().getDATAEnumLiteralDeclaration_0());
@@ -24413,12 +31707,12 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOil.g:9447:3: (enumLiteral_1= 'REFERNCE' )
+                    // InternalOil.g:12467:3: (enumLiteral_1= 'REFERNCE' )
                     {
-                    // InternalOil.g:9447:3: (enumLiteral_1= 'REFERNCE' )
-                    // InternalOil.g:9448:4: enumLiteral_1= 'REFERNCE'
+                    // InternalOil.g:12467:3: (enumLiteral_1= 'REFERNCE' )
+                    // InternalOil.g:12468:4: enumLiteral_1= 'REFERNCE'
                     {
-                    enumLiteral_1=(Token)match(input,166,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,215,FOLLOW_2); 
 
                     				current = grammarAccess.getIocDataTypeAccess().getREFERNCEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getIocDataTypeAccess().getREFERNCEEnumLiteralDeclaration_1());
@@ -24452,7 +31746,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocSemanticsenum"
-    // InternalOil.g:9458:1: ruleIocSemanticsenum returns [Enumerator current=null] : (enumLiteral_0= 'BUFFER_LENGTH' ) ;
+    // InternalOil.g:12478:1: ruleIocSemanticsenum returns [Enumerator current=null] : (enumLiteral_0= 'BUFFER_LENGTH' ) ;
     public final Enumerator ruleIocSemanticsenum() throws RecognitionException {
         Enumerator current = null;
 
@@ -24462,13 +31756,13 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9464:2: ( (enumLiteral_0= 'BUFFER_LENGTH' ) )
-            // InternalOil.g:9465:2: (enumLiteral_0= 'BUFFER_LENGTH' )
+            // InternalOil.g:12484:2: ( (enumLiteral_0= 'BUFFER_LENGTH' ) )
+            // InternalOil.g:12485:2: (enumLiteral_0= 'BUFFER_LENGTH' )
             {
-            // InternalOil.g:9465:2: (enumLiteral_0= 'BUFFER_LENGTH' )
-            // InternalOil.g:9466:3: enumLiteral_0= 'BUFFER_LENGTH'
+            // InternalOil.g:12485:2: (enumLiteral_0= 'BUFFER_LENGTH' )
+            // InternalOil.g:12486:3: enumLiteral_0= 'BUFFER_LENGTH'
             {
-            enumLiteral_0=(Token)match(input,167,FOLLOW_2); 
+            enumLiteral_0=(Token)match(input,216,FOLLOW_2); 
 
             			current = grammarAccess.getIocSemanticsenumAccess().getBUFFER_LENGTHEnumLiteralDeclaration().getEnumLiteral().getInstance();
             			newLeafNode(enumLiteral_0, grammarAccess.getIocSemanticsenumAccess().getBUFFER_LENGTHEnumLiteralDeclaration());
@@ -24496,7 +31790,7 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIocSemanticsenumm"
-    // InternalOil.g:9475:1: ruleIocSemanticsenumm returns [Enumerator current=null] : (enumLiteral_0= 'INIT_VALUE_SYMBOL' ) ;
+    // InternalOil.g:12495:1: ruleIocSemanticsenumm returns [Enumerator current=null] : (enumLiteral_0= 'INIT_VALUE_SYMBOL' ) ;
     public final Enumerator ruleIocSemanticsenumm() throws RecognitionException {
         Enumerator current = null;
 
@@ -24506,13 +31800,13 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOil.g:9481:2: ( (enumLiteral_0= 'INIT_VALUE_SYMBOL' ) )
-            // InternalOil.g:9482:2: (enumLiteral_0= 'INIT_VALUE_SYMBOL' )
+            // InternalOil.g:12501:2: ( (enumLiteral_0= 'INIT_VALUE_SYMBOL' ) )
+            // InternalOil.g:12502:2: (enumLiteral_0= 'INIT_VALUE_SYMBOL' )
             {
-            // InternalOil.g:9482:2: (enumLiteral_0= 'INIT_VALUE_SYMBOL' )
-            // InternalOil.g:9483:3: enumLiteral_0= 'INIT_VALUE_SYMBOL'
+            // InternalOil.g:12502:2: (enumLiteral_0= 'INIT_VALUE_SYMBOL' )
+            // InternalOil.g:12503:3: enumLiteral_0= 'INIT_VALUE_SYMBOL'
             {
-            enumLiteral_0=(Token)match(input,168,FOLLOW_2); 
+            enumLiteral_0=(Token)match(input,217,FOLLOW_2); 
 
             			current = grammarAccess.getIocSemanticsenummAccess().getINIT_VALUE_SYMBOLEnumLiteralDeclaration().getEnumLiteral().getInstance();
             			newLeafNode(enumLiteral_0, grammarAccess.getIocSemanticsenummAccess().getINIT_VALUE_SYMBOLEnumLiteralDeclaration());
@@ -24541,6 +31835,50 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
+    protected DFA113 dfa113 = new DFA113(this);
+    static final String dfa_1s = "\13\uffff";
+    static final String dfa_2s = "\1\103\3\uffff\1\26\1\uffff\1\107\1\22\1\uffff\1\4\1\uffff";
+    static final String dfa_3s = "\1\110\3\uffff\1\26\1\uffff\1\112\1\22\1\uffff\1\6\1\uffff";
+    static final String dfa_4s = "\1\uffff\1\1\1\2\1\3\1\uffff\1\5\2\uffff\1\6\1\uffff\1\4";
+    static final String dfa_5s = "\13\uffff}>";
+    static final String[] dfa_6s = {
+            "\1\1\1\2\1\3\1\4\1\uffff\1\5",
+            "",
+            "",
+            "",
+            "\1\6",
+            "",
+            "\1\7\2\uffff\1\10",
+            "\1\11",
+            "",
+            "\1\12\1\uffff\1\10",
+            ""
+    };
+
+    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
+    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
+    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
+    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
+    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
+    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
+
+    class DFA113 extends DFA {
+
+        public DFA113(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 113;
+            this.eot = dfa_1;
+            this.eof = dfa_1;
+            this.min = dfa_2;
+            this.max = dfa_3;
+            this.accept = dfa_4;
+            this.special = dfa_5;
+            this.transition = dfa_6;
+        }
+        public String getDescription() {
+            return "4663:3: ( (otherlv_1= 'NONE' otherlv_2= ';' ) | (otherlv_3= 'ACTIVATETASK' otherlv_4= '{' otherlv_5= 'TASK' otherlv_6= '=' ( (lv_description_7_0= RULE_ID ) ) otherlv_8= ';' otherlv_9= '}' otherlv_10= ';' ) | (otherlv_11= 'SETEVENT' otherlv_12= '{' ( (lv_Msetevent_13_0= ruleMessageSETEVENT ) )+ otherlv_14= '}' otherlv_15= ';' ) | (otherlv_16= 'COMCALLBACK' otherlv_17= '{' otherlv_18= 'CALLBACKROUTINENAME' otherlv_19= '=' ( (lv_description_20_0= ruleEString ) ) otherlv_21= ';' otherlv_22= '}' otherlv_23= ';' ) | (otherlv_24= 'FLAG' otherlv_25= '{' otherlv_26= 'FLAGNAME' otherlv_27= '=' ( (lv_description_28_0= ruleEString ) ) otherlv_29= ';' otherlv_30= '}' otherlv_31= ';' ) | (otherlv_32= 'COMCALLBACK' otherlv_33= '{' ( (lv_Mcomcallback_34_0= ruleMessageCOMCALLBACK ) ) otherlv_35= '}' otherlv_36= ';' ) )";
+        }
+    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
@@ -24559,88 +31897,110 @@ public class InternalOilParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100010L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000004025000002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0400000002800000L,0x0003C00300000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0400000002000000L,0x0003C00300000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0400000002800000L,0x8000000000000000L,0x000000000001E001L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0400000002000000L,0x8000000000000000L,0x000000000001E001L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x04000000001C0000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x00000000001C0000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000080L,0x0004000080000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000080L,0x4000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000008800000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0400000012000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0400000010000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x00000000000000C0L,0x0004000080000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0400000042800000L,0x0003C00C00000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0400000042000000L,0x0003C00C00000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00000006000001D0L,0x0000000080000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x00000000000000C0L,0x4000000000000000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0400000042800000L,0x0000000000000000L,0x000000000001E006L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0400000042000000L,0x0000000000000000L,0x000000000001E006L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00000006000001D0L,0x4000000000000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000400040L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0030165121800000L,0x000000F000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0030165121800000L,0x0000000000000000L,0x0000000000000078L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000040040L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000600000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000500000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000800800000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0400148000800000L,0x0003F00700000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0400148000800000L,0x8000000000000000L,0x000000000001F803L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000080002L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000500002L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x00000F0000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000780L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0400140000000000L,0x0003F00700000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0400140000000000L,0x8000000000000000L,0x000000000001F803L});
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x047FFE40A7000040L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000180L,0x0004000080000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000090L,0x0004000080000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000180L,0x4000000000000000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000090L,0x4000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0800000000400010L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0380000048800000L,0xFFFBC00000000000L,0x000000000000007FL});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0380000048800000L,0x0000000000000000L,0x0000003FFFFDE000L});
     public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0800000000000010L});
     public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0800000000000000L});
     public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x1000000000400010L});
     public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x1000000000000010L});
     public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000600000080L,0x0004000080000000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000600000080L,0x4000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x2000000000000000L});
     public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x1800000000000000L});
     public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000400012L});
     public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0400000000100010L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0070274081800000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x8000000000800000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0000000000500010L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000000007F80L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x00000006000401D0L,0x0000000080000000L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x00001C0000800000L,0x000000020000004CL,0x0000000001FC0000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000600040000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000800000800000L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000800000L,0x00000F0000000010L,0x0000000000020000L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000000018000L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000E000000L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000020800000L,0x00000000000000C4L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000F00L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000800000800000L,0x0000000000003000L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000080001000000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000020800000L,0x0000000000074044L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000000000088000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000800000L,0x0000000000300000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000800000L,0x0000000000C00080L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000800000800000L,0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000000L,0x0000000060000000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000000L,0x0000000180000000L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000500L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000800000L,0x000000000F000000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000800000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000000000040000L,0x0000000060000000L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000080L,0x0000001800000000L});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000600000000L});
-    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x00000006000401D0L,0x0000000080008000L});
-    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000000L,0x0000006000000000L});
-    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_98 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_99 = new BitSet(new long[]{0x047FFE40A7800040L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0070BF4081800000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000800000L,0x0000000E00000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000000000L,0x0000000000FFF800L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000178L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000080001000000L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000080001800000L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000480L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0002000000000000L,0x000000009F000000L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000800000L,0x00000000B0000000L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x00000000F0000000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000191000000L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000000L,0x00000001F1000000L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000000000000L,0x0000000110000000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000000011000000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000000000L,0x4000000000000000L,0x0060000000000000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0380000048000000L,0x0000000000000000L,0x0000003FFFFDE000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x001FFFC000000000L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000800040L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000500010L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0xFF00000000000000L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x00000006000401D0L,0x4000000000000000L});
+    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x00001C0000800000L,0x0000013000000000L,0x0000000000000001L,0x00000000000003F8L});
+    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000000600040000L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000800000800000L});
+    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000800000L,0x0000004000000000L,0x0000000000000780L,0x0000000000000004L});
+    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000800000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000001C00L});
+    public static final BitSet FOLLOW_98 = new BitSet(new long[]{0x0000000020800000L,0x0000031000000000L});
+    public static final BitSet FOLLOW_99 = new BitSet(new long[]{0x0000000000000000L,0x00000C0000000030L});
+    public static final BitSet FOLLOW_100 = new BitSet(new long[]{0x0000800000800000L,0x0000300000000000L});
+    public static final BitSet FOLLOW_101 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_102 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_103 = new BitSet(new long[]{0x0000000020800000L,0x0003C11000000000L});
+    public static final BitSet FOLLOW_104 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000008L});
+    public static final BitSet FOLLOW_105 = new BitSet(new long[]{0x0000000000800000L,0x0018000000000000L});
+    public static final BitSet FOLLOW_106 = new BitSet(new long[]{0x0000000000800000L,0x0060020000000000L});
+    public static final BitSet FOLLOW_107 = new BitSet(new long[]{0x0000800000800000L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_108 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000000L,0x0000000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_109 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_110 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000030L});
+    public static final BitSet FOLLOW_111 = new BitSet(new long[]{0x0000000000800000L,0x0780000000000000L});
+    public static final BitSet FOLLOW_112 = new BitSet(new long[]{0x0000000000800000L,0x0800000000000000L});
+    public static final BitSet FOLLOW_113 = new BitSet(new long[]{0x0000000000040000L,0x3000000000000000L});
+    public static final BitSet FOLLOW_114 = new BitSet(new long[]{0x0000000000800000L,0x0000020000000000L,0x0000000000000000L,0x0000000000300000L});
+    public static final BitSet FOLLOW_115 = new BitSet(new long[]{0x0000000000800000L,0x0000000000000000L,0x0000000000000000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_116 = new BitSet(new long[]{0x00000006000401D0L,0x4000000000000008L});
+    public static final BitSet FOLLOW_117 = new BitSet(new long[]{0x0000000000040000L,0x0000000000000000L,0x0000000000000000L,0x0000000000C00000L});
+    public static final BitSet FOLLOW_118 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_119 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_120 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_121 = new BitSet(new long[]{0x047FFE40A7800040L});
 
 }

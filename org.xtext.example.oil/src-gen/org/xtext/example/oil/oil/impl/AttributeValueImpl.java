@@ -39,7 +39,7 @@ public class AttributeValueImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return OilPackage.Literals.ATTRIBUTE_VALUE;
+    return OilPackage.eINSTANCE.getAttributeValue();
   }
 
 } //AttributeValueImpl
