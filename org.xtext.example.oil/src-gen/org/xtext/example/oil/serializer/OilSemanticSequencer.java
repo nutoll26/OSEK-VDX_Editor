@@ -30,6 +30,8 @@ import org.xtext.example.oil.oil.BooleanAttributeValue;
 import org.xtext.example.oil.oil.ComRule;
 import org.xtext.example.oil.oil.Comattribute;
 import org.xtext.example.oil.oil.CounterRule;
+import org.xtext.example.oil.oil.Counterattribute;
+import org.xtext.example.oil.oil.CpuOsRule;
 import org.xtext.example.oil.oil.Enumeration;
 import org.xtext.example.oil.oil.Enumerator;
 import org.xtext.example.oil.oil.EventRule;
@@ -55,6 +57,11 @@ import org.xtext.example.oil.oil.IocReceiver;
 import org.xtext.example.oil.oil.IocRule;
 import org.xtext.example.oil.oil.IocSemantics;
 import org.xtext.example.oil.oil.IocSender;
+import org.xtext.example.oil.oil.IpduParam;
+import org.xtext.example.oil.oil.IpduPropParam;
+import org.xtext.example.oil.oil.IpduPropSubCon;
+import org.xtext.example.oil.oil.IpduPropertyRule;
+import org.xtext.example.oil.oil.IpduRule;
 import org.xtext.example.oil.oil.IsrParam;
 import org.xtext.example.oil.oil.IsrRule;
 import org.xtext.example.oil.oil.IsrSubContainer;
@@ -87,13 +94,21 @@ import org.xtext.example.oil.oil.Messageattribute;
 import org.xtext.example.oil.oil.Messageattribute2;
 import org.xtext.example.oil.oil.Messageattribute3;
 import org.xtext.example.oil.oil.Messagefilter;
+import org.xtext.example.oil.oil.MsgPropertyParam;
 import org.xtext.example.oil.oil.NameAttributeValue;
+import org.xtext.example.oil.oil.NetworkMessageRule;
+import org.xtext.example.oil.oil.NetworkMsgParam;
+import org.xtext.example.oil.oil.NetworkMsgPropertyRule;
 import org.xtext.example.oil.oil.NumberAttributeValue;
 import org.xtext.example.oil.oil.OILFile;
 import org.xtext.example.oil.oil.OILVersion;
 import org.xtext.example.oil.oil.ObjectDefinition;
 import org.xtext.example.oil.oil.OilPackage;
+import org.xtext.example.oil.oil.OsAttribute;
+import org.xtext.example.oil.oil.OsBuildAttribute;
+import org.xtext.example.oil.oil.OsMemmapAttribute;
 import org.xtext.example.oil.oil.OsRule;
+import org.xtext.example.oil.oil.OsWithortiAttribute;
 import org.xtext.example.oil.oil.Range;
 import org.xtext.example.oil.oil.ResourceRule;
 import org.xtext.example.oil.oil.Resourceattribute;
@@ -108,8 +123,11 @@ import org.xtext.example.oil.oil.TaskAutostartAttribute;
 import org.xtext.example.oil.oil.TaskRule;
 import org.xtext.example.oil.oil.TaskTimingAttribute;
 import org.xtext.example.oil.oil.Taskattribute;
+import org.xtext.example.oil.oil.TimeAttribute;
 import org.xtext.example.oil.oil.TimingProtectionParam;
 import org.xtext.example.oil.oil.TimingProtectionRule;
+import org.xtext.example.oil.oil.TransmissionModeRule;
+import org.xtext.example.oil.oil.TransmissonParam;
 import org.xtext.example.oil.oil.TrustedFucRule;
 import org.xtext.example.oil.oil.TrustedRule;
 import org.xtext.example.oil.services.OilGrammarAccess;
@@ -174,7 +192,21 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_Comattribute(context, (Comattribute) semanticObject); 
 				return; 
 			case OilPackage.COUNTER_RULE:
-				sequence_ImpCounterRule(context, (CounterRule) semanticObject); 
+				if (rule == grammarAccess.getObjectDefinitionRule()
+						|| rule == grammarAccess.getCounterRuleRule()) {
+					sequence_CounterRule(context, (CounterRule) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getImpCounterRuleRule()) {
+					sequence_ImpCounterRule(context, (CounterRule) semanticObject); 
+					return; 
+				}
+				else break;
+			case OilPackage.COUNTERATTRIBUTE:
+				sequence_Counterattribute(context, (Counterattribute) semanticObject); 
+				return; 
+			case OilPackage.CPU_OS_RULE:
+				sequence_CpuOsRule(context, (CpuOsRule) semanticObject); 
 				return; 
 			case OilPackage.ENUMERATION:
 				sequence_Enumeration(context, (Enumeration) semanticObject); 
@@ -250,6 +282,21 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case OilPackage.IOC_SENDER:
 				sequence_IocSender(context, (IocSender) semanticObject); 
+				return; 
+			case OilPackage.IPDU_PARAM:
+				sequence_IpduParam(context, (IpduParam) semanticObject); 
+				return; 
+			case OilPackage.IPDU_PROP_PARAM:
+				sequence_IpduPropParam(context, (IpduPropParam) semanticObject); 
+				return; 
+			case OilPackage.IPDU_PROP_SUB_CON:
+				sequence_IpduPropSubCon(context, (IpduPropSubCon) semanticObject); 
+				return; 
+			case OilPackage.IPDU_PROPERTY_RULE:
+				sequence_IpduPropertyRule(context, (IpduPropertyRule) semanticObject); 
+				return; 
+			case OilPackage.IPDU_RULE:
+				sequence_IpduRule(context, (IpduRule) semanticObject); 
 				return; 
 			case OilPackage.ISR_PARAM:
 				sequence_IsrParam(context, (IsrParam) semanticObject); 
@@ -347,8 +394,20 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case OilPackage.MESSAGEFILTER:
 				sequence_Messagefilter(context, (Messagefilter) semanticObject); 
 				return; 
+			case OilPackage.MSG_PROPERTY_PARAM:
+				sequence_MsgPropertyParam(context, (MsgPropertyParam) semanticObject); 
+				return; 
 			case OilPackage.NAME_ATTRIBUTE_VALUE:
 				sequence_NameAttributeValue(context, (NameAttributeValue) semanticObject); 
+				return; 
+			case OilPackage.NETWORK_MESSAGE_RULE:
+				sequence_NetworkMessageRule(context, (NetworkMessageRule) semanticObject); 
+				return; 
+			case OilPackage.NETWORK_MSG_PARAM:
+				sequence_NetworkMsgParam(context, (NetworkMsgParam) semanticObject); 
+				return; 
+			case OilPackage.NETWORK_MSG_PROPERTY_RULE:
+				sequence_NetworkMsgPropertyRule(context, (NetworkMsgPropertyRule) semanticObject); 
 				return; 
 			case OilPackage.NUMBER_ATTRIBUTE_VALUE:
 				sequence_NumberAttributeValue(context, (NumberAttributeValue) semanticObject); 
@@ -362,8 +421,20 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case OilPackage.OBJECT_DEFINITION:
 				sequence_ObjectDefinition(context, (ObjectDefinition) semanticObject); 
 				return; 
+			case OilPackage.OS_ATTRIBUTE:
+				sequence_OsAttribute(context, (OsAttribute) semanticObject); 
+				return; 
+			case OilPackage.OS_BUILD_ATTRIBUTE:
+				sequence_OsBuildAttribute(context, (OsBuildAttribute) semanticObject); 
+				return; 
+			case OilPackage.OS_MEMMAP_ATTRIBUTE:
+				sequence_OsMemmapAttribute(context, (OsMemmapAttribute) semanticObject); 
+				return; 
 			case OilPackage.OS_RULE:
 				sequence_ImpOsRule(context, (OsRule) semanticObject); 
+				return; 
+			case OilPackage.OS_WITHORTI_ATTRIBUTE:
+				sequence_OsWithortiAttribute(context, (OsWithortiAttribute) semanticObject); 
 				return; 
 			case OilPackage.RANGE:
 				sequence_Range(context, (Range) semanticObject); 
@@ -415,11 +486,20 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case OilPackage.TASKATTRIBUTE:
 				sequence_Taskattribute(context, (Taskattribute) semanticObject); 
 				return; 
+			case OilPackage.TIME_ATTRIBUTE:
+				sequence_TimeAttribute(context, (TimeAttribute) semanticObject); 
+				return; 
 			case OilPackage.TIMING_PROTECTION_PARAM:
 				sequence_TimingProtectionParam(context, (TimingProtectionParam) semanticObject); 
 				return; 
 			case OilPackage.TIMING_PROTECTION_RULE:
 				sequence_TimingProtectionRule(context, (TimingProtectionRule) semanticObject); 
+				return; 
+			case OilPackage.TRANSMISSION_MODE_RULE:
+				sequence_TransmissionModeRule(context, (TransmissionModeRule) semanticObject); 
+				return; 
+			case OilPackage.TRANSMISSON_PARAM:
+				sequence_TransmissonParam(context, (TransmissonParam) semanticObject); 
 				return; 
 			case OilPackage.TRUSTED_FUC_RULE:
 				sequence_TrustedFucRule(context, (TrustedFucRule) semanticObject); 
@@ -640,6 +720,44 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (name=ComAttributeName value=AttributeValue description=EString?)
 	 */
 	protected void sequence_Comattribute(ISerializationContext context, Comattribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ObjectDefinition returns CounterRule
+	 *     CounterRule returns CounterRule
+	 *
+	 * Constraint:
+	 *     (name=Name Counterlist+=Counterattribute)
+	 */
+	protected void sequence_CounterRule(ISerializationContext context, CounterRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Counterattribute returns Counterattribute
+	 *
+	 * Constraint:
+	 *     (value=T_NUMBER | value=T_NUMBER | value=T_NUMBER | type=Counterenum | sourcevalue=AttributeValue)
+	 */
+	protected void sequence_Counterattribute(ISerializationContext context, Counterattribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ObjectDefinition returns CpuOsRule
+	 *     CpuOsRule returns CpuOsRule
+	 *
+	 * Constraint:
+	 *     (name=Name OsList+=OsAttribute*)
+	 */
+	protected void sequence_CpuOsRule(ISerializationContext context, CpuOsRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1058,6 +1176,83 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (enumiocsenderlist+=EnumIocSendRec value=AttributeValue description=EString?)
 	 */
 	protected void sequence_IocSender(ISerializationContext context, IocSender semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IpduParam returns IpduParam
+	 *
+	 * Constraint:
+	 *     (param=IpduParamEnum (value=NumberAttributeValue | value=StringAttributeValue))
+	 */
+	protected void sequence_IpduParam(ISerializationContext context, IpduParam semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IpduPropParam returns IpduPropParam
+	 *
+	 * Constraint:
+	 *     (param=IpduPropParamEnum value=NumberAttributeValue)
+	 */
+	protected void sequence_IpduPropParam(ISerializationContext context, IpduPropParam semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getIpduPropParam_Param()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getIpduPropParam_Param()));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getIpduPropParam_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getIpduPropParam_Value()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIpduPropParamAccess().getParamIpduPropParamEnumEnumRuleCall_0_0(), semanticObject.getParam());
+		feeder.accept(grammarAccess.getIpduPropParamAccess().getValueNumberAttributeValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IpduPropSubCon returns IpduPropSubCon
+	 *
+	 * Constraint:
+	 *     rule=TransmissionModeRule
+	 */
+	protected void sequence_IpduPropSubCon(ISerializationContext context, IpduPropSubCon semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getIpduPropSubCon_Rule()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getIpduPropSubCon_Rule()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIpduPropSubConAccess().getRuleTransmissionModeRuleParserRuleCall_0(), semanticObject.getRule());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IpduSubContainer returns IpduPropertyRule
+	 *     IpduPropertyRule returns IpduPropertyRule
+	 *
+	 * Constraint:
+	 *     ((value='SENT' | value='RECEIVED') ipduPropSubCon+=IpduPropSubCon? (ipduPropParam+=IpduPropParam? ipduPropSubCon+=IpduPropSubCon?)*)
+	 */
+	protected void sequence_IpduPropertyRule(ISerializationContext context, IpduPropertyRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ObjectDefinition returns IpduRule
+	 *     IpduRule returns IpduRule
+	 *
+	 * Constraint:
+	 *     (name=Name (value=AttributeValue | (ipduSubContaner+=IpduSubContainer | ipduParam+=IpduParam)+)?)
+	 */
+	protected void sequence_IpduRule(ISerializationContext context, IpduRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1544,6 +1739,18 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     MsgPropertyParam returns MsgPropertyParam
+	 *
+	 * Constraint:
+	 *     (param=MsgPropertyParamEnum value=AttributeValue description=EString?)
+	 */
+	protected void sequence_MsgPropertyParam(ISerializationContext context, MsgPropertyParam semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     AttributeValue returns NameAttributeValue
 	 *     NameAttributeValue returns NameAttributeValue
 	 *
@@ -1551,6 +1758,44 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (value=Name parameterList+=Attribute*)
 	 */
 	protected void sequence_NameAttributeValue(ISerializationContext context, NameAttributeValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ObjectDefinition returns NetworkMessageRule
+	 *     NetworkMessageRule returns NetworkMessageRule
+	 *
+	 * Constraint:
+	 *     (name=Name (value=AttributeValue | (networkMsgSub+=NetworkMsgSub | networkMsgParam+=NetworkMsgParam)+)?)
+	 */
+	protected void sequence_NetworkMessageRule(ISerializationContext context, NetworkMessageRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NetworkMsgParam returns NetworkMsgParam
+	 *
+	 * Constraint:
+	 *     (param=NetworkMsgParamEnum (value=NumberAttributeValue | value=StringAttributeValue))
+	 */
+	protected void sequence_NetworkMsgParam(ISerializationContext context, NetworkMsgParam semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NetworkMsgSub returns NetworkMsgPropertyRule
+	 *     NetworkMsgPropertyRule returns NetworkMsgPropertyRule
+	 *
+	 * Constraint:
+	 *     ((value='STATIC' | value='DYNAMIC' | value='ZERO') msgPropertyParam+=MsgPropertyParam*)
+	 */
+	protected void sequence_NetworkMsgPropertyRule(ISerializationContext context, NetworkMsgPropertyRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1607,6 +1852,78 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_ObjectDefinition(ISerializationContext context, ObjectDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     OsAttribute returns OsAttribute
+	 *
+	 * Constraint:
+	 *     (
+	 *         (name=OsAttrubutename value=AttributeValue description=EString?) | 
+	 *         parameterList+=OsBuildAttribute+ | 
+	 *         parameterList+=OsMemmapAttribute+ | 
+	 *         parameterList+=OsWithortiAttribute+ | 
+	 *         (style=Name TimeList+=TimeAttribute*)
+	 *     )
+	 */
+	protected void sequence_OsAttribute(ISerializationContext context, OsAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     OsBuildAttribute returns OsBuildAttribute
+	 *
+	 * Constraint:
+	 *     (
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString | 
+	 *         description=EString
+	 *     )
+	 */
+	protected void sequence_OsBuildAttribute(ISerializationContext context, OsBuildAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     OsMemmapAttribute returns OsMemmapAttribute
+	 *
+	 * Constraint:
+	 *     (description=EString | description=EString | description=EString | description=EString)
+	 */
+	protected void sequence_OsMemmapAttribute(ISerializationContext context, OsMemmapAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     OsWithortiAttribute returns OsWithortiAttribute
+	 *
+	 * Constraint:
+	 *     description=EString
+	 */
+	protected void sequence_OsWithortiAttribute(ISerializationContext context, OsWithortiAttribute semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getOsWithortiAttribute_Description()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getOsWithortiAttribute_Description()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOsWithortiAttributeAccess().getDescriptionEStringParserRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
 	}
 	
 	
@@ -1803,6 +2120,18 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     TimeAttribute returns TimeAttribute
+	 *
+	 * Constraint:
+	 *     ((value=AttributeValue description=EString?) | (value=AttributeValue description=EString?) | (value=AttributeValue description=EString?))
+	 */
+	protected void sequence_TimeAttribute(ISerializationContext context, TimeAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     TimingProtectionParam returns TimingProtectionParam
 	 *
 	 * Constraint:
@@ -1831,6 +2160,39 @@ public class OilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_TimingProtectionRule(ISerializationContext context, TimingProtectionRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TransmissionModeRule returns TransmissionModeRule
+	 *
+	 * Constraint:
+	 *     ((value='PERIORIC' | value='DIRECT' | value='MIXED') transmissionParam+=TransmissonParam*)
+	 */
+	protected void sequence_TransmissionModeRule(ISerializationContext context, TransmissionModeRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TransmissonParam returns TransmissonParam
+	 *
+	 * Constraint:
+	 *     (param=TransmissionParamEnum value=NumberAttributeValue)
+	 */
+	protected void sequence_TransmissonParam(ISerializationContext context, TransmissonParam semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getTransmissonParam_Param()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getTransmissonParam_Param()));
+			if (transientValues.isValueTransient(semanticObject, OilPackage.eINSTANCE.getTransmissonParam_Value()) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OilPackage.eINSTANCE.getTransmissonParam_Value()));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTransmissonParamAccess().getParamTransmissionParamEnumEnumRuleCall_0_0(), semanticObject.getParam());
+		feeder.accept(grammarAccess.getTransmissonParamAccess().getValueNumberAttributeValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

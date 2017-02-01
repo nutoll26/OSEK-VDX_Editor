@@ -156,6 +156,7 @@ Object:
    "APPMODE" | "IPDU" | "NETWORKMESSAGE" | "APPLICATION" | "MEMOTY_PROTECTION" | 
    "SPINLOCK" | "SCHEDULETABLE" | "IOC" | "LIBRARY")
   ;
+  
 ImplementationDef:
    ImplAttrDef | ImplRefDef;
 
@@ -240,14 +241,108 @@ ObjectDefinition://수정(AlarmRule,scheduletableRule 추가), resourcerule, taskrul
       | MessageRule
       | AppmodeRule
       | EventRule
+      | CounterRule
+      | IpduRule
+      | NetworkMessageRule
+      | CpuOsRule
       ) 
       //object=Object name=Name ("{" (parameterList+=Attribute)* "}")? (descrption=EString)? ";")
-   ;
+      ;
+IpduRule:
+   "IPDU"
+   name=Name (("=" value=AttributeValue) | ("{" (ipduSubContaner+=IpduSubContainer | ipduParam+=IpduParam)* "}")) ";"
+;
+
+IpduSubContainer:
+   IpduPropertyRule
+;
+
+IpduPropertyRule:
+   "IPDUPROPERTY"
+   "=" value=("SENT" | "RECEIVED") "{" (ipduPropSubCon+=IpduPropSubCon | ipduPropParam+=IpduPropParam)* "}" ";"
+;
+IpduPropSubCon:
+   rule = TransmissionModeRule
+;
+
+TransmissionModeRule:
+   "TRANSMISSONMODE"
+   "=" value=("PERIORIC" | "DIRECT" | "MIXED") "{" (transmissionParam+=TransmissonParam)* "}" ";"
+;
+
+TransmissonParam:
+   param=TransmissionParamEnum "=" value=(NumberAttributeValue) ";"
+;
+
+enum TransmissionParamEnum:
+   TIMEPERIOD | TIMEOFFSET | MINIMUMDELAYTIME
+;
+
+IpduPropParam:
+   param=IpduPropParamEnum "=" value=(NumberAttributeValue) ";"
+;
+
+enum IpduPropParamEnum:
+   TIMEOUT | FIRSTTIMEOUT
+;
+
+IpduParam:
+   param=IpduParamEnum "=" value=(NumberAttributeValue | StringAttributeValue) ";"
+;
+
+enum IpduParamEnum:
+   SIZEINBITS | IPDUCALLOUT | LAYERUSED   
+;
+
+NetworkMessageRule: //Darlene
+   "NETWORKMESSAGE" name=Name  (("=" value=AttributeValue) | ("{" (networkMsgSub+=NetworkMsgSub | networkMsgParam+=NetworkMsgParam)* "}")) ";"
+;
+
+NetworkMsgParam: //Darlene
+    param=NetworkMsgParamEnum "=" value=(NumberAttributeValue | StringAttributeValue) ";"
+;
+
+enum NetworkMsgParamEnum: //Darlene
+   IPDU
+;
+
+NetworkMsgSub: //Darlene
+   NetworkMsgPropertyRule
+;
+
+NetworkMsgPropertyRule: //Darlene
+   "MESSAGEPROPERTY"
+   "=" value=("STATIC" | "DYNAMIC" | "ZERO") "{" "{" (msgPropertyParam+=MsgPropertyParam)* "}" ";"
+;
+
+MsgPropertyParam: //Darlene
+   param=MsgPropertyParamEnum ("=")? value=AttributeValue (description=EString)? ";"
+;
+
+enum MsgPropertyParamEnum: //Darlene
+   SIZEINBITS|BITORDERING|BITPOSITION|DATAINTERPRETATION|
+   INITIALVALUE|DIRECTION|MAXIMUMSIZEINBITS|NONE
+;
+
 EventRule:
    "EVENT" name=Name "{" "MASK" "=" eventvalue = Name ";" "}"
 ;
 AppmodeRule:
    "APPMODE" name=Name "{" "}" ";"
+;
+CounterRule:
+   "COUNTER" name=Name "{" (Counterlist +=Counterattribute)* "}" ";"
+;
+Counterattribute:
+   ("MAXALLOWEDVALUE" "=" value = T_NUMBER ";"|
+      "MINCYCLE" "=" value = T_NUMBER ";"|
+      "TICKSPERBASE" "=" value = T_NUMBER ";"|
+      "TYPE" "=" type = Counterenum ";"|
+      "SOURCE" "=" sourcevalue =AttributeValue ";"
+   )
+;
+enum Counterenum:
+   HARDWARE|SOFTWARE
 ;
 MessageRule:
     "MESSAGE" name=Name ("{" (MessageList += Messageattribute)* "}") ";" 
@@ -474,6 +569,53 @@ Resourceattribute: //달린추가
 
 enum ResourceRange: //달린추가 
    STANDARD|INTERNAL|LINKED
+;
+
+CpuOsRule:
+   "OS" name =Name ("{" (OsList += OsAttribute)* "}") ";"
+;
+OsAttribute:
+   (
+   name = OsAttrubutename ("=")? value=AttributeValue (description=EString)?";"|
+   "BUILD" "=" ("TRUE" "{" (parameterList+=OsBuildAttribute)* "}" | "FALSE") ";"|
+   "MEMMAP" "=" ("TRUE" "{" (parameterList+=OsMemmapAttribute)* "}" | "FALSE") ";"|
+   "WITHORTI" "=" ("TRUE" "{" (parameterList+=OsWithortiAttribute)* "}" | "FALSE") ";"|
+   "TIMINGPROTECTION_WATCHDOG" style=Name ("{" (TimeList += TimeAttribute)* "}") ";"
+   )
+;
+TimeAttribute:
+   "CORE" ("=")? value=AttributeValue (description=EString)? ";"|
+   "SOURCE" ("=")? value=AttributeValue (description=EString)?";"|
+   "FREQUENCY" ("=")? value=AttributeValue (description=EString)?";"
+;
+enum OsAttrubutename:
+   NUMBER_OF_CORES|SCALABILITYCLASS|STACKMONITORING|STATUS|USEGETSERVICEID|USEPARAMETERACCESS|USERESSCHEDULER|
+   USEVLE|ERRORHOOK|POSTTASKHOOK|PRETASKHOOK|PROTECTIONHOOK|SHUTDOWNHOOK|STARTUPHOOK|APP_NAME|APP_SRC|ASFLAGS|
+   ASSEMBLER|CFLAGS|COMPILER|COPIER|DEBUG|LDFLAGS|LINKER|TRAMPOLINE_BASE_PATH
+;
+OsWithortiAttribute:
+   "FILE" "=" (description=EString)";"
+;
+OsMemmapAttribute:
+   "LINKER" "=" (description=EString)";"|
+   "MEMORY_PROTECTION" "=" (description=EString)";"|
+   "COMPILER" "=" (description=EString)";"|
+   "ASSEMBLER" "=" (description=EString)";"
+;
+OsBuildAttribute:
+   (
+   "APP_NAME" "="(description=EString)";"|
+   "APP_SRC" "="(description=EString)";"|
+   "ASSEMBLER" "="(description=EString)";"|
+   "COPIER" "="(description=EString)";"|
+   "CFLAGS" "="(description=EString)";"|
+   "COMPILER" "="(description=EString)";"|
+   "LDFLAGS" "="(description=EString)";"|
+   "LIBRARY" "="(description=EString)";"|
+   "LINKER" "="(description=EString)";"|
+   "SYSTEM" "="(description=EString)";"|
+   "TRAMPOLINE_BASE_PATH" "="(description=EString)";"
+   )
 ;
 
 AlarmRule://서택추가

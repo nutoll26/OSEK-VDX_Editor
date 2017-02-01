@@ -52,8 +52,11 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_MemoryProtectionRule___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_1__q;
 	protected AbstractElementAlias match_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__;
 	protected AbstractElementAlias match_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0;
+	protected AbstractElementAlias match_MsgPropertyParam_EqualsSignKeyword_1_q;
 	protected AbstractElementAlias match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
 	protected AbstractElementAlias match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q;
+	protected AbstractElementAlias match_OsAttribute_EqualsSignKeyword_0_1_q;
+	protected AbstractElementAlias match_OsAttribute___BUILDKeyword_1_0_EqualsSignKeyword_1_1___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___MEMMAPKeyword_2_0_EqualsSignKeyword_2_1___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3___or___WITHORTIKeyword_3_0_EqualsSignKeyword_3_1___FALSEKeyword_3_2_1_or___TRUEKeyword_3_2_0_0_LeftCurlyBracketKeyword_3_2_0_1_RightCurlyBracketKeyword_3_2_0_3_____SemicolonKeyword_3_3__;
 	protected AbstractElementAlias match_SchduleActionAttribute_EqualsSignKeyword_0_3_q;
 	protected AbstractElementAlias match_SchduleActionAttribute_EqualsSignKeyword_1_3_q;
 	protected AbstractElementAlias match_SchduleSynAttribute_EqualsSignKeyword_0_1_q;
@@ -69,6 +72,9 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Taskattribute_EqualsSignKeyword_1_1_q;
 	protected AbstractElementAlias match_Taskattribute_EqualsSignKeyword_2_1_q;
 	protected AbstractElementAlias match_Taskattribute___AUTOSTARTKeyword_1_0_EqualsSignKeyword_1_1_q___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___TIMINGPROTECTIONKeyword_2_0_EqualsSignKeyword_2_1_q___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3__;
+	protected AbstractElementAlias match_TimeAttribute_EqualsSignKeyword_0_1_q;
+	protected AbstractElementAlias match_TimeAttribute_EqualsSignKeyword_1_1_q;
+	protected AbstractElementAlias match_TimeAttribute_EqualsSignKeyword_2_1_q;
 	protected AbstractElementAlias match_TimingProtectionRule_SemicolonKeyword_5_q;
 	
 	@Inject
@@ -104,8 +110,11 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_MemoryProtectionRule___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMemoryProtectionRuleAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getMemoryProtectionRuleAccess().getRightCurlyBracketKeyword_4_1()));
 		match_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getRECEIVE_UNQUEUED_INTERNALKeyword_1_7_0()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getLeftCurlyBracketKeyword_1_7_1()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getRightCurlyBracketKeyword_1_7_3()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_7_4())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getSEND_ZERO_INTERNALKeyword_1_3_0()), new TokenAlias(false, false, grammarAccess.getMessageattribute2Access().getSemicolonKeyword_1_3_1())));
 		match_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getMessageattributeAccess().getNOTIFICATIONERRORKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getMessageattributeAccess().getNOTIFICATIONKeyword_1_0_0()));
+		match_MsgPropertyParam_EqualsSignKeyword_1_q = new TokenAlias(false, true, grammarAccess.getMsgPropertyParamAccess().getEqualsSignKeyword_1());
 		match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getNameAttributeValueAccess().getRightCurlyBracketKeyword_1_2()));
 		match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getLeftCurlyBracketKeyword_0_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDefinitionAccess().getRightCurlyBracketKeyword_0_2_2()));
+		match_OsAttribute_EqualsSignKeyword_0_1_q = new TokenAlias(false, true, grammarAccess.getOsAttributeAccess().getEqualsSignKeyword_0_1());
+		match_OsAttribute___BUILDKeyword_1_0_EqualsSignKeyword_1_1___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___MEMMAPKeyword_2_0_EqualsSignKeyword_2_1___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3___or___WITHORTIKeyword_3_0_EqualsSignKeyword_3_1___FALSEKeyword_3_2_1_or___TRUEKeyword_3_2_0_0_LeftCurlyBracketKeyword_3_2_0_1_RightCurlyBracketKeyword_3_2_0_3_____SemicolonKeyword_3_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getBUILDKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getEqualsSignKeyword_1_1()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getTRUEKeyword_1_2_0_0()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getLeftCurlyBracketKeyword_1_2_0_1()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getRightCurlyBracketKeyword_1_2_0_3())), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getFALSEKeyword_1_2_1())), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getSemicolonKeyword_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getMEMMAPKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getEqualsSignKeyword_2_1()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getTRUEKeyword_2_2_0_0()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getLeftCurlyBracketKeyword_2_2_0_1()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getRightCurlyBracketKeyword_2_2_0_3())), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getFALSEKeyword_2_2_1())), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getSemicolonKeyword_2_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getWITHORTIKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getEqualsSignKeyword_3_1()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getTRUEKeyword_3_2_0_0()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getLeftCurlyBracketKeyword_3_2_0_1()), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getRightCurlyBracketKeyword_3_2_0_3())), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getFALSEKeyword_3_2_1())), new TokenAlias(false, false, grammarAccess.getOsAttributeAccess().getSemicolonKeyword_3_3())));
 		match_SchduleActionAttribute_EqualsSignKeyword_0_3_q = new TokenAlias(false, true, grammarAccess.getSchduleActionAttributeAccess().getEqualsSignKeyword_0_3());
 		match_SchduleActionAttribute_EqualsSignKeyword_1_3_q = new TokenAlias(false, true, grammarAccess.getSchduleActionAttributeAccess().getEqualsSignKeyword_1_3());
 		match_SchduleSynAttribute_EqualsSignKeyword_0_1_q = new TokenAlias(false, true, grammarAccess.getSchduleSynAttributeAccess().getEqualsSignKeyword_0_1());
@@ -121,6 +130,9 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Taskattribute_EqualsSignKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getTaskattributeAccess().getEqualsSignKeyword_1_1());
 		match_Taskattribute_EqualsSignKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getTaskattributeAccess().getEqualsSignKeyword_2_1());
 		match_Taskattribute___AUTOSTARTKeyword_1_0_EqualsSignKeyword_1_1_q___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___TIMINGPROTECTIONKeyword_2_0_EqualsSignKeyword_2_1_q___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getAUTOSTARTKeyword_1_0()), new TokenAlias(false, true, grammarAccess.getTaskattributeAccess().getEqualsSignKeyword_1_1()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getTRUEKeyword_1_2_0_0()), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getLeftCurlyBracketKeyword_1_2_0_1()), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getRightCurlyBracketKeyword_1_2_0_3())), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getFALSEKeyword_1_2_1())), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getSemicolonKeyword_1_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getTIMINGPROTECTIONKeyword_2_0()), new TokenAlias(false, true, grammarAccess.getTaskattributeAccess().getEqualsSignKeyword_2_1()), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getTRUEKeyword_2_2_0_0()), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getLeftCurlyBracketKeyword_2_2_0_1()), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getRightCurlyBracketKeyword_2_2_0_3())), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getFALSEKeyword_2_2_1())), new TokenAlias(false, false, grammarAccess.getTaskattributeAccess().getSemicolonKeyword_2_3())));
+		match_TimeAttribute_EqualsSignKeyword_0_1_q = new TokenAlias(false, true, grammarAccess.getTimeAttributeAccess().getEqualsSignKeyword_0_1());
+		match_TimeAttribute_EqualsSignKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getTimeAttributeAccess().getEqualsSignKeyword_1_1());
+		match_TimeAttribute_EqualsSignKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getTimeAttributeAccess().getEqualsSignKeyword_2_1());
 		match_TimingProtectionRule_SemicolonKeyword_5_q = new TokenAlias(false, true, grammarAccess.getTimingProtectionRuleAccess().getSemicolonKeyword_5());
 	}
 	
@@ -207,10 +219,16 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Messageattribute2___RECEIVE_UNQUEUED_INTERNALKeyword_1_7_0_LeftCurlyBracketKeyword_1_7_1_RightCurlyBracketKeyword_1_7_3_SemicolonKeyword_1_7_4___or___SEND_ZERO_INTERNALKeyword_1_3_0_SemicolonKeyword_1_3_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0.equals(syntax))
 				emit_Messageattribute_NOTIFICATIONERRORKeyword_1_0_1_or_NOTIFICATIONKeyword_1_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MsgPropertyParam_EqualsSignKeyword_1_q.equals(syntax))
+				emit_MsgPropertyParam_EqualsSignKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q.equals(syntax))
 				emit_NameAttributeValue___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q.equals(syntax))
 				emit_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OsAttribute_EqualsSignKeyword_0_1_q.equals(syntax))
+				emit_OsAttribute_EqualsSignKeyword_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OsAttribute___BUILDKeyword_1_0_EqualsSignKeyword_1_1___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___MEMMAPKeyword_2_0_EqualsSignKeyword_2_1___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3___or___WITHORTIKeyword_3_0_EqualsSignKeyword_3_1___FALSEKeyword_3_2_1_or___TRUEKeyword_3_2_0_0_LeftCurlyBracketKeyword_3_2_0_1_RightCurlyBracketKeyword_3_2_0_3_____SemicolonKeyword_3_3__.equals(syntax))
+				emit_OsAttribute___BUILDKeyword_1_0_EqualsSignKeyword_1_1___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___MEMMAPKeyword_2_0_EqualsSignKeyword_2_1___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3___or___WITHORTIKeyword_3_0_EqualsSignKeyword_3_1___FALSEKeyword_3_2_1_or___TRUEKeyword_3_2_0_0_LeftCurlyBracketKeyword_3_2_0_1_RightCurlyBracketKeyword_3_2_0_3_____SemicolonKeyword_3_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_SchduleActionAttribute_EqualsSignKeyword_0_3_q.equals(syntax))
 				emit_SchduleActionAttribute_EqualsSignKeyword_0_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_SchduleActionAttribute_EqualsSignKeyword_1_3_q.equals(syntax))
@@ -241,6 +259,12 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Taskattribute_EqualsSignKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Taskattribute___AUTOSTARTKeyword_1_0_EqualsSignKeyword_1_1_q___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___TIMINGPROTECTIONKeyword_2_0_EqualsSignKeyword_2_1_q___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3__.equals(syntax))
 				emit_Taskattribute___AUTOSTARTKeyword_1_0_EqualsSignKeyword_1_1_q___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___TIMINGPROTECTIONKeyword_2_0_EqualsSignKeyword_2_1_q___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeAttribute_EqualsSignKeyword_0_1_q.equals(syntax))
+				emit_TimeAttribute_EqualsSignKeyword_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeAttribute_EqualsSignKeyword_1_1_q.equals(syntax))
+				emit_TimeAttribute_EqualsSignKeyword_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TimeAttribute_EqualsSignKeyword_2_1_q.equals(syntax))
+				emit_TimeAttribute_EqualsSignKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TimingProtectionRule_SemicolonKeyword_5_q.equals(syntax))
 				emit_TimingProtectionRule_SemicolonKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -610,6 +634,17 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     '='?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     param=MsgPropertyParamEnum (ambiguity) value=AttributeValue
+	 */
+	protected void emit_MsgPropertyParam_EqualsSignKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -627,6 +662,32 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=Name (ambiguity) ';' (rule end)
 	 */
 	protected void emit_ObjectDefinition___LeftCurlyBracketKeyword_0_2_0_RightCurlyBracketKeyword_0_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '='?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=OsAttrubutename (ambiguity) value=AttributeValue
+	 */
+	protected void emit_OsAttribute_EqualsSignKeyword_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (
+	  *         ('BUILD' '=' ('FALSE' | ('TRUE' '{' '}')) ';') | 
+	  *         ('MEMMAP' '=' ('FALSE' | ('TRUE' '{' '}')) ';') | 
+	  *         ('WITHORTI' '=' ('FALSE' | ('TRUE' '{' '}')) ';')
+	  *     )
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_OsAttribute___BUILDKeyword_1_0_EqualsSignKeyword_1_1___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___MEMMAPKeyword_2_0_EqualsSignKeyword_2_1___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3___or___WITHORTIKeyword_3_0_EqualsSignKeyword_3_1___FALSEKeyword_3_2_1_or___TRUEKeyword_3_2_0_0_LeftCurlyBracketKeyword_3_2_0_1_RightCurlyBracketKeyword_3_2_0_3_____SemicolonKeyword_3_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -798,6 +859,39 @@ public class OilSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) (rule start)
 	 */
 	protected void emit_Taskattribute___AUTOSTARTKeyword_1_0_EqualsSignKeyword_1_1_q___FALSEKeyword_1_2_1_or___TRUEKeyword_1_2_0_0_LeftCurlyBracketKeyword_1_2_0_1_RightCurlyBracketKeyword_1_2_0_3_____SemicolonKeyword_1_3___or___TIMINGPROTECTIONKeyword_2_0_EqualsSignKeyword_2_1_q___FALSEKeyword_2_2_1_or___TRUEKeyword_2_2_0_0_LeftCurlyBracketKeyword_2_2_0_1_RightCurlyBracketKeyword_2_2_0_3_____SemicolonKeyword_2_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '='?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'CORE' (ambiguity) value=AttributeValue
+	 */
+	protected void emit_TimeAttribute_EqualsSignKeyword_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '='?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'SOURCE' (ambiguity) value=AttributeValue
+	 */
+	protected void emit_TimeAttribute_EqualsSignKeyword_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '='?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'FREQUENCY' (ambiguity) value=AttributeValue
+	 */
+	protected void emit_TimeAttribute_EqualsSignKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

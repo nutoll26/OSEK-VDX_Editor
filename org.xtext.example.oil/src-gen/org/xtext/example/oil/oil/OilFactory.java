@@ -366,6 +366,123 @@ public interface OilFactory extends EFactory
   ObjectDefinition createObjectDefinition();
 
   /**
+   * Returns a new object of class '<em>Ipdu Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ipdu Rule</em>'.
+   * @generated
+   */
+  IpduRule createIpduRule();
+
+  /**
+   * Returns a new object of class '<em>Ipdu Sub Container</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ipdu Sub Container</em>'.
+   * @generated
+   */
+  IpduSubContainer createIpduSubContainer();
+
+  /**
+   * Returns a new object of class '<em>Ipdu Property Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ipdu Property Rule</em>'.
+   * @generated
+   */
+  IpduPropertyRule createIpduPropertyRule();
+
+  /**
+   * Returns a new object of class '<em>Ipdu Prop Sub Con</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ipdu Prop Sub Con</em>'.
+   * @generated
+   */
+  IpduPropSubCon createIpduPropSubCon();
+
+  /**
+   * Returns a new object of class '<em>Transmission Mode Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transmission Mode Rule</em>'.
+   * @generated
+   */
+  TransmissionModeRule createTransmissionModeRule();
+
+  /**
+   * Returns a new object of class '<em>Transmisson Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transmisson Param</em>'.
+   * @generated
+   */
+  TransmissonParam createTransmissonParam();
+
+  /**
+   * Returns a new object of class '<em>Ipdu Prop Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ipdu Prop Param</em>'.
+   * @generated
+   */
+  IpduPropParam createIpduPropParam();
+
+  /**
+   * Returns a new object of class '<em>Ipdu Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ipdu Param</em>'.
+   * @generated
+   */
+  IpduParam createIpduParam();
+
+  /**
+   * Returns a new object of class '<em>Network Message Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Network Message Rule</em>'.
+   * @generated
+   */
+  NetworkMessageRule createNetworkMessageRule();
+
+  /**
+   * Returns a new object of class '<em>Network Msg Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Network Msg Param</em>'.
+   * @generated
+   */
+  NetworkMsgParam createNetworkMsgParam();
+
+  /**
+   * Returns a new object of class '<em>Network Msg Sub</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Network Msg Sub</em>'.
+   * @generated
+   */
+  NetworkMsgSub createNetworkMsgSub();
+
+  /**
+   * Returns a new object of class '<em>Network Msg Property Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Network Msg Property Rule</em>'.
+   * @generated
+   */
+  NetworkMsgPropertyRule createNetworkMsgPropertyRule();
+
+  /**
+   * Returns a new object of class '<em>Msg Property Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Msg Property Param</em>'.
+   * @generated
+   */
+  MsgPropertyParam createMsgPropertyParam();
+
+  /**
    * Returns a new object of class '<em>Event Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -382,6 +499,24 @@ public interface OilFactory extends EFactory
    * @generated
    */
   AppmodeRule createAppmodeRule();
+
+  /**
+   * Returns a new object of class '<em>Counter Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Counter Rule</em>'.
+   * @generated
+   */
+  CounterRule createCounterRule();
+
+  /**
+   * Returns a new object of class '<em>Counterattribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Counterattribute</em>'.
+   * @generated
+   */
+  Counterattribute createCounterattribute();
 
   /**
    * Returns a new object of class '<em>Message Rule</em>'.
@@ -708,6 +843,60 @@ public interface OilFactory extends EFactory
   Resourceattribute createResourceattribute();
 
   /**
+   * Returns a new object of class '<em>Cpu Os Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cpu Os Rule</em>'.
+   * @generated
+   */
+  CpuOsRule createCpuOsRule();
+
+  /**
+   * Returns a new object of class '<em>Os Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Os Attribute</em>'.
+   * @generated
+   */
+  OsAttribute createOsAttribute();
+
+  /**
+   * Returns a new object of class '<em>Time Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Time Attribute</em>'.
+   * @generated
+   */
+  TimeAttribute createTimeAttribute();
+
+  /**
+   * Returns a new object of class '<em>Os Withorti Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Os Withorti Attribute</em>'.
+   * @generated
+   */
+  OsWithortiAttribute createOsWithortiAttribute();
+
+  /**
+   * Returns a new object of class '<em>Os Memmap Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Os Memmap Attribute</em>'.
+   * @generated
+   */
+  OsMemmapAttribute createOsMemmapAttribute();
+
+  /**
+   * Returns a new object of class '<em>Os Build Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Os Build Attribute</em>'.
+   * @generated
+   */
+  OsBuildAttribute createOsBuildAttribute();
+
+  /**
    * Returns a new object of class '<em>Alarm Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -940,15 +1129,6 @@ public interface OilFactory extends EFactory
    * @generated
    */
   OsRule createOsRule();
-
-  /**
-   * Returns a new object of class '<em>Counter Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Counter Rule</em>'.
-   * @generated
-   */
-  CounterRule createCounterRule();
 
   /**
    * Returns the package supported by this factory.

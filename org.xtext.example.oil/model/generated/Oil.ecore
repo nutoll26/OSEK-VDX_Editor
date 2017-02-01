@@ -301,10 +301,119 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="LibraryList" upperBound="-1"
         eType="#//Librayattribute" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IpduRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipduSubContaner" upperBound="-1"
+        eType="#//IpduSubContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipduParam" upperBound="-1"
+        eType="#//IpduParam" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IpduSubContainer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IpduPropertyRule" eSuperTypes="#//IpduSubContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipduPropSubCon" upperBound="-1"
+        eType="#//IpduPropSubCon" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipduPropParam" upperBound="-1"
+        eType="#//IpduPropParam" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IpduPropSubCon">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="#//TransmissionModeRule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransmissionModeRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transmissionParam" upperBound="-1"
+        eType="#//TransmissonParam" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransmissonParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//TransmissionParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//NumberAttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransmissionParamEnum">
+    <eLiterals name="TIMEPERIOD" literal="TIMEPERIOD"/>
+    <eLiterals name="TIMEOFFSET" value="1" literal="TIMEOFFSET"/>
+    <eLiterals name="MINIMUMDELAYTIME" value="2" literal="MINIMUMDELAYTIME"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IpduPropParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//IpduPropParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//NumberAttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IpduPropParamEnum">
+    <eLiterals name="TIMEOUT" literal="TIMEOUT"/>
+    <eLiterals name="FIRSTTIMEOUT" value="1" literal="FIRSTTIMEOUT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IpduParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//IpduParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IpduParamEnum">
+    <eLiterals name="SIZEINBITS" literal="SIZEINBITS"/>
+    <eLiterals name="IPDUCALLOUT" value="1" literal="IPDUCALLOUT"/>
+    <eLiterals name="LAYERUSED" value="2" literal="LAYERUSED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkMessageRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkMsgSub" upperBound="-1"
+        eType="#//NetworkMsgSub" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkMsgParam" upperBound="-1"
+        eType="#//NetworkMsgParam" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkMsgParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//NetworkMsgParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NetworkMsgParamEnum">
+    <eLiterals name="IPDU" literal="IPDU"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkMsgSub"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkMsgPropertyRule" eSuperTypes="#//NetworkMsgSub">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="msgPropertyParam" upperBound="-1"
+        eType="#//MsgPropertyParam" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MsgPropertyParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param" eType="#//MsgPropertyParamEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MsgPropertyParamEnum">
+    <eLiterals name="SIZEINBITS" literal="SIZEINBITS"/>
+    <eLiterals name="BITORDERING" value="1" literal="BITORDERING"/>
+    <eLiterals name="BITPOSITION" value="2" literal="BITPOSITION"/>
+    <eLiterals name="DATAINTERPRETATION" value="3" literal="DATAINTERPRETATION"/>
+    <eLiterals name="INITIALVALUE" value="4" literal="INITIALVALUE"/>
+    <eLiterals name="DIRECTION" value="5" literal="DIRECTION"/>
+    <eLiterals name="MAXIMUMSIZEINBITS" value="6" literal="MAXIMUMSIZEINBITS"/>
+    <eLiterals name="NONE" value="7" literal="NONE"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventRule" eSuperTypes="#//ObjectDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppmodeRule" eSuperTypes="#//ObjectDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CounterRule" eSuperTypes="#//ImpCounterRule #//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//ImpCounterParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Counterlist" upperBound="-1"
+        eType="#//Counterattribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Counterattribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Counterenum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcevalue" eType="#//AttributeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Counterenum">
+    <eLiterals name="HARDWARE" literal="HARDWARE"/>
+    <eLiterals name="SOFTWARE" value="1" literal="SOFTWARE"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageRule" eSuperTypes="#//ObjectDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="MessageList" upperBound="-1"
         eType="#//Messageattribute" containment="true"/>
@@ -604,6 +713,62 @@
     <eLiterals name="INTERNAL" value="1" literal="INTERNAL"/>
     <eLiterals name="LINKED" value="2" literal="LINKED"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CpuOsRule" eSuperTypes="#//ObjectDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OsList" upperBound="-1"
+        eType="#//OsAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OsAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//OsAttrubutename"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterList" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TimeList" upperBound="-1"
+        eType="#//TimeAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OsAttrubutename">
+    <eLiterals name="NUMBER_OF_CORES" literal="NUMBER_OF_CORES"/>
+    <eLiterals name="SCALABILITYCLASS" value="1" literal="SCALABILITYCLASS"/>
+    <eLiterals name="STACKMONITORING" value="2" literal="STACKMONITORING"/>
+    <eLiterals name="STATUS" value="3" literal="STATUS"/>
+    <eLiterals name="USEGETSERVICEID" value="4" literal="USEGETSERVICEID"/>
+    <eLiterals name="USEPARAMETERACCESS" value="5" literal="USEPARAMETERACCESS"/>
+    <eLiterals name="USERESSCHEDULER" value="6" literal="USERESSCHEDULER"/>
+    <eLiterals name="USEVLE" value="7" literal="USEVLE"/>
+    <eLiterals name="ERRORHOOK" value="8" literal="ERRORHOOK"/>
+    <eLiterals name="POSTTASKHOOK" value="9" literal="POSTTASKHOOK"/>
+    <eLiterals name="PRETASKHOOK" value="10" literal="PRETASKHOOK"/>
+    <eLiterals name="PROTECTIONHOOK" value="11" literal="PROTECTIONHOOK"/>
+    <eLiterals name="SHUTDOWNHOOK" value="12" literal="SHUTDOWNHOOK"/>
+    <eLiterals name="STARTUPHOOK" value="13" literal="STARTUPHOOK"/>
+    <eLiterals name="APP_NAME" value="14" literal="APP_NAME"/>
+    <eLiterals name="APP_SRC" value="15" literal="APP_SRC"/>
+    <eLiterals name="ASFLAGS" value="16" literal="ASFLAGS"/>
+    <eLiterals name="ASSEMBLER" value="17" literal="ASSEMBLER"/>
+    <eLiterals name="CFLAGS" value="18" literal="CFLAGS"/>
+    <eLiterals name="COMPILER" value="19" literal="COMPILER"/>
+    <eLiterals name="COPIER" value="20" literal="COPIER"/>
+    <eLiterals name="DEBUG" value="21" literal="DEBUG"/>
+    <eLiterals name="LDFLAGS" value="22" literal="LDFLAGS"/>
+    <eLiterals name="LINKER" value="23" literal="LINKER"/>
+    <eLiterals name="TRAMPOLINE_BASE_PATH" value="24" literal="TRAMPOLINE_BASE_PATH"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OsWithortiAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OsMemmapAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OsBuildAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlarmRule" eSuperTypes="#//ObjectDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="AlarmList" upperBound="-1"
         eType="#//AlarmAttribute" containment="true"/>
@@ -789,11 +954,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="OsRule" eSuperTypes="#//ImpOsRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
         eType="#//ImpOsParam" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CounterRule" eSuperTypes="#//ImpCounterRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
-        eType="#//ImpCounterParam" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

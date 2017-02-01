@@ -104,8 +104,23 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.IMPL_REF_DEF: return createImplRefDef();
       case OilPackage.APPLICATION_DEFINITION: return createApplicationDefinition();
       case OilPackage.OBJECT_DEFINITION: return createObjectDefinition();
+      case OilPackage.IPDU_RULE: return createIpduRule();
+      case OilPackage.IPDU_SUB_CONTAINER: return createIpduSubContainer();
+      case OilPackage.IPDU_PROPERTY_RULE: return createIpduPropertyRule();
+      case OilPackage.IPDU_PROP_SUB_CON: return createIpduPropSubCon();
+      case OilPackage.TRANSMISSION_MODE_RULE: return createTransmissionModeRule();
+      case OilPackage.TRANSMISSON_PARAM: return createTransmissonParam();
+      case OilPackage.IPDU_PROP_PARAM: return createIpduPropParam();
+      case OilPackage.IPDU_PARAM: return createIpduParam();
+      case OilPackage.NETWORK_MESSAGE_RULE: return createNetworkMessageRule();
+      case OilPackage.NETWORK_MSG_PARAM: return createNetworkMsgParam();
+      case OilPackage.NETWORK_MSG_SUB: return createNetworkMsgSub();
+      case OilPackage.NETWORK_MSG_PROPERTY_RULE: return createNetworkMsgPropertyRule();
+      case OilPackage.MSG_PROPERTY_PARAM: return createMsgPropertyParam();
       case OilPackage.EVENT_RULE: return createEventRule();
       case OilPackage.APPMODE_RULE: return createAppmodeRule();
+      case OilPackage.COUNTER_RULE: return createCounterRule();
+      case OilPackage.COUNTERATTRIBUTE: return createCounterattribute();
       case OilPackage.MESSAGE_RULE: return createMessageRule();
       case OilPackage.MESSAGEATTRIBUTE: return createMessageattribute();
       case OilPackage.MESSAGEATTRIBUTE3: return createMessageattribute3();
@@ -142,6 +157,12 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.TASK_AUTOSTART_ATTRIBUTE: return createTaskAutostartAttribute();
       case OilPackage.RESOURCE_RULE: return createResourceRule();
       case OilPackage.RESOURCEATTRIBUTE: return createResourceattribute();
+      case OilPackage.CPU_OS_RULE: return createCpuOsRule();
+      case OilPackage.OS_ATTRIBUTE: return createOsAttribute();
+      case OilPackage.TIME_ATTRIBUTE: return createTimeAttribute();
+      case OilPackage.OS_WITHORTI_ATTRIBUTE: return createOsWithortiAttribute();
+      case OilPackage.OS_MEMMAP_ATTRIBUTE: return createOsMemmapAttribute();
+      case OilPackage.OS_BUILD_ATTRIBUTE: return createOsBuildAttribute();
       case OilPackage.ALARM_RULE: return createAlarmRule();
       case OilPackage.ALARM_ATTRIBUTE: return createAlarmAttribute();
       case OilPackage.ALARM_ACTION_ATTRIBUTE: return createAlarmActionAttribute();
@@ -168,7 +189,6 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
       case OilPackage.STRING_ATTRIBUTE_VALUE: return createStringAttributeValue();
       case OilPackage.AUTO_ATTRIBUTE_VALUE: return createAutoAttributeValue();
       case OilPackage.OS_RULE: return createOsRule();
-      case OilPackage.COUNTER_RULE: return createCounterRule();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -200,6 +220,18 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return createDefaultEnumFromString(eDataType, initialValue);
       case OilPackage.OBJECT_REF_TYPE_ENUM:
         return createObjectRefTypeEnumFromString(eDataType, initialValue);
+      case OilPackage.TRANSMISSION_PARAM_ENUM:
+        return createTransmissionParamEnumFromString(eDataType, initialValue);
+      case OilPackage.IPDU_PROP_PARAM_ENUM:
+        return createIpduPropParamEnumFromString(eDataType, initialValue);
+      case OilPackage.IPDU_PARAM_ENUM:
+        return createIpduParamEnumFromString(eDataType, initialValue);
+      case OilPackage.NETWORK_MSG_PARAM_ENUM:
+        return createNetworkMsgParamEnumFromString(eDataType, initialValue);
+      case OilPackage.MSG_PROPERTY_PARAM_ENUM:
+        return createMsgPropertyParamEnumFromString(eDataType, initialValue);
+      case OilPackage.COUNTERENUM:
+        return createCounterenumFromString(eDataType, initialValue);
       case OilPackage.MESSAGEFILTER2:
         return createMessagefilter2FromString(eDataType, initialValue);
       case OilPackage.MESSAGE_TRANSFERPROPERT_YENUM:
@@ -216,6 +248,8 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return createTaskAttributeNameFromString(eDataType, initialValue);
       case OilPackage.RESOURCE_RANGE:
         return createResourceRangeFromString(eDataType, initialValue);
+      case OilPackage.OS_ATTRUBUTENAME:
+        return createOsAttrubutenameFromString(eDataType, initialValue);
       case OilPackage.ACTIVATE_TASK:
         return createActivateTaskFromString(eDataType, initialValue);
       case OilPackage.INCREMENT_COUNTER:
@@ -273,6 +307,18 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return convertDefaultEnumToString(eDataType, instanceValue);
       case OilPackage.OBJECT_REF_TYPE_ENUM:
         return convertObjectRefTypeEnumToString(eDataType, instanceValue);
+      case OilPackage.TRANSMISSION_PARAM_ENUM:
+        return convertTransmissionParamEnumToString(eDataType, instanceValue);
+      case OilPackage.IPDU_PROP_PARAM_ENUM:
+        return convertIpduPropParamEnumToString(eDataType, instanceValue);
+      case OilPackage.IPDU_PARAM_ENUM:
+        return convertIpduParamEnumToString(eDataType, instanceValue);
+      case OilPackage.NETWORK_MSG_PARAM_ENUM:
+        return convertNetworkMsgParamEnumToString(eDataType, instanceValue);
+      case OilPackage.MSG_PROPERTY_PARAM_ENUM:
+        return convertMsgPropertyParamEnumToString(eDataType, instanceValue);
+      case OilPackage.COUNTERENUM:
+        return convertCounterenumToString(eDataType, instanceValue);
       case OilPackage.MESSAGEFILTER2:
         return convertMessagefilter2ToString(eDataType, instanceValue);
       case OilPackage.MESSAGE_TRANSFERPROPERT_YENUM:
@@ -289,6 +335,8 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
         return convertTaskAttributeNameToString(eDataType, instanceValue);
       case OilPackage.RESOURCE_RANGE:
         return convertResourceRangeToString(eDataType, instanceValue);
+      case OilPackage.OS_ATTRUBUTENAME:
+        return convertOsAttrubutenameToString(eDataType, instanceValue);
       case OilPackage.ACTIVATE_TASK:
         return convertActivateTaskToString(eDataType, instanceValue);
       case OilPackage.INCREMENT_COUNTER:
@@ -743,6 +791,149 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public IpduRule createIpduRule()
+  {
+    IpduRuleImpl ipduRule = new IpduRuleImpl();
+    return ipduRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpduSubContainer createIpduSubContainer()
+  {
+    IpduSubContainerImpl ipduSubContainer = new IpduSubContainerImpl();
+    return ipduSubContainer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpduPropertyRule createIpduPropertyRule()
+  {
+    IpduPropertyRuleImpl ipduPropertyRule = new IpduPropertyRuleImpl();
+    return ipduPropertyRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpduPropSubCon createIpduPropSubCon()
+  {
+    IpduPropSubConImpl ipduPropSubCon = new IpduPropSubConImpl();
+    return ipduPropSubCon;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TransmissionModeRule createTransmissionModeRule()
+  {
+    TransmissionModeRuleImpl transmissionModeRule = new TransmissionModeRuleImpl();
+    return transmissionModeRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TransmissonParam createTransmissonParam()
+  {
+    TransmissonParamImpl transmissonParam = new TransmissonParamImpl();
+    return transmissonParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpduPropParam createIpduPropParam()
+  {
+    IpduPropParamImpl ipduPropParam = new IpduPropParamImpl();
+    return ipduPropParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpduParam createIpduParam()
+  {
+    IpduParamImpl ipduParam = new IpduParamImpl();
+    return ipduParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NetworkMessageRule createNetworkMessageRule()
+  {
+    NetworkMessageRuleImpl networkMessageRule = new NetworkMessageRuleImpl();
+    return networkMessageRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NetworkMsgParam createNetworkMsgParam()
+  {
+    NetworkMsgParamImpl networkMsgParam = new NetworkMsgParamImpl();
+    return networkMsgParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NetworkMsgSub createNetworkMsgSub()
+  {
+    NetworkMsgSubImpl networkMsgSub = new NetworkMsgSubImpl();
+    return networkMsgSub;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NetworkMsgPropertyRule createNetworkMsgPropertyRule()
+  {
+    NetworkMsgPropertyRuleImpl networkMsgPropertyRule = new NetworkMsgPropertyRuleImpl();
+    return networkMsgPropertyRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MsgPropertyParam createMsgPropertyParam()
+  {
+    MsgPropertyParamImpl msgPropertyParam = new MsgPropertyParamImpl();
+    return msgPropertyParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EventRule createEventRule()
   {
     EventRuleImpl eventRule = new EventRuleImpl();
@@ -758,6 +949,28 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
   {
     AppmodeRuleImpl appmodeRule = new AppmodeRuleImpl();
     return appmodeRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CounterRule createCounterRule()
+  {
+    CounterRuleImpl counterRule = new CounterRuleImpl();
+    return counterRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Counterattribute createCounterattribute()
+  {
+    CounterattributeImpl counterattribute = new CounterattributeImpl();
+    return counterattribute;
   }
 
   /**
@@ -1161,6 +1374,72 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public CpuOsRule createCpuOsRule()
+  {
+    CpuOsRuleImpl cpuOsRule = new CpuOsRuleImpl();
+    return cpuOsRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OsAttribute createOsAttribute()
+  {
+    OsAttributeImpl osAttribute = new OsAttributeImpl();
+    return osAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimeAttribute createTimeAttribute()
+  {
+    TimeAttributeImpl timeAttribute = new TimeAttributeImpl();
+    return timeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OsWithortiAttribute createOsWithortiAttribute()
+  {
+    OsWithortiAttributeImpl osWithortiAttribute = new OsWithortiAttributeImpl();
+    return osWithortiAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OsMemmapAttribute createOsMemmapAttribute()
+  {
+    OsMemmapAttributeImpl osMemmapAttribute = new OsMemmapAttributeImpl();
+    return osMemmapAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OsBuildAttribute createOsBuildAttribute()
+  {
+    OsBuildAttributeImpl osBuildAttribute = new OsBuildAttributeImpl();
+    return osBuildAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AlarmRule createAlarmRule()
   {
     AlarmRuleImpl alarmRule = new AlarmRuleImpl();
@@ -1447,17 +1726,6 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CounterRule createCounterRule()
-  {
-    CounterRuleImpl counterRule = new CounterRuleImpl();
-    return counterRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ImpTaskParamEnum createImpTaskParamEnumFromString(EDataType eDataType, String initialValue)
   {
     ImpTaskParamEnum result = ImpTaskParamEnum.get(initialValue);
@@ -1634,6 +1902,138 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public TransmissionParamEnum createTransmissionParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    TransmissionParamEnum result = TransmissionParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTransmissionParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpduPropParamEnum createIpduPropParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    IpduPropParamEnum result = IpduPropParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIpduPropParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpduParamEnum createIpduParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    IpduParamEnum result = IpduParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertIpduParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NetworkMsgParamEnum createNetworkMsgParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    NetworkMsgParamEnum result = NetworkMsgParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertNetworkMsgParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MsgPropertyParamEnum createMsgPropertyParamEnumFromString(EDataType eDataType, String initialValue)
+  {
+    MsgPropertyParamEnum result = MsgPropertyParamEnum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertMsgPropertyParamEnumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Counterenum createCounterenumFromString(EDataType eDataType, String initialValue)
+  {
+    Counterenum result = Counterenum.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertCounterenumToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Messagefilter2 createMessagefilter2FromString(EDataType eDataType, String initialValue)
   {
     Messagefilter2 result = Messagefilter2.get(initialValue);
@@ -1801,6 +2201,28 @@ public class OilFactoryImpl extends EFactoryImpl implements OilFactory
    * @generated
    */
   public String convertResourceRangeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OsAttrubutename createOsAttrubutenameFromString(EDataType eDataType, String initialValue)
+  {
+    OsAttrubutename result = OsAttrubutename.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOsAttrubutenameToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -312,6 +312,97 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass ipduRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipduSubContainerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipduPropertyRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipduPropSubConEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass transmissionModeRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass transmissonParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipduPropParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipduParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass networkMessageRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass networkMsgParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass networkMsgSubEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass networkMsgPropertyRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass msgPropertyParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass eventRuleEClass = null;
 
   /**
@@ -320,6 +411,20 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * @generated
    */
   private EClass appmodeRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass counterRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass counterattributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -578,6 +683,48 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass cpuOsRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass osAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass timeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass osWithortiAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass osMemmapAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass osBuildAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass alarmRuleEClass = null;
 
   /**
@@ -760,13 +907,6 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass counterRuleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EEnum impTaskParamEnumEEnum = null;
 
   /**
@@ -823,6 +963,48 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EEnum transmissionParamEnumEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum ipduPropParamEnumEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum ipduParamEnumEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum networkMsgParamEnumEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum msgPropertyParamEnumEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum counterenumEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum messagefilter2EEnum = null;
 
   /**
@@ -873,6 +1055,13 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * @generated
    */
   private EEnum resourceRangeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum osAttrubutenameEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2713,11 +2902,443 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getIpduRule()
+  {
+    if (ipduRuleEClass == null)
+    {
+      ipduRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(46);
+    }
+    return ipduRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduRule_Value()
+  {
+        return (EReference)getIpduRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduRule_IpduSubContaner()
+  {
+        return (EReference)getIpduRule().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduRule_IpduParam()
+  {
+        return (EReference)getIpduRule().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpduSubContainer()
+  {
+    if (ipduSubContainerEClass == null)
+    {
+      ipduSubContainerEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(47);
+    }
+    return ipduSubContainerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpduPropertyRule()
+  {
+    if (ipduPropertyRuleEClass == null)
+    {
+      ipduPropertyRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(48);
+    }
+    return ipduPropertyRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIpduPropertyRule_Value()
+  {
+        return (EAttribute)getIpduPropertyRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduPropertyRule_IpduPropSubCon()
+  {
+        return (EReference)getIpduPropertyRule().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduPropertyRule_IpduPropParam()
+  {
+        return (EReference)getIpduPropertyRule().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpduPropSubCon()
+  {
+    if (ipduPropSubConEClass == null)
+    {
+      ipduPropSubConEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(49);
+    }
+    return ipduPropSubConEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduPropSubCon_Rule()
+  {
+        return (EReference)getIpduPropSubCon().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTransmissionModeRule()
+  {
+    if (transmissionModeRuleEClass == null)
+    {
+      transmissionModeRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(50);
+    }
+    return transmissionModeRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTransmissionModeRule_Value()
+  {
+        return (EAttribute)getTransmissionModeRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransmissionModeRule_TransmissionParam()
+  {
+        return (EReference)getTransmissionModeRule().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTransmissonParam()
+  {
+    if (transmissonParamEClass == null)
+    {
+      transmissonParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(51);
+    }
+    return transmissonParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTransmissonParam_Param()
+  {
+        return (EAttribute)getTransmissonParam().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransmissonParam_Value()
+  {
+        return (EReference)getTransmissonParam().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpduPropParam()
+  {
+    if (ipduPropParamEClass == null)
+    {
+      ipduPropParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(53);
+    }
+    return ipduPropParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIpduPropParam_Param()
+  {
+        return (EAttribute)getIpduPropParam().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduPropParam_Value()
+  {
+        return (EReference)getIpduPropParam().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpduParam()
+  {
+    if (ipduParamEClass == null)
+    {
+      ipduParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(55);
+    }
+    return ipduParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIpduParam_Param()
+  {
+        return (EAttribute)getIpduParam().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpduParam_Value()
+  {
+        return (EReference)getIpduParam().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNetworkMessageRule()
+  {
+    if (networkMessageRuleEClass == null)
+    {
+      networkMessageRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(57);
+    }
+    return networkMessageRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNetworkMessageRule_Value()
+  {
+        return (EReference)getNetworkMessageRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNetworkMessageRule_NetworkMsgSub()
+  {
+        return (EReference)getNetworkMessageRule().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNetworkMessageRule_NetworkMsgParam()
+  {
+        return (EReference)getNetworkMessageRule().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNetworkMsgParam()
+  {
+    if (networkMsgParamEClass == null)
+    {
+      networkMsgParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(58);
+    }
+    return networkMsgParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNetworkMsgParam_Param()
+  {
+        return (EAttribute)getNetworkMsgParam().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNetworkMsgParam_Value()
+  {
+        return (EReference)getNetworkMsgParam().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNetworkMsgSub()
+  {
+    if (networkMsgSubEClass == null)
+    {
+      networkMsgSubEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(60);
+    }
+    return networkMsgSubEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNetworkMsgPropertyRule()
+  {
+    if (networkMsgPropertyRuleEClass == null)
+    {
+      networkMsgPropertyRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(61);
+    }
+    return networkMsgPropertyRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNetworkMsgPropertyRule_Value()
+  {
+        return (EAttribute)getNetworkMsgPropertyRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNetworkMsgPropertyRule_MsgPropertyParam()
+  {
+        return (EReference)getNetworkMsgPropertyRule().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMsgPropertyParam()
+  {
+    if (msgPropertyParamEClass == null)
+    {
+      msgPropertyParamEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(62);
+    }
+    return msgPropertyParamEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMsgPropertyParam_Param()
+  {
+        return (EAttribute)getMsgPropertyParam().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMsgPropertyParam_Value()
+  {
+        return (EReference)getMsgPropertyParam().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMsgPropertyParam_Description()
+  {
+        return (EAttribute)getMsgPropertyParam().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEventRule()
   {
     if (eventRuleEClass == null)
     {
-      eventRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(46);
+      eventRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(64);
     }
     return eventRuleEClass;
   }
@@ -2741,9 +3362,97 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (appmodeRuleEClass == null)
     {
-      appmodeRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(47);
+      appmodeRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(65);
     }
     return appmodeRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCounterRule()
+  {
+    if (counterRuleEClass == null)
+    {
+      counterRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(66);
+    }
+    return counterRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCounterRule_Implementations()
+  {
+        return (EReference)getCounterRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCounterRule_Description()
+  {
+        return (EAttribute)getCounterRule().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCounterRule_Counterlist()
+  {
+        return (EReference)getCounterRule().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCounterattribute()
+  {
+    if (counterattributeEClass == null)
+    {
+      counterattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(67);
+    }
+    return counterattributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCounterattribute_Value()
+  {
+        return (EAttribute)getCounterattribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCounterattribute_Type()
+  {
+        return (EAttribute)getCounterattribute().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCounterattribute_Sourcevalue()
+  {
+        return (EReference)getCounterattribute().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2755,7 +3464,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageRuleEClass == null)
     {
-      messageRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(48);
+      messageRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(69);
     }
     return messageRuleEClass;
   }
@@ -2779,7 +3488,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageattributeEClass == null)
     {
-      messageattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(49);
+      messageattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(70);
     }
     return messageattributeEClass;
   }
@@ -2813,7 +3522,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageattribute3EClass == null)
     {
-      messageattribute3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(50);
+      messageattribute3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(71);
     }
     return messageattribute3EClass;
   }
@@ -2857,7 +3566,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageSETEVENTEClass == null)
     {
-      messageSETEVENTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(51);
+      messageSETEVENTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(72);
     }
     return messageSETEVENTEClass;
   }
@@ -2881,7 +3590,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageCOMCALLBACKEClass == null)
     {
-      messageCOMCALLBACKEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(52);
+      messageCOMCALLBACKEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(73);
     }
     return messageCOMCALLBACKEClass;
   }
@@ -2915,7 +3624,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageattribute2EClass == null)
     {
-      messageattribute2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(53);
+      messageattribute2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(74);
     }
     return messageattribute2EClass;
   }
@@ -3049,7 +3758,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_SEND_STATIC_EXTERNALEClass == null)
     {
-      message_SEND_STATIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(54);
+      message_SEND_STATIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(75);
     }
     return message_SEND_STATIC_EXTERNALEClass;
   }
@@ -3133,7 +3842,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_SEND_DYNAMIC_EXTERNALEClass == null)
     {
-      message_SEND_DYNAMIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(55);
+      message_SEND_DYNAMIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(76);
     }
     return message_SEND_DYNAMIC_EXTERNALEClass;
   }
@@ -3197,7 +3906,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_SEND_ZERO_EXTERNALEClass == null)
     {
-      message_SEND_ZERO_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(56);
+      message_SEND_ZERO_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(77);
     }
     return message_SEND_ZERO_EXTERNALEClass;
   }
@@ -3241,7 +3950,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_ZERO_INTERNALEClass == null)
     {
-      message_RECEIVE_ZERO_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(57);
+      message_RECEIVE_ZERO_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(78);
     }
     return message_RECEIVE_ZERO_INTERNALEClass;
   }
@@ -3265,7 +3974,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_ZERO_EXTERNALEClass == null)
     {
-      message_RECEIVE_ZERO_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(58);
+      message_RECEIVE_ZERO_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(79);
     }
     return message_RECEIVE_ZERO_EXTERNALEClass;
   }
@@ -3309,7 +4018,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_UNQUEUED_INTERNALEClass == null)
     {
-      message_RECEIVE_UNQUEUED_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(59);
+      message_RECEIVE_UNQUEUED_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(80);
     }
     return message_RECEIVE_UNQUEUED_INTERNALEClass;
   }
@@ -3353,7 +4062,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_QUEUED_INTERNALEClass == null)
     {
-      message_RECEIVE_QUEUED_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(60);
+      message_RECEIVE_QUEUED_INTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(81);
     }
     return message_RECEIVE_QUEUED_INTERNALEClass;
   }
@@ -3407,7 +4116,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_UNQUEUED_EXTERNALEClass == null)
     {
-      message_RECEIVE_UNQUEUED_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(61);
+      message_RECEIVE_UNQUEUED_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(82);
     }
     return message_RECEIVE_UNQUEUED_EXTERNALEClass;
   }
@@ -3461,7 +4170,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_QUEUED_EXTERNALEClass == null)
     {
-      message_RECEIVE_QUEUED_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(62);
+      message_RECEIVE_QUEUED_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(83);
     }
     return message_RECEIVE_QUEUED_EXTERNALEClass;
   }
@@ -3525,7 +4234,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_DYNAMIC_EXTERNALEClass == null)
     {
-      message_RECEIVE_DYNAMIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(63);
+      message_RECEIVE_DYNAMIC_EXTERNALEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(84);
     }
     return message_RECEIVE_DYNAMIC_EXTERNALEClass;
   }
@@ -3559,7 +4268,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (message_RECEIVE_ZERO_SENDERSEClass == null)
     {
-      message_RECEIVE_ZERO_SENDERSEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(64);
+      message_RECEIVE_ZERO_SENDERSEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(85);
     }
     return message_RECEIVE_ZERO_SENDERSEClass;
   }
@@ -3593,7 +4302,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageCDATATYPEEClass == null)
     {
-      messageCDATATYPEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(65);
+      messageCDATATYPEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(86);
     }
     return messageCDATATYPEEClass;
   }
@@ -3617,7 +4326,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageTRANSFERPROPERTYEClass == null)
     {
-      messageTRANSFERPROPERTYEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(66);
+      messageTRANSFERPROPERTYEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(87);
     }
     return messageTRANSFERPROPERTYEClass;
   }
@@ -3641,7 +4350,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageNETWORKORDERCALLOUTEClass == null)
     {
-      messageNETWORKORDERCALLOUTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(67);
+      messageNETWORKORDERCALLOUTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(88);
     }
     return messageNETWORKORDERCALLOUTEClass;
   }
@@ -3665,7 +4374,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageCPUORDERCALLOUTEClass == null)
     {
-      messageCPUORDERCALLOUTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(68);
+      messageCPUORDERCALLOUTEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(89);
     }
     return messageCPUORDERCALLOUTEClass;
   }
@@ -3689,7 +4398,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageINITIALVALUEEClass == null)
     {
-      messageINITIALVALUEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(69);
+      messageINITIALVALUEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(90);
     }
     return messageINITIALVALUEEClass;
   }
@@ -3713,7 +4422,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageNETWORKMESSAGEEClass == null)
     {
-      messageNETWORKMESSAGEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(70);
+      messageNETWORKMESSAGEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(91);
     }
     return messageNETWORKMESSAGEEClass;
   }
@@ -3737,7 +4446,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageSENDINGMESSAGEEClass == null)
     {
-      messageSENDINGMESSAGEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(71);
+      messageSENDINGMESSAGEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(92);
     }
     return messageSENDINGMESSAGEEClass;
   }
@@ -3761,7 +4470,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageQUEUESIZEEClass == null)
     {
-      messageQUEUESIZEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(72);
+      messageQUEUESIZEEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(93);
     }
     return messageQUEUESIZEEClass;
   }
@@ -3785,7 +4494,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messagefilterEClass == null)
     {
-      messagefilterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(73);
+      messagefilterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(94);
     }
     return messagefilterEClass;
   }
@@ -3829,7 +4538,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageLINKEClass == null)
     {
-      messageLINKEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(74);
+      messageLINKEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(95);
     }
     return messageLINKEClass;
   }
@@ -3853,7 +4562,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (librayattributeEClass == null)
     {
-      librayattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(78);
+      librayattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(99);
     }
     return librayattributeEClass;
   }
@@ -3877,7 +4586,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (comRuleEClass == null)
     {
-      comRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(79);
+      comRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(100);
     }
     return comRuleEClass;
   }
@@ -3911,7 +4620,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (comattributeEClass == null)
     {
-      comattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(80);
+      comattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(101);
     }
     return comattributeEClass;
   }
@@ -3955,7 +4664,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (taskRuleEClass == null)
     {
-      taskRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(82);
+      taskRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(103);
     }
     return taskRuleEClass;
   }
@@ -3999,7 +4708,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (taskattributeEClass == null)
     {
-      taskattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(83);
+      taskattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(104);
     }
     return taskattributeEClass;
   }
@@ -4053,7 +4762,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (taskTimingAttributeEClass == null)
     {
-      taskTimingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(84);
+      taskTimingAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(105);
     }
     return taskTimingAttributeEClass;
   }
@@ -4107,7 +4816,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (taskAutostartAttributeEClass == null)
     {
-      taskAutostartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(87);
+      taskAutostartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(108);
     }
     return taskAutostartAttributeEClass;
   }
@@ -4141,7 +4850,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (resourceRuleEClass == null)
     {
-      resourceRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(89);
+      resourceRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(110);
     }
     return resourceRuleEClass;
   }
@@ -4175,7 +4884,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (resourceattributeEClass == null)
     {
-      resourceattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(90);
+      resourceattributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(111);
     }
     return resourceattributeEClass;
   }
@@ -4195,11 +4904,215 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCpuOsRule()
+  {
+    if (cpuOsRuleEClass == null)
+    {
+      cpuOsRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(113);
+    }
+    return cpuOsRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCpuOsRule_OsList()
+  {
+        return (EReference)getCpuOsRule().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOsAttribute()
+  {
+    if (osAttributeEClass == null)
+    {
+      osAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(114);
+    }
+    return osAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOsAttribute_Name()
+  {
+        return (EAttribute)getOsAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOsAttribute_Value()
+  {
+        return (EReference)getOsAttribute().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOsAttribute_Description()
+  {
+        return (EAttribute)getOsAttribute().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOsAttribute_ParameterList()
+  {
+        return (EReference)getOsAttribute().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOsAttribute_Style()
+  {
+        return (EAttribute)getOsAttribute().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOsAttribute_TimeList()
+  {
+        return (EReference)getOsAttribute().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTimeAttribute()
+  {
+    if (timeAttributeEClass == null)
+    {
+      timeAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(115);
+    }
+    return timeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTimeAttribute_Value()
+  {
+        return (EReference)getTimeAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTimeAttribute_Description()
+  {
+        return (EAttribute)getTimeAttribute().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOsWithortiAttribute()
+  {
+    if (osWithortiAttributeEClass == null)
+    {
+      osWithortiAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(117);
+    }
+    return osWithortiAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOsWithortiAttribute_Description()
+  {
+        return (EAttribute)getOsWithortiAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOsMemmapAttribute()
+  {
+    if (osMemmapAttributeEClass == null)
+    {
+      osMemmapAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(118);
+    }
+    return osMemmapAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOsMemmapAttribute_Description()
+  {
+        return (EAttribute)getOsMemmapAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOsBuildAttribute()
+  {
+    if (osBuildAttributeEClass == null)
+    {
+      osBuildAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(119);
+    }
+    return osBuildAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOsBuildAttribute_Description()
+  {
+        return (EAttribute)getOsBuildAttribute().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAlarmRule()
   {
     if (alarmRuleEClass == null)
     {
-      alarmRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(92);
+      alarmRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(120);
     }
     return alarmRuleEClass;
   }
@@ -4223,7 +5136,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (alarmAttributeEClass == null)
     {
-      alarmAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(93);
+      alarmAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(121);
     }
     return alarmAttributeEClass;
   }
@@ -4257,7 +5170,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (alarmActionAttributeEClass == null)
     {
-      alarmActionAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(94);
+      alarmActionAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(122);
     }
     return alarmActionAttributeEClass;
   }
@@ -4331,7 +5244,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (alarmAutostartAttributeEClass == null)
     {
-      alarmAutostartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(95);
+      alarmAutostartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(123);
     }
     return alarmAutostartAttributeEClass;
   }
@@ -4365,7 +5278,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (scheduleTableRuleEClass == null)
     {
-      scheduleTableRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(100);
+      scheduleTableRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(128);
     }
     return scheduleTableRuleEClass;
   }
@@ -4389,7 +5302,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (scheduleTableAttributeEClass == null)
     {
-      scheduleTableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(101);
+      scheduleTableAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(129);
     }
     return scheduleTableAttributeEClass;
   }
@@ -4433,7 +5346,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (scheduleAutoStartAttributeEClass == null)
     {
-      scheduleAutoStartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(102);
+      scheduleAutoStartAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(130);
     }
     return scheduleAutoStartAttributeEClass;
   }
@@ -4477,7 +5390,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (schduleSynAttributeEClass == null)
     {
-      schduleSynAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(103);
+      schduleSynAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(131);
     }
     return schduleSynAttributeEClass;
   }
@@ -4521,7 +5434,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (expiryAttributeEClass == null)
     {
-      expiryAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(104);
+      expiryAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(132);
     }
     return expiryAttributeEClass;
   }
@@ -4575,7 +5488,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (schduleActionAttributeEClass == null)
     {
-      schduleActionAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(105);
+      schduleActionAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(133);
     }
     return schduleActionAttributeEClass;
   }
@@ -4629,7 +5542,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocRuleEClass == null)
     {
-      iocRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(109);
+      iocRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(137);
     }
     return iocRuleEClass;
   }
@@ -4653,7 +5566,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocAttributeEClass == null)
     {
-      iocAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(110);
+      iocAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(138);
     }
     return iocAttributeEClass;
   }
@@ -4727,7 +5640,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocSenderEClass == null)
     {
-      iocSenderEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(111);
+      iocSenderEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(139);
     }
     return iocSenderEClass;
   }
@@ -4771,7 +5684,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocReceiverEClass == null)
     {
-      iocReceiverEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(112);
+      iocReceiverEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(140);
     }
     return iocReceiverEClass;
   }
@@ -4825,7 +5738,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocDataTypeAttrEClass == null)
     {
-      iocDataTypeAttrEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(113);
+      iocDataTypeAttrEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(141);
     }
     return iocDataTypeAttrEClass;
   }
@@ -4849,7 +5762,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocSemanticsEClass == null)
     {
-      iocSemanticsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(114);
+      iocSemanticsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(142);
     }
     return iocSemanticsEClass;
   }
@@ -4903,7 +5816,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (attributeEClass == null)
     {
-      attributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(121);
+      attributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(149);
     }
     return attributeEClass;
   }
@@ -4947,7 +5860,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (attributeNameEClass == null)
     {
-      attributeNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(122);
+      attributeNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(150);
     }
     return attributeNameEClass;
   }
@@ -4971,7 +5884,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (attributeValueEClass == null)
     {
-      attributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(123);
+      attributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(151);
     }
     return attributeValueEClass;
   }
@@ -4985,7 +5898,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (nameAttributeValueEClass == null)
     {
-      nameAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(124);
+      nameAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(152);
     }
     return nameAttributeValueEClass;
   }
@@ -5019,7 +5932,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (booleanAttributeValueEClass == null)
     {
-      booleanAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(125);
+      booleanAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(153);
     }
     return booleanAttributeValueEClass;
   }
@@ -5053,7 +5966,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (numberAttributeValueEClass == null)
     {
-      numberAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(126);
+      numberAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(154);
     }
     return numberAttributeValueEClass;
   }
@@ -5077,7 +5990,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (floatAttributeValueEClass == null)
     {
-      floatAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(127);
+      floatAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(155);
     }
     return floatAttributeValueEClass;
   }
@@ -5101,7 +6014,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (stringAttributeValueEClass == null)
     {
-      stringAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(128);
+      stringAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(156);
     }
     return stringAttributeValueEClass;
   }
@@ -5125,7 +6038,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (autoAttributeValueEClass == null)
     {
-      autoAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(129);
+      autoAttributeValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(157);
     }
     return autoAttributeValueEClass;
   }
@@ -5149,7 +6062,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (osRuleEClass == null)
     {
-      osRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(130);
+      osRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(158);
     }
     return osRuleEClass;
   }
@@ -5172,40 +6085,6 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   public EAttribute getOsRule_Description()
   {
         return (EAttribute)getOsRule().getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCounterRule()
-  {
-    if (counterRuleEClass == null)
-    {
-      counterRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(131);
-    }
-    return counterRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCounterRule_Implementations()
-  {
-        return (EReference)getCounterRule().getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getCounterRule_Description()
-  {
-        return (EAttribute)getCounterRule().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -5325,11 +6204,95 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getTransmissionParamEnum()
+  {
+    if (transmissionParamEnumEEnum == null)
+    {
+      transmissionParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(52);
+    }
+    return transmissionParamEnumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getIpduPropParamEnum()
+  {
+    if (ipduPropParamEnumEEnum == null)
+    {
+      ipduPropParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(54);
+    }
+    return ipduPropParamEnumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getIpduParamEnum()
+  {
+    if (ipduParamEnumEEnum == null)
+    {
+      ipduParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(56);
+    }
+    return ipduParamEnumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getNetworkMsgParamEnum()
+  {
+    if (networkMsgParamEnumEEnum == null)
+    {
+      networkMsgParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(59);
+    }
+    return networkMsgParamEnumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getMsgPropertyParamEnum()
+  {
+    if (msgPropertyParamEnumEEnum == null)
+    {
+      msgPropertyParamEnumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(63);
+    }
+    return msgPropertyParamEnumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getCounterenum()
+  {
+    if (counterenumEEnum == null)
+    {
+      counterenumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(68);
+    }
+    return counterenumEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getMessagefilter2()
   {
     if (messagefilter2EEnum == null)
     {
-      messagefilter2EEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(75);
+      messagefilter2EEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(96);
     }
     return messagefilter2EEnum;
   }
@@ -5343,7 +6306,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messageTRANSFERPROPERTYenumEEnum == null)
     {
-      messageTRANSFERPROPERTYenumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(76);
+      messageTRANSFERPROPERTYenumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(97);
     }
     return messageTRANSFERPROPERTYenumEEnum;
   }
@@ -5357,7 +6320,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (messagelink1EEnum == null)
     {
-      messagelink1EEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(77);
+      messagelink1EEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(98);
     }
     return messagelink1EEnum;
   }
@@ -5371,7 +6334,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (comAttributeNameEEnum == null)
     {
-      comAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(81);
+      comAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(102);
     }
     return comAttributeNameEEnum;
   }
@@ -5385,7 +6348,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (taskTimingrLockAttributeEEnum == null)
     {
-      taskTimingrLockAttributeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(85);
+      taskTimingrLockAttributeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(106);
     }
     return taskTimingrLockAttributeEEnum;
   }
@@ -5399,7 +6362,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (taskTimingAttributeNameEEnum == null)
     {
-      taskTimingAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(86);
+      taskTimingAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(107);
     }
     return taskTimingAttributeNameEEnum;
   }
@@ -5413,7 +6376,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (taskAttributeNameEEnum == null)
     {
-      taskAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(88);
+      taskAttributeNameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(109);
     }
     return taskAttributeNameEEnum;
   }
@@ -5427,9 +6390,23 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (resourceRangeEEnum == null)
     {
-      resourceRangeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(91);
+      resourceRangeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(112);
     }
     return resourceRangeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getOsAttrubutename()
+  {
+    if (osAttrubutenameEEnum == null)
+    {
+      osAttrubutenameEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(116);
+    }
+    return osAttrubutenameEEnum;
   }
 
   /**
@@ -5441,7 +6418,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (activateTaskEEnum == null)
     {
-      activateTaskEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(96);
+      activateTaskEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(124);
     }
     return activateTaskEEnum;
   }
@@ -5455,7 +6432,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (incrementCounterEEnum == null)
     {
-      incrementCounterEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(97);
+      incrementCounterEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(125);
     }
     return incrementCounterEEnum;
   }
@@ -5469,7 +6446,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (seteventEEnum == null)
     {
-      seteventEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(98);
+      seteventEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(126);
     }
     return seteventEEnum;
   }
@@ -5483,7 +6460,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (alarmCallBackEEnum == null)
     {
-      alarmCallBackEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(99);
+      alarmCallBackEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(127);
     }
     return alarmCallBackEEnum;
   }
@@ -5497,7 +6474,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (absoluteEEnum == null)
     {
-      absoluteEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(106);
+      absoluteEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(134);
     }
     return absoluteEEnum;
   }
@@ -5511,7 +6488,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (schduleSynEEnum == null)
     {
-      schduleSynEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(107);
+      schduleSynEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(135);
     }
     return schduleSynEEnum;
   }
@@ -5525,7 +6502,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (schduleExpiryAdustbleEEnum == null)
     {
-      schduleExpiryAdustbleEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(108);
+      schduleExpiryAdustbleEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(136);
     }
     return schduleExpiryAdustbleEEnum;
   }
@@ -5539,7 +6516,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocReciverNoneEEnum == null)
     {
-      iocReciverNoneEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(115);
+      iocReciverNoneEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(143);
     }
     return iocReciverNoneEEnum;
   }
@@ -5553,7 +6530,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (enumIocSendRecEEnum == null)
     {
-      enumIocSendRecEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(116);
+      enumIocSendRecEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(144);
     }
     return enumIocSendRecEEnum;
   }
@@ -5567,7 +6544,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (enumIocRecEEnum == null)
     {
-      enumIocRecEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(117);
+      enumIocRecEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(145);
     }
     return enumIocRecEEnum;
   }
@@ -5581,7 +6558,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocDataTypeEEnum == null)
     {
-      iocDataTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(118);
+      iocDataTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(146);
     }
     return iocDataTypeEEnum;
   }
@@ -5595,7 +6572,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocSemanticsenumEEnum == null)
     {
-      iocSemanticsenumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(119);
+      iocSemanticsenumEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(147);
     }
     return iocSemanticsenumEEnum;
   }
@@ -5609,7 +6586,7 @@ public class OilPackageImpl extends EPackageImpl implements OilPackage
   {
     if (iocSemanticsenummEEnum == null)
     {
-      iocSemanticsenummEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(120);
+      iocSemanticsenummEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(OilPackage.eNS_URI).getEClassifiers().get(148);
     }
     return iocSemanticsenummEEnum;
   }

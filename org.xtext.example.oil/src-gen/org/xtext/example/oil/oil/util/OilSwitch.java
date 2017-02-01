@@ -356,6 +356,101 @@ public class OilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case OilPackage.IPDU_RULE:
+      {
+        IpduRule ipduRule = (IpduRule)theEObject;
+        T result = caseIpduRule(ipduRule);
+        if (result == null) result = caseObjectDefinition(ipduRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.IPDU_SUB_CONTAINER:
+      {
+        IpduSubContainer ipduSubContainer = (IpduSubContainer)theEObject;
+        T result = caseIpduSubContainer(ipduSubContainer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.IPDU_PROPERTY_RULE:
+      {
+        IpduPropertyRule ipduPropertyRule = (IpduPropertyRule)theEObject;
+        T result = caseIpduPropertyRule(ipduPropertyRule);
+        if (result == null) result = caseIpduSubContainer(ipduPropertyRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.IPDU_PROP_SUB_CON:
+      {
+        IpduPropSubCon ipduPropSubCon = (IpduPropSubCon)theEObject;
+        T result = caseIpduPropSubCon(ipduPropSubCon);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.TRANSMISSION_MODE_RULE:
+      {
+        TransmissionModeRule transmissionModeRule = (TransmissionModeRule)theEObject;
+        T result = caseTransmissionModeRule(transmissionModeRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.TRANSMISSON_PARAM:
+      {
+        TransmissonParam transmissonParam = (TransmissonParam)theEObject;
+        T result = caseTransmissonParam(transmissonParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.IPDU_PROP_PARAM:
+      {
+        IpduPropParam ipduPropParam = (IpduPropParam)theEObject;
+        T result = caseIpduPropParam(ipduPropParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.IPDU_PARAM:
+      {
+        IpduParam ipduParam = (IpduParam)theEObject;
+        T result = caseIpduParam(ipduParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.NETWORK_MESSAGE_RULE:
+      {
+        NetworkMessageRule networkMessageRule = (NetworkMessageRule)theEObject;
+        T result = caseNetworkMessageRule(networkMessageRule);
+        if (result == null) result = caseObjectDefinition(networkMessageRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.NETWORK_MSG_PARAM:
+      {
+        NetworkMsgParam networkMsgParam = (NetworkMsgParam)theEObject;
+        T result = caseNetworkMsgParam(networkMsgParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.NETWORK_MSG_SUB:
+      {
+        NetworkMsgSub networkMsgSub = (NetworkMsgSub)theEObject;
+        T result = caseNetworkMsgSub(networkMsgSub);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.NETWORK_MSG_PROPERTY_RULE:
+      {
+        NetworkMsgPropertyRule networkMsgPropertyRule = (NetworkMsgPropertyRule)theEObject;
+        T result = caseNetworkMsgPropertyRule(networkMsgPropertyRule);
+        if (result == null) result = caseNetworkMsgSub(networkMsgPropertyRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.MSG_PROPERTY_PARAM:
+      {
+        MsgPropertyParam msgPropertyParam = (MsgPropertyParam)theEObject;
+        T result = caseMsgPropertyParam(msgPropertyParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case OilPackage.EVENT_RULE:
       {
         EventRule eventRule = (EventRule)theEObject;
@@ -369,6 +464,22 @@ public class OilSwitch<T> extends Switch<T>
         AppmodeRule appmodeRule = (AppmodeRule)theEObject;
         T result = caseAppmodeRule(appmodeRule);
         if (result == null) result = caseObjectDefinition(appmodeRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.COUNTER_RULE:
+      {
+        CounterRule counterRule = (CounterRule)theEObject;
+        T result = caseCounterRule(counterRule);
+        if (result == null) result = caseImpCounterRule(counterRule);
+        if (result == null) result = caseObjectDefinition(counterRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.COUNTERATTRIBUTE:
+      {
+        Counterattribute counterattribute = (Counterattribute)theEObject;
+        T result = caseCounterattribute(counterattribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -629,6 +740,49 @@ public class OilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case OilPackage.CPU_OS_RULE:
+      {
+        CpuOsRule cpuOsRule = (CpuOsRule)theEObject;
+        T result = caseCpuOsRule(cpuOsRule);
+        if (result == null) result = caseObjectDefinition(cpuOsRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.OS_ATTRIBUTE:
+      {
+        OsAttribute osAttribute = (OsAttribute)theEObject;
+        T result = caseOsAttribute(osAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.TIME_ATTRIBUTE:
+      {
+        TimeAttribute timeAttribute = (TimeAttribute)theEObject;
+        T result = caseTimeAttribute(timeAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.OS_WITHORTI_ATTRIBUTE:
+      {
+        OsWithortiAttribute osWithortiAttribute = (OsWithortiAttribute)theEObject;
+        T result = caseOsWithortiAttribute(osWithortiAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.OS_MEMMAP_ATTRIBUTE:
+      {
+        OsMemmapAttribute osMemmapAttribute = (OsMemmapAttribute)theEObject;
+        T result = caseOsMemmapAttribute(osMemmapAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case OilPackage.OS_BUILD_ATTRIBUTE:
+      {
+        OsBuildAttribute osBuildAttribute = (OsBuildAttribute)theEObject;
+        T result = caseOsBuildAttribute(osBuildAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case OilPackage.ALARM_RULE:
       {
         AlarmRule alarmRule = (AlarmRule)theEObject;
@@ -818,14 +972,6 @@ public class OilSwitch<T> extends Switch<T>
         OsRule osRule = (OsRule)theEObject;
         T result = caseOsRule(osRule);
         if (result == null) result = caseImpOsRule(osRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case OilPackage.COUNTER_RULE:
-      {
-        CounterRule counterRule = (CounterRule)theEObject;
-        T result = caseCounterRule(counterRule);
-        if (result == null) result = caseImpCounterRule(counterRule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1442,6 +1588,214 @@ public class OilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Ipdu Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ipdu Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpduRule(IpduRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ipdu Sub Container</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ipdu Sub Container</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpduSubContainer(IpduSubContainer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ipdu Property Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ipdu Property Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpduPropertyRule(IpduPropertyRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ipdu Prop Sub Con</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ipdu Prop Sub Con</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpduPropSubCon(IpduPropSubCon object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Transmission Mode Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Transmission Mode Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTransmissionModeRule(TransmissionModeRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Transmisson Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Transmisson Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTransmissonParam(TransmissonParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ipdu Prop Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ipdu Prop Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpduPropParam(IpduPropParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ipdu Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ipdu Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpduParam(IpduParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Network Message Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Network Message Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNetworkMessageRule(NetworkMessageRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Network Msg Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Network Msg Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNetworkMsgParam(NetworkMsgParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Network Msg Sub</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Network Msg Sub</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNetworkMsgSub(NetworkMsgSub object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Network Msg Property Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Network Msg Property Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNetworkMsgPropertyRule(NetworkMsgPropertyRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Msg Property Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Msg Property Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMsgPropertyParam(MsgPropertyParam object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Event Rule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1469,6 +1823,38 @@ public class OilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAppmodeRule(AppmodeRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Counter Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Counter Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCounterRule(CounterRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Counterattribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Counterattribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCounterattribute(Counterattribute object)
   {
     return null;
   }
@@ -2050,6 +2436,102 @@ public class OilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Cpu Os Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cpu Os Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCpuOsRule(CpuOsRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Os Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Os Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOsAttribute(OsAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Time Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Time Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTimeAttribute(TimeAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Os Withorti Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Os Withorti Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOsWithortiAttribute(OsWithortiAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Os Memmap Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Os Memmap Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOsMemmapAttribute(OsMemmapAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Os Build Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Os Build Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOsBuildAttribute(OsBuildAttribute object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Alarm Rule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2461,22 +2943,6 @@ public class OilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOsRule(OsRule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Counter Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Counter Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCounterRule(CounterRule object)
   {
     return null;
   }

@@ -75,6 +75,37 @@
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ObjectRefTypeEnum/APICONFIG_TYPE"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ObjectRefTypeEnum/LIBRARY_TYPE"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//TransmissionParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//TransmissionParamEnum/TIMEPERIOD"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//TransmissionParamEnum/TIMEOFFSET"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//TransmissionParamEnum/MINIMUMDELAYTIME"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//IpduPropParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IpduPropParamEnum/TIMEOUT"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IpduPropParamEnum/FIRSTTIMEOUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//IpduParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IpduParamEnum/SIZEINBITS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IpduParamEnum/IPDUCALLOUT"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//IpduParamEnum/LAYERUSED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//NetworkMsgParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//NetworkMsgParamEnum/IPDU"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//MsgPropertyParamEnum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/SIZEINBITS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/BITORDERING"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/BITPOSITION"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/DATAINTERPRETATION"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/INITIALVALUE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/DIRECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/MAXIMUMSIZEINBITS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//MsgPropertyParamEnum/NONE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//Counterenum">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Counterenum/HARDWARE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Counterenum/SOFTWARE"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//Messagefilter2">
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/ALWAYS"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//Messagefilter2/NEVER"/>
@@ -139,6 +170,33 @@
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ResourceRange/STANDARD"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ResourceRange/INTERNAL"/>
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ResourceRange/LINKED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//OsAttrubutename">
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/NUMBER_OF_CORES"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/SCALABILITYCLASS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/STACKMONITORING"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/USEGETSERVICEID"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/USEPARAMETERACCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/USERESSCHEDULER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/USEVLE"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/ERRORHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/POSTTASKHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/PRETASKHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/PROTECTIONHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/SHUTDOWNHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/STARTUPHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/APP_NAME"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/APP_SRC"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/ASFLAGS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/ASSEMBLER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/CFLAGS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/COMPILER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/COPIER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/DEBUG"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/LDFLAGS"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/LINKER"/>
+      <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//OsAttrubutename/TRAMPOLINE_BASE_PATH"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Oil.ecore#//ActivateTask">
       <genEnumLiterals ecoreEnumLiteral="Oil.ecore#//ActivateTask/TASK"/>
@@ -374,10 +432,69 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//ObjectDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//ObjectDefinition/LibraryList"/>
     </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IpduRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduRule/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduRule/ipduSubContaner"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduRule/ipduParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IpduSubContainer"/>
+    <genClasses ecoreClass="Oil.ecore#//IpduPropertyRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IpduPropertyRule/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduPropertyRule/ipduPropSubCon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduPropertyRule/ipduPropParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IpduPropSubCon">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduPropSubCon/rule"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//TransmissionModeRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TransmissionModeRule/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//TransmissionModeRule/transmissionParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//TransmissonParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TransmissonParam/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//TransmissonParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IpduPropParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IpduPropParam/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduPropParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//IpduParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//IpduParam/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//IpduParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//NetworkMessageRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//NetworkMessageRule/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//NetworkMessageRule/networkMsgSub"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//NetworkMessageRule/networkMsgParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//NetworkMsgParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//NetworkMsgParam/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//NetworkMsgParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//NetworkMsgSub"/>
+    <genClasses ecoreClass="Oil.ecore#//NetworkMsgPropertyRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//NetworkMsgPropertyRule/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//NetworkMsgPropertyRule/msgPropertyParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//MsgPropertyParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MsgPropertyParam/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//MsgPropertyParam/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//MsgPropertyParam/description"/>
+    </genClasses>
     <genClasses ecoreClass="Oil.ecore#//EventRule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//EventRule/eventvalue"/>
     </genClasses>
     <genClasses ecoreClass="Oil.ecore#//AppmodeRule"/>
+    <genClasses ecoreClass="Oil.ecore#//CounterRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//CounterRule/implementations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//CounterRule/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//CounterRule/Counterlist"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//Counterattribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Counterattribute/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Counterattribute/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//Counterattribute/sourcevalue"/>
+    </genClasses>
     <genClasses ecoreClass="Oil.ecore#//MessageRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//MessageRule/MessageList"/>
     </genClasses>
@@ -544,6 +661,30 @@
     <genClasses ecoreClass="Oil.ecore#//Resourceattribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//Resourceattribute/resourceRange"/>
     </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//CpuOsRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//CpuOsRule/OsList"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//OsAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsAttribute/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//OsAttribute/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsAttribute/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//OsAttribute/parameterList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsAttribute/style"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//OsAttribute/TimeList"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//TimeAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//TimeAttribute/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//TimeAttribute/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//OsWithortiAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsWithortiAttribute/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//OsMemmapAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsMemmapAttribute/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Oil.ecore#//OsBuildAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsBuildAttribute/description"/>
+    </genClasses>
     <genClasses ecoreClass="Oil.ecore#//AlarmRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//AlarmRule/AlarmList"/>
     </genClasses>
@@ -656,10 +797,6 @@
     <genClasses ecoreClass="Oil.ecore#//OsRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//OsRule/implementations"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//OsRule/description"/>
-    </genClasses>
-    <genClasses ecoreClass="Oil.ecore#//CounterRule">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Oil.ecore#//CounterRule/implementations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Oil.ecore#//CounterRule/description"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
